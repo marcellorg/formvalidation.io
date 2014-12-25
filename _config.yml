@@ -5,7 +5,7 @@ source:               .
 destination:          ../output
 markdown:             kramdown
 exclude:              ['node_modules', '*.less']
-url:                  http://formvalidation.io/
+url:                  http://formvalidation.io
 
 paginate:             5
 paginate_path:        /news/page:num
@@ -16,6 +16,7 @@ timezone:             Asia/Ho_Chi_Minh
 
 # Custom variables
 # not defined by Jekyll
+description:          FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, SemanticUI, UIKit frameworks
 license:
   developer:
     price:            25$
