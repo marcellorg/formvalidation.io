@@ -28,15 +28,15 @@ license:
     gumroad_url:      https://gum.co/bv-organization-license
     sellfy_url:       https://sellfy.com/p/eQiZ/
     sellfy_id:        eQiZ
-current_version:      0.5.3
-released_date:        2014.11.05
-github_watchers:      1580
-github_forks:         1070
-github_downloads:     92,000
+current_version:      0.6.0
+released_date:        2015.01.01
+github_watchers:      1650
+github_forks:         1150
+github_downloads:     94,000
 twitter_followers:    215
 download:
-  dist:               https://github.com/formvalidation/formvalidation/releases/download/v0.5.3/bootstrapvalidator-dist-0.5.3.zip
-  tag:                https://github.com/formvalidation/formvalidation/archive/v0.5.3.zip
+  dist:               https://github.com/formvalidation/formvalidation/releases/download/v0.6.0/formvalidation-dist-0.6.0.zip
+  tag:                https://github.com/formvalidation/formvalidation/archive/v0.6.0.zip
 repository:
   source:             https://github.com/formvalidation/formvalidation
   docs:               https://github.com/formvalidation/formvalidation.io/gh-pages
