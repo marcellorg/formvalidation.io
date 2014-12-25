@@ -273,12 +273,12 @@ h4 {
 }
 .doc-home-feature i {
   background: #bdc3c7;
-  border-radius: 75px;
+  border-radius: 60px;
   color: #ecf0f1;
-  font-size: 90px;
-  line-height: 150px;
-  height: 150px;
-  width: 150px;
+  font-size: 60px;
+  line-height: 120px;
+  height: 120px;
+  width: 120px;
 }
 .doc-home-feature h4 {
   font-size: 30px;
@@ -420,7 +420,7 @@ h4 {
   padding-left: 96px;
 }
 .doc-gumroad-button {
-  background: #ffffff url('../img/gumroad-button-bar.jpg') repeat-x;
+  background: white url('../img/gumroad-button-bar.jpg') repeat-x;
   border-radius: 4px;
   box-shadow: rgba(0, 0, 0, 0.4) 0 0 2px;
   color: #999;
