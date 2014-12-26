@@ -13,95 +13,81 @@ permalink: /download/
     </div>
 
     <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <p>The latest version, <a href="/news/v0.6.0-released/">v{{ site.current_version }}</a>, is released on {{ site.released_date }}.</p>
+        <p class="text-center">The latest version, <a href="/news/v0.6.0-released/">v{{ site.current_version }}</a>, is released on {{ site.released_date }}.</p>
 
-                <section>
-                    <div class="row text-center">
-                        <div class="col-md-4 col-md-offset-2">
-                            <div class="doc-plan">
-                                <div class="panel panel-primary">
-                                    <div class="panel-heading">
-                                        <p>Developer commercial license</p>
-                                        <span>{{ site.license.developer.price }}</span>
-                                    </div>
-                                    <div class="list-group">
-                                        <div class="list-group-item">For individual developers</div>
-                                        <div class="list-group-item">Each individual developer needs to purchase a separate license</div>
-                                        <div class="list-group-item">Free lifetime upgrade</div>
-                                        <div class="list-group-item">Full source code</div>
-                                        <div class="list-group-item">
-                                            <p><strong>Buy with Paypal</strong></p>
-                                            <a href="{{ site.license.developer.sellfy_url }}" id="{{ site.license.developer.sellfy_id }}" class="doc-sellfy-button" title="Buy BootstrapValidator developer commercial license with Paypal"><span>{{ site.license.developer.price }}</span></a>
-                                        </div>
-                                        <div class="list-group-item">
-                                            <p><strong>Buy with Credit Card</strong></p>
-                                            <a href="{{ site.license.developer.gumroad_url }}" class="doc-gumroad-button" title="Buy BootstrapValidator developer commercial license with Credit Card"><span></span>Buy now</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+        <div class="row text-center">
+            <div class="col-md-4">
+                <div class="doc-plan">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <p>Developer commercial license</p>
+                            <h3>{{ site.license.developer.price }}</h3>
                         </div>
-
-                        <div class="col-md-4">
-                            <div class="doc-plan">
-                                <div class="panel panel-success">
-                                    <div class="panel-heading">
-                                        <p>Organization commercial license</p>
-                                        <span>{{ site.license.organization.price }}</span>
-                                    </div>
-                                    <div class="list-group">
-                                        <div class="list-group-item">For an organization with a team of developers</div>
-                                        <div class="list-group-item">Covers all developers working within the organization</div>
-                                        <div class="list-group-item">Free lifetime upgrade</div>
-                                        <div class="list-group-item">Full source code</div>
-                                        <div class="list-group-item">
-                                            <p><strong>Buy with Paypal</strong></p>
-                                            <a href="{{ site.license.organization.sellfy_url }}" id="{{ site.license.organization.sellfy_id }}" class="doc-sellfy-button" title="Buy BootstrapValidator organization commercial license with Paypal"><span>{{ site.license.organization.price }}</span></a>
-                                        </div>
-                                        <div class="list-group-item">
-                                            <p><strong>Buy with Credit Card</strong></p>
-                                            <a href="{{ site.license.organization.gumroad_url }}" class="doc-gumroad-button" title="Buy BootstrapValidator organization commercial license with Credit Card"><span></span>Buy now</a>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="list-group">
+                            <div class="list-group-item">For individual developers</div>
+                            <div class="list-group-item">Each individual developer needs to purchase a separate license</div>
+                            <div class="list-group-item"><i class="fa fa-check"></i> Free lifetime upgrade</div>
+                            <div class="list-group-item"><i class="fa fa-check"></i> Full source code</div>
+                            <div class="list-group-item">
+                                <p><strong>Buy with Paypal</strong></p>
+                                <a href="{{ site.license.developer.sellfy_url }}" id="{{ site.license.developer.sellfy_id }}" class="doc-sellfy-button" title="Buy BootstrapValidator developer commercial license with Paypal"><span>{{ site.license.developer.price }}</span></a>
+                            </div>
+                            <div class="list-group-item">
+                                <p><strong>Buy with Credit Card</strong></p>
+                                <a href="{{ site.license.developer.gumroad_url }}" class="doc-gumroad-button" title="Buy BootstrapValidator developer commercial license with Credit Card"><span></span>Buy now</a>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
 
-                    <p class="text-center">
-                        All transactions are processed on <a href="https://sellfy.com/nghuuphuoc/">Sellfy</a> and <a href="https://gumroad.com/nghuuphuoc/">GumRoad</a> through an <strong>encrypted HTTP Secure</strong> connection
-                    </p>
-                </section>
-
-                <div class="doc-hr"></div>
-
-                <section>
-                    <h2>Trial version</h2>
-
-                    <div class="row text-center">
-                        <div class="col-md-4 col-md-offset-4">
-                            <div class="doc-plan">
-                                <div class="panel panel-info">
-                                    <div class="panel-heading">Free</div>
-                                    <div class="list-group">
-                                        <div class="list-group-item">
-                                            For anyone who want to try it before buying
-                                        </div>
-                                        <div class="list-group-item">
-                                            Not include the source code, only minification files
-                                        </div>
-                                        <div class="list-group-item">
-                                            <a href="{{ site.download.dist }}" class="btn" data-toggle="tooltip" data-title="By clicking this button, you agree to the FormValidation license agreement" data-placement="bottom">Try v{{ site.current_version }}</a>
-                                        </div>
-                                    </div>
-                                </div>
+            <div class="col-md-4">
+                <div class="doc-plan">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <p>Organization commercial license</p>
+                            <h3>{{ site.license.organization.price }}</h3>
+                        </div>
+                        <div class="list-group">
+                            <div class="list-group-item">For an organization with a team of developers</div>
+                            <div class="list-group-item">Covers all developers working within the organization</div>
+                            <div class="list-group-item"><i class="fa fa-check"></i> Free lifetime upgrade</div>
+                            <div class="list-group-item"><i class="fa fa-check"></i> Full source code</div>
+                            <div class="list-group-item">
+                                <p><strong>Buy with Paypal</strong></p>
+                                <a href="{{ site.license.organization.sellfy_url }}" id="{{ site.license.organization.sellfy_id }}" class="doc-sellfy-button" title="Buy BootstrapValidator organization commercial license with Paypal"><span>{{ site.license.organization.price }}</span></a>
+                            </div>
+                            <div class="list-group-item">
+                                <p><strong>Buy with Credit Card</strong></p>
+                                <a href="{{ site.license.organization.gumroad_url }}" class="doc-gumroad-button" title="Buy BootstrapValidator organization commercial license with Credit Card"><span></span>Buy now</a>
                             </div>
                         </div>
                     </div>
-                </section>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="doc-plan">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <p>Trial version</p>
+                            <h3>0$</h3>
+                        </div>
+                        <div class="list-group">
+                            <div class="list-group-item">For anyone who want to try it before buying</div>
+                            <div class="list-group-item"><span style="text-decoration: line-through;">Free lifetime upgrade</span></div>
+                            <div class="list-group-item"><span style="text-decoration: line-through;">Full source code</span></div>
+                            <div class="list-group-item">
+                                <a href="{{ site.download.dist }}" class="btn" data-toggle="tooltip" data-title="By clicking this button, you agree to the FormValidation license agreement" data-placement="bottom">Try v{{ site.current_version }}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+
+        <p class="text-center">
+            All transactions are processed on <a href="https://sellfy.com/nghuuphuoc/">Sellfy</a> and <a href="https://gumroad.com/nghuuphuoc/">GumRoad</a> through an <strong>encrypted HTTP Secure</strong> connection
+        </p>
     </div>
 </div>
