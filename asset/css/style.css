@@ -136,22 +136,30 @@ h4 {
 .doc-nav li a {
   color: #fff;
   display: block;
-  font-size: 16px;
+  font-size: 15px;
   padding: 0 0 0 20px;
-  height: 40px;
-  line-height: 40px;
+  height: 35px;
+  line-height: 35px;
 }
 .doc-nav li.doc-nav-active {
   border-left: 3px solid #3498db;
 }
+.doc-nav li i {
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  margin-left: 10px;
+  text-align: center;
+}
 .doc-nav .doc-hr {
   background: #7f8c8d;
-  margin: 15px auto;
-  width: 50%;
+  margin: 5px auto;
 }
 .doc-creator {
   color: #fff;
-  margin-top: 30px;
+  margin-top: 20px;
   text-align: center;
 }
 .doc-creator a {
@@ -179,7 +187,7 @@ h4 {
   color: #fff;
   font-size: 20px;
   font-weight: bold;
-  position: absolute;
+  position: fixed;
   left: 10px;
   top: 10px;
   z-index: 1;
@@ -197,13 +205,6 @@ h4 {
 }
 .doc-footer p {
   margin-bottom: 15px;
-}
-.doc-footer ul {
-  list-style: none;
-}
-.doc-footer li {
-  display: inline-block;
-  padding: 0 2px;
 }
 .doc-footer .btn {
   background: #3498db;
