@@ -31,4 +31,16 @@
         <p><a href="mailto: phuoc@huuphuoc.me" class="btn">Hire me</a></p>
     </div>
 </nav>
-<button class="btn doc-logo" title="Toggle the navigation"><i class="fa fa-bars"></i></button>
+
+<nav class="doc-switcher">
+    <ul>
+        <li><a id="toggleButton" class="doc-logo" title="Toggle the navigation"><i class="fa fa-bars"></i></a></li>
+        {% if page.url != '/' %}
+        <li><a href="javascript: void(0);" data-switcher-framework="bootstrap" data-toggle="tooltip" data-placement="right" title="Switch examples to Bootstrap framework">B</a></li>
+        <li><a href="javascript: void(0);" data-switcher-framework="foundation" data-toggle="tooltip" data-placement="right" title="Switch examples to Foundation framework">F</a></li>
+        <li><a href="javascript: void(0);" data-switcher-framework="pure" data-toggle="tooltip" data-placement="right" title="Switch examples to Pure framework">P</a></li>
+        <li><a href="javascript: void(0);" data-switcher-framework="semantic" data-toggle="tooltip" data-placement="right" title="Switch examples to Semantic framework">S</a></li>
+        <li><a href="javascript: void(0);" data-switcher-framework="uikit" data-toggle="tooltip" data-placement="right" title="Switch examples to UIKit framework">U</a></li>
+        {% endif %}
+    </ul>
+</nav>

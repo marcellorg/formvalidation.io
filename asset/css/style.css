@@ -68,7 +68,8 @@ h4 {
 .doc-notification {
   /*background-color: #ecf0f1;*/
   border-bottom: 1px solid #eee;
-  padding: 20px 0;
+  height: 50px;
+  line-height: 50px;
   text-align: center;
 }
 @media (max-width: 767px) {
@@ -106,8 +107,8 @@ h4 {
   width: 280px;
   z-index: 1;
 }
-.doc-nav-shown .doc-logo {
-  left: 290px;
+.doc-nav-shown .doc-switcher {
+  left: 280px;
 }
 .doc-nav-shown .doc-content-wrapper {
   margin-left: 280px;
@@ -181,20 +182,46 @@ h4 {
 .doc-creator .btn:hover {
   color: #fff;
 }
-.doc-logo {
-  background: #3498db;
-  border-radius: 0;
-  color: #fff;
-  font-size: 20px;
-  font-weight: bold;
+.doc-switcher {
   position: fixed;
-  left: 10px;
-  top: 10px;
+  left: 0;
+  top: 0;
   z-index: 1;
 }
-.doc-logo:focus,
-.doc-logo:hover {
+.doc-switcher li {
+  list-style-type: none;
+}
+.doc-switcher a {
   color: #fff;
+  cursor: pointer;
+  display: block;
+  font-size: 20px;
+  line-height: 50px;
+  text-align: center;
+  width: 50px;
+  height: 50px;
+}
+.doc-switcher a:focus,
+.doc-switcher a:hover {
+  color: #fff;
+}
+.doc-switcher a[data-switcher-framework="bootstrap"] {
+  background-color: #6f5499;
+}
+.doc-switcher a[data-switcher-framework="foundation"] {
+  background-color: #074E68;
+}
+.doc-switcher a[data-switcher-framework="pure"] {
+  background-color: #1F8DD6;
+}
+.doc-switcher a[data-switcher-framework="semantic"] {
+  background-color: #35BDB2;
+}
+.doc-switcher a[data-switcher-framework="uikit"] {
+  background-color: #3DC0F1;
+}
+.doc-switcher .doc-logo {
+  background: #3498db;
 }
 /* --- Footer --- */
 .doc-footer {

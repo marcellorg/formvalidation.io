@@ -68,7 +68,8 @@ h1, h2, h3, h4 {
 .doc-notification {
   /*background-color: #ecf0f1;*/
   border-bottom: 1px solid #eee;
-  padding: 20px 0;
+  height: 50px;
+  line-height: 50px;
   text-align: center;
 }
 @media (max-width: 767px) {
@@ -109,8 +110,8 @@ h1, h2, h3, h4 {
     width: @nav-width;
     z-index: 1;
   }
-  .doc-logo {
-    left:  @nav-width + 10;
+  .doc-switcher {
+    left: @nav-width;
   }
   .doc-content-wrapper {
     margin-left: @nav-width;
@@ -185,18 +186,44 @@ h1, h2, h3, h4 {
     }
   }
 }
-.doc-logo {
-  background: #3498db;
-  border-radius: 0;
-  color: #fff;
-  font-size: 20px;
-  font-weight: bold;
+.doc-switcher {
   position: fixed;
-  left: 10px;
-  top: 10px;
+  left: 0;
+  top: 0;
   z-index: 1;
-  &:focus, &:hover {
+  li {
+    list-style-type: none;
+  }
+  a {
     color: #fff;
+    cursor: pointer;
+    display: block;
+    font-size: 20px;
+    line-height: 50px;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    &:focus, &:hover {
+      color: #fff;
+    }
+    &[data-switcher-framework="bootstrap"] {
+      background-color: #6f5499;
+    }
+    &[data-switcher-framework="foundation"] {
+      background-color: #074E68;
+    }
+    &[data-switcher-framework="pure"] {
+      background-color: #1F8DD6;
+    }
+    &[data-switcher-framework="semantic"] {
+      background-color: #35BDB2;
+    }
+    &[data-switcher-framework="uikit"] {
+      background-color: #3DC0F1;
+    }
+  }
+  .doc-logo {
+    background: #3498db;
   }
 }
 
