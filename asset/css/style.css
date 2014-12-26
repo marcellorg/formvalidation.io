@@ -245,23 +245,14 @@ h4 {
 .doc-home-intro h1 a {
   color: #f1c40f;
 }
-.doc-home-intro .btn {
-  background: #3498db;
-  color: #fff;
-  font-size: 30px;
-  margin: 5px;
-  text-transform: uppercase;
-}
-.doc-home-intro .btn:hover {
-  color: #fff;
-}
 .doc-home-intro a {
   color: #ccc;
 }
-.doc-home-intro h3 {
-  color: #ccc;
+.doc-home-intro p {
+  font-size: 80%;
   position: absolute;
-  bottom: 10px;
+  left: 0;
+  bottom: 0;
   text-align: center;
   width: 100%;
 }
@@ -344,7 +335,7 @@ h4 {
   margin-bottom: 30px;
 }
 .doc-home-tweet .col-sm-4 {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   position: relative;
   text-align: center;
 }
@@ -370,6 +361,21 @@ h4 {
 .doc-home-tweet p {
   margin-top: 20px;
 }
+.doc-home-tweet li {
+  list-style-type: none;
+  display: inline-block;
+}
+.doc-home-tweet li a {
+  color: #fff;
+  font-size: 25px;
+}
+.doc-home-tweet li i {
+  background: #3498db;
+  border-radius: 25px;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+}
 .doc-home-tweet .btn {
   background: #3498db;
   color: #fff;
@@ -378,6 +384,27 @@ h4 {
   text-transform: uppercase;
 }
 .doc-home-tweet .btn:hover {
+  color: #fff;
+}
+.doc-home-download h3 {
+  font-size: 80px;
+  margin-bottom: 20px;
+}
+.doc-home-download h3 span {
+  background: #000;
+  border-radius: 8px;
+  color: #fff;
+  padding: 0 5px;
+  margin: 0 5px;
+}
+.doc-home-download .btn {
+  background: #3498db;
+  color: #fff;
+  font-size: 20px;
+  margin: 5px;
+  text-transform: uppercase;
+}
+.doc-home-download .btn:hover {
   color: #fff;
 }
 @media (max-width: 767px) {
