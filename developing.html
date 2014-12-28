@@ -21,9 +21,9 @@ permalink: /developing/
 
 {% highlight javascript %}
 (function($) {
-    $.fn.bootstrapValidator.validators.validatorName = {
+    FormValidation.Validator.validatorName = {
         /**
-         * @param {BootstrapValidator} validator The validator plugin instance
+         * @param {FormValidation.Base} validator The validator plugin instance
          * @param {jQuery} $field The jQuery object represents the field element
          * @param {Object} options The validator options
          * @returns {Boolean}
@@ -48,7 +48,7 @@ permalink: /developing/
                     <p>To apply the validator to particular field:</p>
 
 {% highlight javascript %}
-$(form).bootstrapValidator({
+$(form).formValidation({
     fields: {
         fieldName: {
             // Replace validatorName with the name of validator
@@ -68,7 +68,7 @@ $(form).bootstrapValidator({
 
 {% highlight javascript %}
 (function($) {
-    $.fn.bootstrapValidator.validators.validatorName = {
+    FormValidation.Validator.validatorName = {
         validate: function(validator, $field, options) {
             // ... Do your logic checking
             if (...) {
@@ -104,7 +104,7 @@ $(form).bootstrapValidator({
 
 {% highlight javascript %}
 (function($) {
-    $.fn.bootstrapValidator.validators.password = {
+    FormValidation.Validator.password = {
         validate: function(validator, $field, options) {
             var value = $field.val();
             if (value === '') {
@@ -137,31 +137,7 @@ $(form).bootstrapValidator({
 }(window.jQuery));
 {% endhighlight %}
 
-                    <div class="doc-demo">
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a href="#password-form-tab" data-toggle="tab">Try it</a></li>
-                            <li><a href="#password-html-tab" data-toggle="tab">HTML</a></li>
-                            <li><a href="#password-js-tab" data-toggle="tab">JS</a></li>
-                        </ul>
-
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="password-form-tab">
-                            {% include developing/password-example.html %}
-                            </div>
-
-                            <div class="tab-pane" id="password-html-tab">
-{% highlight html %}
-{% include developing/password-example.html %}
-{% endhighlight %}
-                            </div>
-
-                            <div class="tab-pane" id="password-js-tab">
-{% highlight javascript %}
-{% include developing/password-example.js %}
-{% endhighlight %}
-                            </div>
-                        </div>
-                    </div>
+                    {% include demo/tabs.html id="password" frameworks="bootstrap,foundation,pure,semantic,uikit" path="/demo/developing/password/" %}
 
                     <p>Basically, the validator works fine. It returns <code>false</code> if the password doesn't satisfy any of conditions we define. The limitation here is that the user don't know
                         which condition the password doesn't pass. It informs the same <code>The password is not valid</code> message in all cases.</p>
@@ -169,7 +145,7 @@ $(form).bootstrapValidator({
 
 {% highlight javascript %}
 (function($) {
-    $.fn.bootstrapValidator.validators.securePassword = {
+    FormValidation.Validator.securePassword = {
         validate: function(validator, $field, options) {
             var value = $field.val();
             if (value === '') {
@@ -214,31 +190,8 @@ $(form).bootstrapValidator({
 }(window.jQuery));
 {% endhighlight %}
                     <p>Now, the form shows exactly condition that we want the password to satisfy.</p>
-                    <div class="doc-demo">
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a href="#secure-password-form-tab" data-toggle="tab">Try it</a></li>
-                            <li><a href="#secure-password-html-tab" data-toggle="tab">HTML</a></li>
-                            <li><a href="#secure-password-js-tab" data-toggle="tab">JS</a></li>
-                        </ul>
 
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="secure-password-form-tab">
-                            {% include developing/secure-password-example.html %}
-                            </div>
-
-                            <div class="tab-pane" id="secure-password-html-tab">
-{% highlight html %}
-{% include developing/secure-password-example.html %}
-{% endhighlight %}
-                            </div>
-
-                            <div class="tab-pane" id="secure-password-js-tab">
-{% highlight javascript %}
-{% include developing/secure-password-example.js %}
-{% endhighlight %}
-                            </div>
-                        </div>
-                    </div>
+                    {% include demo/tabs.html id="secure-password" frameworks="bootstrap" path="/demo/developing/secure-password/" %}
                 </section>
 
                 <div class="doc-hr"></div>
@@ -246,8 +199,8 @@ $(form).bootstrapValidator({
                 <section>
                     <h2>Building</h2>
 
-                    <p>BootstrapValidator uses <a href="http://gruntjs.com">grunt</a> to simplify building process.</p>
-                    <p>From the BootstrapValidator root directory, install dependencies:</p>
+                    <p>FormValidation uses <a href="http://gruntjs.com">grunt</a> to simplify building process.</p>
+                    <p>From the FormValidation root directory, install dependencies:</p>
 {% highlight bash %}
 $ npm install
 {% endhighlight %}
@@ -289,8 +242,3 @@ $ grunt watch
         </div>
     </div>
 </div>
-
-<script>
-{% include developing/password-example.js %}
-{% include developing/secure-password-example.js %}
-</script>

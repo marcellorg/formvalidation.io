@@ -24,6 +24,7 @@ $(function() {
     $('[data-toggle="tooltip"]').tooltip();
 
     $('#toggleButton').on('click', function() {
+        $(this).find('i').toggleClass('fa-navicon fa-close');
         $('body').toggleClass('doc-nav-shown');
     });
 
@@ -65,6 +66,36 @@ $(function() {
             });
         }, 100);
     }
+
+    // Switch framework handler
+    $('iframe.doc-demo-frame').each(function() {
+        var $this = $(this);
+        $('<div/>').addClass('doc-demo-loader').html('<i class="fa fa-refresh fa-spin fa-2x"></i>').hide().insertBefore($this);
+        $this.on('load', function() {
+            $(this).prev().hide().end().fadeIn('fast');
+        });
+    });
+
+    $('a[data-demo-framework]').on('click', function(e) {
+        var framework = $(this).attr('data-demo-framework'),
+            url       = $(this).attr('data-demo-url'),
+            $target   = $($(this).attr('data-demo-target') || $(this).attr('href'));
+
+        $(this).closest('.dropdown').find('span').eq(0).html($(this).html());
+
+        $target
+            .closest('.tab-content')
+            .find('[data-demo-code]')
+                .hide()
+                .filter('[data-demo-code="' + framework.toLowerCase() + '"]').show();
+
+        $target.height('');
+        $target.hide().prev().fadeIn('fast').promise().then(function() {
+            $target.attr('src', url);
+        });
+    });
+
+    $('a[data-demo-framework="bootstrap"]').click();
 });
 </script>
 </body>

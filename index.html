@@ -200,7 +200,8 @@ permalink: /
 <script src="/vendor/onepage-scroll/jquery.onepage-scroll.min.js"></script>
 <script>
 $(function() {
-    $('.doc-logo').on('click', function() {
+    $('#toggleButton').on('click', function() {
+        $(this).find('i').toggleClass('fa-navicon fa-close');
         $('body').toggleClass('doc-nav-shown');
     });
 

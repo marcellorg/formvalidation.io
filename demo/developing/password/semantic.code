@@ -1,5 +1,24 @@
+<form id="passwordSemanticForm" class="ui grid form">
+    <div class="row field">
+        <label class="four wide column">Password</label>
+        <div class="eight wide column">
+            <div class="ui input icon">
+                <input type="password" name="pwd" />
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <label class="four wide column"></label>
+        <div class="eight wide column">
+            <button type="submit" class="ui primary button">Validate</button>
+        </div>
+    </div>
+</form>
+
+<script>
 $(document).ready(function() {
-    $.fn.bootstrapValidator.validators.password = {
+    FormValidation.Validator.password = {
         validate: function(validator, $field, options) {
             var value = $field.val();
             if (value === '') {
@@ -23,11 +42,12 @@ $(document).ready(function() {
         }
     };
 
-    $('#passwordForm').bootstrapValidator({
-        feedbackIcons: {
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
+    $('#passwordSemanticForm').formValidation({
+        framework: 'semantic',
+        icon: {
+            valid: 'checkmark icon',
+            invalid: 'remove icon',
+            validating: 'refresh icon'
         },
         fields: {
             pwd: {
@@ -43,3 +63,4 @@ $(document).ready(function() {
         }
     });
 });
+</script>

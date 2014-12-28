@@ -107,7 +107,7 @@ h4 {
   width: 280px;
   z-index: 1;
 }
-.doc-nav-shown .doc-switcher {
+.doc-nav-shown .doc-nav-toggle {
   left: 280px;
 }
 .doc-nav-shown .doc-content-wrapper {
@@ -182,56 +182,23 @@ h4 {
 .doc-creator .btn:hover {
   color: #fff;
 }
-.doc-switcher {
-  background: #fff;
-  height: 100%;
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 1000;
-  border-right: 1px solid #e1e1e1;
-}
-.doc-switcher li {
-  list-style-type: none;
-}
-.doc-switcher a {
+.doc-nav-toggle {
+  background: #3498db;
   color: #fff;
   cursor: pointer;
   display: block;
   font-size: 20px;
   line-height: 50px;
+  position: fixed;
+  left: 0;
+  top: 0;
   text-align: center;
+  z-index: 1000;
   width: 50px;
   height: 50px;
 }
-.doc-switcher a[data-switcher-framework="bootstrap"] {
-  background-color: #6f5499;
-}
-.doc-switcher a[data-switcher-framework="foundation"] {
-  background-color: #074E68;
-}
-.doc-switcher a[data-switcher-framework="pure"] {
-  background-color: #1F8DD6;
-}
-.doc-switcher a[data-switcher-framework="semantic"] {
-  background-color: #35BDB2;
-}
-.doc-switcher a[data-switcher-framework="uikit"] {
-  background-color: #3DC0F1;
-}
-.doc-switcher .doc-logo {
-  background: #3498db;
-}
-.doc-switcher div {
-  position: absolute;
-  bottom: 0;
-}
-.doc-switcher div a {
-  border-top: 1px solid #e1e1e1;
-  color: #333;
-}
-.doc-switcher div a:hover {
-  background: #e1e1e1;
+.doc-nav-toggle:hover {
+  color: #fff;
 }
 /* --- Footer --- */
 .doc-footer {
@@ -526,7 +493,7 @@ h4 {
   font-family: 'cardo';
   font-size: 18px;
   font-style: italic;
-  margin: 20px 0 20px -20px;
+  margin: 20px 0;
   padding-left: 15px;
 }
 .doc-alert.doc-alert-warning {
@@ -574,6 +541,17 @@ h4 {
 }
 .doc-demo li:before {
   content: '';
+}
+.doc-demo-frame {
+  border: none;
+  display: none;
+  width: 100%;
+}
+.doc-demo-loader {
+  line-height: 100px;
+  width: 100%;
+  height: 100px;
+  text-align: center;
 }
 /* --- TOC --- */
 .doc-content-container h2,

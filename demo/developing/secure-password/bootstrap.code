@@ -1,5 +1,21 @@
+<form id="securePasswordForm" class="form-horizontal">
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Password</label>
+        <div class="col-xs-5">
+            <input type="password" class="form-control" name="pwd" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-xs-5 col-xs-offset-3">
+            <button type="submit" class="btn btn-default">Validate</button>
+        </div>
+    </div>
+</form>
+
+<script>
 $(document).ready(function() {
-    $.fn.bootstrapValidator.validators.securePassword = {
+    FormValidation.Validator.securePassword = {
         validate: function(validator, $field, options) {
             var value = $field.val();
             if (value === '') {
@@ -42,7 +58,8 @@ $(document).ready(function() {
         }
     };
 
-    $('#securePasswordForm').bootstrapValidator({
+    $('#securePasswordForm').formValidation({
+        framework: 'bootstrap',
         feedbackIcons: {
             valid: 'glyphicon glyphicon-ok',
             invalid: 'glyphicon glyphicon-remove',
@@ -62,3 +79,4 @@ $(document).ready(function() {
         }
     });
 });
+</script>
