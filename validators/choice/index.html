@@ -8,8 +8,7 @@ permalink: /validators/choice/
     <div class="doc-heading">
         <h1>choice validator</h1>
         <p>Check if the number of checked boxes are less or more than a given number</p>
-        <p>&larr; <a href="/validators/">Validators</a></p>
-        {% include edit-button.html %}
+        <p>&larr; <a href="/validators">Validators</a></p>
         {% include share.html %}
     </div>
 
@@ -32,19 +31,19 @@ permalink: /validators/choice/
                         <tbody>
                             <tr>
                                 <td><code>max</code></td>
-                                <td><code>data-bv-choice-max</code></td>
+                                <td><code>data-fv-choice-max</code></td>
                                 <td>Number</td>
                                 <td>The maximum number of check boxes required to be checked.<br/>It's a <a href="/settings/#dynamic-option">dynamic option</a></td>
                             </tr>
                             <tr>
                                 <td><code>message</code></td>
-                                <td><code>data-bv-choice-message</code></td>
+                                <td><code>data-fv-choice-message</code></td>
                                 <td>String</td>
                                 <td>The error message</td>
                             </tr>
                             <tr>
                                 <td><code>min</code></td>
-                                <td><code>data-bv-choice-min</code></td>
+                                <td><code>data-fv-choice-min</code></td>
                                 <td>Number</td>
                                 <td>The minimum number of check boxes required to be checked.<br/>It's a <a href="/settings/#dynamic-option">dynamic option</a></td>
                             </tr>
@@ -53,7 +52,7 @@ permalink: /validators/choice/
                     <p>At least one of <code>min</code> and <code>max</code> option is required.</p>
 
                     <div class="doc-alert doc-alert-info">
-                        When setting options via HTML attributes, remember to enable the validator by setting data-bv-choice="true".
+                        When setting options via HTML attributes, remember to enable the validator by setting data-fv-choice="true".
                     </div>
                 </section>
 
@@ -100,45 +99,9 @@ permalink: /validators/choice/
 
                 <section>
                     <h2>Example</h2>
-
                     <p>The following form asks a developer to choose 2-4 programming languages which he/she is good at:</p>
 
-                    <div class="doc-demo">
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a href="#choice-form-tab" data-toggle="tab">Try it</a></li>
-                            <li><a href="#choice-html-tab" data-toggle="tab">HTML</a></li>
-                            <li><a href="#choice-js-tab" data-toggle="tab">JS</a></li>
-                            <li><a href="#choice-declarative-tab" data-toggle="tab">Declarative usage</a></li>
-                        </ul>
-
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="choice-form-tab">
-                            {% include validators/choice/example.html %}
-                            </div>
-
-                            <div class="tab-pane" id="choice-html-tab">
-{% highlight html %}
-{% include validators/choice/example.html %}
-{% endhighlight %}
-                            </div>
-
-                            <div class="tab-pane" id="choice-js-tab">
-{% highlight javascript %}
-{% include validators/choice/example.js %}
-{% endhighlight %}
-                            </div>
-
-                            <div class="tab-pane" id="choice-declarative-tab">
-{% highlight html %}
-{% include validators/choice/declarative-example.html %}
-
-<script>
-{% include validators/choice/declarative-example.js %}
-</script>
-{% endhighlight %}
-                            </div>
-                        </div>
-                    </div>
+                    {% include demo/tabs.html id="basic" frameworks="bootstrap" dir="basic" codes="programmatic,declarative" %}
                 </section>
             </div>
 
@@ -148,7 +111,3 @@ permalink: /validators/choice/
         </div>
     </div>
 </div>
-
-<script>
-{% include validators/choice/example.js %}
-</script>

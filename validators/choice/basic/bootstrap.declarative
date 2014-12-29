@@ -1,10 +1,20 @@
-<form id="interviewForm" class="form-horizontal">
+<form id="interviewForm" class="form-horizontal"
+    data-fv-framework="bootstrap"
+    data-fv-icon-valid="glyphicon glyphicon-ok"
+    data-fv-icon-invalid="glyphicon glyphicon-remove"
+    data-fv-icon-validating="glyphicon glyphicon-refresh">
+
+    <!-- You only need to set the validator options for one of radio or checkbox elements -->
     <div class="form-group">
-        <label class="col-sm-3 control-label">Programming Languages</label>
-        <div class="col-sm-4">
+        <label class="col-xs-3 control-label">Programming Languages</label>
+        <div class="col-xs-6">
             <div class="checkbox">
                 <label>
-                    <input type="checkbox" name="languages[]" value="net" /> .Net
+                    <input type="checkbox" name="languages[]" value="net"
+                        data-fv-choice="true"
+                        data-fv-choice-min="2"
+                        data-fv-choice-max="4"
+                        data-fv-choice-message="Please choose 2 - 4 programming languages you are good at" /> .Net
                 </label>
             </div>
             <div class="checkbox">
@@ -46,10 +56,15 @@
     </div>
 
     <div class="form-group">
-        <label class="col-sm-3 control-label">Editors</label>
-        <div class="col-sm-4">
-            <select class="form-control" name="editors[]" multiple="multiple" style="height: 200px;">
-                <option value="" disabled>Choose 2 - 3 editors</option>
+        <label class="col-xs-3 control-label">Editors</label>
+        <div class="col-xs-6">
+            <select class="form-control" name="editors[]" multiple="multiple" style="height: 200px;"
+                data-fv-choice="true"
+                data-fv-choice-min="2"
+                data-fv-choice-max="3"
+                data-fv-choice-message="Please choose 2 - 3 editors you use most">
+
+                <option value="" disabled="disabled">Choose 2 - 3 editors</option>
                 <option value="atom">Atom</option>
                 <option value="eclipse">Eclipse</option>
                 <option value="netbeen">NetBean</option>
@@ -61,3 +76,9 @@
         </div>
     </div>
 </form>
+
+<script>
+$(document).ready(function() {
+    $('#interviewForm').formValidation();
+});
+</script>
