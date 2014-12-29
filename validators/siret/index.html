@@ -1,17 +1,16 @@
 ---
 layout: default
-title: Validate a Siren number
-permalink: /validators/siren/
+title: Validate a Siret number
+permalink: /validators/siret/
 related:
-    - siret
+    - siren
 ---
 
 <div class="doc-content-container">
     <div class="doc-heading">
-        <h1>siren validator</h1>
-        <p>Validate a <a href="http://en.wikipedia.org/wiki/INSEE_code#SIREN_and_SIRET_codes">Siren</a> number</p>
-        <p>&larr; <a href="/validators/">Validators</a></p>
-        {% include edit-button.html %}
+        <h1>siret validator</h1>
+        <p>Validate a <a href="http://en.wikipedia.org/wiki/INSEE_code#SIREN_and_SIRET_codes">Siret</a> number</p>
+        <p>&larr; <a href="/validators">Validators</a></p>
         {% include share.html %}
     </div>
 
@@ -33,7 +32,7 @@ related:
                         <tbody>
                             <tr>
                                 <td><code>message</code></td>
-                                <td><code>data-bv-siren-message</code></td>
+                                <td><code>data-fv-siret-message</code></td>
                                 <td>String</td>
                                 <td>The error message</td>
                             </tr>
@@ -41,7 +40,7 @@ related:
                     </table>
 
                     <div class="doc-alert doc-alert-info">
-                        When setting options via HTML attributes, remember to enable the validator by setting data-bv-siren="true".
+                        When setting options via HTML attributes, remember to enable the validator by setting data-fv-siret="true".
                     </div>
                 </section>
 
