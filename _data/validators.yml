@@ -66,10 +66,6 @@
   version:      0.4.0
   description:  Validate a hexadecimal number
 
-- name:         hexColor
-  version:      0.1.0
-  description:  Validate a hex color
-
 - name:         iban
   version:      0.4.0
   description:  Validate an International Bank Account Number (IBAN)

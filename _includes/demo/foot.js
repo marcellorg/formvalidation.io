@@ -14,6 +14,9 @@ $(document).ready(function() {
                 $iframe.height($container.height()).css('visibility', 'visible').fadeIn('fast');
             }, 1000);
 
+            // Set the internal data to get it later if I want
+            $('body').data('iframe.fv', $iframe);
+
             $container
                 .find('form')
                 .on('status.field.fv', function(e, data) {

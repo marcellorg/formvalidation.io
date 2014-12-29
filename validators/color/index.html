@@ -117,7 +117,6 @@ color_types:
             #- " rgba(255,255,255,1)"
             #- "rgba(255,255,255,1) "
 related:
-    - hexColor
     - regexp
 ---
 
@@ -125,8 +124,7 @@ related:
     <div class="doc-heading">
         <h1>color validator</h1>
         <p>Validate a color in different formats</p>
-        <p>&larr; <a href="/validators/">Validators</a></p>
-        {% include edit-button.html %}
+        <p>&larr; <a href="/validators">Validators</a></p>
         {% include share.html %}
     </div>
 
@@ -148,13 +146,13 @@ related:
                         <tbody>
                             <tr>
                                 <td><code>message</code></td>
-                                <td><code>data-bv-color-message</code></td>
+                                <td><code>data-fv-color-message</code></td>
                                 <td>String</td>
                                 <td>The error message</td>
                             </tr>
                             <tr>
                                 <td><code>type</code></td>
-                                <td><code>data-bv-color-type</code></td>
+                                <td><code>data-fv-color-type</code></td>
                                 <td>String|String[]</td>
                                 <td>
                                     <p>The type of color. It can be:</p>
@@ -169,7 +167,7 @@ related:
                     </table>
 
                     <div class="doc-alert doc-alert-info">
-                        When setting options via HTML attributes, remember to enable the validator by setting data-bv-color="true".
+                        When setting options via HTML attributes, remember to enable the validator by setting data-fv-color="true".
                     </div>
                 </section>
 
@@ -330,42 +328,19 @@ slategray, slategrey, snow, springgreen, steelblue</code></pre>
                 <section>
                     <h2>Example</h2>
 
-                    <div class="doc-demo">
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a href="#color-form-tab" data-toggle="tab">Try it</a></li>
-                            <li><a href="#color-html-tab" data-toggle="tab">HTML</a></li>
-                            <li><a href="#color-js-tab" data-toggle="tab">JS</a></li>
-                            <li><a href="#color-declarative-tab" data-toggle="tab">Declarative usage</a></li>
-                        </ul>
+                    <h3>Basic example</h3>
+                    {% include demo/tabs.html id="basic" frameworks="bootstrap" dir="basic" codes="programmatic,declarative" %}
 
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="color-form-tab">
-                            {% include validators/color/example.html %}
-                            </div>
+                    <h3>HTML5 example</h3>
+                    <p>The color validator will be turned on automatically if the input uses HTML 5 <code>type="color"</code> attribute.</p>
+                    <p>According to the <a href="http://www.w3.org/TR/html-markup/input.color.html#input.color.attrs.value">W3C specification</a>, the color input only accepts 6 hex character values. 3 hex character values as #FFF is not valid.</p>
 
-                            <div class="tab-pane" id="color-html-tab">
-{% highlight html %}
-{% include validators/color/example.html %}
-{% endhighlight %}
-                            </div>
+                    {% include demo/tabs.html id="html5" frameworks="bootstrap" dir="html5" codes="declarative" %}
 
-                            <div class="tab-pane" id="color-js-tab">
-{% highlight javascript %}
-{% include validators/color/example.js %}
-{% endhighlight %}
-                            </div>
+                    <h3>Color picker example</h3>
+                    <p>The following form uses a <a href="http://mjolnic.github.io/bootstrap-colorpicker/">Bootstrap Color Picker</a>.</p>
 
-                            <div class="tab-pane" id="color-declarative-tab">
-{% highlight html %}
-{% include validators/color/declarative-example.html %}
-
-<script>
-{% include validators/color/declarative-example.js %}
-</script>
-{% endhighlight %}
-                            </div>
-                        </div>
-                    </div>
+                    {% include demo/tabs.html id="color-picker" frameworks="bootstrap" dir="color-picker" codes="programmatic" %}
                 </section>
 
                 <div class="doc-hr"></div>
@@ -381,16 +356,11 @@ slategray, slategrey, snow, springgreen, steelblue</code></pre>
 </div>
 
 <script>
-{% include validators/color/example.js %}
 $(document).ready(function() {
     $('.sample').on('click', function() {
-        $('#colorForm')
-            .find('input[name="color"]')
-                .val($(this).html())
-                .end()
-            .bootstrapValidator('revalidateField', 'color');
+        var formWindow = $('#basic-frame').get(0).contentWindow,
+            isValid    = formWindow.revalidateColor($(this).html());
 
-        var isValid = $('#colorForm').data('bootstrapValidator').isValid();
         $(this)
             .parent()
                 .removeClass('doc-sample-error doc-sample-success')

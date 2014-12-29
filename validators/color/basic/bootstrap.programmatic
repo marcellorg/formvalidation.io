@@ -1,6 +1,17 @@
+<form id="colorForm" class="form-horizontal">
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Color</label>
+        <div class="col-xs-6">
+            <input type="text" class="form-control" name="color" />
+        </div>
+    </div>
+</form>
+
+<script>
 $(document).ready(function() {
-    $('#colorForm').bootstrapValidator({
-        feedbackIcons: {
+    $('#colorForm').formValidation({
+        framework: 'bootstrap',
+        icon: {
             valid: 'glyphicon glyphicon-ok',
             invalid: 'glyphicon glyphicon-remove',
             validating: 'glyphicon glyphicon-refresh'
@@ -17,3 +28,4 @@ $(document).ready(function() {
         }
     });
 });
+</script>
