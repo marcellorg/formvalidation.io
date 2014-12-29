@@ -77,11 +77,20 @@ $(function() {
     });
 
     $('a[data-demo-framework]').on('click', function(e) {
-        var framework = $(this).attr('data-demo-framework'),
-            url       = $(this).attr('data-demo-url'),
-            $target   = $($(this).attr('data-demo-target') || $(this).attr('href'));
+        var $this     = $(this),
+            framework = $this.attr('data-demo-framework'),
+            url       = $this.attr('data-demo-url'),
+            $target   = $($this.attr('data-demo-target') || $this.attr('href'));
 
-        $(this).closest('.dropdown').find('span').eq(0).html($(this).html());
+        $this
+            .closest('ul')
+                .find('li')
+                    .removeClass('active')
+                    .end()
+            .end()
+            .parent().addClass('active');
+
+        $this.closest('.dropdown').find('span').eq(0).html($this.html());
 
         $target
             .closest('.tab-content')
