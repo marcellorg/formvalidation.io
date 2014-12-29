@@ -12,8 +12,7 @@ related:
     <div class="doc-heading">
         <h1>sedol validator</h1>
         <p>Validate a SEDOL (Stock Exchange Daily Official List)</p>
-        <p>&larr; <a href="/validators/">Validators</a></p>
-        {% include edit-button.html %}
+        <p>&larr; <a href="/validators">Validators</a></p>
         {% include share.html %}
     </div>
 
@@ -35,7 +34,7 @@ related:
                         <tbody>
                             <tr>
                                 <td><code>message</code></td>
-                                <td><code>data-bv-sedol-message</code></td>
+                                <td><code>data-fv-sedol-message</code></td>
                                 <td>String</td>
                                 <td>The error message</td>
                             </tr>
@@ -43,7 +42,7 @@ related:
                     </table>
 
                     <div class="doc-alert doc-alert-info">
-                        When setting options via HTML attributes, remember to enable the validator by setting data-bv-sedol="true".
+                        When setting options via HTML attributes, remember to enable the validator by setting data-fv-sedol="true".
                     </div>
                 </section>
 
@@ -70,31 +69,7 @@ related:
                         </tbody>
                     </table>
 
-                    <div class="doc-demo">
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a href="#sedol-form-tab" data-toggle="tab">Try it</a></li>
-                            <li><a href="#sedol-html-tab" data-toggle="tab">HTML</a></li>
-                            <li><a href="#sedol-js-tab" data-toggle="tab">JS</a></li>
-                        </ul>
-
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="sedol-form-tab">
-                            {% include validators/sedol/example.html %}
-                            </div>
-
-                            <div class="tab-pane" id="sedol-html-tab">
-                            {% highlight html %}
-                            {% include validators/sedol/example.html %}
-                            {% endhighlight %}
-                            </div>
-
-                            <div class="tab-pane" id="sedol-js-tab">
-                            {% highlight javascript %}
-                            {% include validators/sedol/example.js %}
-                            {% endhighlight %}
-                            </div>
-                        </div>
-                    </div>
+                    {% include demo/tabs.html id="basic" frameworks="bootstrap" dir="basic" codes="programmatic,declarative" %}
                 </section>
 
                 <div class="doc-hr"></div>
@@ -110,14 +85,11 @@ related:
 </div>
 
 <script>
-{% include validators/sedol/example.js %}
 $(document).ready(function() {
     $('.sample').on('click', function() {
-        $('#sedolForm').find('input[name="sedol"]').val($(this).html());
+        var formWindow = $('#basic-frame').get(0).contentWindow,
+            isValid    = formWindow.revalidateSedol($(this).html());
 
-        $('#sedolForm').bootstrapValidator('revalidateField', 'sedol');
-
-        var isValid = $('#sedolForm').data('bootstrapValidator').isValid();
         $(this)
             .parents('tr').find('i')
             .removeClass('fa-check fa-times')
