@@ -12,8 +12,7 @@ related:
     <div class="doc-heading">
         <h1>isbn validator</h1>
         <p>Validate an ISBN (International Standard Book Number). Support both ISBN 10 and ISBN 13</p>
-        <p>&larr; <a href="/validators/">Validators</a></p>
-        {% include edit-button.html %}
+        <p>&larr; <a href="/validators">Validators</a></p>
         {% include share.html %}
     </div>
 
@@ -35,7 +34,7 @@ related:
                         <tbody>
                             <tr>
                                 <td><code>message</code></td>
-                                <td><code>data-bv-isbn-message</code></td>
+                                <td><code>data-fv-isbn-message</code></td>
                                 <td>String</td>
                                 <td>The error message</td>
                             </tr>
@@ -43,7 +42,7 @@ related:
                     </table>
 
                     <div class="doc-alert doc-alert-info">
-                        When setting options via HTML attributes, remember to enable the validator by setting data-bv-isbn="true".
+                        When setting options via HTML attributes, remember to enable the validator by setting data-fv-isbn="true".
                     </div>
                 </section>
 
@@ -70,31 +69,7 @@ related:
                         </tbody>
                     </table>
 
-                    <div class="doc-demo">
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a href="#isbn-form-tab" data-toggle="tab">Try it</a></li>
-                            <li><a href="#isbn-html-tab" data-toggle="tab">HTML</a></li>
-                            <li><a href="#isbn-js-tab" data-toggle="tab">JS</a></li>
-                        </ul>
-
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="isbn-form-tab">
-                            {% include validators/isbn/example.html %}
-                            </div>
-
-                            <div class="tab-pane" id="isbn-html-tab">
-                            {% highlight html %}
-                            {% include validators/isbn/example.html %}
-                            {% endhighlight %}
-                            </div>
-
-                            <div class="tab-pane" id="isbn-js-tab">
-                            {% highlight javascript %}
-                            {% include validators/isbn/example.js %}
-                            {% endhighlight %}
-                            </div>
-                        </div>
-                    </div>
+                    {% include demo/tabs.html id="basic" frameworks="bootstrap" dir="basic" codes="programmatic,declarative" %}
                 </section>
 
                 <div class="doc-hr"></div>
@@ -110,14 +85,11 @@ related:
 </div>
 
 <script>
-{% include validators/isbn/example.js %}
 $(document).ready(function() {
     $('.sample').on('click', function() {
-        $('#isbnForm').find('input[name="isbn"]').val($(this).html());
+        var formWindow = $('#basic-frame').get(0).contentWindow,
+            isValid    = formWindow.revalidateIsbn($(this).html());
 
-        $('#isbnForm').bootstrapValidator('revalidateField', 'isbn');
-
-        var isValid = $('#isbnForm').data('bootstrapValidator').isValid();
         $(this)
             .parents('tr').find('i')
             .removeClass('fa-check fa-times')
