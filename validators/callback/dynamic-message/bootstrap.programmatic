@@ -1,6 +1,17 @@
+<form id="securePasswordForm" class="form-horizontal">
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Password</label>
+        <div class="col-xs-5">
+            <input type="password" class="form-control" name="pwd" />
+        </div>
+    </div>
+</form>
+
+<script>
 $(document).ready(function() {
-    $('#securePasswordForm').bootstrapValidator({
-        feedbackIcons: {
+    $('#securePasswordForm').formValidation({
+        framework: 'bootstrap',
+        icon: {
             valid: 'glyphicon glyphicon-ok',
             invalid: 'glyphicon glyphicon-remove',
             validating: 'glyphicon glyphicon-refresh'
@@ -58,3 +69,4 @@ $(document).ready(function() {
         }
     });
 });
+</script>
