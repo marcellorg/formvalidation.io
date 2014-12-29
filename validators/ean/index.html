@@ -12,8 +12,7 @@ related:
     <div class="doc-heading">
         <h1>ean validator</h1>
         <p>Validate an EAN (International Article Number)</p>
-        <p>&larr; <a href="/validators/">Validators</a></p>
-        {% include edit-button.html %}
+        <p>&larr; <a href="/validators">Validators</a></p>
         {% include share.html %}
     </div>
 
@@ -35,7 +34,7 @@ related:
                         <tbody>
                             <tr>
                                 <td><code>message</code></td>
-                                <td><code>data-bv-ean-message</code></td>
+                                <td><code>data-fv-ean-message</code></td>
                                 <td>String</td>
                                 <td>The error message</td>
                             </tr>
@@ -43,7 +42,7 @@ related:
                     </table>
 
                     <div class="doc-alert doc-alert-info">
-                        When setting options via HTML attributes, remember to enable the validator by setting data-bv-ean="true".
+                        When setting options via HTML attributes, remember to enable the validator by setting data-fv-ean="true".
                     </div>
                 </section>
 
@@ -70,31 +69,7 @@ related:
                         </tbody>
                     </table>
 
-                    <div class="doc-demo">
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a href="#ean-form-tab" data-toggle="tab">Try it</a></li>
-                            <li><a href="#ean-html-tab" data-toggle="tab">HTML</a></li>
-                            <li><a href="#ean-js-tab" data-toggle="tab">JS</a></li>
-                        </ul>
-
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="ean-form-tab">
-                            {% include validators/ean/example.html %}
-                            </div>
-
-                            <div class="tab-pane" id="ean-html-tab">
-                            {% highlight html %}
-                            {% include validators/ean/example.html %}
-                            {% endhighlight %}
-                            </div>
-
-                            <div class="tab-pane" id="ean-js-tab">
-                            {% highlight javascript %}
-                            {% include validators/ean/example.js %}
-                            {% endhighlight %}
-                            </div>
-                        </div>
-                    </div>
+                    {% include demo/tabs.html id="basic" frameworks="bootstrap" dir="basic" codes="programmatic,declarative" %}
                 </section>
 
                 <div class="doc-hr"></div>
@@ -110,16 +85,11 @@ related:
 </div>
 
 <script>
-{% include validators/ean/example.js %}
 $(document).ready(function() {
     $('.sample').on('click', function() {
-        $('#eanForm')
-            .find('input[name="ean"]')
-                .val($(this).html())
-                .end()
-            .bootstrapValidator('revalidateField', 'ean');
+        var formWindow = $('#basic-frame').get(0).contentWindow,
+            isValid    = formWindow.revalidateEan($(this).html());
 
-        var isValid = $('#eanForm').data('bootstrapValidator').isValid();
         $(this)
             .parents('tr').find('i')
             .removeClass('fa-check fa-times')
