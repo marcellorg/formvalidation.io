@@ -12,8 +12,7 @@ related:
     <div class="doc-heading">
         <h1>issn validator</h1>
         <p>Validate an ISSN (International Standard Serial Number)</p>
-        <p>&larr; <a href="/validators/">Validators</a></p>
-        {% include edit-button.html %}
+        <p>&larr; <a href="/validators">Validators</a></p>
         {% include share.html %}
     </div>
 
@@ -35,7 +34,7 @@ related:
                         <tbody>
                             <tr>
                                 <td><code>message</code></td>
-                                <td><code>data-bv-issn-message</code></td>
+                                <td><code>data-fv-issn-message</code></td>
                                 <td>String</td>
                                 <td>The error message</td>
                             </tr>
@@ -43,7 +42,7 @@ related:
                     </table>
 
                     <div class="doc-alert doc-alert-info">
-                        When setting options via HTML attributes, remember to enable the validator by setting data-bv-issn="true".
+                        When setting options via HTML attributes, remember to enable the validator by setting data-fv-issn="true".
                     </div>
                 </section>
 
@@ -70,31 +69,7 @@ related:
                         </tbody>
                     </table>
 
-                    <div class="doc-demo">
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a href="#issn-form-tab" data-toggle="tab">Try it</a></li>
-                            <li><a href="#issn-html-tab" data-toggle="tab">HTML</a></li>
-                            <li><a href="#issn-js-tab" data-toggle="tab">JS</a></li>
-                        </ul>
-
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="issn-form-tab">
-                            {% include validators/issn/example.html %}
-                            </div>
-
-                            <div class="tab-pane" id="issn-html-tab">
-                            {% highlight html %}
-                            {% include validators/issn/example.html %}
-                            {% endhighlight %}
-                            </div>
-
-                            <div class="tab-pane" id="issn-js-tab">
-                            {% highlight javascript %}
-                            {% include validators/issn/example.js %}
-                            {% endhighlight %}
-                            </div>
-                        </div>
-                    </div>
+                    {% include demo/tabs.html id="basic" frameworks="bootstrap" dir="basic" codes="programmatic,declarative" %}
                 </section>
 
                 <div class="doc-hr"></div>
@@ -110,14 +85,11 @@ related:
 </div>
 
 <script>
-{% include validators/issn/example.js %}
 $(document).ready(function() {
     $('.sample').on('click', function() {
-        $('#issnForm').find('input[name="issn"]').val($(this).html());
+        var formWindow = $('#basic-frame').get(0).contentWindow,
+            isValid    = formWindow.revalidateIssn($(this).html());
 
-        $('#issnForm').bootstrapValidator('revalidateField', 'issn');
-
-        var isValid = $('#issnForm').data('bootstrapValidator').isValid();
         $(this)
             .parents('tr').find('i')
             .removeClass('fa-check fa-times')
