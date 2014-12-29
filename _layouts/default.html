@@ -72,7 +72,7 @@ $(function() {
         var $this = $(this);
         $('<div/>').addClass('doc-demo-loader').html('<i class="fa fa-refresh fa-spin fa-2x"></i>').hide().insertBefore($this);
         $this.on('load', function() {
-            $(this).prev().hide().end().fadeIn('fast');
+            $(this).prev().hide().end().show();
         });
     });
 
@@ -91,7 +91,7 @@ $(function() {
 
         $target.height('');
         $target.hide().prev().fadeIn('fast').promise().then(function() {
-            $target.attr('src', url);
+            $target.css('visibility', 'hidden').attr('src', url);
         });
     });
 

@@ -10,7 +10,10 @@ $(document).ready(function() {
 
             // Adjust the height of iframes containing the demo for specific frameworks
             var $container = $('#demoContainer');
-            $iframe.height($container.height());
+            setTimeout(function() {
+                $iframe.height($container.height()).css('visibility', 'visible').fadeIn('fast');
+            }, 1000);
+
             $container
                 .find('form')
                 .on('status.field.fv', function(e, data) {

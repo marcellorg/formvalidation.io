@@ -47,7 +47,8 @@ $(document).ready(function() {
         icon: {
             valid: 'checkmark icon',
             invalid: 'remove icon',
-            validating: 'refresh icon'
+            validating: 'refresh icon',
+            feedback: 'fv-control-feedback'
         },
         fields: {
             pwd: {
