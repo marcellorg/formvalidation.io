@@ -8,7 +8,6 @@ permalink: /developing/
     <div class="doc-heading">
         <h1>Developing</h1>
         <p>It's quite easy to develop new validator</p>
-        {% include edit-button.html %}
         {% include share.html %}
     </div>
 
@@ -43,7 +42,7 @@ permalink: /developing/
 {% endhighlight %}
 
                     <p>The validator must implement <code>validate()</code> method that returns <code>true</code> if the field is valid, or <code>false</code> otherwise.</p>
-                    <p><code>validatorName</code> is the validator name. Since the validators are distinct by the names, <code>validatorName</code> has to be different with <a href="/validators/">built-in validators</a>.</p>
+                    <p><code>validatorName</code> is the validator name. Since the validators are distinct by the names, <code>validatorName</code> has to be different with <a href="/validators">built-in validators</a>.</p>
 
                     <p>To apply the validator to particular field:</p>
 
@@ -137,7 +136,7 @@ $(form).formValidation({
 }(window.jQuery));
 {% endhighlight %}
 
-                    {% include demo/tabs.html id="password" frameworks="bootstrap,foundation,pure,semantic,uikit" path="/demo/developing/password/" %}
+                    {% include demo/tabs.html id="password" frameworks="bootstrap,foundation,pure,semantic,uikit" dir="password" codes="programmatic" %}
 
                     <p>Basically, the validator works fine. It returns <code>false</code> if the password doesn't satisfy any of conditions we define. The limitation here is that the user don't know
                         which condition the password doesn't pass. It informs the same <code>The password is not valid</code> message in all cases.</p>
@@ -191,7 +190,7 @@ $(form).formValidation({
 {% endhighlight %}
                     <p>Now, the form shows exactly condition that we want the password to satisfy.</p>
 
-                    {% include demo/tabs.html id="secure-password" frameworks="bootstrap" path="/demo/developing/secure-password/" %}
+                    {% include demo/tabs.html id="secure-password" frameworks="bootstrap" dir="secure-password" codes="programmatic" %}
                 </section>
 
                 <div class="doc-hr"></div>

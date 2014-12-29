@@ -1,17 +1,24 @@
 {% assign frameworks = include.frameworks | split: ',' %}
-
+{% assign codes      = include.codes | split: ',' %}
+{% if include.url != '' and include.url != nil %}
+{% assign url = include.url %}
+{% else %}
+{% assign url = page.permalink | append: include.dir %}
+{% endif %}
 <div class="doc-demo">
     <ul class="nav nav-tabs">
         <li role="presentation" class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"><span class="doc-framework">Framework</span> <i class="caret"></i></a>
             <ul class="dropdown-menu" role="menu">
                 {% for f in frameworks %}
-                <li><a href="javascript: void(0);" data-demo-target="#{{ include.id }}-frame" data-demo-framework="{{ f }}" data-demo-url="{{ include.path | append: f | append: '.html' }}">{{ f | capitalize }}</a></li>
+                <li><a href="javascript: void(0);" data-demo-target="#{{ include.id }}-frame" data-demo-framework="{{ f }}" data-demo-url="{{ url | append: '/' | append: f | append: '.html' }}">{{ f | capitalize }}</a></li>
                 {% endfor %}
             </ul>
         </li>
         <li class="active"><a href="#{{ include.id }}-form-tab" data-toggle="tab">Try it</a></li>
-        <li><a href="#{{ include.id }}-code-tab" data-toggle="tab">Code</a></li>
+        {% for code in codes %}
+        <li><a href="#{{ include.id }}-{{ code }}-tab" data-toggle="tab">{{ code | capitalize }} code</a></li>
+        {% endfor %}
     </ul>
 
     <div class="tab-content">
@@ -19,14 +26,16 @@
             <iframe class="doc-demo-frame" id="{{ include.id }}-frame"></iframe>
         </div>
 
-        <div class="tab-pane" id="{{ include.id }}-code-tab">
+        {% for code in codes %}
+        <div class="tab-pane" id="{{ include.id }}-{{ code }}-tab">
             {% for f in frameworks %}
             <div data-demo-code="{{ f }}">
 {% highlight html %}
-{% include_relative {{ include.path | append: f | append: '.code' }} %}
+{% include_relative {{ include.dir | append: '/' | append: f | append: '.' | append: code  }} %}
 {% endhighlight %}
             </div>
             {% endfor %}
         </div>
+        {% endfor %}
     </div>
 </div>
