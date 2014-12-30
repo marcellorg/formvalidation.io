@@ -1,19 +1,40 @@
 ---
 layout: default
-title: Validate a RTN (Routing transit number)
-permalink: /validators/rtn/
-examples: 011103093, 067014822, 211274450, 211370545, 054001725, 011400071, 031201360, 026013673, 021302567, 053902197, 036001808, 011600033
+title: Validate a BIC (Business Identifier Codes)
+permalink: /validators/bic/
+examples:
+    valid:
+        - ASPKAT2LXXX
+        - ASPKAT2L
+        - DSBACNBXSHA
+        - UNCRIT2B912
+        - DABADKKK
+        - RZOOAT2L303
+    invalid:
+        - ASPKAT2LXX
+        - ASPKAT2LX
+        - ASPKAT2LXXX1
+        - DABADKK
+        - RZ00AT2L303
+        # Invalid fist 6 characters
+        - 1SBACNBXSHA
+        - D2BACNBXSHA
+        - DS3ACNBXSHA
+        - DSB4CNBXSHA
+        - DSBA5NBXSHA
+        - DSBAC6BXSHA
+        - 1S3AC6BXSHA
 related:
-    - bic
     - creditCard
     - cvv
     - iban
+    - rtn
 ---
 
 <div class="doc-content-container">
     <div class="doc-heading">
-        <h1>rtn validator</h1>
-        <p>Validate a RTN (Routing transit number)</p>
+        <h1>bic validator</h1>
+        <p>Validate a <a href="http://en.wikipedia.org/wiki/ISO_9362">BIC</a> (Business Identifier Codes)</p>
         <p>&larr; <a href="/validators">Validators</a></p>
         {% include share.html %}
     </div>
@@ -36,7 +57,7 @@ related:
                         <tbody>
                             <tr>
                                 <td><code>message</code></td>
-                                <td><code>data-fv-rtn-message</code></td>
+                                <td><code>data-fv-bic-message</code></td>
                                 <td>String</td>
                                 <td>The error message</td>
                             </tr>
@@ -44,7 +65,7 @@ related:
                     </table>
 
                     <div class="doc-alert doc-alert-info">
-                        When setting options via HTML attributes, remember to enable the validator by setting data-fv-rtn="true".
+                        When setting options via HTML attributes, remember to enable the validator by setting data-fv-bic="true".
                     </div>
                 </section>
 
@@ -56,17 +77,19 @@ related:
                     <table class="table table-condensed">
                         <thead>
                             <tr>
-                                <th>RTN</th>
+                                <th>BIC</th>
                                 <th>Result</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {% assign examples = page.examples | split: ', ' %}
-                            {% for sample in examples %}
+                            {% for item in page.examples %}
+                            <tr class="active"><td colspan="2">{{ item[0] | capitalize }}</td></tr>
+                            {% for bic in item[1] %}
                             <tr>
-                                <td><a href="javascript: void(0);" class="sample">{{ sample }}</a></td>
+                                <td><a href="javascript: void(0);" class="sample">{{ bic }}</a></td>
                                 <td><i class="fa"></i></td>
                             </tr>
+                            {% endfor %}
                             {% endfor %}
                         </tbody>
                     </table>
@@ -90,7 +113,7 @@ related:
 $(document).ready(function() {
     $('.sample').on('click', function() {
         var formWindow = $('#basic-frame').get(0).contentWindow,
-            isValid    = formWindow.revalidateRtn($(this).html());
+            isValid    = formWindow.revalidateBic($(this).html());
 
         $(this)
             .parents('tr').find('i')
