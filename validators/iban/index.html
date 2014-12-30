@@ -250,8 +250,7 @@ related:
     <div class="doc-heading">
         <h1>iban validator</h1>
         <p>Validate an International Bank Account Number (IBAN)</p>
-        <p>&larr; <a href="/validators/">Validators</a></p>
-        {% include edit-button.html %}
+        <p>&larr; <a href="/validators">Validators</a></p>
         {% include share.html %}
     </div>
 
@@ -273,13 +272,13 @@ related:
                         <tbody>
                             <tr>
                                 <td><code>country</code></td>
-                                <td><code>data-bv-iban-country</code></td>
+                                <td><code>data-fv-iban-country</code></td>
                                 <td>String</td>
                                 <td>An ISO-3166 country code.<br/>It's <a href="/settings/#dynamic-option">dynamic option</a></td>
                             </tr>
                             <tr>
                                 <td><code>message</code></td>
-                                <td><code>data-bv-iban-message</code></td>
+                                <td><code>data-fv-iban-message</code></td>
                                 <td>String</td>
                                 <td>The error message</td>
                             </tr>
@@ -287,7 +286,7 @@ related:
                     </table>
 
                     <div class="doc-alert doc-alert-info">
-                        When setting options via HTML attributes, remember to enable the validator by setting data-bv-iban="true".
+                        When setting options via HTML attributes, remember to enable the validator by setting data-fv-iban="true".
                     </div>
 
                     <p>If the <code>country</code> is not defined, it will be parsed from the IBAN number.</p>
@@ -322,42 +321,7 @@ related:
                 <section>
                     <h2>Example</h2>
 
-                    <div class="doc-demo">
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a href="#iban-form-tab" data-toggle="tab">Try it</a></li>
-                            <li><a href="#iban-html-tab" data-toggle="tab">HTML</a></li>
-                            <li><a href="#iban-js-tab" data-toggle="tab">JS</a></li>
-                            <li><a href="#iban-declarative-tab" data-toggle="tab">Declarative usage</a></li>
-                        </ul>
-
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="iban-form-tab">
-                            {% include validators/iban/example.html %}
-                            </div>
-
-                            <div class="tab-pane" id="iban-html-tab">
-{% highlight html %}
-{% include validators/iban/example.html %}
-{% endhighlight %}
-                            </div>
-
-                            <div class="tab-pane" id="iban-js-tab">
-{% highlight javascript %}
-{% include validators/iban/example.js %}
-{% endhighlight %}
-                            </div>
-
-                            <div class="tab-pane" id="iban-declarative-tab">
-{% highlight html %}
-{% include validators/iban/declarative-example.html %}
-
-<script>
-{% include validators/iban/declarative-example.js %}
-</script>
-{% endhighlight %}
-                            </div>
-                        </div>
-                    </div>
+                    {% include demo/tabs.html id="basic" frameworks="bootstrap" dir="basic" codes="programmatic,declarative" %}
                 </section>
 
                 <div class="doc-hr"></div>
@@ -373,16 +337,11 @@ related:
 </div>
 
 <script>
-{% include validators/iban/example.js %}
 $(document).ready(function() {
     $('.sample').on('click', function() {
-        $('#ibanForm')
-            .find('input[name="iban"]')
-                .val($(this).html())
-                .end()
-            .bootstrapValidator('revalidateField', 'iban');
+        var formWindow = $('#basic-frame').get(0).contentWindow,
+            isValid    = formWindow.revalidateIban($(this).html());
 
-        var isValid = $('#ibanForm').data('bootstrapValidator').isValid();
         $(this)
             .parents('tr').find('i')
             .removeClass('fa-check fa-times')
