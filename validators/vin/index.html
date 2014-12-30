@@ -9,8 +9,7 @@ examples: 1FAHP26W49G252740, 2FTRX07W53C371582, WP0CA29863U153381, JTMKF4DV5B530
     <div class="doc-heading">
         <h1>vin validator</h1>
         <p>Validate an US VIN (Vehicle Identification Number)</p>
-        <p>&larr; <a href="/validators/">Validators</a></p>
-        {% include edit-button.html %}
+        <p>&larr; <a href="/validators">Validators</a></p>
         {% include share.html %}
     </div>
 
@@ -32,7 +31,7 @@ examples: 1FAHP26W49G252740, 2FTRX07W53C371582, WP0CA29863U153381, JTMKF4DV5B530
                         <tbody>
                             <tr>
                                 <td><code>message</code></td>
-                                <td><code>data-bv-vin-message</code></td>
+                                <td><code>data-fv-vin-message</code></td>
                                 <td>String</td>
                                 <td>The error message</td>
                             </tr>
@@ -40,7 +39,7 @@ examples: 1FAHP26W49G252740, 2FTRX07W53C371582, WP0CA29863U153381, JTMKF4DV5B530
                     </table>
 
                     <div class="doc-alert doc-alert-info">
-                        When setting options via HTML attributes, remember to enable the validator by setting data-bv-vin="true".
+                        When setting options via HTML attributes, remember to enable the validator by setting data-fv-vin="true".
                     </div>
                 </section>
 
@@ -71,31 +70,7 @@ examples: 1FAHP26W49G252740, 2FTRX07W53C371582, WP0CA29863U153381, JTMKF4DV5B530
                         </tbody>
                     </table>
 
-                    <div class="doc-demo">
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a href="#vin-form-tab" data-toggle="tab">Try it</a></li>
-                            <li><a href="#vin-html-tab" data-toggle="tab">HTML</a></li>
-                            <li><a href="#vin-js-tab" data-toggle="tab">JS</a></li>
-                        </ul>
-
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="vin-form-tab">
-                            {% include validators/vin/example.html %}
-                            </div>
-
-                            <div class="tab-pane" id="vin-html-tab">
-                            {% highlight html %}
-                            {% include validators/vin/example.html %}
-                            {% endhighlight %}
-                            </div>
-
-                            <div class="tab-pane" id="vin-js-tab">
-                            {% highlight javascript %}
-                            {% include validators/vin/example.js %}
-                            {% endhighlight %}
-                            </div>
-                        </div>
-                    </div>
+                    {% include demo/tabs.html id="basic" frameworks="bootstrap" dir="basic" codes="programmatic,declarative" %}
                 </section>
             </div>
 
@@ -107,14 +82,11 @@ examples: 1FAHP26W49G252740, 2FTRX07W53C371582, WP0CA29863U153381, JTMKF4DV5B530
 </div>
 
 <script>
-{% include validators/vin/example.js %}
 $(document).ready(function() {
     $('.sample').on('click', function() {
-        $('#vinForm').find('input[name="vin"]').val($(this).html());
+        var formWindow = $('#basic-frame').get(0).contentWindow,
+            isValid    = formWindow.revalidateVin($(this).html());
 
-        $('#vinForm').bootstrapValidator('revalidateField', 'vin');
-
-        var isValid = $('#vinForm').data('bootstrapValidator').isValid();
         $(this)
             .parents('tr').find('i')
             .removeClass('fa-check fa-times')
