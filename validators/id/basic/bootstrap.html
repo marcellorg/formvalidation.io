@@ -1,0 +1,23 @@
+---
+layout: demo/bootstrap
+title: id validator &rarr; Basic example
+permalink: /validators/id/basic/bootstrap.html
+---
+
+{% include_relative bootstrap.programmatic %}
+
+<script>
+function revalidateId(id, country) {
+    var $form = $('form');
+    $form
+        .find('select[name="countrySelectBox"]')
+            .val(country)
+            .end()
+        .find('input[name="idNumber"]')
+            .val(id)
+            .end()
+        .formValidation('revalidateField', 'idNumber');
+
+    return $form.data('formValidation').isValidField('idNumber');
+}
+</script>
