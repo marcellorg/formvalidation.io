@@ -11,8 +11,7 @@ related:
     <div class="doc-heading">
         <h1>imei validator</h1>
         <p>Validate an IMEI (International Mobile Station Equipment Identity)</p>
-        <p>&larr; <a href="/validators/">Validators</a></p>
-        {% include edit-button.html %}
+        <p>&larr; <a href="/validators">Validators</a></p>
         {% include share.html %}
     </div>
 
@@ -34,7 +33,7 @@ related:
                         <tbody>
                             <tr>
                                 <td><code>message</code></td>
-                                <td><code>data-bv-imei-message</code></td>
+                                <td><code>data-fv-imei-message</code></td>
                                 <td>String</td>
                                 <td>The error message</td>
                             </tr>
@@ -42,7 +41,7 @@ related:
                     </table>
 
                     <div class="doc-alert doc-alert-info">
-                        When setting options via HTML attributes, remember to enable the validator by setting data-bv-imei="true".
+                        When setting options via HTML attributes, remember to enable the validator by setting data-fv-imei="true".
                     </div>
                 </section>
 
@@ -69,31 +68,7 @@ related:
                         </tbody>
                     </table>
 
-                    <div class="doc-demo">
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a href="#imei-form-tab" data-toggle="tab">Try it</a></li>
-                            <li><a href="#imei-html-tab" data-toggle="tab">HTML</a></li>
-                            <li><a href="#imei-js-tab" data-toggle="tab">JS</a></li>
-                        </ul>
-
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="imei-form-tab">
-                            {% include validators/imei/example.html %}
-                            </div>
-
-                            <div class="tab-pane" id="imei-html-tab">
-                            {% highlight html %}
-                            {% include validators/imei/example.html %}
-                            {% endhighlight %}
-                            </div>
-
-                            <div class="tab-pane" id="imei-js-tab">
-                            {% highlight javascript %}
-                            {% include validators/imei/example.js %}
-                            {% endhighlight %}
-                            </div>
-                        </div>
-                    </div>
+                    {% include demo/tabs.html id="basic" frameworks="bootstrap" dir="basic" codes="programmatic,declarative" %}
                 </section>
 
                 <div class="doc-hr"></div>
@@ -109,14 +84,11 @@ related:
 </div>
 
 <script>
-{% include validators/imei/example.js %}
 $(document).ready(function() {
     $('.sample').on('click', function() {
-        $('#imeiForm').find('input[name="imei"]').val($(this).html());
+        var formWindow = $('#basic-frame').get(0).contentWindow,
+            isValid    = formWindow.revalidateImei($(this).html());
 
-        $('#imeiForm').bootstrapValidator('revalidateField', 'imei');
-
-        var isValid = $('#imeiForm').data('bootstrapValidator').isValid();
         $(this)
             .parents('tr').find('i')
             .removeClass('fa-check fa-times')
