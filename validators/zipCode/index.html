@@ -68,16 +68,16 @@ countries:
         - "102"
         - "ABCDE"
         - "DE 52240 XY"
-#    - country: India
-#      code: IN
-#      valid:
-#        - "226024"
-#        - "201014"
-#        - "226 021"
-#      invalid:
-#        - "226-024"
-#        - "11023"
-#        - "A226023"
+    - country: India
+      code: IN
+      valid:
+        - "226024"
+        - "201014"
+        - "226 021"
+      invalid:
+        - "226-024"
+        - "11023"
+        - "A226023"
     - country: Italy
       code: IT
       valid:
@@ -131,6 +131,19 @@ countries:
         - "1 2345"
         - "1234 5"
         - "12 3 45"
+    - country: Spain
+      code: ES
+      valid:
+        - "01234"
+        - "28080"
+        - "29004"
+        - "41023"
+      invalid:
+        - "0123"
+        - "99999"
+        - "102"
+        - "ABCD"
+        - "00000"
     - country: Sweden
       code: SE
       valid:
@@ -170,8 +183,7 @@ related:
     <div class="doc-heading">
         <h1>zipCode validator</h1>
         <p>Validate a zip code</p>
-        <p>&larr; <a href="/validators/">Validators</a></p>
-        {% include edit-button.html %}
+        <p>&larr; <a href="/validators">Validators</a></p>
         {% include share.html %}
     </div>
 
@@ -193,13 +205,13 @@ related:
                         <tbody>
                             <tr>
                                 <td><code>country</code></td>
-                                <td><code>data-bv-zipcode-country</code></td>
+                                <td><code>data-fv-zipcode-country</code></td>
                                 <td>String</td>
                                 <td>An ISO-3166 country code.<br/>It's <a href="/settings/#dynamic-option">dynamic option</a></td>
                             </tr>
                             <tr>
                                 <td><code>message</code></td>
-                                <td><code>data-bv-zipcode-message</code></td>
+                                <td><code>data-fv-zipcode-message</code></td>
                                 <td>String</td>
                                 <td>The error message</td>
                             </tr>
@@ -207,7 +219,7 @@ related:
                     </table>
 
                     <div class="doc-alert doc-alert-info">
-                        When setting options via HTML attributes, remember to enable the validator by setting data-bv-zipcode="true".
+                        When setting options via HTML attributes, remember to enable the validator by setting data-fv-zipcode="true".
                     </div>
 
                     <p>Currently, the validator supports the following countries:</p>
@@ -250,7 +262,7 @@ related:
                     <p>This validator supports 4 digits US zipcode. If you want a valid US zipcode to be 5 digits exactly, use the <a href="/validators/regexp/">regexp</a> validator:</p>
 {% highlight javascript %}
 $(document).ready(function() {
-    $('#postcodeForm').bootstrapValidator({
+    $('#postcodeForm').formValidation({
         fields: {
             postcode: {
                 validators: {
@@ -271,42 +283,7 @@ $(document).ready(function() {
                 <section>
                     <h2>Example</h2>
 
-                    <div class="doc-demo">
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a href="#zipcode-form-tab" data-toggle="tab">Try it</a></li>
-                            <li><a href="#zipcode-html-tab" data-toggle="tab">HTML</a></li>
-                            <li><a href="#zipcode-js-tab" data-toggle="tab">JS</a></li>
-                            <li><a href="#zipcode-declarative-tab" data-toggle="tab">Declarative usage</a></li>
-                        </ul>
-
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="zipcode-form-tab">
-                            {% include validators/zipCode/example.html %}
-                            </div>
-
-                            <div class="tab-pane" id="zipcode-html-tab">
-{% highlight html %}
-{% include validators/zipCode/example.html %}
-{% endhighlight %}
-                            </div>
-
-                            <div class="tab-pane" id="zipcode-js-tab">
-{% highlight javascript %}
-{% include validators/zipCode/example.js %}
-{% endhighlight %}
-                            </div>
-
-                            <div class="tab-pane" id="zipcode-declarative-tab">
-{% highlight html %}
-{% include validators/zipCode/declarative-example.html %}
-
-<script>
-{% include validators/zipCode/declarative-example.js %}
-</script>
-{% endhighlight %}
-                            </div>
-                        </div>
-                    </div>
+                    {% include demo/tabs.html id="basic" frameworks="bootstrap" dir="basic" codes="programmatic,declarative" %}
                 </section>
 
                 <div class="doc-hr"></div>
@@ -322,25 +299,14 @@ $(document).ready(function() {
 </div>
 
 <script>
-{% include validators/zipCode/example.js %}
 $(document).ready(function() {
     $('.sample').on('click', function() {
-        var validator = $('#zipCodeForm').data('bootstrapValidator'),
-            country   = $(this).attr('data-country');
+        var country    = $(this).attr('data-country'),
+            zipCode    = $(this).text(),
+            formWindow = $('#basic-frame').get(0).contentWindow,
+            isValid    = formWindow.revalidateZipCode(zipCode, country);
 
-        $('#zipCodeForm')
-            .find('select[name="countrySelectBox"]')
-                .val(country)
-                .end()
-            .find('input[name="postalCode"]')
-                .val($(this).text());
-
-        // Revalidate field
-        $('#zipCodeForm').bootstrapValidator('revalidateField', 'postalCode');
-
-        // Show the result
-        var isValid = validator.isValid();
-       $(this)
+        $(this)
             .parent()
                 .removeClass('doc-sample-error doc-sample-success')
                 .addClass(isValid ? 'doc-sample-success' : 'doc-sample-error')
