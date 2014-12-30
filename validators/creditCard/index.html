@@ -12,8 +12,7 @@ related:
     <div class="doc-heading">
         <h1>creditCard validator</h1>
         <p>Validate a credit card number</p>
-        <p>&larr; <a href="/validators/">Validators</a></p>
-        {% include edit-button.html %}
+        <p>&larr; <a href="/validators">Validators</a></p>
         {% include share.html %}
     </div>
 
@@ -133,42 +132,7 @@ related:
                         You can use <a href="http://www.getcreditcardnumbers.com">www.getcreditcardnumbers.com</a> to generate fake credit card numbers.
                     </div>
 
-                    <div class="doc-demo">
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a href="#cc-form-tab" data-toggle="tab">Try it</a></li>
-                            <li><a href="#cc-html-tab" data-toggle="tab">HTML</a></li>
-                            <li><a href="#cc-js-tab" data-toggle="tab">JS</a></li>
-                            <li><a href="#cc-declarative-tab" data-toggle="tab">Declarative usage</a></li>
-                        </ul>
-
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="cc-form-tab">
-                            {% include validators/creditCard/example.html %}
-                            </div>
-
-                            <div class="tab-pane" id="cc-html-tab">
-{% highlight html %}
-{% include validators/creditCard/example.html %}
-{% endhighlight %}
-                            </div>
-
-                            <div class="tab-pane" id="cc-js-tab">
-{% highlight javascript %}
-{% include validators/creditCard/example.js %}
-{% endhighlight %}
-                            </div>
-
-                            <div class="tab-pane" id="cc-declarative-tab">
-{% highlight html %}
-{% include validators/creditCard/declarative-example.html %}
-
-<script>
-{% include validators/creditCard/declarative-example.js %}
-</script>
-{% endhighlight %}
-                            </div>
-                        </div>
-                    </div>
+                    {% include demo/tabs.html id="basic" frameworks="bootstrap" dir="basic" codes="programmatic,declarative" %}
                 </section>
 
                 <div class="doc-hr"></div>
@@ -184,14 +148,11 @@ related:
 </div>
 
 <script>
-{% include validators/creditCard/example.js %}
 $(document).ready(function() {
     $('.sample').on('click', function() {
-        $('#creditCardForm').find('input[name="cc"]').val($(this).html());
+        var formWindow = $('#basic-frame').get(0).contentWindow,
+            isValid    = formWindow.revalidateCreditCard($(this).html());
 
-        $('#creditCardForm').bootstrapValidator('revalidateField', 'cc');
-
-        var isValid = $('#creditCardForm').data('bootstrapValidator').isValid();
         $(this)
             .parents('tr').find('i')
             .removeClass('fa-check fa-times')
