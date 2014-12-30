@@ -252,8 +252,7 @@ related:
     <div class="doc-heading">
         <h1>vat validator</h1>
         <p>Validate VAT number</p>
-        <p>&larr; <a href="/validators/">Validators</a></p>
-        {% include edit-button.html %}
+        <p>&larr; <a href="/validators">Validators</a></p>
         {% include share.html %}
     </div>
 
@@ -275,13 +274,13 @@ related:
                         <tbody>
                             <tr>
                                 <td><code>country</code></td>
-                                <td><code>data-bv-vat-country</code></td>
+                                <td><code>data-fv-vat-country</code></td>
                                 <td>String</td>
                                 <td>An ISO-3166 country code.<br/>It's <a href="/settings/#dynamic-option">dynamic option</a>.<br/>If it is not defined, it will be parsed from the VAT number</td>
                             </tr>
                             <tr>
                                 <td><code>message</code></td>
-                                <td><code>data-bv-vat-message</code></td>
+                                <td><code>data-fv-vat-message</code></td>
                                 <td>String</td>
                                 <td>The error message</td>
                             </tr>
@@ -289,7 +288,7 @@ related:
                     </table>
 
                     <div class="doc-alert doc-alert-info">
-                        When setting options via HTML attributes, remember to enable the validator by setting data-bv-vat="true".
+                        When setting options via HTML attributes, remember to enable the validator by setting data-fv-vat="true".
                     </div>
 
                     <p>The validator supports the following countries (click the example VAT number to validate it):</p>
@@ -329,42 +328,7 @@ related:
                 <section>
                     <h2>Example</h2>
 
-                    <div class="doc-demo">
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a href="#vat-form-tab" data-toggle="tab">Try it</a></li>
-                            <li><a href="#vat-html-tab" data-toggle="tab">HTML</a></li>
-                            <li><a href="#vat-js-tab" data-toggle="tab">JS</a></li>
-                            <li><a href="#vat-declarative-tab" data-toggle="tab">Declarative usage</a></li>
-                        </ul>
-
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="vat-form-tab">
-                            {% include validators/vat/example.html %}
-                            </div>
-
-                            <div class="tab-pane" id="vat-html-tab">
-{% highlight html %}
-{% include validators/vat/example.html %}
-{% endhighlight %}
-                            </div>
-
-                            <div class="tab-pane" id="vat-js-tab">
-{% highlight javascript %}
-{% include validators/vat/example.js %}
-{% endhighlight %}
-                            </div>
-
-                            <div class="tab-pane" id="vat-declarative-tab">
-{% highlight html %}
-{% include validators/vat/declarative-example.html %}
-
-<script>
-{% include validators/vat/declarative-example.js %}
-</script>
-{% endhighlight %}
-                            </div>
-                        </div>
-                    </div>
+                    {% include demo/tabs.html id="basic" frameworks="bootstrap" dir="basic" codes="programmatic,declarative" %}
                 </section>
 
                 <div class="doc-hr"></div>
@@ -380,14 +344,11 @@ related:
 </div>
 
 <script>
-{% include validators/vat/example.js %}
 $(document).ready(function() {
     $('.sample').on('click', function() {
-        $('#vatForm').find('input[name="vat"]').val($(this).text());
+        var formWindow = $('#basic-frame').get(0).contentWindow,
+            isValid    = formWindow.revalidateVat($(this).text());
 
-        $('#vatForm').bootstrapValidator('revalidateField', 'vat');
-
-        var isValid = $('#vatForm').data('bootstrapValidator').isValid();
         $(this)
             .parent()
                 .removeClass('doc-sample-error doc-sample-success')
