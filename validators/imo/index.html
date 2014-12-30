@@ -9,8 +9,7 @@ examples: IMO 9074729, imo 9074729, 9074729, IMO 9074728
     <div class="doc-heading">
         <h1>imo validator</h1>
         <p>Validate an IMO (International Maritime Organization)</p>
-        <p>&larr; <a href="/validators/">Validators</a></p>
-        {% include edit-button.html %}
+        <p>&larr; <a href="/validators">Validators</a></p>
         {% include share.html %}
     </div>
 
@@ -32,7 +31,7 @@ examples: IMO 9074729, imo 9074729, 9074729, IMO 9074728
                         <tbody>
                             <tr>
                                 <td><code>message</code></td>
-                                <td><code>data-bv-imo-message</code></td>
+                                <td><code>data-fv-imo-message</code></td>
                                 <td>String</td>
                                 <td>The error message</td>
                             </tr>
@@ -40,7 +39,7 @@ examples: IMO 9074729, imo 9074729, 9074729, IMO 9074728
                     </table>
 
                     <div class="doc-alert doc-alert-info">
-                        When setting options via HTML attributes, remember to enable the validator by setting data-bv-imo="true".
+                        When setting options via HTML attributes, remember to enable the validator by setting data-fv-imo="true".
                     </div>
                 </section>
 
@@ -67,31 +66,7 @@ examples: IMO 9074729, imo 9074729, 9074729, IMO 9074728
                         </tbody>
                     </table>
 
-                    <div class="doc-demo">
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a href="#imo-form-tab" data-toggle="tab">Try it</a></li>
-                            <li><a href="#imo-html-tab" data-toggle="tab">HTML</a></li>
-                            <li><a href="#imo-js-tab" data-toggle="tab">JS</a></li>
-                        </ul>
-
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="imo-form-tab">
-                            {% include validators/imo/example.html %}
-                            </div>
-
-                            <div class="tab-pane" id="imo-html-tab">
-                            {% highlight html %}
-                            {% include validators/imo/example.html %}
-                            {% endhighlight %}
-                            </div>
-
-                            <div class="tab-pane" id="imo-js-tab">
-                            {% highlight javascript %}
-                            {% include validators/imo/example.js %}
-                            {% endhighlight %}
-                            </div>
-                        </div>
-                    </div>
+                    {% include demo/tabs.html id="basic" frameworks="bootstrap" dir="basic" codes="programmatic,declarative" %}
                 </section>
             </div>
 
@@ -103,14 +78,11 @@ examples: IMO 9074729, imo 9074729, 9074729, IMO 9074728
 </div>
 
 <script>
-{% include validators/imo/example.js %}
 $(document).ready(function() {
     $('.sample').on('click', function() {
-        $('#imoForm').find('input[name="imo"]').val($(this).html());
+        var formWindow = $('#basic-frame').get(0).contentWindow,
+            isValid    = formWindow.revalidateImo($(this).html());
 
-        $('#imoForm').bootstrapValidator('revalidateField', 'imo');
-
-        var isValid = $('#imoForm').data('bootstrapValidator').isValid();
         $(this)
             .parents('tr').find('i')
             .removeClass('fa-check fa-times')

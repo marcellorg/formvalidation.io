@@ -1,6 +1,17 @@
+<form id="imoForm" class="form-horizontal">
+    <div class="form-group">
+        <label class="col-xs-3 control-label">IMO</label>
+        <div class="col-xs-5">
+            <input type="text" class="form-control" name="imo" />
+        </div>
+    </div>
+</form>
+
+<script>
 $(document).ready(function() {
-    $('#imoForm').bootstrapValidator({
-        feedbackIcons: {
+    $('#imoForm').formValidation({
+        framework: 'bootstrap',
+        icon: {
             valid: 'glyphicon glyphicon-ok',
             invalid: 'glyphicon glyphicon-remove',
             validating: 'glyphicon glyphicon-refresh'
@@ -16,3 +27,4 @@ $(document).ready(function() {
         }
     });
 });
+</script>

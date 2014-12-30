@@ -1,0 +1,20 @@
+---
+layout: demo/bootstrap
+title: imo validator &rarr; Basic example
+permalink: /validators/imo/basic/bootstrap.html
+---
+
+{% include_relative bootstrap.programmatic %}
+
+<script>
+function revalidateImo(value) {
+    var $form = $('form');
+    $form
+        .find('input[name="imo"]')
+            .val(value)
+            .end()
+        .formValidation('revalidateField', 'imo');
+
+    return $form.data('formValidation').isValidField('imo');
+}
+</script>
