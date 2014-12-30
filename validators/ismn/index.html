@@ -11,8 +11,7 @@ related:
     <div class="doc-heading">
         <h1>ismn validator</h1>
         <p>Validate an ISMN (International Standard Music Number)</p>
-        <p>&larr; <a href="/validators/">Validators</a></p>
-        {% include edit-button.html %}
+        <p>&larr; <a href="/validators">Validators</a></p>
         {% include share.html %}
     </div>
 
@@ -34,7 +33,7 @@ related:
                         <tbody>
                             <tr>
                                 <td><code>message</code></td>
-                                <td><code>data-bv-ismn-message</code></td>
+                                <td><code>data-fv-ismn-message</code></td>
                                 <td>String</td>
                                 <td>The error message</td>
                             </tr>
@@ -42,7 +41,7 @@ related:
                     </table>
 
                     <div class="doc-alert doc-alert-info">
-                        When setting options via HTML attributes, remember to enable the validator by setting data-bv-ismn="true".
+                        When setting options via HTML attributes, remember to enable the validator by setting data-fv-ismn="true".
                     </div>
                 </section>
 
@@ -69,31 +68,7 @@ related:
                         </tbody>
                     </table>
 
-                    <div class="doc-demo">
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a href="#ismn-form-tab" data-toggle="tab">Try it</a></li>
-                            <li><a href="#ismn-html-tab" data-toggle="tab">HTML</a></li>
-                            <li><a href="#ismn-js-tab" data-toggle="tab">JS</a></li>
-                        </ul>
-
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="ismn-form-tab">
-                            {% include validators/ismn/example.html %}
-                            </div>
-
-                            <div class="tab-pane" id="ismn-html-tab">
-                            {% highlight html %}
-                            {% include validators/ismn/example.html %}
-                            {% endhighlight %}
-                            </div>
-
-                            <div class="tab-pane" id="ismn-js-tab">
-                            {% highlight javascript %}
-                            {% include validators/ismn/example.js %}
-                            {% endhighlight %}
-                            </div>
-                        </div>
-                    </div>
+                    {% include demo/tabs.html id="basic" frameworks="bootstrap" dir="basic" codes="programmatic,declarative" %}
                 </section>
 
                 <div class="doc-hr"></div>
@@ -109,14 +84,11 @@ related:
 </div>
 
 <script>
-{% include validators/ismn/example.js %}
 $(document).ready(function() {
     $('.sample').on('click', function() {
-        $('#ismnForm').find('input[name="ismn"]').val($(this).html());
+        var formWindow = $('#basic-frame').get(0).contentWindow,
+            isValid    = formWindow.revalidateIsmn($(this).html());
 
-        $('#ismnForm').bootstrapValidator('revalidateField', 'ismn');
-
-        var isValid = $('#ismnForm').data('bootstrapValidator').isValid();
         $(this)
             .parents('tr').find('i')
             .removeClass('fa-check fa-times')
