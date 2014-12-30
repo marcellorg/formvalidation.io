@@ -5,20 +5,38 @@ permalink: /validators/phone/
 countries:
     - country: United States
       code: US
-#    - country: United Arab Emirates
-#      code: AE
-#      valid:
-#        - "00971501234567"
-#        - "+971521234567"
-#        - "971551234567"
-#        - "971 56 123 4567"
-#        - "971-50-123-4567"
-#        - "971.4.123.4567"
-#        - "+971 (0) 4 1234567"
-#        - "971 (56) 1234567"
-#        - "0551234567"
-#        - "021234567"
-#        - "600-540-000"
+      valid:
+        - "1444-555-1234"
+        - "246.555.8888"
+        - "1235554567"
+        - "(123)456-7890"
+        - "123)456.0987"
+        - "1-444-555-1234"
+        - "14325678901"
+        - "1(123)456-7890"
+        - "+1 246.555-8888"
+        - "+1 (123)456-7890"
+        - "+1(123)456-7890"
+      invalid:
+        - "7334-12.111"
+        - "v123.11.1111"
+        - "(23)440.4448"
+        - "123(456)7890"
+        - "0800 333333 abcdef"
+    - country: United Arab Emirates
+      code: AE
+      valid:
+        - "00971501234567"
+        - "+971521234567"
+        - "971551234567"
+        - "971 56 123 4567"
+        - "971-50-123-4567"
+        - "971.4.123.4567"
+        - "+971 (0) 4 1234567"
+        - "971 (56) 1234567"
+        - "0551234567"
+        - "021234567"
+        - "600-540-000"
     - country: Brazil
       code: BR
       valid:
@@ -135,6 +153,15 @@ countries:
         - "0891234567"
         - "0049-89-123456"
         - "089 123456-78"
+    - country: India
+      code: IN
+      valid:
+        - "9999114011"
+        - "+919911112341"
+        - "+91 9415007327"
+        - "03598245785"
+        - "+911204312280"
+        - "1302231221"
     - country: Morocco
       code: MA
       valid:
@@ -258,8 +285,7 @@ related:
     <div class="doc-heading">
         <h1>phone validator</h1>
         <p>Validate a phone number</p>
-        <p>&larr; <a href="/validators/">Validators</a></p>
-        {% include edit-button.html %}
+        <p>&larr; <a href="/validators">Validators</a></p>
         {% include share.html %}
     </div>
 
@@ -281,13 +307,13 @@ related:
                         <tbody>
                             <tr>
                                 <td><code>country</code><sup>*</sup></td>
-                                <td><code>data-bv-phone-country</code></td>
+                                <td><code>data-fv-phone-country</code></td>
                                 <td>String</td>
                                 <td>An ISO-3166 country code.<br/>It's <a href="/settings/#dynamic-option">dynamic option</a></td>
                             </tr>
                             <tr>
                                 <td><code>message</code></td>
-                                <td><code>data-bv-phone-message</code></td>
+                                <td><code>data-fv-phone-message</code></td>
                                 <td>String</td>
                                 <td>The error message</td>
                             </tr>
@@ -295,7 +321,7 @@ related:
                     </table>
 
                     <div class="doc-alert doc-alert-info">
-                        When setting options via HTML attributes, remember to enable the validator by setting data-bv-phone="true".
+                        When setting options via HTML attributes, remember to enable the validator by setting data-fv-phone="true".
                     </div>
 
                     <div class="doc-alert doc-alert-warning">
@@ -344,42 +370,7 @@ related:
                 <section>
                     <h2>Example</h2>
 
-                    <div class="doc-demo">
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a href="#phone-form-tab" data-toggle="tab">Try it</a></li>
-                            <li><a href="#phone-html-tab" data-toggle="tab">HTML</a></li>
-                            <li><a href="#phone-js-tab" data-toggle="tab">JS</a></li>
-                            <li><a href="#phone-declarative-tab" data-toggle="tab">Declarative usage</a></li>
-                        </ul>
-
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="phone-form-tab">
-                            {% include validators/phone/example.html %}
-                            </div>
-
-                            <div class="tab-pane" id="phone-html-tab">
-{% highlight html %}
-{% include validators/phone/example.html %}
-{% endhighlight %}
-                            </div>
-
-                            <div class="tab-pane" id="phone-js-tab">
-{% highlight javascript %}
-{% include validators/phone/example.js %}
-{% endhighlight %}
-                            </div>
-
-                            <div class="tab-pane" id="phone-declarative-tab">
-{% highlight html %}
-{% include validators/phone/declarative-example.html %}
-
-<script>
-{% include validators/phone/declarative-example.js %}
-</script>
-{% endhighlight %}
-                            </div>
-                        </div>
-                    </div>
+                    {% include demo/tabs.html id="basic" frameworks="bootstrap" dir="basic" codes="programmatic,declarative" %}
                 </section>
 
                 <div class="doc-hr"></div>
@@ -395,24 +386,13 @@ related:
 </div>
 
 <script>
-{% include validators/phone/example.js %}
 $(document).ready(function() {
     $('.sample').on('click', function() {
-        var validator = $('#phoneForm').data('bootstrapValidator'),
-            country   = $(this).attr('data-country');
-
-        $('#phoneForm')
-            .find('select[name="countrySelectBox"]')
-                .val(country)
-                .end()
-            .find('input[name="phoneNumber"]')
-                .val($(this).text());
-
-        // Revalidate field
-        $('#phoneForm').bootstrapValidator('revalidateField', 'phoneNumber');
-
-        // Show the result
-        var isValid = validator.isValid();
+        var country    = $(this).attr('data-country'),
+            phone      = $(this).text(),
+            formWindow = $('#basic-frame').get(0).contentWindow,
+            isValid    = formWindow.revalidatePhone(phone, country);
+        
        $(this)
             .parent()
                 .removeClass('doc-sample-error doc-sample-success')
