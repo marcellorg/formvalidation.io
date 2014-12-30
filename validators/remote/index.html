@@ -8,8 +8,7 @@ permalink: /validators/remote/
     <div class="doc-heading">
         <h1>remote validator</h1>
         <p>Perform remote checking via Ajax request</p>
-        <p>&larr; <a href="/validators/">Validators</a></p>
-        {% include edit-button.html %}
+        <p>&larr; <a href="/validators">Validators</a></p>
         {% include share.html %}
     </div>
 
@@ -31,41 +30,41 @@ permalink: /validators/remote/
                         <tbody>
                             <tr>
                                 <td><code>data</code></td>
-                                <td><code>data-bv-remote-data</code></td>
+                                <td><code>data-fv-remote-data</code></td>
                                 <td>Object</td>
                                 <td>
                                     The data sent to remote URL.<br />
                                     You don't need to use this option if there is only field, defined as field name, sent to the remote URL.<br/>
-                                    When using <code>data-bv-remote-data</code> attribute, its value must be an encoded JSON string.
+                                    When using <code>data-fv-remote-data</code> attribute, its value must be an encoded JSON string.
                                 </td>
                             </tr>
                             <tr>
                                 <td><code>delay</code></td>
-                                <td><code>data-bv-remote-delay</code></td>
+                                <td><code>data-fv-remote-delay</code></td>
                                 <td>Number</td>
                                 <td>The Ajax request created by the remote validator is only fired once in the delay duration time.</td>
                             </tr>
                             <tr>
                                 <td><code>message</code></td>
-                                <td><code>data-bv-remote-message</code></td>
+                                <td><code>data-fv-remote-message</code></td>
                                 <td>String</td>
                                 <td>The error message</td>
                             </tr>
                             <tr>
                                 <td><code>name</code></td>
-                                <td><code>data-bv-remote-name</code></td>
+                                <td><code>data-fv-remote-name</code></td>
                                 <td>String</td>
                                 <td>The name of field which need to validate</td>
                             </tr>
                             <tr>
                                 <td><code>type</code></td>
-                                <td><code>data-bv-remote-type</code></td>
+                                <td><code>data-fv-remote-type</code></td>
                                 <td>String</td>
                                 <td>The method used to send data to back-end. It can be <code>GET</code> <span class="label label-default">default</span> or <code>POST</code></td>
                             </tr>
                             <tr>
                                 <td><code>url</code><sup>*</sup></td>
-                                <td><code>data-bv-remote-url</code></td>
+                                <td><code>data-fv-remote-url</code></td>
                                 <td>String|Function</td>
                                 <td>The remote URL.<br/>
                                     If you want to use a dynamic URL, then use the callback as following:
@@ -81,7 +80,7 @@ url: function(validator) {
                     </table>
 
                     <div class="doc-alert doc-alert-info">
-                        When setting options via HTML attributes, remember to enable the validator by setting data-bv-remote="true".
+                        When setting options via HTML attributes, remember to enable the validator by setting data-fv-remote="true".
                     </div>
 
                     <div class="doc-alert doc-alert-info">From v0.5.2, the type option is GET, by default.</div>
@@ -105,13 +104,12 @@ url: function(validator) {
                     <p>The following example shows how to use a remote back-end to check if a given username is already taken or not.</p>
                     <div class="doc-demo">
                         <ul class="nav nav-tabs">
-                            <li class="active"><a href="#example-html-tab" data-toggle="tab">HTML</a></li>
-                            <li><a href="#example-js-tab" data-toggle="tab">JS</a></li>
+                            <li class="active"><a href="#example-programmatic-tab" data-toggle="tab">Programmatic code</a></li>
                             <li><a href="#example-php-tab" data-toggle="tab">Back-end</a></li>
                         </ul>
 
                         <div class="tab-content">
-                            <div class="tab-pane active" id="example-html-tab">
+                            <div class="tab-pane active" id="example-programmatic-tab">
 {% highlight html %}
 <form id="registrationForm" class="form-horizontal">
     <div class="form-group">
@@ -121,13 +119,11 @@ url: function(validator) {
         </div>
     </div>
 </form>
-{% endhighlight %}
-                            </div>
 
-                            <div class="tab-pane" id="example-js-tab">
-{% highlight javascript %}
+<script>
 $(document).ready(function() {
-    $('#registrationForm').bootstrapValidator({
+    $('#registrationForm').formValidation({
+        framework: 'bootstrap',
         fields: {
             username: {
                 message: 'The username is not valid',
@@ -143,6 +139,7 @@ $(document).ready(function() {
         }
     });
 });
+</script>
 {% endhighlight %}
                             </div>
 
@@ -172,13 +169,12 @@ echo json_encode(array(
                     <p>For example, there is same back-end for validating both username and email address. The back-end uses additional parameter named <code>type</code> to determine which field is going to be validated.</p>
                     <div class="doc-demo">
                         <ul class="nav nav-tabs">
-                            <li class="active"><a href="#staticdata-html-tab" data-toggle="tab">HTML</a></li>
-                            <li><a href="#staticdata-js-tab" data-toggle="tab">JS</a></li>
+                            <li class="active"><a href="#staticdata-programmatic-tab" data-toggle="tab">Programmatic code</a></li>
                             <li><a href="#staticdata-php-tab" data-toggle="tab">Back-end</a></li>
                         </ul>
 
                         <div class="tab-content">
-                            <div class="tab-pane active" id="staticdata-html-tab">
+                            <div class="tab-pane active" id="staticdata-programmatic-tab">
 {% highlight html %}
 <form id="registrationForm" class="form-horizontal">
     <div class="form-group">
@@ -195,13 +191,11 @@ echo json_encode(array(
         </div>
     </div>
 </form>
-{% endhighlight %}
-                            </div>
 
-                            <div class="tab-pane" id="staticdata-js-tab">
-{% highlight javascript %}
+<script>
 $(document).ready(function() {
-    $('#registrationForm').bootstrapValidator({
+    $('#registrationForm').formValidation({
+        framework: 'bootstrap',
         fields: {
             username: {
                 message: 'The username is not valid',
@@ -232,6 +226,7 @@ $(document).ready(function() {
         }
     });
 });
+</script>
 {% endhighlight %}
                             </div>
 
@@ -268,14 +263,7 @@ echo json_encode(array(
 
                     <h3>Sending dynamic data example</h3>
                     <p>For instance, the registration form need to validate both the username and emails.</p>
-                    <div class="doc-demo">
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a href="#data-html-tab" data-toggle="tab">HTML</a></li>
-                            <li><a href="#data-js-tab" data-toggle="tab">JS</a></li>
-                        </ul>
 
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="data-html-tab">
 {% highlight html %}
 <form id="registrationForm" class="form-horizontal">
     <div class="form-group">
@@ -297,13 +285,11 @@ echo json_encode(array(
         </div>
     </div>
 </form>
-{% endhighlight %}
-                            </div>
 
-                            <div class="tab-pane" id="data-js-tab">
-{% highlight javascript %}
+<script>
 $(document).ready(function() {
-    $('#registrationForm').bootstrapValidator({
+    $('#registrationForm').formValidation({
+        framework: 'bootstrap',
         fields: {
             username: {
                 message: 'The username is not valid',
@@ -337,25 +323,24 @@ $(document).ready(function() {
         }
     });
 });
+</script>
 {% endhighlight %}
-                            </div>
-                        </div>
-                    </div>
 
                     <h3>Overriding name example</h3>
 
-                    <p>By default, it will be set as the name of field. You can override the name option by using the <code>data-bv-remote-name</code> attribute.Here are two cases which you might need to use this attribute.</p>
+                    <p>By default, it will be set as the name of field. You can override the name option by using the <code>data-fv-remote-name</code> attribute.Here are two cases which you might need to use this attribute.</p>
 
                     <h4>Using different names for same field</h4>
                     <p>For example, the <i>Sign up</i> and <i>Profile</i> forms use the same back-end URL to validate the email address which is declared with different name.</p>
-                    <p>In this case, use the same <code>data-bv-remote-name</code> attribute and the back-end will get the same data key.</p>
+                    <p>In this case, use the same <code>data-fv-remote-name</code> attribute and the back-end will get the same data key.</p>
+
 {% highlight html %}
 <!-- In the signup form, the email address field is named as "login" -->
 <form id="signupForm" class="form-horizontal">
     <div class="form-group">
         <label class="col-lg-3 control-label">Email</label>
         <div class="col-lg-5">
-            <input type="text" class="form-control" name="login" data-bv-remote-name="email" />
+            <input type="text" class="form-control" name="login" data-fv-remote-name="email" />
         </div>
     </div>
 </form>
@@ -367,7 +352,7 @@ $(document).ready(function() {
     <div class="form-group">
         <label class="col-lg-3 control-label">Email</label>
         <div class="col-lg-5">
-            <input type="text" class="form-control" name="email" data-bv-remote-name="email" />
+            <input type="text" class="form-control" name="email" data-fv-remote-name="email" />
         </div>
     </div>
 </form>
@@ -376,20 +361,20 @@ $(document).ready(function() {
                     <h4>Using same backend for different fields</h4>
                     <p>Assume that the profile form asks you to update multiple email address (primary, secondary, for example).
                     These emails will be validated by the same backend.</p>
-                    <p>In this case, just use the same <code>data-bv-remote-name</code> attribute for these email address fields.</p>
+                    <p>In this case, just use the same <code>data-fv-remote-name</code> attribute for these email address fields.</p>
 {% highlight html %}
 <form id="profileForm" class="form-horizontal">
     <div class="form-group">
         <label class="col-lg-3 control-label">Primary email</label>
         <div class="col-lg-5">
             <input type="text" class="form-control"
-                name="primary_email" data-bv-remote-name="email" />
+                name="primary_email" data-fv-remote-name="email" />
         </div>
 
         <label class="col-lg-3 control-label">Secondary email</label>
         <div class="col-lg-5">
             <input type="text" class="form-control"
-                name="secondary_email" data-bv-remote-name="email" />
+                name="secondary_email" data-fv-remote-name="email" />
         </div>
     </div>
 </form>
