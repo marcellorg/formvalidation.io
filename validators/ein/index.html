@@ -1,0 +1,105 @@
+---
+layout: default
+title: Validate an EIN (Employer Identification Number)
+permalink: /validators/ein/
+examples:
+    valid:
+        - "01-1234567"
+        - "91-1144442"
+        - "011234567"
+    invalid:
+        # Invalid format
+        - "123-45-6789"
+        # Invalid campus
+        - "00-1234567"
+        - "07-1144442"
+        - "49-1234567"
+---
+
+<div class="doc-content-container">
+    <div class="doc-heading">
+        <h1>ein validator</h1>
+        <p>Validate an EIN (Employer Identification Number)</p>
+        <p>&larr; <a href="/validators">Validators</a></p>
+        {% include share.html %}
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <section>
+                    <h2>Options</h2>
+
+                    <table class="table table-condensed">
+                        <thead>
+                            <tr>
+                                <th>Option</th>
+                                <th>HTML attribute</th>
+                                <th>Type</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>message</code></td>
+                                <td><code>data-fv-ein-message</code></td>
+                                <td>String</td>
+                                <td>The error message</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="doc-alert doc-alert-info">
+                        When setting options via HTML attributes, remember to enable the validator by setting data-fv-ein="true".
+                    </div>
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Example</h2>
+
+                    <table class="table table-condensed">
+                        <thead>
+                            <tr>
+                                <th>BIC</th>
+                                <th>Result</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in page.examples %}
+                            <tr class="active"><td colspan="2">{{ item[0] | capitalize }}</td></tr>
+                            {% for ein in item[1] %}
+                            <tr>
+                                <td><a href="javascript: void(0);" class="sample">{{ ein }}</a></td>
+                                <td><i class="fa"></i></td>
+                            </tr>
+                            {% endfor %}
+                            {% endfor %}
+                        </tbody>
+                    </table>
+
+                    {% include demo/tabs.html id="basic" frameworks="bootstrap" dir="basic" codes="programmatic,declarative" %}
+                </section>
+            </div>
+
+            <div class="col-md-3">
+                <div id="toc" class="doc-toc hidden-print hidden-xs hidden-sm"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+$(document).ready(function() {
+    $('.sample').on('click', function() {
+        var formWindow = $('#basic-frame').get(0).contentWindow,
+            isValid    = formWindow.revalidateEin($(this).html());
+
+        $(this)
+            .parents('tr').find('i')
+            .removeClass('fa-check fa-times')
+            .addClass(isValid ? 'fa-check' : 'fa-times');
+    });
+});
+</script>
