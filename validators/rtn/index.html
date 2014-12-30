@@ -13,8 +13,7 @@ related:
     <div class="doc-heading">
         <h1>rtn validator</h1>
         <p>Validate a RTN (Routing transit number)</p>
-        <p>&larr; <a href="/validators/">Validators</a></p>
-        {% include edit-button.html %}
+        <p>&larr; <a href="/validators">Validators</a></p>
         {% include share.html %}
     </div>
 
@@ -36,7 +35,7 @@ related:
                         <tbody>
                             <tr>
                                 <td><code>message</code></td>
-                                <td><code>data-bv-rtn-message</code></td>
+                                <td><code>data-fv-rtn-message</code></td>
                                 <td>String</td>
                                 <td>The error message</td>
                             </tr>
@@ -44,7 +43,7 @@ related:
                     </table>
 
                     <div class="doc-alert doc-alert-info">
-                        When setting options via HTML attributes, remember to enable the validator by setting data-bv-rtn="true".
+                        When setting options via HTML attributes, remember to enable the validator by setting data-fv-rtn="true".
                     </div>
                 </section>
 
@@ -71,31 +70,7 @@ related:
                         </tbody>
                     </table>
 
-                    <div class="doc-demo">
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a href="#rtn-form-tab" data-toggle="tab">Try it</a></li>
-                            <li><a href="#rtn-html-tab" data-toggle="tab">HTML</a></li>
-                            <li><a href="#rtn-js-tab" data-toggle="tab">JS</a></li>
-                        </ul>
-
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="rtn-form-tab">
-                            {% include validators/rtn/example.html %}
-                            </div>
-
-                            <div class="tab-pane" id="rtn-html-tab">
-                            {% highlight html %}
-                            {% include validators/rtn/example.html %}
-                            {% endhighlight %}
-                            </div>
-
-                            <div class="tab-pane" id="rtn-js-tab">
-                            {% highlight javascript %}
-                            {% include validators/rtn/example.js %}
-                            {% endhighlight %}
-                            </div>
-                        </div>
-                    </div>
+                    {% include demo/tabs.html id="basic" frameworks="bootstrap" dir="basic" codes="programmatic,declarative" %}
                 </section>
 
                 <div class="doc-hr"></div>
@@ -111,14 +86,11 @@ related:
 </div>
 
 <script>
-{% include validators/rtn/example.js %}
 $(document).ready(function() {
     $('.sample').on('click', function() {
-        $('#rtnForm').find('input[name="rtn"]').val($(this).html());
+        var formWindow = $('#basic-frame').get(0).contentWindow,
+            isValid    = formWindow.revalidateRtn($(this).html());
 
-        $('#rtnForm').bootstrapValidator('revalidateField', 'rtn');
-
-        var isValid = $('#rtnForm').data('bootstrapValidator').isValid();
         $(this)
             .parents('tr').find('i')
             .removeClass('fa-check fa-times')
