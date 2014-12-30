@@ -12,8 +12,7 @@ related:
     <div class="doc-heading">
         <h1>cvv validator</h1>
         <p>Validate a CVV number</p>
-        <p>&larr; <a href="/validators/">Validators</a></p>
-        {% include edit-button.html %}
+        <p>&larr; <a href="/validators">Validators</a></p>
         {% include share.html %}
     </div>
 
@@ -35,13 +34,13 @@ related:
                         <tbody>
                             <tr>
                                 <td><code>creditCardField</code></td>
-                                <td><code>data-bv-cvv-ccfield</code></td>
+                                <td><code>data-fv-cvv-ccfield</code></td>
                                 <td>String</td>
                                 <td>The credit card number field. It is <code>null</code> by default</td>
                             </tr>
                             <tr>
                                 <td><code>message</code></td>
-                                <td><code>data-bv-cvv-message</code></td>
+                                <td><code>data-fv-cvv-message</code></td>
                                 <td>String</td>
                                 <td>The error message</td>
                             </tr>
@@ -49,7 +48,7 @@ related:
                     </table>
 
                     <div class="doc-alert doc-alert-info">
-                        When setting options via HTML attributes, remember to enable the validator by setting data-bv-cvv="true".
+                        When setting options via HTML attributes, remember to enable the validator by setting data-fv-cvv="true".
                     </div>
 
                     <p>If the <code>creditCardField</code> is set, the validator will check if the CVV number is suitable with the credit card number of not.</p>
@@ -67,31 +66,7 @@ related:
                         You can use <a href="http://www.getcreditcardnumbers.com">www.getcreditcardnumbers.com</a> to generate fake credit card numbers.
                     </div>
 
-                    <div class="doc-demo">
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a href="#cvv-form-tab" data-toggle="tab">Try it</a></li>
-                            <li><a href="#cvv-html-tab" data-toggle="tab">HTML</a></li>
-                            <li><a href="#cvv-js-tab" data-toggle="tab">JS</a></li>
-                        </ul>
-
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="cvv-form-tab">
-                            {% include validators/cvv/example.html %}
-                            </div>
-
-                            <div class="tab-pane" id="cvv-html-tab">
-{% highlight html %}
-{% include validators/cvv/example.html %}
-{% endhighlight %}
-                            </div>
-
-                            <div class="tab-pane" id="cvv-js-tab">
-{% highlight javascript %}
-{% include validators/cvv/example.js %}
-{% endhighlight %}
-                            </div>
-                        </div>
-                    </div>
+                    {% include demo/tabs.html id="basic" frameworks="bootstrap" dir="basic" codes="programmatic,declarative" %}
                 </section>
 
                 <div class="doc-hr"></div>
@@ -105,7 +80,3 @@ related:
         </div>
     </div>
 </div>
-
-<script>
-{% include validators/cvv/example.js %}
-</script>
