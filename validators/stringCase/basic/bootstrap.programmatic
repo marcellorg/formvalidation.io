@@ -1,6 +1,17 @@
+<form id="stringCaseForm" class="form-horizontal">
+    <div class="form-group">
+        <label class="col-xs-4 control-label">Credit card holder</label>
+        <div class="col-xs-6">
+            <input type="text" class="form-control" name="name" />
+        </div>
+    </div>
+</form>
+
+<script>
 $(document).ready(function() {
-    $('#stringCaseForm').bootstrapValidator({
-        feedbackIcons: {
+    $('#stringCaseForm').formValidation({
+        framework: 'bootstrap',
+        icon: {
             valid: 'glyphicon glyphicon-ok',
             invalid: 'glyphicon glyphicon-remove',
             validating: 'glyphicon glyphicon-refresh'
@@ -17,3 +28,4 @@ $(document).ready(function() {
         }
     });
 });
+</script>
