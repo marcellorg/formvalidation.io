@@ -1,6 +1,17 @@
+<form id="regexpForm" class="form-horizontal">
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Avatar URL</label>
+        <div class="col-xs-6">
+            <input type="text" class="form-control" name="avatar" />
+        </div>
+    </div>
+</form>
+
+<script>
 $(document).ready(function() {
-    $('#regexpForm').bootstrapValidator({
-        feedbackIcons: {
+    $('#regexpForm').formValidation({
+        framework: 'bootstrap',
+        icon: {
             valid: 'glyphicon glyphicon-ok',
             invalid: 'glyphicon glyphicon-remove',
             validating: 'glyphicon glyphicon-refresh'
@@ -20,3 +31,4 @@ $(document).ready(function() {
         }
     });
 });
+</script>

@@ -89,8 +89,7 @@ related:
     <div class="doc-heading">
         <h1>uri validator</h1>
         <p>Validate an URL address</p>
-        <p>&larr; <a href="/validators/">Validators</a></p>
-        {% include edit-button.html %}
+        <p>&larr; <a href="/validators">Validators</a></p>
         {% include share.html %}
     </div>
 
@@ -112,19 +111,19 @@ related:
                         <tbody>
                             <tr>
                                 <td><code>allowLocal</code></td>
-                                <td><code>data-bv-uri-allowlocal</code></td>
+                                <td><code>data-fv-uri-allowlocal</code></td>
                                 <td>Boolean</td>
                                 <td>Allow the private and local network IP.<br/>It is <code>false</code>, by default.</td>
                             </tr>
                             <tr>
                                 <td><code>message</code></td>
-                                <td><code>data-bv-uri-message</code></td>
+                                <td><code>data-fv-uri-message</code></td>
                                 <td>String</td>
                                 <td>The error message</td>
                             </tr>
                             <tr>
                                 <td><code>protocol</code></td>
-                                <td><code>data-bv-uri-protocol</code></td>
+                                <td><code>data-fv-uri-protocol</code></td>
                                 <td>String</td>
                                 <td>The protocols, separated by a comma. By default, it is set to <code>http, https, ftp</code></td>
                             </tr>
@@ -132,7 +131,7 @@ related:
                     </table>
 
                     <div class="doc-alert doc-alert-info">
-                        When setting options via HTML attributes, remember to enable the validator by setting data-bv-uri="true".<br/>
+                        When setting options via HTML attributes, remember to enable the validator by setting data-fv-uri="true".<br/>
                         You don't need to do that when using HTML 5 type="url" attribute.
                     </div>
                 </section>
@@ -157,7 +156,7 @@ related:
                         </thead>
                         <tbody>
                             <tr>
-                                <td colspan="2" class="text-center"><strong>Valid URL examples</strong></td>
+                                <td colspan="2" class="active"><strong>Valid URL examples</strong></td>
                             </tr>
                             {% for url in page.examples.valid %}
                             <tr>
@@ -167,7 +166,7 @@ related:
                             {% endfor %}
 
                             <tr>
-                                <td colspan="2" class="text-center"><strong>Invalid URL examples</strong></td>
+                                <td colspan="2" class="active"><strong>Invalid URL examples</strong></td>
                             </tr>
                             {% for url in page.examples.invalid %}
                             <tr>
@@ -178,101 +177,18 @@ related:
                         </tbody>
                     </table>
 
-                    <div class="doc-demo">
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a href="#uri-form-tab" data-toggle="tab">Try it</a></li>
-                            <li><a href="#uri-html-tab" data-toggle="tab">HTML</a></li>
-                            <li><a href="#uri-js-tab" data-toggle="tab">JS</a></li>
-                            <li><a href="#uri-declarative-tab" data-toggle="tab">Declarative usage</a></li>
-                        </ul>
-
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="uri-form-tab">
-                            {% include validators/uri/basic-example.html %}
-                            </div>
-
-                            <div class="tab-pane" id="uri-html-tab">
-{% highlight html %}
-{% include validators/uri/basic-example.html %}
-{% endhighlight %}
-                            </div>
-
-                            <div class="tab-pane" id="uri-js-tab">
-{% highlight javascript %}
-{% include validators/uri/basic-example.js %}
-{% endhighlight %}
-                            </div>
-
-                            <div class="tab-pane" id="uri-declarative-tab">
-{% highlight html %}
-{% include validators/uri/declarative-example.html %}
-
-<script>
-{% include validators/uri/declarative-example.js %}
-</script>
-{% endhighlight %}
-                            </div>
-                        </div>
-                    </div>
+                    {% include demo/tabs.html id="basic" frameworks="bootstrap" dir="basic" codes="programmatic,declarative" %}
 
                     <h3>HTML 5 example</h3>
 
                     <p>The following form uses HTML 5 <code>type="url"</code> attribute to enable the uri validator.</p>
-                    <div class="doc-demo">
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a href="#html5-form-tab" data-toggle="tab">Try it</a></li>
-                            <li><a href="#html5-html-tab" data-toggle="tab">HTML</a></li>
-                            <li><a href="#html5-js-tab" data-toggle="tab">JS</a></li>
-                        </ul>
-
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="html5-form-tab">
-                            {% include validators/uri/html5-example.html %}
-                            </div>
-
-                            <div class="tab-pane" id="html5-html-tab">
-{% highlight html %}
-{% include validators/uri/html5-example.html %}
-{% endhighlight %}
-                            </div>
-
-                            <div class="tab-pane" id="html5-js-tab">
-{% highlight javascript %}
-{% include validators/uri/html5-example.js %}
-{% endhighlight %}
-                            </div>
-                        </div>
-                    </div>
+                    {% include demo/tabs.html id="html5" frameworks="bootstrap" dir="html5" codes="declarative" %}
 
                     <h3>Using with regexp validator</h3>
-                    <p>The following example is a combination usage of the uri and <a href="/validators/regexp/">regexp</a> validators.</p>
+                    <p>The following example is a combination usage of the uri and <a href="/validators/regexp">regexp</a> validators.</p>
                     <p>It asks user to enter a valid URL which ends with .jpg, .jpeg, or .png.</p>
 
-                    <div class="doc-demo">
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a href="#regexp-form-tab" data-toggle="tab">Try it</a></li>
-                            <li><a href="#regexp-html-tab" data-toggle="tab">HTML</a></li>
-                            <li><a href="#regexp-js-tab" data-toggle="tab">JS</a></li>
-                        </ul>
-
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="regexp-form-tab">
-                            {% include validators/uri/regexp-example.html %}
-                            </div>
-
-                            <div class="tab-pane" id="regexp-html-tab">
-{% highlight html %}
-{% include validators/uri/regexp-example.html %}
-{% endhighlight %}
-                            </div>
-
-                            <div class="tab-pane" id="regexp-js-tab">
-{% highlight javascript %}
-{% include validators/uri/regexp-example.js %}
-{% endhighlight %}
-                            </div>
-                        </div>
-                    </div>
+                    {% include demo/tabs.html id="regexp" frameworks="bootstrap" dir="regexp" codes="programmatic" %}
                 </section>
 
                 <div class="doc-hr"></div>
@@ -288,16 +204,11 @@ related:
 </div>
 
 <script>
-{% include validators/uri/basic-example.js %}
-{% include validators/uri/html5-example.js %}
-{% include validators/uri/regexp-example.js %}
 $(document).ready(function() {
     $('.sample').on('click', function() {
-        $('#uriForm').find('input[name="website"]').val($(this).html());
+        var formWindow = $('#basic-frame').get(0).contentWindow,
+            isValid    = formWindow.revalidateUri($(this).html());
 
-        $('#uriForm').bootstrapValidator('revalidateField', 'website');
-
-        var isValid = $('#uriForm').data('bootstrapValidator').isValid();
         $(this)
             .parents('tr').find('i')
             .removeClass('fa-check fa-times')
