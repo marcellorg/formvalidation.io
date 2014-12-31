@@ -8,8 +8,7 @@ permalink: /validators/date/
     <div class="doc-heading">
         <h1>date validator</h1>
         <p>Validate a date</p>
-        <p>&larr; <a href="/validators/">Validators</a></p>
-        {% include edit-button.html %}
+        <p>&larr; <a href="/validators">Validators</a></p>
         {% include share.html %}
     </div>
 
@@ -31,31 +30,31 @@ permalink: /validators/date/
                         <tbody>
                             <tr>
                                 <td><code>format</code><sup>*</sup></td>
-                                <td><code>data-bv-date-format</code></td>
+                                <td><code>data-fv-date-format</code></td>
                                 <td>String</td>
                                 <td>The date format. It is <code>MM/DD/YYYY</code>, by default</td>
                             </tr>
                             <tr>
                                 <td><code>max</code></td>
-                                <td><code>data-bv-date-max</code></td>
+                                <td><code>data-fv-date-max</code></td>
                                 <td>String</td>
                                 <td>The value must be earlier than this option</td>
                             </tr>
                             <tr>
                                 <td><code>message</code></td>
-                                <td><code>data-bv-date-message</code></td>
+                                <td><code>data-fv-date-message</code></td>
                                 <td>String</td>
                                 <td>The error message</td>
                             </tr>
                             <tr>
                                 <td><code>min</code></td>
-                                <td><code>data-bv-date-min</code></td>
+                                <td><code>data-fv-date-min</code></td>
                                 <td>String</td>
                                 <td>The value must be later than this option</td>
                             </tr>
                             <tr>
                                 <td><code>separator</code></td>
-                                <td><code>data-bv-date-separator</code></td>
+                                <td><code>data-fv-date-separator</code></td>
                                 <td>String</td>
                                 <td>Used to separate the day, month, and year. It is <code>/</code>, by default</td>
                             </tr>
@@ -63,7 +62,7 @@ permalink: /validators/date/
                     </table>
 
                     <div class="doc-alert doc-alert-info">
-                        When setting options via HTML attributes, remember to enable the validator by setting data-bv-date="true".<br/>
+                        When setting options via HTML attributes, remember to enable the validator by setting data-fv-date="true".<br/>
                         You don't need to do that when using HTML 5 type="date" attribute (the format then will be forced to be YYYY/MM/DD).
                     </div>
 
@@ -97,8 +96,8 @@ permalink: /validators/date/
                     </table>
 
                     <div class="doc-alert doc-alert-info">
-                        The date validator requires day, month and year. If you are looking for hour and time validator, HH:mm, for example, you should use the <a href="/validators/regexp/">regexp</a> validator.
-                        See the <a href="/validators/regexp/#html-5-example">time</a> example.
+                        The date validator requires day, month and year. If you are looking for hour and time validator, HH:mm, for example, you should use the <a href="/validators/regexp">regexp</a> validator.
+                        See the <a href="/validators/regexp#html-5-example">time</a> example.
                     </div>
 
                     <p>The following table describes the token meanings, defined by <a href="http://momentjs.com/docs/#/displaying/format/">momentjs</a>, one of most popular Javascript datetime library:</p>
@@ -168,7 +167,7 @@ permalink: /validators/date/
                         <li>DD-MM-YYYY h:m A</li>
                     </ul>
 
-                    <p>It's possible to support other date format by using <a href="/validators/callback/">callback</a> validator as shown in the <a href="#custom-format-example">Custom format example</a>.</p>
+                    <p>It's possible to support other date format by using <a href="/validators/callback">callback</a> validator as shown in the <a href="#custom-format-example">Custom format example</a>.</p>
 
                     <div class="doc-alert doc-alert-info">
                         The date validator also checks the number of days in February of leap year. For example, 2000/02/29 is a valid date, while 2001/02/29 is invalid one.
@@ -183,166 +182,29 @@ permalink: /validators/date/
                     <h3>Basic example</h3>
                     <p>The following form might be used in a profile setting page:</p>
 
-                    <div class="doc-demo">
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a href="#example-form-tab" data-toggle="tab">Try it</a></li>
-                            <li><a href="#example-html-tab" data-toggle="tab">HTML</a></li>
-                            <li><a href="#example-js-tab" data-toggle="tab">JS</a></li>
-                            <li><a href="#example-declarative-tab" data-toggle="tab">Declarative usage</a></li>
-                        </ul>
-
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="example-form-tab">
-                            {% include validators/date/basic-example.html %}
-                            </div>
-
-                            <div class="tab-pane" id="example-html-tab">
-{% highlight html %}
-{% include validators/date/basic-example.html %}
-{% endhighlight %}
-                            </div>
-
-                            <div class="tab-pane" id="example-js-tab">
-{% highlight javascript %}
-{% include validators/date/basic-example.js %}
-{% endhighlight %}
-                            </div>
-
-                            <div class="tab-pane" id="example-declarative-tab">
-{% highlight html %}
-{% include validators/date/declarative-example.html %}
-
-<script>
-{% include validators/date/declarative-example.js %}
-</script>
-{% endhighlight %}
-                            </div>
-                        </div>
-                    </div>
+                    {% include demo/tabs.html id="basic" frameworks="bootstrap" dir="basic" codes="programmatic,declarative" %}
 
                     <h3>Datetime picker example</h3>
                     <p>The form below is an example of using the date validator with <a href="http://eonasdan.github.io/bootstrap-datetimepicker/">Bootstrap Datetime Picker</a>:</p>
 
-                    <div class="doc-demo">
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a href="#datepicker-form-tab" data-toggle="tab">Try it</a></li>
-                            <li><a href="#datepicker-html-tab" data-toggle="tab">HTML</a></li>
-                            <li><a href="#datepicker-js-tab" data-toggle="tab">JS</a></li>
-                        </ul>
-
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="datepicker-form-tab">
-                            {% include validators/date/date-picker-example.html %}
-                            </div>
-
-                            <div class="tab-pane" id="datepicker-html-tab">
-{% highlight html %}
-{% include validators/date/date-picker-example.html %}
-{% endhighlight %}
-                            </div>
-
-                            <div class="tab-pane" id="datepicker-js-tab">
-{% highlight javascript %}
-{% include validators/date/date-picker-example.js %}
-{% endhighlight %}
-                            </div>
-                        </div>
-                    </div>
+                    {% include demo/tabs.html id="picker" frameworks="bootstrap" dir="picker" codes="programmatic" %}
 
                     <h3>Custom format example</h3>
 
-                    <p>This example illustrates the ability of validating date in custom format by using the <a href="/validators/callback/">callback</a> validator and <a href="http://momentjs.com/">momentjs</a> to parse/validate.</p>
-                    <div class="doc-demo">
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a href="#custom-form-tab" data-toggle="tab">Try it</a></li>
-                            <li><a href="#custom-html-tab" data-toggle="tab">HTML</a></li>
-                            <li><a href="#custom-js-tab" data-toggle="tab">JS</a></li>
-                        </ul>
-
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="custom-form-tab">
-                            {% include validators/date/custom-format-example.html %}
-                            </div>
-
-                            <div class="tab-pane" id="custom-html-tab">
-{% highlight html %}
-<!-- Include the momentjs library to use later -->
-<script src="//oss.maxcdn.com/momentjs/2.8.2/moment.min.js"></script>
-
-{% include validators/date/custom-format-example.html %}
-{% endhighlight %}
-                            </div>
-
-                            <div class="tab-pane" id="custom-js-tab">
-{% highlight javascript %}
-{% include validators/date/custom-format-example.js %}
-{% endhighlight %}
-                            </div>
-                        </div>
-                    </div>
+                    <p>This example illustrates the ability of validating date in custom format by using the <a href="/validators/callback">callback</a> validator and <a href="http://momentjs.com/">momentjs</a> to parse/validate.</p>
+                    {% include demo/tabs.html id="custom-format" frameworks="bootstrap" dir="custom-format" codes="programmatic" %}
 
                     <h3>Date range example</h3>
 
                     <p>The following form asks you to enter a date in the range of 2000/01/01 and 2020/12/30.</p>
                     <p>It can be implemented by using the <code>min</code> and <code>max</code> options.</p>
 
-                    <div class="doc-demo">
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a href="#range-form-tab" data-toggle="tab">Try it</a></li>
-                            <li><a href="#range-html-tab" data-toggle="tab">HTML</a></li>
-                            <li><a href="#range-js-tab" data-toggle="tab">JS</a></li>
-                        </ul>
+                    {% include demo/tabs.html id="range" frameworks="bootstrap" dir="range" codes="programmatic" %}
 
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="range-form-tab">
-                            {% include validators/date/range-example.html %}
-                            </div>
-
-                            <div class="tab-pane" id="range-html-tab">
-{% highlight html %}
-{% include validators/date/range-example.html %}
-{% endhighlight %}
-                            </div>
-
-                            <div class="tab-pane" id="range-js-tab">
-{% highlight javascript %}
-{% include validators/date/range-example.js %}
-{% endhighlight %}
-                            </div>
-                        </div>
-                    </div>
-
-                    <p>You also can use the <a href="/validators/callback/">callback</a> validator and <a href="http://momentjs.com/docs/#/query/is-before/"><code>isBefore()</code></a>, <a href="http://momentjs.com/docs/#/query/is-after/"><code>isAfter()</code></a> methods provided <a href="http://momentjs.com/">momentjs</a>
+                    <p>You also can use the <a href="/validators/callback">callback</a> validator and <a href="http://momentjs.com/docs/#/query/is-before/"><code>isBefore()</code></a>, <a href="http://momentjs.com/docs/#/query/is-after/"><code>isAfter()</code></a> methods provided <a href="http://momentjs.com/">momentjs</a>
                     to check if the date is in the range.</p>
 
-                    <div class="doc-demo">
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a href="#range-callback-form-tab" data-toggle="tab">Try it</a></li>
-                            <li><a href="#range-callback-html-tab" data-toggle="tab">HTML</a></li>
-                            <li><a href="#range-callback-js-tab" data-toggle="tab">JS</a></li>
-                        </ul>
-
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="range-callback-form-tab">
-                            {% include validators/date/range-callback-example.html %}
-                            </div>
-
-                            <div class="tab-pane" id="range-callback-html-tab">
-{% highlight html %}
-<!-- Include the momentjs library to use later -->
-<script src="//oss.maxcdn.com/momentjs/2.8.2/moment.min.js"></script>
-
-{% include validators/date/range-callback-example.html %}
-{% endhighlight %}
-                            </div>
-
-                            <div class="tab-pane" id="range-callback-js-tab">
-{% highlight javascript %}
-{% include validators/date/range-callback-example.js %}
-{% endhighlight %}
-                            </div>
-                        </div>
-                    </div>
+                    {% include demo/tabs.html id="range-moment" frameworks="bootstrap" dir="range-moment" codes="programmatic" %}
                 </section>
 
                 <ul class="doc-list">
@@ -357,11 +219,3 @@ permalink: /validators/date/
         </div>
     </div>
 </div>
-
-<script>
-{% include validators/date/basic-example.js %}
-{% include validators/date/date-picker-example.js %}
-{% include validators/date/custom-format-example.js %}
-{% include validators/date/range-example.js %}
-{% include validators/date/range-callback-example.js %}
-</script>

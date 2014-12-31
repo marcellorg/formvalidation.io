@@ -1,6 +1,19 @@
+<script src="//oss.maxcdn.com/momentjs/2.8.2/moment.min.js"></script>
+
+<form id="rangeCallbackForm" class="form-horizontal">
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Enter a date</label>
+        <div class="col-xs-4">
+            <input type="text" class="form-control" name="date" />
+        </div>
+    </div>
+</form>
+
+<script>
 $(document).ready(function() {
-    $('#rangeCallbackForm').bootstrapValidator({
-        feedbackIcons: {
+    $('#rangeCallbackForm').formValidation({
+        framework: 'bootstrap',
+        icon: {
             valid: 'glyphicon glyphicon-ok',
             invalid: 'glyphicon glyphicon-remove',
             validating: 'glyphicon glyphicon-refresh'
@@ -27,3 +40,4 @@ $(document).ready(function() {
         }
     });
 });
+</script>
