@@ -19,7 +19,7 @@ permalink: /download/
                     <p class="text-center">The latest version, <a href="/news/v0.6.0-released/">v{{ site.current_version }}</a>, is released on {{ site.released_date }}.</p>
 
                     <div class="row text-center">
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <div class="doc-plan">
                                 <div class="panel panel-primary">
                                     <div class="panel-heading">
@@ -44,7 +44,7 @@ permalink: /download/
                             </div>
                         </div>
 
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <div class="doc-plan">
                                 <div class="panel panel-success">
                                     <div class="panel-heading">
@@ -68,25 +68,6 @@ permalink: /download/
                                 </div>
                             </div>
                         </div>
-
-                        <div class="col-md-4">
-                            <div class="doc-plan">
-                                <div class="panel panel-info">
-                                    <div class="panel-heading">
-                                        <p>Trial version</p>
-                                        <h3>0$</h3>
-                                    </div>
-                                    <div class="list-group">
-                                        <div class="list-group-item">For anyone who want to try it before buying</div>
-                                        <div class="list-group-item"><span style="text-decoration: line-through;">Free lifetime upgrade</span></div>
-                                        <div class="list-group-item"><span style="text-decoration: line-through;">Full source code</span></div>
-                                        <div class="list-group-item">
-                                            <a href="{{ site.download.dist }}" class="btn" data-toggle="tooltip" data-title="By clicking this button, you agree to the FormValidation license agreement" data-placement="bottom">Try v{{ site.current_version }}</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
 
                     <p class="text-center">
@@ -100,7 +81,7 @@ permalink: /download/
                     <h2>Give it a try</h2>
                     <p>Below is basic working examples of FormValidation using with <a href="http://getbootstrap.com">Bootstrap</a>, <a href="http://foundation.zurb.com/">Foundation</a>, <a href="http://purecss.io/">Pure</a>, <a href="http://semantic-ui.com/">Semantic UI</a> and <a href="http://getuikit.com/">UIKit</a> frameworks.</p>
 
-                    {% include demo/tabs.html id="demo" frameworks="bootstrap,foundation,pure,semantic,uikit" dir="tryit" codes="programmatic" %}
+                    {% include demo/tabs.html id="demo" frameworks="bootstrap,foundation,pure,semantic,uikit" dir="tryit" codes="programmatic,declarative" %}
                 </section>
             </div>
         </div>

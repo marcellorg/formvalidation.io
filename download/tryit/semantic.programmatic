@@ -101,7 +101,6 @@ $(document).ready(function() {
         },
         fields: {
             firstName: {
-                row: '.small-6',
                 validators: {
                     notEmpty: {
                         message: 'The first name is required'
@@ -109,7 +108,6 @@ $(document).ready(function() {
                 }
             },
             lastName: {
-                row: '.small-6',
                 validators: {
                     notEmpty: {
                         message: 'The last name is required'
@@ -117,7 +115,6 @@ $(document).ready(function() {
                 }
             },
             username: {
-                message: 'The username is not valid',
                 validators: {
                     notEmpty: {
                         message: 'The username is required'
@@ -165,7 +162,7 @@ $(document).ready(function() {
                 validators: {
                     callback: {
                         message: 'Wrong answer',
-                        callback: function(value, validator) {
+                        callback: function(value, validator, $field) {
                             var items = $('#captchaOperation').html().split(' '), sum = parseInt(items[0]) + parseInt(items[2]);
                             return value == sum;
                         }

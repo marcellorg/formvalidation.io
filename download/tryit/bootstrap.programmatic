@@ -108,7 +108,6 @@ $(document).ready(function() {
                 }
             },
             username: {
-                message: 'The username is not valid',
                 validators: {
                     notEmpty: {
                         message: 'The username is required'
