@@ -1,0 +1,20 @@
+---
+layout: demo/bootstrap
+title: emailAddress validator &rarr; Basic example
+permalink: /validators/emailAddress/basic/bootstrap.html
+---
+
+{% include_relative bootstrap.programmatic %}
+
+<script>
+function revalidateEmailAddress(value) {
+    var $form = $('form');
+    $form
+        .find('input[name="email"]')
+            .val(value)
+            .end()
+        .formValidation('revalidateField', 'email');
+
+    return $form.data('formValidation').isValidField('email');
+}
+</script>

@@ -1,7 +1,18 @@
+<form id="regexpEmailForm" class="form-horizontal">
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Email address</label>
+        <div class="col-xs-7">
+            <input type="text" class="form-control" name="email" />
+        </div>
+    </div>
+</form>
+
+<script>
 $(document).ready(function() {
     $('#regexpEmailForm')
-        .bootstrapValidator({
-            feedbackIcons: {
+        .formValidation({
+            framework: 'bootstrap',
+            icon: {
                 valid: 'glyphicon glyphicon-ok',
                 invalid: 'glyphicon glyphicon-remove',
                 validating: 'glyphicon glyphicon-refresh'
@@ -20,8 +31,8 @@ $(document).ready(function() {
                 }
             }
         })
-        .on('error.validator.bv', function(e, data) {
-            // data.bv        --> The BootstrapValidator instance
+        .on('err.validator.fv', function(e, data) {
+            // data.bv        --> The FormValidation.Base instance
             // data.field     --> The field name
             // data.element   --> The field element
             // data.validator --> The current validator name
@@ -29,11 +40,12 @@ $(document).ready(function() {
             if (data.field === 'email') {
                 // The email field is not valid
                 data.element
-                    .data('bv.messages')
+                    .data('fv.messages')
                     // Hide all the messages
-                    .find('.help-block[data-bv-for="' + data.field + '"]').hide()
+                    .find('.help-block[data-fv-for="' + data.field + '"]').hide()
                     // Show only message associated with current validator
-                    .filter('[data-bv-validator="' + data.validator + '"]').show();
+                    .filter('[data-fv-validator="' + data.validator + '"]').show();
             }
         });
 });
+</script>
