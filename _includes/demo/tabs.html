@@ -1,9 +1,16 @@
 {% assign frameworks = include.frameworks | split: ',' %}
 {% assign codes      = include.codes | split: ',' %}
+
+{% if include.dir != '' and include.dir != nil %}
+{% assign dir = include.dir | append: '/' %}
+{% else %}
+{% assign dir = '' %}
+{% endif %}
+
 {% if include.url != '' and include.url != nil %}
 {% assign url = include.url %}
 {% else %}
-{% assign url = page.permalink | append: include.dir %}
+{% assign url = page.permalink | append: dir %}
 {% endif %}
 <div class="doc-demo">
     <ul class="nav nav-tabs">
@@ -11,7 +18,7 @@
             <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"><span class="doc-framework">Framework</span> <i class="caret"></i></a>
             <ul class="dropdown-menu" role="menu">
                 {% for f in frameworks %}
-                <li><a href="javascript: void(0);" data-demo-target="#{{ include.id }}-frame" data-demo-framework="{{ f }}" data-demo-url="{{ url | append: '/' | append: f | append: '.html' }}">{{ f | capitalize }}</a></li>
+                <li><a href="javascript: void(0);" data-demo-target="#{{ include.id }}-frame" data-demo-framework="{{ f }}" data-demo-url="{{ url | append: f | append: '.html' }}">{{ f | capitalize }}</a></li>
                 {% endfor %}
             </ul>
         </li>
@@ -31,7 +38,7 @@
             {% for f in frameworks %}
             <div data-demo-code="{{ f }}">
 {% highlight html %}
-{% include_relative {{ include.dir | append: '/' | append: f | append: '.' | append: code  }} %}
+{% include_relative {{ dir | append: f | append: '.' | append: code  }} %}
 {% endhighlight %}
             </div>
             {% endfor %}

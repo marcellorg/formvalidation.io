@@ -1,6 +1,9 @@
 body {
   font-family: 'open sans';
 }
+.demo-frame-body {
+  overflow: hidden;
+}
 .demo-frame-body .demo-ad {
   visibility: hidden;
 }
