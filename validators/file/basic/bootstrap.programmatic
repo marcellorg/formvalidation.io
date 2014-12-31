@@ -1,6 +1,17 @@
+<form id="fileForm" class="form-horizontal" enctype="multipart/form-data">
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Avatar</label>
+        <div class="col-xs-6">
+            <input type="file" class="form-control" name="avatar" />
+        </div>
+    </div>
+</form>
+
+<script>
 $(document).ready(function() {
-    $('#fileForm').bootstrapValidator({
-        feedbackIcons: {
+    $('#fileForm').formValidation({
+        framework: 'bootstrap',
+        icon: {
             valid: 'glyphicon glyphicon-ok',
             invalid: 'glyphicon glyphicon-remove',
             validating: 'glyphicon glyphicon-refresh'
@@ -19,3 +30,4 @@ $(document).ready(function() {
         }
     });
 });
+</script>

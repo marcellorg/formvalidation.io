@@ -81,8 +81,7 @@ mime_types:
     <div class="doc-heading">
         <h1>file validator</h1>
         <p>Validate file</p>
-        <p>&larr; <a href="/validators/">Validators</a></p>
-        {% include edit-button.html %}
+        <p>&larr; <a href="/validators">Validators</a></p>
         {% include share.html %}
     </div>
 
@@ -104,55 +103,55 @@ mime_types:
                         <tbody>
                             <tr>
                                 <td><code>extension</code></td>
-                                <td><code>data-bv-file-extension</code></td>
+                                <td><code>data-fv-file-extension</code></td>
                                 <td>String</td>
                                 <td>The allowed extensions, separated by a comma</td>
                             </tr>
                             <tr>
                                 <td><code>maxFiles</code></td>
-                                <td><code>data-bv-file-maxfiles</code></td>
+                                <td><code>data-fv-file-maxfiles</code></td>
                                 <td>Number</td>
                                 <td>The maximum number of files</td>
                             </tr>
                             <tr>
                                 <td><code>maxSize</code></td>
-                                <td><code>data-bv-file-maxsize</code></td>
+                                <td><code>data-fv-file-maxsize</code></td>
                                 <td>Number</td>
                                 <td>The maximum file size in bytes</td>
                             </tr>
                             <tr>
                                 <td><code>maxTotalSize</code></td>
-                                <td><code>data-bv-file-maxtotalsize</code></td>
+                                <td><code>data-fv-file-maxtotalsize</code></td>
                                 <td>Number</td>
                                 <td>The maximum size in bytes for all files</td>
                             </tr>
                             <tr>
                                 <td><code>minFiles</code></td>
-                                <td><code>data-bv-file-minfiles</code></td>
+                                <td><code>data-fv-file-minfiles</code></td>
                                 <td>Number</td>
                                 <td>The minimum number of files</td>
                             </tr>
                             <tr>
                                 <td><code>minSize</code></td>
-                                <td><code>data-bv-file-minsize</code></td>
+                                <td><code>data-fv-file-minsize</code></td>
                                 <td>Number</td>
                                 <td>The minimum file size in bytes</td>
                             </tr>
                             <tr>
                                 <td><code>minTotalSize</code></td>
-                                <td><code>data-bv-file-mintotalsize</code></td>
+                                <td><code>data-fv-file-mintotalsize</code></td>
                                 <td>Number</td>
                                 <td>The minimum size in bytes for all files</td>
                             </tr>
                             <tr>
                                 <td><code>message</code></td>
-                                <td><code>data-bv-file-message</code></td>
+                                <td><code>data-fv-file-message</code></td>
                                 <td>String</td>
                                 <td>The error message</td>
                             </tr>
                             <tr>
                                 <td><code>type</code></td>
-                                <td><code>data-bv-file-type</code></td>
+                                <td><code>data-fv-file-type</code></td>
                                 <td>String</td>
                                 <td>
                                     <p>The allowed MIME type, separated by a comma.</p>
@@ -166,7 +165,7 @@ mime_types:
                     <p>The <code>maxSize</code> and <code>type</code> are only used if the browser supports HTML 5 File API.</p>
 
                     <div class="doc-alert doc-alert-info">
-                        When setting options via HTML attributes, remember to enable the validator by setting data-bv-file="true".
+                        When setting options via HTML attributes, remember to enable the validator by setting data-fv-file="true".
                     </div>
                 </section>
 
@@ -201,42 +200,7 @@ mime_types:
 
                     <p>The following form allows to upload JPEG, PNG image which is smaller than 2 MB in size.</p>
 
-                    <div class="doc-demo">
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a href="#file-form-tab" data-toggle="tab">Try it</a></li>
-                            <li><a href="#file-html-tab" data-toggle="tab">HTML</a></li>
-                            <li><a href="#file-js-tab" data-toggle="tab">JS</a></li>
-                            <li><a href="#file-declarative-tab" data-toggle="tab">Declarative usage</a></li>
-                        </ul>
-
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="file-form-tab">
-                            {% include validators/file/example.html %}
-                            </div>
-
-                            <div class="tab-pane" id="file-html-tab">
-{% highlight html %}
-{% include validators/file/example.html %}
-{% endhighlight %}
-                            </div>
-
-                            <div class="tab-pane" id="file-js-tab">
-{% highlight javascript %}
-{% include validators/file/example.js %}
-{% endhighlight %}
-                            </div>
-
-                            <div class="tab-pane" id="file-declarative-tab">
-{% highlight html %}
-{% include validators/file/declarative-example.html %}
-
-<script>
-{% include validators/file/declarative-example.js %}
-</script>
-{% endhighlight %}
-                            </div>
-                        </div>
-                    </div>
+                    {% include demo/tabs.html id="basic" frameworks="bootstrap" dir="basic" codes="programmatic,declarative" %}
                 </section>
             </div>
 
@@ -246,7 +210,3 @@ mime_types:
         </div>
     </div>
 </div>
-
-<script>
-{% include validators/file/example.js %}
-</script>
