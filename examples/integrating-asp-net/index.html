@@ -7,8 +7,7 @@ permalink: /examples/integrating-asp-net/
 <div class="doc-content-container">
     <div class="doc-heading">
         <h1>Integrating with ASP.Net</h1>
-        <p>&larr; <a href="/examples/">Examples</a></p>
-        {% include edit-button.html %}
+        <p>&larr; <a href="/examples">Examples</a></p>
         {% include share.html %}
     </div>
 
@@ -19,8 +18,8 @@ permalink: /examples/integrating-asp-net/
 
                 <div class="doc-demo">
                     <ul class="nav nav-tabs">
-                        <li class="active"><a href="#aspnet-programmatic-tab" data-toggle="tab">Programmatic usage</a></li>
-                        <li><a href="#aspnet-declarative-tab" data-toggle="tab">Declarative usage</a></li>
+                        <li class="active"><a href="#aspnet-programmatic-tab" data-toggle="tab">Programmatic code</a></li>
+                        <li><a href="#aspnet-declarative-tab" data-toggle="tab">Declarative code</a></li>
                     </ul>
 
                     <div class="tab-content">
@@ -41,8 +40,9 @@ permalink: /examples/integrating-asp-net/
 
     <script type="text/javascript">
     $(document).ready(function() {
-        $('#form1').bootstrapValidator({
-            feedbackIcons: {
+        $('#form1').formValidation({
+            framework: 'bootstrap',
+            icon: {
                 valid: 'glyphicon glyphicon-ok',
                 invalid: 'glyphicon glyphicon-remove',
                 validating: 'glyphicon glyphicon-refresh'
@@ -91,26 +91,27 @@ permalink: /examples/integrating-asp-net/
 
     <!-- Fields -->
     <asp:TextBox runat="server" CssClass="form-control" ID="userNameTextBox"
-        data-bv-notempty="true"
-        data-bv-notempty-message="The username is required and cannot be empty"
+        data-fv-notempty="true"
+        data-fv-notempty-message="The username is required and cannot be empty"
 
-        data-bv-stringlength="true"
-        data-bv-stringlength-min="6"
-        data-bv-stringlength-max="30"
-        data-bv-stringlength-message="The username must be more than 6 and less than 30 characters long"
+        data-fv-stringlength="true"
+        data-fv-stringlength-min="6"
+        data-fv-stringlength-max="30"
+        data-fv-stringlength-message="The username must be more than 6 and less than 30 characters long"
 
-        data-bv-regexp="true"
-        data-bv-regexp-regexp="^[a-zA-Z0-9]+$"
-        data-bv-regexp-message="The username can only consist of alphabetical and number"
+        data-fv-regexp="true"
+        data-fv-regexp-regexp="^[a-zA-Z0-9]+$"
+        data-fv-regexp-message="The username can only consist of alphabetical and number"
 
-        data-bv-different="true"
-        data-bv-different-field="password"
-        data-bv-different-message="The username and password cannot be the same as each other" />
+        data-fv-different="true"
+        data-fv-different-field="password"
+        data-fv-different-message="The username and password cannot be the same as each other" />
 
     <script type="text/javascript">
     $(document).ready(function() {
-        $('#form1').bootstrapValidator({
-            feedbackIcons: {
+        $('#form1').formValidation({
+            framework: 'bootstrap',
+            icon: {
                 valid: 'glyphicon glyphicon-ok',
                 invalid: 'glyphicon glyphicon-remove',
                 validating: 'glyphicon glyphicon-refresh'
