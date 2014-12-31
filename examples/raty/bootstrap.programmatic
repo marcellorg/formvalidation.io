@@ -1,3 +1,36 @@
+<!-- Include Raty JS file -->
+<script src="/vendor/raty/jquery.raty.min.js"></script>
+
+<form id="ratyForm" method="post" class="form-horizontal">
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Rating</label>
+        <div class="col-xs-5">
+            <div id="ratyRating"></div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Review title</label>
+        <div class="col-xs-6">
+            <input type="text" class="form-control" name="title" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Your review</label>
+        <div class="col-xs-6">
+            <textarea rows="5" class="form-control" name="content"></textarea>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-xs-9 col-xs-offset-3">
+            <button type="submit" class="btn btn-default">Validate</button>
+        </div>
+    </div>
+</form>
+
+<script>
 $(document).ready(function() {
     $('#ratyRating').raty({
         path: '/vendor/raty/img',
@@ -6,15 +39,16 @@ $(document).ready(function() {
         scoreName: 'star',
         // Revalidate the star rating whenever user change it
         click: function (score, evt) {
-            $('#ratyForm').bootstrapValidator('revalidateField', 'star');
+            $('#ratyForm').formValidation('revalidateField', 'star');
         }
     });
 
-    $('#ratyForm').bootstrapValidator({
+    $('#ratyForm').formValidation({
+        framework: 'bootstrap',
         // The disabled elements are excluded
         // Hidden elements (including the rating star) are included
         excluded: ':disabled',
-        feedbackIcons: {
+        icon: {
             valid: 'glyphicon glyphicon-ok',
             invalid: 'glyphicon glyphicon-remove',
             validating: 'glyphicon glyphicon-refresh'
@@ -48,3 +82,4 @@ $(document).ready(function() {
         }
     });
 });
+</script>
