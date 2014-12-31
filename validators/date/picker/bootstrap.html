@@ -8,13 +8,21 @@ permalink: /validators/date/picker/bootstrap.html
 
 <script>
 $(document).ready(function() {
-    $('#datetimePicker').on('dp.change dp.show dp.hide', function(e) {
-        var $body   = $('body'),
-            $iframe = $body.data('iframe.fv');
-        if ($iframe) {
-            // Adjust the height of iframe when showing/hiding the picker
-            $iframe.height($body.get(0).scrollHeight);
-        }
-    });
+    $('#datetimePicker')
+        // Adjust the height of iframe when showing/hiding the picker
+        .on('dp.change dp.show', function(e) {
+            var $body   = $('body'),
+                $iframe = $body.data('iframe.fv');
+            if ($iframe) {
+                $iframe.height($body.get(0).scrollHeight);
+            }
+        })
+        .on('dp.hide', function(e) {
+            var $body   = $('body'),
+                $iframe = $body.data('iframe.fv');
+            if ($iframe) {
+                $iframe.height($body.height());
+            }
+        });
 });
 </script>
