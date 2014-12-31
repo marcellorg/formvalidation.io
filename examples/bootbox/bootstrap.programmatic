@@ -1,6 +1,8 @@
+<script>
 $(document).ready(function() {
-    $('#loginForm').bootstrapValidator({
-        feedbackIcons: {
+    $('#loginForm').formValidation({
+        framework: 'bootstrap',
+        icon: {
             valid: 'glyphicon glyphicon-ok',
             invalid: 'glyphicon glyphicon-remove',
             validating: 'glyphicon glyphicon-refresh'
@@ -33,8 +35,8 @@ $(document).ready(function() {
             })
             .on('shown.bs.modal', function() {
                 $('#loginForm')
-                    .show()                                 // Show the login form
-                    .bootstrapValidator('resetForm', true); // Reset form
+                    .show()                             // Show the login form
+                    .formValidation('resetForm', true); // Reset form
             })
             .on('hide.bs.modal', function(e) {
                 // Bootbox will remove the modal (including the body which contains the login form)
@@ -45,3 +47,4 @@ $(document).ready(function() {
             .modal('show');
     });
 });
+</script>
