@@ -2,13 +2,18 @@
 layout: default
 title: Getting Started
 permalink: /getting-started/
+prev:
+    url: /download/
+    title: Download
+next:
+    url: /settings/
+    title: Settings
 ---
 
 <div class="doc-content-container">
     <div class="doc-heading">
         <h1>Getting Started</h1>
         <p>Getting used with BootstrapValidator</p>
-        {% include edit-button.html %}
         {% include share.html %}
     </div>
 
@@ -24,6 +29,8 @@ permalink: /getting-started/
                 <div class="doc-hr"></div>
 
                 {% include getting-started/example.html %}
+
+                {% include pagination.html %}
             </div>
 
             <div class="col-md-3">

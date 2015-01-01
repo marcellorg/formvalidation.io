@@ -30,13 +30,13 @@
         </tbody>
     </table>
 
-    <p>If you want to do additional task after adding new field, then trigger the <a href="/settings/#event-form">added.field.bv</a> event:</p>
+    <p>If you want to do additional task after adding new field, then trigger the <a href="/settings/#event-form">added.field.fv</a> event:</p>
 
 {% highlight javascript %}
 $(document).ready(function() {
     $(form)
         .formValidation(options)
-        .on('added.field.bv', function(e, data) {
+        .on('added.field.fv', function(e, data) {
             // $(e.target)  --> The form instance
             // $(e.target).data('formValidation')
             //              --> The FormValidation instance

@@ -640,10 +640,11 @@ h4 {
 .doc-pagination span {
   display: block;
   float: left;
-  width: 50%;
-  padding: 15px 0;
-  text-align: center;
   font-size: 18px;
+  line-height: 45px;
+  width: 50%;
+  height: 45px;
+  text-align: center;
 }
 .doc-pagination span {
   color: #bfbfbf;

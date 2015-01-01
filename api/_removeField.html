@@ -19,13 +19,13 @@
         </tbody>
     </table>
 
-    <p>By triggering the <a href="/settings/#event-form">removed.field.bv</a> event, you can perform additional task after removing given field:</p>
+    <p>By triggering the <a href="/settings/#event-form">removed.field.fv</a> event, you can perform additional task after removing given field:</p>
 
 {% highlight javascript %}
 $(document).ready(function() {
     $(form)
         .formValidation(options)
-        .on('removed.field.bv', function(e, data) {
+        .on('removed.field.fv', function(e, data) {
             // $(e.target)  --> The form instance
             // $(e.target).data('formValidation')
             //              --> The FormValidation instance
