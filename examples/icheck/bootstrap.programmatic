@@ -13,8 +13,8 @@
 
 <form id="icheckForm" method="post" class="form-horizontal">
     <div class="form-group">
-        <label class="col-sm-3 control-label">Job position</label>
-        <div class="col-sm-5">
+        <label class="col-xs-3 control-label">Job position</label>
+        <div class="col-xs-6">
             <div class="radio">
                 <label>
                     <input type="radio" name="job" value="designer" /> Designer
@@ -44,8 +44,8 @@
     </div>
 
     <div class="form-group">
-        <label class="col-sm-3 control-label">Programming Languages</label>
-        <div class="col-sm-5">
+        <label class="col-xs-3 control-label">Programming Languages</label>
+        <div class="col-xs-6">
             <div class="checkbox">
                 <label>
                     <input type="checkbox" name="languages[]" value="net" /> .Net
@@ -90,8 +90,52 @@
     </div>
 
     <div class="form-group">
-        <div class="col-sm-5 col-sm-offset-3">
+        <div class="col-xs-5 col-xs-offset-3">
             <button type="submit" class="btn btn-default">Validate</button>
         </div>
     </div>
 </form>
+
+<script>
+$(document).ready(function() {
+    $('#icheckForm')
+        .formValidation({
+            framework: 'bootstrap',
+            icon: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                job: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The job position is required'
+                        }
+                    }
+                },
+                'languages[]': {
+                    validators: {
+                        choice: {
+                            min: 2,
+                            max: 4,
+                            message: 'Please choose 2 - 4 programming languages you are good at'
+                        }
+                    }
+                }
+            }
+        })
+        .find('input[name="job"], input[name="languages[]"]')
+            // Init iCheck elements
+            .iCheck({
+                checkboxClass: 'icheckbox_square-red',
+                radioClass: 'iradio_square-red'
+            })
+            // Called when the radios/checkboxes are changed
+            .on('ifChanged', function(e) {
+                // Get the field name
+                var field = $(this).attr('name');
+                $('#icheckForm').formValidation('revalidateField', field);
+            });
+});
+</script>
