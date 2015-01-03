@@ -449,7 +449,7 @@ h4 {
   padding-left: 96px;
 }
 .doc-gumroad-button {
-  background: white url('../img/gumroad-button-bar.jpg') repeat-x;
+  background: #ffffff url('../img/gumroad-button-bar.jpg') repeat-x;
   border-radius: 4px;
   box-shadow: rgba(0, 0, 0, 0.4) 0 0 2px;
   color: #999;
@@ -578,9 +578,6 @@ h4 {
 .doc-toc .nav > .active:hover > a,
 .doc-toc .nav > .active :focus > a {
   border-left: 2px solid #3498db;
-}
-.doc-toc .nav .nav {
-  display: none;
 }
 .doc-toc .nav > .active > ul {
   display: block;

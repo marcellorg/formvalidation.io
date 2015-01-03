@@ -44,27 +44,6 @@ $(function() {
                 ulClass: 'nav',
                 indexingFormats: '______'
             });
-
-        var $window = $(window),
-            $body   = $(document.body);
-        $body.scrollspy({
-            target: '#toc'
-        });
-
-        $window.on('load', function() {
-            $body.scrollspy('refresh');
-        });
-
-        setTimeout(function() {
-            var $sideBar = $('#toc');
-            $sideBar.affix({
-                offset: {
-                    top: function() {
-                        return (this.top = $sideBar.offset().top);
-                    }
-                }
-            });
-        }, 100);
     }
 
     // Switch framework handler
