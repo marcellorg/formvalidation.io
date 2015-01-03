@@ -22,7 +22,7 @@
     text-align: center;
 }
 .fv-has-feedback .fv-control-feedback {
-    right: 15px;
+    /*right: 15px;*/
 }
 .fv-help-block {
     display: block;
@@ -52,9 +52,27 @@
 /* ~~~ For Foundation form ~~~ */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
+.fv-form-foundation .fv-control-feedback {
+    top: 21px; /* The height of Foundation label */
+    right: 15px; /* The padding-right of .columns */
+    width: 37px;
+    height: 37px;
+    line-height: 37px;
+}
+
+.fv-form-foundation .collapse .fv-control-feedback {
+    top: 0;
+    right: 0;
+}
+
+.fv-form-horizontal.fv-form-foundation .fv-control-feedback {
+    top: 0;
+}
+
 .fv-form-foundation .error .fv-control-feedback {
     color: #f04124;
 }
+
 /**
  * Foundation reset the bottom marin to 0 when the row has '.error' class
  * I need to adjust it when using tooltip to show the error
