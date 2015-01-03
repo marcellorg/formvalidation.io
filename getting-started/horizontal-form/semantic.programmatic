@@ -1,0 +1,19 @@
+<form id="registrationForm" class="ui grid form">
+    <div class="row field">
+        <label class="four wide column">Username</label>
+        <div class="eight wide column">
+            <div class="ui input icon">
+                <input name="username" type="text" />
+            </div>
+        </div>
+    </div>
+
+    <div class="row field">
+        <label class="four wide column">Email address</label>
+        <div class="eight wide column">
+            <div class="ui input icon">
+                <input name="email" type="text" />
+            </div>
+        </div>
+    </div>
+</form>

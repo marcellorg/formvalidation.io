@@ -1,0 +1,15 @@
+<form id="registrationForm" class="ui form">
+    <div class="field">
+        <label>Username</label>
+        <div class="ui input icon">
+            <input name="username" type="text" />
+        </div>
+    </div>
+
+    <div class="field">
+        <label>Email address</label>
+        <div class="ui input icon">
+            <input name="email" type="text" />
+        </div>
+    </div>
+</form>

@@ -1,0 +1,11 @@
+<form id="registrationForm" class="pure-form pure-form-stacked">
+    <div class="pure-control-group">
+        <label>Username</label>
+        <input name="username" type="text" />
+    </div>
+
+    <div class="pure-control-group">
+        <label>Email address</label>
+        <input name="email" type="text" />
+    </div>
+</form>
