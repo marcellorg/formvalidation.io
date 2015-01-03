@@ -1,16 +1,19 @@
-<form id="registrationForm" class="form-inline">
-    <div class="form-group">
-        <input type="text" class="form-control" name="username" placeholder="Username" />
+<form id="signinForm" class="form-inline">
+    <div class="form-group" style="width: 40%;">
+        <input type="text" class="form-control" name="username" placeholder="Username" style="width: 100%;" />
     </div>
 
-    <div class="form-group">
-        <input type="text" class="form-control" name="email" placeholder="Email address" />
+    <div class="form-group" style="width: 40%;">
+        <input type="password" class="form-control" name="password" placeholder="Password" style="width: 100%;" />
     </div>
+
+    <!-- Do NOT use name="submit" or id="submit" for the Submit button -->
+    <button type="submit" class="btn btn-default">Sign in</button>
 </form>
 
 <script>
 $(document).ready(function() {
-    $('#registrationForm').formValidation({
+    $('#signinForm').formValidation({
         framework: 'bootstrap',
         icon: {
             valid: 'glyphicon glyphicon-ok',
@@ -21,7 +24,7 @@ $(document).ready(function() {
             username: {
                 validators: {
                     notEmpty: {
-                        message: 'The username is required and cannot be empty'
+                        message: 'The username is required'
                     },
                     stringLength: {
                         min: 6,
@@ -34,13 +37,10 @@ $(document).ready(function() {
                     }
                 }
             },
-            email: {
+            password: {
                 validators: {
                     notEmpty: {
-                        message: 'The email is required and cannot be empty'
-                    },
-                    emailAddress: {
-                        message: 'The input is not a valid email address'
+                        message: 'The password is required'
                     }
                 }
             }
