@@ -13,22 +13,22 @@ next:
 <div class="doc-content-container">
     <div class="doc-heading">
         <h1>Getting Started</h1>
-        <p>Getting used with BootstrapValidator</p>
+        <p>Getting used with FormValidation</p>
         {% include share.html %}
     </div>
 
     <div class="container">
         <div class="row">
             <div class="col-md-9">
-                {% include getting-started/what-included.html %}
+                {% include_relative _whatIncluded.html %}
 
                 <div class="doc-hr"></div>
 
-                {% include getting-started/usage.html %}
+                {% include_relative _usage.html %}
 
                 <div class="doc-hr"></div>
 
-                {% include getting-started/example.html %}
+                {% include_relative _example.html %}
 
                 {% include pagination.html %}
             </div>
