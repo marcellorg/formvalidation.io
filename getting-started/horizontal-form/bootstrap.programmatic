@@ -1,22 +1,62 @@
-<form id="registrationForm" class="form-horizontal">
+<form id="productForm" class="form-horizontal">
     <div class="form-group">
-        <label class="col-xs-3 control-label">Username</label>
+        <label class="col-xs-3 control-label">Product name</label>
         <div class="col-xs-6">
-            <input type="text" class="form-control" name="username" />
+            <input type="text" class="form-control" name="name" />
         </div>
     </div>
 
     <div class="form-group">
-        <label class="col-xs-3 control-label">Email address</label>
+        <label class="col-xs-3 control-label">Price</label>
+        <div class="col-xs-3">
+            <div class="input-group">
+                <div class="input-group-addon">$</div>
+                <input type="text" class="form-control" name="price" />
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Size</label>
         <div class="col-xs-6">
-            <input type="text" class="form-control" name="email" />
+            <div class="checkbox">
+                <label><input type="checkbox" name="size[]" value="s" /> S</label>
+            </div>
+            <div class="checkbox">
+                <label><input type="checkbox" name="size[]" value="m" /> M</label>
+            </div>
+            <div class="checkbox">
+                <label><input type="checkbox" name="size[]" value="l" /> L</label>
+            </div>
+            <div class="checkbox">
+                <label><input type="checkbox" name="size[]" value="xl" /> XL</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Available in store</label>
+        <div class="col-xs-6">
+            <div class="radio">
+                <label><input type="radio" name="availability" value="yes" /> Yes</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="availability" value="no" /> No</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-xs-6 col-xs-offset-3">
+            <!-- Do NOT use name="submit" or id="submit" for the Submit button -->
+            <button type="submit" class="btn btn-default">Add product</button>
         </div>
     </div>
 </form>
 
 <script>
 $(document).ready(function() {
-    $('#registrationForm').formValidation({
+    $('#productForm').formValidation({
         framework: 'bootstrap',
         icon: {
             valid: 'glyphicon glyphicon-ok',
@@ -24,15 +64,15 @@ $(document).ready(function() {
             validating: 'glyphicon glyphicon-refresh'
         },
         fields: {
-            username: {
+            name: {
                 validators: {
                     notEmpty: {
-                        message: 'The username is required and cannot be empty'
+                        message: 'The name is required'
                     },
                     stringLength: {
                         min: 6,
                         max: 30,
-                        message: 'The username must be more than 6 and less than 30 characters long'
+                        message: 'The name must be more than 6 and less than 30 characters long'
                     },
                     regexp: {
                         regexp: /^[a-zA-Z0-9_]+$/,
@@ -40,13 +80,27 @@ $(document).ready(function() {
                     }
                 }
             },
-            email: {
+            price: {
                 validators: {
                     notEmpty: {
-                        message: 'The email is required and cannot be empty'
+                        message: 'The price is required'
                     },
-                    emailAddress: {
-                        message: 'The input is not a valid email address'
+                    numeric: {
+                        message: 'The price must be a number'
+                    }
+                }
+            },
+            'size[]': {
+                validators: {
+                    notEmpty: {
+                        message: 'The size is required'
+                    }
+                }
+            },
+            availability: {
+                validators: {
+                    notEmpty: {
+                        message: 'The availability option is required'
                     }
                 }
             }
