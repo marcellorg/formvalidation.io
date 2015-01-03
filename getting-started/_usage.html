@@ -213,7 +213,7 @@ Too much recursion error
 
         <h4>Stacked form</h4>
 
-        {% include demo/tabs.html id="stacked-form" frameworks="bootstrap" dir="stacked-form" codes="programmatic" %}
+        {% include demo/tabs.html id="stacked-form" frameworks="bootstrap,foundation,pure,semantic,uikit" dir="stacked-form" codes="programmatic" %}
 
         <h4>Stacked form without labels</h4>
 
@@ -225,7 +225,7 @@ Too much recursion error
 
         <h4>Horizontal form</h4>
 
-        {% include demo/tabs.html id="horizontal-form" frameworks="bootstrap" dir="horizontal-form" codes="programmatic" %}
+        {% include demo/tabs.html id="horizontal-form" frameworks="bootstrap,foundation,pure,semantic,uikit" dir="horizontal-form" codes="programmatic" %}
 
         <p>It also supports multiple fields on the same row:</p>
 
@@ -242,7 +242,7 @@ Too much recursion error
 $(document).ready(function() {
     $(formSelector).formValidation({
         // Indicate the framework
-        //  Can be bootstrap, foundation, pure, semantic, uikit
+        // Can be bootstrap, foundation, pure, semantic, uikit
         framework: '...',
 
         // Other settings
@@ -259,7 +259,7 @@ $(document).ready(function() {
 
 {% highlight javascript %}
 $(document).ready(function() {
-    $('#registerForm').formValidation({
+    $('#registrationForm').formValidation({
         // I am validating Bootstrap form
         framework: 'bootstrap',
 
