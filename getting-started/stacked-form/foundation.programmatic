@@ -43,7 +43,7 @@
     <div class="row">
         <div class="small-12 columns">
             <!-- Do NOT use name="submit" or id="submit" for the Submit button -->
-            <button type="submit" class="button small">Add product</button>
+            <button type="submit" class="button">Add product</button>
         </div>
     </div>
 </form>
