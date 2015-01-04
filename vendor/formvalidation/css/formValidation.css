@@ -94,11 +94,14 @@
     height: 36px;
     line-height: 36px;
 }
+.pure-form-stacked.fv-form-pure .fv-control-feedback {
+    top: 4px;
+}
 .pure-form-aligned .pure-control-group .fv-help-block {
     margin-top: 5px;
     margin-left: 180px;
 }
-.pure-form-aligned .fv-control-feedback,    /* Pure horizontal form */
+.pure-form-aligned.fv-form-pure .fv-control-feedback,    /* Pure horizontal form */
 .fv-form-pure .fv-icon-no-label {           /* Pure stacked form without label */
 	top: 0;
 }
