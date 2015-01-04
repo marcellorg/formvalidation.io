@@ -76,7 +76,6 @@
 .fv-form-foundation .error .fv-control-feedback {
     color: #f04124;
 }
-
 /**
  * Foundation reset the bottom marin to 0 when the row has '.error' class
  * I need to adjust it when using tooltip to show the error
@@ -135,4 +134,8 @@
 .fv-form-uikit .fv-has-success .uk-form-label,
 .fv-form-uikit .fv-has-success .fv-control-feedback {
     color: #659F13;     /* Same as .uk-form-success */
+}
+/* UIKit stacked form without label */
+.fv-form-uikit .fv-icon-no-label {
+	top: 0;
 }
