@@ -69,6 +69,7 @@
     <div class="row">
         <label class="four wide column"></label>
         <div class="eight wide column">
+            <!-- Do NOT use name="submit" or id="submit" for the Submit button -->
             <button type="submit" class="ui primary button">Submit</button>
         </div>
     </div>
@@ -81,8 +82,7 @@ $(document).ready(function() {
         icon: {
             valid: 'checkmark icon',
             invalid: 'remove icon',
-            validating: 'refresh icon',
-            feedback: 'fv-control-feedback'
+            validating: 'refresh icon'
         },
         fields: {
             firstName: {
