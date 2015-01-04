@@ -121,8 +121,10 @@
 .fv-form-uikit .uk-text-danger {
     display: block;
 }
+/* UIKit horizontal form */
 .uk-form-horizontal.fv-form-uikit .fv-control-feedback {
-    line-height: normal;
+    /*line-height: normal;*/
+    top: 0;
 }
 .fv-form-uikit .fv-has-error label,
 .fv-form-uikit .fv-has-error .uk-form-label,
