@@ -1,16 +1,16 @@
-<form id="signinForm">
-    <div class="row">
-        <div class="small-4 columns">
-            <input type="text" name="username" placeholder="Username" />
+<form id="signinForm" class="uk-form">
+    <div class="uk-grid">
+        <div class="uk-width-2-5">
+            <input type="text" class="uk-width-1-1" name="username" placeholder="Username" />
         </div>
 
-        <div class="small-4 columns">
-            <input type="password" name="password" placeholder="Password" />
+        <div class="uk-width-2-5">
+            <input type="password" class="uk-width-1-1" name="password" placeholder="Password" />
         </div>
 
-        <div class="small-4 columns">
+        <div class="uk-width-1-5">
             <!-- Do NOT use name="submit" or id="submit" for the Submit button -->
-            <button type="submit" class="button">Sign in</button>
+            <button type="submit" class="uk-button uk-button-primary">Sign in</button>
         </div>
     </div>
 </form>
@@ -18,7 +18,7 @@
 <script>
 $(document).ready(function() {
     $('#signinForm').formValidation({
-        framework: 'foundation',
+        framework: 'uikit',
         icon: {
             valid: 'fa fa-check',
             invalid: 'fa fa-times',
@@ -26,7 +26,7 @@ $(document).ready(function() {
         },
         fields: {
             username: {
-                row: '.small-4',
+                row: '.uk-width-2-5',
                 validators: {
                     notEmpty: {
                         message: 'The username is required'
@@ -43,7 +43,7 @@ $(document).ready(function() {
                 }
             },
             password: {
-                row: '.small-4',
+                row: '.uk-width-2-5',
                 validators: {
                     notEmpty: {
                         message: 'The password is required'
