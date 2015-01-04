@@ -94,15 +94,12 @@
     height: 36px;
     line-height: 36px;
 }
-.fv-form-pure .fv-help-block {
-    color: rgb(202, 60, 60);    /* Same as Pure .button-error */
-}
 .pure-form-aligned .pure-control-group .fv-help-block {
     margin-top: 5px;
     margin-left: 180px;
 }
-/* Pure stacked form without label */
-.fv-form-pure .fv-icon-no-label {
+.pure-form-aligned .fv-control-feedback,    /* Pure horizontal form */
+.fv-form-pure .fv-icon-no-label {           /* Pure stacked form without label */
 	top: 0;
 }
 .fv-form-pure .fv-has-error label,
