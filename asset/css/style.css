@@ -477,6 +477,9 @@ h4 {
   font-weight: bold;
   padding-bottom: 15px;
 }
+.doc-content-container h5 {
+  font-weight: bold;
+}
 .doc-content-container code {
   background: transparent;
 }
