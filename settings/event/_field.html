@@ -11,19 +11,19 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><code>init.field.bv</code></td>
+                    <td><code>init.field.fv</code></td>
                     <td>Triggered after the field is initialized by the plugin</td>
                 </tr>
                 <tr>
-                    <td><code>error.field.bv</code></td>
+                    <td><code>err.field.fv</code></td>
                     <td>Triggered when any field is invalid</td>
                 </tr>
                 <tr>
-                    <td><code>success.field.bv</code></td>
+                    <td><code>success.field.fv</code></td>
                     <td>Triggered when any field is valid</td>
                 </tr>
                 <tr>
-                    <td><code>status.field.bv</code></td>
+                    <td><code>status.field.fv</code></td>
                     <td>
                         <p>Triggered when field changes status. Each field has four possible status:</p>
                         <ul class="doc-list">
@@ -53,34 +53,34 @@
 {% highlight javascript %}
 $(document).ready(function() {
     $(form)
-        // on('init.field.bv') must be declared
-        // before calling .bootstrapValidator(options)
-        .on('init.field.bv', function(e, data) {
+        // on('init.field.fv') must be declared
+        // before calling .formValidation(options)
+        .on('init.field.fv', function(e, data) {
             // $(e.target)  --> The field element
-            // data.bv      --> The BootstrapValidator instance
+            // data.fv      --> The FormValidation instance
             // data.field   --> The field name
             // data.element --> The field element
         })
 
-        .bootstrapValidator(options)
+        .formValidation(options)
 
-        .on('error.field.bv', function(e, data) {
+        .on('err.field.fv', function(e, data) {
             // The e and data parameters are the same
-            // as one in the init.field.bv event above
+            // as one in the init.field.fv event above
 
             // Do something ...
         })
 
-        .on('success.field.bv', function(e, data) {
+        .on('success.field.fv', function(e, data) {
             // The e and data parameters are the same
-            // as one in the init.field.bv event above
+            // as one in the init.field.fv event above
 
             // Do something ...
         })
 
-        .on('status.field.bv', function(e, data) {
+        .on('status.field.fv', function(e, data) {
             // The e and data parameters are the same
-            // as one in the init.field.bv event above
+            // as one in the init.field.fv event above
 
             // data.status --> New field status
 
@@ -110,23 +110,23 @@ $(document).ready(function() {
 {% highlight javascript %}
 $(document).ready(function() {
     $(form)
-        // on('init.field.bv') must be declared
-        // before calling .bootstrapValidator(options)
-        .on('init.field.bv', '[name="email"]', function(e, data) {
+        // on('init.field.fv') must be declared
+        // before calling .formValidation(options)
+        .on('init.field.fv', '[name="email"]', function(e, data) {
             // Do something ...
         })
 
-        .bootstrapValidator(options)
+        .formValidation(options)
 
-        .on('error.field.bv', '[name="email"]', function(e, data) {
+        .on('err.field.fv', '[name="email"]', function(e, data) {
             // Do something ...
         })
 
-        .on('success.field.bv', '[name="email"]', function(e, data) {
+        .on('success.field.fv', '[name="email"]', function(e, data) {
             // Do something ...
         })
 
-        .on('status.field.bv', '[name="email"]', function(e, data) {
+        .on('status.field.fv', '[name="email"]', function(e, data) {
             // Do something ...
         });
 });
@@ -139,7 +139,7 @@ $(document).ready(function() {
 {% highlight javascript %}
 $(document).ready(function() {
     $(form)
-        .bootstrapValidator({
+        .formValidation({
             fields: {
                 email: {
                     onError: function(e, data) {
@@ -168,10 +168,10 @@ $(document).ready(function() {
 <form>
     ...
     <input type="text" name="email" class="form-control"
-        data-bv-emailaddress
-        data-bv-onerror="onFieldError"
-        data-bv-onsuccess="onFieldSuccess"
-        data-bv-onstatus="onFieldStatus" />
+        data-fv-emailaddress="true"
+        data-fv-onerror="onFieldError"
+        data-fv-onsuccess="onFieldSuccess"
+        data-fv-onstatus="onFieldStatus" />
     ...
 </form>
 {% endhighlight %}
@@ -189,7 +189,7 @@ function onFieldStatus(e, data) {
 };
 
 $(document).ready(function() {
-    $(form).bootstrapValidator(options);
+    $(form).formValidation(options);
 });
 {% endhighlight %}
                     </td>
@@ -198,7 +198,7 @@ $(document).ready(function() {
         </table>
     </div>
 
-    <h4 id="event-field-examples">Examples</h4>
+    <h5>Examples</h5>
     <ul class="doc-list">
         <li><a href="/examples/clearing-field-when-clicking-icon/">Clearing field when clicking the icon</a></li>
         <li><a href="/examples/enabling-submit-button/">Enabling the submit button all the time</a></li>

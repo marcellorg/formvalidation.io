@@ -11,11 +11,11 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><code>error.validator.bv</code></td>
+                    <td><code>err.validator.fv</code></td>
                     <td>Triggered when field passes given validator</td>
                 </tr>
                 <tr>
-                    <td><code>success.validator.bv</code></td>
+                    <td><code>success.validator.fv</code></td>
                     <td>Triggered when field doesn't pass given validator</td>
                 </tr>
             </tbody>
@@ -37,9 +37,9 @@
 {% highlight javascript %}
 $(document).ready(function() {
     $(form)
-        .bootstrapValidator(options)
+        .formValidation(options)
 
-        .on('error.validator.bv', function(e, data) {
+        .on('err.validator.fv', function(e, data) {
             // $(e.target)    --> The form instance
             // data.field     --> The field name
             // data.element   --> The field element
@@ -48,9 +48,9 @@ $(document).ready(function() {
             // Do something ...
         })
 
-        .on('success.validator.bv', function(e, data) {
+        .on('success.validator.fv', function(e, data) {
             // The e parameter is the same as one
-            // in the error.validator.bv event above
+            // in the err.validator.fv event above
 
             // Do something ...
         });
@@ -64,7 +64,7 @@ $(document).ready(function() {
 {% highlight javascript %}
 $(document).ready(function() {
     $(form)
-        .bootstrapValidator({
+        .formValidation({
             fields: {
                 email: {
                     validators: {
@@ -92,9 +92,9 @@ $(document).ready(function() {
 <form>
     ...
     <input type="text" name="email" class="form-control"
-        data-bv-emailaddress
-        data-bv-emailaddress-onerror="onEmailAddressError"
-        data-bv-emailaddress-onsuccess="onEmailAddressSuccess" />
+        data-fv-emailaddress="true"
+        data-fv-emailaddress-onerror="onEmailAddressError"
+        data-fv-emailaddress-onsuccess="onEmailAddressSuccess" />
     ...
 </form>
 {% endhighlight %}
@@ -109,7 +109,7 @@ function onEmailAddressSuccess(e, data) {
 };
 
 $(document).ready(function() {
-    $(form).bootstrapValidator(options);
+    $(form).formValidation(options);
 });
 {% endhighlight %}
                         </td>
@@ -118,7 +118,7 @@ $(document).ready(function() {
             </table>
         </div>
 
-        <h4 id="event-validator-examples">Example</h4>
+        <h5>Example</h5>
         <ul class="doc-list">
             <li><a href="/examples/showing-one-message/">Showing only one message each time</a></li>
         </ul>
