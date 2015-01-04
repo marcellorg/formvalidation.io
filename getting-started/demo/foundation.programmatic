@@ -1,4 +1,4 @@
-<form id="registrationForm">
+<form id="registrationForm" class="fv-form-horizontal">
     <div class="row">
         <div class="small-3 columns">
             <label class="right">Full name</label>

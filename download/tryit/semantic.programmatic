@@ -1,4 +1,4 @@
-<form id="basicSemanticForm" class="ui grid form">
+<form id="basicSemanticForm" class="ui grid form fv-form-horizontal">
     <div class="row field">
         <label class="four wide column">Full name</label>
         <div class="six wide column">
@@ -43,14 +43,16 @@
     <div class="row field">
         <label class="four wide column">Gender</label>
         <div class="ten wide column">
-            <div class="ui radio">
-                <input name="gender" type="radio" value="male" /> <label>Male</label>
-            </div>
-            <div class="ui radio">
-                <input name="gender" type="radio" value="female" /> <label>Female</label>
-            </div>
-            <div class="ui radio">
-                <input name="gender" type="radio" value="other" /> <label>Other</label>
+            <div class="ui input icon">
+                <div class="ui radio checkbox">
+                    <input name="gender" type="radio" value="male" /> <label>Male</label>
+                </div>
+                <div class="ui radio checkbox">
+                    <input name="gender" type="radio" value="female" /> <label>Female</label>
+                </div>
+                <div class="ui radio checkbox">
+                    <input name="gender" type="radio" value="other" /> <label>Other</label>
+                </div>
             </div>
         </div>
     </div>
@@ -69,8 +71,10 @@
     <div class="row field">
         <label class="four wide column"></label>
         <div class="ten wide column">
-            <div class="ui checkbox">
-                <input name="agree" type="checkbox" /> <label>Agree with the terms and conditions</label>
+            <div class="ui input icon">
+                <div class="ui checkbox">
+                    <input name="agree" type="checkbox" /> <label>Agree with the terms and conditions</label>
+                </div>
             </div>
         </div>
     </div>

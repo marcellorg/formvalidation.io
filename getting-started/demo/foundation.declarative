@@ -1,4 +1,4 @@
-<form id="registrationForm"
+<form id="registrationForm" class="fv-form-horizontal"
     data-fv-framework="foundation"
     data-fv-icon-valid="fa fa-check"
     data-fv-icon-invalid="fa fa-times"
