@@ -38,12 +38,14 @@
 .fv-form-bootstrap .tooltip-inner {
     text-align: left;
 }
-.fv-form-bootstrap .fv-bootstrap-icon-no-label {
+/* Bootstrap stacked form without label */
+.fv-form-bootstrap .fv-icon-no-label {
 	top: 0;
 }
 .fv-form-bootstrap .fv-bootstrap-icon-input-group {
 	z-index: 100;
 }
+/* Bootstrap inline form */
 .form-inline.fv-form-bootstrap .form-group {
     vertical-align: top;
 }
@@ -59,16 +61,18 @@
     height: 37px;
     line-height: 37px;
 }
-
 .fv-form-foundation .collapse .fv-control-feedback {
     top: 0;
     right: 0;
 }
-
+/* Foundation horizontal form */
 .fv-form-horizontal.fv-form-foundation .fv-control-feedback {
     top: 0;
 }
-
+/* Foundation stacked form without label */
+.fv-form-foundation .fv-icon-no-label {
+	top: 0;
+}
 .fv-form-foundation .error .fv-control-feedback {
     color: #f04124;
 }

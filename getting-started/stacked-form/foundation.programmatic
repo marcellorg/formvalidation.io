@@ -41,7 +41,7 @@
     </div>
 
     <div class="row">
-        <div class="small-9 small-push-3 columns">
+        <div class="small-12 columns">
             <!-- Do NOT use name="submit" or id="submit" for the Submit button -->
             <button type="submit" class="button small">Add product</button>
         </div>
