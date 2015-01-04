@@ -2,6 +2,12 @@
 layout: default
 title: Check if the value is valid step one
 permalink: /validators/step/
+prev:
+    url: /validators/siret/
+    title: siret validator
+next:
+    url: /validators/stringCase/
+    title: stringCase validator
 ---
 
 <div class="doc-content-container">
@@ -55,6 +61,8 @@ permalink: /validators/step/
                         When setting options via HTML attributes, remember to enable the validator by setting data-fv-step="true".
                     </div>
                 </section>
+
+                {% include pagination.html %}
             </div>
 
             <div class="col-md-3">

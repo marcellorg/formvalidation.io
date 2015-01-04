@@ -2,6 +2,12 @@
 layout: default
 title: API
 permalink: /api/
+prev:
+    url: /settings/
+    title: Settings
+next:
+    url: /validators/
+    title: Validators
 ---
 
 <div class="doc-content-container">
@@ -107,6 +113,8 @@ permalink: /api/
                 <div class="doc-hr"></div>
 
                 {% include_relative _validateField.html %}
+
+                {% include pagination.html %}
             </div>
 
             <div class="col-md-3">

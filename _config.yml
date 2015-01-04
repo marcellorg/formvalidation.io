@@ -32,7 +32,7 @@ current_version:      0.6.0
 released_date:        2015.01.01
 github_watchers:      1650
 github_forks:         1150
-github_downloads:     94,000
+github_downloads:     95,000
 twitter_followers:    215
 download:
   dist:               https://github.com/formvalidation/formvalidation/releases/download/v0.6.0/formvalidation-dist-0.6.0.zip

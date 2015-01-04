@@ -2,6 +2,12 @@
 layout: default
 title: Validate a MEID (mobile equipment identifier)
 permalink: /validators/meid/
+prev:
+    url: /validators/mac/
+    title: mac validator
+next:
+    url: /validators/notEmpty/
+    title: notEmpty validator
 examples: A00000049259B16, A0-000004-9259B1-6, A0 000004 9259B1 6, 2936087365007037100, 29360-87365-0070-3710-0, 29360 87365 0070 3710 0, AF0123450ABCDE, AF-012345-0ABCDE, AF 012345 0ABCDE, 293608736500703710, 29360-87365-0070-3710, 29360 87365 0070 3710, A00000049259B15, A00000049259B, 2936087365007037101, 29360873650070371
 related:
     - imei
@@ -78,6 +84,8 @@ related:
                 <div class="doc-hr"></div>
 
                 {% include related.html %}
+
+                {% include pagination.html %}
             </div>
 
             <div class="col-md-3">

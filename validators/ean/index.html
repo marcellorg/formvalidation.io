@@ -2,6 +2,12 @@
 layout: default
 title: Validate an EAN (International Article Number)
 permalink: /validators/ean/
+prev:
+    url: /validators/digits/
+    title: digits validator
+next:
+    url: /validators/ein/
+    title: ein validator
 examples: 73513537, 9780471117094, 4006381333931, 73513536
 related:
     - isbn
@@ -79,6 +85,8 @@ related:
                 <div class="doc-hr"></div>
 
                 {% include related.html %}
+
+                {% include pagination.html %}
             </div>
 
             <div class="col-md-3">

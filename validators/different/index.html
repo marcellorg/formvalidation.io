@@ -2,6 +2,12 @@
 layout: default
 title: different validator
 permalink: /validators/different/
+prev:
+    url: /validators/date/
+    title: date validator
+next:
+    url: /validators/digits/
+    title: digits validator
 related:
     - identical
 ---
@@ -109,6 +115,8 @@ $('#differentForm').formValidation({
                 <div class="doc-hr"></div>
 
                 {% include related.html %}
+
+                {% include pagination.html %}
             </div>
 
             <div class="col-md-3">

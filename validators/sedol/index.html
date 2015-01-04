@@ -2,6 +2,12 @@
 layout: default
 title: Validate a SEDOL (Stock Exchange Daily Official List)
 permalink: /validators/sedol/
+prev:
+    url: /validators/rtn/
+    title: rtn validator
+next:
+    url: /validators/siren/
+    title: siren validator
 examples: 0263494, B0WNLY7
 related:
     - cusip
@@ -79,6 +85,8 @@ related:
                 <div class="doc-hr"></div>
 
                 {% include related.html %}
+
+                {% include pagination.html %}
             </div>
 
             <div class="col-md-3">

@@ -2,6 +2,12 @@
 layout: default
 title: Validate a GRId (Global Release Identifier)
 permalink: /validators/grid/
+prev:
+    url: /validators/greaterThan/
+    title: greaterThan validator
+next:
+    url: /validators/hex/
+    title: hex validator
 examples: A12425GABC1234002M, A1-2425G-ABC1234002-M, A1 2425G ABC1234002 M, Grid:A1-2425G-ABC1234002-M, A1-2425G-ABC1234002-Q
 related:
     - ismn
@@ -78,6 +84,8 @@ related:
                 <div class="doc-hr"></div>
 
                 {% include related.html %}
+
+                {% include pagination.html %}
             </div>
 
             <div class="col-md-3">

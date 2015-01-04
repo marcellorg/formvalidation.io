@@ -2,6 +2,12 @@
 layout: default
 title: callback validator
 permalink: /validators/callback/
+prev:
+    url: /validators/bic/
+    title: bic validator
+next:
+    url: /validators/choice/
+    title: choice validator
 ---
 
 <div class="doc-content-container">
@@ -105,6 +111,8 @@ function(value, validator, $field) {
 
                     {% include demo/tabs.html id="dynamic" frameworks="bootstrap" dir="dynamic-message" codes="programmatic" %}
                 </section>
+
+                {% include pagination.html %}
             </div>
 
             <div class="col-md-3">

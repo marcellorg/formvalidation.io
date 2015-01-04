@@ -2,6 +2,12 @@
 layout: default
 title: Validate file
 permalink: /validators/file/
+prev:
+    url: /validators/emailAddress/
+    title: emailAddress validator
+next:
+    url: /validators/greaterThan/
+    title: greaterThan validator
 mime_types:
     - ext: doc
       type: application/msword
@@ -206,6 +212,8 @@ mime_types:
 
                     {% include demo/tabs.html id="basic" frameworks="bootstrap" dir="basic" codes="programmatic,declarative" %}
                 </section>
+
+                {% include pagination.html %}
             </div>
 
             <div class="col-md-3">

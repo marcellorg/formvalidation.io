@@ -2,6 +2,12 @@
 layout: default
 title: Validate a CUSIP
 permalink: /validators/cusip/
+prev:
+    url: /validators/creditCard/
+    title: creditCard validator
+next:
+    url: /validators/cvv/
+    title: cvv validator
 examples: 037833100, 931142103, 14149YAR8, 126650BG6, 31430F200, 022615AC2
 related:
     - isin
@@ -79,6 +85,8 @@ related:
                 <div class="doc-hr"></div>
 
                 {% include related.html %}
+
+                {% include pagination.html %}
             </div>
 
             <div class="col-md-3">

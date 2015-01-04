@@ -2,6 +2,12 @@
 layout: default
 title: Validate an IMO (International Maritime Organization)
 permalink: /validators/imo/
+prev:
+    url: /validators/imei/
+    title: imei validator
+next:
+    url: /validators/integer/
+    title: integer validator
 examples: IMO 9074729, imo 9074729, 9074729, IMO 9074728
 ---
 
@@ -72,6 +78,8 @@ examples: IMO 9074729, imo 9074729, 9074729, IMO 9074728
 
                     {% include demo/tabs.html id="basic" frameworks="bootstrap" dir="basic" codes="programmatic,declarative" %}
                 </section>
+
+                {% include pagination.html %}
             </div>
 
             <div class="col-md-3">

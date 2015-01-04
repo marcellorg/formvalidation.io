@@ -2,6 +2,12 @@
 layout: default
 title: Validate an EIN (Employer Identification Number)
 permalink: /validators/ein/
+prev:
+    url: /validators/ean/
+    title: ean validator
+next:
+    url: /validators/emailAddress/
+    title: emailAddress validator
 examples:
     valid:
         - "01-1234567"
@@ -85,6 +91,8 @@ examples:
 
                     {% include demo/tabs.html id="basic" frameworks="bootstrap" dir="basic" codes="programmatic,declarative" %}
                 </section>
+
+                {% include pagination.html %}
             </div>
 
             <div class="col-md-3">

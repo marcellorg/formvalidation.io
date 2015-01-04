@@ -2,6 +2,12 @@
 layout: default
 title: Validate identification number
 permalink: /validators/id/
+prev:
+    url: /validators/iban/
+    title: iban validator
+next:
+    url: /validators/identical/
+    title: identical validator
 countries:
     - country: Bosnia and Herzegovina
       abbr: JMBG
@@ -291,6 +297,8 @@ related:
                 <div class="doc-hr"></div>
 
                 {% include related.html %}
+
+                {% include pagination.html %}
             </div>
 
             <div class="col-md-3">

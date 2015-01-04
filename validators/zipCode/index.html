@@ -2,6 +2,12 @@
 layout: default
 title: Validate a zip code
 permalink: /validators/zipCode/
+prev:
+    url: /validators/vin/
+    title: vin validator
+next:
+    url: /examples/
+    title: Examples
 countries:
     - country: United States
       code: US
@@ -293,6 +299,8 @@ $(document).ready(function() {
                 <div class="doc-hr"></div>
 
                 {% include related.html %}
+
+                {% include pagination.html %}
             </div>
 
             <div class="col-md-3">

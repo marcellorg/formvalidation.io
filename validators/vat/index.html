@@ -2,6 +2,12 @@
 layout: default
 title: Validate VAT number
 permalink: /validators/vat/
+prev:
+    url: /validators/uuid/
+    title: uuid validator
+next:
+    url: /validators/vin/
+    title: vin validator
 countries:
     - country: Austria
       abbr: UID
@@ -338,6 +344,8 @@ related:
                 <div class="doc-hr"></div>
 
                 {% include related.html %}
+
+                {% include pagination.html %}
             </div>
 
             <div class="col-md-3">

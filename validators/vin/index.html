@@ -2,6 +2,12 @@
 layout: default
 title: Validate an US VIN (Vehicle Identification Number)
 permalink: /validators/vin/
+prev:
+    url: /validators/vat/
+    title: vat validator
+next:
+    url: /validators/zipCode/
+    title: zipCode validator
 examples: 1FAHP26W49G252740, 2FTRX07W53C371582, WP0CA29863U153381, JTMKF4DV5B5309254
 ---
 
@@ -76,6 +82,8 @@ examples: 1FAHP26W49G252740, 2FTRX07W53C371582, WP0CA29863U153381, JTMKF4DV5B530
 
                     {% include demo/tabs.html id="basic" frameworks="bootstrap" dir="basic" codes="programmatic,declarative" %}
                 </section>
+
+                {% include pagination.html %}
             </div>
 
             <div class="col-md-3">

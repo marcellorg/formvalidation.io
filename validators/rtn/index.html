@@ -2,6 +2,12 @@
 layout: default
 title: Validate a RTN (Routing transit number)
 permalink: /validators/rtn/
+prev:
+    url: /validators/remote/
+    title: remote validator
+next:
+    url: /validators/sedol/
+    title: sedol validator
 examples: 011103093, 067014822, 211274450, 211370545, 054001725, 011400071, 031201360, 026013673, 021302567, 053902197, 036001808, 011600033
 related:
     - bic
@@ -81,6 +87,8 @@ related:
                 <div class="doc-hr"></div>
 
                 {% include related.html %}
+
+                {% include pagination.html %}
             </div>
 
             <div class="col-md-3">

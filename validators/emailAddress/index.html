@@ -2,7 +2,12 @@
 layout: default
 title: Validate an email address
 permalink: /validators/emailAddress/
-
+prev:
+    url: /validators/ein/
+    title: ein validator
+next:
+    url: /validators/file/
+    title: file validator
 # http://en.wikipedia.org/wiki/Email_address#Examples
 examples:
     - niceandsimple@example.com
@@ -123,6 +128,8 @@ examples:
 
                     {% include demo/tabs.html id="regexp" frameworks="bootstrap" dir="regexp" codes="programmatic" %}
                 </section>
+
+                {% include pagination.html %}
             </div>
 
             <div class="col-md-3">
