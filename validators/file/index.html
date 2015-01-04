@@ -91,76 +91,78 @@ mime_types:
                 <section>
                     <h2>Options</h2>
 
-                    <table class="table table-condensed">
-                        <thead>
-                            <tr>
-                                <th>Option</th>
-                                <th>HTML attribute</th>
-                                <th>Type</th>
-                                <th>Description</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><code>extension</code></td>
-                                <td><code>data-fv-file-extension</code></td>
-                                <td>String</td>
-                                <td>The allowed extensions, separated by a comma</td>
-                            </tr>
-                            <tr>
-                                <td><code>maxFiles</code></td>
-                                <td><code>data-fv-file-maxfiles</code></td>
-                                <td>Number</td>
-                                <td>The maximum number of files</td>
-                            </tr>
-                            <tr>
-                                <td><code>maxSize</code></td>
-                                <td><code>data-fv-file-maxsize</code></td>
-                                <td>Number</td>
-                                <td>The maximum file size in bytes</td>
-                            </tr>
-                            <tr>
-                                <td><code>maxTotalSize</code></td>
-                                <td><code>data-fv-file-maxtotalsize</code></td>
-                                <td>Number</td>
-                                <td>The maximum size in bytes for all files</td>
-                            </tr>
-                            <tr>
-                                <td><code>minFiles</code></td>
-                                <td><code>data-fv-file-minfiles</code></td>
-                                <td>Number</td>
-                                <td>The minimum number of files</td>
-                            </tr>
-                            <tr>
-                                <td><code>minSize</code></td>
-                                <td><code>data-fv-file-minsize</code></td>
-                                <td>Number</td>
-                                <td>The minimum file size in bytes</td>
-                            </tr>
-                            <tr>
-                                <td><code>minTotalSize</code></td>
-                                <td><code>data-fv-file-mintotalsize</code></td>
-                                <td>Number</td>
-                                <td>The minimum size in bytes for all files</td>
-                            </tr>
-                            <tr>
-                                <td><code>message</code></td>
-                                <td><code>data-fv-file-message</code></td>
-                                <td>String</td>
-                                <td>The error message</td>
-                            </tr>
-                            <tr>
-                                <td><code>type</code></td>
-                                <td><code>data-fv-file-type</code></td>
-                                <td>String</td>
-                                <td>
-                                    <p>The allowed MIME type, separated by a comma.</p>
-                                    <p>For example: Setting <code>image/jpeg,image/png,application/pdf</code> only allows to upload JPEG, PNG image and PDF document.</p>
-                                    <p>See <a href="#mime-types">popular MIME types</a> listed below.</p>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Option</th>
+                                    <th>HTML attribute</th>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>extension</code></td>
+                                    <td><code>data-fv-file-extension</code></td>
+                                    <td>String</td>
+                                    <td>The allowed extensions, separated by a comma</td>
+                                </tr>
+                                <tr>
+                                    <td><code>maxFiles</code></td>
+                                    <td><code>data-fv-file-maxfiles</code></td>
+                                    <td>Number</td>
+                                    <td>The maximum number of files</td>
+                                </tr>
+                                <tr>
+                                    <td><code>maxSize</code></td>
+                                    <td><code>data-fv-file-maxsize</code></td>
+                                    <td>Number</td>
+                                    <td>The maximum file size in bytes</td>
+                                </tr>
+                                <tr>
+                                    <td><code>maxTotalSize</code></td>
+                                    <td><code>data-fv-file-maxtotalsize</code></td>
+                                    <td>Number</td>
+                                    <td>The maximum size in bytes for all files</td>
+                                </tr>
+                                <tr>
+                                    <td><code>minFiles</code></td>
+                                    <td><code>data-fv-file-minfiles</code></td>
+                                    <td>Number</td>
+                                    <td>The minimum number of files</td>
+                                </tr>
+                                <tr>
+                                    <td><code>minSize</code></td>
+                                    <td><code>data-fv-file-minsize</code></td>
+                                    <td>Number</td>
+                                    <td>The minimum file size in bytes</td>
+                                </tr>
+                                <tr>
+                                    <td><code>minTotalSize</code></td>
+                                    <td><code>data-fv-file-mintotalsize</code></td>
+                                    <td>Number</td>
+                                    <td>The minimum size in bytes for all files</td>
+                                </tr>
+                                <tr>
+                                    <td><code>message</code></td>
+                                    <td><code>data-fv-file-message</code></td>
+                                    <td>String</td>
+                                    <td>The error message</td>
+                                </tr>
+                                <tr>
+                                    <td><code>type</code></td>
+                                    <td><code>data-fv-file-type</code></td>
+                                    <td>String</td>
+                                    <td>
+                                        <p>The allowed MIME type, separated by a comma.</p>
+                                        <p>For example: Setting <code>image/jpeg,image/png,application/pdf</code> only allows to upload JPEG, PNG image and PDF document.</p>
+                                        <p>See <a href="#mime-types">popular MIME types</a> listed below.</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
                     <p>The <code>maxSize</code> and <code>type</code> are only used if the browser supports HTML 5 File API.</p>
 
@@ -175,22 +177,24 @@ mime_types:
                     <h2>Popular MIME types</h2>
                     <p>The following table shows popular MIME types. For other MIME type, you can refer to the <a href="https://www.sitepoint.com/web-foundations/mime-types-complete-list/">complete list</a>.</p>
 
-                    <table class="table table-condensed">
-                        <thead>
-                            <tr>
-                                <th>MIME type</th>
-                                <th>File extensions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for item in page.mime_types %}
-                            <tr>
-                                <td>{{ item.type }}</td>
-                                <td>{{ item.ext }}</td>
-                            </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>MIME type</th>
+                                    <th>File extensions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for item in page.mime_types %}
+                                <tr>
+                                    <td>{{ item.type }}</td>
+                                    <td>{{ item.ext }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
                 </section>
 
                 <div class="doc-hr"></div>

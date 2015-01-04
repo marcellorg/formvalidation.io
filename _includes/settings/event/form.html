@@ -1,48 +1,51 @@
 <section>
     <h3 id="event-form">Form events</h3>
 
-    <table class="table table-condensed">
-        <thead>
-            <tr>
-                <th>Event</th>
-                <th>Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><code>init.form.bv</code></td>
-                <td>Triggered after the form is initialized by the plugin</td>
-            </tr>
-            <tr>
-                <td><code>error.form.bv</code></td>
-                <td>Triggered when the form is invalid</td>
-            </tr>
-            <tr>
-                <td><code>success.form.bv</code></td>
-                <td>Triggered when the form is valid</td>
-            </tr>
-            <tr>
-                <td><code>added.field.bv</code></td>
-                <td>Triggered after adding dynamic field</td>
-            </tr>
-            <tr>
-                <td><code>removed.field.bv</code></td>
-                <td>Triggered after removing given field</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Event</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>init.form.bv</code></td>
+                    <td>Triggered after the form is initialized by the plugin</td>
+                </tr>
+                <tr>
+                    <td><code>error.form.bv</code></td>
+                    <td>Triggered when the form is invalid</td>
+                </tr>
+                <tr>
+                    <td><code>success.form.bv</code></td>
+                    <td>Triggered when the form is valid</td>
+                </tr>
+                <tr>
+                    <td><code>added.field.bv</code></td>
+                    <td>Triggered after adding dynamic field</td>
+                </tr>
+                <tr>
+                    <td><code>removed.field.bv</code></td>
+                    <td>Triggered after removing given field</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
-    <table class="table table-condensed">
-        <thead>
-            <tr>
-                <th>Usage</th>
-                <th>Example</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Listening to event</td>
-                <td>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Usage</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Listening to event</td>
+                    <td>
 {% highlight javascript %}
 $(document).ready(function() {
     $(form)
@@ -93,11 +96,11 @@ $(document).ready(function() {
         });
 });
 {% endhighlight %}
-                </td>
-            </tr>
-            <tr>
-                <td>Using option</td>
-                <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Using option</td>
+                    <td>
 {% highlight javascript %}
 $(document).ready(function() {
     $(form)
@@ -111,11 +114,11 @@ $(document).ready(function() {
         });
 });
 {% endhighlight %}
-                </td>
-            </tr>
-            <tr>
-                <td>Using HTML 5 attributes</td>
-                <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Using HTML 5 attributes</td>
+                    <td>
 {% highlight html %}
 <form data-bv-onerror="onFormError" data-bv-onsuccess="onFormSuccess"></form>
 {% endhighlight %}
@@ -133,10 +136,11 @@ $(document).ready(function() {
     $(form).bootstrapValidator(options);
 });
 {% endhighlight %}
-                </td>
-            </tr>
-        </tbody>
-    </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
     <h4 id="event-form-examples">Examples</h4>
     <ul class="doc-list">

@@ -25,56 +25,58 @@ function(value, validator, $field) {
     <h4 id="dynamic-option-validators">Supported validators</h4>
 
     <p>Below is the list of validators supporting dynamic option. Refer to specific validator document to see the full list of options.</p>
-    <table class="table table-condensed">
-        <thead>
-            <tr>
-                <th>Validator</th>
-                <th>Dynamic option</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><a href="/validators/between/">between validator</a></td>
-                <td><code>min</code>, <code>max</code></td>
-            </tr>
-            <tr>
-                <td><a href="/validators/choice/">choice validator</a></td>
-                <td><code>min</code>, <code>max</code></td>
-            </tr>
-            <tr>
-                <td><a href="/validators/greaterThan/">greaterThan validator</a></td>
-                <td><code>value</code></td>
-            </tr>
-            <tr>
-                <td><a href="/validators/iban/">iban validator</a></td>
-                <td><code>country</code></td>
-            </tr>
-            <tr>
-                <td><a href="/validators/id/">id validator</a></td>
-                <td><code>country</code></td>
-            </tr>
-            <tr>
-                <td><a href="/validators/lessThan/">lessThan validator</a></td>
-                <td><code>value</code></td>
-            </tr>
-            <tr>
-                <td><a href="/validators/phone/">phone validator</a></td>
-                <td><code>country</code></td>
-            </tr>
-            <tr>
-                <td><a href="/validators/stringLength/">stringLength validator</a></td>
-                <td><code>min</code>, <code>max</code></td>
-            </tr>
-            <tr>
-                <td><a href="/validators/vat/">vat validator</a></td>
-                <td><code>country</code></td>
-            </tr>
-            <tr>
-                <td><a href="/validators/zipCode/">zipCode validator</a></td>
-                <td><code>country</code></td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Validator</th>
+                    <th>Dynamic option</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="/validators/between/">between validator</a></td>
+                    <td><code>min</code>, <code>max</code></td>
+                </tr>
+                <tr>
+                    <td><a href="/validators/choice/">choice validator</a></td>
+                    <td><code>min</code>, <code>max</code></td>
+                </tr>
+                <tr>
+                    <td><a href="/validators/greaterThan/">greaterThan validator</a></td>
+                    <td><code>value</code></td>
+                </tr>
+                <tr>
+                    <td><a href="/validators/iban/">iban validator</a></td>
+                    <td><code>country</code></td>
+                </tr>
+                <tr>
+                    <td><a href="/validators/id/">id validator</a></td>
+                    <td><code>country</code></td>
+                </tr>
+                <tr>
+                    <td><a href="/validators/lessThan/">lessThan validator</a></td>
+                    <td><code>value</code></td>
+                </tr>
+                <tr>
+                    <td><a href="/validators/phone/">phone validator</a></td>
+                    <td><code>country</code></td>
+                </tr>
+                <tr>
+                    <td><a href="/validators/stringLength/">stringLength validator</a></td>
+                    <td><code>min</code>, <code>max</code></td>
+                </tr>
+                <tr>
+                    <td><a href="/validators/vat/">vat validator</a></td>
+                    <td><code>country</code></td>
+                </tr>
+                <tr>
+                    <td><a href="/validators/zipCode/">zipCode validator</a></td>
+                    <td><code>country</code></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
     <div class="doc-alert doc-alert-info">
         If you develop your own validator which support dynamic option, the <a href="/api/#get-dynamic-option">getDynamicOption()</a> method might be useful.
@@ -85,27 +87,29 @@ function(value, validator, $field) {
     <p>Assume that your form uses <a href="/validators/zipCode/">zipCode validator</a> to validate a zipcode. The next sections show you how to use four ways above to define option value.</p>
 
     <p>You can use the following sample zipcodes for testing:</p>
-    <table class="table table-condensed">
-        <thead>
-            <tr>
-                <th>Country</th>
-                <th>Valid Zipcode</th>
-                <th>Invalid Zipcode</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>United States</td>
-                <td>12345</td>
-                <td>123</td>
-            </tr>
-            <tr>
-                <td>Italy</td>
-                <td>IT-12345</td>
-                <td>123</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Country</th>
+                    <th>Valid Zipcode</th>
+                    <th>Invalid Zipcode</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>United States</td>
+                    <td>12345</td>
+                    <td>123</td>
+                </tr>
+                <tr>
+                    <td>Italy</td>
+                    <td>IT-12345</td>
+                    <td>123</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
     <h4 id="dynamic-option-string">Using string as usual</h4>
 

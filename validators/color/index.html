@@ -134,37 +134,39 @@ related:
                 <section>
                     <h2>Options</h2>
 
-                    <table class="table table-condensed">
-                        <thead>
-                            <tr>
-                                <th>Option</th>
-                                <th>HTML attribute</th>
-                                <th>Type</th>
-                                <th>Description</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><code>message</code></td>
-                                <td><code>data-fv-color-message</code></td>
-                                <td>String</td>
-                                <td>The error message</td>
-                            </tr>
-                            <tr>
-                                <td><code>type</code></td>
-                                <td><code>data-fv-color-type</code></td>
-                                <td>String|String[]</td>
-                                <td>
-                                    <p>The type of color. It can be:</p>
-                                    <ul class="doc-list">
-                                        <li>One of <a href="#supported-types">supported types</a> listed below</li>
-                                        <li>Array of supported types</li>
-                                        <li>A string consists of supported types, separated by a comma</li>
-                                    </ul>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Option</th>
+                                    <th>HTML attribute</th>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>message</code></td>
+                                    <td><code>data-fv-color-message</code></td>
+                                    <td>String</td>
+                                    <td>The error message</td>
+                                </tr>
+                                <tr>
+                                    <td><code>type</code></td>
+                                    <td><code>data-fv-color-type</code></td>
+                                    <td>String|String[]</td>
+                                    <td>
+                                        <p>The type of color. It can be:</p>
+                                        <ul class="doc-list">
+                                            <li>One of <a href="#supported-types">supported types</a> listed below</li>
+                                            <li>Array of supported types</li>
+                                            <li>A string consists of supported types, separated by a comma</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
                     <div class="doc-alert doc-alert-info">
                         When setting options via HTML attributes, remember to enable the validator by setting data-fv-color="true".
@@ -177,150 +179,154 @@ related:
                     <h2>Supported types</h2>
 
                     <p>Following is the list of supported types:</p>
-                    <table class="table table-condensed">
-                        <thead>
-                            <tr>
-                                <th>Type</th>
-                                <th>Valid sample</th>
-                                <th>Invalid sample</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for type in page.color_types %}
-                            <tr>
-                                <td>{{ type.name }}</td>
-                                <td>
-                                    <ul class="doc-sample-list">
-                                        {% for sample in type.valid %}
-                                        <li><a href="javascript: void(0);" class="sample">{{ sample }}</a> <i class="fa"></i></li>
-                                        {% endfor %}
-                                    </ul>
-                                </td>
-                                <td>
-                                    <ul class="doc-sample-list">
-                                        {% for sample in type.invalid %}
-                                        <li><a href="javascript: void(0);" class="sample">{{ sample }}</a> <i class="fa"></i></li>
-                                        {% endfor %}
-                                    </ul>
-                                </td>
-                            </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Valid sample</th>
+                                    <th>Invalid sample</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for type in page.color_types %}
+                                <tr>
+                                    <td>{{ type.name }}</td>
+                                    <td>
+                                        <ul class="doc-sample-list">
+                                            {% for sample in type.valid %}
+                                            <li><a href="javascript: void(0);" class="sample">{{ sample }}</a> <i class="fa"></i></li>
+                                            {% endfor %}
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <ul class="doc-sample-list">
+                                            {% for sample in type.invalid %}
+                                            <li><a href="javascript: void(0);" class="sample">{{ sample }}</a> <i class="fa"></i></li>
+                                            {% endfor %}
+                                        </ul>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
 
                     <p>The <code>keyword</code> type accepts the following colors:</p>
-                    <table class="table table-condensed">
-                        <thead>
-                            <tr>
-                                <th>Starting with</th>
-                                <th>Colors</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>A</td>
-                                <td><pre><code>aliceblue, antiquewhite, aqua, aquamarine, azure</code></pre></td>
-                            </tr>
-                            <tr>
-                                <td>B</td>
-                                <td><pre><code>beige, bisque, black, blanchedalmond, blue, blueviolet, brown, burlywood</code></pre>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>C</td>
-                                <td><pre><code>cadetblue, chartreuse, chocolate, coral, cornflowerblue, cornsilk, crimson, cyan</code></pre>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>D</td>
-                                <td>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Starting with</th>
+                                    <th>Colors</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>A</td>
+                                    <td><pre><code>aliceblue, antiquewhite, aqua, aquamarine, azure</code></pre></td>
+                                </tr>
+                                <tr>
+                                    <td>B</td>
+                                    <td><pre><code>beige, bisque, black, blanchedalmond, blue, blueviolet, brown, burlywood</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>C</td>
+                                    <td><pre><code>cadetblue, chartreuse, chocolate, coral, cornflowerblue, cornsilk, crimson, cyan</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>D</td>
+                                    <td>
 <pre><code>darkblue, darkcyan, darkgoldenrod, darkgray, darkgreen, darkgrey, darkkhaki, darkmagenta,
 darkolivegreen, darkorange, darkorchid, darkred, darksalmon, darkseagreen, darkslateblue,
 darkslategray, darkslategrey, darkturquoise, darkviolet, deeppink, deepskyblue, dimgray,
 dimgrey, dodgerblue</code></pre>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>F</td>
-                                <td><pre><code>firebrick, floralwhite, forestgreen, fuchsia</code></pre></td>
-                            </tr>
-                            <tr>
-                                <td>G</td>
-                                <td><pre><code>gainsboro, ghostwhite, gold, goldenrod, gray, green, greenyellow, grey</code></pre></td>
-                            </tr>
-                            <tr>
-                                <td>H</td>
-                                <td><pre><code>honeydew, hotpink</code></pre></td>
-                            </tr>
-                            <tr>
-                                <td>I</td>
-                                <td><pre><code>indianred, indigo, ivory</code></pre></td>
-                            </tr>
-                            <tr>
-                                <td>K</td>
-                                <td><pre><code>khaki</code></pre></td>
-                            </tr>
-                            <tr>
-                                <td>L</td>
-                                <td>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>F</td>
+                                    <td><pre><code>firebrick, floralwhite, forestgreen, fuchsia</code></pre></td>
+                                </tr>
+                                <tr>
+                                    <td>G</td>
+                                    <td><pre><code>gainsboro, ghostwhite, gold, goldenrod, gray, green, greenyellow, grey</code></pre></td>
+                                </tr>
+                                <tr>
+                                    <td>H</td>
+                                    <td><pre><code>honeydew, hotpink</code></pre></td>
+                                </tr>
+                                <tr>
+                                    <td>I</td>
+                                    <td><pre><code>indianred, indigo, ivory</code></pre></td>
+                                </tr>
+                                <tr>
+                                    <td>K</td>
+                                    <td><pre><code>khaki</code></pre></td>
+                                </tr>
+                                <tr>
+                                    <td>L</td>
+                                    <td>
 <pre><code>lavender, lavenderblush, lawngreen, lemonchiffon, lightblue, lightcoral, lightcyan,
 lightgoldenrodyellow, lightgray, lightgreen, lightgrey, lightpink, lightsalmon, lightseagreen,
 lightskyblue, lightslategray, lightslategrey, lightsteelblue, lightyellow, lime, limegreen,
 linen</code></pre>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>M</td>
-                                <td>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>M</td>
+                                    <td>
 <pre><code>magenta, maroon, mediumaquamarine, mediumblue, mediumorchid, mediumpurple, mediumseagreen,
 mediumslateblue, mediumspringgreen, mediumturquoise, mediumvioletred, midnightblue, mintcream,
 mistyrose, moccasin</code></pre>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>N</td>
-                                <td><pre><code>navajowhite, navy</code></pre></td>
-                            </tr>
-                            <tr>
-                                <td>O</td>
-                                <td><pre><code>oldlace, olive, olivedrab, orange, orangered, orchid</code></pre></td>
-                            </tr>
-                            <tr>
-                                <td>P</td>
-                                <td>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>N</td>
+                                    <td><pre><code>navajowhite, navy</code></pre></td>
+                                </tr>
+                                <tr>
+                                    <td>O</td>
+                                    <td><pre><code>oldlace, olive, olivedrab, orange, orangered, orchid</code></pre></td>
+                                </tr>
+                                <tr>
+                                    <td>P</td>
+                                    <td>
 <pre><code>palegoldenrod, palegreen, paleturquoise, palevioletred, papayawhip, peachpuff, peru, pink,
 plum, powderblue, purple</code></pre>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>R</td>
-                                <td><pre><code>red, rosybrown, royalblue</code></pre></td>
-                            </tr>
-                            <tr>
-                                <td>S</td>
-                                <td>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>R</td>
+                                    <td><pre><code>red, rosybrown, royalblue</code></pre></td>
+                                </tr>
+                                <tr>
+                                    <td>S</td>
+                                    <td>
 <pre><code>saddlebrown, salmon, sandybrown, seagreen, seashell, sienna, silver, skyblue, slateblue,
 slategray, slategrey, snow, springgreen, steelblue</code></pre>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>T</td>
-                                <td><pre><code>tan, teal, thistle, tomato, transparent, turquoise</code></pre></td>
-                            </tr>
-                            <tr>
-                                <td>V</td>
-                                <td><pre><code>violet</code></pre></td>
-                            </tr>
-                            <tr>
-                                <td>W</td>
-                                <td><pre><code>wheat, white, whitesmoke</code></pre></td>
-                            </tr>
-                            <tr>
-                                <td>Y</td>
-                                <td><pre><code>yellow, yellowgreen</code></pre></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>T</td>
+                                    <td><pre><code>tan, teal, thistle, tomato, transparent, turquoise</code></pre></td>
+                                </tr>
+                                <tr>
+                                    <td>V</td>
+                                    <td><pre><code>violet</code></pre></td>
+                                </tr>
+                                <tr>
+                                    <td>W</td>
+                                    <td><pre><code>wheat, white, whitesmoke</code></pre></td>
+                                </tr>
+                                <tr>
+                                    <td>Y</td>
+                                    <td><pre><code>yellow, yellowgreen</code></pre></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </section>
 
                 <div class="doc-hr"></div>

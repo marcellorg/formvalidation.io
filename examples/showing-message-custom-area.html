@@ -35,28 +35,30 @@ permalink: /examples/showing-message-custom-area/
                     <p>The first solution which is easiest way is to use the <a href="/settings/#form-container">container</a> option.</p>
                     <p>This option indicates where the error messages are shown.</p>
 
-                    <table class="table table-condensed">
-                        <thead>
-                            <tr>
-                                <th>Value</th>
-                                <th>Description</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>CSS selector</td>
-                                <td>All error messages are placed in element defined by this CSS selector</td>
-                            </tr>
-                            <tr>
-                                <td><code>tooltip</code></td>
-                                <td>Error messages of each field are placed inside a <a href="http://getbootstrap.com/javascript/#tooltips">Bootstrap tooltip</a>.</td>
-                            </tr>
-                            <tr>
-                                <td><code>popover</code></td>
-                                <td>Error messages of each field are placed inside a <a href="http://getbootstrap.com/javascript/#popovers">Bootstrap popover</a>.</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Value</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>CSS selector</td>
+                                    <td>All error messages are placed in element defined by this CSS selector</td>
+                                </tr>
+                                <tr>
+                                    <td><code>tooltip</code></td>
+                                    <td>Error messages of each field are placed inside a <a href="http://getbootstrap.com/javascript/#tooltips">Bootstrap tooltip</a>.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>popover</code></td>
+                                    <td>Error messages of each field are placed inside a <a href="http://getbootstrap.com/javascript/#popovers">Bootstrap popover</a>.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
                     <p>The contact form below shows messages in an element located at the bottom of form.</p>
                     <div class="doc-demo">
@@ -99,32 +101,34 @@ permalink: /examples/showing-message-custom-area/
                     </ul>
                     <p>It's possible to solve these requirements by using the methods and events below:</p>
 
-                    <table class="table table-condensed">
-                        <thead>
-                            <tr>
-                                <th>Event/Method</th>
-                                <th>Description</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><a href="/settings/#event-form">success.form.bv</a> event</td>
-                                <td>Triggered when the form is valid</td>
-                            </tr>
-                            <tr>
-                                <td><a href="/settings/#event-field">error.field.bv</a> event</td>
-                                <td>Triggered when any field is invalid</td>
-                            </tr>
-                            <tr>
-                                <td><a href="/settings/#event-field">success.field.bv</a> event</td>
-                                <td>Triggered when any field is valid</td>
-                            </tr>
-                            <tr>
-                                <td><a href="/api/#get-messages">getMessages(field)</a> method</td>
-                                <td>Get the field messages</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Event/Method</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><a href="/settings/#event-form">success.form.bv</a> event</td>
+                                    <td>Triggered when the form is valid</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="/settings/#event-field">error.field.bv</a> event</td>
+                                    <td>Triggered when any field is invalid</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="/settings/#event-field">success.field.bv</a> event</td>
+                                    <td>Triggered when any field is valid</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="/api/#get-messages">getMessages(field)</a> method</td>
+                                    <td>Get the field messages</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
                     <p>Looking at the HTML and JS tabs to see how we get the job done.</p>
 

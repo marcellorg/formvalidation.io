@@ -1,52 +1,55 @@
 <section>
     <h3 id="event-field">Field events</h3>
 
-    <table class="table table-condensed">
-        <thead>
-            <tr>
-                <th>Event</th>
-                <th>Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><code>init.field.bv</code></td>
-                <td>Triggered after the field is initialized by the plugin</td>
-            </tr>
-            <tr>
-                <td><code>error.field.bv</code></td>
-                <td>Triggered when any field is invalid</td>
-            </tr>
-            <tr>
-                <td><code>success.field.bv</code></td>
-                <td>Triggered when any field is valid</td>
-            </tr>
-            <tr>
-                <td><code>status.field.bv</code></td>
-                <td>
-                    <p>Triggered when field changes status. Each field has four possible status:</p>
-                    <ul class="doc-list">
-                        <li><code>NOT_VALIDATED</code>: The field is not validated yet</li>
-                        <li><code>VALIDATING</code>: The field is being validated</li>
-                        <li><code>INVALID</code>: The field is invalid</li>
-                        <li><code>VALID</code>: The field is valid</li>
-                    </ul>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Event</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>init.field.bv</code></td>
+                    <td>Triggered after the field is initialized by the plugin</td>
+                </tr>
+                <tr>
+                    <td><code>error.field.bv</code></td>
+                    <td>Triggered when any field is invalid</td>
+                </tr>
+                <tr>
+                    <td><code>success.field.bv</code></td>
+                    <td>Triggered when any field is valid</td>
+                </tr>
+                <tr>
+                    <td><code>status.field.bv</code></td>
+                    <td>
+                        <p>Triggered when field changes status. Each field has four possible status:</p>
+                        <ul class="doc-list">
+                            <li><code>NOT_VALIDATED</code>: The field is not validated yet</li>
+                            <li><code>VALIDATING</code>: The field is being validated</li>
+                            <li><code>INVALID</code>: The field is invalid</li>
+                            <li><code>VALID</code>: The field is valid</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
-    <table class="table table-condensed">
-        <thead>
-            <tr>
-                <th>Usage</th>
-                <th>Example</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Listening to event</td>
-                <td>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Usage</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Listening to event</td>
+                    <td>
 {% highlight javascript %}
 $(document).ready(function() {
     $(form)
@@ -85,23 +88,25 @@ $(document).ready(function() {
         });
 });
 {% endhighlight %}
-                </td>
-            </tr>
-        </tbody>
-    </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
     <p>If you want to trigger this event for particular field, for example, the <code>name="email"</code> field:</p>
-    <table class="table table-condensed">
-        <thead>
-            <tr>
-                <th>Usage</th>
-                <th>Example</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Listening to event</td>
-                <td>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Usage</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Listening to event</td>
+                    <td>
 {% highlight javascript %}
 $(document).ready(function() {
     $(form)
@@ -126,11 +131,11 @@ $(document).ready(function() {
         });
 });
 {% endhighlight %}
-                </td>
-            </tr>
-            <tr>
-                <td>Using option</td>
-                <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Using option</td>
+                    <td>
 {% highlight javascript %}
 $(document).ready(function() {
     $(form)
@@ -154,11 +159,11 @@ $(document).ready(function() {
         });
 });
 {% endhighlight %}
-                </td>
-            </tr>
-            <tr>
-                <td>Using HTML 5 attributes</td>
-                <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Using HTML 5 attributes</td>
+                    <td>
 {% highlight html %}
 <form>
     ...
@@ -187,10 +192,11 @@ $(document).ready(function() {
     $(form).bootstrapValidator(options);
 });
 {% endhighlight %}
-                </td>
-            </tr>
-        </tbody>
-    </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
     <h4 id="event-field-examples">Examples</h4>
     <ul class="doc-list">

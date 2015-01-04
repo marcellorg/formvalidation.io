@@ -295,30 +295,32 @@ related:
                 <section>
                     <h2>Options</h2>
 
-                    <table class="table table-condensed">
-                        <thead>
-                            <tr>
-                                <th>Option</th>
-                                <th>HTML attribute</th>
-                                <th>Type</th>
-                                <th>Description</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><code>country</code><sup>*</sup></td>
-                                <td><code>data-fv-phone-country</code></td>
-                                <td>String</td>
-                                <td>An ISO-3166 country code.<br/>It's <a href="/settings/#dynamic-option">dynamic option</a></td>
-                            </tr>
-                            <tr>
-                                <td><code>message</code></td>
-                                <td><code>data-fv-phone-message</code></td>
-                                <td>String</td>
-                                <td>The error message</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Option</th>
+                                    <th>HTML attribute</th>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>country</code><sup>*</sup></td>
+                                    <td><code>data-fv-phone-country</code></td>
+                                    <td>String</td>
+                                    <td>An ISO-3166 country code.<br/>It's <a href="/settings/#dynamic-option">dynamic option</a></td>
+                                </tr>
+                                <tr>
+                                    <td><code>message</code></td>
+                                    <td><code>data-fv-phone-message</code></td>
+                                    <td>String</td>
+                                    <td>The error message</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
                     <div class="doc-alert doc-alert-info">
                         When setting options via HTML attributes, remember to enable the validator by setting data-fv-phone="true".
@@ -329,40 +331,42 @@ related:
                     </div>
 
                     <p>The supported countries are:</p>
-                    <table class="table table-condensed">
-                        <thead>
-                            <tr>
-                                <th>No.</th>
-                                <th>Country</th>
-                                <th>Code</th>
-                                <th>Valid examples</th>
-                                <th>Invalid examples</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for item in page.countries %}
-                            <tr>
-                                <td>{{ forloop.index }}</td>
-                                <td>{{ item.country }}</td>
-                                <td>{{ item.code }} {% if item.code == "US" %}<label class="label label-default">default</label>{% endif %}</td>
-                                <td>
-                                    <ul class="doc-sample-list">
-                                        {% for sample in item.valid %}
-                                        <li><a href="javascript: void(0);" class="sample" data-country="{{ item.code }}">{{ sample }}</a> <i class="fa"></i></li>
-                                        {% endfor %}
-                                    </ul>
-                                </td>
-                                <td>
-                                    <ul class="doc-sample-list">
-                                        {% for sample in item.invalid %}
-                                        <li><a href="javascript: void(0);" class="sample" data-country="{{ item.code }}">{{ sample }}</a> <i class="fa"></i></li>
-                                        {% endfor %}
-                                    </ul>
-                                </td>
-                            </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>No.</th>
+                                    <th>Country</th>
+                                    <th>Code</th>
+                                    <th>Valid examples</th>
+                                    <th>Invalid examples</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for item in page.countries %}
+                                <tr>
+                                    <td>{{ forloop.index }}</td>
+                                    <td>{{ item.country }}</td>
+                                    <td>{{ item.code }} {% if item.code == "US" %}<label class="label label-default">default</label>{% endif %}</td>
+                                    <td>
+                                        <ul class="doc-sample-list">
+                                            {% for sample in item.valid %}
+                                            <li><a href="javascript: void(0);" class="sample" data-country="{{ item.code }}">{{ sample }}</a> <i class="fa"></i></li>
+                                            {% endfor %}
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <ul class="doc-sample-list">
+                                            {% for sample in item.invalid %}
+                                            <li><a href="javascript: void(0);" class="sample" data-country="{{ item.code }}">{{ sample }}</a> <i class="fa"></i></li>
+                                            {% endfor %}
+                                        </ul>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
                 </section>
 
                 <div class="doc-hr"></div>

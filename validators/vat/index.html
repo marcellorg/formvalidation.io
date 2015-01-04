@@ -262,30 +262,32 @@ related:
                 <section>
                     <h2>Options</h2>
 
-                    <table class="table table-condensed">
-                        <thead>
-                            <tr>
-                                <th>Option</th>
-                                <th>HTML attribute</th>
-                                <th>Type</th>
-                                <th>Description</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><code>country</code></td>
-                                <td><code>data-fv-vat-country</code></td>
-                                <td>String</td>
-                                <td>An ISO-3166 country code.<br/>It's <a href="/settings/#dynamic-option">dynamic option</a>.<br/>If it is not defined, it will be parsed from the VAT number</td>
-                            </tr>
-                            <tr>
-                                <td><code>message</code></td>
-                                <td><code>data-fv-vat-message</code></td>
-                                <td>String</td>
-                                <td>The error message</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Option</th>
+                                    <th>HTML attribute</th>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>country</code></td>
+                                    <td><code>data-fv-vat-country</code></td>
+                                    <td>String</td>
+                                    <td>An ISO-3166 country code.<br/>It's <a href="/settings/#dynamic-option">dynamic option</a>.<br/>If it is not defined, it will be parsed from the VAT number</td>
+                                </tr>
+                                <tr>
+                                    <td><code>message</code></td>
+                                    <td><code>data-fv-vat-message</code></td>
+                                    <td>String</td>
+                                    <td>The error message</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
                     <div class="doc-alert doc-alert-info">
                         When setting options via HTML attributes, remember to enable the validator by setting data-fv-vat="true".
@@ -293,34 +295,36 @@ related:
 
                     <p>The validator supports the following countries (click the example VAT number to validate it):</p>
 
-                    <table class="table table-condensed">
-                        <thead>
-                            <tr>
-                                <th>No.</th>
-                                <th>Country</th>
-                                <th>Abbreviation VAT name</th>
-                                <th>Country code</th>
-                                <th>Example</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for item in page.countries %}
-                            <tr>
-                                <td>{{ forloop.index }}</td>
-                                <td>{{ item.country }}</td>
-                                <td>{{ item.abbr }}</td>
-                                <td>{{ item.code }}</td>
-                                <td>
-                                    <ul class="doc-sample-list">
-                                        {% for sample in item.examples %}
-                                        <li><a href="javascript: void(0);" class="sample">{{ sample }}</a> <i class="fa"></i></li>
-                                        {% endfor %}
-                                    </ul>
-                                </td>
-                            </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>No.</th>
+                                    <th>Country</th>
+                                    <th>Abbreviation VAT name</th>
+                                    <th>Country code</th>
+                                    <th>Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for item in page.countries %}
+                                <tr>
+                                    <td>{{ forloop.index }}</td>
+                                    <td>{{ item.country }}</td>
+                                    <td>{{ item.abbr }}</td>
+                                    <td>{{ item.code }}</td>
+                                    <td>
+                                        <ul class="doc-sample-list">
+                                            {% for sample in item.examples %}
+                                            <li><a href="javascript: void(0);" class="sample">{{ sample }}</a> <i class="fa"></i></li>
+                                            {% endfor %}
+                                        </ul>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
                 </section>
 
                 <div class="doc-hr"></div>

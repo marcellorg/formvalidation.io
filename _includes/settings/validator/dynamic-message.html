@@ -79,17 +79,18 @@ $(document).ready(function() {
     </div>
 
     <p>Below is the list of validators supporting dynamic message:</p>
-    <table class="table table-condensed">
-        <thead>
-            <tr>
-                <th>Validator</th>
-                <th>Example</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><a href="/validators/between/">between validator</a></td>
-                <td>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Validator</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="/validators/between/">between validator</a></td>
+                    <td>
 {% highlight javascript %}
 between: {
     min: ...,
@@ -97,11 +98,11 @@ between: {
     message: 'Please enter a value between %s and %s'
 }
 {% endhighlight %}
-                </td>
-            </tr>
-            <tr>
-                <td><a href="/validators/choice/">choice validator</a></td>
-                <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="/validators/choice/">choice validator</a></td>
+                    <td>
 {% highlight javascript %}
 choice: {
     min: ...,
@@ -109,66 +110,66 @@ choice: {
     message: 'Please choose %s - %s options'
 }
 {% endhighlight %}
-                </td>
-            </tr>
-            <tr>
-                <td><a href="/validators/greaterThan/">greaterThan validator</a></td>
-                <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="/validators/greaterThan/">greaterThan validator</a></td>
+                    <td>
 {% highlight javascript %}
 greaterThan: {
     value: ...,
     message: 'Please enter a value greater than or equal to %s'
 }
 {% endhighlight %}
-                </td>
-            </tr>
-            <tr>
-                <td><a href="/validators/iban/">iban validator</a></td>
-                <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="/validators/iban/">iban validator</a></td>
+                    <td>
 {% highlight javascript %}
 iban: {
     country: ...,
     message: 'Please enter a valid IBAN number in %s'
 }
 {% endhighlight %}
-                </td>
-            </tr>
-            <tr>
-                <td><a href="/validators/id/">id validator</a></td>
-                <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="/validators/id/">id validator</a></td>
+                    <td>
 {% highlight javascript %}
 id: {
     country: ...,
     message: 'Please enter a valid %s identification number'
 }
 {% endhighlight %}
-                </td>
-            </tr>
-            <tr>
-                <td><a href="/validators/lessThan/">lessThan validator</a></td>
-                <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="/validators/lessThan/">lessThan validator</a></td>
+                    <td>
 {% highlight javascript %}
 lessThan: {
     value: ...,
     message: 'Please enter a value less than or equal to %s'
 }
 {% endhighlight %}
-                </td>
-            </tr>
-            <tr>
-                <td><a href="/validators/phone/">phone validator</a></td>
-                <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="/validators/phone/">phone validator</a></td>
+                    <td>
 {% highlight javascript %}
 phone: {
     country: ...,
     message: 'Please enter a valid phone number in %s'
 }
 {% endhighlight %}
-                </td>
-            </tr>
-            <tr>
-                <td><a href="/validators/stringLength/">stringLength validator</a></td>
-                <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="/validators/stringLength/">stringLength validator</a></td>
+                    <td>
 {% highlight javascript %}
 stringLength: {
     min: ...,
@@ -176,33 +177,33 @@ stringLength: {
     message: 'Please enter value between %s and %s characters long'
 }
 {% endhighlight %}
-                </td>
-            </tr>
-            <tr>
-                <td><a href="/validators/vat/">vat validator</a></td>
-                <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="/validators/vat/">vat validator</a></td>
+                    <td>
 {% highlight javascript %}
 vat: {
     country: ...,
     message: 'Please enter a valid %s VAT number'
 }
 {% endhighlight %}
-                </td>
-            </tr>
-            <tr>
-                <td><a href="/validators/zipCode/">zipCode validator</a></td>
-                <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="/validators/zipCode/">zipCode validator</a></td>
+                    <td>
 {% highlight javascript %}
 zipCode: {
     country: ...,
     message: 'Please enter a valid %s'
 }
 {% endhighlight %}
-                </td>
-            </tr>
-            <tr>
-                <td><a href="/validators/callback/">callback validator</a></td>
-                <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="/validators/callback/">callback validator</a></td>
+                    <td>
 {% highlight javascript %}
 callback: {
     callback: function(value, validator, $field) {
@@ -221,20 +222,20 @@ callback: {
     }
 }
 {% endhighlight %}
-                </td>
-            </tr>
-            <tr>
-                <td><a href="/validators/remote/">remote validator</a></td>
-                <td>
-                    <p>The backend returns a JSON string that consists of <code>valid</code> and <code>message</code> keys:</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="/validators/remote/">remote validator</a></td>
+                    <td>
+                        <p>The backend returns a JSON string that consists of <code>valid</code> and <code>message</code> keys:</p>
 {% highlight javascript %}
 { valid: true, message: 'The error message' }
 {% endhighlight %}
-                </td>
-            </tr>
-            <tr>
-                <td><a href="/developing/">Your own validator</a></td>
-                <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="/developing/">Your own validator</a></td>
+                    <td>
 {% highlight javascript %}
 (function($) {
     $.fn.bootstrapValidator.validators.yourValidatorName = {
@@ -255,10 +256,11 @@ callback: {
     };
 }(window.jQuery));
 {% endhighlight %}
-                </td>
-            </tr>
-        </tbody>
-    </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
     <h4>Turning off dynamic message</h4>
 
@@ -267,17 +269,18 @@ callback: {
         <li>Don't use <code>%s</code> characters in the message</li>
         <li>Don't include the <code>message</code> in the result returned by <a href="/validators/callback/">callback</a>, <a href="/validators/remote/">remote validator</a>, or <a href="/developing/">your own validator</a>.</li>
     </ul>
-    <table class="table table-condensed">
-        <thead>
-            <tr>
-                <th>Validator</th>
-                <th>Example</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><a href="/validators/between/">between validator</a></td>
-                <td>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Validator</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="/validators/between/">between validator</a></td>
+                    <td>
 {% highlight javascript %}
 between: {
     min: 20,
@@ -285,11 +288,11 @@ between: {
     message: 'Please enter a value between 20 and 100'
 }
 {% endhighlight %}
-                </td>
-            </tr>
-            <tr>
-                <td><a href="/validators/callback/">callback validator</a></td>
-                <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="/validators/callback/">callback validator</a></td>
+                    <td>
 {% highlight javascript %}
 callback: {
     callback: function(value, validator, $field) {
@@ -298,20 +301,20 @@ callback: {
     }
 }
 {% endhighlight %}
-                </td>
-            </tr>
-            <tr>
-                <td><a href="/validators/remote/">remote validator</a></td>
-                <td>
-                    <p>The backend returns a JSON string that consists of <code>valid</code> key:</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="/validators/remote/">remote validator</a></td>
+                    <td>
+                        <p>The backend returns a JSON string that consists of <code>valid</code> key:</p>
 {% highlight javascript %}
 { valid: true }
 {% endhighlight %}
-                </td>
-            </tr>
-            <tr>
-                <td><a href="/developing/">Your own validator</a></td>
-                <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="/developing/">Your own validator</a></td>
+                    <td>
 {% highlight javascript %}
 (function($) {
     $.fn.bootstrapValidator.validators.yourValidatorName = {
@@ -322,10 +325,11 @@ callback: {
     };
 }(window.jQuery));
 {% endhighlight %}
-                </td>
-            </tr>
-        </tbody>
-    </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </section>
 
 <script>

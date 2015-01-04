@@ -18,66 +18,68 @@ permalink: /validators/remote/
                 <section>
                     <h2>Options</h2>
 
-                    <table class="table table-condensed">
-                        <thead>
-                            <tr>
-                                <th>Option</th>
-                                <th>HTML attribute</th>
-                                <th>Type</th>
-                                <th>Description</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><code>data</code></td>
-                                <td><code>data-fv-remote-data</code></td>
-                                <td>Object</td>
-                                <td>
-                                    The data sent to remote URL.<br />
-                                    You don't need to use this option if there is only field, defined as field name, sent to the remote URL.<br/>
-                                    When using <code>data-fv-remote-data</code> attribute, its value must be an encoded JSON string.
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><code>delay</code></td>
-                                <td><code>data-fv-remote-delay</code></td>
-                                <td>Number</td>
-                                <td>The Ajax request created by the remote validator is only fired once in the delay duration time.</td>
-                            </tr>
-                            <tr>
-                                <td><code>message</code></td>
-                                <td><code>data-fv-remote-message</code></td>
-                                <td>String</td>
-                                <td>The error message</td>
-                            </tr>
-                            <tr>
-                                <td><code>name</code></td>
-                                <td><code>data-fv-remote-name</code></td>
-                                <td>String</td>
-                                <td>The name of field which need to validate</td>
-                            </tr>
-                            <tr>
-                                <td><code>type</code></td>
-                                <td><code>data-fv-remote-type</code></td>
-                                <td>String</td>
-                                <td>The method used to send data to back-end. It can be <code>GET</code> <span class="label label-default">default</span> or <code>POST</code></td>
-                            </tr>
-                            <tr>
-                                <td><code>url</code><sup>*</sup></td>
-                                <td><code>data-fv-remote-url</code></td>
-                                <td>String|Function</td>
-                                <td>The remote URL.<br/>
-                                    If you want to use a dynamic URL, then use the callback as following:
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Option</th>
+                                    <th>HTML attribute</th>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>data</code></td>
+                                    <td><code>data-fv-remote-data</code></td>
+                                    <td>Object</td>
+                                    <td>
+                                        The data sent to remote URL.<br />
+                                        You don't need to use this option if there is only field, defined as field name, sent to the remote URL.<br/>
+                                        When using <code>data-fv-remote-data</code> attribute, its value must be an encoded JSON string.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><code>delay</code></td>
+                                    <td><code>data-fv-remote-delay</code></td>
+                                    <td>Number</td>
+                                    <td>The Ajax request created by the remote validator is only fired once in the delay duration time.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>message</code></td>
+                                    <td><code>data-fv-remote-message</code></td>
+                                    <td>String</td>
+                                    <td>The error message</td>
+                                </tr>
+                                <tr>
+                                    <td><code>name</code></td>
+                                    <td><code>data-fv-remote-name</code></td>
+                                    <td>String</td>
+                                    <td>The name of field which need to validate</td>
+                                </tr>
+                                <tr>
+                                    <td><code>type</code></td>
+                                    <td><code>data-fv-remote-type</code></td>
+                                    <td>String</td>
+                                    <td>The method used to send data to back-end. It can be <code>GET</code> <span class="label label-default">default</span> or <code>POST</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>url</code><sup>*</sup></td>
+                                    <td><code>data-fv-remote-url</code></td>
+                                    <td>String|Function</td>
+                                    <td>The remote URL.<br/>
+                                        If you want to use a dynamic URL, then use the callback as following:
 {% highlight javascript %}
 url: function(validator) {
     // validator is BootstrapValidator instance
     return 'the URL';
 }
 {% endhighlight %}
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
                     <div class="doc-alert doc-alert-info">
                         When setting options via HTML attributes, remember to enable the validator by setting data-fv-remote="true".

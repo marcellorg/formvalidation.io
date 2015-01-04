@@ -261,30 +261,32 @@ related:
                 <section>
                     <h2>Options</h2>
 
-                    <table class="table table-condensed">
-                        <thead>
-                            <tr>
-                                <th>Option</th>
-                                <th>HTML attribute</th>
-                                <th>Type</th>
-                                <th>Description</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><code>country</code></td>
-                                <td><code>data-fv-iban-country</code></td>
-                                <td>String</td>
-                                <td>An ISO-3166 country code.<br/>It's <a href="/settings/#dynamic-option">dynamic option</a></td>
-                            </tr>
-                            <tr>
-                                <td><code>message</code></td>
-                                <td><code>data-fv-iban-message</code></td>
-                                <td>String</td>
-                                <td>The error message</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Option</th>
+                                    <th>HTML attribute</th>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>country</code></td>
+                                    <td><code>data-fv-iban-country</code></td>
+                                    <td>String</td>
+                                    <td>An ISO-3166 country code.<br/>It's <a href="/settings/#dynamic-option">dynamic option</a></td>
+                                </tr>
+                                <tr>
+                                    <td><code>message</code></td>
+                                    <td><code>data-fv-iban-message</code></td>
+                                    <td>String</td>
+                                    <td>The error message</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
                     <div class="doc-alert doc-alert-info">
                         When setting options via HTML attributes, remember to enable the validator by setting data-fv-iban="true".
@@ -293,28 +295,30 @@ related:
                     <p>If the <code>country</code> is not defined, it will be parsed from the IBAN number.</p>
                     <p>The validator supports the following countries (sorted by the country code in alphabetical order):</p>
 
-                    <table class="table table-condensed">
-                        <thead>
-                            <tr>
-                                <th>No.</th>
-                                <th>Country</th>
-                                <th>Code</th>
-                                <th>Sample IBAN</th>
-                                <th>Result</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for item in page.countries %}
-                            <tr>
-                                <td>{{ forloop.index }}</td>
-                                <td>{{ item.country }}</td>
-                                <td>{{ item.code }}</td>
-                                <td><a href="javascript: void(0);" class="sample">{{ item.example }}</a></td>
-                                <td><i class="fa"></i></td>
-                            </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>No.</th>
+                                    <th>Country</th>
+                                    <th>Code</th>
+                                    <th>Sample IBAN</th>
+                                    <th>Result</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for item in page.countries %}
+                                <tr>
+                                    <td>{{ forloop.index }}</td>
+                                    <td>{{ item.country }}</td>
+                                    <td>{{ item.code }}</td>
+                                    <td><a href="javascript: void(0);" class="sample">{{ item.example }}</a></td>
+                                    <td><i class="fa"></i></td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
                 </section>
 
                 <div class="doc-hr"></div>

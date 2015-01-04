@@ -99,36 +99,38 @@ related:
                 <section>
                     <h2>Options</h2>
 
-                    <table class="table table-condensed">
-                        <thead>
-                            <tr>
-                                <th>Option</th>
-                                <th>HTML attribute</th>
-                                <th>Type</th>
-                                <th>Description</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><code>allowLocal</code></td>
-                                <td><code>data-fv-uri-allowlocal</code></td>
-                                <td>Boolean</td>
-                                <td>Allow the private and local network IP.<br/>It is <code>false</code>, by default.</td>
-                            </tr>
-                            <tr>
-                                <td><code>message</code></td>
-                                <td><code>data-fv-uri-message</code></td>
-                                <td>String</td>
-                                <td>The error message</td>
-                            </tr>
-                            <tr>
-                                <td><code>protocol</code></td>
-                                <td><code>data-fv-uri-protocol</code></td>
-                                <td>String</td>
-                                <td>The protocols, separated by a comma. By default, it is set to <code>http, https, ftp</code></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Option</th>
+                                    <th>HTML attribute</th>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>allowLocal</code></td>
+                                    <td><code>data-fv-uri-allowlocal</code></td>
+                                    <td>Boolean</td>
+                                    <td>Allow the private and local network IP.<br/>It is <code>false</code>, by default.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>message</code></td>
+                                    <td><code>data-fv-uri-message</code></td>
+                                    <td>String</td>
+                                    <td>The error message</td>
+                                </tr>
+                                <tr>
+                                    <td><code>protocol</code></td>
+                                    <td><code>data-fv-uri-protocol</code></td>
+                                    <td>String</td>
+                                    <td>The protocols, separated by a comma. By default, it is set to <code>http, https, ftp</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
                     <div class="doc-alert doc-alert-info">
                         When setting options via HTML attributes, remember to enable the validator by setting data-fv-uri="true".<br/>
@@ -147,35 +149,37 @@ related:
                         Thank to <a href="http://mathiasbynens.be/">Mathias Bynens</a> for providing this amazing collection of <a href="http://mathiasbynens.be/demo/url-regex">URL examples</a>.
                     </div>
 
-                    <table class="table table-condensed">
-                        <thead>
-                            <tr>
-                                <th>URL</th>
-                                <th>Result</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td colspan="2" class="active"><strong>Valid URL examples</strong></td>
-                            </tr>
-                            {% for url in page.examples.valid %}
-                            <tr>
-                                <td><a href="javascript: void(0);" class="sample">{{ url }}</a></td>
-                                <td><i class="fa"></i></td>
-                            </tr>
-                            {% endfor %}
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>URL</th>
+                                    <th>Result</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="2" class="active"><strong>Valid URL examples</strong></td>
+                                </tr>
+                                {% for url in page.examples.valid %}
+                                <tr>
+                                    <td><a href="javascript: void(0);" class="sample">{{ url }}</a></td>
+                                    <td><i class="fa"></i></td>
+                                </tr>
+                                {% endfor %}
 
-                            <tr>
-                                <td colspan="2" class="active"><strong>Invalid URL examples</strong></td>
-                            </tr>
-                            {% for url in page.examples.invalid %}
-                            <tr>
-                                <td><a href="javascript: void(0);" class="sample">{{ url }}</a></td>
-                                <td><i class="fa"></i></td>
-                            </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
+                                <tr>
+                                    <td colspan="2" class="active"><strong>Invalid URL examples</strong></td>
+                                </tr>
+                                {% for url in page.examples.invalid %}
+                                <tr>
+                                    <td><a href="javascript: void(0);" class="sample">{{ url }}</a></td>
+                                    <td><i class="fa"></i></td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
 
                     {% include demo/tabs.html id="basic" frameworks="bootstrap" dir="basic" codes="programmatic,declarative" %}
 

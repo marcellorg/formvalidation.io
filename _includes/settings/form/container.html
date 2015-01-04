@@ -1,28 +1,30 @@
 <section>
     <h3 id="form-container">container: String</h3>
     <p>Indicate where the error messages are shown.</p>
-    <table class="table table-condensed">
-        <thead>
-            <tr>
-                <th>Value</th>
-                <th>Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>CSS selector</td>
-                <td>All error messages are placed in element defined by this CSS selector</td>
-            </tr>
-            <tr>
-                <td><code>tooltip</code></td>
-                <td>Error messages of each field are placed inside a <a href="http://getbootstrap.com/javascript/#tooltips">Bootstrap tooltip</a>.</td>
-            </tr>
-            <tr>
-                <td><code>popover</code></td>
-                <td>Error messages of each field are placed inside a <a href="http://getbootstrap.com/javascript/#popovers">Bootstrap popover</a>.</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Value</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>CSS selector</td>
+                    <td>All error messages are placed in element defined by this CSS selector</td>
+                </tr>
+                <tr>
+                    <td><code>tooltip</code></td>
+                    <td>Error messages of each field are placed inside a <a href="http://getbootstrap.com/javascript/#tooltips">Bootstrap tooltip</a>.</td>
+                </tr>
+                <tr>
+                    <td><code>popover</code></td>
+                    <td>Error messages of each field are placed inside a <a href="http://getbootstrap.com/javascript/#popovers">Bootstrap popover</a>.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
     <p>This option can be <a href="#field-container">overridden</a> by particular field.</p>
 
     <h4 id="form-container-examples">Examples</h4>

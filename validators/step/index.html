@@ -18,36 +18,38 @@ permalink: /validators/step/
                 <section>
                     <h2>Options</h2>
 
-                    <table class="table table-condensed">
-                        <thead>
-                            <tr>
-                                <th>Option</th>
-                                <th>HTML attribute</th>
-                                <th>Type</th>
-                                <th>Description</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><code>baseValue</code></td>
-                                <td><code>data-fv-step-base</code></td>
-                                <td>Float</td>
-                                <td>The base value, default to 0</td>
-                            </tr>
-                            <tr>
-                                <td><code>message</code></td>
-                                <td><code>data-fv-step-message</code></td>
-                                <td>String</td>
-                                <td>The error message</td>
-                            </tr>
-                            <tr>
-                                <td><code>step</code></td>
-                                <td><code>data-fv-step-step</code></td>
-                                <td>Float</td>
-                                <td>The step, default to 1</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Option</th>
+                                    <th>HTML attribute</th>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>baseValue</code></td>
+                                    <td><code>data-fv-step-base</code></td>
+                                    <td>Float</td>
+                                    <td>The base value, default to 0</td>
+                                </tr>
+                                <tr>
+                                    <td><code>message</code></td>
+                                    <td><code>data-fv-step-message</code></td>
+                                    <td>String</td>
+                                    <td>The error message</td>
+                                </tr>
+                                <tr>
+                                    <td><code>step</code></td>
+                                    <td><code>data-fv-step-step</code></td>
+                                    <td>Float</td>
+                                    <td>The step, default to 1</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
                     <div class="doc-alert doc-alert-info">
                         When setting options via HTML attributes, remember to enable the validator by setting data-fv-step="true".

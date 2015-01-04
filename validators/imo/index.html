@@ -19,24 +19,26 @@ examples: IMO 9074729, imo 9074729, 9074729, IMO 9074728
                 <section>
                     <h2>Options</h2>
 
-                    <table class="table table-condensed">
-                        <thead>
-                            <tr>
-                                <th>Option</th>
-                                <th>HTML attribute</th>
-                                <th>Type</th>
-                                <th>Description</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><code>message</code></td>
-                                <td><code>data-fv-imo-message</code></td>
-                                <td>String</td>
-                                <td>The error message</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Option</th>
+                                    <th>HTML attribute</th>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>message</code></td>
+                                    <td><code>data-fv-imo-message</code></td>
+                                    <td>String</td>
+                                    <td>The error message</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
                     <div class="doc-alert doc-alert-info">
                         When setting options via HTML attributes, remember to enable the validator by setting data-fv-imo="true".
@@ -48,23 +50,25 @@ examples: IMO 9074729, imo 9074729, 9074729, IMO 9074728
                 <section>
                     <h2>Example</h2>
 
-                    <table class="table table-condensed">
-                        <thead>
-                            <tr>
-                                <th>IMO</th>
-                                <th>Result</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% assign examples = page.examples | split: ', ' %}
-                            {% for imo in examples %}
-                            <tr>
-                                <td><a href="javascript: void(0);" class="sample">{{ imo }}</a></td>
-                                <td><i class="fa"></i></td>
-                            </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>IMO</th>
+                                    <th>Result</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% assign examples = page.examples | split: ', ' %}
+                                {% for imo in examples %}
+                                <tr>
+                                    <td><a href="javascript: void(0);" class="sample">{{ imo }}</a></td>
+                                    <td><i class="fa"></i></td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
 
                     {% include demo/tabs.html id="basic" frameworks="bootstrap" dir="basic" codes="programmatic,declarative" %}
                 </section>

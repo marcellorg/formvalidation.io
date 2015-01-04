@@ -16,25 +16,27 @@ permalink: /validators/
             <div class="col-md-8 col-md-offset-2">
                 <p>FormValidation comes with various built-in validators listed in the alphabetical order as following:</p>
 
-                <table class="table table-condensed">
-                    <thead>
-                        <tr>
-                            <th>No.</th>
-                            <th>Name</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Name</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
 
-                    <tbody>
-                        {% for validator in site.data.validators %}
-                        <tr>
-                            <td>{{ forloop.index }}</td>
-                            <td><a href="/validators/{{ validator.name }}/">{{ validator.name }}</a></td>
-                            <td>{{ validator.description }}</td>
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
+                        <tbody>
+                            {% for validator in site.data.validators %}
+                            <tr>
+                                <td>{{ forloop.index }}</td>
+                                <td><a href="/validators/{{ validator.name }}/">{{ validator.name }}</a></td>
+                                <td>{{ validator.description }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>

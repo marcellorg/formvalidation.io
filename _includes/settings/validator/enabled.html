@@ -5,17 +5,18 @@
     <p>Look at the field's <a href="#field-enabled">enabled</a> option if you want to enable/disable all validators.</p>
     <p>The table below shows three equivalent ways to enable or disable given validator:</p>
 
-    <table class="table table-condensed">
-        <thead>
-            <tr>
-                <th>Usage</th>
-                <th>Example</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>HTML 5 attribute</td>
-                <td>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Usage</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>HTML 5 attribute</td>
+                    <td>
 {% highlight html %}
 <!-- Enable validator -->
 <input class="form-control" name="fullName" data-bv-notempty />
@@ -26,11 +27,11 @@
 <!-- Disable validator -->
 <input class="form-control" name="fullName" data-bv-notempty="false" />
 {% endhighlight %}
-                </td>
-            </tr>
-            <tr>
-                <td>Plugin option</td>
-                <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Plugin option</td>
+                    <td>
 {% highlight javascript %}
 $(document).ready(function() {
     $(form).bootstrapValidator({
@@ -46,10 +47,10 @@ $(document).ready(function() {
     });
 });
 {% endhighlight %}
-                </td>
-            <tr>
-                <td><a href="/api/#enable-field-validators">enableFieldValidators()</a></td>
-                <td>
+                    </td>
+                <tr>
+                    <td><a href="/api/#enable-field-validators">enableFieldValidators()</a></td>
+                    <td>
 {% highlight javascript %}
 // Enable validator
 $(form)
@@ -59,10 +60,11 @@ $(form)
 $(form)
     .bootstrapValidator('enableFieldValidators', fullName, false, 'notEmpty');
 {% endhighlight %}
-                </td>
-            </tr>
-        </tbody>
-    </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
     <h4 id="validator-enabled-example">Example</h4>
     <div class="doc-demo">

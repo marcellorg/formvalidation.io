@@ -40,36 +40,38 @@ examples:
                 <section>
                     <h2>Options</h2>
 
-                    <table class="table table-condensed">
-                        <thead>
-                            <tr>
-                                <th>Option</th>
-                                <th>HTML attribute</th>
-                                <th>Type</th>
-                                <th>Description</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><code>message</code></td>
-                                <td><code>data-fv-emailaddress-message</code></td>
-                                <td>String</td>
-                                <td>The error message</td>
-                            </tr>
-                            <tr>
-                                <td><code>multiple</code></td>
-                                <td><code>data-fv-emailaddress-multiple</code></td>
-                                <td>String</td>
-                                <td>Allow multiple email addresses, separated by a comma or semicolon. The default value is <code>false</code></td>
-                            </tr>
-                            <tr>
-                                <td><code>separator</code></td>
-                                <td><code>data-fv-emailaddress-separator</code></td>
-                                <td>String</td>
-                                <td>Regex for character or characters expected as separator between addresses. By default, it is /[,;]/, i.e. comma or semicolon</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Option</th>
+                                    <th>HTML attribute</th>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>message</code></td>
+                                    <td><code>data-fv-emailaddress-message</code></td>
+                                    <td>String</td>
+                                    <td>The error message</td>
+                                </tr>
+                                <tr>
+                                    <td><code>multiple</code></td>
+                                    <td><code>data-fv-emailaddress-multiple</code></td>
+                                    <td>String</td>
+                                    <td>Allow multiple email addresses, separated by a comma or semicolon. The default value is <code>false</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>separator</code></td>
+                                    <td><code>data-fv-emailaddress-separator</code></td>
+                                    <td>String</td>
+                                    <td>Regex for character or characters expected as separator between addresses. By default, it is /[,;]/, i.e. comma or semicolon</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
                     <div class="doc-alert doc-alert-info">
                         When setting options via HTML attributes, remember to enable the validator by setting data-fv-emailaddress="true".<br/>
@@ -88,22 +90,24 @@ examples:
 
                     <h3>Basic example</h3>
 
-                    <table class="table table-condensed">
-                        <thead>
-                            <tr>
-                                <th>Email address</th>
-                                <th>Result</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for email in page.examples %}
-                            <tr>
-                                <td><a href="javascript: void(0);" class="sample">{{ email }}</a></td>
-                                <td><i class="fa"></i></td>
-                            </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Email address</th>
+                                    <th>Result</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for email in page.examples %}
+                                <tr>
+                                    <td><a href="javascript: void(0);" class="sample">{{ email }}</a></td>
+                                    <td><i class="fa"></i></td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
 
                     {% include demo/tabs.html id="basic" frameworks="bootstrap" dir="basic" codes="programmatic,declarative" %}
 

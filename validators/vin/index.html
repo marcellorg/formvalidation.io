@@ -19,24 +19,26 @@ examples: 1FAHP26W49G252740, 2FTRX07W53C371582, WP0CA29863U153381, JTMKF4DV5B530
                 <section>
                     <h2>Options</h2>
 
-                    <table class="table table-condensed">
-                        <thead>
-                            <tr>
-                                <th>Option</th>
-                                <th>HTML attribute</th>
-                                <th>Type</th>
-                                <th>Description</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><code>message</code></td>
-                                <td><code>data-fv-vin-message</code></td>
-                                <td>String</td>
-                                <td>The error message</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Option</th>
+                                    <th>HTML attribute</th>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>message</code></td>
+                                    <td><code>data-fv-vin-message</code></td>
+                                    <td>String</td>
+                                    <td>The error message</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
                     <div class="doc-alert doc-alert-info">
                         When setting options via HTML attributes, remember to enable the validator by setting data-fv-vin="true".
@@ -52,23 +54,25 @@ examples: 1FAHP26W49G252740, 2FTRX07W53C371582, WP0CA29863U153381, JTMKF4DV5B530
                         <a href="http://randomvin.com/">randomvin.com</a> helps you generate a random vin for testing
                     </div>
 
-                    <table class="table table-condensed">
-                        <thead>
-                            <tr>
-                                <th>VIN</th>
-                                <th>Result</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% assign examples = page.examples | split: ', ' %}
-                            {% for vin in examples %}
-                            <tr>
-                                <td><a href="javascript: void(0);" class="sample">{{ vin }}</a></td>
-                                <td><i class="fa"></i></td>
-                            </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>VIN</th>
+                                    <th>Result</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% assign examples = page.examples | split: ', ' %}
+                                {% for vin in examples %}
+                                <tr>
+                                    <td><a href="javascript: void(0);" class="sample">{{ vin }}</a></td>
+                                    <td><i class="fa"></i></td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
 
                     {% include demo/tabs.html id="basic" frameworks="bootstrap" dir="basic" codes="programmatic,declarative" %}
                 </section>

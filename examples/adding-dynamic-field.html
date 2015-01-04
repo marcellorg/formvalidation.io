@@ -19,32 +19,34 @@ permalink: /examples/adding-dynamic-field/
                 <p>This example demonstrates a sample scenario where you have to solve validating dynamic fields problem.</p>
                 <p>Before going to the details, there are some methods and events you need to know:</p>
 
-                <table class="table table-condensed">
-                    <thead>
-                        <tr>
-                            <th>Method/Event</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><a href="/api/#add-field">addField()</a> method</td>
-                            <td>Adding new field</td>
-                        </tr>
-                        <tr>
-                            <td><a href="/api/#remove-field">removeField()</a> method</td>
-                            <td>Removing given field</td>
-                        </tr>
-                        <tr>
-                            <td><a href="/settings/#event-form">added.field.bv</a> event</td>
-                            <td>Called after adding new field</td>
-                        </tr>
-                        <tr>
-                            <td><a href="/settings/#event-form">removed.field.bv</a> event</td>
-                            <td>Called after removing given field</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Method/Event</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><a href="/api/#add-field">addField()</a> method</td>
+                                <td>Adding new field</td>
+                            </tr>
+                            <tr>
+                                <td><a href="/api/#remove-field">removeField()</a> method</td>
+                                <td>Removing given field</td>
+                            </tr>
+                            <tr>
+                                <td><a href="/settings/#event-form">added.field.bv</a> event</td>
+                                <td>Called after adding new field</td>
+                            </tr>
+                            <tr>
+                                <td><a href="/settings/#event-form">removed.field.bv</a> event</td>
+                                <td>Called after removing given field</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
                 <p>Assuming that you are managing a survey which consists of a question and some options that user can choose from. The form allows you to add more options but the number of options can't exceed 5.</p>
 
