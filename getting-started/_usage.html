@@ -217,7 +217,7 @@ Too much recursion error
 
         <h4>Stacked form without labels</h4>
 
-        {% include demo/tabs.html id="no-label-form" frameworks="bootstrap,foundation,semantic,uikit" dir="no-label-form" codes="programmatic" %}
+        {% include demo/tabs.html id="no-label-form" frameworks="bootstrap,foundation,pure,semantic,uikit" dir="no-label-form" codes="programmatic" %}
 
         <h4>Inline form</h4>
 
@@ -255,11 +255,11 @@ $(document).ready(function() {
 });
 {% endhighlight %}
 
-        <p>For example, to validate the sample registration form above, the plugin might be called as:</p>
+        <p>For example, to validate a sample signing in form with username and password fields, the plugin might be called as:</p>
 
 {% highlight javascript %}
 $(document).ready(function() {
-    $('#registrationForm').formValidation({
+    $('#signinForm').formValidation({
         // I am validating Bootstrap form
         framework: 'bootstrap',
 
@@ -288,13 +288,10 @@ $(document).ready(function() {
                     }
                 }
             },
-            email: {
+            password: {
                 validators: {
                     notEmpty: {
-                        message: 'The email is required and cannot be empty'
-                    },
-                    emailAddress: {
-                        message: 'The input is not a valid email address'
+                        message: 'The password is required and cannot be empty'
                     }
                 }
             }

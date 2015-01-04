@@ -101,6 +101,10 @@
     margin-top: 5px;
     margin-left: 180px;
 }
+/* Pure stacked form without label */
+.fv-form-pure .fv-icon-no-label {
+	top: 0;
+}
 .fv-form-pure .fv-has-error label,
 .fv-form-pure .fv-has-error .fv-help-block,
 .fv-form-pure .fv-has-error .fv-control-feedback {
