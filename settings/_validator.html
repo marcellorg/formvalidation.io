@@ -19,6 +19,10 @@
                     <td><code>message</code></td>
                     <td><code>data-fv-{validatorname}-message</code></td>
                 </tr>
+                <tr>
+                    <td><code>transformer</code></td>
+                    <td>n/a</td>
+                </tr>
             </tbody>
         </table>
     </div>
@@ -29,6 +33,9 @@
     <div class="doc-hr-short"></div>
 
     {% include_relative validator/_message.html %}
+    <div class="doc-hr-short"></div>
+
+    {% include_relative validator/_transformer.html %}
     <div class="doc-hr-short"></div>
 
     {% include_relative validator/_dynamicOption.html %}
