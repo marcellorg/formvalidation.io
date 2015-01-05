@@ -17,7 +17,7 @@
 
 {% highlight javascript %}
 $(document).ready(function() {
-    $('#dynamicMessageForm').bootstrapValidator({
+    $('#dynamicMessageForm').formValidation({
         fields: {
             code: {
                 validators: {
@@ -36,7 +36,7 @@ $(document).ready(function() {
     <p>Fortunately, it is easy to convert this message to a dynamic one. Just use <code>%s</code> characters in the message and they will be replaced with the country you choose:</p>
 {% highlight javascript %}
 $(document).ready(function() {
-    $('#dynamicMessageForm').bootstrapValidator({
+    $('#dynamicMessageForm').formValidation({
         fields: {
             code: {
                 validators: {
@@ -44,7 +44,7 @@ $(document).ready(function() {
                         country: 'countrySelectBox',
                         // %s will be replaced with "US zipcode", "Italian postal code", and so on
                         // when you choose the country as US, IT, etc.
-                        message: 'The value is not valid %s'
+                        message: 'The value is not valid %s zipcode'
                     }
                 }
             }
@@ -52,31 +52,8 @@ $(document).ready(function() {
     });
 });
 {% endhighlight %}
-    <div class="doc-demo">
-        <ul class="nav nav-tabs">
-            <li class="active"><a href="#dynamic-message-form-tab" data-toggle="tab">Try it</a></li>
-            <li><a href="#dynamic-message-html-tab" data-toggle="tab">HTML</a></li>
-            <li><a href="#dynamic-message-js-tab" data-toggle="tab">JS</a></li>
-        </ul>
 
-        <div class="tab-content">
-            <div class="tab-pane active" id="dynamic-message-form-tab">
-            {% include settings/validator/dynamic-message-example.html %}
-            </div>
-
-            <div class="tab-pane" id="dynamic-message-html-tab">
-{% highlight html %}
-{% include settings/validator/dynamic-message-example.html %}
-{% endhighlight %}
-            </div>
-
-            <div class="tab-pane" id="dynamic-message-js-tab">
-{% highlight javascript %}
-{% include settings/validator/dynamic-message-example.js %}
-{% endhighlight %}
-            </div>
-        </div>
-    </div>
+    {% include demo/tabs.html id="validator-dm" frameworks="bootstrap" dir="validator/dynamic-message" codes="programmatic" %}
 
     <p>Below is the list of validators supporting dynamic message:</p>
     <div class="table-responsive">
@@ -89,7 +66,7 @@ $(document).ready(function() {
             </thead>
             <tbody>
                 <tr>
-                    <td><a href="/validators/between/">between validator</a></td>
+                    <td><a href="/validators/between/">between</a> validator</td>
                     <td>
 {% highlight javascript %}
 between: {
@@ -101,7 +78,7 @@ between: {
                     </td>
                 </tr>
                 <tr>
-                    <td><a href="/validators/choice/">choice validator</a></td>
+                    <td><a href="/validators/choice/">choice</a> validator</td>
                     <td>
 {% highlight javascript %}
 choice: {
@@ -113,7 +90,7 @@ choice: {
                     </td>
                 </tr>
                 <tr>
-                    <td><a href="/validators/greaterThan/">greaterThan validator</a></td>
+                    <td><a href="/validators/greaterThan/">greaterThan</a> validator</td>
                     <td>
 {% highlight javascript %}
 greaterThan: {
@@ -124,7 +101,7 @@ greaterThan: {
                     </td>
                 </tr>
                 <tr>
-                    <td><a href="/validators/iban/">iban validator</a></td>
+                    <td><a href="/validators/iban/">iban</a> validator</td>
                     <td>
 {% highlight javascript %}
 iban: {
@@ -135,7 +112,7 @@ iban: {
                     </td>
                 </tr>
                 <tr>
-                    <td><a href="/validators/id/">id validator</a></td>
+                    <td><a href="/validators/id/">id</a> validator</td>
                     <td>
 {% highlight javascript %}
 id: {
@@ -146,7 +123,7 @@ id: {
                     </td>
                 </tr>
                 <tr>
-                    <td><a href="/validators/lessThan/">lessThan validator</a></td>
+                    <td><a href="/validators/lessThan/">lessThan</a> validator</td>
                     <td>
 {% highlight javascript %}
 lessThan: {
@@ -157,7 +134,7 @@ lessThan: {
                     </td>
                 </tr>
                 <tr>
-                    <td><a href="/validators/phone/">phone validator</a></td>
+                    <td><a href="/validators/phone/">phone</a> validator</td>
                     <td>
 {% highlight javascript %}
 phone: {
@@ -168,7 +145,7 @@ phone: {
                     </td>
                 </tr>
                 <tr>
-                    <td><a href="/validators/stringLength/">stringLength validator</a></td>
+                    <td><a href="/validators/stringLength/">stringLength</a> validator</td>
                     <td>
 {% highlight javascript %}
 stringLength: {
@@ -180,7 +157,7 @@ stringLength: {
                     </td>
                 </tr>
                 <tr>
-                    <td><a href="/validators/vat/">vat validator</a></td>
+                    <td><a href="/validators/vat/">vat</a> validator</td>
                     <td>
 {% highlight javascript %}
 vat: {
@@ -191,7 +168,7 @@ vat: {
                     </td>
                 </tr>
                 <tr>
-                    <td><a href="/validators/zipCode/">zipCode validator</a></td>
+                    <td><a href="/validators/zipCode/">zipCode</a> validator</td>
                     <td>
 {% highlight javascript %}
 zipCode: {
@@ -202,7 +179,7 @@ zipCode: {
                     </td>
                 </tr>
                 <tr>
-                    <td><a href="/validators/callback/">callback validator</a></td>
+                    <td><a href="/validators/callback/">callback</a> validator</td>
                     <td>
 {% highlight javascript %}
 callback: {
@@ -225,7 +202,7 @@ callback: {
                     </td>
                 </tr>
                 <tr>
-                    <td><a href="/validators/remote/">remote validator</a></td>
+                    <td><a href="/validators/remote/">remote</a> validator</td>
                     <td>
                         <p>The backend returns a JSON string that consists of <code>valid</code> and <code>message</code> keys:</p>
 {% highlight javascript %}
@@ -234,11 +211,11 @@ callback: {
                     </td>
                 </tr>
                 <tr>
-                    <td><a href="/developing/">Your own validator</a></td>
+                    <td><a href="/developing/">Your own</a> validator</td>
                     <td>
 {% highlight javascript %}
 (function($) {
-    $.fn.bootstrapValidator.validators.yourValidatorName = {
+    FormValidation.Validator.yourValidatorName = {
         validate: function(validator, $field, options) {
             // ... Do your logic checking
             if (...) {
@@ -267,7 +244,7 @@ callback: {
     <p>To turn off dynamic message:</p>
     <ul class="doc-list">
         <li>Don't use <code>%s</code> characters in the message</li>
-        <li>Don't include the <code>message</code> in the result returned by <a href="/validators/callback/">callback</a>, <a href="/validators/remote/">remote validator</a>, or <a href="/developing/">your own validator</a>.</li>
+        <li>Don't include the <code>message</code> in the result returned by <a href="/validators/callback">callback</a>, <a href="/validators/remote">remote</a> validator, or <a href="/developing">your own validator</a>.</li>
     </ul>
     <div class="table-responsive">
         <table class="table table-bordered table-striped">
@@ -279,7 +256,7 @@ callback: {
             </thead>
             <tbody>
                 <tr>
-                    <td><a href="/validators/between/">between validator</a></td>
+                    <td><a href="/validators/between/">between</a> validator</td>
                     <td>
 {% highlight javascript %}
 between: {
@@ -291,7 +268,7 @@ between: {
                     </td>
                 </tr>
                 <tr>
-                    <td><a href="/validators/callback/">callback validator</a></td>
+                    <td><a href="/validators/callback/">callback</a> validator</td>
                     <td>
 {% highlight javascript %}
 callback: {
@@ -304,7 +281,7 @@ callback: {
                     </td>
                 </tr>
                 <tr>
-                    <td><a href="/validators/remote/">remote validator</a></td>
+                    <td><a href="/validators/remote/">remote</a> validator</td>
                     <td>
                         <p>The backend returns a JSON string that consists of <code>valid</code> key:</p>
 {% highlight javascript %}
@@ -317,7 +294,7 @@ callback: {
                     <td>
 {% highlight javascript %}
 (function($) {
-    $.fn.bootstrapValidator.validators.yourValidatorName = {
+    FormValidation.Validator.yourValidatorName = {
         validate: function(validator, $field, options) {
             // ... Do your logic checking
             return true;        // or false
@@ -331,7 +308,3 @@ callback: {
         </table>
     </div>
 </section>
-
-<script>
-{% include settings/validator/dynamic-message-example.js %}
-</script>
