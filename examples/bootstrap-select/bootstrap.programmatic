@@ -1,22 +1,24 @@
+<script>
 $(document).ready(function() {
     $('#bootstrapSelectForm')
         .find('[name="colors"]')
             .selectpicker()
             .change(function(e) {
                 // revalidate the color when it is changed
-                $('#bootstrapSelectForm').bootstrapValidator('revalidateField', 'colors');
+                $('#bootstrapSelectForm').formValidation('revalidateField', 'colors');
             })
             .end()
         .find('[name="language"]')
             .selectpicker()
             .change(function(e) {
                 // revalidate the language when it is changed
-                $('#bootstrapSelectForm').bootstrapValidator('revalidateField', 'language');
+                $('#bootstrapSelectForm').formValidation('revalidateField', 'language');
             })
             .end()
-        .bootstrapValidator({
+        .formValidation({
+            framework: 'bootstrap',
             excluded: ':disabled',
-            feedbackIcons: {
+            icon: {
                 valid: 'glyphicon glyphicon-ok',
                 invalid: 'glyphicon glyphicon-remove',
                 validating: 'glyphicon glyphicon-refresh'
@@ -44,3 +46,4 @@ $(document).ready(function() {
             }
         });
 });
+</script>
