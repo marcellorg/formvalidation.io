@@ -1,0 +1,64 @@
+---
+layout: default
+title: Enabling the submit button all the time
+permalink: /examples/enabling-submit-button/
+---
+
+<div class="doc-content-container">
+    <div class="doc-heading">
+        <h1>Enabling the submit button all the time</h1>
+        <p>&larr; <a href="/examples">Examples</a></p>
+        {% include share.html %}
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <section>
+                    <h2>Always enable the submit button</h2>
+
+                    <p>By default, the submit buttons will be disabled if there is at least one invalid field.</p>
+                    <p>If you want to enable the submit buttons all the time, triggering the <a href="/settings#event-field">err.field.fv</a>, <a href="/settings#event-field">success.field.fv</a> event and using the <a href="/api#disable-submit-buttons">disableSubmitButtons()</a> method:</p>
+
+                    {% include demo/tabs.html id="always" frameworks="bootstrap" dir="always" codes="programmatic" %}
+
+                    <p>If you want the submit button to be enabled only after clicking it, use the <a href="/api#get-submit-button">getSubmitButton()</a> method to check whether or not the submit button is clicked:</p>
+
+{% highlight javascript  %}
+$(document).ready(function() {
+    $('#alwaysEnableButtonForm')
+        .formValidation({
+            ...
+        })
+        .on('err.field.fv', function(e, data) {
+            if (data.fv.getSubmitButton()) {
+                data.fv.disableSubmitButtons(false);
+            }
+        })
+        .on('success.field.fv', function(e, data) {
+            if (data.fv.getSubmitButton()) {
+                data.fv.disableSubmitButtons(false);
+            }
+        });
+});
+{% endhighlight %}
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Only enable the submit button if all fields are valid</h2>
+
+                    <p>We can use the <a href="/api#is-valid">isValid()</a> method to check if all fields are valid.</p>
+
+                    <div class="doc-alert doc-alert-warning">
+                        The <a href="/api#is-valid">isValid()</a> method returns correct value if the form is already validated (by either pressing the submit button or calling <a href="/api#validate">validate()</a> directly).
+                        This example is supposed to work if all fields are empty which is mostly suitable for creating record form.
+                    </div>
+
+                    {% include demo/tabs.html id="all-valid" frameworks="bootstrap" dir="all-valid" codes="programmatic" %}
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
