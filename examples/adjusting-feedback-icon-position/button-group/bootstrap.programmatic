@@ -16,8 +16,8 @@
 
 <form id="buttonGroupForm" method="post" class="form-horizontal">
     <div class="form-group">
-        <label class="col-sm-3 control-label">Gender</label>
-        <div class="col-sm-9">
+        <label class="col-xs-3 control-label">Gender</label>
+        <div class="col-xs-9">
             <div class="btn-group" data-toggle="buttons">
                 <label class="btn btn-default">
                     <input type="radio" name="gender" value="male" /> Male
@@ -33,8 +33,8 @@
     </div>
 
     <div class="form-group">
-        <label class="col-sm-3 control-label">Languages</label>
-        <div class="col-sm-9">
+        <label class="col-xs-3 control-label">Languages</label>
+        <div class="col-xs-9">
             <div class="btn-group" data-toggle="buttons">
                 <label class="btn btn-default">
                     <input type="checkbox" name="languages[]" value="english" /> English
@@ -55,3 +55,35 @@
         </div>
     </div>
 </form>
+
+<script>
+$(document).ready(function() {
+    $('#buttonGroupForm').formValidation({
+        framework: 'bootstrap',
+        excluded: ':disabled',
+        icon: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            gender: {
+                validators: {
+                    notEmpty: {
+                        message: 'The gender is required'
+                    }
+                }
+            },
+            'languages[]': {
+                validators: {
+                    choice: {
+                        min: 1,
+                        max: 2,
+                        message: 'Please choose 1 - 2 languages you can speak'
+                    }
+                }
+            }
+        }
+    });
+});
+</script>
