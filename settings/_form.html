@@ -1,7 +1,7 @@
 <section>
     <h2>Form settings</h2>
 
-    <p>Below is the list of settings for form:</p>
+    <p>Below is the list of settings for form sorted in alphabetical order:</p>
     <div class="table-responsive">
         <table class="table table-bordered table-striped">
             <thead>
@@ -14,22 +14,50 @@
             <tbody>
                 <tr>
                     <td><code>autoFocus</code></td>
-                    <td><code>data-bv-autofocus</code></td>
+                    <td><code>data-fv-autofocus</code></td>
                     <td><code>true</code></td>
                 </tr>
                 <tr>
-                    <td><code>container</code></td>
-                    <td><code>data-bv-container</code></td>
-                    <td>n/a</td>
+                    <td><code>button</code></td>
+                    <td><code>data-fv-button-selector</code></td>
+                    <td>
+{% highlight javascript %}
+button: {
+    selector: '[type="submit"]'
+}
+{% endhighlight %}
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>err</code></td>
+                    <td><code>data-err-container</code></td>
+                    <td>
+{% highlight javascript %}
+err: {
+    container: null
+}
+{% endhighlight %}
+                    </td>
                 </tr>
                 <tr>
                     <td><code>excluded</code></td>
-                    <td><code>data-bv-excluded</code></td>
+                    <td><code>data-fv-excluded</code></td>
                     <td><code>[':disabled', ':hidden', ':not(:visible)']</code></td>
                 </tr>
                 <tr>
-                    <td><code>feedbackIcons</code></td>
-                    <td><code>data-bv-feedbackicons-valid</code>, <code>data-bv-feedbackicons-invalid</code>, <code>data-bv-feedbackicons-validating</code></td>
+                    <td><code>framework</code></td>
+                    <td><code>data-fv-framework</code></td>
+                    <td><code>bootstrap</code></td>
+                </tr>
+                <tr>
+                    <td><code>icon</code></td>
+                    <td>
+                        <ul class="doc-list">
+                            <li><code>data-fv-icon-valid</code></li>
+                            <li><code>data-fv-icon-invalid</code></li>
+                            <li><code>data-fv-icon-validating</code></li>
+                        </ul>
+                    </td>
                     <td>
 {% highlight javascript %}
 {
@@ -41,38 +69,39 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><code>group</code></td>
-                    <td><code>data-bv-group</code></td>
-                    <td><code>'.form-group'</code></td>
-                </tr>
-                <tr>
                     <td><code>live</code></td>
-                    <td><code>data-bv-live</code></td>
+                    <td><code>data-fv-live</code></td>
                     <td><code>'enabled'</code></td>
                 </tr>
                 <tr>
                     <td><code>message</code></td>
-                    <td><code>data-bv-message</code></td>
+                    <td><code>data-fv-message</code></td>
                     <td><code>'This value is not valid'</code></td>
                 </tr>
                 <tr>
-                    <td><code>submitButtons</code></td>
-                    <td><code>data-bv-submitbuttons</code></td>
-                    <td><code>'[type="submit"]'</code></td>
+                    <td><code>row</code></td>
+                    <td><code>data-row-container</code></td>
+                    <td>
+{% highlight javascript %}
+row: {
+    container: null
+}
+{% endhighlight %}
+                    </td>
                 </tr>
                 <tr>
                     <td><code>threshold</code></td>
-                    <td><code>data-bv-threshold</code></td>
+                    <td><code>data-fv-threshold</code></td>
                     <td><code>null</code></td>
                 </tr>
                 <tr>
                     <td><code>trigger</code></td>
-                    <td><code>data-bv-trigger</code></td>
+                    <td><code>data-fv-trigger</code></td>
                     <td><code>null</code></td>
                 </tr>
                 <tr>
                     <td><code>verbose</code></td>
-                    <td><code>data-bv-verbose</code></td>
+                    <td><code>data-fv-verbose</code></td>
                     <td><code>true</code></td>
                 </tr>
                 <tr>
@@ -84,15 +113,26 @@
         </table>
     </div>
 
-    {% include settings/form/auto-focus.html %}
+    <div class="doc-hr-short"></div>
+    {% include_relative form/_autoFocus.html %}
+    <div class="doc-hr-short"></div>
     {% include settings/form/container.html %}
+    <div class="doc-hr-short"></div>
     {% include settings/form/excluded.html %}
+    <div class="doc-hr-short"></div>
     {% include settings/form/feedback-icons.html %}
+    <div class="doc-hr-short"></div>
     {% include settings/form/group.html %}
+    <div class="doc-hr-short"></div>
     {% include settings/form/live.html %}
+    <div class="doc-hr-short"></div>
     {% include settings/form/message.html %}
+    <div class="doc-hr-short"></div>
     {% include settings/form/submit-buttons.html %}
+    <div class="doc-hr-short"></div>
     {% include settings/form/threshold.html %}
+    <div class="doc-hr-short"></div>
     {% include settings/form/trigger.html %}
+    <div class="doc-hr-short"></div>
     {% include settings/form/verbose.html %}
 </section>

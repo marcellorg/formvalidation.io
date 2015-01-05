@@ -61,10 +61,16 @@ h4 {
 }
 /* --- Helpers --- */
 .doc-hr {
+  background: #c5c5c5;
+  height: 1px;
+  margin: 30px auto;
+  width: 50%;
+}
+.doc-hr-short {
   background: #e5e5e5;
   height: 1px;
   margin: 30px auto;
-  max-width: 300px;
+  width: 30%;
 }
 .doc-notification {
   /*background-color: #ecf0f1;*/
@@ -449,7 +455,7 @@ h4 {
   padding-left: 96px;
 }
 .doc-gumroad-button {
-  background: white url('../img/gumroad-button-bar.jpg') repeat-x;
+  background: #ffffff url('../img/gumroad-button-bar.jpg') repeat-x;
   border-radius: 4px;
   box-shadow: rgba(0, 0, 0, 0.4) 0 0 2px;
   color: #999;
