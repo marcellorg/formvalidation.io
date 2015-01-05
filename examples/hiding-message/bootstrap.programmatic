@@ -4,25 +4,25 @@
     right: -30px;
 }
 </style>
-        
+
 <form id="reportForm" method="post" class="form-horizontal">
     <div class="form-group">
-        <label class="col-sm-3 control-label">Bug title</label>
-        <div class="col-sm-6">
+        <label class="col-xs-3 control-label">Bug title</label>
+        <div class="col-xs-6">
             <input type="text" class="form-control" name="title" />
         </div>
     </div>
 
     <div class="form-group">
-        <label class="col-sm-3 control-label">Description</label>
-        <div class="col-sm-6">
+        <label class="col-xs-3 control-label">Description</label>
+        <div class="col-xs-6">
             <textarea class="form-control" name="description" rows="8"></textarea>
         </div>
     </div>
 
     <div class="form-group">
-        <label class="col-sm-3 control-label">Operating system</label>
-        <div class="col-sm-9">
+        <label class="col-xs-3 control-label">Operating system</label>
+        <div class="col-xs-9">
             <div class="btn-group" data-toggle="buttons">
                 <label class="btn btn-default">
                     <input type="radio" name="os" value="window" /> Window
@@ -44,8 +44,8 @@
     </div>
 
     <div class="form-group">
-        <label class="col-sm-3 control-label">Browser(s)</label>
-        <div class="col-sm-9">
+        <label class="col-xs-3 control-label">Browser(s)</label>
+        <div class="col-xs-9">
             <div class="btn-group" data-toggle="buttons">
                 <label class="btn btn-default">
                     <input type="checkbox" name="browser[]" value="ie" /> IE
@@ -67,8 +67,8 @@
     </div>
 
     <div class="form-group">
-        <label class="col-sm-3 control-label">Priority</label>
-        <div class="col-sm-4">
+        <label class="col-xs-3 control-label">Priority</label>
+        <div class="col-xs-4">
             <select class="form-control" name="priority">
                 <option value="">Choose the priority</option>
                 <option value="low">Low</option>
@@ -79,8 +79,71 @@
     </div>
 
     <div class="form-group">
-        <div class="col-sm-5 col-sm-offset-3">
+        <div class="col-xs-5 col-xs-offset-3">
             <button type="submit" class="btn btn-default">Report issue</button>
         </div>
     </div>
 </form>
+
+<script>
+$(document).ready(function() {
+    $('#reportForm')
+        .formValidation({
+            framework: 'bootstrap',
+            excluded: ':disabled',
+            icon: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                title: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The title is required'
+                        }
+                    }
+                },
+                description: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The abstract is required'
+                        }
+                    }
+                },
+                os: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The operating system is required'
+                        }
+                    }
+                },
+                'browser[]': {
+                    validators: {
+                        notEmpty: {
+                            message: 'Choose at least one browser'
+                        }
+                    }
+                },
+                priority: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The priority is required'
+                        }
+                    }
+                }
+            }
+        })
+        .on('err.field.fv', function(e, data) {
+            // $(e.target)  --> The field element
+            // data.fv      --> The FormValidation instance
+            // data.field   --> The field name
+            // data.element --> The field element
+
+            // Hide the messages
+            data.element
+                .data('fv.messages')
+                .find('.help-block[data-fv-for="' + data.field + '"]').hide();
+        });
+});
+</script>
