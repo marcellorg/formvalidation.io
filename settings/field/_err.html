@@ -1,0 +1,34 @@
+<section>
+    <h3 id="field-container">err</h3>
+
+    <p><code>container: String</code> &mdash; Indicate where the error messages are shown.</p>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Value</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>CSS selector</td>
+                    <td>Error messages are placed in element defined by this CSS selector</td>
+                </tr>
+                <tr>
+                    <td><code>tooltip</code></td>
+                    <td>Error messages are placed inside a tooltip.</td>
+                </tr>
+                <tr>
+                    <td><code>popover</code></td>
+                    <td>Error messages are placed inside a popover.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h5>Example</h5>
+    <p>The following form illustrates an usage of the <code>err</code> option. The error messages are shown in the element defined by a CSS selector.</p>
+
+    {% include demo/tabs.html id="field-err" frameworks="bootstrap" dir="field/err" codes="programmatic" %}
+</section>
