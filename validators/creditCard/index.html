@@ -42,7 +42,7 @@ related:
                             <tbody>
                                 <tr>
                                     <td><code>message</code></td>
-                                    <td><code>data-bv-creditcard-message</code></td>
+                                    <td><code>data-fv-creditcard-message</code></td>
                                     <td>String</td>
                                     <td>The error message</td>
                                 </tr>
@@ -51,7 +51,7 @@ related:
                     </div>
 
                     <div class="doc-alert doc-alert-info">
-                        When setting options via HTML attributes, remember to enable the validator by setting data-bv-creditcard="true".
+                        When setting options via HTML attributes, remember to enable the validator by setting data-fv-creditcard="true".
                     </div>
 
                     <div class="doc-alert doc-alert-info">
@@ -137,13 +137,57 @@ related:
                 <div class="doc-hr"></div>
 
                 <section>
-                    <h2>Example</h2>
+                    <h2>Examples</h2>
 
                     <div class="doc-alert doc-alert-info">
                         You can use <a href="http://www.getcreditcardnumbers.com">www.getcreditcardnumbers.com</a> to generate fake credit card numbers.
                     </div>
 
+                    <h3>Basic example</h3>
                     {% include demo/tabs.html id="basic" frameworks="bootstrap" dir="basic" codes="programmatic,declarative" %}
+
+                    <h3>Showing card icon</h3>
+                    <p>The following example shows credit card icon provided by <a href="http://fontawesome.io/icons/#payment">Font Awesome</a> based on the card type.</p>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Card type</th>
+                                    <th>Icon</th>
+                                    <th>CSS class</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>American Express</td>
+                                    <td><i class="fa fa-cc-amex"></i></td>
+                                    <td><code>fa fa-cc-amex</code></td>
+                                </tr>
+                                <tr>
+                                    <td>Discover</td>
+                                    <td><i class="fa fa-cc-discover"></i></td>
+                                    <td><code>fa fa-cc-discover</code></td>
+                                </tr>
+                                <tr>
+                                    <td>Mastercard</td>
+                                    <td><i class="fa fa-cc-mastercard"></i></td>
+                                    <td><code>fa fa-cc-mastercard</code></td>
+                                </tr>
+                                <tr>
+                                    <td>Visa</td>
+                                    <td><i class="fa fa-cc-visa"></i></td>
+                                    <td><code>fa fa-cc-visa</code></td>
+                                </tr>
+                                <tr>
+                                    <td>Other</td>
+                                    <td><i class="fa fa-credit-card"></i></td>
+                                    <td><code>fa fa-credit-card</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    {% include demo/tabs.html id="icon" frameworks="bootstrap" dir="icon" codes="programmatic" %}
                 </section>
 
                 <div class="doc-hr"></div>
