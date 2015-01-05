@@ -1,6 +1,8 @@
+<script>
 $(document).ready(function() {
-    $('#loginForm').bootstrapValidator({
-        feedbackIcons: {
+    $('#loginForm').formValidation({
+        framework: 'bootstrap',
+        icon: {
             valid: 'glyphicon glyphicon-ok',
             invalid: 'glyphicon glyphicon-remove',
             validating: 'glyphicon glyphicon-refresh'
@@ -23,3 +25,4 @@ $(document).ready(function() {
         }
     });
 });
+</script>
