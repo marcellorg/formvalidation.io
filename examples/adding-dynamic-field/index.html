@@ -7,7 +7,7 @@ permalink: /examples/adding-dynamic-field/
 <div class="doc-content-container">
     <div class="doc-heading">
         <h1>Adding dynamic field</h1>
-        <p>&larr; <a href="/examples/">Examples</a></p>
+        <p>&larr; <a href="/examples">Examples</a></p>
         {% include share.html %}
     </div>
 
@@ -28,19 +28,19 @@ permalink: /examples/adding-dynamic-field/
                         </thead>
                         <tbody>
                             <tr>
-                                <td><a href="/api/#add-field">addField()</a> method</td>
+                                <td><a href="/api#add-field">addField()</a> method</td>
                                 <td>Adding new field</td>
                             </tr>
                             <tr>
-                                <td><a href="/api/#remove-field">removeField()</a> method</td>
+                                <td><a href="/api#remove-field">removeField()</a> method</td>
                                 <td>Removing given field</td>
                             </tr>
                             <tr>
-                                <td><a href="/settings/#event-form">added.field.bv</a> event</td>
+                                <td><a href="/settings#event-form">added.field.fv</a> event</td>
                                 <td>Called after adding new field</td>
                             </tr>
                             <tr>
-                                <td><a href="/settings/#event-form">removed.field.bv</a> event</td>
+                                <td><a href="/settings#event-form">removed.field.fv</a> event</td>
                                 <td>Called after removing given field</td>
                             </tr>
                         </tbody>
@@ -49,36 +49,8 @@ permalink: /examples/adding-dynamic-field/
 
                 <p>Assuming that you are managing a survey which consists of a question and some options that user can choose from. The form allows you to add more options but the number of options can't exceed 5.</p>
 
-                <div class="doc-demo">
-                    <ul class="nav nav-tabs">
-                        <li class="active"><a href="#survey-form-tab" data-toggle="tab">Try it</a></li>
-                        <li><a href="#survey-html-tab" data-toggle="tab">HTML</a></li>
-                        <li><a href="#survey-js-tab" data-toggle="tab">JS</a></li>
-                    </ul>
-
-                    <div class="tab-content">
-                        <div class="tab-pane active" id="survey-form-tab">
-                        {% include examples/adding-dynamic-field/example.html %}
-                        </div>
-
-                        <div class="tab-pane" id="survey-html-tab">
-                        {% highlight html %}
-                        {% include examples/adding-dynamic-field/example.html %}
-                        {% endhighlight %}
-                        </div>
-
-                        <div class="tab-pane" id="survey-js-tab">
-                        {% highlight javascript %}
-                        {% include examples/adding-dynamic-field/example.js %}
-                        {% endhighlight %}
-                        </div>
-                    </div>
-                </div>
+                {% include demo/tabs.html id="demo" frameworks="bootstrap" codes="programmatic" %}
             </div>
         </div>
     </div>
 </div>
-
-<script>
-{% include examples/adding-dynamic-field/example.js %}
-</script>
