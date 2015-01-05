@@ -36,10 +36,16 @@ button: {
                 </tr>
                 <tr>
                     <td><code>err</code></td>
-                    <td><code>data-err-container</code></td>
+                    <td>
+                        <ul>
+                            <li><code>data-err-clazz</code></li>
+                            <li><code>data-err-container</code></li>
+                        </ul>
+                    </td>
                     <td>
 {% highlight javascript %}
 err: {
+    clazz: '',
     container: null
 }
 {% endhighlight %}
@@ -133,7 +139,7 @@ row: {
     {% include_relative form/_excluded.html %}
     <div class="doc-hr-short"></div>
 
-    {% include settings/form/feedback-icons.html %}
+    {% include_relative form/_icon.html %}
     <div class="doc-hr-short"></div>
 
     {% include settings/form/group.html %}
