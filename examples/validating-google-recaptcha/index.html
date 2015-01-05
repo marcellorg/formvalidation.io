@@ -7,14 +7,14 @@ permalink: /examples/validating-google-recaptcha/
 <div class="doc-content-container">
     <div class="doc-heading">
         <h1>Validating Google reCAPTCHA</h1>
-        <p>&larr; <a href="/examples/">Examples</a></p>
+        <p>&larr; <a href="/examples">Examples</a></p>
         {% include share.html %}
     </div>
 
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                <p>This example is a step by step instruction on how to use a <a href="/validators/remote/">remote</a> validator to verify a <a href="https://www.google.com/recaptcha/">Google reCAPTCHA</a>.</p>
+                <p>This example is a step by step instruction on how to use a <a href="/validators/remote">remote</a> validator to verify a <a href="https://www.google.com/recaptcha/">Google reCAPTCHA</a>.</p>
 
                 <div class="doc-hr"></div>
 
@@ -47,9 +47,9 @@ permalink: /examples/validating-google-recaptcha/
 <script type="text/javascript" src="http://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
-    // Call the BootstrapValidator plugin
-    $('#defaultForm').bootstrapValidator({
-        feedbackIcons: {
+    // Call the FormValidation plugin
+    $('#defaultForm').formValidation({
+        icon: {
             valid: 'glyphicon glyphicon-ok',
             invalid: 'glyphicon glyphicon-remove',
             validating: 'glyphicon glyphicon-refresh'
@@ -66,12 +66,12 @@ $(document).ready(function() {
 </script>
 {% endhighlight %}
 
-                    <p>reCAPTCHA then creates a text box with name of <code>recaptcha_response_field</code>. We use the <a href="/api/#add-field">addField()</a> method to add this field:</p>
+                    <p>reCAPTCHA then creates a text box with name of <code>recaptcha_response_field</code>. We use the <a href="/api#add-field">addField()</a> method to add this field:</p>
 
 {% highlight html %}
 <script type="text/javascript">
 $(document).ready(function() {
-    $('#defaultForm').bootstrapValidator(...);
+    $('#defaultForm').formValidation(...);
 
     Recaptcha.create('PUBLIC_KEY', 'recaptcha', {
         theme: 'white',
@@ -81,7 +81,7 @@ $(document).ready(function() {
 
     function captchaLoaded() {
         // Add new field after loading captcha
-        $('#defaultForm').bootstrapValidator('addField', 'recaptcha_response_field', {
+        $('#defaultForm').formValidation('addField', 'recaptcha_response_field', {
             validators: {
                 notEmpty: {
                     message: 'The captcha is required and can\'t be empty'
@@ -93,14 +93,14 @@ $(document).ready(function() {
 </script>
 {% endhighlight %}
 
-                    <p>At the moment, the captcha field uses only <a href="/validators/notEmpty/">notEmpty</a> validator indicating that the field is required. We will use the <a href="/validators/remote/">remote</a> validator to verify it in the next step.</p>
+                    <p>At the moment, the captcha field uses only <a href="/validators/notEmpty/">notEmpty</a> validator indicating that the field is required. We will use the <a href="/validators/remote">remote</a> validator to verify it in the next step.</p>
 
                     <p>Currently, if you leave the captcha empty and submit the form, the field will be masked as invalid. But the element showing captcha seem to be shown not properly, because the feedback icon is placed right after the field:</p>
                     <p class="text-center">
                         <img src="/asset/img/example/validating-google-recaptcha/icon-position-before.png" alt="Feedback icon position" />
                     </p>
 
-                    <p>In order to fix this, we need to move the feedback icon right after the <code>recaptcha</code> element. It can be done by triggering the <a href="/settings/#event-form">added.field.bv</a> event, which is called after adding a field:</p>
+                    <p>In order to fix this, we need to move the feedback icon right after the <code>recaptcha</code> element. It can be done by triggering the <a href="/settings#event-form">added.field.fv</a> event, which is called after adding a field:</p>
 
 {% highlight html %}
 <script type="text/javascript">
@@ -109,18 +109,17 @@ $(document).ready(function() {
 
     function captchaLoaded() {
         $('#defaultForm')
-            .on('added.field.bv', function(e, data) {
+            .on('added.field.fv', function(e, data) {
                 // The field "recaptcha_response_field" has just been added
                 if (data.field === 'recaptcha_response_field') {
                     // Find the icon
-                    var $parent = data.element.parents('.form-group'),
-                        $icon   = $parent.find('.form-control-feedback[data-bv-icon-for="' + data.field + '"]');
+                    var $icon = data.element.data('fv.icon');
 
                     // Move icon to other position
                     $icon.insertAfter('#recaptcha');
                 }
             })
-            .bootstrapValidator('addField', 'recaptcha_response_field', {
+            .formValidation('addField', 'recaptcha_response_field', {
                 validators: {
                     notEmpty: {
                         message: 'The captcha is required and can\'t be empty'
@@ -143,7 +142,7 @@ $(document).ready(function() {
                 <section>
                     <h2>Verifying the captcha</h2>
 
-                    <p>The last step is to validate the captcha using the <a href="/validators/remote/">remote</a> validator. Google reCAPTCHA requires the value of <code>recaptcha_response_field</code> and <code>recaptcha_challenge_field</code> fields. The last one is a hidden field generated by Google reCAPTCHA.</p>
+                    <p>The last step is to validate the captcha using the <a href="/validators/remote">remote</a> validator. Google reCAPTCHA requires the value of <code>recaptcha_response_field</code> and <code>recaptcha_challenge_field</code> fields. The last one is a hidden field generated by Google reCAPTCHA.</p>
                     <p>So, we need to send these fields to our back-end:</p>
 
 {% highlight html %}
@@ -153,10 +152,10 @@ $(document).ready(function() {
 
     function captchaLoaded() {
         $('#defaultForm')
-            .on('added.field.bv', function(e, data) {
+            .on('added.field.fv', function(e, data) {
                 ...
             })
-            .bootstrapValidator('addField', 'recaptcha_response_field', {
+            .formValidation('addField', 'recaptcha_response_field', {
                 validators: {
                     notEmpty: {
                         message: 'The captcha is required and can\'t be empty'
@@ -171,6 +170,7 @@ $(document).ready(function() {
                                 recaptcha_challenge_field: $('#defaultForm').find('[name="recaptcha_challenge_field"]').val()
                             };
                         },
+                        // Set it to enough time that you think the user complete typing the captcha
                         delay: 1000
                     }
                 }
@@ -216,27 +216,20 @@ echo json_encode(array(
 
                     <div class="doc-demo">
                         <ul class="nav nav-tabs">
-                            <li class="active"><a href="#recaptcha-html-tab" data-toggle="tab">HTML</a></li>
-                            <li><a href="#recaptcha-js-tab" data-toggle="tab">JS</a></li>
+                            <li class="active"><a href="#recaptcha-programmatic-tab" data-toggle="tab">Programmatic code</a></li>
                             <li><a href="#recaptcha-backend-tab" data-toggle="tab">Back-end</a></li>
                         </ul>
 
                         <div class="tab-content">
-                            <div class="tab-pane active" id="recaptcha-html-tab">
+                            <div class="tab-pane active" id="recaptcha-programmatic-tab">
 {% highlight html %}
-{% include examples/validating-google-recaptcha/example.html %}
-{% endhighlight %}
-                            </div>
-
-                            <div class="tab-pane" id="recaptcha-js-tab">
-{% highlight javascript %}
-{% include examples/validating-google-recaptcha/example.js %}
+{% include_relative bootstrap.programmatic %}
 {% endhighlight %}
                             </div>
 
                             <div class="tab-pane" id="recaptcha-backend-tab">
-{% highlight javascript %}
-{% include examples/validating-google-recaptcha/recaptcha.php %}
+{% highlight php %}
+{% include_relative recaptcha.php %}
 {% endhighlight %}
                             </div>
                         </div>

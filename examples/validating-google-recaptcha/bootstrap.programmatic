@@ -1,6 +1,18 @@
+<form id="defaultForm" method="post" class="form-horizontal">
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Captcha</label>
+        <div class="col-xs-9 captchaContainer">
+            <div id="recaptcha"></div>
+        </div>
+    </div>
+</form>
+
+<script src="http://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>
+
+<script>
 $(document).ready(function() {
-    $('#defaultForm').bootstrapValidator({
-        feedbackIcons: {
+    $('#defaultForm').formValidation({
+        icon: {
             valid: 'glyphicon glyphicon-ok',
             invalid: 'glyphicon glyphicon-remove',
             validating: 'glyphicon glyphicon-refresh'
@@ -15,19 +27,18 @@ $(document).ready(function() {
 
     function captchaLoaded() {
         $('#defaultForm')
-            .on('added.field.bv', function(e, data) {
+            .on('added.field.fv', function(e, data) {
                 // The field 'recaptcha_response_field' has just been added
                 if (data.field === 'recaptcha_response_field') {
                     // Find the icon
-                    var $parent = data.element.parents('.form-group'),
-                        $icon   = $parent.find('.form-control-feedback[data-bv-icon-for="' + data.field + '"]');
+                    var $icon = data.element.data('fv.icon');
 
                     // Move icon to other position
                     $icon.insertAfter('#recaptcha');
                 }
             })
             // Add new field after loading captcha
-            .bootstrapValidator('addField', 'recaptcha_response_field', {
+            .formValidation('addField', 'recaptcha_response_field', {
                 validators: {
                     notEmpty: {
                         message: 'The captcha is required and can\'t be empty'
@@ -41,9 +52,11 @@ $(document).ready(function() {
                                 recaptcha_challenge_field: $('#defaultForm').find('[name="recaptcha_challenge_field"]').val()
                             };
                         },
+                        // Set it to enough time that you think the user complete typing the captcha
                         delay: 1000
                     }
                 }
             });
     };
 });
+</script>
