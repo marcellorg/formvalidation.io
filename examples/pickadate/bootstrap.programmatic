@@ -1,3 +1,4 @@
+<script>
 $(document).ready(function() {
     $('#dob').pickadate({
         format: 'mm/dd/yyyy',
@@ -9,12 +10,13 @@ $(document).ready(function() {
         .pickadate('picker')
         .on('render', function() {
             // http://amsul.ca/pickadate.js/api.htm#events-callbacks
-            // Revalidate the dob field
-            $('#pickDateForm').bootstrapValidator('revalidateField', 'dob');
+            // Revalidate the date of birth field
+            $('#pickDateForm').formValidation('revalidateField', 'dob');
         });
 
-    $('#pickDateForm').bootstrapValidator({
-        feedbackIcons: {
+    $('#pickDateForm').formValidation({
+        framework: 'bootstrap',
+        icon: {
             valid: 'glyphicon glyphicon-ok',
             invalid: 'glyphicon glyphicon-remove',
             validating: 'glyphicon glyphicon-refresh'
@@ -35,3 +37,4 @@ $(document).ready(function() {
         }
     });
 });
+</script>
