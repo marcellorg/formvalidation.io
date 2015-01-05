@@ -19,11 +19,17 @@
                 </tr>
                 <tr>
                     <td><code>button</code></td>
-                    <td><code>data-fv-button-selector</code></td>
+                    <td>
+                        <ul class="doc-list">
+                            <li><code>data-fv-button-selector</code></li>
+                            <li><code>data-fv-button-disabled</code></li>
+                        </ul>
+                    </td>
                     <td>
 {% highlight javascript %}
 button: {
-    selector: '[type="submit"]'
+    selector: '[type="submit"]',
+    disabled: ''
 }
 {% endhighlight %}
                     </td>
@@ -114,25 +120,36 @@ row: {
     </div>
 
     <div class="doc-hr-short"></div>
+
     {% include_relative form/_autoFocus.html %}
     <div class="doc-hr-short"></div>
+
+    {% include_relative form/_button.html %}
+    <div class="doc-hr-short"></div>
+
     {% include settings/form/container.html %}
     <div class="doc-hr-short"></div>
+
     {% include settings/form/excluded.html %}
     <div class="doc-hr-short"></div>
+
     {% include settings/form/feedback-icons.html %}
     <div class="doc-hr-short"></div>
+
     {% include settings/form/group.html %}
     <div class="doc-hr-short"></div>
+
     {% include settings/form/live.html %}
     <div class="doc-hr-short"></div>
+
     {% include settings/form/message.html %}
     <div class="doc-hr-short"></div>
-    {% include settings/form/submit-buttons.html %}
-    <div class="doc-hr-short"></div>
+
     {% include settings/form/threshold.html %}
     <div class="doc-hr-short"></div>
+
     {% include settings/form/trigger.html %}
     <div class="doc-hr-short"></div>
+
     {% include settings/form/verbose.html %}
 </section>
