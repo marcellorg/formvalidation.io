@@ -1,7 +1,24 @@
+<form id="registrationForm" method="post" class="form-horizontal">
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Username</label>
+        <div class="col-xs-4">
+            <input type="text" class="form-control" name="username" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-xs-5 col-xs-offset-3">
+            <button type="submit" class="btn btn-default">Validate</button>
+        </div>
+    </div>
+</form>
+
+<script>
 $(document).ready(function() {
     $('#registrationForm')
-        .bootstrapValidator({
-            feedbackIcons: {
+        .formValidation({
+            framework: 'bootstrap',
+            icon: {
                 valid: 'glyphicon glyphicon-ok',
                 invalid: 'glyphicon glyphicon-remove',
                 validating: 'glyphicon glyphicon-refresh'
@@ -25,18 +42,19 @@ $(document).ready(function() {
                 }
             }
         })
-        .on('error.validator.bv', function(e, data) {
+        .on('err.validator.fv', function(e, data) {
             // $(e.target)    --> The field element
-            // data.bv        --> The BootstrapValidator instance
+            // data.fv        --> The FormValidation instance
             // data.field     --> The field name
             // data.element   --> The field element
             // data.validator --> The current validator name
 
             data.element
-                .data('bv.messages')
+                .data('fv.messages')
                 // Hide all the messages
-                .find('.help-block[data-bv-for="' + data.field + '"]').hide()
+                .find('.help-block[data-fv-for="' + data.field + '"]').hide()
                 // Show only message associated with current validator
-                .filter('[data-bv-validator="' + data.validator + '"]').show();
+                .filter('[data-fv-validator="' + data.validator + '"]').show();
         });
 });
+</script>
