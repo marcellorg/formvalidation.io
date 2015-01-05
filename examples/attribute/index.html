@@ -7,7 +7,7 @@ permalink: /examples/attribute/
 <div class="doc-content-container">
     <div class="doc-heading">
         <h1>Setting validator options via HTML attributes</h1>
-        <p>&larr; <a href="/examples/">Examples</a></p>
+        <p>&larr; <a href="/examples">Examples</a></p>
         {% include share.html %}
     </div>
 
@@ -20,16 +20,16 @@ permalink: /examples/attribute/
 
 {% highlight html %}
 <input
-    data-bv-validatorname="true"
-    data-bv-validatorname-validatoroption="..." />
+    data-fv-validatorname="true"
+    data-fv-validatorname-validatoroption="..." />
 {% endhighlight %}
 
                     <p>Here are some important points when setting the attributes for field:</p>
 
                     <ol>
                         <li><code>validatorname</code> and <code>validatoroption</code> must be lowercase.</li>
-                        <li>Use <code>data-bv-validatorname</code>, <code>data-bv-validatorname="true"</code>, or <code>data-bv-validatorname="data-bv-validatorname"</code> to enable particular validator for field.</li>
-                        <li>Set <code>data-bv-validatorname="false"</code> to disable the validator</li>
+                        <li>Use <code>data-fv-validatorname</code>, <code>data-fv-validatorname="true"</code>, or <code>data-fv-validatorname="data-fv-validatorname"</code> to enable particular validator for field.</li>
+                        <li>Set <code>data-fv-validatorname="false"</code> to disable the validator</li>
                         <li>There are some validators which not all options are configurable via HTML attribute. Refer to each validator documentation to see exactly the equivalent HTML attribute for each option.</li>
                     </ol>
 
@@ -42,7 +42,8 @@ permalink: /examples/attribute/
         <div class="radio">
             <label>
                 <input type="radio" name="gender" value="male"
-                    data-bv-notempty data-bv-notempty-message="The gender is required" /> Male
+                    data-fv-notempty
+                    data-fv-notempty-message="The gender is required" /> Male
             </label>
         </div>
         <div class="radio">
@@ -59,37 +60,9 @@ permalink: /examples/attribute/
 </div>
 {% endhighlight %}
 
-                    <div class="doc-demo">
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a href="#attribute-form-tab" data-toggle="tab">Try it</a></li>
-                            <li><a href="#attribute-html-tab" data-toggle="tab">HTML</a></li>
-                            <li><a href="#attribute-js-tab" data-toggle="tab">JS</a></li>
-                        </ul>
-
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="attribute-form-tab">
-                            {% include examples/attribute/example.html %}
-                            </div>
-
-                            <div class="tab-pane" id="attribute-html-tab">
-{% highlight html %}
-{% include examples/attribute/example.html %}
-{% endhighlight %}
-                            </div>
-
-                            <div class="tab-pane" id="attribute-js-tab">
-{% highlight javascript %}
-{% include examples/attribute/example.js %}
-{% endhighlight %}
-                            </div>
-                        </div>
-                    </div>
+                    {% include demo/tabs.html id="demo" frameworks="bootstrap" codes="declarative" %}
                 </section>
             </div>
         </div>
     </div>
 </div>
-
-<script>
-{% include examples/attribute/example.js %}
-</script>
