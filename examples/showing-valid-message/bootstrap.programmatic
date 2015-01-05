@@ -1,9 +1,32 @@
+<form id="signupForm" method="post" class="form-horizontal">
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Username</label>
+        <div class="col-xs-5">
+            <input type="text" class="form-control" name="username" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Password</label>
+        <div class="col-xs-5">
+            <input type="password" class="form-control" name="password" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-xs-5 col-xs-offset-3">
+            <button type="submit" class="btn btn-default">Signup</button>
+        </div>
+    </div>
+</form>
+
+<script>
 $(document).ready(function() {
     $('#signupForm')
-        .on('init.field.bv', function(e, data) {
+        .on('init.field.fv', function(e, data) {
             var field  = data.field,        // Get the field name
                 $field = data.element,      // Get the field element
-                bv     = data.bv;           // BootstrapValidator instance
+                bv     = data.fv;           // FormValidation instance
 
             // Create a span element to show valid message
             // and place it right before the field
@@ -19,8 +42,8 @@ $(document).ready(function() {
                 $span.html(message);
             }
         })
-        .bootstrapValidator({
-            feedbackIcons: {
+        .formValidation({
+            icon: {
                 valid: 'glyphicon glyphicon-ok',
                 invalid: 'glyphicon glyphicon-remove',
                 validating: 'glyphicon glyphicon-refresh'
@@ -56,14 +79,14 @@ $(document).ready(function() {
                 }
             }
         })
-        .on('success.field.bv', function(e, data) {
+        .on('success.field.fv', function(e, data) {
             var field  = data.field,        // Get the field name
                 $field = data.element;      // Get the field element
 
             // Show the valid message element
             $field.next('.validMessage[data-field="' + field + '"]').show();
         })
-        .on('error.field.bv', function(e, data) {
+        .on('err.field.fv', function(e, data) {
             var field  = data.field,        // Get the field name
                 $field = data.element;      // Get the field element
 
@@ -71,3 +94,4 @@ $(document).ready(function() {
             $field.next('.validMessage[data-field="' + field + '"]').hide();
         });
 });
+</script>
