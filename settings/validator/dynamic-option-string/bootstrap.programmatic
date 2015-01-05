@@ -1,6 +1,17 @@
+<form id="zipCodeForm" class="form-horizontal">
+    <div class="form-group">
+        <label class="col-xs-3 control-label">US zipcode</label>
+        <div class="col-xs-5">
+            <input type="text" class="form-control" name="code" />
+        </div>
+    </div>
+</form>
+
+<script>
 $(document).ready(function() {
-    $('#zipcodeForm').bootstrapValidator({
-        feedbackIcons: {
+    $('#zipCodeForm').formValidation({
+        framework: 'bootstrap',
+        icon: {
             valid: 'glyphicon glyphicon-ok',
             invalid: 'glyphicon glyphicon-remove',
             validating: 'glyphicon glyphicon-refresh'
@@ -17,3 +28,4 @@ $(document).ready(function() {
         }
     });
 });
+</script>

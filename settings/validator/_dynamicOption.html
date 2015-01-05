@@ -2,7 +2,7 @@
     <h3 id="dynamic-option">Dynamic option</h3>
 
     <p>Some validators have option which its value could be change dynamically.</p>
-    <p>For example, the <a href="/validators/zipCode/">zipCode validator</a> has the <code>country</code> option that can be changed dynamically a select element.</p>
+    <p>For example, the <a href="/validators/zipCode">zipCode validator</a> has the <code>country</code> option that can be changed dynamically a select element.</p>
 
     <p>The dynamic option can be determined by:</p>
     <ul class="doc-list">
@@ -17,7 +17,7 @@
 {% highlight javascript %}
 function(value, validator, $field) {
     // value is the value of field
-    // validator is the BootstrapValidator instance
+    // validator is the FormValidation instance
     // $field is the jQuery element representing field element
 }
 {% endhighlight %}
@@ -35,43 +35,43 @@ function(value, validator, $field) {
             </thead>
             <tbody>
                 <tr>
-                    <td><a href="/validators/between/">between validator</a></td>
+                    <td><a href="/validators/between">between</a> validator</td>
                     <td><code>min</code>, <code>max</code></td>
                 </tr>
                 <tr>
-                    <td><a href="/validators/choice/">choice validator</a></td>
+                    <td><a href="/validators/choice">choice</a> validator</td>
                     <td><code>min</code>, <code>max</code></td>
                 </tr>
                 <tr>
-                    <td><a href="/validators/greaterThan/">greaterThan validator</a></td>
+                    <td><a href="/validators/greaterThan">greaterThan</a> validator</td>
                     <td><code>value</code></td>
                 </tr>
                 <tr>
-                    <td><a href="/validators/iban/">iban validator</a></td>
+                    <td><a href="/validators/iban">iban</a> validator</td>
                     <td><code>country</code></td>
                 </tr>
                 <tr>
-                    <td><a href="/validators/id/">id validator</a></td>
+                    <td><a href="/validators/id">id</a> validator</td>
                     <td><code>country</code></td>
                 </tr>
                 <tr>
-                    <td><a href="/validators/lessThan/">lessThan validator</a></td>
+                    <td><a href="/validators/lessThan">lessThan</a> validator</td>
                     <td><code>value</code></td>
                 </tr>
                 <tr>
-                    <td><a href="/validators/phone/">phone validator</a></td>
+                    <td><a href="/validators/phone">phone</a> validator</td>
                     <td><code>country</code></td>
                 </tr>
                 <tr>
-                    <td><a href="/validators/stringLength/">stringLength validator</a></td>
+                    <td><a href="/validators/stringLength">stringLength</a> validator</td>
                     <td><code>min</code>, <code>max</code></td>
                 </tr>
                 <tr>
-                    <td><a href="/validators/vat/">vat validator</a></td>
+                    <td><a href="/validators/vat">vat</a> validator</td>
                     <td><code>country</code></td>
                 </tr>
                 <tr>
-                    <td><a href="/validators/zipCode/">zipCode validator</a></td>
+                    <td><a href="/validators/zipCode">zipCode</a> validator</td>
                     <td><code>country</code></td>
                 </tr>
             </tbody>
@@ -79,12 +79,12 @@ function(value, validator, $field) {
     </div>
 
     <div class="doc-alert doc-alert-info">
-        If you develop your own validator which support dynamic option, the <a href="/api/#get-dynamic-option">getDynamicOption()</a> method might be useful.
+        If you develop your own validator which support dynamic option, the <a href="/api#get-dynamic-option">getDynamicOption()</a> method might be useful.
         You should look at the source of validators above to see how this method is used.
     </div>
 
     <p>To illustrate how powerful this concept is, take a look at the following example.</p>
-    <p>Assume that your form uses <a href="/validators/zipCode/">zipCode validator</a> to validate a zipcode. The next sections show you how to use four ways above to define option value.</p>
+    <p>Assume that your form uses <a href="/validators/zipCode/">zipCode</a> validator to validate a zipcode. The next sections show you how to use four ways above to define option value.</p>
 
     <p>You can use the following sample zipcodes for testing:</p>
     <div class="table-responsive">
@@ -117,7 +117,7 @@ function(value, validator, $field) {
 
 {% highlight javascript %}
 $(document).ready(function() {
-    $('#zipcodeForm').bootstrapValidator({
+    $('#zipcodeForm').formValidation({
         fields: {
             code: {
                 validators: {
@@ -132,31 +132,7 @@ $(document).ready(function() {
 });
 {% endhighlight %}
 
-    <div class="doc-demo">
-        <ul class="nav nav-tabs">
-            <li class="active"><a href="#zipcode-form-tab" data-toggle="tab">Try it</a></li>
-            <li><a href="#zipcode-html-tab" data-toggle="tab">HTML</a></li>
-            <li><a href="#zipcode-js-tab" data-toggle="tab">JS</a></li>
-        </ul>
-
-        <div class="tab-content">
-            <div class="tab-pane active" id="zipcode-form-tab">
-            {% include settings/validator/zipcode-example.html %}
-            </div>
-
-            <div class="tab-pane" id="zipcode-html-tab">
-{% highlight html %}
-{% include settings/validator/zipcode-example.html %}
-{% endhighlight %}
-            </div>
-
-            <div class="tab-pane" id="zipcode-js-tab">
-{% highlight javascript %}
-{% include settings/validator/zipcode-example.js %}
-{% endhighlight %}
-            </div>
-        </div>
-    </div>
+    {% include demo/tabs.html id="validator-do-string" frameworks="bootstrap" dir="validator/dynamic-option-string" codes="programmatic" %}
 
     <p>What happen if you want the country to be changeable, for example, by a select element. With the dynamic option concept, it can be done easily by setting the <code>country</code> option as:</p>
 
@@ -176,7 +152,7 @@ $(document).ready(function() {
 
 {% highlight javascript %}
 $(document).ready(function() {
-    $('#zipcodeElementForm').bootstrapValidator({
+    $('#zipcodeElementForm').formValidation({
         fields: {
             code: {
                 validators: {
@@ -191,31 +167,7 @@ $(document).ready(function() {
 });
 {% endhighlight %}
 
-    <div class="doc-demo">
-        <ul class="nav nav-tabs">
-            <li class="active"><a href="#zipcode-element-form-tab" data-toggle="tab">Try it</a></li>
-            <li><a href="#zipcode-element-html-tab" data-toggle="tab">HTML</a></li>
-            <li><a href="#zipcode-element-js-tab" data-toggle="tab">JS</a></li>
-        </ul>
-
-        <div class="tab-content">
-            <div class="tab-pane active" id="zipcode-element-form-tab">
-            {% include settings/validator/zipcode-element-example.html %}
-            </div>
-
-            <div class="tab-pane" id="zipcode-element-html-tab">
-{% highlight html %}
-{% include settings/validator/zipcode-element-example.html %}
-{% endhighlight %}
-            </div>
-
-            <div class="tab-pane" id="zipcode-element-js-tab">
-{% highlight javascript %}
-{% include settings/validator/zipcode-element-example.js %}
-{% endhighlight %}
-            </div>
-        </div>
-    </div>
+    {% include demo/tabs.html id="validator-do-element" frameworks="bootstrap" dir="validator/dynamic-option-element" codes="programmatic" %}
 
     <h4 id="dynamic-option-function-name">Using name of function returning the option value</h4>
 
@@ -242,7 +194,7 @@ function getCountryCode(value, validator, $field) {
 };
 
 $(document).ready(function() {
-    $('#zipcodeFunctionNameForm').bootstrapValidator({
+    $('#zipcodeFunctionNameForm').formValidation({
         fields: {
             code: {
                 validators: {
@@ -257,37 +209,13 @@ $(document).ready(function() {
 });
 {% endhighlight %}
 
-    <div class="doc-demo">
-        <ul class="nav nav-tabs">
-            <li class="active"><a href="#zipcode-function-form-tab" data-toggle="tab">Try it</a></li>
-            <li><a href="#zipcode-function-html-tab" data-toggle="tab">HTML</a></li>
-            <li><a href="#zipcode-function-js-tab" data-toggle="tab">JS</a></li>
-        </ul>
-
-        <div class="tab-content">
-            <div class="tab-pane active" id="zipcode-function-form-tab">
-            {% include settings/validator/zipcode-function-example.html %}
-            </div>
-
-            <div class="tab-pane" id="zipcode-function-html-tab">
-{% highlight html %}
-{% include settings/validator/zipcode-function-example.html %}
-{% endhighlight %}
-            </div>
-
-            <div class="tab-pane" id="zipcode-function-js-tab">
-{% highlight javascript %}
-{% include settings/validator/zipcode-function-example.js %}
-{% endhighlight %}
-            </div>
-        </div>
-    </div>
+    {% include demo/tabs.html id="validator-do-function" frameworks="bootstrap" dir="validator/dynamic-option-function" codes="programmatic" %}
 
     <h4 id="dynamic-option-callback">Using function returning the option value</h4>
 
 {% highlight javascript %}
 $(document).ready(function() {
-    $('#zipcodeElementForm').bootstrapValidator({
+    $('#zipcodeElementForm').formValidation({
         fields: {
             code: {
                 validators: {
@@ -307,36 +235,5 @@ $(document).ready(function() {
 });
 {% endhighlight %}
 
-    <div class="doc-demo">
-        <ul class="nav nav-tabs">
-            <li class="active"><a href="#zipcode-callback-form-tab" data-toggle="tab">Try it</a></li>
-            <li><a href="#zipcode-callback-html-tab" data-toggle="tab">HTML</a></li>
-            <li><a href="#zipcode-callback-js-tab" data-toggle="tab">JS</a></li>
-        </ul>
-
-        <div class="tab-content">
-            <div class="tab-pane active" id="zipcode-callback-form-tab">
-            {% include settings/validator/zipcode-callback-example.html %}
-            </div>
-
-            <div class="tab-pane" id="zipcode-callback-html-tab">
-{% highlight html %}
-{% include settings/validator/zipcode-callback-example.html %}
-{% endhighlight %}
-            </div>
-
-            <div class="tab-pane" id="zipcode-callback-js-tab">
-{% highlight javascript %}
-{% include settings/validator/zipcode-callback-example.js %}
-{% endhighlight %}
-            </div>
-        </div>
-    </div>
+    {% include demo/tabs.html id="validator-do-callback" frameworks="bootstrap" dir="validator/dynamic-option-callback" codes="programmatic" %}
 </section>
-
-<script>
-{% include settings/validator/zipcode-example.js %}
-{% include settings/validator/zipcode-element-example.js %}
-{% include settings/validator/zipcode-function-example.js %}
-{% include settings/validator/zipcode-callback-example.js %}
-</script>
