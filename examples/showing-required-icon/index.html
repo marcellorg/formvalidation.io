@@ -7,19 +7,19 @@ permalink: /examples/showing-required-icon/
 <div class="doc-content-container">
     <div class="doc-heading">
         <h1>Showing required icon for the mandatory fields</h1>
-        <p>&larr; <a href="/examples/">Examples</a></p>
+        <p>&larr; <a href="/examples">Examples</a></p>
         {% include share.html %}
     </div>
 
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                <p>As you know, the BootstrapValidator provides three <a href="/settings/#form-icon">feedback icons</a> which are shown based on the status of field:</p>
+                <p>As you know, the FormValidation provides three <a href="/settings#form-icon">feedback icons</a> which are shown based on the status of field:</p>
 
 {% highlight javascript %}
 $(document).ready(function() {
-    $(form).bootstrapValidator({
-        feedbackIcons: {
+    $(form).formValidation({
+        icon: {
             valid: 'glyphicon glyphicon-ok',
             invalid: 'glyphicon glyphicon-remove',
             validating: 'glyphicon glyphicon-refresh'
@@ -40,19 +40,19 @@ $(document).ready(function() {
                         <tbody>
                             <tr>
                                 <td>
-                                    <code>feedbackIcons.valid</code>
+                                    <code>icon.valid</code>
                                 </td>
                                 <td>Shown when the field is valid</td>
                             </tr>
                             <tr>
                                 <td>
-                                    <code>feedbackIcons.invalid</code>
+                                    <code>icon.invalid</code>
                                 </td>
                                 <td>Shown when the field is invalid</td>
                             </tr>
                             <tr>
                                 <td>
-                                    <code>feedbackIcons.validating</code>
+                                    <code>icon.validating</code>
                                 </td>
                                 <td>Shown when the field is being validated</td>
                             </tr>
@@ -66,8 +66,8 @@ $(document).ready(function() {
 {% highlight javascript %}
 $(document).ready(function() {
     // Use Glyphicons icons
-    $(form).bootstrapValidator({
-        feedbackIcons: {
+    $(form).formValidation({
+        icon: {
             required: 'glyphicon glyphicon-asterisk',
             valid: 'glyphicon glyphicon-ok',
             invalid: 'glyphicon glyphicon-remove',
@@ -77,8 +77,8 @@ $(document).ready(function() {
     });
 
     // Use FontAwesome icons
-    $(form).bootstrapValidator({
-        feedbackIcons: {
+    $(form).formValidation({
+        icon: {
             required: 'fa fa-asterisk',
             valid: 'fa fa-check',
             invalid: 'fa fa-times',
@@ -92,36 +92,12 @@ $(document).ready(function() {
                 <p>The implementation uses:</p>
 
                 <ul class="doc-list">
-                    <li><a href="/api/#get-options">getOptions()</a> method to get the required icon option</li>
-                    <li>Show the required icons by triggering the <a href="/settings/#event-field">init.field.bv</a> event which is called after the field is initialized by the plugin</li>
-                    <li>Hide the required icons by triggering the <a href="/settings/#event-field">status.field.bv</a> event which is called after the field changes its status</li>
+                    <li><a href="/api#get-options">getOptions()</a> method to get the required icon option</li>
+                    <li>Show the required icons by triggering the <a href="/settings#event-field">init.field.fv</a> event which is called after the field is initialized by the plugin</li>
+                    <li>Hide the required icons by triggering the <a href="/settings#event-field">status.field.fv</a> event which is called after the field changes its status</li>
                 </ul>
 
-                <div class="doc-demo">
-                    <ul class="nav nav-tabs">
-                        <li class="active"><a href="#icon-form-tab" data-toggle="tab">Try it</a></li>
-                        <li><a href="#icon-html-tab" data-toggle="tab">HTML</a></li>
-                        <li><a href="#icon-js-tab" data-toggle="tab">JS</a></li>
-                    </ul>
-
-                    <div class="tab-content">
-                        <div class="tab-pane active" id="icon-form-tab">
-                        {% include examples/showing-required-icon/example.html %}
-                        </div>
-
-                        <div class="tab-pane" id="icon-html-tab">
-{% highlight html %}
-{% include examples/showing-required-icon/example.html %}
-{% endhighlight %}
-                        </div>
-
-                        <div class="tab-pane" id="icon-js-tab">
-{% highlight javascript %}
-{% include examples/showing-required-icon/example.js %}
-{% endhighlight %}
-                        </div>
-                    </div>
-                </div>
+                {% include demo/tabs.html id="demo" frameworks="bootstrap" codes="programmatic" %}
 
                 <div class="doc-alert doc-alert-info">
                     If the form uses different input types which might cause the required icon not shown properly, you can <a href="/examples/adjusting-feedback-icon-position/">adjust its position</a>.
@@ -130,7 +106,3 @@ $(document).ready(function() {
         </div>
     </div>
 </div>
-
-<script>
-{% include examples/showing-required-icon/example.js %}
-</script>
