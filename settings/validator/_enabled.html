@@ -1,7 +1,7 @@
 <section>
-    <h3 id="validator-enabled">enabled: Boolean</h3>
+    <h3 id="validator-enabled">enabled</h3>
 
-    <p>Indicate the validator is enabled or disabled. It is <code>true</code>, by default.</p>
+    <p><code>enabled: Boolean</code> &mdash; Indicate the validator is enabled or disabled. It is <code>true</code>, by default.</p>
     <p>Look at the field's <a href="#field-enabled">enabled</a> option if you want to enable/disable all validators.</p>
     <p>The table below shows three equivalent ways to enable or disable given validator:</p>
 
@@ -34,7 +34,7 @@
                     <td>
 {% highlight javascript %}
 $(document).ready(function() {
-    $(form).bootstrapValidator({
+    $(form).formValidation({
         fields: {
             fullName: {
                 validators: {
@@ -49,16 +49,16 @@ $(document).ready(function() {
 {% endhighlight %}
                     </td>
                 <tr>
-                    <td><a href="/api/#enable-field-validators">enableFieldValidators()</a></td>
+                    <td><a href="/api#enable-field-validators">enableFieldValidators()</a></td>
                     <td>
 {% highlight javascript %}
 // Enable validator
 $(form)
-    .bootstrapValidator('enableFieldValidators', fullName, true, 'notEmpty');
+    .formValidation('enableFieldValidators', fullName, true, 'notEmpty');
 
 // Disable validator
 $(form)
-    .bootstrapValidator('enableFieldValidators', fullName, false, 'notEmpty');
+    .formValidation('enableFieldValidators', fullName, false, 'notEmpty');
 {% endhighlight %}
                     </td>
                 </tr>
@@ -66,34 +66,6 @@ $(form)
         </table>
     </div>
 
-    <h4 id="validator-enabled-example">Example</h4>
-    <div class="doc-demo">
-        <ul class="nav nav-tabs">
-            <li class="active"><a href="#validator-enabled-form-tab" data-toggle="tab">Try it</a></li>
-            <li><a href="#validator-enabled-html-tab" data-toggle="tab">HTML</a></li>
-            <li><a href="#validator-enabled-js-tab" data-toggle="tab">JS</a></li>
-        </ul>
-
-        <div class="tab-content">
-            <div class="tab-pane active" id="validator-enabled-form-tab">
-            {% include settings/validator/enabled-example.html %}
-            </div>
-
-            <div class="tab-pane" id="validator-enabled-html-tab">
-{% highlight html %}
-{% include settings/validator/enabled-example.html %}
-{% endhighlight %}
-            </div>
-
-            <div class="tab-pane" id="validator-enabled-js-tab">
-{% highlight javascript %}
-{% include settings/validator/enabled-example.js %}
-{% endhighlight %}
-            </div>
-        </div>
-    </div>
+    <h5>Example</h5>
+    {% include demo/tabs.html id="validator-enabled" frameworks="bootstrap" dir="validator/enabled" codes="programmatic" %}
 </section>
-
-<script>
-{% include settings/validator/enabled-example.js %}
-</script>

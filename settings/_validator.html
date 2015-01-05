@@ -13,18 +13,26 @@
             <tbody>
                 <tr>
                     <td><code>enabled</code></td>
-                    <td><code>data-bv-{validatorname}</code></td>
+                    <td><code>data-fv-{validatorname}</code></td>
                 </tr>
                 <tr>
                     <td><code>message</code></td>
-                    <td><code>data-bv-{validatorname}-message</code></td>
+                    <td><code>data-fv-{validatorname}-message</code></td>
                 </tr>
             </tbody>
         </table>
     </div>
 
-    {% include settings/validator/enabled.html %}
+    <div class="doc-hr-short"></div>
+
+    {% include_relative validator/_enabled.html %}
+    <div class="doc-hr-short"></div>
+
     {% include settings/validator/message.html %}
+    <div class="doc-hr-short"></div>
+
     {% include settings/validator/dynamic-option.html %}
+    <div class="doc-hr-short"></div>
+
     {% include settings/validator/dynamic-message.html %}
 </section>
