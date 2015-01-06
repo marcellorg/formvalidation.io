@@ -2,7 +2,7 @@
 <html>
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article#">
     <meta charset="utf-8">
-<title>updateStatus() example - FormValidation</title>
+<title>Using Bootstrap tooltip to show message - FormValidation</title>
 <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
 <meta http-equiv="Content-Language" content="en">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -15,13 +15,13 @@
 <meta name="twitter:site" content="@formvalidation" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks" />
-<meta name="twitter:title" content="updateStatus() example - FormValidation" />
+<meta name="twitter:title" content="Using Bootstrap tooltip to show message - FormValidation" />
 <meta name="twitter:image" content="http://formvalidation.io/asset/img/logo.png" />
 
-<meta property="og:title" content="updateStatus() example - FormValidation" />
+<meta property="og:title" content="Using Bootstrap tooltip to show message - FormValidation" />
 <meta property="og:description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://formvalidation.io/api/payment/bootstrap.html" />
+<meta property="og:url" content="http://formvalidation.io/examples/using-tooltip-to-show-message/tooltip/bootstrap.html" />
 <meta property="og:image" content="http://formvalidation.io/asset/img/logo.png" />
 <meta property="og:site_name" content="FormValidation" />
 
@@ -59,91 +59,156 @@ _gaq.push(['_trackPageview']);
 </head>
 <body class="demo-bootstrap">
     <div class="container" id="demoContainer">
-        <form id="paymentForm" class="form-horizontal">
+        <form id="registrationForm" class="form-horizontal">
     <div class="form-group">
-        <label class="col-xs-3 control-label">Expiration</label>
-        <div class="col-xs-3">
-            <input type="text" class="form-control" placeholder="Month" name="expMonth" />
+        <label class="col-xs-3 control-label">Full name</label>
+        <div class="col-xs-4">
+            <input type="text" class="form-control" name="firstName" placeholder="First name" />
         </div>
+        <div class="col-xs-4">
+            <input type="text" class="form-control" name="lastName" placeholder="Last name" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Username</label>
+        <div class="col-xs-5">
+            <input type="text" class="form-control" name="username" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Email address</label>
+        <div class="col-xs-5">
+            <input type="text" class="form-control" name="email" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Password</label>
+        <div class="col-xs-5">
+            <input type="password" class="form-control" name="password" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Gender</label>
+        <div class="col-xs-5">
+            <div class="radio">
+                <label>
+                    <input type="radio" name="gender" value="male" /> Male
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="gender" value="female" /> Female
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="gender" value="other" /> Other
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Date of birth</label>
         <div class="col-xs-3">
-            <input type="text" class="form-control" placeholder="Year" name="expYear" />
+            <input type="text" class="form-control" name="birthday" placeholder="YYYY/MM/DD" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-xs-9 col-xs-offset-3">
+            <button type="submit" class="btn btn-primary" name="signup" value="Sign up">Submit</button>
         </div>
     </div>
 </form>
 
 <script>
 $(document).ready(function() {
-    $('#paymentForm').formValidation({
+    $('#registrationForm').formValidation({
         framework: 'bootstrap',
         icon: {
             valid: 'glyphicon glyphicon-ok',
             invalid: 'glyphicon glyphicon-remove',
             validating: 'glyphicon glyphicon-refresh'
         },
+        err: {
+            // You can set it to popover
+            // The message then will be shown in Bootstrap popover
+            container: 'tooltip'
+        },
         fields: {
-            expMonth: {
-                row: '.col-xs-3',
+            firstName: {
+                row: '.col-xs-4',
                 validators: {
                     notEmpty: {
-                        message: 'The expiration month is required'
-                    },
-                    digits: {
-                        message: 'The expiration month can contain digits only'
-                    },
-                    callback: {
-                        message: 'Expired',
-                        callback: function(value, validator) {
-                            value = parseInt(value, 10);
-                            var year         = validator.getFieldElements('expYear').val(),
-                                currentMonth = new Date().getMonth() + 1,
-                                currentYear  = new Date().getFullYear();
-                            if (value < 0 || value > 12) {
-                                return false;
-                            }
-                            if (year == '') {
-                                return true;
-                            }
-                            year = parseInt(year, 10);
-                            if (year > currentYear || (year == currentYear && value > currentMonth)) {
-                                validator.updateStatus('expYear', 'VALID');
-                                return true;
-                            } else {
-                                return false;
-                            }
-                        }
+                        message: 'The first name is required'
                     }
                 }
             },
-            expYear: {
-                row: '.col-xs-3',
+            lastName: {
+                row: '.col-xs-4',
                 validators: {
                     notEmpty: {
-                        message: 'The expiration year is required'
+                        message: 'The last name is required'
+                    }
+                }
+            },
+            username: {
+                validators: {
+                    notEmpty: {
+                        message: 'The username is required'
                     },
-                    digits: {
-                        message: 'The expiration year can contain digits only'
+                    stringLength: {
+                        min: 6,
+                        max: 30,
+                        message: 'The username must be more than 6 and less than 30 characters long'
                     },
-                    callback: {
-                        message: 'Expired',
-                        callback: function(value, validator) {
-                            value = parseInt(value, 10);
-                            var month        = validator.getFieldElements('expMonth').val(),
-                                currentMonth = new Date().getMonth() + 1,
-                                currentYear  = new Date().getFullYear();
-                            if (value < currentYear || value > currentYear + 10) {
-                                return false;
-                            }
-                            if (month == '') {
-                                return false;
-                            }
-                            month = parseInt(month, 10);
-                            if (value > currentYear || (value == currentYear && month > currentMonth)) {
-                                validator.updateStatus('expMonth', 'VALID');
-                                return true;
-                            } else {
-                                return false;
-                            }
-                        }
+                    regexp: {
+                        regexp: /^[a-zA-Z0-9_\.]+$/,
+                        message: 'The username can only consist of alphabetical, number, dot and underscore'
+                    }
+                }
+            },
+            email: {
+                validators: {
+                    notEmpty: {
+                        message: 'The email address is required'
+                    },
+                    emailAddress: {
+                        message: 'The input is not a valid email address'
+                    }
+                }
+            },
+            password: {
+                validators: {
+                    notEmpty: {
+                        message: 'The password is required'
+                    },
+                    different: {
+                        field: 'username',
+                        message: 'The password cannot be the same as username'
+                    }
+                }
+            },
+            gender: {
+                validators: {
+                    notEmpty: {
+                        message: 'The gender is required'
+                    }
+                }
+            },
+            birthday: {
+                validators: {
+                    notEmpty: {
+                        message: 'The date of birth is required'
+                    },
+                    date: {
+                        format: 'YYYY/MM/DD',
+                        message: 'The date of birth is not valid'
                     }
                 }
             }
@@ -162,7 +227,7 @@ $(document).ready(function() {
     });
 
     $(window).on('load', function() {
-        var $iframe = $(window.parent.document).find('iframe[src="/api/payment/bootstrap.html"]');
+        var $iframe = $(window.parent.document).find('iframe[src="/examples/using-tooltip-to-show-message/tooltip/bootstrap.html"]');
         if ($iframe.length) {
             $('body').addClass('demo-frame-body').find('.demo-ad').hide();
 

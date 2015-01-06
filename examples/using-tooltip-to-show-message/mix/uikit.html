@@ -2,7 +2,7 @@
 <html>
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article#">
     <meta charset="utf-8">
-<title>updateStatus() example - FormValidation</title>
+<title>Showing message in tooltip and default area - FormValidation</title>
 <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
 <meta http-equiv="Content-Language" content="en">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -15,13 +15,13 @@
 <meta name="twitter:site" content="@formvalidation" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks" />
-<meta name="twitter:title" content="updateStatus() example - FormValidation" />
+<meta name="twitter:title" content="Showing message in tooltip and default area - FormValidation" />
 <meta name="twitter:image" content="http://formvalidation.io/asset/img/logo.png" />
 
-<meta property="og:title" content="updateStatus() example - FormValidation" />
+<meta property="og:title" content="Showing message in tooltip and default area - FormValidation" />
 <meta property="og:description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://formvalidation.io/api/payment/bootstrap.html" />
+<meta property="og:url" content="http://formvalidation.io/examples/using-tooltip-to-show-message/mix/uikit.html" />
 <meta property="og:image" content="http://formvalidation.io/asset/img/logo.png" />
 <meta property="og:site_name" content="FormValidation" />
 
@@ -49,101 +49,71 @@ _gaq.push(['_trackPageview']);
 </script>
 
 
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/uikit/2.13.1/css/uikit.min.css">
     <link rel="stylesheet" href="/vendor/formvalidation/css/formValidation.min.css">
     <link rel="stylesheet" href="/asset/css/demo.css">
 
-    <script src="//cdn.jsdelivr.net/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="//cdn.jsdelivr.net/uikit/2.13.1/js/uikit.min.js"></script>
     <script src="/vendor/formvalidation/js/formValidation.min.js"></script>
-    <script src="/vendor/formvalidation/js/framework/bootstrap.min.js"></script>
+    <script src="/vendor/formvalidation/js/framework/uikit.min.js"></script>
 </head>
-<body class="demo-bootstrap">
-    <div class="container" id="demoContainer">
-        <form id="paymentForm" class="form-horizontal">
-    <div class="form-group">
-        <label class="col-xs-3 control-label">Expiration</label>
-        <div class="col-xs-3">
-            <input type="text" class="form-control" placeholder="Month" name="expMonth" />
+<body class="demo-uikit">
+    <div class="uk-width-2-3 uk-container-center" id="demoContainer">
+        <form id="messageForm" class="uk-form uk-form-horizontal">
+    <div class="uk-form-row">
+        <label class="uk-form-label">Message</label>
+        <div class="uk-form-controls">
+            <textarea name="message" rows="5" class="uk-width-1-1"></textarea>
         </div>
-        <div class="col-xs-3">
-            <input type="text" class="form-control" placeholder="Year" name="expYear" />
+    </div>
+
+    <div class="uk-form-row">
+        <label class="uk-form-label">Email address</label>
+        <div class="uk-form-controls">
+            <input name="email" type="text" class="uk-form-width-medium" />
+        </div>
+    </div>
+
+    <div class="uk-form-row">
+        <label class="uk-form-label"></label>
+        <div class="uk-form-controls">
+            <button type="submit" class="uk-button uk-button-primary">Send</button>
         </div>
     </div>
 </form>
 
 <script>
 $(document).ready(function() {
-    $('#paymentForm').formValidation({
-        framework: 'bootstrap',
+    $('#messageForm').formValidation({
+        framework: 'uikit',
         icon: {
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
+            valid: 'fa fa-check',
+            invalid: 'fa fa-times',
+            validating: 'fa fa-refresh'
         },
         fields: {
-            expMonth: {
-                row: '.col-xs-3',
+            message: {
+                // The messages for this field are shown as usual
                 validators: {
                     notEmpty: {
-                        message: 'The expiration month is required'
+                        message: 'The message is required'
                     },
-                    digits: {
-                        message: 'The expiration month can contain digits only'
-                    },
-                    callback: {
-                        message: 'Expired',
-                        callback: function(value, validator) {
-                            value = parseInt(value, 10);
-                            var year         = validator.getFieldElements('expYear').val(),
-                                currentMonth = new Date().getMonth() + 1,
-                                currentYear  = new Date().getFullYear();
-                            if (value < 0 || value > 12) {
-                                return false;
-                            }
-                            if (year == '') {
-                                return true;
-                            }
-                            year = parseInt(year, 10);
-                            if (year > currentYear || (year == currentYear && value > currentMonth)) {
-                                validator.updateStatus('expYear', 'VALID');
-                                return true;
-                            } else {
-                                return false;
-                            }
-                        }
+                    stringLength: {
+                        min: 20,
+                        max: 500,
+                        message: 'The message must be more than 20 and less than 500 characters long'
                     }
                 }
             },
-            expYear: {
-                row: '.col-xs-3',
+            email: {
+                // Show the message in a tooltip
+                err: 'tooltip',
                 validators: {
                     notEmpty: {
-                        message: 'The expiration year is required'
+                        message: 'The email address is required'
                     },
-                    digits: {
-                        message: 'The expiration year can contain digits only'
-                    },
-                    callback: {
-                        message: 'Expired',
-                        callback: function(value, validator) {
-                            value = parseInt(value, 10);
-                            var month        = validator.getFieldElements('expMonth').val(),
-                                currentMonth = new Date().getMonth() + 1,
-                                currentYear  = new Date().getFullYear();
-                            if (value < currentYear || value > currentYear + 10) {
-                                return false;
-                            }
-                            if (month == '') {
-                                return false;
-                            }
-                            month = parseInt(month, 10);
-                            if (value > currentYear || (value == currentYear && month > currentMonth)) {
-                                validator.updateStatus('expMonth', 'VALID');
-                                return true;
-                            } else {
-                                return false;
-                            }
-                        }
+                    emailAddress: {
+                        message: 'The email address is not valid'
                     }
                 }
             }
@@ -162,7 +132,7 @@ $(document).ready(function() {
     });
 
     $(window).on('load', function() {
-        var $iframe = $(window.parent.document).find('iframe[src="/api/payment/bootstrap.html"]');
+        var $iframe = $(window.parent.document).find('iframe[src="/examples/using-tooltip-to-show-message/mix/uikit.html"]');
         if ($iframe.length) {
             $('body').addClass('demo-frame-body').find('.demo-ad').hide();
 

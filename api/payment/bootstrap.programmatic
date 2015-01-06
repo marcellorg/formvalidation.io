@@ -21,6 +21,7 @@ $(document).ready(function() {
         },
         fields: {
             expMonth: {
+                row: '.col-xs-3',
                 validators: {
                     notEmpty: {
                         message: 'The expiration month is required'
@@ -53,6 +54,7 @@ $(document).ready(function() {
                 }
             },
             expYear: {
+                row: '.col-xs-3',
                 validators: {
                     notEmpty: {
                         message: 'The expiration year is required'
