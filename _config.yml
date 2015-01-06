@@ -2,7 +2,7 @@ name:                 FormValidation
 highlighter:          pygments
 
 source:               .
-destination:          _gh_pages
+destination:          ../output
 markdown:             kramdown
 exclude:              ['node_modules', '*.less']
 url:                  http://formvalidation.io
