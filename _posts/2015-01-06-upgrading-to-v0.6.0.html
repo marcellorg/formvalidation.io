@@ -7,7 +7,7 @@ author: nghuuphuoc
 
 <p>From v0.6.0, the plugin name is changed to <strong>FormValidation</strong>. To upgrade from v0.5.3 to v0.6.0, perform the following steps:</p>
 
-<h3>Step 1: Changing CSS, Javascript paths</h3>
+<h3>Required Step: Changing CSS, Javascript paths</h3>
 
 <p>This step is <strong>required</strong>.</p>
 
@@ -25,16 +25,45 @@ author: nghuuphuoc
 
 {% highlight html %}
 <!-- FormValidation CSS file -->
-<link rel="stylesheet" href="/vendor/formvalidation/dist/css/formValidation.min.css">
+<link rel="stylesheet" href="/vendor/formvalidation/dist/css/formValidation(.min).css">
 
 <!-- FormValidation plugin and the class supports validating Bootstrap form -->
-<script src="/vendor/formvalidation/dist/js/formValidation.min.js"></script>
-<script src="/vendor/formvalidation/dist/js/framework/bootstrap.min.js"></script>
+<script src="/vendor/formvalidation/dist/js/formValidation(.min).js"></script>
+<script src="/vendor/formvalidation/dist/js/framework/bootstrap(.min).js"></script>
 {% endhighlight %}
 
-<h3>Step 2: Calling plugin</h3>
+<h3>Required Step: Changing your own validator</h3>
 
-<p>After completing the step 1, you can call the plugin by both programmatic and declarative usages as before.</p>
+<p>You can ignore this step in case you don't have any your own validators. Otherwise, change its declaration as following:</p>
+
+<strong>v0.5.3:</strong>
+
+{% highlight javascript %}
+(function($) {
+    $.fn.bootstrapValidator.validators.yourValidatorName = {
+        validate: function(validator, $field, options) {
+            ...
+        }
+    };
+}(window.jQuery));
+{% endhighlight %}
+
+<strong>v0.6.0:</strong>
+
+{% highlight javascript %}
+(function($) {
+    FormValidation.Validator.yourValidatorName = {
+        validate: function(validator, $field, options) {
+            // ...
+            // The validation code is the same
+        }
+    };
+}(window.jQuery));
+{% endhighlight %}
+
+<h3>Optional Step: Calling plugin</h3>
+
+<p>After completing the steps above, you can call the plugin by both programmatic and declarative usages as before.</p>
 <p><strong>Using v0.5.3 options as your current one are supported in all v0.6.x releases</strong>. It means that you will have a lot of time to upgrade your code while current one still work.</p>
 <p>Anyway, it is recommended to change the plugin calling, options which are listed as following:</p>
 
