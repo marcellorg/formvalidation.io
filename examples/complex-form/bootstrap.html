@@ -1,0 +1,292 @@
+<!doctype html>
+<html>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article#">
+    <meta charset="utf-8">
+<title>Complex form - FormValidation</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<meta http-equiv="Content-Language" content="en">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks">
+<meta name="keywords" content="FormValidation, BootstrapValidator, jQuery, form, validate, validation, validator, plugin, Bootstrap, Foundation, Pure, SemanticUI, UIKit">
+<meta name="author" content="Nguyen Huu Phuoc">
+<meta name="google-site-verification" content="FMmr8kYuIuW27-qJLOb1Z59OgiVgKNgAv4_eMARhIY8" />
+
+<meta name="twitter:site" content="@formvalidation" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks" />
+<meta name="twitter:title" content="Complex form - FormValidation" />
+<meta name="twitter:image" content="http://formvalidation.io/asset/img/logo.png" />
+
+<meta property="og:title" content="Complex form - FormValidation" />
+<meta property="og:description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://formvalidation.io/examples/complex-form/bootstrap.html" />
+<meta property="og:image" content="http://formvalidation.io/asset/img/logo.png" />
+<meta property="og:site_name" content="FormValidation" />
+
+<link rel="icon" type="image/x-icon" href="/asset/img/favicon.ico">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/fontawesome/4.2.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+
+<!--[if lt IE 9]>
+<script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<script src="//oss.maxcdn.com/jquery/1.11.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-44786951-2']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/vendor/formvalidation/css/formValidation.min.css">
+    <link rel="stylesheet" href="/asset/css/demo.css">
+
+    <script src="//cdn.jsdelivr.net/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="/vendor/formvalidation/js/formValidation.min.js"></script>
+    <script src="/vendor/formvalidation/js/framework/bootstrap.min.js"></script>
+</head>
+<body class="demo-bootstrap">
+    <div class="container" id="demoContainer">
+        <style type="text/css">
+/* Adjust feedback icon position */
+#movieForm .form-control-feedback {
+    right: 15px;
+}
+#movieForm .selectContainer .form-control-feedback {
+    right: 25px;
+}
+</style>
+
+<form id="movieForm" method="post">
+    <div class="form-group">
+        <div class="row">
+            <div class="col-xs-8">
+                <label class="control-label">Movie title</label>
+                <input type="text" class="form-control" name="title" />
+            </div>
+
+            <div class="col-xs-4 selectContainer">
+                <label class="control-label">Genre</label>
+                <select class="form-control" name="genre">
+                    <option value="">Choose a genre</option>
+                    <option value="action">Action</option>
+                    <option value="comedy">Comedy</option>
+                    <option value="horror">Horror</option>
+                    <option value="romance">Romance</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-xs-4">
+                <label class="control-label">Director</label>
+                <input type="text" class="form-control" name="director" />
+            </div>
+
+            <div class="col-xs-4">
+                <label class="control-label">Writer</label>
+                <input type="text" class="form-control" name="writer" />
+            </div>
+
+            <div class="col-xs-4">
+                <label class="control-label">Producer</label>
+                <input type="text" class="form-control" name="producer" />
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-xs-6">
+                <label class="control-label">Website</label>
+                <input type="text" class="form-control" name="website" />
+            </div>
+
+            <div class="col-xs-6">
+                <label class="control-label">Youtube trailer</label>
+                <input type="text" class="form-control" name="trailer" />
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Review</label>
+        <textarea class="form-control" name="review" rows="8"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Rating</label>
+        <div>
+            <label class="radio-inline">
+                <input type="radio" name="rating" value="terrible" /> Terrible
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="rating" value="watchable" /> Watchable
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="rating" value="best" /> Best ever
+            </label>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-default">Validate</button>
+</form>
+
+<script>
+$(document).ready(function() {
+    $('#movieForm').formValidation({
+        framework: 'bootstrap',
+        icon: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            title: {
+                row: '.col-xs-8',
+                validators: {
+                    notEmpty: {
+                        message: 'The title is required'
+                    },
+                    stringLength: {
+                        max: 200,
+                        message: 'The title must be less than 200 characters long'
+                    }
+                }
+            },
+            genre: {
+                row: '.col-xs-4',
+                validators: {
+                    notEmpty: {
+                        message: 'The genre is required'
+                    }
+                }
+            },
+            director: {
+                row: '.col-xs-4',
+                validators: {
+                    notEmpty: {
+                        message: 'The director name is required'
+                    },
+                    stringLength: {
+                        max: 80,
+                        message: 'The director name must be less than 80 characters long'
+                    }
+                }
+            },
+            writer: {
+                row: '.col-xs-4',
+                validators: {
+                    notEmpty: {
+                        message: 'The writer name is required'
+                    },
+                    stringLength: {
+                        max: 80,
+                        message: 'The writer name must be less than 80 characters long'
+                    }
+                }
+            },
+            producer: {
+                row: '.col-xs-4',
+                validators: {
+                    notEmpty: {
+                        message: 'The producer name is required'
+                    },
+                    stringLength: {
+                        max: 80,
+                        message: 'The producer name must be less than 80 characters long'
+                    }
+                }
+            },
+            website: {
+                row: '.col-xs-6',
+                validators: {
+                    notEmpty: {
+                        message: 'The website address is required'
+                    },
+                    uri: {
+                        message: 'The website address is not valid'
+                    }
+                }
+            },
+            trailer: {
+                row: '.col-xs-6',
+                validators: {
+                    notEmpty: {
+                        message: 'The trailer link is required'
+                    },
+                    uri: {
+                        message: 'The trailer link is not valid'
+                    }
+                }
+            },
+            review: {
+                // The group will be set as default (.form-group)
+                validators: {
+                    stringLength: {
+                        max: 500,
+                        message: 'The review must be less than 500 characters long'
+                    }
+                }
+            },
+            rating: {
+                // The group will be set as default (.form-group)
+                validators: {
+                    notEmpty: {
+                        message: 'The rating is required'
+                    }
+                }
+            }
+        }
+    });
+});
+</script>
+    </div>
+
+    <div class="demo-ad"><script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=bootstrapvalidatorcom" id="_carbonads_js"></script></div>
+
+<script>
+$(document).ready(function() {
+    $('form').on('success.form.fv', function(e) {
+        e.preventDefault();
+    });
+
+    $(window).on('load', function() {
+        var $iframe = $(window.parent.document).find('iframe[src="/examples/complex-form/bootstrap.html"]');
+        if ($iframe.length) {
+            $('body').addClass('demo-frame-body').find('.demo-ad').hide();
+
+            // Adjust the height of iframes containing the demo for specific frameworks
+            var $container = $('#demoContainer');
+            setTimeout(function() {
+                $iframe.height($container.height()).css('visibility', 'visible').fadeIn('fast');
+            }, 1000);
+
+            // Set the internal data to get it later if I want
+            $('body').data('iframe.fv', $iframe);
+
+            $container
+                .find('form')
+                .on('status.field.fv', function(e, data) {
+                    $iframe.height($container.height());
+                });
+        }
+    });
+});
+</script>
+</body>
+</html>

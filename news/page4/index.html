@@ -7,28 +7,28 @@
 <meta http-equiv="Content-Language" content="en">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, SemanticUI, UIKit frameworks">
+<meta name="description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks">
 <meta name="keywords" content="FormValidation, BootstrapValidator, jQuery, form, validate, validation, validator, plugin, Bootstrap, Foundation, Pure, SemanticUI, UIKit">
 <meta name="author" content="Nguyen Huu Phuoc">
 <meta name="google-site-verification" content="FMmr8kYuIuW27-qJLOb1Z59OgiVgKNgAv4_eMARhIY8" />
 
 <meta name="twitter:site" content="@formvalidation" />
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, SemanticUI, UIKit frameworks" />
+<meta name="twitter:description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks" />
 <meta name="twitter:title" content="News - FormValidation" />
 <meta name="twitter:image" content="http://formvalidation.io/asset/img/logo.png" />
 
 <meta property="og:title" content="News - FormValidation" />
-<meta property="og:description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, SemanticUI, UIKit frameworks" />
+<meta property="og:description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://formvalidation.io/news/page4/index.html" />
 <meta property="og:image" content="http://formvalidation.io/asset/img/logo.png" />
 <meta property="og:site_name" content="FormValidation" />
 
 <link rel="icon" type="image/x-icon" href="/asset/img/favicon.ico">
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="//oss.maxcdn.com/jquery.bootstrapvalidator/0.5.2/css/bootstrapValidator.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/fontawesome/4.2.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/vendor/formvalidation/css/formValidation.min.css">
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:300,400,700">
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Cardo:400,400italic,700">
@@ -41,8 +41,9 @@
 <![endif]-->
 
 <script src="//oss.maxcdn.com/jquery/1.11.1/jquery.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script src="//oss.maxcdn.com/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.min.js"></script>
+<script src="//cdn.jsdelivr.net/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="/vendor/formvalidation/js/formValidation.min.js"></script>
+<script src="/vendor/formvalidation/js/framework/bootstrap.min.js"></script>
 
 <script type="text/javascript">
 var _gaq = _gaq || [];
@@ -80,12 +81,12 @@ _gaq.push(['_trackPageview']);
         
             
         
-        <li class=""><a href="/validators/">Validators</a></li>
+        <li class=""><a href="/api/">API</a></li>
     
         
             
         
-        <li class=""><a href="/api/">API</a></li>
+        <li class=""><a href="/validators/">Validators</a></li>
     
         
             
@@ -112,10 +113,10 @@ _gaq.push(['_trackPageview']);
     <div class="doc-hr"></div>
 
     <ul>
-        <li><a href="https://github.com/formvalidation/" title="Fork me on Github">Github <i class="fa fa-github"></i></a></li>
-        <li><a href="https://twitter.com/formvalidation/" title="Follow me on Twitter">formvalidation <i class="fa fa-twitter"></i></a></li>
-        <li><a href="https://www.facebook.com/formvalidation/" title="Like me on Facebook">FormValidation <i class="fa fa-facebook"></i></a></li>
-        <li><a href="https://plus.google.com/u/0/communities/114931136856987817254" title="Join me on Google+">Google+ community <i class="fa fa-google-plus"></i></a></li>
+        <li><a href="https://github.com/formvalidation/" title="Fork FormValidation on Github">Github <i class="fa fa-github"></i></a></li>
+        <li><a href="https://twitter.com/formvalidation/" title="Follow FormValidation on Twitter">Twitter <i class="fa fa-twitter"></i></a></li>
+        <li><a href="https://www.facebook.com/formvalidation/" title="Like FormValidation on Facebook">Facebook <i class="fa fa-facebook"></i></a></li>
+        <li><a href="https://plus.google.com/u/0/communities/114931136856987817254" title="Join FormValidation community on Google+">Google+ <i class="fa fa-google-plus"></i></a></li>
     </ul>
 
     <div class="doc-hr"></div>
@@ -129,24 +130,121 @@ _gaq.push(['_trackPageview']);
         <p><a href="mailto: phuoc@huuphuoc.me" class="btn">Hire me</a></p>
     </div>
 </nav>
-<button class="btn doc-logo" title="Toggle the navigation"><i class="fa fa-bars"></i></button>
+
+<a id="toggleButton" class="doc-nav-toggle" title="Toggle the navigation"><i class="fa fa-navicon"></i></a>
 
     <div id="main" class="doc-content-wrapper">
         <div class="doc-notification">
-    <i class="fa fa-bell-o"></i> <a href="/news/v0.5.3-released/">v0.5.3</a> is released on 2014.11.05!
+    <i class="fa fa-bell-o"></i> <a href="/news/v0.6.0-released/">v0.6.0</a> is released on 2015.01.06!
 </div>
 
         <div class="doc-content-container">
     <div class="doc-heading">
         <h1>News</h1>
-        <p>The latest news about BootstrapValidator</p>
-        <a class="btn doc-edit-btn" href="https://github.com/formvalidation/formvalidation.io/edit/master/news/page4/index.html">Improve it on Github</a>
+        <p>The latest news about FormValidation</p>
         <div id="shareButton" class="doc-share-button"></div>
     </div>
 
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
+                
+                    <div class="doc-post">
+    <h2><a href="/news/v0.3.2-released/">BootstrapValidator v0.3.2 Released</a></h2>
+
+    <div class="doc-post-meta">
+        <a href="https://github.com/nghuuphuoc" title="@nghuuphuoc">
+            <img src="https://github.com/nghuuphuoc.png" />
+        </a>
+        <p>21 Mar 2014</p>
+    </div>
+
+    <div class="doc-post-content">
+        <h3>New features</h3>
+<ul class="doc-list">
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/5">#5</a>: Add <a href="/validators/ip/">ip validator</a>. Support both IPv4 and IPv6</li>
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/6">#6</a>: Add <a href="/validators/isbn/">isbn validator</a>, support both ISBN 10 and ISBN 13</li>
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/7">#7</a>: Add <a href="/validators/step/">step validator</a></li>
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/56">#56</a>: Add <a href="/settings/#field-selector"><code>selector</code> option</a> for each field. The field can be defined by CSS validator instead of the <code>name</code> attribute</li>
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/95">#95</a>: Add <a href="/validators/mac/">mac validator</a></li>
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/96">#96</a>: Add <a href="/validators/base64/">base64 validator</a></li>
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/97">#97</a>: Add <a href="/validators/cvv/">cvv validator</a></li>
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/99">#99</a>, <a href="https://github.com/formvalidation/formvalidation/pull/100">#100</a>: Add <a href="/validators/phone/">phone validator</a>. Support US phone number only, thanks to <a href="https://github.com/gercheq">@gercheq</a></li>
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/107">#107</a>: Add <a href="/settings/#field-err"><code>container</code> option</a> for each field to indicate where the error messages are shown</li>
+</ul>
+
+<h3>Improvements</h3>
+<ul class="doc-list">
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/112">#112</a>: <a href="/validators/creditCard/">creditCard validator</a> now validates both IIN ranges and length</li>
+</ul>
+
+<h3>Contributors</h3>
+<p>Thank to the contributor:</p>
+<ul class="doc-list">
+    <li><a href="https://github.com/gercheq">@gercheq</a></li>
+</ul>
+
+<h3>Download</h3>
+<div>
+    <a class="btn btn-primary" href="https://github.com/formvalidation/formvalidation/releases/download/v0.3.2/bootstrapvalidator-dist-0.3.2.zip">bootstrapvalidator-dist-0.3.2.zip</a>
+    <a class="btn btn-default" href="https://github.com/formvalidation/formvalidation/archive/v0.3.2.zip">v0.3.2 Source Code</a>
+</div>
+    </div>
+</div>
+
+                    <div class="doc-hr"></div>
+                
+                    <div class="doc-post">
+    <h2><a href="/news/v0.3.1-released/">BootstrapValidator v0.3.1 Released</a></h2>
+
+    <div class="doc-post-meta">
+        <a href="https://github.com/nghuuphuoc" title="@nghuuphuoc">
+            <img src="https://github.com/nghuuphuoc.png" />
+        </a>
+        <p>17 Mar 2014</p>
+    </div>
+
+    <div class="doc-post-content">
+        <h3>New features</h3>
+<ul class="doc-list">
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/4">#4</a>: Add <a href="/validators/date/"><code>date</code> validator</a></li>
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/80">#80</a>: Add <a href="/settings/#field-enabled"><code>enabled</code> option</a> and <a href="/api/#enable-field-validators"><code>enableFieldValidators()</code> method</a> to enable/disable all validators to given field</li>
+    <li><a href="https://github.com/formvalidation/formvalidation/pull/90">#90</a>: Add <code>bower.json</code> file, thanks to <a href="https://github.com/ikanedo">@ikanedo</a></li>
+</ul>
+
+<h3>Changes</h3>
+<ul class="doc-list">
+    <li>Remove the <code>columns</code> option. Now the plugin works normally no matter how many columns the form uses</li>
+</ul>
+
+<h3>Improvements</h3>
+<ul class="doc-list">
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/3">#3</a>, <a href="https://github.com/formvalidation/formvalidation/issues/92">#92</a>: Support more form controls on the same row</li>
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/72">#72</a>, <a href="https://github.com/formvalidation/formvalidation/issues/79">#79</a>: Improve <a href="/api/#update-status"><code>updateStatus()</code> method</a> to make the plugin play well with another</li>
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/102">#102</a>: The <a href="/api/#reset-form"><code>resetForm</code> method</a> now only resets fields with validator rules</li>
+</ul>
+
+<h3>Bug fixes</h3>
+<ul class="doc-list">
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/82">#82</a>, <a href="https://github.com/formvalidation/formvalidation/issues/84">#84</a>: The error messages aren't shown if the form field doesn't have label</li>
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/89">#89</a>: <a href="/settings/#form-submit-handler"><code>submitHandler</code></a> or default submission isn't called after <a href="/validators/remote/">remote validation</a> completes</li>
+</ul>
+
+<h3>Contributors</h3>
+<p>Thank to the contributors:</p>
+<ul class="doc-list">
+    <li><a href="https://github.com/ikanedo">@ikanedo</a></li>
+</ul>
+
+<h3>Download</h3>
+<div>
+    <a class="btn btn-primary" href="https://github.com/formvalidation/formvalidation/releases/download/v0.3.1/bootstrapvalidator-dist-0.3.1.zip">bootstrapvalidator-dist-0.3.1.zip</a>
+    <a class="btn btn-default" href="https://github.com/formvalidation/formvalidation/archive/v0.3.1.zip">v0.3.1 Source Code</a>
+</div>
+    </div>
+</div>
+
+                    <div class="doc-hr"></div>
                 
                     <div class="doc-post">
     <h2><a href="/news/v0.3.0-released/">BootstrapValidator v0.3.0 Released</a></h2>
@@ -164,7 +262,7 @@ _gaq.push(['_trackPageview']);
     <li><a href="https://github.com/formvalidation/formvalidation/issues/26">#26</a>, <a href="https://github.com/formvalidation/formvalidation/issues/27">#27</a>, <a href="https://github.com/formvalidation/formvalidation/pull/67">#67</a>: Add <a href="/validators/choice/"><code>choice</code> validator</a>, thanks to <a href="https://github.com/emilchristensen">@emilchristensen</a></li>
     <li><a href="https://github.com/formvalidation/formvalidation/issues/36">#36</a>, <a href="https://github.com/formvalidation/formvalidation/issues/58">#58</a>: Add method to <a href="/api/#validate">validate form</a> manually</li>
     <li><i class="fa fa-star"></i> <a href="https://github.com/formvalidation/formvalidation/issues/44">#44</a>: Rewrite entirely using Deferred</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/48">#48</a>: Add optional <a href="/settings/#form-feedback-icons">feedback icons</a></li>
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/48">#48</a>: Add optional <a href="/settings/#form-icon">feedback icons</a></li>
     <li><a href="https://github.com/formvalidation/formvalidation/issues/76">#76</a>: Add <a href="/api/#reset-form"><code>resetForm()</code> method</a></li>
 </ul>
 
@@ -272,88 +370,15 @@ _gaq.push(['_trackPageview']);
 
                     <div class="doc-hr"></div>
                 
-                    <div class="doc-post">
-    <h2><a href="/news/v0.2.0-released/">BootstrapValidator v0.2.0 Released</a></h2>
-
-    <div class="doc-post-meta">
-        <a href="https://github.com/nghuuphuoc" title="@nghuuphuoc">
-            <img src="https://github.com/nghuuphuoc.png" />
-        </a>
-        <p>21 Oct 2013</p>
-    </div>
-
-    <div class="doc-post-content">
-        <h3>New features</h3>
-<ul class="doc-list">
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/9">#9</a>: Add <a href="/validators/creditCard/">creditCard validator</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/18">#18</a>: Add <a href="/validators/different/">different validator</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/20">#20</a>: Add custom submit handler using <a href="/settings/#submit-handler"><code>submitHandler</code> option</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/21">#21</a>: Add <a href="/validators/callback/">callback validator</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/24">#24</a>: Add <a href="/settings/#form-live"><code>live</code> option</a></li>
-</ul>
-
-<h3>Improvements</h3>
-<ul class="doc-list">
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/22">#22</a>: Support form that labels are placed in extra small (<code>col-xs-</code>), small (<code>col-sm-</code>), medium (<code>col-md-</code>) elements</li>
-</ul>
-
-<h3>Bug fixes</h3>
-<ul class="doc-list">
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/25">#25</a>: The <a href="/validators/regexp/">regexp validator</a> does not work</li>
-</ul>
-
-<h3>Download</h3>
-<div>
-    <a class="btn btn-primary" href="https://github.com/formvalidation/formvalidation/releases/download/v0.2.0/bootstrapvalidator-dist-0.2.0.zip">bootstrapvalidator-dist-0.2.0.zip</a>
-    <a class="btn btn-default" href="https://github.com/formvalidation/formvalidation/archive/v0.2.0.zip">v0.2.0 Source Code</a>
-</div>
-    </div>
-</div>
-
-                    <div class="doc-hr"></div>
-                
-                    <div class="doc-post">
-    <h2><a href="/news/v0.1.1-released/">BootstrapValidator v0.1.1 Released</a></h2>
-
-    <div class="doc-post-meta">
-        <a href="https://github.com/nghuuphuoc" title="@nghuuphuoc">
-            <img src="https://github.com/nghuuphuoc.png" />
-        </a>
-        <p>17 Oct 2013</p>
-    </div>
-
-    <div class="doc-post-content">
-        <h3>New features</h3>
-<ul class="doc-list">
-    <li>Added <a href="/settings/#form-submit-buttons"><code>submitButtons</code> option</a></li>
-</ul>
-
-<h3>Improvements</h3>
-<ul class="doc-list">
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/16">#16</a>: Added disabling client side validation in HTML 5</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/17">#17</a>: Added support for default Bootstrap form without labels</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/19">#19</a>: Added support for select box validator</li>
-</ul>
-
-<h3>Download</h3>
-<div>
-    <a class="btn btn-primary" href="https://github.com/formvalidation/formvalidation/releases/download/v0.1.1/bootstrapvalidator-dist-0.1.1.zip">bootstrapvalidator-dist-0.1.1.zip</a>
-    <a class="btn btn-default" href="https://github.com/formvalidation/formvalidation/archive/v0.1.1.zip">v0.1.1 Source Code</a>
-</div>
-    </div>
-</div>
-
-                    <div class="doc-hr"></div>
-                
 
                 <div class="doc-pagination">
                     
-                        <a href="/news/page5" class="doc-pagination-older">Older</a>
+                        <a href="/news/page5" class="doc-pagination-older">&larr; Older</a>
                     
 
                     
                         
-                            <a href="/news/page3" class="doc-pagination-newer">Newer</a>
+                            <a href="/news/page3" class="doc-pagination-newer">Newer &rarr;</a>
                         
                     
                 </div>
@@ -371,60 +396,9 @@ _gaq.push(['_trackPageview']);
             <a class="btn" href="https://github.com/formvalidation/formvalidation/issues">Report bug</a>
         </p>
         <p>
-            &copy; 2013 - 2014 <a href="http://twitter.com/nghuuphuoc">Nguyen Huu Phuoc</a>. All rights reserved.<br/>
+            &copy; 2013 - 2015 <a href="http://twitter.com/nghuuphuoc">Nguyen Huu Phuoc</a>. All rights reserved.<br/>
             Handcrafted with <span class="doc-heart"><i class="fa fa-heart"></i></span> and a lot of <i class="fa fa-coffee"></i>
         </p>
-        <ul>
-            <li><a href="/getting-started/">Getting started</a></li>
-            <li>&middot;</li>
-            <li><a href="/settings/">Settings</a></li>
-            <li>&middot;</li>
-            <li><a href="/validators/">Validators</a></li>
-            <li>&middot;</li>
-            <li><a href="/api/">API</a></li>
-            <li>&middot;</li>
-            <li><a href="/examples/">Examples</a></li>
-            <li>&middot;</li>
-            <li><a href="/developing/">Developing</a></li>
-            <li>&middot;</li>
-            <li><a href="/news/">News</a></li>
-            <li>&middot;</li>
-            <li><a href="/license/">License</a></li>
-        </ul>
-        <ul>
-            <li>
-                <a href="https://github.com/formvalidation/" title="Fork me on Github">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-github-alt fa-stack-1x fa-inverse"></i>
-                    </span>
-                </a>
-            </li>
-            <li>
-                <a href="https://twitter.com/formvalidation/" title="Follow me on Twitter">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                    </span>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.facebook.com/formvalidation/" title="Like me on Facebook">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                    </span>
-                </a>
-            </li>
-            <li>
-                <a href="https://plus.google.com/u/0/communities/114931136856987817254" title="Join me on Google+">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
-                    </span>
-                </a>
-            </li>
-        </ul>
     </div>
 
     
@@ -442,7 +416,8 @@ $(function() {
 
     $('[data-toggle="tooltip"]').tooltip();
 
-    $('.doc-logo').on('click', function() {
+    $('#toggleButton').on('click', function() {
+        $(this).find('i').toggleClass('fa-navicon fa-close');
         $('body').toggleClass('doc-nav-shown');
     });
 
@@ -457,33 +432,51 @@ $(function() {
         $('#toc')
             .css('max-width', $('#toc').width())
             .toc({
-                selector: '#main h2, #main h3, #main h4, #main h5, #main h6',
+                selector: '#main h2, #main h3, #main h4',
                 elementClass: 'toc',
                 ulClass: 'nav',
                 indexingFormats: '______'
             });
-
-        var $window = $(window),
-            $body   = $(document.body);
-        $body.scrollspy({
-            target: '#toc'
-        });
-
-        $window.on('load', function() {
-            $body.scrollspy('refresh');
-        });
-
-        setTimeout(function() {
-            var $sideBar = $('#toc');
-            $sideBar.affix({
-                offset: {
-                    top: function() {
-                        return (this.top = $sideBar.offset().top);
-                    }
-                }
-            });
-        }, 100);
     }
+
+    // Switch framework handler
+    $('iframe.doc-demo-frame').each(function() {
+        var $this = $(this);
+        $('<div/>').addClass('doc-demo-loader').html('<i class="fa fa-refresh fa-spin fa-2x"></i>').hide().insertBefore($this);
+        $this.on('load', function() {
+            $(this).prev().hide().end().show();
+        });
+    });
+
+    $('a[data-demo-framework]').on('click', function(e) {
+        var $this     = $(this),
+            framework = $this.attr('data-demo-framework'),
+            url       = $this.attr('data-demo-url'),
+            $target   = $($this.attr('data-demo-target') || $this.attr('href'));
+
+        $this
+            .closest('ul')
+                .find('li')
+                    .removeClass('active')
+                    .end()
+            .end()
+            .parent().addClass('active');
+
+        $this.closest('.dropdown').find('span').eq(0).html($this.html());
+
+        $target
+            .closest('.tab-content')
+            .find('[data-demo-code]')
+                .hide()
+                .filter('[data-demo-code="' + framework.toLowerCase() + '"]').show();
+
+        $target.height('');
+        $target.hide().prev().fadeIn('fast').promise().then(function() {
+            $target.css('visibility', 'hidden').attr('src', url);
+        });
+    });
+
+    $('a[data-demo-framework="bootstrap"]').click();
 });
 </script>
 </body>

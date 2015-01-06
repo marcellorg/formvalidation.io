@@ -7,28 +7,28 @@
 <meta http-equiv="Content-Language" content="en">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, SemanticUI, UIKit frameworks">
+<meta name="description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks">
 <meta name="keywords" content="FormValidation, BootstrapValidator, jQuery, form, validate, validation, validator, plugin, Bootstrap, Foundation, Pure, SemanticUI, UIKit">
 <meta name="author" content="Nguyen Huu Phuoc">
 <meta name="google-site-verification" content="FMmr8kYuIuW27-qJLOb1Z59OgiVgKNgAv4_eMARhIY8" />
 
 <meta name="twitter:site" content="@formvalidation" />
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, SemanticUI, UIKit frameworks" />
+<meta name="twitter:description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks" />
 <meta name="twitter:title" content="Validate an ISBN (International Standard Book Number) - FormValidation" />
 <meta name="twitter:image" content="http://formvalidation.io/asset/img/logo.png" />
 
 <meta property="og:title" content="Validate an ISBN (International Standard Book Number) - FormValidation" />
-<meta property="og:description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, SemanticUI, UIKit frameworks" />
+<meta property="og:description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://formvalidation.io/validators/isbn/" />
 <meta property="og:image" content="http://formvalidation.io/asset/img/logo.png" />
 <meta property="og:site_name" content="FormValidation" />
 
 <link rel="icon" type="image/x-icon" href="/asset/img/favicon.ico">
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="//oss.maxcdn.com/jquery.bootstrapvalidator/0.5.2/css/bootstrapValidator.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/fontawesome/4.2.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/vendor/formvalidation/css/formValidation.min.css">
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:300,400,700">
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Cardo:400,400italic,700">
@@ -41,8 +41,9 @@
 <![endif]-->
 
 <script src="//oss.maxcdn.com/jquery/1.11.1/jquery.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script src="//oss.maxcdn.com/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.min.js"></script>
+<script src="//cdn.jsdelivr.net/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="/vendor/formvalidation/js/formValidation.min.js"></script>
+<script src="/vendor/formvalidation/js/framework/bootstrap.min.js"></script>
 
 <script type="text/javascript">
 var _gaq = _gaq || [];
@@ -80,12 +81,12 @@ _gaq.push(['_trackPageview']);
         
             
         
-        <li class="doc-nav-active"><a href="/validators/">Validators</a></li>
+        <li class=""><a href="/api/">API</a></li>
     
         
             
         
-        <li class=""><a href="/api/">API</a></li>
+        <li class="doc-nav-active"><a href="/validators/">Validators</a></li>
     
         
             
@@ -112,10 +113,10 @@ _gaq.push(['_trackPageview']);
     <div class="doc-hr"></div>
 
     <ul>
-        <li><a href="https://github.com/formvalidation/" title="Fork me on Github">Github <i class="fa fa-github"></i></a></li>
-        <li><a href="https://twitter.com/formvalidation/" title="Follow me on Twitter">formvalidation <i class="fa fa-twitter"></i></a></li>
-        <li><a href="https://www.facebook.com/formvalidation/" title="Like me on Facebook">FormValidation <i class="fa fa-facebook"></i></a></li>
-        <li><a href="https://plus.google.com/u/0/communities/114931136856987817254" title="Join me on Google+">Google+ community <i class="fa fa-google-plus"></i></a></li>
+        <li><a href="https://github.com/formvalidation/" title="Fork FormValidation on Github">Github <i class="fa fa-github"></i></a></li>
+        <li><a href="https://twitter.com/formvalidation/" title="Follow FormValidation on Twitter">Twitter <i class="fa fa-twitter"></i></a></li>
+        <li><a href="https://www.facebook.com/formvalidation/" title="Like FormValidation on Facebook">Facebook <i class="fa fa-facebook"></i></a></li>
+        <li><a href="https://plus.google.com/u/0/communities/114931136856987817254" title="Join FormValidation community on Google+">Google+ <i class="fa fa-google-plus"></i></a></li>
     </ul>
 
     <div class="doc-hr"></div>
@@ -129,19 +130,19 @@ _gaq.push(['_trackPageview']);
         <p><a href="mailto: phuoc@huuphuoc.me" class="btn">Hire me</a></p>
     </div>
 </nav>
-<button class="btn doc-logo" title="Toggle the navigation"><i class="fa fa-bars"></i></button>
+
+<a id="toggleButton" class="doc-nav-toggle" title="Toggle the navigation"><i class="fa fa-navicon"></i></a>
 
     <div id="main" class="doc-content-wrapper">
         <div class="doc-notification">
-    <i class="fa fa-bell-o"></i> <a href="/news/v0.5.3-released/">v0.5.3</a> is released on 2014.11.05!
+    <i class="fa fa-bell-o"></i> <a href="/news/v0.6.0-released/">v0.6.0</a> is released on 2015.01.06!
 </div>
 
         <div class="doc-content-container">
     <div class="doc-heading">
         <h1>isbn validator</h1>
         <p>Validate an ISBN (International Standard Book Number). Support both ISBN 10 and ISBN 13</p>
-        <p>&larr; <a href="/validators/">Validators</a></p>
-        <a class="btn doc-edit-btn" href="https://github.com/formvalidation/formvalidation.io/edit/master/validators/isbn.html">Improve it on Github</a>
+        <p>&larr; <a href="/validators">Validators</a></p>
         <div id="shareButton" class="doc-share-button"></div>
     </div>
 
@@ -151,27 +152,29 @@ _gaq.push(['_trackPageview']);
                 <section>
                     <h2>Options</h2>
 
-                    <table class="table table-condensed">
-                        <thead>
-                            <tr>
-                                <th>Option</th>
-                                <th>HTML attribute</th>
-                                <th>Type</th>
-                                <th>Description</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><code>message</code></td>
-                                <td><code>data-bv-isbn-message</code></td>
-                                <td>String</td>
-                                <td>The error message</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Option</th>
+                                    <th>HTML attribute</th>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>message</code></td>
+                                    <td><code>data-fv-isbn-message</code></td>
+                                    <td>String</td>
+                                    <td>The error message</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
                     <div class="doc-alert doc-alert-info">
-                        When setting options via HTML attributes, remember to enable the validator by setting data-bv-isbn="true".
+                        When setting options via HTML attributes, remember to enable the validator by setting data-fv-isbn="true".
                     </div>
                 </section>
 
@@ -180,93 +183,112 @@ _gaq.push(['_trackPageview']);
                 <section>
                     <h2>Example</h2>
 
-                    <table class="table table-condensed">
-                        <thead>
-                            <tr>
-                                <th>ISBN</th>
-                                <th>Result</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            
-                            
-                            <tr>
-                                <td><a href="javascript: void(0);" class="sample">9971502100</a></td>
-                                <td><i class="fa"></i></td>
-                            </tr>
-                            
-                            <tr>
-                                <td><a href="javascript: void(0);" class="sample">99921-58-10-7</a></td>
-                                <td><i class="fa"></i></td>
-                            </tr>
-                            
-                            <tr>
-                                <td><a href="javascript: void(0);" class="sample">960 425 059 0</a></td>
-                                <td><i class="fa"></i></td>
-                            </tr>
-                            
-                            <tr>
-                                <td><a href="javascript: void(0);" class="sample">99921-58-10-6</a></td>
-                                <td><i class="fa"></i></td>
-                            </tr>
-                            
-                            <tr>
-                                <td><a href="javascript: void(0);" class="sample">9780306406157</a></td>
-                                <td><i class="fa"></i></td>
-                            </tr>
-                            
-                            <tr>
-                                <td><a href="javascript: void(0);" class="sample">978-0-306-40615-7</a></td>
-                                <td><i class="fa"></i></td>
-                            </tr>
-                            
-                            <tr>
-                                <td><a href="javascript: void(0);" class="sample">978 0 306 40615 7</a></td>
-                                <td><i class="fa"></i></td>
-                            </tr>
-                            
-                            <tr>
-                                <td><a href="javascript: void(0);" class="sample">978-0-306-40615-6</a></td>
-                                <td><i class="fa"></i></td>
-                            </tr>
-                            
-                        </tbody>
-                    </table>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>ISBN</th>
+                                    <th>Result</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                                
+                                <tr>
+                                    <td><a href="javascript: void(0);" class="sample">9971502100</a></td>
+                                    <td><i class="fa"></i></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td><a href="javascript: void(0);" class="sample">99921-58-10-7</a></td>
+                                    <td><i class="fa"></i></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td><a href="javascript: void(0);" class="sample">960 425 059 0</a></td>
+                                    <td><i class="fa"></i></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td><a href="javascript: void(0);" class="sample">99921-58-10-6</a></td>
+                                    <td><i class="fa"></i></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td><a href="javascript: void(0);" class="sample">9780306406157</a></td>
+                                    <td><i class="fa"></i></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td><a href="javascript: void(0);" class="sample">978-0-306-40615-7</a></td>
+                                    <td><i class="fa"></i></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td><a href="javascript: void(0);" class="sample">978 0 306 40615 7</a></td>
+                                    <td><i class="fa"></i></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td><a href="javascript: void(0);" class="sample">978-0-306-40615-6</a></td>
+                                    <td><i class="fa"></i></td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
 
-                    <div class="doc-demo">
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a href="#isbn-form-tab" data-toggle="tab">Try it</a></li>
-                            <li><a href="#isbn-html-tab" data-toggle="tab">HTML</a></li>
-                            <li><a href="#isbn-js-tab" data-toggle="tab">JS</a></li>
-                        </ul>
+                    
 
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="isbn-form-tab">
-                            <form id="isbnForm" class="form-horizontal">
-    <div class="form-group">
-        <label class="col-sm-3 control-label">ISBN</label>
-        <div class="col-sm-5">
-            <input type="text" class="form-control" name="isbn" />
+
+
+
+
+
+
+
+
+<div class="doc-demo">
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"><span class="doc-framework">Framework</span> <i class="caret"></i></a>
+            <ul class="dropdown-menu" role="menu">
+                
+                <li><a href="javascript: void(0);" data-demo-target="#basic-frame" data-demo-framework="bootstrap" data-demo-url="/validators/isbn/basic/bootstrap.html">Bootstrap</a></li>
+                
+            </ul>
+        </li>
+        <li class="active"><a href="#basic-form-tab" data-toggle="tab">Try it</a></li>
+        
+        <li><a href="#basic-programmatic-tab" data-toggle="tab">Programmatic code</a></li>
+        
+        <li><a href="#basic-declarative-tab" data-toggle="tab">Declarative code</a></li>
+        
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane active" id="basic-form-tab">
+            <iframe class="doc-demo-frame" id="basic-frame"></iframe>
         </div>
-    </div>
-</form>
-                            </div>
 
-                            <div class="tab-pane" id="isbn-html-tab">
-                            <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;isbnForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+        
+        <div class="tab-pane" id="basic-programmatic-tab">
+            
+            <div data-demo-code="bootstrap">
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;isbnForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-sm-3 control-label&quot;</span><span class="nt">&gt;</span>ISBN<span class="nt">&lt;/label&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-sm-5&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>ISBN<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-5&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;isbn&quot;</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/form&gt;</span></code></pre></div>
-                            </div>
+<span class="nt">&lt;/form&gt;</span>
 
-                            <div class="tab-pane" id="isbn-js-tab">
-                            <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#isbnForm&#39;</span><span class="p">).</span><span class="nx">bootstrapValidator</span><span class="p">({</span>
-        <span class="nx">feedbackIcons</span><span class="o">:</span> <span class="p">{</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#isbnForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
+        <span class="nx">framework</span><span class="o">:</span> <span class="s1">&#39;bootstrap&#39;</span><span class="p">,</span>
+        <span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
             <span class="nx">valid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-ok&#39;</span><span class="p">,</span>
             <span class="nx">invalid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-remove&#39;</span><span class="p">,</span>
             <span class="nx">validating</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-refresh&#39;</span>
@@ -281,10 +303,42 @@ _gaq.push(['_trackPageview']);
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">});</span>
-<span class="p">});</span></code></pre></div>
-                            </div>
-                        </div>
-                    </div>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span></code></pre></div>
+            </div>
+            
+        </div>
+        
+        <div class="tab-pane" id="basic-declarative-tab">
+            
+            <div data-demo-code="bootstrap">
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;isbnForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span>
+    <span class="na">data-fv-framework=</span><span class="s">&quot;bootstrap&quot;</span>
+    <span class="na">data-fv-icon-valid=</span><span class="s">&quot;glyphicon glyphicon-ok&quot;</span>
+    <span class="na">data-fv-icon-invalid=</span><span class="s">&quot;glyphicon glyphicon-remove&quot;</span>
+    <span class="na">data-fv-icon-validating=</span><span class="s">&quot;glyphicon glyphicon-refresh&quot;</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>ISBN<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-5&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;isbn&quot;</span>
+                <span class="na">data-fv-isbn=</span><span class="s">&quot;true&quot;</span>
+                <span class="na">data-fv-isbn-message=</span><span class="s">&quot;The value is not valid ISBN&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#isbnForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">();</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span></code></pre></div>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
                 </section>
 
                 <div class="doc-hr"></div>
@@ -304,6 +358,16 @@ _gaq.push(['_trackPageview']);
     </ul>
 </section>
 
+
+                <div class="doc-pagination">
+    
+        <a href="/validators/ip/" class="doc-pagination-older">&larr; ip validator</a>
+    
+
+    
+        <a href="/validators/isin/" class="doc-pagination-newer">isin validator &rarr;</a>
+    
+</div>
             </div>
 
             <div class="col-md-3">
@@ -315,30 +379,10 @@ _gaq.push(['_trackPageview']);
 
 <script>
 $(document).ready(function() {
-    $('#isbnForm').bootstrapValidator({
-        feedbackIcons: {
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
-        },
-        fields: {
-            isbn: {
-                validators: {
-                    isbn: {
-                        message: 'The value is not valid ISBN'
-                    }
-                }
-            }
-        }
-    });
-});
-$(document).ready(function() {
     $('.sample').on('click', function() {
-        $('#isbnForm').find('input[name="isbn"]').val($(this).html());
+        var formWindow = $('#basic-frame').get(0).contentWindow,
+            isValid    = formWindow.revalidateIsbn($(this).html());
 
-        $('#isbnForm').bootstrapValidator('revalidateField', 'isbn');
-
-        var isValid = $('#isbnForm').data('bootstrapValidator').isValid();
         $(this)
             .parents('tr').find('i')
             .removeClass('fa-check fa-times')
@@ -356,60 +400,9 @@ $(document).ready(function() {
             <a class="btn" href="https://github.com/formvalidation/formvalidation/issues">Report bug</a>
         </p>
         <p>
-            &copy; 2013 - 2014 <a href="http://twitter.com/nghuuphuoc">Nguyen Huu Phuoc</a>. All rights reserved.<br/>
+            &copy; 2013 - 2015 <a href="http://twitter.com/nghuuphuoc">Nguyen Huu Phuoc</a>. All rights reserved.<br/>
             Handcrafted with <span class="doc-heart"><i class="fa fa-heart"></i></span> and a lot of <i class="fa fa-coffee"></i>
         </p>
-        <ul>
-            <li><a href="/getting-started/">Getting started</a></li>
-            <li>&middot;</li>
-            <li><a href="/settings/">Settings</a></li>
-            <li>&middot;</li>
-            <li><a href="/validators/">Validators</a></li>
-            <li>&middot;</li>
-            <li><a href="/api/">API</a></li>
-            <li>&middot;</li>
-            <li><a href="/examples/">Examples</a></li>
-            <li>&middot;</li>
-            <li><a href="/developing/">Developing</a></li>
-            <li>&middot;</li>
-            <li><a href="/news/">News</a></li>
-            <li>&middot;</li>
-            <li><a href="/license/">License</a></li>
-        </ul>
-        <ul>
-            <li>
-                <a href="https://github.com/formvalidation/" title="Fork me on Github">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-github-alt fa-stack-1x fa-inverse"></i>
-                    </span>
-                </a>
-            </li>
-            <li>
-                <a href="https://twitter.com/formvalidation/" title="Follow me on Twitter">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                    </span>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.facebook.com/formvalidation/" title="Like me on Facebook">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                    </span>
-                </a>
-            </li>
-            <li>
-                <a href="https://plus.google.com/u/0/communities/114931136856987817254" title="Join me on Google+">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
-                    </span>
-                </a>
-            </li>
-        </ul>
     </div>
 
     
@@ -427,7 +420,8 @@ $(function() {
 
     $('[data-toggle="tooltip"]').tooltip();
 
-    $('.doc-logo').on('click', function() {
+    $('#toggleButton').on('click', function() {
+        $(this).find('i').toggleClass('fa-navicon fa-close');
         $('body').toggleClass('doc-nav-shown');
     });
 
@@ -442,33 +436,51 @@ $(function() {
         $('#toc')
             .css('max-width', $('#toc').width())
             .toc({
-                selector: '#main h2, #main h3, #main h4, #main h5, #main h6',
+                selector: '#main h2, #main h3, #main h4',
                 elementClass: 'toc',
                 ulClass: 'nav',
                 indexingFormats: '______'
             });
-
-        var $window = $(window),
-            $body   = $(document.body);
-        $body.scrollspy({
-            target: '#toc'
-        });
-
-        $window.on('load', function() {
-            $body.scrollspy('refresh');
-        });
-
-        setTimeout(function() {
-            var $sideBar = $('#toc');
-            $sideBar.affix({
-                offset: {
-                    top: function() {
-                        return (this.top = $sideBar.offset().top);
-                    }
-                }
-            });
-        }, 100);
     }
+
+    // Switch framework handler
+    $('iframe.doc-demo-frame').each(function() {
+        var $this = $(this);
+        $('<div/>').addClass('doc-demo-loader').html('<i class="fa fa-refresh fa-spin fa-2x"></i>').hide().insertBefore($this);
+        $this.on('load', function() {
+            $(this).prev().hide().end().show();
+        });
+    });
+
+    $('a[data-demo-framework]').on('click', function(e) {
+        var $this     = $(this),
+            framework = $this.attr('data-demo-framework'),
+            url       = $this.attr('data-demo-url'),
+            $target   = $($this.attr('data-demo-target') || $this.attr('href'));
+
+        $this
+            .closest('ul')
+                .find('li')
+                    .removeClass('active')
+                    .end()
+            .end()
+            .parent().addClass('active');
+
+        $this.closest('.dropdown').find('span').eq(0).html($this.html());
+
+        $target
+            .closest('.tab-content')
+            .find('[data-demo-code]')
+                .hide()
+                .filter('[data-demo-code="' + framework.toLowerCase() + '"]').show();
+
+        $target.height('');
+        $target.hide().prev().fadeIn('fast').promise().then(function() {
+            $target.css('visibility', 'hidden').attr('src', url);
+        });
+    });
+
+    $('a[data-demo-framework="bootstrap"]').click();
 });
 </script>
 </body>

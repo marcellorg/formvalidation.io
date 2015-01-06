@@ -1,0 +1,544 @@
+<!doctype html>
+<html>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article#">
+    <meta charset="utf-8">
+<title>Upgrading to v0.6.0 - FormValidation</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<meta http-equiv="Content-Language" content="en">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks">
+<meta name="keywords" content="FormValidation, BootstrapValidator, jQuery, form, validate, validation, validator, plugin, Bootstrap, Foundation, Pure, SemanticUI, UIKit">
+<meta name="author" content="Nguyen Huu Phuoc">
+<meta name="google-site-verification" content="FMmr8kYuIuW27-qJLOb1Z59OgiVgKNgAv4_eMARhIY8" />
+
+<meta name="twitter:site" content="@formvalidation" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks" />
+<meta name="twitter:title" content="Upgrading to v0.6.0 - FormValidation" />
+<meta name="twitter:image" content="http://formvalidation.io/asset/img/logo.png" />
+
+<meta property="og:title" content="Upgrading to v0.6.0 - FormValidation" />
+<meta property="og:description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://formvalidation.io/news/upgrading-to-v0.6.0/" />
+<meta property="og:image" content="http://formvalidation.io/asset/img/logo.png" />
+<meta property="og:site_name" content="FormValidation" />
+
+<link rel="icon" type="image/x-icon" href="/asset/img/favicon.ico">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/fontawesome/4.2.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/vendor/formvalidation/css/formValidation.min.css">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:300,400,700">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Cardo:400,400italic,700">
+<link rel="stylesheet" href="/vendor/pygments/github.css">
+<link rel="stylesheet" href="/asset/css/style.css">
+
+<!--[if lt IE 9]>
+<script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<script src="//oss.maxcdn.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="/vendor/formvalidation/js/formValidation.min.js"></script>
+<script src="/vendor/formvalidation/js/framework/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-44786951-2']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+</head>
+<body>
+    <nav class="doc-nav" tabindex="-1">
+    <ul>
+        <li><a href="/">Home</a></li>
+    
+        
+            
+        
+        <li class=""><a href="/download/">Download</a></li>
+    
+        
+            
+        
+        <li class=""><a href="/getting-started/">Getting Started</a></li>
+    
+        
+            
+        
+        <li class=""><a href="/settings/">Settings</a></li>
+    
+        
+            
+        
+        <li class=""><a href="/api/">API</a></li>
+    
+        
+            
+        
+        <li class=""><a href="/validators/">Validators</a></li>
+    
+        
+            
+        
+        <li class=""><a href="/examples/">Examples</a></li>
+    
+        
+            
+        
+        <li class=""><a href="/developing/">Developing</a></li>
+    
+        
+            
+        
+        <li class="doc-nav-active"><a href="/news/">News</a></li>
+    
+        
+            
+        
+        <li class=""><a href="/license/">License</a></li>
+    
+    </ul>
+
+    <div class="doc-hr"></div>
+
+    <ul>
+        <li><a href="https://github.com/formvalidation/" title="Fork FormValidation on Github">Github <i class="fa fa-github"></i></a></li>
+        <li><a href="https://twitter.com/formvalidation/" title="Follow FormValidation on Twitter">Twitter <i class="fa fa-twitter"></i></a></li>
+        <li><a href="https://www.facebook.com/formvalidation/" title="Like FormValidation on Facebook">Facebook <i class="fa fa-facebook"></i></a></li>
+        <li><a href="https://plus.google.com/u/0/communities/114931136856987817254" title="Join FormValidation community on Google+">Google+ <i class="fa fa-google-plus"></i></a></li>
+    </ul>
+
+    <div class="doc-hr"></div>
+
+    <div class="doc-creator">
+        <p>
+            Handcrafted with <span class="doc-heart"><i class="fa fa-heart"></i></span> and a lot of <i class="fa fa-coffee"></i><br />
+            by <a href="http://twitter.com/nghuuphuoc">@nghuuphuoc</a><br/>
+            <img src="http://github.com/nghuuphuoc.png" />
+        </p>
+        <p><a href="mailto: phuoc@huuphuoc.me" class="btn">Hire me</a></p>
+    </div>
+</nav>
+
+<a id="toggleButton" class="doc-nav-toggle" title="Toggle the navigation"><i class="fa fa-navicon"></i></a>
+
+    <div id="main" class="doc-content-wrapper">
+        <div class="doc-notification">
+    <i class="fa fa-bell-o"></i> <a href="/news/v0.6.0-released/">v0.6.0</a> is released on 2015.01.06!
+</div>
+
+        <div class="doc-content-container">
+    <div class="doc-heading">
+        <h1>Upgrading to v0.6.0</h1>
+        <p>&larr; <a href="/news/">News</a></p>
+        <div id="shareButton" class="doc-share-button"></div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="doc-post-meta">
+                    <a href="https://github.com/nghuuphuoc" title="@nghuuphuoc">
+                        <img src="https://github.com/nghuuphuoc.png" />
+                    </a>
+                    <p>06 Jan 2015</p>
+                </div>
+
+                <div class="doc-post-content">
+                    <p>From v0.6.0, the plugin name is changed to <strong>FormValidation</strong>. To upgrade from v0.5.3 to v0.6.0, perform the following steps:</p>
+
+<h3>Required Step: Changing CSS, Javascript paths</h3>
+
+<p>This step is <strong>required</strong>.</p>
+
+<strong>v0.5.3:</strong>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Path to BootstrapValidator CSS --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;/vendor/bootstrapvalidator/dist/css/bootstrapValidator(.min).css&quot;</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- Path to BootstrapValidator JS --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;/vendor/bootstrapvalidator/dist/js/bootstrapValidator(.min).js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></div>
+
+<strong>v0.6.0:</strong>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- FormValidation CSS file --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;/vendor/formvalidation/dist/css/formValidation(.min).css&quot;</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- FormValidation plugin and the class supports validating Bootstrap form --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/vendor/formvalidation/dist/js/formValidation(.min).js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/vendor/formvalidation/dist/js/framework/bootstrap(.min).js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></div>
+
+<h3>Required Step: Changing your own validator</h3>
+
+<p>You can ignore this step in case you don't have any your own validators. Otherwise, change its declaration as following:</p>
+
+<strong>v0.5.3:</strong>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">.</span><span class="nx">fn</span><span class="p">.</span><span class="nx">bootstrapValidator</span><span class="p">.</span><span class="nx">validators</span><span class="p">.</span><span class="nx">yourValidatorName</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="nx">validate</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+            <span class="p">...</span>
+        <span class="p">}</span>
+    <span class="p">};</span>
+<span class="p">}(</span><span class="nb">window</span><span class="p">.</span><span class="nx">jQuery</span><span class="p">));</span></code></pre></div>
+
+<strong>v0.6.0:</strong>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">FormValidation</span><span class="p">.</span><span class="nx">Validator</span><span class="p">.</span><span class="nx">yourValidatorName</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="nx">validate</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// ...</span>
+            <span class="c1">// The validation code is the same</span>
+        <span class="p">}</span>
+    <span class="p">};</span>
+<span class="p">}(</span><span class="nb">window</span><span class="p">.</span><span class="nx">jQuery</span><span class="p">));</span></code></pre></div>
+
+<h3>Optional Step: Calling plugin</h3>
+
+<p>After completing the steps above, you can call the plugin by both programmatic and declarative usages as before.</p>
+<p><strong>Using v0.5.3 options as your current one are supported in all v0.6.x releases</strong>. It means that you will have a lot of time to upgrade your code while current one still work.</p>
+<p>Anyway, it is recommended to change the plugin calling, options which are listed as following:</p>
+
+<h4>Attribute</h4>
+<div class="table-responsive">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>v0.5.3</th>
+                <th>v0.6.0</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Using <code>data-bv-xxx</code> attribute</td>
+                <td>Using <code>data-fv-xxx</code> attribute</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h4><a href="/settings/#form-settings">Form settings</a></h4>
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>v0.5.3</th>
+                <th>v0.6.0</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>container</td>
+                <td><a href="/settings/#form-err-container">err.container</a></td>
+            </tr>
+            <tr>
+                <td>feedbackIcons</td>
+                <td><a href="/settings/#form-icon">icon</a></td>
+            </tr>
+            <tr>
+                <td>group</td>
+                <td><a href="/settings/#form-row-selector">row.selector</a></td>
+            </tr>
+            <tr>
+                <td>submitButtons</td>
+                <td><a href="/settings/#form-button-selector">button.selector</a></td>
+            </tr>
+
+            <tr class="active">
+                <td colspan="2">Example</td>
+            </tr>
+            <tr>
+                <td>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">).</span><span class="nx">bootstrapValidator</span><span class="p">({</span>
+    <span class="nx">container</span><span class="o">:</span> <span class="s1">&#39;tooltip&#39;</span><span class="p">,</span>
+    <span class="nx">feedbackIcons</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">valid</span><span class="o">:</span> <span class="s1">&#39;...&#39;</span><span class="p">,</span>
+        <span class="nx">invalid</span><span class="o">:</span> <span class="s1">&#39;...&#39;</span><span class="p">,</span>
+        <span class="nx">validating</span><span class="o">:</span> <span class="s1">&#39;...&#39;</span>
+    <span class="p">},</span>
+    <span class="nx">group</span><span class="o">:</span> <span class="s1">&#39;td&#39;</span><span class="p">,</span>
+    <span class="nx">submitButtons</span><span class="o">:</span> <span class="s1">&#39;#submitButton&#39;</span>
+<span class="p">});</span></code></pre></div>
+                </td>
+                <td>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
+    <span class="nx">framework</span><span class="o">:</span> <span class="s1">&#39;bootstrap&#39;</span><span class="p">,</span>
+    <span class="nx">err</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">container</span><span class="o">:</span> <span class="s1">&#39;tooltip&#39;</span>
+    <span class="p">}</span>
+    <span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">valid</span><span class="o">:</span> <span class="s1">&#39;...&#39;</span><span class="p">,</span>
+        <span class="nx">invalid</span><span class="o">:</span> <span class="s1">&#39;...&#39;</span><span class="p">,</span>
+        <span class="nx">validating</span><span class="o">:</span> <span class="s1">&#39;...&#39;</span>
+    <span class="p">},</span>
+    <span class="nx">row</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;td&#39;</span>
+    <span class="p">},</span>
+    <span class="nx">button</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;#submitButton&#39;</span>
+    <span class="p">}</span>
+<span class="p">});</span></code></pre></div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h4><a href="/settings/#field-settings">Field settings</a></h4>
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>v0.5.3</th>
+                <th>v0.6.0</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>container</td>
+                <td><a href="/settings/#field-err">err</a></td>
+            </tr>
+            <tr>
+                <td>feedbackIcons</td>
+                <td><a href="/settings/#field-icon">icon</a></td>
+            </tr>
+            <tr>
+                <td>group</td>
+                <td><a href="/settings/#field-row">row</a></td>
+            </tr>
+
+            <tr class="active">
+                <td colspan="2">Example</td>
+            </tr>
+            <tr>
+                <td>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">).</span><span class="nx">bootstrapValidator</span><span class="p">({</span>
+    <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">fieldName</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">container</span><span class="o">:</span> <span class="s1">&#39;tooltip&#39;</span><span class="p">,</span>
+            <span class="nx">feedbackIcons</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nx">group</span><span class="o">:</span> <span class="s1">&#39;.col-sm-3&#39;</span><span class="p">,</span>
+            <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                <span class="p">...</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span></code></pre></div>
+                </td>
+                <td>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
+    <span class="nx">framework</span><span class="o">:</span> <span class="s1">&#39;bootstrap&#39;</span><span class="p">,</span>
+    <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">fieldName</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">err</span><span class="o">:</span> <span class="s1">&#39;tooltip&#39;</span><span class="p">,</span>
+            <span class="nx">icon</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nx">row</span><span class="o">:</span> <span class="s1">&#39;.col-sm-3&#39;</span><span class="p">,</span>
+            <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                <span class="p">...</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span></code></pre></div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h4><a href="/settings/#events">Events</a></h4>
+<p>There are two changes about the event names:</p>
+<ul class="doc-list">
+    <li>The namespace <code>.bv</code> is changed to <code>.fv</code></li>
+    <li>The namespace <code>error.</code> is changed to <code>err.</code> to avoid <code>window.onerror</code> being invoked by jQuery</li>
+</ul>
+
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>v0.5.3</th>
+                <th>v0.6.0</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="active">
+                <td colspan="2"><strong>Form events</strong></td>
+            </tr>
+            <tr>
+                <td><code>init.form.bv</code></td>
+                <td><code>init.form.fv</code></td>
+            </tr>
+            <tr>
+                <td><code>error.form.bv</code></td>
+                <td><code>err.form.fv</code></td>
+            </tr>
+            <tr>
+                <td><code>success.form.bv</code></td>
+                <td><code>success.form.fv</code></td>
+            </tr>
+            <tr>
+                <td><code>added.field.bv</code></td>
+                <td><code>added.field.fv</code></td>
+            </tr>
+            <tr>
+                <td><code>removed.field.bv</code></td>
+                <td><code>removed.field.fv</code></td>
+            </tr>
+
+            <tr class="active">
+                <td colspan="2"><strong>Field events</strong></td>
+            </tr>
+            <tr>
+                <td><code>init.field.bv</code></td>
+                <td><code>init.field.fv</code></td>
+            </tr>
+            <tr>
+                <td><code>error.field.bv</code></td>
+                <td><code>err.field.fv</code></td>
+            </tr>
+            <tr>
+                <td><code>success.field.bv</code></td>
+                <td><code>success.field.fv</code></td>
+            </tr>
+            <tr>
+                <td><code>status.field.bv</code></td>
+                <td><code>status.field.fv</code></td>
+            </tr>
+
+            <tr class="active">
+                <td colspan="2"><strong>Validator events</strong></td>
+            </tr>
+            <tr>
+                <td><code>error.validator.bv</code></td>
+                <td><code>err.validator.fv</code></td>
+            </tr>
+            <tr>
+                <td><code>success.validator.bv</code></td>
+                <td><code>success.validator.fv</code></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>The last thing, the hexColor validator, deprecated in v0.5.3, is replaced with <a href="/validators/color/">color</a> validator.</p>
+                </div>
+
+                <div class="doc-pagination">
+                    
+                        <a href="/news/v0.6.0-released/" class="doc-pagination-older">&larr; PREVIOUS</a>
+                    
+
+                    
+                        <span class="doc-pagination-newer">NEXT &rarr;</span>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <footer class="doc-footer">
+    <div class="container">
+        <p>
+            
+            <a class="btn" href="/download/">Download</a>
+            
+            <a class="btn" href="https://github.com/formvalidation/formvalidation/issues">Report bug</a>
+        </p>
+        <p>
+            &copy; 2013 - 2015 <a href="http://twitter.com/nghuuphuoc">Nguyen Huu Phuoc</a>. All rights reserved.<br/>
+            Handcrafted with <span class="doc-heart"><i class="fa fa-heart"></i></span> and a lot of <i class="fa fa-coffee"></i>
+        </p>
+    </div>
+
+    
+    <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=bootstrapvalidatorcom" id="_carbonads_js"></script>
+    
+</footer>
+    </div>
+
+<script src="/vendor/tocjs/js/toc.min.js"></script>
+<script src="/vendor/share/share.min.js"></script>
+<script>
+$(function() {
+    // Create share button
+    new Share('#shareButton');
+
+    $('[data-toggle="tooltip"]').tooltip();
+
+    $('#toggleButton').on('click', function() {
+        $(this).find('i').toggleClass('fa-navicon fa-close');
+        $('body').toggleClass('doc-nav-shown');
+    });
+
+    $('form').each(function() {
+        $(this).on('success.form.bv', function(e) {
+            e.preventDefault();
+        });
+    });
+
+    // Create table of contents
+    if ($('#toc').length) {
+        $('#toc')
+            .css('max-width', $('#toc').width())
+            .toc({
+                selector: '#main h2, #main h3, #main h4',
+                elementClass: 'toc',
+                ulClass: 'nav',
+                indexingFormats: '______'
+            });
+    }
+
+    // Switch framework handler
+    $('iframe.doc-demo-frame').each(function() {
+        var $this = $(this);
+        $('<div/>').addClass('doc-demo-loader').html('<i class="fa fa-refresh fa-spin fa-2x"></i>').hide().insertBefore($this);
+        $this.on('load', function() {
+            $(this).prev().hide().end().show();
+        });
+    });
+
+    $('a[data-demo-framework]').on('click', function(e) {
+        var $this     = $(this),
+            framework = $this.attr('data-demo-framework'),
+            url       = $this.attr('data-demo-url'),
+            $target   = $($this.attr('data-demo-target') || $this.attr('href'));
+
+        $this
+            .closest('ul')
+                .find('li')
+                    .removeClass('active')
+                    .end()
+            .end()
+            .parent().addClass('active');
+
+        $this.closest('.dropdown').find('span').eq(0).html($this.html());
+
+        $target
+            .closest('.tab-content')
+            .find('[data-demo-code]')
+                .hide()
+                .filter('[data-demo-code="' + framework.toLowerCase() + '"]').show();
+
+        $target.height('');
+        $target.hide().prev().fadeIn('fast').promise().then(function() {
+            $target.css('visibility', 'hidden').attr('src', url);
+        });
+    });
+
+    $('a[data-demo-framework="bootstrap"]').click();
+});
+</script>
+</body>
+</html>

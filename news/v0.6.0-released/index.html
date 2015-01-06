@@ -1,0 +1,411 @@
+<!doctype html>
+<html>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article#">
+    <meta charset="utf-8">
+<title>FormValidation v0.6.0 Released - FormValidation</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<meta http-equiv="Content-Language" content="en">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks">
+<meta name="keywords" content="FormValidation, BootstrapValidator, jQuery, form, validate, validation, validator, plugin, Bootstrap, Foundation, Pure, SemanticUI, UIKit">
+<meta name="author" content="Nguyen Huu Phuoc">
+<meta name="google-site-verification" content="FMmr8kYuIuW27-qJLOb1Z59OgiVgKNgAv4_eMARhIY8" />
+
+<meta name="twitter:site" content="@formvalidation" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks" />
+<meta name="twitter:title" content="FormValidation v0.6.0 Released - FormValidation" />
+<meta name="twitter:image" content="http://formvalidation.io/asset/img/logo.png" />
+
+<meta property="og:title" content="FormValidation v0.6.0 Released - FormValidation" />
+<meta property="og:description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://formvalidation.io/news/v0.6.0-released/" />
+<meta property="og:image" content="http://formvalidation.io/asset/img/logo.png" />
+<meta property="og:site_name" content="FormValidation" />
+
+<link rel="icon" type="image/x-icon" href="/asset/img/favicon.ico">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/fontawesome/4.2.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/vendor/formvalidation/css/formValidation.min.css">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:300,400,700">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Cardo:400,400italic,700">
+<link rel="stylesheet" href="/vendor/pygments/github.css">
+<link rel="stylesheet" href="/asset/css/style.css">
+
+<!--[if lt IE 9]>
+<script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<script src="//oss.maxcdn.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="/vendor/formvalidation/js/formValidation.min.js"></script>
+<script src="/vendor/formvalidation/js/framework/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-44786951-2']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+</head>
+<body>
+    <nav class="doc-nav" tabindex="-1">
+    <ul>
+        <li><a href="/">Home</a></li>
+    
+        
+            
+        
+        <li class=""><a href="/download/">Download</a></li>
+    
+        
+            
+        
+        <li class=""><a href="/getting-started/">Getting Started</a></li>
+    
+        
+            
+        
+        <li class=""><a href="/settings/">Settings</a></li>
+    
+        
+            
+        
+        <li class=""><a href="/api/">API</a></li>
+    
+        
+            
+        
+        <li class=""><a href="/validators/">Validators</a></li>
+    
+        
+            
+        
+        <li class=""><a href="/examples/">Examples</a></li>
+    
+        
+            
+        
+        <li class=""><a href="/developing/">Developing</a></li>
+    
+        
+            
+        
+        <li class="doc-nav-active"><a href="/news/">News</a></li>
+    
+        
+            
+        
+        <li class=""><a href="/license/">License</a></li>
+    
+    </ul>
+
+    <div class="doc-hr"></div>
+
+    <ul>
+        <li><a href="https://github.com/formvalidation/" title="Fork FormValidation on Github">Github <i class="fa fa-github"></i></a></li>
+        <li><a href="https://twitter.com/formvalidation/" title="Follow FormValidation on Twitter">Twitter <i class="fa fa-twitter"></i></a></li>
+        <li><a href="https://www.facebook.com/formvalidation/" title="Like FormValidation on Facebook">Facebook <i class="fa fa-facebook"></i></a></li>
+        <li><a href="https://plus.google.com/u/0/communities/114931136856987817254" title="Join FormValidation community on Google+">Google+ <i class="fa fa-google-plus"></i></a></li>
+    </ul>
+
+    <div class="doc-hr"></div>
+
+    <div class="doc-creator">
+        <p>
+            Handcrafted with <span class="doc-heart"><i class="fa fa-heart"></i></span> and a lot of <i class="fa fa-coffee"></i><br />
+            by <a href="http://twitter.com/nghuuphuoc">@nghuuphuoc</a><br/>
+            <img src="http://github.com/nghuuphuoc.png" />
+        </p>
+        <p><a href="mailto: phuoc@huuphuoc.me" class="btn">Hire me</a></p>
+    </div>
+</nav>
+
+<a id="toggleButton" class="doc-nav-toggle" title="Toggle the navigation"><i class="fa fa-navicon"></i></a>
+
+    <div id="main" class="doc-content-wrapper">
+        <div class="doc-notification">
+    <i class="fa fa-bell-o"></i> <a href="/news/v0.6.0-released/">v0.6.0</a> is released on 2015.01.06!
+</div>
+
+        <div class="doc-content-container">
+    <div class="doc-heading">
+        <h1>FormValidation v0.6.0 Released</h1>
+        <p>&larr; <a href="/news/">News</a></p>
+        <div id="shareButton" class="doc-share-button"></div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="doc-post-meta">
+                    <a href="https://github.com/nghuuphuoc" title="@nghuuphuoc">
+                        <img src="https://github.com/nghuuphuoc.png" />
+                    </a>
+                    <p>06 Jan 2015</p>
+                </div>
+
+                <div class="doc-post-content">
+                    <h3>New name</h3>
+<p>From v0.6.0, the plugin has new name: <strong>FormValidation</strong>. It supports validating form created by many frameworks including</p>
+<ul class="doc-list">
+    <li><a href="http://getbootstrap.com">Bootstrap</a></li>
+    <li><a href="http://foundation.zurb.com/">Foundation</a></li>
+    <li><a href="http://purecss.io/">Pure</a></li>
+    <li><a href="http://semantic-ui.com/">Semantic UI</a></li>
+    <li><a href="http://getuikit.com/">UIKit</a></li>
+</ul>
+
+<div class="doc-alert doc-alert-info">
+    <a href="/news/upgrading-to-v0.6.0/">Upgrading guide</a> shows the step by step instructions to upgrade from v0.5.3 to v0.6.0
+</div>
+
+<h3>Highlight <i class="fa fa-star"></i></h3>
+<ul class="doc-list">
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/744">#744</a>: Add <a href="/settings/#validator-transformer">transformer</a> option, allowing to hook the value of field before validating</li>
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/1131">#1131</a>: Support add-on</li>
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/1204">#1204</a>: Support Zurb Foundation framework</li>
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/1210">#1210</a>: Support UI Kit framework</li>
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/1211">#1211</a>: Support Semantic UI framework</li>
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/1212">#1212</a>: Support Pure framework</li>
+</ul>
+
+<h3>New features</h3>
+<ul class="doc-list">
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/708">#708</a>, <a href="https://github.com/formvalidation/formvalidation/issues/899">#899</a>: Add <code>setLocale()</code> and <code>getLocale()</code> methods to support multiple languages</li>
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/718">#718</a>: Add <a href="/api/#validate-container">validateContainer()</a> method</li>
+    <li><a href="https://github.com/formvalidation/formvalidation/pull/1140">#1140</a>: Add UAE <a href="/validators/phone/">phone number</a> validator, thanks to <a href="https://github.com/s-a-y">@s-a-y</a></li>
+    <li><a href="https://github.com/formvalidation/formvalidation/pull/1153">#1153</a>: Add <a href="/validators/ein/">EIN</a> validator, thanks to <a href="https://github.com/joshuachestang">@joshuachestang</a></li>
+    <li><a href="https://github.com/formvalidation/formvalidation/pull/1165">#1165</a>: Add <a href="/validators/bic/">BIC (ISO 9362)</a> validator, thanks to <a href="https://github.com/thomaslhotta">@thomaslhotta</a></li>
+    <li><a href="https://github.com/formvalidation/formvalidation/pull/1185">#1185</a>: Add <code>composer.json</code> file, thanks to <a href="https://github.com/rbnvrw">@rbnvrw</a></li>
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/1189">#1189</a>, <a href="https://github.com/formvalidation/formvalidation/issues/1194">#1194</a>: Add <a href="/settings/#form-err">err</a>, <a href="/settings/#form-icon">icon</a>, <a href="/settings/#form-row">row</a> options</li>
+    <li><a href="https://github.com/formvalidation/formvalidation/pull/1207">#1207</a>: Add Spanish <a href="/validators/zipCode/">postal code</a> validator, thanks to <a href="https://github.com/ethernet-zero">@ethernet-zero</a></li>
+    <li><a href="https://github.com/formvalidation/formvalidation/pull/1208">#1208</a>: Support Spanish <a href="/validators/id/">CIF</a> validator, thanks to <a href="https://github.com/ethernet-zero">@ethernet-zero</a></li>
+    <li><a href="https://github.com/formvalidation/formvalidation/pull/1227">#1227</a>, <a href="https://github.com/formvalidation/formvalidation/pull/1229">#1229</a>: Add India <a href="/validators/phone/">phone number</a> validator, thanks to <a href="https://github.com/waveking">@waveking</a></li>
+    <li><a href="https://github.com/formvalidation/formvalidation/pull/1230">#1230</a>, <a href="https://github.com/formvalidation/formvalidation/pull/1231">#1231</a>: Add India <a href="/validators/zipCode/">postal code</a> validator, thanks to <a href="https://github.com/waveking">@waveking</a></li>
+</ul>
+
+<h3>Changes</h3>
+<ul class="doc-list">
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/1167">#1167</a>: Remove hexColor validator. Use <a href="/validators/color/">color</a> validator instead</li>
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/1272">#1272</a>: Change event <code>error.x.x</code> to <code>err.x.x</code> to avoid <code>window.onerror</code> being invoked by jQuery</li>
+    <li>Remove tab behavior from base class</li>
+</ul>
+
+<h3>Improvements</h3>
+<ul class="doc-list">
+    <li><a href="https://github.com/formvalidation/formvalidation/pull/883">#883</a>: Look for the field inside form first when using selector, thanks to <a href="https://github.com/drebrez">@drebrez</a></li>
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/908">#908</a>, <a href="https://github.com/formvalidation/formvalidation/pull/1156">#1156</a>: Add option to set optional protocol in <a href="/validators/uri/">uri</a> validator, thanks to <a href="https://github.com/krecik">@krecik</a></li>
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/914">#914</a>, <a href="https://github.com/formvalidation/formvalidation/pull/1035">#1035</a>, <a href="https://github.com/formvalidation/formvalidation/issues/1163">#1163</a>: Improve <a href="/validators/identical/">identical</a> validator, thanks to <a href="https://github.com/jazzzz">@jazzzz</a></li>
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/1037">#1037</a>: <a href="/validators/creditCard/#showing-card-icon">Show the credit card icon</a> based on its type</li>
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/1083">#1083</a>, <a href="https://github.com/formvalidation/formvalidation/pull/1092/">#1092</a>: Showing tooltip/popover when moving over or clicking the feedback icon (Bootstrap 3.3.0), thanks to <a href="https://github.com/Arkni">@Arkni</a></li>
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/1137">#1137</a>: Use <code>jQuery</code> instead of <code>window.jQuery</code></li>
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/1154">#1154</a>: Allow to reuse data which is returned by the validator</li>
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/1177">#1177</a>: Don't need to set the <a href="/validators/different/">different</a> validator for both fields</li>
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/1186">#1186</a>, <a href="https://github.com/formvalidation/formvalidation/pull/1188">#1188</a>: Improve the <a href="/validators/id/">CPF</a> validator, thanks to <a href="https://github.com/igorescobar">@igorescobar</a></li>
+    <li><a href="https://github.com/formvalidation/formvalidation/pull/1197">#1197</a>: Add sample data for <a href="/validators/id/">CPF</a> validator, thanks to <a href="https://github.com/dgmike">@dgmike</a></li>
+    <li><a href="https://github.com/formvalidation/formvalidation/pull/1207">#1207</a>: Improve Spanish <a href="/validators/phone/">phone</a> validator, thanks to <a href="https://github.com/ethernet-zero">@ethernet-zero</a></li>
+    <li><a href="https://github.com/formvalidation/formvalidation/pull/1218">#1218</a>: Improve Slovenian <a href="/validators/vat/">vat number</a> validator, thanks to <a href="https://github.com/Glavic">@Glavic</a></li>
+    <li><a href="https://github.com/formvalidation/formvalidation/pull/1224">#1224</a>: Improve tooltip style when working with Semantic UI form, thanks to <a href="https://github.com/Arkni">@Arkni</a></li>
+    <li><a href="https://github.com/formvalidation/formvalidation/pull/1226">#1226</a>: Fix destroying Semantic UI popup, thanks to <a href="https://github.com/Arkni">@Arkni</a></li>
+    <li><a href="https://github.com/formvalidation/formvalidation/pull/1239">#1239</a>: Fix typo in UIKit class, thanks to <a href="https://github.com/Arkni">@Arkni</a></li>
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/1252">#1252</a>: Validators return true for not supported countries</li>
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/1255">#1255</a>, <a href="https://github.com/formvalidation/formvalidation/pull/1258">#1258</a>: Support to use a <code>Date</code> object as value for <a href="/validators/date/#options">min and max</a> options, thanks to <a href="https://github.com/Arkni">@Arkni</a></li>
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/1261">#1261</a>: Improve <a href="/validators/cvv/">cvv</a> validator</li>
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/1268">#1268</a>: <a href="/validators/uri/">uri</a> validator gets slower if more than 25 characters</li>
+    <li>The <a href="/api/#is-valid-container">isValidContainer()</a> method should return <code>null</code> if the container consists of at least one field which is not validated yet or being validated</li>
+</ul>
+
+<h3>Bug fixes</h3>
+<ul class="doc-list">
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/1101">#1101</a>: The <a href="/validators/cusip/">cusip</a> validator doesn't work</li>
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/1102">#1102</a>: Fix the <a href="/validators/date/">date</a> validator issue where accepts <code>2014-11-1 23:</code> as valid <code>YYYY-MM-DD h:m</code> date</li>
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/1105">#1105</a>: The <a href="/validators/color/">color</a> validator doesn't provide <code>html5Attributes</code> mapping</li>
+    <li><a href="https://github.com/formvalidation/formvalidation/pull/1125">#1125</a>, <a href="https://github.com/formvalidation/formvalidation/pull/1136">#1136</a>: Update Brazil <a href="/validators/id/">ID</a> validator to support working with Mask plugin, thanks to <a href="https://github.com/jonasesteves">@jonasesteves</a></li>
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/1243">#1243</a>: Fix the icon without label class</li>
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/1267">#1267</a>: <a href="/validators/identical/">identical</a> validator allows to compare with any input</li>
+    <li><a href="https://github.com/formvalidation/formvalidation/pull/1274">#1274</a>: Fix <a href="/api/#validate-container">validateContainer()</a> to use map value instead of key, thanks to <a href="https://github.com/jasonblalock">@jasonblalock</a></li>
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/1279">#1279</a>, <a href="https://github.com/formvalidation/formvalidation/pull/1280">#1280</a>: Show the <code>validating</code> icon when the field is being validated, thanks to <a href="https://github.com/tmaly1980">@tmaly1980</a></li>
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/1292">#1292</a>: Fix bug of US <a href="/validators/phone/">phone number</a> validator</li>
+</ul>
+
+<h3>Document</h3>
+<ul class="doc-list">
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/800">#800</a>: Add <a href="/validators/uri/#using-with-regexp-validator">Using uri and regexp validators</a> example</li>
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/825">#825</a>: Add <a href="/examples/bootstrap-datepicker/">Bootstrap Datepicker</a> example</li>
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/919">#919</a>, <a href="https://github.com/formvalidation/formvalidation/issues/1114">#1114</a>: Add <a href="/examples/validating-google-recaptcha/">Google reCAPTCHA</a> example</li>
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/941">#941</a>: Add <a href="/examples/clearing-field-when-clicking-icon/">Clearing field when clicking the icon</a> example</li>
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/948">#948</a>, <a href="https://github.com/formvalidation/formvalidation/issues/978">#978</a>, <a href="https://github.com/formvalidation/formvalidation/issues/1032">#1032</a>, <a href="https://github.com/formvalidation/formvalidation/issues/1146">#1146</a>, <a href="https://github.com/formvalidation/formvalidation/issues/1162">#1162</a>: Add the <a href="/validators/emailAddress/#is-ab-valid-email-address">Is a@b valid email address</a> section</li>
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/1034">#1034</a>: Add <a href="/examples/enabling-submit-button/">Only enable the submit button if all fields are valid</a> example</li>
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/1078">#1078</a>, <a href="https://github.com/formvalidation/formvalidation/issues/1104">#1104</a>: Update the <a href="/examples/enabling-submit-button/">Enabling the submit button all the time</a> example</li>
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/1106">#1106</a>: Add example to the <a href="/validators/phone/">phone</a> validator</li>
+    <li><a href="https://github.com/formvalidation/formvalidation/pull/1122">#1122</a>: Add third parameter to <code>callback</code> method of <a href="/validators/callback/">callback</a> validator, thanks to <a href="https://github.com/Arkni">@Arkni</a></li>
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/1128">#1128</a>: Add link to the <a href="/examples/">Examples</a> from the <a href="/#2">homepage</a></li>
+    <li><a href="https://github.com/formvalidation/formvalidation/pull/1139">#1139</a>: Add sample <a href="/validators/phone/">United Arab Emirates phone numbers</a>, thanks to <a href="https://github.com/@s-a-y">@s-a-y</a></li>
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/1143">#1143</a>, <a href="https://github.com/formvalidation/formvalidation/issues/1176">#1176</a>: Add <a href="/examples/form-submit-twice/">Form is submitted twice</a> example</li>
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/1172">#1172</a>: Add <a href="/examples/requiring-at-least-one-field/">Requiring at least one field</a> example</li>
+    <li><a href="https://github.com/formvalidation/formvalidation/issues/1174">#1174</a>: Add <a href="/examples/pickadate/">Pickadate</a> example</li>
+    <li><a href="https://github.com/formvalidation/formvalidation/pull/1187">#1187</a>: Add sample <a href="/validators/id/">Brazil ID (CPF) numbers</a>, thanks to <a href="https://github.com/igorescobar">@igorescobar</a></li>
+    <li><a href="https://github.com/formvalidation/formvalidation/pull/1233">#1233</a>: Add sample <a href="/validators/zipCode/">India postal code numbers</a>, thanks to <a href="https://github.com/waveking">@waveking</a></li>
+</ul>
+
+<h3>Language packages</h3>
+<ul class="doc-list">
+    <li><a href="https://github.com/formvalidation/formvalidation/pull/1150">#1150</a>: Add Catalan language package, thanks to <a href="https://github.com/ArnauAregall">@ArnauAregall</a></li>
+    <li><a href="https://github.com/formvalidation/formvalidation/pull/1216">#1216</a>, <a href="https://github.com/formvalidation/formvalidation/pull/1248">#1248</a>: Add Slovak language package, thanks to <a href="https://github.com/budik21">@budik21</a></li>
+    <li><a href="https://github.com/formvalidation/formvalidation/pull/1217">#1217</a>, <a href="https://github.com/formvalidation/formvalidation/pull/1247">#1247</a>: Update Czech language package, thanks to <a href="https://github.com/budik21">@budik21</a></li>
+    <li><a href="https://github.com/formvalidation/formvalidation/pull/1225">#1225</a>: Add Finnish language package, thanks to <a href="https://github.com/traone">@traone</a></li>
+    <li><a href="https://github.com/formvalidation/formvalidation/pull/1246">#1246</a>: Add Hindi language package, thanks to <a href="https://github.com/gladiatorAsh">@gladiatorAsh</a></li>
+    <li><a href="https://github.com/formvalidation/formvalidation/pull/1321">#1321</a>: Add Basque language package, thanks to <a href="https://github.com/xabikip">@xabikip</a></li>
+</ul>
+
+<h3>Contributors</h3>
+<p>Thanks to contributors:</p>
+<ul class="doc-list">
+    <li><a href="https://github.com/Arkni">@Arkni</a></li>
+    <li><a href="https://github.com/ArnauAregall">@ArnauAregall</a></li>
+    <li><a href="https://github.com/budik21">@budik21</a></li>
+    <li><a href="https://github.com/dgmike">@dgmike</a></li>
+    <li><a href="https://github.com/drebrez">@drebrez</a></li>
+    <li><a href="https://github.com/ethernet-zero">@ethernet-zero</a></li>
+    <li><a href="https://github.com/gladiatorAsh">@gladiatorAsh</a></li>
+    <li><a href="https://github.com/Glavic">@Glavic</a></li>
+    <li><a href="https://github.com/igorescobar">@igorescobar</a></li>
+    <li><a href="https://github.com/jasonblalock">@jasonblalock</a></li>
+    <li><a href="https://github.com/jazzzz">@jazzzz</a></li>
+    <li><a href="https://github.com/jonasesteves">@jonasesteves</a></li>
+    <li><a href="https://github.com/joshuachestang">@joshuachestang</a></li>
+    <li><a href="https://github.com/krecik">@krecik</a></li>
+    <li><a href="https://github.com/rbnvrw">@rbnvrw</a></li>
+    <li><a href="https://github.com/s-a-y">@s-a-y</a></li>
+    <li><a href="https://github.com/thomaslhotta">@thomaslhotta</a></li>
+    <li><a href="https://github.com/tmaly1980">@tmaly1980</a></li>
+    <li><a href="https://github.com/traone">@traone</a></li>
+    <li><a href="https://github.com/xabikip">@xabikip</a></li>
+    <li><a href="https://github.com/waveking">@waveking</a></li>
+</ul>
+
+<h3>Download</h3>
+<div>
+    <a class="btn btn-primary" href="/download/" title="Download FormValidation v0.6.0">FormValidation v0.6.0</a>
+</div>
+                </div>
+
+                <div class="doc-pagination">
+                    
+                        <a href="/news/best-jquery-practices/" class="doc-pagination-older">&larr; PREVIOUS</a>
+                    
+
+                    
+                        <a href="/news/upgrading-to-v0.6.0/" class="doc-pagination-newer">NEXT &rarr;</a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <footer class="doc-footer">
+    <div class="container">
+        <p>
+            
+            <a class="btn" href="/download/">Download</a>
+            
+            <a class="btn" href="https://github.com/formvalidation/formvalidation/issues">Report bug</a>
+        </p>
+        <p>
+            &copy; 2013 - 2015 <a href="http://twitter.com/nghuuphuoc">Nguyen Huu Phuoc</a>. All rights reserved.<br/>
+            Handcrafted with <span class="doc-heart"><i class="fa fa-heart"></i></span> and a lot of <i class="fa fa-coffee"></i>
+        </p>
+    </div>
+
+    
+    <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=bootstrapvalidatorcom" id="_carbonads_js"></script>
+    
+</footer>
+    </div>
+
+<script src="/vendor/tocjs/js/toc.min.js"></script>
+<script src="/vendor/share/share.min.js"></script>
+<script>
+$(function() {
+    // Create share button
+    new Share('#shareButton');
+
+    $('[data-toggle="tooltip"]').tooltip();
+
+    $('#toggleButton').on('click', function() {
+        $(this).find('i').toggleClass('fa-navicon fa-close');
+        $('body').toggleClass('doc-nav-shown');
+    });
+
+    $('form').each(function() {
+        $(this).on('success.form.bv', function(e) {
+            e.preventDefault();
+        });
+    });
+
+    // Create table of contents
+    if ($('#toc').length) {
+        $('#toc')
+            .css('max-width', $('#toc').width())
+            .toc({
+                selector: '#main h2, #main h3, #main h4',
+                elementClass: 'toc',
+                ulClass: 'nav',
+                indexingFormats: '______'
+            });
+    }
+
+    // Switch framework handler
+    $('iframe.doc-demo-frame').each(function() {
+        var $this = $(this);
+        $('<div/>').addClass('doc-demo-loader').html('<i class="fa fa-refresh fa-spin fa-2x"></i>').hide().insertBefore($this);
+        $this.on('load', function() {
+            $(this).prev().hide().end().show();
+        });
+    });
+
+    $('a[data-demo-framework]').on('click', function(e) {
+        var $this     = $(this),
+            framework = $this.attr('data-demo-framework'),
+            url       = $this.attr('data-demo-url'),
+            $target   = $($this.attr('data-demo-target') || $this.attr('href'));
+
+        $this
+            .closest('ul')
+                .find('li')
+                    .removeClass('active')
+                    .end()
+            .end()
+            .parent().addClass('active');
+
+        $this.closest('.dropdown').find('span').eq(0).html($this.html());
+
+        $target
+            .closest('.tab-content')
+            .find('[data-demo-code]')
+                .hide()
+                .filter('[data-demo-code="' + framework.toLowerCase() + '"]').show();
+
+        $target.height('');
+        $target.hide().prev().fadeIn('fast').promise().then(function() {
+            $target.css('visibility', 'hidden').attr('src', url);
+        });
+    });
+
+    $('a[data-demo-framework="bootstrap"]').click();
+});
+</script>
+</body>
+</html>

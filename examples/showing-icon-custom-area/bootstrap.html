@@ -1,0 +1,171 @@
+<!doctype html>
+<html>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article#">
+    <meta charset="utf-8">
+<title>Showing icons in custom area - FormValidation</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<meta http-equiv="Content-Language" content="en">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks">
+<meta name="keywords" content="FormValidation, BootstrapValidator, jQuery, form, validate, validation, validator, plugin, Bootstrap, Foundation, Pure, SemanticUI, UIKit">
+<meta name="author" content="Nguyen Huu Phuoc">
+<meta name="google-site-verification" content="FMmr8kYuIuW27-qJLOb1Z59OgiVgKNgAv4_eMARhIY8" />
+
+<meta name="twitter:site" content="@formvalidation" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks" />
+<meta name="twitter:title" content="Showing icons in custom area - FormValidation" />
+<meta name="twitter:image" content="http://formvalidation.io/asset/img/logo.png" />
+
+<meta property="og:title" content="Showing icons in custom area - FormValidation" />
+<meta property="og:description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://formvalidation.io/examples/showing-icon-custom-area/bootstrap.html" />
+<meta property="og:image" content="http://formvalidation.io/asset/img/logo.png" />
+<meta property="og:site_name" content="FormValidation" />
+
+<link rel="icon" type="image/x-icon" href="/asset/img/favicon.ico">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/fontawesome/4.2.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+
+<!--[if lt IE 9]>
+<script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<script src="//oss.maxcdn.com/jquery/1.11.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-44786951-2']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/vendor/formvalidation/css/formValidation.min.css">
+    <link rel="stylesheet" href="/asset/css/demo.css">
+
+    <script src="//cdn.jsdelivr.net/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="/vendor/formvalidation/js/formValidation.min.js"></script>
+    <script src="/vendor/formvalidation/js/framework/bootstrap.min.js"></script>
+</head>
+<body class="demo-bootstrap">
+    <div class="container" id="demoContainer">
+        <style type="text/css">
+/* Custom the feedback icon styles */
+#registerForm .form-control-feedback {
+    position: static;
+    display: inline-block;
+}
+</style>
+
+<form id="registerForm">
+    <div class="form-group">
+        <label>Username</label>
+        <input type="text" class="form-control" name="username" />
+    </div>
+
+    <div class="form-group">
+        <label>Email address</label>
+        <input type="text" class="form-control" name="email" />
+    </div>
+</form>
+
+<script>
+$(document).ready(function() {
+    $('#registerForm')
+        // IMPORTANT: on('init.field.fv') must be declared
+        // before calling .formValidation(...)
+        .on('init.field.fv', function(e, data) {
+            // $(e.target)  --> The field element
+            // data.fv      --> The FormValidation instance
+            // data.field   --> The field name
+            // data.element --> The field element
+            var $parent = data.element.parents('.form-group'),
+                $icon   = data.element.data('fv.icon'),
+                $label  = $parent.find('label');
+
+            // Place the icon right after the label
+            $icon.insertAfter($label);
+        })
+        .formValidation({
+            framework: 'bootstrap',
+            icon: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                username: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The username is required and cannot be empty'
+                        },
+                        stringLength: {
+                            min: 6,
+                            max: 30,
+                            message: 'The username must be more than 6 and less than 30 characters long'
+                        },
+                        regexp: {
+                            regexp: /^[a-zA-Z0-9_]+$/,
+                            message: 'The username can only consist of alphabetical, number and underscore'
+                        }
+                    }
+                },
+                email: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The email is required and cannot be empty'
+                        },
+                        emailAddress: {
+                            message: 'The input is not a valid email address'
+                        }
+                    }
+                }
+            }
+        });
+});
+</script>
+    </div>
+
+    <div class="demo-ad"><script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=bootstrapvalidatorcom" id="_carbonads_js"></script></div>
+
+<script>
+$(document).ready(function() {
+    $('form').on('success.form.fv', function(e) {
+        e.preventDefault();
+    });
+
+    $(window).on('load', function() {
+        var $iframe = $(window.parent.document).find('iframe[src="/examples/showing-icon-custom-area/bootstrap.html"]');
+        if ($iframe.length) {
+            $('body').addClass('demo-frame-body').find('.demo-ad').hide();
+
+            // Adjust the height of iframes containing the demo for specific frameworks
+            var $container = $('#demoContainer');
+            setTimeout(function() {
+                $iframe.height($container.height()).css('visibility', 'visible').fadeIn('fast');
+            }, 1000);
+
+            // Set the internal data to get it later if I want
+            $('body').data('iframe.fv', $iframe);
+
+            $container
+                .find('form')
+                .on('status.field.fv', function(e, data) {
+                    $iframe.height($container.height());
+                });
+        }
+    });
+});
+</script>
+</body>
+</html>
