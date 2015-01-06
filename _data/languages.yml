@@ -4,6 +4,9 @@
 - name:   Arabic
   file:   ar_MA.js
   author: Arkni
+- name:   Basque
+  file:   eu_ES.js
+  author: xabikip
 - name:   Belgium (French)
   file:   be_FR.js
   author: neilime
