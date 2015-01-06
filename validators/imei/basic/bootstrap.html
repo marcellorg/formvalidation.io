@@ -1,0 +1,20 @@
+---
+layout: demo/bootstrap
+title: imei validator &rarr; Basic example
+permalink: /validators/imei/basic/bootstrap.html
+---
+
+{% include_relative bootstrap.programmatic %}
+
+<script>
+function revalidateImei(value) {
+    var $form = $('form');
+    $form
+        .find('input[name="imei"]')
+            .val(value)
+            .end()
+        .formValidation('revalidateField', 'imei');
+
+    return $form.data('formValidation').isValidField('imei');
+}
+</script>

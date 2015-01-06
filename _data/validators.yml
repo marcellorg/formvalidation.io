@@ -6,6 +6,10 @@
   version:      0.1.0
   description:  Check if the input value is between (strictly or not) two given numbers
 
+- name:         bic
+  version:      0.6.0
+  description:  Validate a BIC (Business Identifier Codes)
+
 - name:         callback
   version:      0.2.0
   description:  Return the validity from a callback method
@@ -46,6 +50,10 @@
   version:      0.4.4
   description:  Validate an EAN (International Article Number)
 
+- name:         ein
+  version:      0.6.0
+  description:  Validate an EIN (Employer Identification Number)
+
 - name:         emailAddress
   version:      0.1.0
   description:  Validate an email address
@@ -65,10 +73,6 @@
 - name:         hex
   version:      0.4.0
   description:  Validate a hexadecimal number
-
-- name:         hexColor
-  version:      0.1.0
-  description:  Validate a hex color
 
 - name:         iban
   version:      0.4.0

@@ -11,94 +11,96 @@ author: nghuuphuoc
     <li><i class="fa fa-star"></i> Support <a href="/examples/#html5">HTML 5 input types</a>:</li>
 </ul>
 
-<table class="table table-condensed">
-    <thead>
-        <tr>
-            <th>HTML 5 attribute</th>
-            <th>Equivalent validator</th>
-            <th>Equivalent HTML attribute</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><code>min="..."</code></td>
-            <td><a href="/validators/greaterThan/">greaterThan validator</a></td>
-            <td>
+<div class="table-responsive">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>HTML 5 attribute</th>
+                <th>Equivalent validator</th>
+                <th>Equivalent HTML attribute</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>min="..."</code></td>
+                <td><a href="/validators/greaterThan/">greaterThan validator</a></td>
+                <td>
 {% highlight html %}
 data-bv-greaterthan="true"
 data-bv-greaterthan-value="..."
 {% endhighlight %}
-            </td>
-        </tr>
-        <tr>
-            <td><code>max="..."</code></td>
-            <td><a href="/validators/lessThan/">lessThan validator</a></td>
-            <td>
+                </td>
+            </tr>
+            <tr>
+                <td><code>max="..."</code></td>
+                <td><a href="/validators/lessThan/">lessThan validator</a></td>
+                <td>
 {% highlight html %}
 data-bv-lessthan="true"
 data-bv-lessthan-value="..."
 {% endhighlight %}
-            </td>
-        </tr>
-        <tr>
-            <td><code>maxlength="..."</code></td>
-            <td><a href="/validators/stringLength/">stringLength validator</a></td>
-            <td>
+                </td>
+            </tr>
+            <tr>
+                <td><code>maxlength="..."</code></td>
+                <td><a href="/validators/stringLength/">stringLength validator</a></td>
+                <td>
 {% highlight html %}
 data-bv-stringlength="true"
 data-bv-stringlength-max="..."
 {% endhighlight %}
-            </td>
-        </tr>
-        <tr>
-            <td><code>pattern="..."</code></td>
-            <td><a href="/validators/regexp/">regexp validator</a></td>
-            <td>
+                </td>
+            </tr>
+            <tr>
+                <td><code>pattern="..."</code></td>
+                <td><a href="/validators/regexp/">regexp validator</a></td>
+                <td>
 {% highlight html %}
 data-bv-regexp="true"
 data-bv-regexp-regexp="..."
 {% endhighlight %}
-            </td>
-        </tr>
-        <tr>
-            <td><code>required</code></td>
-            <td><a href="/validators/notEmpty/">notEmpty validator</a></td>
-            <td><code>data-bv-notempty="true"</code></td>
-        </tr>
-        <tr>
-            <td><code>type="color"</code></td>
-            <td><a href="/validators/hexColor/">hexColor validator</a></td>
-            <td><code>data-bv-hexcolor="true"</code></td>
-        </tr>
-        <tr>
-            <td><code>type="email"</code></td>
-            <td><a href="/validators/emailAddress/">emailAddress validator</a></td>
-            <td><code>data-bv-emailaddress="true"</code></td>
-        </tr>
-        <tr>
-            <td>
+                </td>
+            </tr>
+            <tr>
+                <td><code>required</code></td>
+                <td><a href="/validators/notEmpty/">notEmpty validator</a></td>
+                <td><code>data-bv-notempty="true"</code></td>
+            </tr>
+            <tr>
+                <td><code>type="color"</code></td>
+                <td><a href="/validators/hexColor/">hexColor validator</a></td>
+                <td><code>data-bv-hexcolor="true"</code></td>
+            </tr>
+            <tr>
+                <td><code>type="email"</code></td>
+                <td><a href="/validators/emailAddress/">emailAddress validator</a></td>
+                <td><code>data-bv-emailaddress="true"</code></td>
+            </tr>
+            <tr>
+                <td>
 {% highlight html %}
 type="range"
 min="..."
 max="..."
 {% endhighlight %}
-            </td>
-            <td><a href="/validators/between/">between validator</a></td>
-            <td>
+                </td>
+                <td><a href="/validators/between/">between validator</a></td>
+                <td>
 {% highlight html %}
 data-bv-between="true"
 data-bv-between-min="..."
 data-bv-between-max="..."
 {% endhighlight %}
-            </td>
-        </tr>
-        <tr>
-            <td><code>type="url"</code></td>
-            <td><a href="/validators/uri/">uri validator</a></td>
-            <td><code>data-bv-uri="true"</code></td>
-        </tr>
-    </tbody>
-</table>
+                </td>
+            </tr>
+            <tr>
+                <td><code>type="url"</code></td>
+                <td><a href="/validators/uri/">uri validator</a></td>
+                <td><code>data-bv-uri="true"</code></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 <ul class="doc-list">
     <li><i class="fa fa-star"></i> <a href="{{ site.repository.source }}/issues/74">#74</a>, <a href="{{ site.repository.source }}/issues/103">#103</a>, <a href="{{ site.repository.source }}/issues/122">#122</a>: Set the custom <a href="/settings/#trigger">trigger event</a>. It's possible to use <code>data-bv-trigger</code> attribute or <code>trigger</code> option.</li>

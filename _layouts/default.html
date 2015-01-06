@@ -23,7 +23,8 @@ $(function() {
 
     $('[data-toggle="tooltip"]').tooltip();
 
-    $('.doc-logo').on('click', function() {
+    $('#toggleButton').on('click', function() {
+        $(this).find('i').toggleClass('fa-navicon fa-close');
         $('body').toggleClass('doc-nav-shown');
     });
 
@@ -38,33 +39,51 @@ $(function() {
         $('#toc')
             .css('max-width', $('#toc').width())
             .toc({
-                selector: '#main h2, #main h3, #main h4, #main h5, #main h6',
+                selector: '#main h2, #main h3, #main h4',
                 elementClass: 'toc',
                 ulClass: 'nav',
                 indexingFormats: '______'
             });
-
-        var $window = $(window),
-            $body   = $(document.body);
-        $body.scrollspy({
-            target: '#toc'
-        });
-
-        $window.on('load', function() {
-            $body.scrollspy('refresh');
-        });
-
-        setTimeout(function() {
-            var $sideBar = $('#toc');
-            $sideBar.affix({
-                offset: {
-                    top: function() {
-                        return (this.top = $sideBar.offset().top);
-                    }
-                }
-            });
-        }, 100);
     }
+
+    // Switch framework handler
+    $('iframe.doc-demo-frame').each(function() {
+        var $this = $(this);
+        $('<div/>').addClass('doc-demo-loader').html('<i class="fa fa-refresh fa-spin fa-2x"></i>').hide().insertBefore($this);
+        $this.on('load', function() {
+            $(this).prev().hide().end().show();
+        });
+    });
+
+    $('a[data-demo-framework]').on('click', function(e) {
+        var $this     = $(this),
+            framework = $this.attr('data-demo-framework'),
+            url       = $this.attr('data-demo-url'),
+            $target   = $($this.attr('data-demo-target') || $this.attr('href'));
+
+        $this
+            .closest('ul')
+                .find('li')
+                    .removeClass('active')
+                    .end()
+            .end()
+            .parent().addClass('active');
+
+        $this.closest('.dropdown').find('span').eq(0).html($this.html());
+
+        $target
+            .closest('.tab-content')
+            .find('[data-demo-code]')
+                .hide()
+                .filter('[data-demo-code="' + framework.toLowerCase() + '"]').show();
+
+        $target.height('');
+        $target.hide().prev().fadeIn('fast').promise().then(function() {
+            $target.css('visibility', 'hidden').attr('src', url);
+        });
+    });
+
+    $('a[data-demo-framework="bootstrap"]').click();
 });
 </script>
 </body>

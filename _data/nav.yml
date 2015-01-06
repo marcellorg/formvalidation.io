@@ -4,10 +4,10 @@
   permalink: /getting-started/
 - title:     Settings
   permalink: /settings/
-- title:     Validators
-  permalink: /validators/
 - title:     API
   permalink: /api/
+- title:     Validators
+  permalink: /validators/
 - title:     Examples
   permalink: /examples/
 - title:     Developing

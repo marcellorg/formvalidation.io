@@ -1,0 +1,51 @@
+body {
+  font-family: 'open sans';
+}
+.demo-frame-body {
+  overflow: hidden;
+}
+.demo-frame-body .demo-ad {
+  visibility: hidden;
+}
+.demo-bootstrap .form-group:last-child {
+  margin-bottom: 0;
+}
+.demo-foundation button[type="submit"],
+.demo-foundation .button[type="submit"] {
+  margin-bottom: 0;
+}
+.demo-semantic {
+  background: #fff;
+}
+/* --- Ads --- */
+#carbonads {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 180px;
+  margin: 0;
+  padding: 25px;
+  font-size: 10px;
+  z-index: 100;
+}
+#carbonads .carbon-text,
+#carbonads .carbon-poweredby {
+  display: block;
+  color: #999;
+  margin-top: 10px;
+}
+#carbonads .carbon-text:hover,
+#carbonads .carbon-poweredby:hover {
+  color: #08c;
+  text-decoration: none;
+}
+@media (max-width: 1199px) {
+  #carbonads {
+    visibility: hidden;
+  }
+}
+@media (min-width: 1200px) {
+  #carbonads {
+    visibility: visible;
+  }
+}

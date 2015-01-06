@@ -1,0 +1,27 @@
+<section>
+    <h3 id="validator-transformer">transformer</h3>
+
+    <p><code>transformer: Function</code> &mdash; Modify the field value before validating.</p>
+
+{% highlight javascript %}
+transformer: function($field, validator) {
+    // $field is the jQuery object presenting the field element
+    // validator the instance of FormValidation
+
+    // You can get the field value
+    var value = $field.val();
+
+    // Modify it
+    // ...
+
+    // ... and return
+    return value;
+}
+{% endhighlight %}
+
+    <h5>Example</h5>
+    <p>The following form accepts a website address without <strong>http://</strong> or <strong>https://</strong> prefix.</p>
+    <p>By default, these kind of URLs don't pass the <a href="/validators/uri/">uri</a> validators. Applying the <code>transformer</code> option for the uri validator, we can make it pass.</p>
+
+    {% include demo/tabs.html id="validator-transformer-uri" frameworks="bootstrap" dir="validator/transformer-uri" codes="programmatic" %}
+</section>

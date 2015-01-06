@@ -1,0 +1,100 @@
+---
+layout: default
+title: Download
+permalink: /download/
+next:
+    url: /getting-started/
+    title: Getting started
+---
+
+<div class="doc-content-container">
+    <div class="doc-heading">
+        <h1>Download</h1>
+        <p><strong><span id="downloadCounter">96,000+</span></strong> downloads so far! It is right choice, absolutely!</p>
+
+        {% include share.html %}
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+                <section>
+                    <p class="text-center">The latest version, <a href="/news/v0.6.0-released/">v{{ site.current_version }}</a>, is released on {{ site.released_date }}.</p>
+
+                    <div class="doc-alert doc-alert-info">
+                        <a href="/news/upgrading-to-v0.6.0/">Upgrading guide</a> shows the step by step instructions to upgrade from v0.5.3 to v0.6.0
+                    </div>
+
+                    <div class="row text-center">
+                        <div class="col-md-6">
+                            <div class="doc-plan">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <p>Developer commercial license</p>
+                                        <h3>{{ site.license.developer.price }}</h3>
+                                    </div>
+                                    <div class="list-group">
+                                        <div class="list-group-item">For individual developers</div>
+                                        <div class="list-group-item">Each individual developer needs to purchase a separate license</div>
+                                        <div class="list-group-item"><i class="fa fa-check"></i> Free lifetime upgrade</div>
+                                        <div class="list-group-item"><i class="fa fa-check"></i> Use in multiple websites</div>
+                                        <div class="list-group-item"><i class="fa fa-check"></i> Full source code</div>
+                                        <div class="list-group-item">
+                                            <p><strong>Buy with Paypal</strong></p>
+                                            <a href="{{ site.license.developer.sellfy_url }}" id="{{ site.license.developer.sellfy_id }}" class="doc-sellfy-button" title="Buy BootstrapValidator developer commercial license with Paypal"><span>{{ site.license.developer.price }}</span></a>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <p><strong>Buy with Credit Card</strong></p>
+                                            <a href="{{ site.license.developer.gumroad_url }}" class="doc-gumroad-button" title="Buy BootstrapValidator developer commercial license with Credit Card"><span></span>Buy now</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="doc-plan">
+                                <div class="panel panel-success">
+                                    <div class="panel-heading">
+                                        <p>Organization commercial license</p>
+                                        <h3>{{ site.license.organization.price }}</h3>
+                                    </div>
+                                    <div class="list-group">
+                                        <div class="list-group-item">For an organization with a team of developers</div>
+                                        <div class="list-group-item">Covers all developers working within the organization</div>
+                                        <div class="list-group-item"><i class="fa fa-check"></i> Free lifetime upgrade</div>
+                                        <div class="list-group-item"><i class="fa fa-check"></i> Use in multiple websites</div>
+                                        <div class="list-group-item"><i class="fa fa-check"></i> Full source code</div>
+                                        <div class="list-group-item">
+                                            <p><strong>Buy with Paypal</strong></p>
+                                            <a href="{{ site.license.organization.sellfy_url }}" id="{{ site.license.organization.sellfy_id }}" class="doc-sellfy-button" title="Buy BootstrapValidator organization commercial license with Paypal"><span>{{ site.license.organization.price }}</span></a>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <p><strong>Buy with Credit Card</strong></p>
+                                            <a href="{{ site.license.organization.gumroad_url }}" class="doc-gumroad-button" title="Buy BootstrapValidator organization commercial license with Credit Card"><span></span>Buy now</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="text-center">
+                        All transactions are processed on <a href="https://sellfy.com/nghuuphuoc/">Sellfy</a> and <a href="https://gumroad.com/nghuuphuoc/">GumRoad</a> through an <strong>encrypted HTTP Secure</strong> connection
+                    </p>
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Give it a try</h2>
+                    <p>Below is basic working examples of FormValidation using with <a href="http://getbootstrap.com">Bootstrap</a>, <a href="http://foundation.zurb.com/">Foundation</a>, <a href="http://purecss.io/">Pure</a>, <a href="http://semantic-ui.com/">Semantic UI</a> and <a href="http://getuikit.com/">UIKit</a> frameworks.</p>
+
+                    {% include demo/tabs.html id="demo" frameworks="bootstrap,foundation,pure,semantic,uikit" dir="tryit" codes="programmatic,declarative" %}
+                </section>
+
+                {% include pagination.html %}
+            </div>
+        </div>
+    </div>
+</div>

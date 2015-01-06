@@ -1,0 +1,40 @@
+<section>
+    <h2 id="update-status">updateStatus</h2>
+
+    <p><code>updateStatus(field<sup>*</sup>, status<sup>*</sup>, validator): FormValidation</code> &mdash; Update validator result for given field</p>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Parameter</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>field</code></td>
+                    <td>String|jQuery</td>
+                    <td>The field name or field element</td>
+                </tr>
+                <tr>
+                    <td><code>status</code></td>
+                    <td>String</td>
+                    <td>Can be <code>NOT_VALIDATED</code>, <code>VALIDATING</code>, <code>INVALID</code> or <code>VALID</code></td>
+                </tr>
+                <tr>
+                    <td><code>validator</code></td>
+                    <td>String</td>
+                    <td>The validator name. If <code>null</code>, the method updates validity result for all validators</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h5>Example</h5>
+    <p>The <code>updateStatus</code> method might be used when a field validity is effected by other filed.</p>
+    <p>For example, the form below asks user for credit card expiration. The expiration is valid if it is in the range of next month and next 10 year.</p>
+
+    {% include demo/tabs.html id="payment" frameworks="bootstrap" dir="payment" codes="programmatic" %}
+</section>

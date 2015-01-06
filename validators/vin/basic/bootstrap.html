@@ -1,0 +1,20 @@
+---
+layout: demo/bootstrap
+title: vin validator &rarr; Basic example
+permalink: /validators/vin/basic/bootstrap.html
+---
+
+{% include_relative bootstrap.programmatic %}
+
+<script>
+function revalidateVin(value) {
+    var $form = $('form');
+    $form
+        .find('input[name="vin"]')
+            .val(value)
+            .end()
+        .formValidation('revalidateField', 'vin');
+
+    return $form.data('formValidation').isValidField('vin');
+}
+</script>
