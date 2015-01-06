@@ -20,12 +20,12 @@ description:          FormValidation - The best jQuery plugin to validate form f
 license:
   developer:
     price:            25$
-    gumroad_url:      https://gum.co/bv-developer-license
+    gumroad_url:      https://gum.co/formvalidation-developer-license
     sellfy_url:       https://sellfy.com/p/uitF/
     sellfy_id:        uitF
   organization:
     price:            75$
-    gumroad_url:      https://gum.co/bv-organization-license
+    gumroad_url:      https://gum.co/formvalidation-organization-license
     sellfy_url:       https://sellfy.com/p/eQiZ/
     sellfy_id:        eQiZ
 current_version:      0.6.0
