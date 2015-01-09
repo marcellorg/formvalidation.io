@@ -565,6 +565,10 @@ _gaq.push(['_trackPageview']);
         <p>Choose the framework you are using to see CSS, Javascript files that need to be included in your page (Assuming
         frameworks and FormValidation are placed in the <code>vendor</code> directory. You might need change the path to these files)</p>
 
+        <div class="doc-alert doc-alert-info">
+            FormValidation requires <a href="http://jquery.com/">jQuery</a> v1.9.1 or higher
+        </div>
+
         <div class="doc-demo">
             <ul class="nav nav-tabs">
                 <li class="active"><a href="#including-bootstrap-tab" data-toggle="tab">Bootstrap</a></li>
@@ -591,6 +595,12 @@ _gaq.push(['_trackPageview']);
 <span class="c">&lt;!-- FormValidation plugin and the class supports validating Bootstrap form --&gt;</span>
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/vendor/formvalidation/dist/js/formValidation.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/vendor/formvalidation/dist/js/framework/bootstrap.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></div>
+
+                    <div class="doc-alert doc-alert-warning">
+                        <p>Don't confuse bootstrap(.min).js file provided by the Bootstrap framework with
+                        bootstrap(.min).js provided by FormValidation which is placed inside the formvalidation/dist/js/framework directory.</p>
+                        <p>They are two different files and both of them need to be included as mentioned above.</p>
+                    </div>
                 </div>
 
                 <div class="tab-pane" id="including-foundation-tab">
@@ -612,6 +622,12 @@ _gaq.push(['_trackPageview']);
 <span class="c">&lt;!-- FormValidation plugin and the class supports validating Foundation form --&gt;</span>
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/vendor/formvalidation/dist/js/formValidation.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/vendor/formvalidation/dist/js/framework/foundation.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></div>
+
+                    <div class="doc-alert doc-alert-warning">
+                        <p>Don't confuse foundation(.min).js file provided by the Foundation framework with
+                            foundation(.min).js provided by FormValidation which is placed inside the formvalidation/dist/js/framework directory.</p>
+                        <p>They are two different files and both of them need to be included as mentioned above.</p>
+                    </div>
                 </div>
 
                 <div class="tab-pane" id="including-pure-tab">
@@ -647,6 +663,12 @@ _gaq.push(['_trackPageview']);
 <span class="c">&lt;!-- FormValidation plugin and the class supports validating Semantic form --&gt;</span>
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/vendor/formvalidation/dist/js/formValidation.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/vendor/formvalidation/dist/js/framework/semantic.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></div>
+
+                    <div class="doc-alert doc-alert-warning">
+                        <p>Don't confuse semantic(.min).js file provided by the Semantic framework with
+                            semantic(.min).js provided by FormValidation which is placed inside the formvalidation/dist/js/framework directory.</p>
+                        <p>They are two different files and both of them need to be included as mentioned above.</p>
+                    </div>
                 </div>
 
                 <div class="tab-pane" id="including-uikit-tab">
@@ -665,12 +687,14 @@ _gaq.push(['_trackPageview']);
 <span class="c">&lt;!-- FormValidation plugin and the class supports validating Semantic form --&gt;</span>
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/vendor/formvalidation/dist/js/formValidation.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/vendor/formvalidation/dist/js/framework/uikit.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></div>
+
+                    <div class="doc-alert doc-alert-warning">
+                        <p>Don't confuse uikit(.min).js file provided by the UIKit framework with
+                            uikit(.min).js provided by FormValidation which is placed inside the formvalidation/dist/js/framework directory.</p>
+                        <p>They are two different files and both of them need to be included as mentioned above.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <div class="doc-alert doc-alert-info">
-            FormValidation requires <a href="http://jquery.com/">jQuery</a> v1.9.1 or higher
         </div>
 
         <p>If you want to use the default message translated in the <a href="#language-package">language package</a>, then finally include it:</p>

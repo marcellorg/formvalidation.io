@@ -164,20 +164,44 @@ _gaq.push(['_trackPageview']);
 
 <strong>v0.5.3:</strong>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Path to BootstrapValidator CSS --&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Path to Bootstrap CSS v3.0.0 or higher --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;/vendor/bootstrap/css/bootstrap.min.css&quot;</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- Path to BootstrapValidator CSS --&gt;</span>
 <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;/vendor/bootstrapvalidator/dist/css/bootstrapValidator(.min).css&quot;</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- jQuery v1.9.1 or higher --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;/vendor/jquery/jquery.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+
+<span class="c">&lt;!-- Path to Bootstrap JS --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/vendor/bootstrap/js/bootstrap.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 
 <span class="c">&lt;!-- Path to BootstrapValidator JS --&gt;</span>
 <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;/vendor/bootstrapvalidator/dist/js/bootstrapValidator(.min).js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></div>
 
 <strong>v0.6.0:</strong>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- FormValidation CSS file --&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Path to Bootstrap CSS v3.0.0 or higher --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;/vendor/bootstrap/css/bootstrap.min.css&quot;</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- FormValidation CSS file --&gt;</span>
 <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;/vendor/formvalidation/dist/css/formValidation(.min).css&quot;</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- jQuery v1.9.1 or higher --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;/vendor/jquery/jquery.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+
+<span class="c">&lt;!-- Path to Bootstrap JS --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/vendor/bootstrap/js/bootstrap.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 
 <span class="c">&lt;!-- FormValidation plugin and the class supports validating Bootstrap form --&gt;</span>
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/vendor/formvalidation/dist/js/formValidation(.min).js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/vendor/formvalidation/dist/js/framework/bootstrap(.min).js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></div>
+
+<div class="doc-alert doc-alert-warning">
+    <p>Don't confuse bootstrap(.min).js file provided by the Bootstrap framework with
+        bootstrap(.min).js provided by FormValidation which is placed inside the formvalidation/dist/js/framework directory.</p>
+    <p>They are two different files and both of them need to be included as mentioned above.</p>
+</div>
 
 <h3>Required Step: Changing your own validator</h3>
 
