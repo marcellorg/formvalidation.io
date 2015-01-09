@@ -14,8 +14,17 @@ author: nghuuphuoc
 <strong>v0.5.3:</strong>
 
 {% highlight html %}
+<!-- Path to Bootstrap CSS v3.0.0 or higher -->
+<link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css">
+
 <!-- Path to BootstrapValidator CSS -->
 <link rel="stylesheet" href="/vendor/bootstrapvalidator/dist/css/bootstrapValidator(.min).css">
+
+<!-- jQuery v1.9.1 or higher -->
+<script type="text/javascript" src="/vendor/jquery/jquery.min.js"></script>
+
+<!-- Path to Bootstrap JS -->
+<script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
 
 <!-- Path to BootstrapValidator JS -->
 <script type="text/javascript" src="/vendor/bootstrapvalidator/dist/js/bootstrapValidator(.min).js"></script>
@@ -24,13 +33,28 @@ author: nghuuphuoc
 <strong>v0.6.0:</strong>
 
 {% highlight html %}
+<!-- Path to Bootstrap CSS v3.0.0 or higher -->
+<link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css">
+
 <!-- FormValidation CSS file -->
 <link rel="stylesheet" href="/vendor/formvalidation/dist/css/formValidation(.min).css">
+
+<!-- jQuery v1.9.1 or higher -->
+<script type="text/javascript" src="/vendor/jquery/jquery.min.js"></script>
+
+<!-- Path to Bootstrap JS -->
+<script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
 
 <!-- FormValidation plugin and the class supports validating Bootstrap form -->
 <script src="/vendor/formvalidation/dist/js/formValidation(.min).js"></script>
 <script src="/vendor/formvalidation/dist/js/framework/bootstrap(.min).js"></script>
 {% endhighlight %}
+
+<div class="doc-alert doc-alert-warning">
+    <p>Don't confuse bootstrap(.min).js file provided by the Bootstrap framework with
+        bootstrap(.min).js provided by FormValidation which is placed inside the formvalidation/dist/js/framework directory.</p>
+    <p>They are two different files and both of them need to be included as mentioned above.</p>
+</div>
 
 <h3>Required Step: Changing your own validator</h3>
 
