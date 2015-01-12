@@ -2,7 +2,7 @@
 <html>
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article#">
     <meta charset="utf-8">
-<title>Always enable the submit button - FormValidation</title>
+<title>Only enable the submit button if all fields are valid - FormValidation</title>
 <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
 <meta http-equiv="Content-Language" content="en">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -15,10 +15,10 @@
 <meta name="twitter:site" content="@formvalidation" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks" />
-<meta name="twitter:title" content="Always enable the submit button - FormValidation" />
+<meta name="twitter:title" content="Only enable the submit button if all fields are valid - FormValidation" />
 <meta name="twitter:image" content="http://formvalidation.io/asset/img/logo.png" />
 
-<meta property="og:title" content="Always enable the submit button - FormValidation" />
+<meta property="og:title" content="Only enable the submit button if all fields are valid - FormValidation" />
 <meta property="og:description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://formvalidation.io/examples/enabling-submit-button/always/bootstrap.html" />
@@ -59,7 +59,7 @@ _gaq.push(['_trackPageview']);
 </head>
 <body class="demo-bootstrap">
     <div class="container" id="demoContainer">
-        <form id="enableButtonForm" method="post" class="form-horizontal">
+        <form id="alwaysEnableButtonForm" method="post" class="form-horizontal">
     <div class="form-group">
         <label class="col-xs-3 control-label">Task</label>
         <div class="col-xs-5">
@@ -75,16 +75,27 @@ _gaq.push(['_trackPageview']);
     </div>
 
     <div class="form-group">
+        <label class="col-xs-3 control-label">Priority</label>
+        <div class="col-xs-5">
+            <select class="form-control" name="priority" style="width: 200px;">
+                <option value="">Choose the priority</option>
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
         <div class="col-xs-5 col-xs-offset-3">
-            <!-- Initially, the submit button is disabled -->
-            <button type="submit" class="btn btn-default" disabled>Submit</button>
+            <button type="submit" class="btn btn-default">Submit</button>
         </div>
     </div>
 </form>
 
 <script>
 $(document).ready(function() {
-    $('#enableButtonForm')
+    $('#alwaysEnableButtonForm')
         .formValidation({
             framework: 'bootstrap',
             icon: {
@@ -106,13 +117,30 @@ $(document).ready(function() {
                             message: 'The description is required'
                         }
                     }
+                },
+                priority: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The priority is required'
+                        }
+                    }
                 }
             }
         })
+        .on('err.field.fv', function(e, data) {
+            // $(e.target)  --> The field element
+            // data.fv      --> The FormValidation instance
+            // data.field   --> The field name
+            // data.element --> The field element
+
+            data.fv.disableSubmitButtons(false);
+        })
         .on('success.field.fv', function(e, data) {
-            if (data.fv.isValid()) {
-                data.fv.disableSubmitButtons(false);
-            }
+            // e, data parameters are the same as in error.field.bv event handler
+            // Despite that the field is valid, by default, the submit button will be disabled if all the following conditions meet
+            // - The submit button is clicked
+            // - The form is invalid
+            data.fv.disableSubmitButtons(false);
         });
 });
 </script>
@@ -127,7 +155,7 @@ $(document).ready(function() {
     });
 
     $(window).on('load', function() {
-        var $iframe = $(window.parent.document).find('iframe[src="/examples/enabling-submit-button/all-valid/bootstrap.html"]');
+        var $iframe = $(window.parent.document).find('iframe[src="/examples/enabling-submit-button/always/bootstrap.html"]');
         if ($iframe.length) {
             $('body').addClass('demo-frame-body').find('.demo-ad').hide();
 
