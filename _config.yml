@@ -4,7 +4,7 @@ highlighter:          pygments
 source:               .
 destination:          ../output
 markdown:             kramdown
-exclude:              ['node_modules', '*.less']
+exclude:              ['node_modules', '*.less', '*.programmatic', '*.declarative']
 url:                  http://formvalidation.io
 
 paginate:             5
