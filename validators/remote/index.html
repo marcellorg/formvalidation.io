@@ -261,7 +261,8 @@ _gaq.push(['_trackPageview']);
                     <span class="c1">// sending { username: &#39;its value&#39; } to the back-end</span>
                     <span class="nx">remote</span><span class="o">:</span> <span class="p">{</span>
                         <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The username is not available&#39;</span><span class="p">,</span>
-                        <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;/path/to/backend/&#39;</span>
+                        <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;/path/to/backend/&#39;</span><span class="p">,</span>
+                        <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;POST&#39;</span>
                     <span class="p">}</span>
                 <span class="p">}</span>
             <span class="p">}</span>
@@ -331,7 +332,8 @@ _gaq.push(['_trackPageview']);
                         <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;/path/to/backend/&#39;</span><span class="p">,</span>
                         <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
                             <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;username&#39;</span>
-                        <span class="p">}</span>
+                        <span class="p">},</span>
+                        <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;POST&#39;</span>
                     <span class="p">}</span>
                 <span class="p">}</span>
             <span class="p">},</span>
@@ -344,7 +346,8 @@ _gaq.push(['_trackPageview']);
                         <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;/path/to/backend/&#39;</span><span class="p">,</span>
                         <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
                             <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;email&#39;</span>
-                        <span class="p">}</span>
+                        <span class="p">},</span>
+                        <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;POST&#39;</span>
                     <span class="p">}</span>
                 <span class="p">}</span>
             <span class="p">}</span>
@@ -423,7 +426,8 @@ _gaq.push(['_trackPageview']);
                                 <span class="nx">email</span><span class="o">:</span> <span class="nx">validator</span><span class="p">.</span><span class="nx">getFieldElements</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span>
                             <span class="p">};</span>
                         <span class="p">},</span>
-                        <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The username is not available&#39;</span>
+                        <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The username is not available&#39;</span><span class="p">,</span>
+                        <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;POST&#39;</span>
                     <span class="p">}</span>
                 <span class="p">}</span>
             <span class="p">},</span>
@@ -437,7 +441,8 @@ _gaq.push(['_trackPageview']);
                                 <span class="nx">username</span><span class="o">:</span> <span class="nx">validator</span><span class="p">.</span><span class="nx">getFieldElements</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span>
                             <span class="p">};</span>
                         <span class="p">},</span>
-                        <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The email is not available&#39;</span>
+                        <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The email is not available&#39;</span><span class="p">,</span>
+                        <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;POST&#39;</span>
                     <span class="p">}</span>
                 <span class="p">}</span>
             <span class="p">}</span>
@@ -494,8 +499,9 @@ _gaq.push(['_trackPageview']);
     <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/form&gt;</span></code></pre></div>
 
-                    <h3>More example</h3>
+                    <h3>More examples</h3>
                     <ul class="doc-list">
+                        <li><a href="/examples/adding-warning-validation-state/">Adding warning validation state</a></li>
                         <li><a href="/examples/validating-google-recaptcha/">Validating Google reCAPTCHA</a></li>
                     </ul>
                 </section>
