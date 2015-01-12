@@ -140,7 +140,8 @@ $(document).ready(function() {
                     // sending { username: 'its value' } to the back-end
                     remote: {
                         message: 'The username is not available',
-                        url: '/path/to/backend/'
+                        url: '/path/to/backend/',
+                        type: 'POST'
                     }
                 }
             }
@@ -214,7 +215,8 @@ $(document).ready(function() {
                         url: '/path/to/backend/',
                         data: {
                             type: 'username'
-                        }
+                        },
+                        type: 'POST'
                     }
                 }
             },
@@ -227,7 +229,8 @@ $(document).ready(function() {
                         url: '/path/to/backend/',
                         data: {
                             type: 'email'
-                        }
+                        },
+                        type: 'POST'
                     }
                 }
             }
@@ -310,7 +313,8 @@ $(document).ready(function() {
                                 email: validator.getFieldElements('email').val()
                             };
                         },
-                        message: 'The username is not available'
+                        message: 'The username is not available',
+                        type: 'POST'
                     }
                 }
             },
@@ -324,7 +328,8 @@ $(document).ready(function() {
                                 username: validator.getFieldElements('username').val()
                             };
                         },
-                        message: 'The email is not available'
+                        message: 'The email is not available',
+                        type: 'POST'
                     }
                 }
             }
@@ -388,8 +393,9 @@ $(document).ready(function() {
 </form>
 {% endhighlight %}
 
-                    <h3>More example</h3>
+                    <h3>More examples</h3>
                     <ul class="doc-list">
+                        <li><a href="/examples/adding-warning-validation-state/">Adding warning validation state</a></li>
                         <li><a href="/examples/validating-google-recaptcha/">Validating Google reCAPTCHA</a></li>
                     </ul>
                 </section>
