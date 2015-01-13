@@ -29,35 +29,30 @@ h4 {
 }
 /* --- Ads --- */
 #carbonads {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 180px;
-  margin: 0;
-  padding: 25px;
+  border: 1px solid #e5e5e5;
   font-size: 10px;
-  z-index: 100;
+  max-width: 163px;
+  padding: 15px;
 }
-#carbonads .carbon-text,
-#carbonads .carbon-poweredby {
+#carbonads .carbon-wrap {
+  margin-bottom: 5px;
+}
+#carbonads .carbon-img {
   display: block;
-  color: #999;
-  margin-top: 10px;
+  padding-bottom: 5px;
+  text-align: center;
 }
-#carbonads .carbon-text:hover,
-#carbonads .carbon-poweredby:hover {
+#carbonads .carbon-text {
+  color: #999;
+}
+#carbonads .carbon-text:hover {
   color: #08c;
   text-decoration: none;
 }
-@media (max-width: 1199px) {
-  #carbonads {
-    visibility: hidden;
-  }
-}
-@media (min-width: 1200px) {
-  #carbonads {
-    visibility: visible;
-  }
+#carbonads .carbon-poweredby {
+  display: block;
+  padding-top: 5px;
+  text-align: right;
 }
 /* --- Helpers --- */
 .doc-hr {
@@ -581,7 +576,7 @@ h4 {
   right: 0;
 }
 .doc-toc {
-  margin-top: 20px;
+  margin: 20px 0;
 }
 .doc-toc .nav > .active > a,
 .doc-toc .nav > .active:hover > a,

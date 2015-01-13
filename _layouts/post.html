@@ -5,20 +5,21 @@ layout: default
 <div class="doc-content-container">
     <div class="doc-heading">
         <h1>{{ page.title }}</h1>
+
+        <div class="doc-post-meta">
+            <a href="https://github.com/{{ page.author }}" title="@{{ page.author }}">
+                <img src="https://github.com/{{ page.author }}.png" />
+            </a>
+            <p>{{ page.date | date_to_string }}</p>
+        </div>
+
         <p>&larr; <a href="/news/">News</a></p>
         {% include share.html %}
     </div>
 
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="doc-post-meta">
-                    <a href="https://github.com/{{ page.author }}" title="@{{ page.author }}">
-                        <img src="https://github.com/{{ page.author }}.png" />
-                    </a>
-                    <p>{{ page.date | date_to_string }}</p>
-                </div>
-
+            <div class="col-md-9">
                 <div class="doc-post-content">
                     {{ content }}
                 </div>
@@ -36,6 +37,10 @@ layout: default
                         <span class="doc-pagination-newer">NEXT &rarr;</span>
                     {% endif %}
                 </div>
+            </div>
+
+            <div class="col-md-3">
+                {% include ad.html %}
             </div>
         </div>
     </div>

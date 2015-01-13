@@ -13,7 +13,7 @@ permalink: /examples/hiding-success-class/
 
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-9">
                 <p>Based on the field status, the field and its container are marked as success or error element. For Bootstrap form, the plugin will add <code>has-success</code> or <code>has-error</code> class to the container element.</p>
                 <p>If you think that it's better to indicate error status only due to the similarity of these status colors, you can remove <code>has-success</code> class from the container.</p>
                 <p>It can be done by triggering the <a href="/settings#event-field">success.field.fv</a> event as below:</p>
@@ -49,6 +49,10 @@ $(document).ready(function() {
         });
 });
 {% endhighlight %}
+            </div>
+
+            <div class="col-md-3">
+                {% include ad.html %}
             </div>
         </div>
     </div>

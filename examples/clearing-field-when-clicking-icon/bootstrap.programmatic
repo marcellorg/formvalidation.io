@@ -43,7 +43,7 @@ $(document).ready(function() {
         // IMPORTANT: You must declare .on('init.field.bv')
         // before calling .formValidation(options)
         .on('init.field.fv', function(e, data) {
-            // data.fv      --> The BootstrapValidator instance
+            // data.fv      --> The FormValidation instance
             // data.field   --> The field name
             // data.element --> The field element
 

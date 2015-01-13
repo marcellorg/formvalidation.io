@@ -13,7 +13,7 @@ permalink: /examples/modal/
 
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-9">
                 <section>
                     <p>It's possible to use the plugin with a form which is placed inside a <a href="http://getbootstrap.com/javascript/#modals">Bootstrap Modal</a>.</p>
 
@@ -76,16 +76,20 @@ $('#loginModal').on('shown.bs.modal', function() {
 
                 <section>
                     <h2>Related example</h2>
-                    <ul>
+                    <ul class="doc-list">
                         <li><a href="/examples/bootbox/">Play with Bootbox</a></li>
                     </ul>
                 </section>
+            </div>
+
+            <div class="col-md-3">
+                {% include ad.html %}
             </div>
         </div>
     </div>
 </div>
 
-<div class="modal fade" id="welcomeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="welcomeModal" tabindex="-1" role="dialog" aria-labelledby="Welcome back" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">

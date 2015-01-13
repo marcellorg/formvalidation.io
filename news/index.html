@@ -12,7 +12,7 @@ title: News
 
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-9">
                 {% for post in paginator.posts %}
                     {% include post.html %}
 
@@ -36,6 +36,10 @@ title: News
                         <span class="doc-pagination-newer">Newer &rarr;</span>
                     {% endif %}
                 </div>
+            </div>
+
+            <div class="col-md-3">
+                {% include ad.html %}
             </div>
         </div>
     </div>

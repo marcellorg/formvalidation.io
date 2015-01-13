@@ -13,7 +13,7 @@ permalink: /examples/integrating-rails/
 
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-9">
                 <section>
                     <p>For Rails, the input field is constructed from model name and field name. For example, user have email as field, when form helper render view, the input field name will be <code>'user[email]'</code>. The syntax for calling the plugin looks like below:</p>
 
@@ -60,10 +60,14 @@ $(form)
 
                 <section>
                     <h2>Resources</h2>
-                    <ul>
+                    <ul class="doc-list">
                         <li><a href="https://rubygems.org/gems/bootstrap-validator-rails">FormValidation gem for Rails</a>, created by Jiří Kaipr (<a href="https://github.com/jkaipr">@jkaipr</a>)</li>
                     </ul>
                 </section>
+            </div>
+
+            <div class="col-md-3">
+                {% include ad.html %}
             </div>
         </div>
     </div>
