@@ -1,0 +1,569 @@
+<!doctype html>
+<html>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article#">
+    <meta charset="utf-8">
+<title>Playing with Fuel UX Wizard - FormValidation</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<meta http-equiv="Content-Language" content="en">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks">
+<meta name="keywords" content="FormValidation, BootstrapValidator, jQuery, form, validate, validation, validator, plugin, Bootstrap, Foundation, Pure, SemanticUI, UIKit">
+<meta name="author" content="Nguyen Huu Phuoc">
+<meta name="google-site-verification" content="FMmr8kYuIuW27-qJLOb1Z59OgiVgKNgAv4_eMARhIY8" />
+
+<meta name="twitter:site" content="@formvalidation" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks" />
+<meta name="twitter:title" content="Playing with Fuel UX Wizard - FormValidation" />
+<meta name="twitter:image" content="http://formvalidation.io/examples/fuel-ux-wizard/cover.png" />
+
+<meta property="og:title" content="Playing with Fuel UX Wizard - FormValidation" />
+<meta property="og:description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://formvalidation.io/examples/fuel-ux-wizard/" />
+<meta property="og:image" content="http://formvalidation.io/examples/fuel-ux-wizard/cover.png" />
+<meta property="og:site_name" content="FormValidation" />
+
+<link rel="icon" type="image/x-icon" href="/asset/img/favicon.ico">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/fontawesome/4.2.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/vendor/formvalidation/css/formValidation.min.css">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:300,400,700">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Cardo:400,400italic,700">
+<link rel="stylesheet" href="/vendor/pygments/github.css">
+<link rel="stylesheet" href="/asset/css/style.css">
+
+<!--[if lt IE 9]>
+<script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<script src="//oss.maxcdn.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="/vendor/formvalidation/js/formValidation.min.js"></script>
+<script src="/vendor/formvalidation/js/framework/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-44786951-2']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+</head>
+<body>
+    <nav class="doc-nav" tabindex="-1">
+    <ul>
+        <li><a href="/">Home</a></li>
+    
+        
+            
+        
+        <li class=""><a href="/download/">Download</a></li>
+    
+        
+            
+        
+        <li class=""><a href="/getting-started/">Getting Started</a></li>
+    
+        
+            
+        
+        <li class=""><a href="/settings/">Settings</a></li>
+    
+        
+            
+        
+        <li class=""><a href="/api/">API</a></li>
+    
+        
+            
+        
+        <li class=""><a href="/validators/">Validators</a></li>
+    
+        
+            
+        
+        <li class="doc-nav-active"><a href="/examples/">Examples</a></li>
+    
+        
+            
+        
+        <li class=""><a href="/developing/">Developing</a></li>
+    
+        
+            
+        
+        <li class=""><a href="/news/">News</a></li>
+    
+        
+            
+        
+        <li class=""><a href="/license/">License</a></li>
+    
+    </ul>
+
+    <div class="doc-hr"></div>
+
+    <ul>
+        <li><a href="https://github.com/formvalidation/" title="Fork FormValidation on Github">Github <i class="fa fa-github"></i></a></li>
+        <li><a href="https://twitter.com/formvalidation/" title="Follow FormValidation on Twitter">Twitter <i class="fa fa-twitter"></i></a></li>
+        <li><a href="https://www.facebook.com/formvalidation/" title="Like FormValidation on Facebook">Facebook <i class="fa fa-facebook"></i></a></li>
+        <li><a href="https://plus.google.com/u/0/communities/114931136856987817254" title="Join FormValidation community on Google+">Google+ <i class="fa fa-google-plus"></i></a></li>
+    </ul>
+
+    <div class="doc-hr"></div>
+
+    <div class="doc-creator">
+        <p>
+            Handcrafted with <span class="doc-heart"><i class="fa fa-heart"></i></span> and a lot of <i class="fa fa-coffee"></i><br />
+            by <a href="http://twitter.com/nghuuphuoc">@nghuuphuoc</a><br/>
+            <img src="http://github.com/nghuuphuoc.png" />
+        </p>
+        <p><a href="mailto: phuoc@huuphuoc.me" class="btn">Hire me</a></p>
+    </div>
+</nav>
+
+<a id="toggleButton" class="doc-nav-toggle" title="Toggle the navigation"><i class="fa fa-navicon"></i></a>
+
+    <div id="main" class="doc-content-wrapper">
+        <div class="doc-notification">
+    <i class="fa fa-bell-o"></i> <a href="/news/v0.6.0-released/">v0.6.0</a> is released on 2015.01.06!
+</div>
+
+        <div class="doc-content-container">
+    <div class="doc-heading">
+        <h1>Playing with Fuel UX Wizard</h1>
+        <p>&larr; <a href="/examples/">Examples</a></p>
+        <div id="shareButton" class="doc-share-button"></div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <p>The following example demonstrates how to use FormValidation to validate panels structured by <a href="http://getfuelux.com/javascript.html#wizard">Fuel UX Wizard</a>.</p>
+                <p>We need to trigger the <code>actionclicked.fu.wizard</code> and <code>finished.fu.wizard</code> <a href="http://getfuelux.com/javascript.html#wizard-usage-events">events</a> to validate selected panel.</p>
+
+                <div class="doc-alert doc-alert-info">
+                    You should look at the <a href="/examples#wizard">wizard</a> section when integrating FormValidation with wizard-like components
+                </div>
+
+                
+
+
+
+
+
+
+
+
+
+<div class="doc-demo">
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"><span class="doc-framework">Framework</span> <i class="caret"></i></a>
+            <ul class="dropdown-menu" role="menu">
+                
+                <li><a href="javascript: void(0);" data-demo-target="#demo-frame" data-demo-framework="bootstrap" data-demo-url="/examples/fuel-ux-wizard/bootstrap.html">Bootstrap</a></li>
+                
+            </ul>
+        </li>
+        <li class="active"><a href="#demo-form-tab" data-toggle="tab">Try it</a></li>
+        
+        <li><a href="#demo-programmatic-tab" data-toggle="tab">Programmatic code</a></li>
+        
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane active" id="demo-form-tab">
+            <iframe class="doc-demo-frame" id="demo-frame"></iframe>
+        </div>
+
+        
+        <div class="tab-pane" id="demo-programmatic-tab">
+            
+            <div data-demo-code="bootstrap">
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Include Fuel UX files --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;//www.fuelcdn.com/fuelux/3.4.0/css/fuelux.min.css&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;//www.fuelcdn.com/fuelux/3.4.0/js/fuelux.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;fuelux&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;wizard&quot;</span> <span class="na">id=</span><span class="s">&quot;orderWizard&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;steps&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;li</span> <span class="na">data-step=</span><span class="s">&quot;1&quot;</span> <span class="na">class=</span><span class="s">&quot;active&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;badge&quot;</span><span class="nt">&gt;</span>1<span class="nt">&lt;/span&gt;</span> Add to cart<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;chevron&quot;</span><span class="nt">&gt;&lt;/span&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;li</span> <span class="na">data-step=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;badge&quot;</span><span class="nt">&gt;</span>2<span class="nt">&lt;/span&gt;</span> Shipping address<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;chevron&quot;</span><span class="nt">&gt;&lt;/span&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;/ul&gt;</span>
+
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;actions&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default btn-prev&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;glyphicon glyphicon-arrow-left&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>Prev<span class="nt">&lt;/button&gt;</span>
+            <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default btn-next&quot;</span> <span class="na">data-last=</span><span class="s">&quot;Order&quot;</span><span class="nt">&gt;</span>Next<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;glyphicon glyphicon-arrow-right&quot;</span><span class="nt">&gt;&lt;/span&gt;&lt;/button&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+
+        <span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;orderForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;step-content&quot;</span><span class="nt">&gt;</span>
+                <span class="c">&lt;!-- The first panel --&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;step-pane active&quot;</span> <span class="na">data-step=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Quantity<span class="nt">&lt;/label&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-3&quot;</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;quantity&quot;</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;/div&gt;</span>
+                    <span class="nt">&lt;/div&gt;</span>
+
+                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Size<span class="nt">&lt;/label&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-6&quot;</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;</span>
+                                <span class="nt">&lt;label&gt;&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name=</span><span class="s">&quot;size[]&quot;</span> <span class="na">value=</span><span class="s">&quot;s&quot;</span> <span class="nt">/&gt;</span> S<span class="nt">&lt;/label&gt;</span>
+                            <span class="nt">&lt;/div&gt;</span>
+                            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;</span>
+                                <span class="nt">&lt;label&gt;&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name=</span><span class="s">&quot;size[]&quot;</span> <span class="na">value=</span><span class="s">&quot;m&quot;</span> <span class="nt">/&gt;</span> M<span class="nt">&lt;/label&gt;</span>
+                            <span class="nt">&lt;/div&gt;</span>
+                            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;</span>
+                                <span class="nt">&lt;label&gt;&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name=</span><span class="s">&quot;size[]&quot;</span> <span class="na">value=</span><span class="s">&quot;l&quot;</span> <span class="nt">/&gt;</span> L<span class="nt">&lt;/label&gt;</span>
+                            <span class="nt">&lt;/div&gt;</span>
+                            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;</span>
+                                <span class="nt">&lt;label&gt;&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name=</span><span class="s">&quot;size[]&quot;</span> <span class="na">value=</span><span class="s">&quot;xl&quot;</span> <span class="nt">/&gt;</span> XL<span class="nt">&lt;/label&gt;</span>
+                            <span class="nt">&lt;/div&gt;</span>
+                        <span class="nt">&lt;/div&gt;</span>
+                    <span class="nt">&lt;/div&gt;</span>
+
+                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Color<span class="nt">&lt;/label&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-6&quot;</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;</span>
+                                <span class="nt">&lt;label&gt;&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name=</span><span class="s">&quot;color[]&quot;</span> <span class="na">value=</span><span class="s">&quot;white&quot;</span> <span class="nt">/&gt;</span> White<span class="nt">&lt;/label&gt;</span>
+                            <span class="nt">&lt;/div&gt;</span>
+                            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;</span>
+                                <span class="nt">&lt;label&gt;&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name=</span><span class="s">&quot;color[]&quot;</span> <span class="na">value=</span><span class="s">&quot;black&quot;</span> <span class="nt">/&gt;</span> Black<span class="nt">&lt;/label&gt;</span>
+                            <span class="nt">&lt;/div&gt;</span>
+                            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;</span>
+                                <span class="nt">&lt;label&gt;&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name=</span><span class="s">&quot;color[]&quot;</span> <span class="na">value=</span><span class="s">&quot;red&quot;</span> <span class="nt">/&gt;</span> Red<span class="nt">&lt;/label&gt;</span>
+                            <span class="nt">&lt;/div&gt;</span>
+                            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;</span>
+                                <span class="nt">&lt;label&gt;&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name=</span><span class="s">&quot;color[]&quot;</span> <span class="na">value=</span><span class="s">&quot;yellow&quot;</span> <span class="nt">/&gt;</span> Yellow<span class="nt">&lt;/label&gt;</span>
+                            <span class="nt">&lt;/div&gt;</span>
+                            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;</span>
+                                <span class="nt">&lt;label&gt;&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name=</span><span class="s">&quot;color[]&quot;</span> <span class="na">value=</span><span class="s">&quot;green&quot;</span> <span class="nt">/&gt;</span> Green<span class="nt">&lt;/label&gt;</span>
+                            <span class="nt">&lt;/div&gt;</span>
+                        <span class="nt">&lt;/div&gt;</span>
+                    <span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+
+                <span class="c">&lt;!-- The second panel --&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;step-pane&quot;</span> <span class="na">data-step=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Full name<span class="nt">&lt;/label&gt;</span>
+
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-4&quot;</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;firstName&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;First name&quot;</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;/div&gt;</span>
+
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-4&quot;</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;lastName&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Last name&quot;</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;/div&gt;</span>
+                    <span class="nt">&lt;/div&gt;</span>
+
+                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Phone number<span class="nt">&lt;/label&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-3&quot;</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;cellPhone&quot;</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;/div&gt;</span>
+                    <span class="nt">&lt;/div&gt;</span>
+
+                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Street<span class="nt">&lt;/label&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-9&quot;</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;street&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;&quot;</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;/div&gt;</span>
+                    <span class="nt">&lt;/div&gt;</span>
+
+                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>City<span class="nt">&lt;/label&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-4&quot;</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;city&quot;</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;/div&gt;</span>
+                    <span class="nt">&lt;/div&gt;</span>
+
+                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Zipcode<span class="nt">&lt;/label&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-3&quot;</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;zipCode&quot;</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;/div&gt;</span>
+                    <span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/form&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;modal fade&quot;</span> <span class="na">id=</span><span class="s">&quot;thankModal&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;-1&quot;</span> <span class="na">role=</span><span class="s">&quot;dialog&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;modal-dialog modal-sm&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;modal-content&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;modal-header&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;close&quot;</span> <span class="na">data-dismiss=</span><span class="s">&quot;modal&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Close&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span><span class="ni">&amp;times;</span><span class="nt">&lt;/span&gt;&lt;/button&gt;</span>
+                <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">&quot;modal-title&quot;</span> <span class="na">id=</span><span class="s">&quot;myModalLabel&quot;</span><span class="nt">&gt;</span>Thank you<span class="nt">&lt;/h4&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;modal-body&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-center&quot;</span><span class="nt">&gt;</span>Thank you for your order<span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#orderForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
+        <span class="nx">framework</span><span class="o">:</span> <span class="s1">&#39;bootstrap&#39;</span><span class="p">,</span>
+        <span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">valid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-ok&#39;</span><span class="p">,</span>
+            <span class="nx">invalid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-remove&#39;</span><span class="p">,</span>
+            <span class="nx">validating</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-refresh&#39;</span>
+        <span class="p">},</span>
+        <span class="c1">// This option will not ignore invisible fields which belong to inactive panes</span>
+        <span class="nx">exclude</span><span class="o">:</span> <span class="s1">&#39;:disabled&#39;</span><span class="p">,</span>
+        <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">quantity</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">notEmpty</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The quantity is required&#39;</span>
+                    <span class="p">},</span>
+                    <span class="nx">greaterThan</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">value</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+                        <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The quantity must be greater than 0&#39;</span>
+                    <span class="p">},</span>
+                    <span class="nx">integer</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The quantity must be a number&#39;</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">},</span>
+            <span class="s1">&#39;size[]&#39;</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">notEmpty</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The size is required&#39;</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">},</span>
+            <span class="s1">&#39;color[]&#39;</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">notEmpty</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The color is required&#39;</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">},</span>
+            <span class="nx">firstName</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">row</span><span class="o">:</span> <span class="s1">&#39;.col-xs-4&#39;</span><span class="p">,</span>
+                <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">notEmpty</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The first name is required&#39;</span>
+                    <span class="p">},</span>
+                    <span class="nx">regexp</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">regexp</span><span class="o">:</span> <span class="sr">/^[a-zA-Z\s]+$/</span><span class="p">,</span>
+                        <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The first name can only consist of alphabetical and space&#39;</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">},</span>
+            <span class="nx">lastName</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">row</span><span class="o">:</span> <span class="s1">&#39;.col-xs-4&#39;</span><span class="p">,</span>
+                <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">notEmpty</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The last name is required&#39;</span>
+                    <span class="p">},</span>
+                    <span class="nx">regexp</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">regexp</span><span class="o">:</span> <span class="sr">/^[a-zA-Z\s]+$/</span><span class="p">,</span>
+                        <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The last name can only consist of alphabetical and space&#39;</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">},</span>
+            <span class="nx">cellPhone</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">notEmpty</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The phone number is required&#39;</span>
+                    <span class="p">},</span>
+                    <span class="nx">phone</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">country</span><span class="o">:</span> <span class="s1">&#39;US&#39;</span><span class="p">,</span>
+                        <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The value is not valid US phone number&#39;</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">},</span>
+            <span class="nx">street</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">notEmpty</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The street is required&#39;</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">},</span>
+            <span class="nx">city</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">notEmpty</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The city is required&#39;</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">},</span>
+            <span class="nx">zipCode</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">notEmpty</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The zip code is required&#39;</span>
+                    <span class="p">},</span>
+                    <span class="nx">zipCode</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">country</span><span class="o">:</span> <span class="s1">&#39;US&#39;</span><span class="p">,</span>
+                        <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The value is not valid US zip code&#39;</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#orderWizard&#39;</span><span class="p">)</span>
+        <span class="c1">// Call the wizard plugin</span>
+        <span class="p">.</span><span class="nx">wizard</span><span class="p">()</span>
+
+        <span class="c1">// Triggered when click the Next/Prev buttons</span>
+        <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;actionclicked.fu.wizard&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">fv</span>        <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#orderForm&#39;</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;formValidation&#39;</span><span class="p">),</span> <span class="c1">// FormValidation instance</span>
+                <span class="nx">step</span>      <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">step</span><span class="p">,</span>                              <span class="c1">// Current step</span>
+                <span class="c1">// The current step container</span>
+                <span class="nx">container</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#orderForm&#39;</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;.step-pane[data-step=&quot;&#39;</span> <span class="o">+</span> <span class="nx">step</span> <span class="o">+</span><span class="s1">&#39;&quot;]&#39;</span><span class="p">);</span>
+
+            <span class="c1">// Validate the container</span>
+            <span class="nx">fv</span><span class="p">.</span><span class="nx">validateContainer</span><span class="p">(</span><span class="nx">container</span><span class="p">);</span>
+
+            <span class="kd">var</span> <span class="nx">isValidStep</span> <span class="o">=</span> <span class="nx">fv</span><span class="p">.</span><span class="nx">isValidContainer</span><span class="p">(</span><span class="nx">container</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">isValidStep</span> <span class="o">===</span> <span class="kc">false</span> <span class="o">||</span> <span class="nx">isValidStep</span> <span class="o">===</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+                <span class="c1">// Do not jump to the target pane</span>
+                <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+            <span class="p">}</span>
+        <span class="p">})</span>
+
+        <span class="c1">// Triggered when click the Complete button</span>
+        <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;finished.fu.wizard&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">fv</span>        <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#orderForm&#39;</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;formValidation&#39;</span><span class="p">),</span>
+                <span class="nx">step</span>      <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#orderWizard&#39;</span><span class="p">).</span><span class="nx">wizard</span><span class="p">(</span><span class="s1">&#39;selectedItem&#39;</span><span class="p">).</span><span class="nx">step</span><span class="p">,</span>
+                <span class="nx">container</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#orderForm&#39;</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;.step-pane[data-step=&quot;&#39;</span> <span class="o">+</span> <span class="nx">step</span> <span class="o">+</span><span class="s1">&#39;&quot;]&#39;</span><span class="p">);</span>
+
+            <span class="c1">// Validate the last step container</span>
+            <span class="nx">fv</span><span class="p">.</span><span class="nx">validateContainer</span><span class="p">(</span><span class="nx">container</span><span class="p">);</span>
+
+            <span class="kd">var</span> <span class="nx">isValidStep</span> <span class="o">=</span> <span class="nx">fv</span><span class="p">.</span><span class="nx">isValidContainer</span><span class="p">(</span><span class="nx">container</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">isValidStep</span> <span class="o">===</span> <span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+                <span class="c1">// Uncomment the following line to submit the form using the defaultSubmit() method</span>
+                <span class="c1">// fv.defaultSubmit();</span>
+
+                <span class="c1">// For testing purpose</span>
+                <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#thankModal&#39;</span><span class="p">).</span><span class="nx">modal</span><span class="p">();</span>
+            <span class="p">}</span>
+        <span class="p">});</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span></code></pre></div>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <footer class="doc-footer">
+    <div class="container">
+        <p>
+            
+            <a class="btn" href="/download/">Download</a>
+            
+            <a class="btn" href="https://github.com/formvalidation/formvalidation/issues">Report bug</a>
+        </p>
+        <p>
+            &copy; 2013 - 2015 <a href="http://twitter.com/nghuuphuoc">Nguyen Huu Phuoc</a>. All rights reserved.<br/>
+            Handcrafted with <span class="doc-heart"><i class="fa fa-heart"></i></span> and a lot of <i class="fa fa-coffee"></i>
+        </p>
+    </div>
+
+    
+    <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=bootstrapvalidatorcom" id="_carbonads_js"></script>
+    
+</footer>
+    </div>
+
+<script src="/vendor/tocjs/js/toc.min.js"></script>
+<script src="/vendor/share/share.min.js"></script>
+<script>
+$(function() {
+    // Create share button
+    new Share('#shareButton');
+
+    $('[data-toggle="tooltip"]').tooltip();
+
+    $('#toggleButton').on('click', function() {
+        $(this).find('i').toggleClass('fa-navicon fa-close');
+        $('body').toggleClass('doc-nav-shown');
+    });
+
+    $('form').each(function() {
+        $(this).on('success.form.bv', function(e) {
+            e.preventDefault();
+        });
+    });
+
+    // Create table of contents
+    if ($('#toc').length) {
+        $('#toc')
+            .css('max-width', $('#toc').width())
+            .toc({
+                selector: '#main h2, #main h3, #main h4',
+                elementClass: 'toc',
+                ulClass: 'nav',
+                indexingFormats: '______'
+            });
+    }
+
+    // Switch framework handler
+    $('iframe.doc-demo-frame').each(function() {
+        var $this = $(this);
+        $('<div/>').addClass('doc-demo-loader').html('<i class="fa fa-refresh fa-spin fa-2x"></i>').hide().insertBefore($this);
+        $this.on('load', function() {
+            $(this).prev().hide().end().show();
+        });
+    });
+
+    $('a[data-demo-framework]').on('click', function(e) {
+        var $this     = $(this),
+            framework = $this.attr('data-demo-framework'),
+            url       = $this.attr('data-demo-url'),
+            $target   = $($this.attr('data-demo-target') || $this.attr('href'));
+
+        $this
+            .closest('ul')
+                .find('li')
+                    .removeClass('active')
+                    .end()
+            .end()
+            .parent().addClass('active');
+
+        $this.closest('.dropdown').find('span').eq(0).html($this.html());
+
+        $target
+            .closest('.tab-content')
+            .find('[data-demo-code]')
+                .hide()
+                .filter('[data-demo-code="' + framework.toLowerCase() + '"]').show();
+
+        $target.height('');
+        $target.hide().prev().fadeIn('fast').promise().then(function() {
+            $target.css('visibility', 'hidden').attr('src', url);
+        });
+    });
+
+    $('a[data-demo-framework="bootstrap"]').click();
+});
+</script>
+</body>
+</html>
