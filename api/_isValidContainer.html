@@ -1,8 +1,14 @@
 <section>
     <h2 id="is-valid-container">isValidContainer</h2>
 
-    <p><code>isValidContainer(container<sup>*</sup>): Boolean</code> &mdash; Returns <code>true</code> if all fields in the container are valid. Otherwise, returns <code>false</code>.</p>
-    <p>It's useful when working with a wizard-like such as tab, collapse.</p>
+    <p><code>isValidContainer(container<sup>*</sup>): Boolean</code> &mdash; It can take one of three values:</p>
+    <ul class="doc-list">
+        <li><code>null</code> if the container consists of at least one field that isn't validated yet</li>
+        <li><code>true</code> if all fields belonging to the container are valid</li>
+        <li><code>false</code> if all fields belonging to the container are already validated and there is at least one invalid field</li>
+    </ul>
+
+    <p>Using with the <a href="#validate-container">validateContainer(container)</a> method, these methods are useful when working with a wizard-like such as tabs, collapsible panels.</p>
     <div class="table-responsive">
         <table class="table table-bordered table-striped">
             <thead>
@@ -21,4 +27,9 @@
             </tbody>
         </table>
     </div>
+
+    <h5>Examples</h5>
+    <ul class="doc-list">
+        <li><a href="/examples/#wizard">Wizard examples</a></li>
+    </ul>
 </section>
