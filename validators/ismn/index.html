@@ -134,9 +134,34 @@ _gaq.push(['_trackPageview']);
 <a id="toggleButton" class="doc-nav-toggle" title="Toggle the navigation"><i class="fa fa-navicon"></i></a>
 
     <div id="main" class="doc-content-wrapper">
-        <div class="doc-notification">
-    <i class="fa fa-bell-o"></i> <a href="/news/v0.6.0-released/">v0.6.0</a> is released on 2015.01.06!
+        <div class="doc-notification" id="notification">
+    <i class="fa fa-bell-o"></i> <a href="/news/v0.6.0-released/">v0.6.0 is released on 2015-01-06</a>
 </div>
+<script>
+$(document).ready(function() {
+    var notifications = [],
+        $message      = $('#notification').find('a').data('index', 0);
+    notifications.push({ title: 'v0.6.0 is released on 2015-01-06', url: '/news/v0.6.0-released/'});
+    notifications.push({ title: 'New example: Using tooltip to show message', url: '/examples/using-tooltip-to-show-message/'});
+    notifications.push({ title: 'New example: Adding warning validation state', url: '/examples/adding-warning-validation-state/'});
+    notifications.push({ title: 'New example: Playing with Fuel UX Wizard', url: '/examples/fuel-ux-wizard/'});
+    
+    setInterval(function() {
+        $message.data('index', $message.data('index') + 1);
+        if ($message.data('index') >= notifications.length) {
+            $message.data('index', 0);
+        }
+        $message
+            .fadeOut('slow')
+            .promise()
+            .then(function() {
+                $message.attr('href', notifications[$message.data('index')].url)
+                        .html(notifications[$message.data('index')].title)
+                        .fadeIn('slow');
+            });
+    }, 5000);
+});
+</script>
 
         <div class="doc-content-container">
     <div class="doc-heading">
