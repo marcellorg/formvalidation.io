@@ -9,3 +9,6 @@
 
 - title: "New example: Playing with Fuel UX Wizard"
   url: "/examples/fuel-ux-wizard/"
+
+- title: "New example: Playing with jQuery Steps"
+  url: "/examples/jquery-steps/"

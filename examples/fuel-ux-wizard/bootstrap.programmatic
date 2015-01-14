@@ -135,7 +135,7 @@ $(document).ready(function() {
             invalid: 'glyphicon glyphicon-remove',
             validating: 'glyphicon glyphicon-refresh'
         },
-        // This option will not ignore invisible fields which belong to inactive panes
+        // This option will not ignore invisible fields which belong to inactive panels
         exclude: ':disabled',
         fields: {
             quantity: {
@@ -233,33 +233,33 @@ $(document).ready(function() {
         // Call the wizard plugin
         .wizard()
 
-        // Triggered when click the Next/Prev buttons
+        // Triggered when clicking the Next/Prev buttons
         .on('actionclicked.fu.wizard', function(e, data) {
-            var fv        = $('#orderForm').data('formValidation'), // FormValidation instance
-                step      = data.step,                              // Current step
+            var fv         = $('#orderForm').data('formValidation'), // FormValidation instance
+                step       = data.step,                              // Current step
                 // The current step container
-                container = $('#orderForm').find('.step-pane[data-step="' + step +'"]');
+                $container = $('#orderForm').find('.step-pane[data-step="' + step +'"]');
 
             // Validate the container
-            fv.validateContainer(container);
+            fv.validateContainer($container);
 
-            var isValidStep = fv.isValidContainer(container);
+            var isValidStep = fv.isValidContainer($container);
             if (isValidStep === false || isValidStep === null) {
-                // Do not jump to the target pane
+                // Do not jump to the target panel
                 e.preventDefault();
             }
         })
 
-        // Triggered when click the Complete button
+        // Triggered when clicking the Complete button
         .on('finished.fu.wizard', function(e) {
-            var fv        = $('#orderForm').data('formValidation'),
-                step      = $('#orderWizard').wizard('selectedItem').step,
-                container = $('#orderForm').find('.step-pane[data-step="' + step +'"]');
+            var fv         = $('#orderForm').data('formValidation'),
+                step       = $('#orderWizard').wizard('selectedItem').step,
+                $container = $('#orderForm').find('.step-pane[data-step="' + step +'"]');
 
             // Validate the last step container
-            fv.validateContainer(container);
+            fv.validateContainer($container);
 
-            var isValidStep = fv.isValidContainer(container);
+            var isValidStep = fv.isValidContainer($container);
             if (isValidStep === true) {
                 // Uncomment the following line to submit the form using the defaultSubmit() method
                 // fv.defaultSubmit();
