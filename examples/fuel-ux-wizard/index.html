@@ -145,6 +145,7 @@ $(document).ready(function() {
     notifications.push({ title: 'New example: Using tooltip to show message', url: '/examples/using-tooltip-to-show-message/'});
     notifications.push({ title: 'New example: Adding warning validation state', url: '/examples/adding-warning-validation-state/'});
     notifications.push({ title: 'New example: Playing with Fuel UX Wizard', url: '/examples/fuel-ux-wizard/'});
+    notifications.push({ title: 'New example: Playing with jQuery Steps', url: '/examples/jquery-steps/'});
     
     setInterval(function() {
         $message.data('index', $message.data('index') + 1);
@@ -352,7 +353,7 @@ $(document).ready(function() {
             <span class="nx">invalid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-remove&#39;</span><span class="p">,</span>
             <span class="nx">validating</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-refresh&#39;</span>
         <span class="p">},</span>
-        <span class="c1">// This option will not ignore invisible fields which belong to inactive panes</span>
+        <span class="c1">// This option will not ignore invisible fields which belong to inactive panels</span>
         <span class="nx">exclude</span><span class="o">:</span> <span class="s1">&#39;:disabled&#39;</span><span class="p">,</span>
         <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
             <span class="nx">quantity</span><span class="o">:</span> <span class="p">{</span>
@@ -450,33 +451,33 @@ $(document).ready(function() {
         <span class="c1">// Call the wizard plugin</span>
         <span class="p">.</span><span class="nx">wizard</span><span class="p">()</span>
 
-        <span class="c1">// Triggered when click the Next/Prev buttons</span>
+        <span class="c1">// Triggered when clicking the Next/Prev buttons</span>
         <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;actionclicked.fu.wizard&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
-            <span class="kd">var</span> <span class="nx">fv</span>        <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#orderForm&#39;</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;formValidation&#39;</span><span class="p">),</span> <span class="c1">// FormValidation instance</span>
-                <span class="nx">step</span>      <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">step</span><span class="p">,</span>                              <span class="c1">// Current step</span>
+            <span class="kd">var</span> <span class="nx">fv</span>         <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#orderForm&#39;</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;formValidation&#39;</span><span class="p">),</span> <span class="c1">// FormValidation instance</span>
+                <span class="nx">step</span>       <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">step</span><span class="p">,</span>                              <span class="c1">// Current step</span>
                 <span class="c1">// The current step container</span>
-                <span class="nx">container</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#orderForm&#39;</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;.step-pane[data-step=&quot;&#39;</span> <span class="o">+</span> <span class="nx">step</span> <span class="o">+</span><span class="s1">&#39;&quot;]&#39;</span><span class="p">);</span>
+                <span class="nx">$container</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#orderForm&#39;</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;.step-pane[data-step=&quot;&#39;</span> <span class="o">+</span> <span class="nx">step</span> <span class="o">+</span><span class="s1">&#39;&quot;]&#39;</span><span class="p">);</span>
 
             <span class="c1">// Validate the container</span>
-            <span class="nx">fv</span><span class="p">.</span><span class="nx">validateContainer</span><span class="p">(</span><span class="nx">container</span><span class="p">);</span>
+            <span class="nx">fv</span><span class="p">.</span><span class="nx">validateContainer</span><span class="p">(</span><span class="nx">$container</span><span class="p">);</span>
 
-            <span class="kd">var</span> <span class="nx">isValidStep</span> <span class="o">=</span> <span class="nx">fv</span><span class="p">.</span><span class="nx">isValidContainer</span><span class="p">(</span><span class="nx">container</span><span class="p">);</span>
+            <span class="kd">var</span> <span class="nx">isValidStep</span> <span class="o">=</span> <span class="nx">fv</span><span class="p">.</span><span class="nx">isValidContainer</span><span class="p">(</span><span class="nx">$container</span><span class="p">);</span>
             <span class="k">if</span> <span class="p">(</span><span class="nx">isValidStep</span> <span class="o">===</span> <span class="kc">false</span> <span class="o">||</span> <span class="nx">isValidStep</span> <span class="o">===</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
-                <span class="c1">// Do not jump to the target pane</span>
+                <span class="c1">// Do not jump to the target panel</span>
                 <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
             <span class="p">}</span>
         <span class="p">})</span>
 
-        <span class="c1">// Triggered when click the Complete button</span>
+        <span class="c1">// Triggered when clicking the Complete button</span>
         <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;finished.fu.wizard&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-            <span class="kd">var</span> <span class="nx">fv</span>        <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#orderForm&#39;</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;formValidation&#39;</span><span class="p">),</span>
-                <span class="nx">step</span>      <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#orderWizard&#39;</span><span class="p">).</span><span class="nx">wizard</span><span class="p">(</span><span class="s1">&#39;selectedItem&#39;</span><span class="p">).</span><span class="nx">step</span><span class="p">,</span>
-                <span class="nx">container</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#orderForm&#39;</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;.step-pane[data-step=&quot;&#39;</span> <span class="o">+</span> <span class="nx">step</span> <span class="o">+</span><span class="s1">&#39;&quot;]&#39;</span><span class="p">);</span>
+            <span class="kd">var</span> <span class="nx">fv</span>         <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#orderForm&#39;</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;formValidation&#39;</span><span class="p">),</span>
+                <span class="nx">step</span>       <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#orderWizard&#39;</span><span class="p">).</span><span class="nx">wizard</span><span class="p">(</span><span class="s1">&#39;selectedItem&#39;</span><span class="p">).</span><span class="nx">step</span><span class="p">,</span>
+                <span class="nx">$container</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#orderForm&#39;</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;.step-pane[data-step=&quot;&#39;</span> <span class="o">+</span> <span class="nx">step</span> <span class="o">+</span><span class="s1">&#39;&quot;]&#39;</span><span class="p">);</span>
 
             <span class="c1">// Validate the last step container</span>
-            <span class="nx">fv</span><span class="p">.</span><span class="nx">validateContainer</span><span class="p">(</span><span class="nx">container</span><span class="p">);</span>
+            <span class="nx">fv</span><span class="p">.</span><span class="nx">validateContainer</span><span class="p">(</span><span class="nx">$container</span><span class="p">);</span>
 
-            <span class="kd">var</span> <span class="nx">isValidStep</span> <span class="o">=</span> <span class="nx">fv</span><span class="p">.</span><span class="nx">isValidContainer</span><span class="p">(</span><span class="nx">container</span><span class="p">);</span>
+            <span class="kd">var</span> <span class="nx">isValidStep</span> <span class="o">=</span> <span class="nx">fv</span><span class="p">.</span><span class="nx">isValidContainer</span><span class="p">(</span><span class="nx">$container</span><span class="p">);</span>
             <span class="k">if</span> <span class="p">(</span><span class="nx">isValidStep</span> <span class="o">===</span> <span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
                 <span class="c1">// Uncomment the following line to submit the form using the defaultSubmit() method</span>
                 <span class="c1">// fv.defaultSubmit();</span>
