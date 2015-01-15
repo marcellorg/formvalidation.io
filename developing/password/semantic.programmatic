@@ -1,4 +1,4 @@
-<form id="passwordSemanticForm" class="ui grid form">
+<form id="passwordSemanticForm" class="ui grid form fv-form-horizontal">
     <div class="row field">
         <label class="four wide column">Password</label>
         <div class="eight wide column">

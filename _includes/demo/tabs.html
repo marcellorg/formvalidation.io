@@ -18,7 +18,7 @@
             <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"><span class="doc-framework">Framework</span> <i class="caret"></i></a>
             <ul class="dropdown-menu" role="menu">
                 {% for f in frameworks %}
-                <li><a href="javascript: void(0);" data-demo-target="#{{ include.id }}-frame" data-demo-framework="{{ f }}" data-demo-url="{{ url | append: f | append: '.html' }}">{{ f | capitalize }}</a></li>
+                <li><a href="{{ url | append: f | append: '.html' }}" data-demo-target="#{{ include.id }}-frame" data-demo-framework="{{ f }}">{{ f | capitalize }}</a></li>
                 {% endfor %}
             </ul>
         </li>
@@ -26,6 +26,7 @@
         {% for code in codes %}
         <li><a href="#{{ include.id }}-{{ code }}-tab" data-toggle="tab">{{ code | capitalize }} code</a></li>
         {% endfor %}
+        <li class="doc-demo-direct"><a href="{{ url | append: frameworks[0] | append: '.html' }}" data-toggle="tooltip" data-container="body" title="Open the demo in new tab" target="_blank"><i class="fa fa-external-link"></i></a></li>
     </ul>
 
     <div class="tab-content">

@@ -15,11 +15,15 @@
     <script src="/vendor/formvalidation/js/framework/foundation.min.js"></script>
 </head>
 <body class="demo-foundation">
-    <div id="demoContainer">
-        {{ content }}
-    </div>
+    <div class="row">
+        <div class="large-9 columns" id="demoContainer">
+            {{ content }}
+        </div>
 
-    <div class="demo-ad">{% include ad.html %}</div>
+        <div class="large-3 columns">
+            <div class="demo-ad">{% include ad.html %}</div>
+        </div>
+    </div>
 
 <script>
 $(document).ready(function() {

@@ -13,10 +13,14 @@
 </head>
 <body class="demo-semantic">
     <div class="ui grid" id="demoContainer">
-        {{ content }}
-    </div>
+        <div class="twelve wide column">
+            {{ content }}
+        </div>
 
-    <div class="demo-ad">{% include ad.html %}</div>
+        <div class="four wide column">
+            <div class="demo-ad">{% include ad.html %}</div>
+        </div>
+    </div>
 
 <script>
 $(document).ready(function() {

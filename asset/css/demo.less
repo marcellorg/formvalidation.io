@@ -27,31 +27,38 @@ body {
 
 /* --- Ads --- */
 #carbonads {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 180px;
-  margin: 0;
-  padding: 25px;
+  border: 1px solid #e5e5e5;
   font-size: 10px;
-  z-index: 100;
-  .carbon-text, .carbon-poweredby {
+  max-width: 163px;
+  padding: 15px;
+  .carbon-wrap {
+    margin-bottom: 5px;
+  }
+  .carbon-img {
     display: block;
+    padding-bottom: 5px;
+    text-align: center;
+  }
+  .carbon-text {
     color: #999;
-    margin-top: 10px;
     &:hover {
       color: #08c;
       text-decoration: none;
     }
   }
+  .carbon-poweredby {
+    display: block;
+    padding-top: 5px;
+    text-align: right;
+  }
 }
-@media (max-width: 1199px) {
-  #carbonads {
+@media (max-width: 991px) {
+  .demo-ad {
     visibility: hidden;
   }
 }
-@media (min-width: 1200px) {
-  #carbonads {
+@media (min-width: 992px) {
+  .demo-ad {
     visibility: visible;
   }
 }

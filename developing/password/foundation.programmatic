@@ -1,4 +1,4 @@
-<form id="passwordFoundationForm">
+<form id="passwordFoundationForm" class="fv-form-horizontal">
     <div class="row">
         <div class="small-3 columns">
             <label class="right">Password</label>
