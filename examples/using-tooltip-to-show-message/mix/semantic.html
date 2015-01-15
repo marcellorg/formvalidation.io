@@ -59,7 +59,8 @@ _gaq.push(['_trackPageview']);
 </head>
 <body class="demo-semantic">
     <div class="ui grid" id="demoContainer">
-        <div class="ui grid">
+        <div class="twelve wide column">
+            <div class="ui grid">
     <div class="twelve wide column centered">
         <form id="messageForm" class="ui form">
             <div class="field">
@@ -120,11 +121,12 @@ $(document).ready(function() {
     });
 });
 </script>
-    </div>
+        </div>
 
-    <div class="demo-ad"><div class="hidden-print hidden-xs hidden-sm">
-<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=bootstrapvalidatorcom" id="_carbonads_js"></script>
-</div></div>
+        <div class="four wide column">
+            <div class="demo-ad"><script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=bootstrapvalidatorcom" id="_carbonads_js"></script></div>
+        </div>
+    </div>
 
 <script>
 $(document).ready(function() {
@@ -132,6 +134,8 @@ $(document).ready(function() {
     // http://semantic-ui.com/modules/checkbox.html
     $('.ui.checkbox').checkbox();
 });
+// You don't need to care about the following code
+// It's built for all demos
 $(document).ready(function() {
     $('form').on('success.form.fv', function(e) {
         e.preventDefault();

@@ -61,8 +61,9 @@ _gaq.push(['_trackPageview']);
     <script src="/vendor/formvalidation/js/framework/foundation.min.js"></script>
 </head>
 <body class="demo-foundation">
-    <div id="demoContainer">
-        <form id="signinForm">
+    <div class="row">
+        <div class="large-9 columns" id="demoContainer">
+            <form id="signinForm">
     <div class="row">
         <div class="small-12 columns">
             <input type="text" name="username" placeholder="Username" />
@@ -120,16 +121,19 @@ $(document).ready(function() {
     });
 });
 </script>
-    </div>
+        </div>
 
-    <div class="demo-ad"><div class="hidden-print hidden-xs hidden-sm">
-<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=bootstrapvalidatorcom" id="_carbonads_js"></script>
-</div></div>
+        <div class="large-3 columns">
+            <div class="demo-ad"><script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=bootstrapvalidatorcom" id="_carbonads_js"></script></div>
+        </div>
+    </div>
 
 <script>
 $(document).ready(function() {
     $(document).foundation();
 });
+// You don't need to care about the following code
+// It's built for all demos
 $(document).ready(function() {
     $('form').on('success.form.fv', function(e) {
         e.preventDefault();

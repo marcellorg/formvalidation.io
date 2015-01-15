@@ -58,8 +58,9 @@ _gaq.push(['_trackPageview']);
     <script src="/vendor/formvalidation/js/framework/uikit.min.js"></script>
 </head>
 <body class="demo-uikit">
-    <div class="uk-width-2-3 uk-container-center" id="demoContainer">
-        <form id="basicUikitForm" class="uk-form uk-form-horizontal">
+    <div class="uk-grid">
+        <div class="uk-width-3-4" id="demoContainer">
+            <form id="basicUikitForm" class="uk-form uk-form-horizontal">
     <div class="uk-form-row">
         <label class="uk-form-label">Full name</label>
         <div class="uk-form-controls">
@@ -227,13 +228,16 @@ $(document).ready(function() {
     });
 });
 </script>
+        </div>
+
+        <div class="uk-width-1-4">
+            <div class="demo-ad"><script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=bootstrapvalidatorcom" id="_carbonads_js"></script></div>
+        </div>
     </div>
 
-    <div class="demo-ad"><div class="hidden-print hidden-xs hidden-sm">
-<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=bootstrapvalidatorcom" id="_carbonads_js"></script>
-</div></div>
-
 <script>
+// You don't need to care about the following code
+// It's built for all demos
 $(document).ready(function() {
     $('form').on('success.form.fv', function(e) {
         e.preventDefault();

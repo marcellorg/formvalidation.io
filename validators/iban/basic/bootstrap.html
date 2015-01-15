@@ -58,8 +58,10 @@ _gaq.push(['_trackPageview']);
     <script src="/vendor/formvalidation/js/framework/bootstrap.min.js"></script>
 </head>
 <body class="demo-bootstrap">
-    <div class="container" id="demoContainer">
-        <form id="ibanForm" class="form-horizontal">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9" id="demoContainer">
+                <form id="ibanForm" class="form-horizontal">
     <div class="form-group">
         <label class="col-xs-3 control-label">IBAN</label>
         <div class="col-xs-7">
@@ -102,13 +104,17 @@ function revalidateIban(value) {
     return $form.data('formValidation').isValidField('iban');
 }
 </script>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="demo-ad"><script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=bootstrapvalidatorcom" id="_carbonads_js"></script></div>
+            </div>
+        </div>
     </div>
 
-    <div class="demo-ad"><div class="hidden-print hidden-xs hidden-sm">
-<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=bootstrapvalidatorcom" id="_carbonads_js"></script>
-</div></div>
-
 <script>
+// You don't need to care about the following code
+// It's built for all demos
 $(document).ready(function() {
     $('form').on('success.form.fv', function(e) {
         e.preventDefault();

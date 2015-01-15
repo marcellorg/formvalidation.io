@@ -237,7 +237,7 @@ $(document).ready(function() {
             <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"><span class="doc-framework">Framework</span> <i class="caret"></i></a>
             <ul class="dropdown-menu" role="menu">
                 
-                <li><a href="javascript: void(0);" data-demo-target="#container-frame" data-demo-framework="bootstrap" data-demo-url="/examples/showing-message-custom-area/container/bootstrap.html">Bootstrap</a></li>
+                <li><a href="/examples/showing-message-custom-area/container/bootstrap.html" data-demo-target="#container-frame" data-demo-framework="bootstrap">Bootstrap</a></li>
                 
             </ul>
         </li>
@@ -245,6 +245,7 @@ $(document).ready(function() {
         
         <li><a href="#container-programmatic-tab" data-toggle="tab">Programmatic code</a></li>
         
+        <li class="doc-demo-direct"><a href="/examples/showing-message-custom-area/container/bootstrap.html" data-toggle="tooltip" data-container="body" title="Open the demo in new tab" target="_blank"><i class="fa fa-external-link"></i></a></li>
     </ul>
 
     <div class="tab-content">
@@ -423,7 +424,7 @@ $(document).ready(function() {
             <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"><span class="doc-framework">Framework</span> <i class="caret"></i></a>
             <ul class="dropdown-menu" role="menu">
                 
-                <li><a href="javascript: void(0);" data-demo-target="#event-frame" data-demo-framework="bootstrap" data-demo-url="/examples/showing-message-custom-area/event/bootstrap.html">Bootstrap</a></li>
+                <li><a href="/examples/showing-message-custom-area/event/bootstrap.html" data-demo-target="#event-frame" data-demo-framework="bootstrap">Bootstrap</a></li>
                 
             </ul>
         </li>
@@ -431,6 +432,7 @@ $(document).ready(function() {
         
         <li><a href="#event-programmatic-tab" data-toggle="tab">Programmatic code</a></li>
         
+        <li class="doc-demo-direct"><a href="/examples/showing-message-custom-area/event/bootstrap.html" data-toggle="tooltip" data-container="body" title="Open the demo in new tab" target="_blank"><i class="fa fa-external-link"></i></a></li>
     </ul>
 
     <div class="tab-content">
@@ -608,10 +610,8 @@ $(document).ready(function() {
                 </section>
             </div>
 
-            <div class="col-md-3">
-                <div class="hidden-print hidden-xs hidden-sm">
-<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=bootstrapvalidatorcom" id="_carbonads_js"></script>
-</div>
+            <div class="col-md-3 hidden-print hidden-xs hidden-sm">
+                <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=bootstrapvalidatorcom" id="_carbonads_js"></script>
             </div>
         </div>
     </div>
@@ -675,10 +675,16 @@ $(function() {
     });
 
     $('a[data-demo-framework]').on('click', function(e) {
+        e.preventDefault();
         var $this     = $(this),
             framework = $this.attr('data-demo-framework'),
-            url       = $this.attr('data-demo-url'),
-            $target   = $($this.attr('data-demo-target') || $this.attr('href'));
+            url       = $this.attr('href'),
+            $target   = $($this.attr('data-demo-target'));
+
+        $this
+            .closest('.doc-demo')
+            .find('.doc-demo-direct a')
+            .attr('href', url);
 
         $this
             .closest('ul')

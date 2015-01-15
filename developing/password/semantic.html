@@ -59,7 +59,8 @@ _gaq.push(['_trackPageview']);
 </head>
 <body class="demo-semantic">
     <div class="ui grid" id="demoContainer">
-        <form id="passwordSemanticForm" class="ui grid form">
+        <div class="twelve wide column">
+            <form id="passwordSemanticForm" class="ui grid form fv-form-horizontal">
     <div class="row field">
         <label class="four wide column">Password</label>
         <div class="eight wide column">
@@ -126,11 +127,12 @@ $(document).ready(function() {
     });
 });
 </script>
-    </div>
+        </div>
 
-    <div class="demo-ad"><div class="hidden-print hidden-xs hidden-sm">
-<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=bootstrapvalidatorcom" id="_carbonads_js"></script>
-</div></div>
+        <div class="four wide column">
+            <div class="demo-ad"><script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=bootstrapvalidatorcom" id="_carbonads_js"></script></div>
+        </div>
+    </div>
 
 <script>
 $(document).ready(function() {
@@ -138,6 +140,8 @@ $(document).ready(function() {
     // http://semantic-ui.com/modules/checkbox.html
     $('.ui.checkbox').checkbox();
 });
+// You don't need to care about the following code
+// It's built for all demos
 $(document).ready(function() {
     $('form').on('success.form.fv', function(e) {
         e.preventDefault();

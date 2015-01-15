@@ -250,12 +250,10 @@ $(document).ready(function() {
 </div>
             </div>
 
-            <div class="col-md-3">
-                <div id="toc" class="doc-toc hidden-print hidden-xs hidden-sm"></div>
+            <div class="col-md-3 hidden-print hidden-xs hidden-sm">
+                <div id="toc" class="doc-toc"></div>
 
-                <div class="hidden-print hidden-xs hidden-sm">
-<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=bootstrapvalidatorcom" id="_carbonads_js"></script>
-</div>
+                <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=bootstrapvalidatorcom" id="_carbonads_js"></script>
             </div>
         </div>
     </div>
@@ -319,10 +317,16 @@ $(function() {
     });
 
     $('a[data-demo-framework]').on('click', function(e) {
+        e.preventDefault();
         var $this     = $(this),
             framework = $this.attr('data-demo-framework'),
-            url       = $this.attr('data-demo-url'),
-            $target   = $($this.attr('data-demo-target') || $this.attr('href'));
+            url       = $this.attr('href'),
+            $target   = $($this.attr('data-demo-target'));
+
+        $this
+            .closest('.doc-demo')
+            .find('.doc-demo-direct a')
+            .attr('href', url);
 
         $this
             .closest('ul')

@@ -305,15 +305,15 @@ $(document).ready(function() {
             <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"><span class="doc-framework">Framework</span> <i class="caret"></i></a>
             <ul class="dropdown-menu" role="menu">
                 
-                <li><a href="javascript: void(0);" data-demo-target="#password-frame" data-demo-framework="bootstrap" data-demo-url="/developing/password/bootstrap.html">Bootstrap</a></li>
+                <li><a href="/developing/password/bootstrap.html" data-demo-target="#password-frame" data-demo-framework="bootstrap">Bootstrap</a></li>
                 
-                <li><a href="javascript: void(0);" data-demo-target="#password-frame" data-demo-framework="foundation" data-demo-url="/developing/password/foundation.html">Foundation</a></li>
+                <li><a href="/developing/password/foundation.html" data-demo-target="#password-frame" data-demo-framework="foundation">Foundation</a></li>
                 
-                <li><a href="javascript: void(0);" data-demo-target="#password-frame" data-demo-framework="pure" data-demo-url="/developing/password/pure.html">Pure</a></li>
+                <li><a href="/developing/password/pure.html" data-demo-target="#password-frame" data-demo-framework="pure">Pure</a></li>
                 
-                <li><a href="javascript: void(0);" data-demo-target="#password-frame" data-demo-framework="semantic" data-demo-url="/developing/password/semantic.html">Semantic</a></li>
+                <li><a href="/developing/password/semantic.html" data-demo-target="#password-frame" data-demo-framework="semantic">Semantic</a></li>
                 
-                <li><a href="javascript: void(0);" data-demo-target="#password-frame" data-demo-framework="uikit" data-demo-url="/developing/password/uikit.html">Uikit</a></li>
+                <li><a href="/developing/password/uikit.html" data-demo-target="#password-frame" data-demo-framework="uikit">Uikit</a></li>
                 
             </ul>
         </li>
@@ -321,6 +321,7 @@ $(document).ready(function() {
         
         <li><a href="#password-programmatic-tab" data-toggle="tab">Programmatic code</a></li>
         
+        <li class="doc-demo-direct"><a href="/developing/password/bootstrap.html" data-toggle="tooltip" data-container="body" title="Open the demo in new tab" target="_blank"><i class="fa fa-external-link"></i></a></li>
     </ul>
 
     <div class="tab-content">
@@ -398,7 +399,7 @@ $(document).ready(function() {
             </div>
             
             <div data-demo-code="foundation">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;passwordFoundationForm&quot;</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;passwordFoundationForm&quot;</span> <span class="na">class=</span><span class="s">&quot;fv-form-horizontal&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;row&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;small-3 columns&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;right&quot;</span><span class="nt">&gt;</span>Password<span class="nt">&lt;/label&gt;</span>
@@ -474,7 +475,7 @@ $(document).ready(function() {
 
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;pure-control-group&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;label&gt;&lt;/label&gt;</span>
-        <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span><span class="nt">&gt;</span>Validate<span class="nt">&lt;/button&gt;</span>
+        <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;pure-button pure-button-primary&quot;</span><span class="nt">&gt;</span>Validate<span class="nt">&lt;/button&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/form&gt;</span>
 
@@ -529,7 +530,7 @@ $(document).ready(function() {
             </div>
             
             <div data-demo-code="semantic">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;passwordSemanticForm&quot;</span> <span class="na">class=</span><span class="s">&quot;ui grid form&quot;</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;passwordSemanticForm&quot;</span> <span class="na">class=</span><span class="s">&quot;ui grid form fv-form-horizontal&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;row field&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;four wide column&quot;</span><span class="nt">&gt;</span>Password<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;eight wide column&quot;</span><span class="nt">&gt;</span>
@@ -736,7 +737,7 @@ $(document).ready(function() {
             <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"><span class="doc-framework">Framework</span> <i class="caret"></i></a>
             <ul class="dropdown-menu" role="menu">
                 
-                <li><a href="javascript: void(0);" data-demo-target="#secure-password-frame" data-demo-framework="bootstrap" data-demo-url="/developing/secure-password/bootstrap.html">Bootstrap</a></li>
+                <li><a href="/developing/secure-password/bootstrap.html" data-demo-target="#secure-password-frame" data-demo-framework="bootstrap">Bootstrap</a></li>
                 
             </ul>
         </li>
@@ -744,6 +745,7 @@ $(document).ready(function() {
         
         <li><a href="#secure-password-programmatic-tab" data-toggle="tab">Programmatic code</a></li>
         
+        <li class="doc-demo-direct"><a href="/developing/secure-password/bootstrap.html" data-toggle="tooltip" data-container="body" title="Open the demo in new tab" target="_blank"><i class="fa fa-external-link"></i></a></li>
     </ul>
 
     <div class="tab-content">
@@ -891,12 +893,10 @@ $(document).ready(function() {
 </div>
             </div>
 
-            <div class="col-md-3">
-                <div id="toc" class="doc-toc hidden-print hidden-xs hidden-sm"></div>
+            <div class="col-md-3 hidden-print hidden-xs hidden-sm">
+                <div id="toc" class="doc-toc"></div>
 
-                <div class="hidden-print hidden-xs hidden-sm">
-<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=bootstrapvalidatorcom" id="_carbonads_js"></script>
-</div>
+                <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=bootstrapvalidatorcom" id="_carbonads_js"></script>
             </div>
         </div>
     </div>
@@ -960,10 +960,16 @@ $(function() {
     });
 
     $('a[data-demo-framework]').on('click', function(e) {
+        e.preventDefault();
         var $this     = $(this),
             framework = $this.attr('data-demo-framework'),
-            url       = $this.attr('data-demo-url'),
-            $target   = $($this.attr('data-demo-target') || $this.attr('href'));
+            url       = $this.attr('href'),
+            $target   = $($this.attr('data-demo-target'));
+
+        $this
+            .closest('.doc-demo')
+            .find('.doc-demo-direct a')
+            .attr('href', url);
 
         $this
             .closest('ul')

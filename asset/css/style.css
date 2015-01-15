@@ -115,9 +115,6 @@ h4 {
 .doc-nav-shown .doc-content-wrapper {
   margin-left: 280px;
 }
-.doc-nav-shown #carbonads {
-  visibility: hidden;
-}
 .doc-nav {
   bottom: 0;
   height: 100%;
@@ -529,6 +526,9 @@ h4 {
 }
 .doc-demo {
   margin-bottom: 15px;
+}
+.doc-demo .doc-demo-direct {
+  float: right;
 }
 .doc-demo .tab-pane {
   padding: 10px 15px;
