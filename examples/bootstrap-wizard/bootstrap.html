@@ -1,0 +1,346 @@
+<!doctype html>
+<html>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article#">
+    <meta charset="utf-8">
+<title>Playing with Bootstrap Wizard - FormValidation</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<meta http-equiv="Content-Language" content="en">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks">
+<meta name="keywords" content="FormValidation, BootstrapValidator, jQuery, form, validate, validation, validator, plugin, Bootstrap, Foundation, Pure, SemanticUI, UIKit">
+<meta name="author" content="Nguyen Huu Phuoc">
+<meta name="google-site-verification" content="FMmr8kYuIuW27-qJLOb1Z59OgiVgKNgAv4_eMARhIY8" />
+
+<meta name="twitter:site" content="@formvalidation" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks" />
+<meta name="twitter:title" content="Playing with Bootstrap Wizard - FormValidation" />
+<meta name="twitter:image" content="http://formvalidation.io/examples/bootstrap-wizard/cover.png" />
+
+<meta property="og:title" content="Playing with Bootstrap Wizard - FormValidation" />
+<meta property="og:description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://formvalidation.io/examples/bootstrap-wizard/bootstrap.html" />
+<meta property="og:image" content="http://formvalidation.io/examples/bootstrap-wizard/cover.png" />
+<meta property="og:site_name" content="FormValidation" />
+
+<link rel="icon" type="image/x-icon" href="/asset/img/favicon.ico">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/fontawesome/4.2.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+
+<!--[if lt IE 9]>
+<script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<script src="//oss.maxcdn.com/jquery/1.11.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-44786951-2']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/vendor/formvalidation/css/formValidation.min.css">
+    <link rel="stylesheet" href="/asset/css/demo.css">
+
+    <script src="//cdn.jsdelivr.net/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="/vendor/formvalidation/js/formValidation.min.js"></script>
+    <script src="/vendor/formvalidation/js/framework/bootstrap.min.js"></script>
+</head>
+<body class="demo-bootstrap">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9" id="demoContainer">
+                <!-- Include Bootstrap Wizard -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap-wizard/1.2/jquery.bootstrap.wizard.min.js"></script>
+
+<style type="text/css">
+#installationForm .tab-content {
+    margin-top: 20px;
+}
+</style>
+
+<form id="installationForm" class="form-horizontal">
+    <ul class="nav nav-pills">
+        <li class="active"><a href="#basic-tab" data-toggle="tab">Site information</a></li>
+        <li><a href="#database-tab" data-toggle="tab">Database</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <!-- First tab -->
+        <div class="tab-pane active" id="basic-tab">
+            <div class="form-group">
+                <label class="col-xs-3 control-label">Site name</label>
+                <div class="col-xs-5">
+                    <input type="text" class="form-control" name="name" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-xs-3 control-label">URL</label>
+                <div class="col-xs-7">
+                    <input type="text" class="form-control" name="url" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-xs-3 control-label">Owner email</label>
+                <div class="col-xs-5">
+                    <input type="text" class="form-control" name="email" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-xs-3 control-label">Description</label>
+                <div class="col-xs-7">
+                    <textarea class="form-control" name="description" rows="6"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Second tab -->
+        <div class="tab-pane" id="database-tab">
+            <div class="form-group">
+                <label class="col-xs-3 control-label">Server IP</label>
+                <div class="col-xs-5">
+                    <input type="text" class="form-control" name="dbServer" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-xs-3 control-label">Database name</label>
+                <div class="col-xs-5">
+                    <input type="text" class="form-control" name="dbName" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-xs-3 control-label">Database user</label>
+                <div class="col-xs-5">
+                    <input type="text" class="form-control" name="dbUser" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-xs-3 control-label">Password</label>
+                <div class="col-xs-5">
+                    <input type="password" class="form-control" name="dbPassword" />
+                </div>
+            </div>
+        </div>
+
+        <!-- Previous/Next buttons -->
+        <ul class="pager wizard">
+            <li class="previous"><a href="javascript: void(0);">Previous</a></li>
+            <li class="next"><a href="javascript: void(0);">Next</a></li>
+        </ul>
+    </div>
+</form>
+
+<div class="modal fade" id="completeModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Complete</h4>
+            </div>
+
+            <div class="modal-body">
+                <p class="text-center">The installation is completed</p>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-dismiss="modal">Visit the website</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+$(document).ready(function() {
+    // You don't need to care about this function
+    // It is for the specific demo
+    function adjustIframeHeight() {
+        var $body   = $('body'),
+                $iframe = $body.data('iframe.fv');
+        if ($iframe) {
+            // Adjust the height of iframe
+            $iframe.height($body.height());
+        }
+    }
+
+    $('#installationForm')
+        .formValidation({
+            framework: 'bootstrap',
+            icon: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            // This option will not ignore invisible fields which belong to inactive panels
+            exclude: ':disabled',
+            fields: {
+                name: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The site name is required'
+                        }
+                    }
+                },
+                url: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The URL is required'
+                        },
+                        uri: {
+                            message: 'The URL is not valid'
+                        }
+                    }
+                },
+                email: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The email address is required'
+                        },
+                        emailAddress: {
+                            message: 'The email address is not valid'
+                        }
+                    }
+                },
+                dbServer: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The server IP is required'
+                        },
+                        ip: {
+                            message: 'The server IP is not valid'
+                        }
+                    }
+                },
+                dbName: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The database name is required'
+                        }
+                    }
+                },
+                dbUser: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The database user is required'
+                        }
+                    }
+                }
+            }
+        })
+        .bootstrapWizard({
+            tabClass: 'nav nav-pills',
+            onTabClick: function(tab, navigation, index) {
+                return validateTab(index);
+            },
+            onNext: function(tab, navigation, index) {
+                var numTabs    = $('#installationForm').find('.tab-pane').length,
+                    isValidTab = validateTab(index - 1);
+                if (!isValidTab) {
+                    return false;
+                }
+
+                if (index === numTabs) {
+                    // We are at the last tab
+
+                    // Uncomment the following line to submit the form using the defaultSubmit() method
+                    // $('#installationForm').formValidation('defaultSubmit');
+
+                    // For testing purpose
+                    $('#completeModal').modal();
+                }
+
+                return true;
+            },
+            onPrevious: function(tab, navigation, index) {
+                return validateTab(index + 1);
+            },
+            onTabShow: function(tab, navigation, index) {
+                // Update the label of Next button when we are at the last tab
+                var numTabs = $('#installationForm').find('.tab-pane').length;
+                $('#installationForm')
+                    .find('.next')
+                        .removeClass('disabled')    // Enable the Next button
+                        .find('a')
+                        .html(index === numTabs - 1 ? 'Install' : 'Next');
+
+                // You don't need to care about it
+                // It is for the specific demo
+                adjustIframeHeight();
+            }
+        });
+
+    function validateTab(index) {
+        var fv   = $('#installationForm').data('formValidation'), // FormValidation instance
+            // The current tab
+            $tab = $('#installationForm').find('.tab-pane').eq(index);
+
+        // Validate the container
+        fv.validateContainer($tab);
+
+        var isValidStep = fv.isValidContainer($tab);
+        if (isValidStep === false || isValidStep === null) {
+            // Do not jump to the target tab
+            return false;
+        }
+
+        return true;
+    }
+});
+</script>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="demo-ad"><script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=bootstrapvalidatorcom" id="_carbonads_js"></script></div>
+            </div>
+        </div>
+    </div>
+
+<script>
+// You don't need to care about the following code
+// It's built for all demos
+$(document).ready(function() {
+    $('form').on('success.form.fv', function(e) {
+        e.preventDefault();
+    });
+
+    $(window).on('load', function() {
+        var $iframe = $(window.parent.document).find('iframe[src="/examples/bootstrap-wizard/bootstrap.html"]');
+        if ($iframe.length) {
+            $('body').addClass('demo-frame-body').find('.demo-ad').hide();
+
+            // Adjust the height of iframes containing the demo for specific frameworks
+            var $container = $('#demoContainer');
+            setTimeout(function() {
+                $iframe.height($container.height()).css('visibility', 'visible').fadeIn('fast');
+            }, 1000);
+
+            // Set the internal data to get it later if I want
+            $('body').data('iframe.fv', $iframe);
+
+            $container
+                .find('form')
+                .on('status.field.fv', function(e, data) {
+                    $iframe.height($container.height());
+                });
+        }
+    });
+});
+</script>
+</body>
+</html>
