@@ -24,7 +24,7 @@ permalink: /examples/hiding-success-class/
 
 {% highlight javascript %}
 $(document).ready(function() {
-    $('#hidingSuccessForm')
+    $('#proposalForm')
         .formValidation({
             icon: {
                 valid: 'glyphicon glyphicon-ok',
@@ -44,7 +44,7 @@ $(document).ready(function() {
                 $parent.removeClass('has-success');
 
                 // Hide the success icon
-                $parent.find('.form-control-feedback[data-fv-icon-for="' + data.field + '"]').hide();
+                data.element.data('fv.icon').hide();
             }
         });
 });
