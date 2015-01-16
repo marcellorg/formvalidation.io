@@ -178,7 +178,7 @@ $(document).ready(function() {
             $parent.removeClass('has-success');
 
             // Hide the success icon
-            $parent.find('.form-control-feedback[data-fv-icon-for="' + data.field + '"]').hide();
+            data.element.data('fv.icon').hide();
         });
 });
 </script>

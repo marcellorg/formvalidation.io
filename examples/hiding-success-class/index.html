@@ -331,7 +331,7 @@ $(document).ready(function() {
             <span class="nx">$parent</span><span class="p">.</span><span class="nx">removeClass</span><span class="p">(</span><span class="s1">&#39;has-success&#39;</span><span class="p">);</span>
 
             <span class="c1">// Hide the success icon</span>
-            <span class="nx">$parent</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;.form-control-feedback[data-fv-icon-for=&quot;&#39;</span> <span class="o">+</span> <span class="nx">data</span><span class="p">.</span><span class="nx">field</span> <span class="o">+</span> <span class="s1">&#39;&quot;]&#39;</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+            <span class="nx">data</span><span class="p">.</span><span class="nx">element</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;fv.icon&#39;</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
         <span class="p">});</span>
 <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span></code></pre></div>
@@ -345,7 +345,7 @@ $(document).ready(function() {
                 <p>Based on this approach, it's possible to hide success icon and remove the success CSS class from the container if the field is empty. You just simply change the <code>success.field.fv</code> event handler a little bit:</p>
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#hidingSuccessForm&#39;</span><span class="p">)</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#proposalForm&#39;</span><span class="p">)</span>
         <span class="p">.</span><span class="nx">formValidation</span><span class="p">({</span>
             <span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
                 <span class="nx">valid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-ok&#39;</span><span class="p">,</span>
@@ -365,7 +365,7 @@ $(document).ready(function() {
                 <span class="nx">$parent</span><span class="p">.</span><span class="nx">removeClass</span><span class="p">(</span><span class="s1">&#39;has-success&#39;</span><span class="p">);</span>
 
                 <span class="c1">// Hide the success icon</span>
-                <span class="nx">$parent</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;.form-control-feedback[data-fv-icon-for=&quot;&#39;</span> <span class="o">+</span> <span class="nx">data</span><span class="p">.</span><span class="nx">field</span> <span class="o">+</span> <span class="s1">&#39;&quot;]&#39;</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+                <span class="nx">data</span><span class="p">.</span><span class="nx">element</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;fv.icon&#39;</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
             <span class="p">}</span>
         <span class="p">});</span>
 <span class="p">});</span></code></pre></div>
