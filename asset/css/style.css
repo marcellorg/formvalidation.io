@@ -529,6 +529,7 @@ h4 {
 }
 .doc-demo .doc-demo-direct {
   float: right;
+  display: none;
 }
 .doc-demo .tab-pane {
   padding: 10px 15px;
