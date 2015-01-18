@@ -302,6 +302,9 @@ $(document).ready(function() {
                         <span class="nx">callback</span><span class="o">:</span> <span class="p">{</span>
                             <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The bio must be less than 200 characters long&#39;</span><span class="p">,</span>
                             <span class="nx">callback</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">)</span> <span class="p">{</span>
+                                <span class="k">if</span> <span class="p">(</span><span class="nx">value</span> <span class="o">===</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="p">{</span>
+                                    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+                                <span class="p">}</span>
                                 <span class="c1">// Get the plain text without HTML</span>
                                 <span class="kd">var</span> <span class="nx">div</span>  <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;&lt;div/&gt;&#39;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">value</span><span class="p">).</span><span class="nx">get</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
                                     <span class="nx">text</span> <span class="o">=</span> <span class="nx">div</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">||</span> <span class="nx">div</span><span class="p">.</span><span class="nx">innerText</span><span class="p">;</span>
