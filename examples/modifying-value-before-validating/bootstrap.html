@@ -2,7 +2,7 @@
 <html>
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article#">
     <meta charset="utf-8">
-<title>Overriding default options - FormValidation</title>
+<title>Modifying the value before validating - FormValidation</title>
 <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
 <meta http-equiv="Content-Language" content="en">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -15,14 +15,14 @@
 <meta name="twitter:site" content="@formvalidation" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks" />
-<meta name="twitter:title" content="Overriding default options - FormValidation" />
-<meta name="twitter:image" content="http://formvalidation.io/asset/img/logo.png" />
+<meta name="twitter:title" content="Modifying the value before validating - FormValidation" />
+<meta name="twitter:image" content="http://formvalidation.io/examples/modifying-value-before-validating/cover.png" />
 
-<meta property="og:title" content="Overriding default options - FormValidation" />
+<meta property="og:title" content="Modifying the value before validating - FormValidation" />
 <meta property="og:description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://formvalidation.io/examples/overriding-default-options/bootstrap.html" />
-<meta property="og:image" content="http://formvalidation.io/asset/img/logo.png" />
+<meta property="og:url" content="http://formvalidation.io/examples/modifying-value-before-validating/bootstrap.html" />
+<meta property="og:image" content="http://formvalidation.io/examples/modifying-value-before-validating/cover.png" />
 <meta property="og:site_name" content="FormValidation" />
 
 <link rel="icon" type="image/x-icon" href="/asset/img/favicon.ico">
@@ -61,16 +61,19 @@ _gaq.push(['_trackPageview']);
     <div class="container">
         <div class="row">
             <div class="col-lg-9" id="demoContainer">
-                <form id="overrideOptionsForm" method="post" class="form-horizontal">
+                <form id="productForm" class="form-horizontal">
     <div class="form-group">
-        <label class="col-xs-3 control-label">Your website</label>
-        <div class="col-xs-5">
-            <input type="text" class="form-control" name="website" />
+        <label class="col-xs-3 control-label">Price</label>
+        <div class="col-xs-4">
+            <div class="input-group">
+                <div class="input-group-addon">$</div>
+                <input type="text" class="form-control" name="price" />
+            </div>
         </div>
     </div>
 
     <div class="form-group">
-        <div class="col-xs-5 col-xs-offset-3">
+        <div class="col-xs-6 col-xs-offset-3">
             <button type="submit" class="btn btn-default">Validate</button>
         </div>
     </div>
@@ -78,23 +81,25 @@ _gaq.push(['_trackPageview']);
 
 <script>
 $(document).ready(function() {
-    $.fn.formValidation.DEFAULT_OPTIONS = $.extend({}, $.fn.formValidation.DEFAULT_OPTIONS, {
+    $('#productForm').formValidation({
+        framework: 'bootstrap',
         icon: {
             valid: 'glyphicon glyphicon-ok',
             invalid: 'glyphicon glyphicon-remove',
             validating: 'glyphicon glyphicon-refresh'
-        }
-    });
-
-    $('#overrideOptionsForm').formValidation({
+        },
         fields: {
-            website: {
+            price: {
                 validators: {
                     notEmpty: {
-                        message: 'The website address is required'
+                        message: 'The price is required'
                     },
-                    uri: {
-                        message: 'The website address is not valid'
+                    numeric: {
+                        message: 'The price must be a number',
+                        transformer: function($field, validator) {
+                            var value = $field.val();
+                            return value.replace(',', '');
+                        }
                     }
                 }
             }
@@ -119,7 +124,7 @@ $(document).ready(function() {
     });
 
     $(window).on('load', function() {
-        var $iframe = $(window.parent.document).find('iframe[src="/examples/overriding-default-options/bootstrap.html"]');
+        var $iframe = $(window.parent.document).find('iframe[src="/examples/modifying-value-before-validating/bootstrap.html"]');
         if ($iframe.length) {
             $('body').addClass('demo-frame-body').find('.demo-ad').hide();
 
