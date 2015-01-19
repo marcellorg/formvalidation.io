@@ -19,9 +19,17 @@ transformer: function($field, validator) {
 }
 {% endhighlight %}
 
+    <div class="doc-alert doc-alert-info">
+        FormValidation only uses the value returned by the transformer option for validating. It doesn't send the modified value to the server when submitting the form
+    </div>
+
     <h5>Example</h5>
     <p>The following form accepts a website address without <strong>http://</strong> or <strong>https://</strong> prefix.</p>
     <p>By default, these kind of URLs don't pass the <a href="/validators/uri/">uri</a> validators. Applying the <code>transformer</code> option for the uri validator, we can make it pass.</p>
 
     {% include demo/tabs.html id="validator-transformer-uri" frameworks="bootstrap" dir="validator/transformer-uri" codes="programmatic" %}
+
+    <ul class="doc-list">
+        <li><a href="/examples/modifying-value-before-validating/">Modifying the value before validating</a></li>
+    </ul>
 </section>

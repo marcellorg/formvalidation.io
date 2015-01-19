@@ -1,0 +1,53 @@
+---
+layout: default
+title: Modifying the value before validating
+permalink: /examples/modifying-value-before-validating/
+image: /examples/modifying-value-before-validating/cover.png
+---
+
+<div class="doc-content-container">
+    <div class="doc-heading">
+        <h1>Modifying the value before validating</h1>
+        <p>&larr; <a href="/examples/">Examples</a></p>
+        {% include share.html %}
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <p>By default, the value of field will be taken by using jQuery's <code>val()</code> method.</p>
+                <p>In some case, you might want to adjust the value before performing validations.
+                    For example, the <a href="/validators/numeric/">numeric</a> validator doesn't allow to use a comma (,) for thousand separator.</p>
+                <p>Fortunately, it's now possible to hook the value of field via the <a href="/settings/#validator-transformer">transformer</a> option.
+                    The following example is a simple usage which transforms value to new one:</p>
+
+{% highlight javascript %}
+$('#productForm').formValidation({
+    fields: {
+        price: {
+            validators: {
+                numeric: {
+                    transformer: function($field, validator) {
+                        // In fact, you might adjust this transformer to suit your usage
+                        // In this case, this function simply replaces comma with blank space
+                        // as a basic usage
+                        var value = $field.val();
+                        return value.replace(',', '');
+                    }
+                }
+            }
+        }
+    }
+});
+{% endhighlight %}
+
+                <p>The <strong>Price</strong> field now accepts value using comma for thousand separator, such as <strong>12,570.634</strong></p>
+                {% include demo/tabs.html id="basic" frameworks="bootstrap" codes="programmatic" %}
+            </div>
+
+            <div class="col-md-3 hidden-print hidden-xs hidden-sm">
+                {% include ad.html %}
+            </div>
+        </div>
+    </div>
+</div>
