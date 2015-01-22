@@ -352,9 +352,11 @@ h1, h2, h3, h4 {
     position: relative;
     text-align: center;
     img {
+      border: 1px solid #ccc;
       border-radius: 30px;
       width: 60px;
       height: 60px;
+      padding: 5px;
       position: absolute;
       top: 0;
       left: 20px;
@@ -368,6 +370,7 @@ h1, h2, h3, h4 {
     }
     span {
       display: block;
+      font-size: 12px;
       text-align: right;
     }
   }
@@ -442,6 +445,33 @@ h1, h2, h3, h4 {
 }
 
 /* --- Download --- */
+.doc-download-quote {
+  .col-sm-4 {
+    margin: 15px 0;
+  }
+  p {
+    text-align: center;
+  }
+  img {
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    width: 60px;
+    height: 60px;
+    padding: 5px;
+  }
+  blockquote {
+    border-left: none;
+    font-size: 14px;
+    margin: 0 0 5px;
+    padding: 0;
+  }
+  span {
+    display: block;
+    font-size: 12px;
+    text-align: right;
+  }
+}
+
 .doc-plan {
   .btn {
     background: #3498db;
