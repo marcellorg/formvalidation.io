@@ -257,6 +257,88 @@ $(document).ready(function() {
                 <div class="doc-hr"></div>
 
                 <section>
+                    <h2>Improving the performance</h2>
+
+                    <p>By default, the plugin will send an Ajax request to your back-end whenever you enter a character in field.
+                        If the back-end takes time to process the request, it might slow down the website. In order to improve the performance, you can use following tips:</p>
+
+                    <h3>Using delay option</h3>
+                    <p>By setting the <code>delay</code> option, the Ajax request is only fired once in the specific duration time.</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#registrationForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
+    <span class="nx">framework</span><span class="o">:</span> <span class="s1">&#39;bootstrap&#39;</span><span class="p">,</span>
+    <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">username</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">remote</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;/path/to/backend/&#39;</span><span class="p">,</span>
+                    <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;POST&#39;</span><span class="p">,</span>
+                    <span class="nx">delay</span><span class="o">:</span> <span class="mi">2000</span>     <span class="c1">// Send Ajax request every 2 seconds</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span></code></pre></div>
+
+                    <h3>Using threshold option</h3>
+                    <p>The <a href="/settings/#field-threshold">threshold</a> option indicates value that asks validators not to perform validations unless the length of field value is greater than this number.</p>
+                    <p>In the snippet code below, the remote validator will not send Ajax request until the username field has at least 5 characters:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#registrationForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
+    <span class="nx">framework</span><span class="o">:</span> <span class="s1">&#39;bootstrap&#39;</span><span class="p">,</span>
+    <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">username</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">threshold</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+            <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">remote</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;/path/to/backend/&#39;</span><span class="p">,</span>
+                    <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;POST&#39;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span></code></pre></div>
+
+                    <h3>Using verbose option</h3>
+                    <p>Client first, server last. If the field uses multiple validators, the validators processed in the client should be done first.
+                        The remote validator is only processed once the field passes all other validators.</p>
+                    <p>Using the <a href="/settings/#field-verbose">verbose</a> option is solution for this approach.
+                        Setting <code>verbose: false</code> will stop validations when there is one failure validator.</p>
+                    <p>In the following code, the remote validator is only processed if the field satisfies all <a href="/validators/notEmpty/">notEmpty</a>, <a href="/validators/stringLength/">stringLength</a>, <a href="/validators/regexp/">regexp</a> validators.</p>
+
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#registrationForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
+    <span class="nx">framework</span><span class="o">:</span> <span class="s1">&#39;bootstrap&#39;</span><span class="p">,</span>
+    <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">username</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">verbose</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">notEmpty</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The username is required&#39;</span>
+                <span class="p">},</span>
+                <span class="nx">stringLength</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">min</span><span class="o">:</span> <span class="mi">6</span><span class="p">,</span>
+                    <span class="nx">max</span><span class="o">:</span> <span class="mi">30</span><span class="p">,</span>
+                    <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The username must be more than 6 and less than 30 characters long&#39;</span>
+                <span class="p">},</span>
+                <span class="nx">regexp</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">regexp</span><span class="o">:</span> <span class="sr">/^[a-zA-Z0-9_\.]+$/</span><span class="p">,</span>
+                    <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The username can only consist of alphabetical, number, dot and underscore&#39;</span>
+                <span class="p">}</span>
+                <span class="c1">// Place the remote validator in the last</span>
+                <span class="nx">remote</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;/path/to/backend/&#39;</span><span class="p">,</span>
+                    <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;POST&#39;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span></code></pre></div>
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
                     <h2>Examples</h2>
 
                     <h3>Basic example</h3>
