@@ -106,6 +106,94 @@ url: function(validator) {
                 <div class="doc-hr"></div>
 
                 <section>
+                    <h2>Improving the performance</h2>
+
+                    <p>By default, the plugin will send an Ajax request to your back-end whenever you enter a character in field.
+                        If the back-end takes time to process the request, it might slow down the website. In order to improve the performance, you can use following tips:</p>
+
+                    <h3>Using delay option</h3>
+                    <p>By setting the <code>delay</code> option, the Ajax request is only fired once in the specific duration time.</p>
+
+{% highlight javascript %}
+$('#registrationForm').formValidation({
+    framework: 'bootstrap',
+    fields: {
+        username: {
+            validators: {
+                remote: {
+                    url: '/path/to/backend/',
+                    type: 'POST',
+                    delay: 2000     // Send Ajax request every 2 seconds
+                }
+            }
+        }
+    }
+});
+{% endhighlight %}
+
+                    <h3>Using threshold option</h3>
+                    <p>The <a href="/settings/#field-threshold">threshold</a> option indicates value that asks validators not to perform validations unless the length of field value is greater than this number.</p>
+                    <p>In the snippet code below, the remote validator will not send Ajax request until the username field has at least 5 characters:</p>
+
+{% highlight javascript %}
+$('#registrationForm').formValidation({
+    framework: 'bootstrap',
+    fields: {
+        username: {
+            threshold: 5,
+            validators: {
+                remote: {
+                    url: '/path/to/backend/',
+                    type: 'POST'
+                }
+            }
+        }
+    }
+});
+{% endhighlight %}
+
+                    <h3>Using verbose option</h3>
+                    <p>Client first, server last. If the field uses multiple validators, the validators processed in the client should be done first.
+                        The remote validator is only processed once the field passes all other validators.</p>
+                    <p>Using the <a href="/settings/#field-verbose">verbose</a> option is solution for this approach.
+                        Setting <code>verbose: false</code> will stop validations when there is one failure validator.</p>
+                    <p>In the following code, the remote validator is only processed if the field satisfies all <a href="/validators/notEmpty/">notEmpty</a>, <a href="/validators/stringLength/">stringLength</a>, <a href="/validators/regexp/">regexp</a> validators.</p>
+
+
+{% highlight javascript %}
+$('#registrationForm').formValidation({
+    framework: 'bootstrap',
+    fields: {
+        username: {
+            verbose: false,
+            validators: {
+                notEmpty: {
+                    message: 'The username is required'
+                },
+                stringLength: {
+                    min: 6,
+                    max: 30,
+                    message: 'The username must be more than 6 and less than 30 characters long'
+                },
+                regexp: {
+                    regexp: /^[a-zA-Z0-9_\.]+$/,
+                    message: 'The username can only consist of alphabetical, number, dot and underscore'
+                }
+                // Place the remote validator in the last
+                remote: {
+                    url: '/path/to/backend/',
+                    type: 'POST'
+                }
+            }
+        }
+    }
+});
+{% endhighlight %}
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
                     <h2>Examples</h2>
 
                     <h3>Basic example</h3>
