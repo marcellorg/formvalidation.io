@@ -343,9 +343,11 @@ h4 {
   text-align: center;
 }
 .doc-home-tweet .col-sm-4 img {
+  border: 1px solid #ccc;
   border-radius: 30px;
   width: 60px;
   height: 60px;
+  padding: 5px;
   position: absolute;
   top: 0;
   left: 20px;
@@ -359,6 +361,7 @@ h4 {
 }
 .doc-home-tweet .col-sm-4 span {
   display: block;
+  font-size: 12px;
   text-align: right;
 }
 .doc-home-tweet p {
@@ -422,6 +425,30 @@ h4 {
   }
 }
 /* --- Download --- */
+.doc-download-quote .col-sm-4 {
+  margin: 15px 0;
+}
+.doc-download-quote p {
+  text-align: center;
+}
+.doc-download-quote img {
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  width: 60px;
+  height: 60px;
+  padding: 5px;
+}
+.doc-download-quote blockquote {
+  border-left: none;
+  font-size: 14px;
+  margin: 0 0 5px;
+  padding: 0;
+}
+.doc-download-quote span {
+  display: block;
+  font-size: 12px;
+  text-align: right;
+}
 .doc-plan .btn {
   background: #3498db;
   color: #fff;
