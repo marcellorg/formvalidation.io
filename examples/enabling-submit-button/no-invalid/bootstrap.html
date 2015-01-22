@@ -2,7 +2,7 @@
 <html>
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article#">
     <meta charset="utf-8">
-<title>Always enable the submit button - FormValidation</title>
+<title>Enabling the submit button when there is no invalid fields - FormValidation</title>
 <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
 <meta http-equiv="Content-Language" content="en">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -15,13 +15,13 @@
 <meta name="twitter:site" content="@formvalidation" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks" />
-<meta name="twitter:title" content="Always enable the submit button - FormValidation" />
+<meta name="twitter:title" content="Enabling the submit button when there is no invalid fields - FormValidation" />
 <meta name="twitter:image" content="http://formvalidation.io/asset/img/logo.png" />
 
-<meta property="og:title" content="Always enable the submit button - FormValidation" />
+<meta property="og:title" content="Enabling the submit button when there is no invalid fields - FormValidation" />
 <meta property="og:description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://formvalidation.io/examples/enabling-submit-button/all-valid/bootstrap.html" />
+<meta property="og:url" content="http://formvalidation.io/examples/enabling-submit-button/no-invalid/bootstrap.html" />
 <meta property="og:image" content="http://formvalidation.io/asset/img/logo.png" />
 <meta property="og:site_name" content="FormValidation" />
 
@@ -61,7 +61,7 @@ _gaq.push(['_trackPageview']);
     <div class="container">
         <div class="row">
             <div class="col-lg-9" id="demoContainer">
-                <form id="enableButtonForm" method="post" class="form-horizontal">
+                <form id="taskForm" method="post" class="form-horizontal">
     <div class="form-group">
         <label class="col-xs-3 control-label">Task</label>
         <div class="col-xs-5">
@@ -86,7 +86,7 @@ _gaq.push(['_trackPageview']);
 
 <script>
 $(document).ready(function() {
-    $('#enableButtonForm')
+    $('#taskForm')
         .formValidation({
             framework: 'bootstrap',
             icon: {
@@ -112,8 +112,8 @@ $(document).ready(function() {
             }
         })
         .on('success.field.fv', function(e, data) {
-            if (data.fv.isValid()) {
-                data.fv.disableSubmitButtons(false);
+            if (data.fv.getInvalidFields().length > 0) {    // There is invalid field
+                data.fv.disableSubmitButtons(true);
             }
         });
 });
@@ -135,7 +135,7 @@ $(document).ready(function() {
     });
 
     $(window).on('load', function() {
-        var $iframe = $(window.parent.document).find('iframe[src="/examples/enabling-submit-button/all-valid/bootstrap.html"]');
+        var $iframe = $(window.parent.document).find('iframe[src="/examples/enabling-submit-button/no-invalid/bootstrap.html"]');
         if ($iframe.length) {
             $('body').addClass('demo-frame-body').find('.demo-ad').hide();
 
