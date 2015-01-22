@@ -1,4 +1,4 @@
-<form id="enableButtonForm" method="post" class="form-horizontal">
+<form id="taskForm" method="post" class="form-horizontal">
     <div class="form-group">
         <label class="col-xs-3 control-label">Task</label>
         <div class="col-xs-5">
@@ -23,7 +23,7 @@
 
 <script>
 $(document).ready(function() {
-    $('#enableButtonForm')
+    $('#taskForm')
         .formValidation({
             framework: 'bootstrap',
             icon: {
@@ -49,8 +49,8 @@ $(document).ready(function() {
             }
         })
         .on('success.field.fv', function(e, data) {
-            if (data.fv.isValid()) {
-                data.fv.disableSubmitButtons(false);
+            if (data.fv.getInvalidFields().length > 0) {    // There is invalid field
+                data.fv.disableSubmitButtons(true);
             }
         });
 });
