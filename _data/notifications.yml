@@ -1,6 +1,9 @@
 - title: "v0.6.0 is released on 2015-01-06"
   url: "/news/v0.6.0-released/"
 
+- title: "3 ways to improve performance when using remote validator"
+  url: "/validators/remote/#improving-the-performance"
+
 - title: "New example: Modifying the value before validating"
   url: "/examples/modifying-value-before-validating/"
 
