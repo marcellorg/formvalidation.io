@@ -4,9 +4,9 @@
     <p><code>transformer: Function</code> &mdash; Modify the field value before validating.</p>
 
 {% highlight javascript %}
-transformer: function($field, validator) {
+transformer: function($field, validatorName) {
     // $field is the jQuery object presenting the field element
-    // validator the instance of FormValidation
+    // validatorName is the name of current validator
 
     // You can get the field value
     var value = $field.val();
