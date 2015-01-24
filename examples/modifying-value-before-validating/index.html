@@ -189,7 +189,10 @@ $(document).ready(function() {
         <span class="nx">price</span><span class="o">:</span> <span class="p">{</span>
             <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
                 <span class="nx">numeric</span><span class="o">:</span> <span class="p">{</span>
-                    <span class="nx">transformer</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$field</span><span class="p">,</span> <span class="nx">validator</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">transformer</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$field</span><span class="p">,</span> <span class="nx">validatorName</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="c1">// $field is the jQuery object presenting the field element</span>
+                        <span class="c1">// validatorName is the name of current validator (numeric)</span>
+
                         <span class="c1">// In fact, you might adjust this transformer to suit your usage</span>
                         <span class="c1">// In this case, this function simply replaces comma with blank space</span>
                         <span class="c1">// as a basic usage</span>
@@ -274,7 +277,7 @@ $(document).ready(function() {
                     <span class="p">},</span>
                     <span class="nx">numeric</span><span class="o">:</span> <span class="p">{</span>
                         <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The price must be a number&#39;</span><span class="p">,</span>
-                        <span class="nx">transformer</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$field</span><span class="p">,</span> <span class="nx">validator</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="nx">transformer</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$field</span><span class="p">,</span> <span class="nx">validatorName</span><span class="p">)</span> <span class="p">{</span>
                             <span class="kd">var</span> <span class="nx">value</span> <span class="o">=</span> <span class="nx">$field</span><span class="p">.</span><span class="nx">val</span><span class="p">();</span>
                             <span class="k">return</span> <span class="nx">value</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">);</span>
                         <span class="p">}</span>

@@ -96,7 +96,7 @@ $(document).ready(function() {
                     },
                     numeric: {
                         message: 'The price must be a number',
-                        transformer: function($field, validator) {
+                        transformer: function($field, validatorName) {
                             var value = $field.val();
                             return value.replace(',', '');
                         }
