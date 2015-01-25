@@ -2,7 +2,7 @@
 <html>
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article#">
     <meta charset="utf-8">
-<title>Examples - FormValidation</title>
+<title>Field value is changed programmatically - FormValidation</title>
 <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
 <meta http-equiv="Content-Language" content="en">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -15,14 +15,14 @@
 <meta name="twitter:site" content="@formvalidation" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks" />
-<meta name="twitter:title" content="Examples - FormValidation" />
-<meta name="twitter:image" content="http://formvalidation.io/asset/img/logo.png" />
+<meta name="twitter:title" content="Field value is changed programmatically - FormValidation" />
+<meta name="twitter:image" content="http://formvalidation.io/examples/field-value-changed-programmatically/cover.png" />
 
-<meta property="og:title" content="Examples - FormValidation" />
+<meta property="og:title" content="Field value is changed programmatically - FormValidation" />
 <meta property="og:description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://formvalidation.io/examples/" />
-<meta property="og:image" content="http://formvalidation.io/asset/img/logo.png" />
+<meta property="og:url" content="http://formvalidation.io/examples/field-value-changed-programmatically/" />
+<meta property="og:image" content="http://formvalidation.io/examples/field-value-changed-programmatically/cover.png" />
 <meta property="og:site_name" content="FormValidation" />
 
 <link rel="icon" type="image/x-icon" href="/asset/img/favicon.ico">
@@ -170,168 +170,132 @@ $(document).ready(function() {
 
         <div class="doc-content-container">
     <div class="doc-heading">
-        <h1>Examples</h1>
-        <p>A collection of usage examples you can play with</p>
+        <h1>Field value is changed programmatically</h1>
+        <p>&larr; <a href="/examples/">Examples</a></p>
         <div id="shareButton" class="doc-share-button"></div>
     </div>
 
     <div class="container">
         <div class="row">
             <div class="col-md-9">
-                <section>
-    <h2>Most asked questions</h2>
+                <p>When the field value is changed programmatically by either jQuery's <code>.val()</code> method or other plugins,
+                    FormValidation doesn't change the field validity and update the feedback icon.</p>
+                <p>You need to ask the plugin to revalidate it by calling the <a href="/api#revalidate-field">revalidateField()</a> method.</p>
 
-    <ul class="doc-list">
-        <li><a href="/examples/adjusting-feedback-icon-position/">Adjusting feedback icon position</a></li>
-        <li><a href="/examples/form-submit-twice/">Form is submitted twice</a></li>
-        <li><a href="/examples/field-value-changed-programmatically/">Field value is changed programmatically</a> <span class="label label-info">New</span></li>
-    </ul>
-</section>
-                <div class="doc-hr"></div>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Update the field value</span>
+<span class="nx">$fieldElement</span><span class="p">.</span><span class="nx">val</span><span class="p">(</span><span class="nx">newValue</span><span class="p">);</span>
 
-                <section>
-    <h2>Basic</h2>
+<span class="c1">// Revalidate it</span>
+<span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;revalidateField&#39;</span><span class="p">,</span> <span class="nx">fieldName</span><span class="p">);</span></code></pre></div>
 
-    <ul class="doc-list">
-        <li><a href="/examples/clearing-field-when-clicking-icon/">Clearing field when clicking the icon</a></li>
-        <li><a href="/examples/html5/">Playing with HTML 5 input types and attributes</a></li>
-        <li><a href="/examples/requiring-at-least-one-field/">Requiring at least one field</a></li>
-        <li><a href="/examples/attribute/">Setting validator options via HTML 5 attributes</a></li>
-        <li><a href="/examples/toggle/">Toggling field</a></li>
-        <li><a href="/examples/using-language-package/">Using language package</a></li>
-        <li><a href="/examples/multiple/">Using multiple elements with the same name</a></li>
-        <li><a href="/examples/using-tooltip-to-show-message/">Using tooltip to show message</a> <span class="label label-info">New</span></li>
-        <li><a href="/examples/modal/">Validating a form placed inside a Bootstrap modal</a></li>
-    </ul>
-</section>
-                <div class="doc-hr"></div>
+                <p>It's one of principles when <a href="/examples#compatibility">integrating</a> FormValidation with 3rd party plugins.</p>
+                <p>In the following example, after clicking the <strong>Set values</strong> button, the <strong>First name</strong> and <strong>Last name</strong> field are revalidated.</p>
 
-                <section>
-    <h2>Advance</h2>
+                
 
-    <ul class="doc-list">
-        <li><a href="/examples/adding-dynamic-field/">Adding dynamic field</a></li>
-        <li><a href="/examples/adding-warning-validation-state/">Adding warning validation state</a> <span class="label label-info">New</span></li>
-        <li><a href="/examples/changing-tooltip-position/">Changing tooltip position</a></li>
-        <li><a href="/examples/complex-form/">Complex form</a></li>
-        <li><a href="/examples/enabling-submit-button/">Enabling the submit button</a></li>
-        <li><a href="/examples/enable-validator/">Enabling validator</a></li>
-        <li><a href="/examples/hiding-message/">Hiding messages</a></li>
-        <li><a href="/examples/hiding-success-class/">Hiding success class</a></li>
-        <li><a href="/examples/modifying-value-before-validating/">Modifying the value before validating</a> <span class="label label-info">New</span></li>
-        <li><a href="/examples/showing-icon-custom-area/">Showing icons in custom area</a></li>
-        <li><a href="/examples/showing-one-message/">Showing only one message each time</a></li>
-        <li><a href="/examples/showing-message-custom-area/">Showing messages in custom area</a></li>
-        <li><a href="/examples/showing-required-icon/">Showing required icon for the mandatory fields </a></li>
-        <li><a href="/examples/showing-valid-message/">Showing valid message</a></li>
-        <li><a href="/examples/ajax-submit/">Using Ajax to submit the form</a></li>
-        <li><a href="/examples/validating-google-recaptcha/">Validating Google reCAPTCHA</a></li>
-    </ul>
-</section>
-                <div class="doc-hr"></div>
 
-                <section>
-    <h2>Integrating with server side</h2>
 
-    <p>These examples shows how to integrate FormValidation with the server side:</p>
 
-    <ul class="doc-list">
-        <li><a href="/examples/integrating-asp-net/">ASP.Net</a></li>
-        <li><a href="/examples/integrating-rails/">Rails</a></li>
-    </ul>
-</section>
-                <div class="doc-hr"></div>
 
-                <section>
-    <h2>Compatibility</h2>
 
-    <p>In order to make FormValidation work together with other plugin, you should follow two rules below:</p>
 
-    <ol>
-        <li>
-            <p><strong>Don't exclude the field if the plugin changes the field visibility</strong></p>
-            <p>Some plugins hide your field and create new elements to change how the field looks like. By default, the hidden, invisible fields will not be validated. Therefore, you need to set <code>excluded: ':disabled'</code>. See the <a href="/settings#form-excluded">excluded</a> option for more information.</p>
-            <p>Example: <a href="/examples/bootstrap-button/">Bootstrap Button</a></p>
+
+
+<div class="doc-demo">
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"><span class="doc-framework">Framework</span> <i class="caret"></i></a>
+            <ul class="dropdown-menu" role="menu">
+                
+                <li><a href="/examples/field-value-changed-programmatically/bootstrap.html" data-demo-target="#demo-frame" data-demo-framework="bootstrap">Bootstrap</a></li>
+                
+            </ul>
         </li>
-
-        <li>
-            <p><strong>Revalidate the field if the plugin changes its value dynamically:</strong></p>
-            <p>Most plugins trigger an event after changing the field value. By using this kind of event handler, you need to ask FormValidation to revalidate the field.</p>
-        </li>
-    </ol>
-
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nx">field</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">nameOfPlugin</span><span class="p">(</span><span class="nx">pluginOptions</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="nx">pluginChangedEvent</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">)</span>
-            <span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;formValidation&#39;</span><span class="p">)</span>         <span class="c1">// Get the validator instance</span>
-            <span class="p">.</span><span class="nx">revalidateField</span><span class="p">(</span><span class="nx">field</span><span class="p">);</span>        <span class="c1">// Revalidate it</span>
-
-        <span class="c1">// It is equivalent to use</span>
-        <span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;revalidateField&#39;</span><span class="p">,</span> <span class="nx">field</span><span class="p">);</span>
-    <span class="p">});</span></code></pre></div>
-
-    <p>Look at the <a href="/api#revalidate-field"><code>revalidateField()</code></a> method for more details.</p>
-    <p>Example: <a href="/examples/chosen/">Chosen</a></p>
-
-    <p>These examples show how you can use FormValidation with other Javascript plugins.</p>
-
-    <ul class="doc-list">
-        <li><a href="/examples/bootbox/">Bootbox</a></li>
-        <li><a href="/examples/bootstrap-button/">Bootstrap Button</a></li>
-        <li><a href="/examples/bootstrap-datepicker/">Bootstrap Datepicker</a></li>
-        <li><a href="/validators/date#datetime-picker-example">Bootstrap Datetime Picker</a></li>
-        <li><a href="/examples/bootstrap-material-design/">Bootstrap Material Design</a> <span class="label label-info">New</span></li>
-        <li><a href="/examples/bootstrap-multiselect/">Bootstrap Multiselect</a></li>
-        <li><a href="/examples/bootstrap-select/">Bootstrap Select</a></li>
-        <li><a href="/examples/bootstrap-tab/">Bootstrap Tabs</a></li>
-        <li><a href="/examples/bootstrap-tagsinput/">Bootstrap Tags Input</a></li>
-        <li><a href="/examples/chosen/">Chosen</a></li>
-        <li><a href="/examples/ckeditor/">CKEditor</a></li>
-        <li><a href="/examples/icheck/">iCheck</a></li>
-        <li><a href="/examples/mask/">Mask</a></li>
-        <li><a href="/examples/pickadate/">Pickadate</a></li>
-        <li><a href="/examples/raty/">Raty</a></li>
-        <li><a href="/examples/select2/">Select2</a></li>
-        <li><a href="/examples/summernote/">Summernote</a></li>
-        <li><a href="/examples/tinymce/">TinyMCE</a></li>
+        <li class="active"><a href="#demo-form-tab" data-toggle="tab">Try it</a></li>
+        
+        <li><a href="#demo-programmatic-tab" data-toggle="tab">Programmatic code</a></li>
+        
+        <li class="doc-demo-direct"><a href="/examples/field-value-changed-programmatically/bootstrap.html" data-toggle="tooltip" data-container="body" title="Open the demo in new tab" target="_blank"><i class="fa fa-external-link"></i></a></li>
     </ul>
-</section>
-                <div class="doc-hr"></div>
 
-                <section>
-    <h2>Wizard</h2>
+    <div class="tab-content">
+        <div class="tab-pane active" id="demo-form-tab">
+            <iframe class="doc-demo-frame" id="demo-frame"></iframe>
+        </div>
 
-    <p>Using FormValidation, you can validate the wizard-like interfaces such as tabs, collapsible panels, accordions.</p>
-    <p>When using these kind of components, the form fields are split into multiple regions which there is only active, visible one at any time.
-    By default, the invisible fields belonging to inactive regions will be ignored by FormValidation, we need to set <code>excluded: ':disabled'</code>.</p>
-    <p>For more information, see the <a href="/settings#form-excluded">excluded</a> option.</p>
+        
+        <div class="tab-pane" id="demo-programmatic-tab">
+            
+            <div data-demo-code="bootstrap">
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;profileForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Full name<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-4&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;firstName&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;First name&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-4&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;lastName&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Last name&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
 
-    <p>In order to validate particular region, we can use <a href="/api/#validate-container">validateContainer(container)</a> method.
-        Then use <a href="/api/#is-valid-container">isValidContainer(container)</a> method to determine the container is valid or not.</p>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-9 col-xs-offset-3&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-primary&quot;</span> <span class="na">id=</span><span class="s">&quot;setValueButton&quot;</span><span class="nt">&gt;</span>Set values<span class="nt">&lt;/button&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
 
-    <p>Below is the list of examples showing how to use FormValidation with popular wizard plugins:</p>
-    <ul class="doc-list">
-        <li><a href="/examples/bootstrap-wizard/">Bootstrap Wizard</a> <span class="label label-info">New</span></li>
-        <li><a href="/examples/fuel-ux-wizard/">Fuel UX Wizard</a> <span class="label label-info">New</span></li>
-        <li><a href="/examples/jquery-steps/">jQuery Steps</a> <span class="label label-info">New</span></li>
-    </ul>
-</section>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#profileForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
+        <span class="nx">framework</span><span class="o">:</span> <span class="s1">&#39;bootstrap&#39;</span><span class="p">,</span>
+        <span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">valid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-ok&#39;</span><span class="p">,</span>
+            <span class="nx">invalid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-remove&#39;</span><span class="p">,</span>
+            <span class="nx">validating</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-refresh&#39;</span>
+        <span class="p">},</span>
+        <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">firstName</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">row</span><span class="o">:</span> <span class="s1">&#39;.col-xs-4&#39;</span><span class="p">,</span>
+                <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">notEmpty</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The first name is required&#39;</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">},</span>
+            <span class="nx">lastName</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">row</span><span class="o">:</span> <span class="s1">&#39;.col-xs-4&#39;</span><span class="p">,</span>
+                <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">notEmpty</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The last name is required&#39;</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
 
-                <div class="doc-pagination">
-    
-        <a href="/validators/" class="doc-pagination-older">&larr; Validators</a>
-    
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#setValueButton&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// Set value for fields</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#profileForm&#39;</span><span class="p">)</span>
+            <span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;input[name=&quot;firstName&quot;]&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="s1">&#39;Form&#39;</span><span class="p">).</span><span class="nx">end</span><span class="p">()</span>
+            <span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;input[name=&quot;lastName&quot;]&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="s1">&#39;Validation&#39;</span><span class="p">);</span>
 
-    
-        <a href="/developing/" class="doc-pagination-newer">Developing &rarr;</a>
-    
+        <span class="c1">// Revalidate the fields</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#profileForm&#39;</span><span class="p">)</span>
+            <span class="p">.</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;revalidateField&#39;</span><span class="p">,</span> <span class="s1">&#39;firstName&#39;</span><span class="p">)</span>
+            <span class="p">.</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;revalidateField&#39;</span><span class="p">,</span> <span class="s1">&#39;lastName&#39;</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span></code></pre></div>
+            </div>
+            
+        </div>
+        
+    </div>
 </div>
             </div>
 
             <div class="col-md-3 hidden-print hidden-xs hidden-sm">
-                <div id="toc" class="doc-toc"></div>
-
                 <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=bootstrapvalidatorcom" id="_carbonads_js"></script>
             </div>
         </div>
