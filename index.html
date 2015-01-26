@@ -78,25 +78,6 @@ permalink: /
             </div>
         </section>
 
-        <!-- contributors -->
-        <section id="contributors" class="doc-center-wrapper doc-home-contributor">
-            <div class="container doc-center-container">
-                <h2>Made better by contributors</h2>
-                <div class="doc-hr"></div>
-
-                <p>
-                    <a href="{{ site.repository.source }}/stargazers"><i class="fa fa-github"></i> <span id="ghStars" class="doc-home-counter"></span> stars</a>
-                    <a href="{{ site.repository.source }}/network/members"><i class="fa fa-code-fork"></i> <span id="ghForks" class="doc-home-counter"></span> forks</a>
-                </p>
-
-                <ul id="contributorList">
-                    {% for user in site.data.contributors %}<li><a href="https://github.com/{{ user.username }}" title="@{{ user.username }}"><img src="https://github.com/{{ user.username }}.png" width="60px" height="60px" /></a></li>{% endfor %}
-                </ul>
-
-                <a href="{{ site.repository.source }}" class="btn">Fork and Contribute</a>
-            </div>
-        </section>
-
         <!-- what people say -->
         <section id="tweet" class="doc-center-wrapper doc-home-tweet">
             <div class="container doc-center-container">
@@ -211,38 +192,6 @@ $(function() {
     });
 
     updateCounter('{{ site.github_downloads }}');
-
-    // Show the number of Github stars/forks
-    $.ajax({
-        dataType: 'jsonp',
-        url: 'https://api.github.com/repos/formvalidation/formvalidation',
-        success: function(response) {
-            $('#ghStars').html((response && response.data.watchers_count ? parseInt(response.data.watchers_count) : '{{ site.github_watchers }}').toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','));
-            $('#ghForks').html((response && response.data.forks_count    ? parseInt(response.data.forks_count)    : '{{ site.github_forks }}').toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','));
-        }
-    });
-
-    $(window).on('load', function() {
-        var $contributors   = $('#contributorList').find('li'),
-            numContributors = $contributors.length,
-            random          = function(a, b) {
-                return Math.floor(Math.random() * (b - a + 1) + a);
-            },
-            swapContributor = function(i, j) {
-                var $tmp = $('<span>').hide(),
-                    $a   = $contributors.eq(i),
-                    $b   = $contributors.eq(j);
-                $a.before($tmp);
-                $b.before($a);
-                $tmp.replaceWith($b);
-            };
-
-        setInterval(function() {
-            var i = random(0, numContributors / 2),
-                j = random(numContributors / 2, numContributors);
-            swapContributor(i, j);
-        }, 300);
-    });
 
     // Show the total of downloads
     $.ajax({
