@@ -293,46 +293,6 @@ h4 {
 .doc-home-feature .btn:hover {
   color: #fff;
 }
-.doc-home-contributor {
-  background-color: #111;
-  padding-bottom: 30px;
-}
-.doc-home-contributor h2 {
-  color: #fff;
-  font-size: 40px;
-  margin-bottom: 30px;
-}
-.doc-home-contributor .doc-hr {
-  background: #666;
-}
-.doc-home-contributor p {
-  font-size: 30px;
-}
-.doc-home-contributor p a {
-  color: #fff;
-  padding: 0 20px;
-}
-.doc-home-contributor .btn {
-  font-size: 20px;
-  text-transform: uppercase;
-  border-color: #fff;
-  color: #fff;
-}
-.doc-home-contributor ul {
-  height: 300px;
-  margin: 40px 0;
-  opacity: 0.5;
-  overflow: hidden;
-}
-.doc-home-contributor li {
-  display: inline-block;
-  padding: 8px 8px 8px 0;
-}
-.doc-home-contributor li img {
-  border-radius: 30px;
-  width: 60px;
-  height: 60px;
-}
 .doc-home-tweet h2 {
   font-size: 40px;
   margin-bottom: 30px;
