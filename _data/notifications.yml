@@ -1,6 +1,9 @@
 - title: "v0.6.0 is released on 2015-01-06"
   url: "/news/v0.6.0-released/"
 
+- title: "Validating multiple inputs as one"
+  url: "/examples/validating-multiple-inputs-one/"
+
 - title: "3 ways to improve performance when using remote validator"
   url: "/validators/remote/#improving-the-performance"
 
