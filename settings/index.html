@@ -197,7 +197,7 @@ $(document).ready(function() {
 
     <span class="c1">// ... Form settings go here ...</span>
     <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">specificFieldName</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">fieldName</span><span class="o">:</span> <span class="p">{</span>
             <span class="c1">// ... Field settings go here ...</span>
 
             <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
@@ -210,6 +210,11 @@ $(document).ready(function() {
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">});</span></code></pre></div>
+
+    <div class="doc-alert doc-alert-info">
+        If the field name contains special characters such as ., [, ], you must wrap it between single or double quote.
+        See the <a href="/examples/validating-field-special-name/">Validating field with special name</a> example
+    </div>
 
     <p>Most of settings can be set via HTML 5 attributes prefixed with <code>data-bv</code>.</p>
     <p>For example, the following call:</p>
