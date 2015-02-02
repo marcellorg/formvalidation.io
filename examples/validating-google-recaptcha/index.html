@@ -91,6 +91,11 @@ _gaq.push(['_trackPageview']);
         
             
         
+        <li class=""><a href="/addons/">Add-ons</a></li>
+    
+        
+            
+        
         <li class="doc-nav-active"><a href="/examples/">Examples</a></li>
     
         
@@ -135,12 +140,13 @@ _gaq.push(['_trackPageview']);
 
     <div id="main" class="doc-content-wrapper">
         <div class="doc-notification" id="notification">
-    <i class="fa fa-bell-o"></i> <a href="/news/v0.6.0-released/">v0.6.0 is released on 2015-01-06</a>
+    <i class="fa fa-bell-o"></i> <a href="/addons/">Explore new add-ons page</a>
 </div>
 <script>
 $(document).ready(function() {
     var notifications = [],
         $message      = $('#notification').find('a').data('index', 0);
+    notifications.push({ title: 'Explore new add-ons page', url: '/addons/'});
     notifications.push({ title: 'v0.6.0 is released on 2015-01-06', url: '/news/v0.6.0-released/'});
     notifications.push({ title: 'Validating multiple inputs as one', url: '/examples/validating-multiple-inputs-one/'});
     notifications.push({ title: '3 ways to improve performance when using remote validator', url: '/validators/remote/#improving-the-performance'});
@@ -180,6 +186,10 @@ $(document).ready(function() {
         <div class="row">
             <div class="col-md-9">
                 <p>This example is a step by step instruction on how to use a <a href="/validators/remote">remote</a> validator to verify a <a href="https://www.google.com/recaptcha/">Google reCAPTCHA</a>.</p>
+
+                <div class="doc-alert doc-alert-warning">
+                    You don't need to follow this instruction anymore. FormValidation now provides <a href="/addons/recaptcha1/">recaptcha1</a> and <a href="/addons/recaptcha2/">recaptcha2</a> add-ons adding support for Google reCAPTCHA v1 and v2 in a quick and more easy way.
+                </div>
 
                 <div class="doc-hr"></div>
 

@@ -91,6 +91,11 @@ _gaq.push(['_trackPageview']);
         
             
         
+        <li class=""><a href="/addons/">Add-ons</a></li>
+    
+        
+            
+        
         <li class=""><a href="/examples/">Examples</a></li>
     
         
@@ -135,12 +140,13 @@ _gaq.push(['_trackPageview']);
 
     <div id="main" class="doc-content-wrapper">
         <div class="doc-notification" id="notification">
-    <i class="fa fa-bell-o"></i> <a href="/news/v0.6.0-released/">v0.6.0 is released on 2015-01-06</a>
+    <i class="fa fa-bell-o"></i> <a href="/addons/">Explore new add-ons page</a>
 </div>
 <script>
 $(document).ready(function() {
     var notifications = [],
         $message      = $('#notification').find('a').data('index', 0);
+    notifications.push({ title: 'Explore new add-ons page', url: '/addons/'});
     notifications.push({ title: 'v0.6.0 is released on 2015-01-06', url: '/news/v0.6.0-released/'});
     notifications.push({ title: 'Validating multiple inputs as one', url: '/examples/validating-multiple-inputs-one/'});
     notifications.push({ title: '3 ways to improve performance when using remote validator', url: '/validators/remote/#improving-the-performance'});
@@ -503,7 +509,7 @@ $(document).ready(function() {
     
 
     
-        <a href="/examples/" class="doc-pagination-newer">Examples &rarr;</a>
+        <a href="/addons/" class="doc-pagination-newer">Add-ons &rarr;</a>
     
 </div>
             </div>
