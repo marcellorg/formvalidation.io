@@ -12,7 +12,7 @@ $(formSelector).formValidation({
 
     // ... Form settings go here ...
     fields: {
-        specificFieldName: {
+        fieldName: {
             // ... Field settings go here ...
 
             validators: {
@@ -26,6 +26,11 @@ $(formSelector).formValidation({
     }
 });
 {% endhighlight %}
+
+    <div class="doc-alert doc-alert-info">
+        If the field name contains special characters such as ., [, ], you must wrap it between single or double quote.
+        See the <a href="/examples/validating-field-special-name/">Validating field with special name</a> example
+    </div>
 
     <p>Most of settings can be set via HTML 5 attributes prefixed with <code>data-bv</code>.</p>
     <p>For example, the following call:</p>
