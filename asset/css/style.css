@@ -153,6 +153,14 @@ h4 {
   margin-left: 10px;
   text-align: center;
 }
+.doc-nav li span {
+  background-color: #CF0000;
+  border-radius: 4px;
+  display: inline-block;
+  margin-right: 5px;
+  width: 8px;
+  height: 8px;
+}
 .doc-nav .doc-hr {
   background: #7f8c8d;
   margin: 5px auto;
