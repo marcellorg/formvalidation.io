@@ -2,11 +2,7 @@
     <ul>
         <li{% if page.url == '/' %} class="doc-nav-active"{% endif %}><a href="/">Home</a></li>
     {% for nav in site.data.nav %}
-        {% if page.url contains nav.permalink %}
-            {% assign c = "doc-nav-active" %}
-        {% else %}
-            {% assign c = "" %}
-        {% endif %}
+        {% if page.url contains nav.permalink %}{% assign c = "doc-nav-active" %}{% else %}{% assign c = "" %}{% endif %}
         <li class="{{ c }}"><a href="{{ nav.permalink }}">{{ nav.title }}</a></li>
     {% endfor %}
     </ul>
