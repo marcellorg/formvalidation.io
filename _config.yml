@@ -30,13 +30,7 @@ license:
     sellfy_id:        eQiZ
 current_version:      0.6.0
 released_date:        2015.01.06
-github_watchers:      1650
-github_forks:         1150
 github_downloads:     96,000
-twitter_followers:    215
-download:
-  dist:               https://github.com/formvalidation/formvalidation/releases/download/v0.6.0/formvalidation-trial-0.6.0.zip
-  tag:                https://github.com/formvalidation/formvalidation/archive/v0.6.0.zip
 repository:
   source:             https://github.com/formvalidation/formvalidation
   docs:               https://github.com/formvalidation/formvalidation.io/gh-pages
