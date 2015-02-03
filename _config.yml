@@ -14,6 +14,9 @@ relative_permalinks:  false
 permalink:            /news/:title/
 timezone:             Asia/Ho_Chi_Minh
 
+gems:
+  - jekyll-sitemap
+
 # Custom variables
 # not defined by Jekyll
 description:          FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks
