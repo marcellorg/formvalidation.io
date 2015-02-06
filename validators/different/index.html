@@ -202,6 +202,10 @@ $(document).ready(function() {
                         When setting options via HTML attributes, remember to enable the validator by setting data-fv-different="true".
                     </div>
 
+                    <div class="doc-alert doc-alert-info">
+                        The message and other options can be updated on the fly via the <a href="/api/#update-message">updateMessage()</a> and <a href="/api/#update-option">updateOption()</a> methods
+                    </div>
+
                     <p>From v0.6.0, you don't need to set different validator for all fields which you want them to be different to each other. For example, instead of using different validator for all fields as following</p>
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#differentForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>

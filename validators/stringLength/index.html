@@ -223,6 +223,10 @@ $(document).ready(function() {
                         You don't need to do that when using either HTML 5 maxlength="..." or minlength="..." attribute.
                     </div>
 
+                    <div class="doc-alert doc-alert-info">
+                        The message and other options can be updated on the fly via the <a href="/api/#update-message">updateMessage()</a> and <a href="/api/#update-option">updateOption()</a> methods
+                    </div>
+
                     <h3>Using with Rails form</h3>
                     <p>Rails' forms count new lines as two characters (<code>\r\n</code>). Meanwhile, the stringLength validator counts new lines as one character.
                         So the user can input more than number of allowed characters as long as they enter a new line.</p>

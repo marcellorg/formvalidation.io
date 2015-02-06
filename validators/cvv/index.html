@@ -202,7 +202,11 @@ $(document).ready(function() {
                         When setting options via HTML attributes, remember to enable the validator by setting data-fv-cvv="true".
                     </div>
 
-                    <p>If the <code>creditCardField</code> is set, the validator will check if the CVV number is suitable with the credit card number of not.</p>
+                    <div class="doc-alert doc-alert-info">
+                        The message and other options can be updated on the fly via the <a href="/api/#update-message">updateMessage()</a> and <a href="/api/#update-option">updateOption()</a> methods
+                    </div>
+
+                    <p>If the <code>creditCardField</code> option is set, the validator will check if the CVV number is suitable with the credit card number of not.</p>
                     <p>In the details, the American Express card only accepts 4 digits CVV number, while other cards only accept 3 digits CVV number.</p>
                 </section>
 
