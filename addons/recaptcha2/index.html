@@ -3,7 +3,7 @@ layout: default
 title: reCaptcha2 add-on
 permalink: /addons/recaptcha2/
 image: /addons/recaptcha2/cover.png
-download: "https://github.com/formvalidation/addon-recaptcha/releases/download/v0.1.0/recaptcha2-v0.1.0.zip"
+download: "https://github.com/formvalidation/addon-recaptcha/releases/download/v0.2.0/recaptcha2-v0.2.0.zip"
 ---
 
 <div class="doc-content-container">
@@ -33,7 +33,7 @@ download: "https://github.com/formvalidation/addon-recaptcha/releases/download/v
                 <section>
                     <h3>Including the add-on</h3>
                     <ul class="doc-list">
-                        <li>Download <a href="{{ page.download }}">reCaptcha2</a> add-on</li>
+                        <li>Download <a href="{{ page.download }}" class="addonDownloadButton" data-placement="bottom" data-container="body">reCaptcha2</a> add-on</li>
                         <li>Include <code>reCaptcha2.js</code> (located in the <code>src</code> directory) to your page. Ensure that it's placed after <code>formValidation(.min).js</code></li>
                     </ul>
 {% highlight html %}
@@ -66,6 +66,7 @@ $('#signUpForm').formValidation({
     addOns: {
         reCaptcha2: {
             element: 'captchaContainer',
+            language: 'en',
             theme: 'light',
             siteKey: '6LdgOwETAAAAALA9auuNVKFeXizXcYFrKOVC_vs-',
             timeout: 120,
@@ -88,6 +89,7 @@ $('#signUpForm').formValidation({
 <form id="signUpForm" method="post" class="form-horizontal"
     data-fv-addons="reCaptcha2"
     data-fv-addons-recaptcha2-element="captchaContainer"
+    data-fv-addons-recaptcha2-language="en"
     data-fv-addons-recaptcha2-theme="light"
     data-fv-addons-recaptcha2-sitekey="6LdgOwETAAAAALA9auuNVKFeXizXcYFrKOVC_vs-"
     data-fv-addons-recaptcha2-timeout="120"
@@ -117,6 +119,12 @@ $('#signUpForm').formValidation({
                                     <td><code>data-fv-addons-recaptcha2-element</code></td>
                                     <td><code>String</code></td>
                                     <td>The ID of element showing the captcha</td>
+                                </tr>
+                                <tr>
+                                    <td><code>language</code></td>
+                                    <td><code>data-fv-addons-recaptcha2-language</code></td>
+                                    <td><code>String</code></td>
+                                    <td>The <a href="https://developers.google.com/recaptcha/docs/language">language code</a> defined by reCAPTCHA</td>
                                 </tr>
                                 <tr>
                                     <td><code>message</code></td>
@@ -153,6 +161,8 @@ $('#signUpForm').formValidation({
                     </div>
                 </section>
 
+                <div class="doc-hr"></div>
+
                 <section>
                     <h3>Example</h3>
 
@@ -164,10 +174,10 @@ $('#signUpForm').formValidation({
 
             <div class="col-md-3">
                 <div class="doc-addon">
-                    <div class="doc-addon-image"><img class="img-responsive" src="/addons/recaptcha2/cover.png" alt="FormValidation reCaptcha v1 add-on" /></div>
+                    <div class="doc-addon-image"><img class="img-responsive" src="/addons/recaptcha2/cover.png" alt="FormValidation reCaptcha2 add-on" /></div>
 
                     <div class="doc-addon-meta">
-                        <a href="{{ page.download }}" class="btn btn-success" id="addonDownloadButton" data-placement="bottom" data-container="body"><i class="fa fa-download"></i> recaptcha2-v0.1.0.zip</a>
+                        <a href="{{ page.download }}" class="btn btn-success addonDownloadButton" data-placement="bottom" data-container="body"><i class="fa fa-download"></i> recaptcha2-v0.2.0.zip</a>
                     </div>
                 </div>
 
@@ -196,7 +206,7 @@ $(document).ready(function() {
                     }
                 }
             }
-            $('#addonDownloadButton').attr('data-title', total + (total <= 1 ? ' download' : ' downloads')).tooltip();
+            $('.addonDownloadButton').attr('data-title', total + (total <= 1 ? ' download' : ' downloads')).tooltip();
         }
     })
 });
