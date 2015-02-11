@@ -184,7 +184,7 @@ $(document).ready(function() {
                 <section>
                     <h3>Including the add-on</h3>
                     <ul class="doc-list">
-                        <li>Download <a href="https://github.com/formvalidation/addon-recaptcha/releases/download/v0.1.0/recaptcha1-v0.1.0.zip">reCaptcha1</a> add-on</li>
+                        <li>Download <a href="https://github.com/formvalidation/addon-recaptcha/releases/download/v0.1.0/recaptcha1-v0.1.0.zip" class="addonDownloadButton" data-placement="bottom" data-container="body">reCaptcha1</a> add-on</li>
                         <li>Include <code>reCaptcha1.js</code> (located in the <code>src</code> directory) to your page. Ensure that it's placed after <code>formValidation(.min).js</code></li>
                     </ul>
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- FormValidation plugin --&gt;</span>
@@ -598,7 +598,7 @@ $(document).ready(function() {
                     <div class="doc-addon-image"><img class="img-responsive" src="/addons/recaptcha1/cover.png" alt="FormValidation reCaptcha1 add-on" /></div>
 
                     <div class="doc-addon-meta">
-                        <a href="https://github.com/formvalidation/addon-recaptcha/releases/download/v0.1.0/recaptcha1-v0.1.0.zip" class="btn btn-success" id="addonDownloadButton" data-placement="bottom" data-container="body"><i class="fa fa-download"></i> recaptcha1-v0.1.0.zip</a>
+                        <a href="https://github.com/formvalidation/addon-recaptcha/releases/download/v0.1.0/recaptcha1-v0.1.0.zip" class="btn btn-success addonDownloadButton" data-placement="bottom" data-container="body"><i class="fa fa-download"></i> recaptcha1-v0.1.0.zip</a>
                     </div>
                 </div>
 
@@ -627,7 +627,7 @@ $(document).ready(function() {
                     }
                 }
             }
-            $('#addonDownloadButton').attr('data-title', total + (total <= 1 ? ' download' : ' downloads')).tooltip();
+            $('.addonDownloadButton').attr('data-title', total + (total <= 1 ? ' download' : ' downloads')).tooltip();
         }
     })
 });
