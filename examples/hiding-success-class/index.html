@@ -14,13 +14,22 @@ permalink: /examples/hiding-success-class/
     <div class="container">
         <div class="row">
             <div class="col-md-9">
-                <p>Based on the field status, the field and its container are marked as success or error element. For Bootstrap form, the plugin will add <code>has-success</code> or <code>has-error</code> class to the container element.</p>
-                <p>If you think that it's better to indicate error status only due to the similarity of these status colors, you can remove <code>has-success</code> class from the container.</p>
-                <p>It can be done by triggering the <a href="/settings#event-field">success.field.fv</a> event as below:</p>
+                <section>
+                    <h2>Hiding success class and tick icon</h2>
 
-                {% include demo/tabs.html id="demo" frameworks="bootstrap" codes="programmatic" %}
+                    <p>Based on the field status, the field and its container are marked as success or error element. For Bootstrap form, the plugin will add <code>has-success</code> or <code>has-error</code> class to the container element.</p>
+                    <p>If you think that it's better to indicate error status only due to the similarity of these status colors, you can remove <code>has-success</code> class from the container.</p>
+                    <p>It can be done by triggering the <a href="/settings#event-field">success.field.fv</a> event as below:</p>
 
-                <p>Based on this approach, it's possible to hide success icon and remove the success CSS class from the container if the field is empty. You just simply change the <code>success.field.fv</code> event handler a little bit:</p>
+                    {% include demo/tabs.html id="demo" frameworks="bootstrap" codes="programmatic" %}
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Hiding success class and tick icon when field is empty</h2>
+
+                    <p>Based on this approach, it's possible to hide success icon and remove the success CSS class from the container if the field is empty. You just simply change the <code>success.field.fv</code> event handler a little bit:</p>
 
 {% highlight javascript %}
 $(document).ready(function() {
@@ -49,9 +58,12 @@ $(document).ready(function() {
         });
 });
 {% endhighlight %}
+                </section>
             </div>
 
             <div class="col-md-3 hidden-print hidden-xs hidden-sm">
+                <div id="toc" class="doc-toc"></div>
+
                 {% include ad.html %}
             </div>
         </div>
