@@ -1,8 +1,8 @@
 <form id="basicUikitForm" class="uk-form uk-form-horizontal"
     data-fv-framework="uikit"
-    data-fv-icon-valid="fa fa-check"
-    data-fv-icon-invalid="fa fa-times"
-    data-fv-icon-validating="fa fa-refresh">
+    data-fv-icon-valid="uk-icon-check"
+    data-fv-icon-invalid="uk-icon-times"
+    data-fv-icon-validating="uk-icon-refresh">
 
     <div class="uk-form-row">
         <label class="uk-form-label">Full name</label>
