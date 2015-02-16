@@ -1,16 +1,25 @@
 - title: "Explore new add-ons page"
   url: "/addons/"
 
-- title: "Updating validator options"
+- title: "New example: Playing with jQuery UI Datepicker"
+  url: "/examples/jquery-ui-datepicker/"
+
+- title: "New example: Playing with Typhead"
+  url: "/examples/typeahead/"
+
+- title: "New example: Validating array of inputs"
+  url: "/examples/validating-array-inputs/"
+
+- title: "New example: Updating validator options"
   url: "/examples/updating-validator-options/"
 
-- title: "Validating field with special name"
+- title: "New example: Validating field with special name"
   url: "/examples/validating-field-special-name/"
 
 - title: "v0.6.0 is released on 2015-01-06"
   url: "/news/v0.6.0-released/"
 
-- title: "Validating multiple inputs as one"
+- title: "New example: Validating multiple inputs as one"
   url: "/examples/validating-multiple-inputs-one/"
 
 - title: "3 ways to improve performance when using remote validator"
