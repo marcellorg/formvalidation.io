@@ -1,0 +1,518 @@
+<!doctype html>
+<html>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article#">
+    <meta charset="utf-8">
+<title>Playing with Typhead - FormValidation</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<meta http-equiv="Content-Language" content="en">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks">
+<meta name="keywords" content="FormValidation, BootstrapValidator, jQuery, form, validate, validation, validator, plugin, Bootstrap, Foundation, Pure, SemanticUI, UIKit">
+<meta name="author" content="Nguyen Huu Phuoc">
+<meta name="google-site-verification" content="FMmr8kYuIuW27-qJLOb1Z59OgiVgKNgAv4_eMARhIY8" />
+
+<meta name="twitter:site" content="@formvalidation" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks" />
+<meta name="twitter:title" content="Playing with Typhead - FormValidation" />
+<meta name="twitter:image" content="http://formvalidation.io/examples/typeahead/cover.png" />
+
+<meta property="og:title" content="Playing with Typhead - FormValidation" />
+<meta property="og:description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://formvalidation.io/examples/typeahead/" />
+<meta property="og:image" content="http://formvalidation.io/examples/typeahead/cover.png" />
+<meta property="og:site_name" content="FormValidation" />
+
+<link rel="icon" type="image/x-icon" href="/asset/img/favicon.ico">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/3.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/fontawesome/4.2.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/vendor/formvalidation/css/formValidation.min.css">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:300,400,700">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Cardo:400,400italic,700">
+<link rel="stylesheet" href="/vendor/pygments/github.css">
+<link rel="stylesheet" href="/asset/css/style.css">
+
+<!--[if lt IE 9]>
+<script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src="/vendor/formvalidation/js/formValidation.min.js"></script>
+<script src="/vendor/formvalidation/js/framework/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-44786951-2']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+</head>
+<body>
+    <nav class="doc-nav" tabindex="-1">
+    <ul>
+        <li><a href="/">Home</a></li>
+    
+        
+        <li class=""><a href="/download/">Download</a></li>
+    
+        
+        <li class=""><a href="/getting-started/">Getting Started</a></li>
+    
+        
+        <li class=""><a href="/settings/">Settings</a></li>
+    
+        
+        <li class=""><a href="/api/">API</a></li>
+    
+        
+        <li class=""><a href="/validators/">Validators</a></li>
+    
+        
+        <li class=""><a href="/addons/"><span></span> Add-ons</a></li>
+    
+        
+        <li class="doc-nav-active"><a href="/examples/"><span></span> Examples</a></li>
+    
+        
+        <li class=""><a href="/developing/">Developing</a></li>
+    
+        
+        <li class=""><a href="/news/">News</a></li>
+    
+        
+        <li class=""><a href="/license/">License</a></li>
+    
+    </ul>
+
+    <div class="doc-hr"></div>
+
+    <ul>
+        <li><a href="https://github.com/formvalidation/" title="Fork FormValidation on Github">Github <i class="fa fa-github"></i></a></li>
+        <li><a href="https://twitter.com/formvalidation/" title="Follow FormValidation on Twitter">Twitter <i class="fa fa-twitter"></i></a></li>
+        <li><a href="https://www.facebook.com/formvalidation/" title="Like FormValidation on Facebook">Facebook <i class="fa fa-facebook"></i></a></li>
+        <li><a href="https://plus.google.com/u/0/communities/114931136856987817254" title="Join FormValidation community on Google+">Google+ <i class="fa fa-google-plus"></i></a></li>
+    </ul>
+
+    <div class="doc-hr"></div>
+
+    <div class="doc-creator">
+        <p>
+            Handcrafted with <span class="doc-heart"><i class="fa fa-heart"></i></span> and a lot of <i class="fa fa-coffee"></i><br />
+            by <a href="http://twitter.com/nghuuphuoc">@nghuuphuoc</a><br/>
+            <img src="/asset/img/logo.png" width="60px" height="60px" />
+        </p>
+        <p><a href="mailto: phuoc@huuphuoc.me" class="btn">Hire me</a></p>
+    </div>
+</nav>
+
+<a id="toggleButton" class="doc-nav-toggle" title="Toggle the navigation"><i class="fa fa-navicon"></i></a>
+
+    <div id="main" class="doc-content-wrapper">
+        <div class="doc-notification" id="notification">
+    <i class="fa fa-bell-o"></i> <a href="/addons/">Explore new add-ons page</a>
+</div>
+<script>
+$(document).ready(function() {
+    var notifications = [],
+        $message      = $('#notification').find('a').data('index', 0);
+    notifications.push({ title: 'Explore new add-ons page', url: '/addons/'});
+    notifications.push({ title: 'Updating validator options', url: '/examples/updating-validator-options/'});
+    notifications.push({ title: 'Validating field with special name', url: '/examples/validating-field-special-name/'});
+    notifications.push({ title: 'v0.6.0 is released on 2015-01-06', url: '/news/v0.6.0-released/'});
+    notifications.push({ title: 'Validating multiple inputs as one', url: '/examples/validating-multiple-inputs-one/'});
+    notifications.push({ title: '3 ways to improve performance when using remote validator', url: '/validators/remote/#improving-the-performance'});
+    notifications.push({ title: 'New example: Modifying the value before validating', url: '/examples/modifying-value-before-validating/'});
+    notifications.push({ title: 'New example: Playing with Bootstrap Wizard', url: '/examples/bootstrap-wizard/'});
+    notifications.push({ title: 'New example: Playing with Bootstrap Material Design', url: '/examples/bootstrap-material-design/'});
+    notifications.push({ title: 'New example: Playing with jQuery Steps', url: '/examples/jquery-steps/'});
+    notifications.push({ title: 'New example: Playing with Fuel UX Wizard', url: '/examples/fuel-ux-wizard/'});
+    notifications.push({ title: 'New example: Adding warning validation state', url: '/examples/adding-warning-validation-state/'});
+    notifications.push({ title: 'New example: Using tooltip to show message', url: '/examples/using-tooltip-to-show-message/'});
+    
+    setInterval(function() {
+        $message.data('index', $message.data('index') + 1);
+        if ($message.data('index') >= notifications.length) {
+            $message.data('index', 0);
+        }
+        $message
+            .fadeOut('slow')
+            .promise()
+            .then(function() {
+                $message.attr('href', notifications[$message.data('index')].url)
+                        .html(notifications[$message.data('index')].title)
+                        .fadeIn('slow');
+            });
+    }, 5000);
+});
+</script>
+
+        <div class="doc-content-container">
+    <div class="doc-heading">
+        <h1>Playing with Typehead</h1>
+        <p>&larr; <a href="/examples/">Examples</a></p>
+        <div id="shareButton" class="doc-share-button"></div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <p>This example shows how to integrate FormValidation with the <a href="https://twitter.github.io/typeahead.js/">Typehead</a> plugin.</p>
+                <p>It also uses <a href="https://github.com/bassjobsen/typeahead.js-bootstrap-css">typeahead.js-bootstrap-css</a> for integrating Typehead with <a href="http://getbootstrap.com/">Bootstrap</a>.</p>
+
+                <div class="doc-alert doc-alert-info">
+                    You should look at the <a href="/examples#compatibility">basic principles</a> when integrating FormValidation with other plugins
+                </div>
+
+                <div class="doc-demo">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#typehead-form-tab" data-toggle="tab">Try it</a></li>
+                        <li><a href="#typehead-programmatic-tab" data-toggle="tab">Programmatic code</a></li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="typehead-form-tab">
+                            <script src="//cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.10.5/typeahead.jquery.js"></script>
+
+<style type="text/css">
+/* https://github.com/bassjobsen/typeahead.js-bootstrap-css */
+span.twitter-typeahead .tt-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    list-style: none;
+    font-size: 14px;
+    text-align: left;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+    background-clip: padding-box;
+}
+span.twitter-typeahead .tt-suggestion > p {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: normal;
+    line-height: 1.42857143;
+    color: #333333;
+    white-space: nowrap;
+}
+span.twitter-typeahead .tt-suggestion > p:hover,
+span.twitter-typeahead .tt-suggestion > p:focus {
+    color: #ffffff;
+    text-decoration: none;
+    outline: 0;
+    background-color: #428bca;
+}
+span.twitter-typeahead .tt-suggestion.tt-cursor {
+    color: #ffffff;
+    background-color: #428bca;
+}
+span.twitter-typeahead {
+    width: 100%;
+}
+.input-group span.twitter-typeahead {
+    display: block !important;
+}
+.input-group span.twitter-typeahead .tt-dropdown-menu {
+    top: 32px !important;
+}
+.input-group.input-group-lg span.twitter-typeahead .tt-dropdown-menu {
+    top: 44px !important;
+}
+.input-group.input-group-sm span.twitter-typeahead .tt-dropdown-menu {
+    top: 28px !important;
+}
+</style>
+
+<form id="typeheadForm" method="post" class="form-horizontal">
+    <div class="form-group">
+        <label class="col-xs-3 control-label">US state</label>
+        <div class="col-xs-5">
+            <input type="text" class="form-control" name="state" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-xs-5 col-xs-offset-3">
+            <button type="submit" class="btn btn-default">Submit</button>
+        </div>
+    </div>
+</form>
+                        </div>
+
+                        <div class="tab-pane" id="typehead-programmatic-tab">
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;//cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.10.5/typeahead.jquery.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+
+<span class="nt">&lt;style </span><span class="na">type=</span><span class="s">&quot;text/css&quot;</span><span class="nt">&gt;</span>
+<span class="c">/* https://github.com/bassjobsen/typeahead.js-bootstrap-css */</span>
+<span class="nt">span</span><span class="nc">.twitter-typeahead</span> <span class="nc">.tt-dropdown-menu</span> <span class="p">{</span>
+    <span class="k">position</span><span class="o">:</span> <span class="k">absolute</span><span class="p">;</span>
+    <span class="k">top</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
+    <span class="k">left</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="k">z-index</span><span class="o">:</span> <span class="m">1000</span><span class="p">;</span>
+    <span class="k">display</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+    <span class="k">float</span><span class="o">:</span> <span class="k">left</span><span class="p">;</span>
+    <span class="k">min-width</span><span class="o">:</span> <span class="m">160px</span><span class="p">;</span>
+    <span class="k">padding</span><span class="o">:</span> <span class="m">5px</span> <span class="m">0</span><span class="p">;</span>
+    <span class="k">margin</span><span class="o">:</span> <span class="m">2px</span> <span class="m">0</span> <span class="m">0</span><span class="p">;</span>
+    <span class="k">list-style</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+    <span class="k">font-size</span><span class="o">:</span> <span class="m">14px</span><span class="p">;</span>
+    <span class="k">text-align</span><span class="o">:</span> <span class="k">left</span><span class="p">;</span>
+    <span class="k">background-color</span><span class="o">:</span> <span class="m">#ffffff</span><span class="p">;</span>
+    <span class="k">border</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="m">#cccccc</span><span class="p">;</span>
+    <span class="k">border</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">.</span><span class="m">15</span><span class="p">);</span>
+    <span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">4px</span><span class="p">;</span>
+    <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">box</span><span class="o">-</span><span class="n">shadow</span><span class="o">:</span> <span class="m">0</span> <span class="m">6px</span> <span class="m">12px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">.</span><span class="m">175</span><span class="p">);</span>
+    <span class="n">box</span><span class="o">-</span><span class="n">shadow</span><span class="o">:</span> <span class="m">0</span> <span class="m">6px</span> <span class="m">12px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">.</span><span class="m">175</span><span class="p">);</span>
+    <span class="k">background</span><span class="o">-</span><span class="k">clip</span><span class="o">:</span> <span class="k">padding</span><span class="o">-</span><span class="n">box</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">span</span><span class="nc">.twitter-typeahead</span> <span class="nc">.tt-suggestion</span> <span class="o">&gt;</span> <span class="nt">p</span> <span class="p">{</span>
+    <span class="k">display</span><span class="o">:</span> <span class="k">block</span><span class="p">;</span>
+    <span class="k">padding</span><span class="o">:</span> <span class="m">3px</span> <span class="m">20px</span><span class="p">;</span>
+    <span class="k">clear</span><span class="o">:</span> <span class="k">both</span><span class="p">;</span>
+    <span class="k">font-weight</span><span class="o">:</span> <span class="k">normal</span><span class="p">;</span>
+    <span class="k">line-height</span><span class="o">:</span> <span class="m">1</span><span class="o">.</span><span class="m">42857143</span><span class="p">;</span>
+    <span class="k">color</span><span class="o">:</span> <span class="m">#333333</span><span class="p">;</span>
+    <span class="k">white-space</span><span class="o">:</span> <span class="k">nowrap</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">span</span><span class="nc">.twitter-typeahead</span> <span class="nc">.tt-suggestion</span> <span class="o">&gt;</span> <span class="nt">p</span><span class="nd">:hover</span><span class="o">,</span>
+<span class="nt">span</span><span class="nc">.twitter-typeahead</span> <span class="nc">.tt-suggestion</span> <span class="o">&gt;</span> <span class="nt">p</span><span class="nd">:focus</span> <span class="p">{</span>
+    <span class="k">color</span><span class="o">:</span> <span class="m">#ffffff</span><span class="p">;</span>
+    <span class="k">text-decoration</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+    <span class="k">outline</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="k">background-color</span><span class="o">:</span> <span class="m">#428bca</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">span</span><span class="nc">.twitter-typeahead</span> <span class="nc">.tt-suggestion.tt-cursor</span> <span class="p">{</span>
+    <span class="k">color</span><span class="o">:</span> <span class="m">#ffffff</span><span class="p">;</span>
+    <span class="k">background-color</span><span class="o">:</span> <span class="m">#428bca</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">span</span><span class="nc">.twitter-typeahead</span> <span class="p">{</span>
+    <span class="k">width</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.input-group</span> <span class="nt">span</span><span class="nc">.twitter-typeahead</span> <span class="p">{</span>
+    <span class="k">display</span><span class="o">:</span> <span class="k">block</span> <span class="cp">!important</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.input-group</span> <span class="nt">span</span><span class="nc">.twitter-typeahead</span> <span class="nc">.tt-dropdown-menu</span> <span class="p">{</span>
+    <span class="k">top</span><span class="o">:</span> <span class="m">32px</span> <span class="cp">!important</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.input-group.input-group-lg</span> <span class="nt">span</span><span class="nc">.twitter-typeahead</span> <span class="nc">.tt-dropdown-menu</span> <span class="p">{</span>
+    <span class="k">top</span><span class="o">:</span> <span class="m">44px</span> <span class="cp">!important</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.input-group.input-group-sm</span> <span class="nt">span</span><span class="nc">.twitter-typeahead</span> <span class="nc">.tt-dropdown-menu</span> <span class="p">{</span>
+    <span class="k">top</span><span class="o">:</span> <span class="m">28px</span> <span class="cp">!important</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+
+<span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;typeheadForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>US state<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-5&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;state&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-5 col-xs-offset-3&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/button&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">states</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Alabama&#39;</span><span class="p">,</span> <span class="s1">&#39;Alaska&#39;</span><span class="p">,</span> <span class="s1">&#39;Arizona&#39;</span><span class="p">,</span> <span class="s1">&#39;Arkansas&#39;</span><span class="p">,</span> <span class="s1">&#39;California&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Colorado&#39;</span><span class="p">,</span> <span class="s1">&#39;Connecticut&#39;</span><span class="p">,</span> <span class="s1">&#39;Delaware&#39;</span><span class="p">,</span> <span class="s1">&#39;Florida&#39;</span><span class="p">,</span> <span class="s1">&#39;Georgia&#39;</span><span class="p">,</span> <span class="s1">&#39;Hawaii&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Idaho&#39;</span><span class="p">,</span> <span class="s1">&#39;Illinois&#39;</span><span class="p">,</span> <span class="s1">&#39;Indiana&#39;</span><span class="p">,</span> <span class="s1">&#39;Iowa&#39;</span><span class="p">,</span> <span class="s1">&#39;Kansas&#39;</span><span class="p">,</span> <span class="s1">&#39;Kentucky&#39;</span><span class="p">,</span> <span class="s1">&#39;Louisiana&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Maine&#39;</span><span class="p">,</span> <span class="s1">&#39;Maryland&#39;</span><span class="p">,</span> <span class="s1">&#39;Massachusetts&#39;</span><span class="p">,</span> <span class="s1">&#39;Michigan&#39;</span><span class="p">,</span> <span class="s1">&#39;Minnesota&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Mississippi&#39;</span><span class="p">,</span> <span class="s1">&#39;Missouri&#39;</span><span class="p">,</span> <span class="s1">&#39;Montana&#39;</span><span class="p">,</span> <span class="s1">&#39;Nebraska&#39;</span><span class="p">,</span> <span class="s1">&#39;Nevada&#39;</span><span class="p">,</span> <span class="s1">&#39;New Hampshire&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;New Jersey&#39;</span><span class="p">,</span> <span class="s1">&#39;New Mexico&#39;</span><span class="p">,</span> <span class="s1">&#39;New York&#39;</span><span class="p">,</span> <span class="s1">&#39;North Carolina&#39;</span><span class="p">,</span> <span class="s1">&#39;North Dakota&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Ohio&#39;</span><span class="p">,</span> <span class="s1">&#39;Oklahoma&#39;</span><span class="p">,</span> <span class="s1">&#39;Oregon&#39;</span><span class="p">,</span> <span class="s1">&#39;Pennsylvania&#39;</span><span class="p">,</span> <span class="s1">&#39;Rhode Island&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;South Carolina&#39;</span><span class="p">,</span> <span class="s1">&#39;South Dakota&#39;</span><span class="p">,</span> <span class="s1">&#39;Tennessee&#39;</span><span class="p">,</span> <span class="s1">&#39;Texas&#39;</span><span class="p">,</span> <span class="s1">&#39;Utah&#39;</span><span class="p">,</span> <span class="s1">&#39;Vermont&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Virginia&#39;</span><span class="p">,</span> <span class="s1">&#39;Washington&#39;</span><span class="p">,</span> <span class="s1">&#39;West Virginia&#39;</span><span class="p">,</span> <span class="s1">&#39;Wisconsin&#39;</span><span class="p">,</span> <span class="s1">&#39;Wyoming&#39;</span>
+    <span class="p">];</span>
+    <span class="kd">var</span> <span class="nx">substringMatcher</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">strs</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kd">function</span> <span class="nx">findMatches</span><span class="p">(</span><span class="nx">q</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">matches</span><span class="p">,</span> <span class="nx">substrRegex</span><span class="p">;</span>
+            <span class="c1">// an array that will be populated with substring matches</span>
+            <span class="nx">matches</span> <span class="o">=</span> <span class="p">[];</span>
+            <span class="c1">// regex used to determine if a string contains the substring `q`</span>
+            <span class="nx">substrRegex</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="nx">q</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">);</span>
+            <span class="c1">// iterate through the pool of strings and for any string that</span>
+            <span class="c1">// contains the substring `q`, add it to the `matches` array</span>
+            <span class="nx">$</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">strs</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nx">substrRegex</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">str</span><span class="p">))</span> <span class="p">{</span>
+                    <span class="c1">// the typeahead jQuery plugin expects suggestions to a</span>
+                    <span class="c1">// JavaScript object, refer to typeahead docs for more info</span>
+                    <span class="nx">matches</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span> <span class="nx">value</span><span class="o">:</span> <span class="nx">str</span> <span class="p">});</span>
+                <span class="p">}</span>
+            <span class="p">});</span>
+            <span class="nx">cb</span><span class="p">(</span><span class="nx">matches</span><span class="p">);</span>
+        <span class="p">};</span>
+    <span class="p">};</span>
+
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#typeheadForm&#39;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;input[name=&quot;state&quot;]&#39;</span><span class="p">)</span>
+            <span class="p">.</span><span class="nx">typeahead</span><span class="p">({</span>
+                <span class="nx">hint</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="nx">highlight</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="nx">minLength</span><span class="o">:</span> <span class="mi">1</span>
+            <span class="p">},</span> <span class="p">{</span>
+                <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;states&#39;</span><span class="p">,</span>
+                <span class="nx">displayKey</span><span class="o">:</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span>
+                <span class="nx">source</span><span class="o">:</span> <span class="nx">substringMatcher</span><span class="p">(</span><span class="nx">states</span><span class="p">)</span>
+            <span class="p">})</span>
+            <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;typeahead:selected&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">suggestion</span><span class="p">,</span> <span class="nx">dataSetName</span><span class="p">)</span> <span class="p">{</span>
+                <span class="c1">// Revalidate the state field</span>
+                <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#typeheadForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;revalidateField&#39;</span><span class="p">,</span> <span class="s1">&#39;state&#39;</span><span class="p">);</span>
+            <span class="p">})</span>
+            <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;typeahead:closed&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+                <span class="c1">// Revalidate the state field</span>
+                <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#typeheadForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;revalidateField&#39;</span><span class="p">,</span> <span class="s1">&#39;state&#39;</span><span class="p">);</span>
+            <span class="p">});</span>
+
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#typeheadForm&#39;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">formValidation</span><span class="p">({</span>
+            <span class="nx">framework</span><span class="o">:</span> <span class="s1">&#39;bootstrap&#39;</span><span class="p">,</span>
+            <span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">valid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-ok&#39;</span><span class="p">,</span>
+                <span class="nx">invalid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-remove&#39;</span><span class="p">,</span>
+                <span class="nx">validating</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-refresh&#39;</span>
+            <span class="p">},</span>
+            <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">state</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">notEmpty</span><span class="o">:</span> <span class="p">{</span>
+                            <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The state is required&#39;</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">});</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span></code></pre></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 hidden-print hidden-xs hidden-sm">
+                <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=bootstrapvalidatorcom" id="_carbonads_js"></script>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+$(document).ready(function() {
+    var states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
+        'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii',
+        'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana',
+        'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota',
+        'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
+        'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota',
+        'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island',
+        'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont',
+        'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
+    ];
+    var substringMatcher = function(strs) {
+        return function findMatches(q, cb) {
+            var matches, substrRegex;
+            // an array that will be populated with substring matches
+            matches = [];
+            // regex used to determine if a string contains the substring `q`
+            substrRegex = new RegExp(q, 'i');
+            // iterate through the pool of strings and for any string that
+            // contains the substring `q`, add it to the `matches` array
+            $.each(strs, function(i, str) {
+                if (substrRegex.test(str)) {
+                    // the typeahead jQuery plugin expects suggestions to a
+                    // JavaScript object, refer to typeahead docs for more info
+                    matches.push({ value: str });
+                }
+            });
+            cb(matches);
+        };
+    };
+
+    $('#typeheadForm')
+        .find('input[name="state"]')
+            .typeahead({
+                hint: true,
+                highlight: true,
+                minLength: 1
+            }, {
+                name: 'states',
+                displayKey: 'value',
+                source: substringMatcher(states)
+            })
+            .on('typeahead:selected', function(e, suggestion, dataSetName) {
+                // Revalidate the state field
+                $('#typeheadForm').formValidation('revalidateField', 'state');
+            })
+            .on('typeahead:closed', function(e) {
+                // Revalidate the state field
+                $('#typeheadForm').formValidation('revalidateField', 'state');
+            });
+
+    $('#typeheadForm')
+        .formValidation({
+            framework: 'bootstrap',
+            icon: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                state: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The state is required'
+                        }
+                    }
+                }
+            }
+        });
+});
+</script>
+
+        <footer class="doc-footer">
+    <div class="container">
+        <p>
+            
+            <a class="btn" href="/download/">Download</a>
+            
+            <a class="btn" href="https://github.com/formvalidation/support">Report bug</a>
+        </p>
+        <p>
+            &copy; 2013 - 2015 <a href="http://twitter.com/nghuuphuoc">Nguyen Huu Phuoc</a>. All rights reserved.<br/>
+            Handcrafted with <span class="doc-heart"><i class="fa fa-heart"></i></span> and a lot of <i class="fa fa-coffee"></i>
+        </p>
+    </div>
+</footer>
+    </div>
+
+<script src="/vendor/tocjs/js/toc.min.js"></script>
+<script src="/vendor/share/share.min.js"></script>
+<script src="/asset/js/app.js"></script>
+</body>
+</html>
