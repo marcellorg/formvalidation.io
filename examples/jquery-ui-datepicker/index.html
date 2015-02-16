@@ -2,7 +2,7 @@
 <html>
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article#">
     <meta charset="utf-8">
-<title>Requiring at least one field - FormValidation</title>
+<title>Playing with jQuery UI Datepicker - FormValidation</title>
 <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
 <meta http-equiv="Content-Language" content="en">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -15,14 +15,14 @@
 <meta name="twitter:site" content="@formvalidation" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks" />
-<meta name="twitter:title" content="Requiring at least one field - FormValidation" />
-<meta name="twitter:image" content="http://formvalidation.io/asset/img/logo.png" />
+<meta name="twitter:title" content="Playing with jQuery UI Datepicker - FormValidation" />
+<meta name="twitter:image" content="http://formvalidation.io/examples/jquery-ui-datepicker/cover.png" />
 
-<meta property="og:title" content="Requiring at least one field - FormValidation" />
+<meta property="og:title" content="Playing with jQuery UI Datepicker - FormValidation" />
 <meta property="og:description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://formvalidation.io/examples/requiring-at-least-one-field/" />
-<meta property="og:image" content="http://formvalidation.io/asset/img/logo.png" />
+<meta property="og:url" content="http://formvalidation.io/examples/jquery-ui-datepicker/" />
+<meta property="og:image" content="http://formvalidation.io/examples/jquery-ui-datepicker/cover.png" />
 <meta property="og:site_name" content="FormValidation" />
 
 <link rel="icon" type="image/x-icon" href="/asset/img/favicon.ico">
@@ -162,7 +162,7 @@ $(document).ready(function() {
 
         <div class="doc-content-container">
     <div class="doc-heading">
-        <h1>Requiring at least one field</h1>
+        <h1>Playing with jQuery UI Datepicker</h1>
         <p>&larr; <a href="/examples/">Examples</a></p>
         <div id="shareButton" class="doc-share-button"></div>
     </div>
@@ -170,65 +170,47 @@ $(document).ready(function() {
     <div class="container">
         <div class="row">
             <div class="col-md-9">
-                <p>In fact, the form might have multiple fields with the same validator rules but at least one of them is required.
-                    We can't use neither the <a href="/validators/notEmpty/">notEmpty</a> validator nor HTML 5 <a href="/examples/html5/">required</a>
-                    attribute for all of them.</p>
+                <p>In this example, you will see how to validate the field using the <a href="http://jqueryui.com/datepicker/">jQuery UI Datepicker</a> plugin.</p>
+                <div class="doc-alert doc-alert-info">
+                    You should look at the <a href="/examples#compatibility">basic principles</a> when integrating FormValidation with other plugins
+                </div>
 
-                <p>Fortunately, this can be done easily by</p>
-                <ul class="doc-list">
-                    <li>Using the <a href="/settings#field-selector">selector</a> option to define validators for all fields. So, we don't need
-                    to indicate the validator rules for each separate field.</li>
-                    <li>Using the <a href="/validators/callback/">callback</a> validator to check if one of fields is not empty.
-                    And then update the result of callback validator via the <a href="/api#update-status">updateStatus()</a> method.</li>
-                </ul>
+                <div class="doc-demo">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#datepicker-form-tab" data-toggle="tab">Try it</a></li>
+                        <li><a href="#datepicker-programmatic-tab" data-toggle="tab">Programmatic code</a></li>
+                    </ul>
 
-                
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="datepicker-form-tab">
+                            <link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
 
-
-
-
-
-
-
-
-
-<div class="doc-demo">
-    <ul class="nav nav-tabs">
-        <li role="presentation" class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"><span class="doc-framework">Framework</span> <i class="caret"></i></a>
-            <ul class="dropdown-menu" role="menu">
-                
-                <li><a href="/examples/requiring-at-least-one-field/bootstrap.html" data-demo-target="#demo-frame" data-demo-framework="bootstrap">Bootstrap</a></li>
-                
-            </ul>
-        </li>
-        <li class="active"><a href="#demo-form-tab" data-toggle="tab">Try it</a></li>
-        
-        <li><a href="#demo-programmatic-tab" data-toggle="tab">Programmatic code</a></li>
-        
-        <li class="doc-demo-direct"><a href="/examples/requiring-at-least-one-field/bootstrap.html" data-toggle="tooltip" data-container="body" title="Open the demo in new tab" target="_blank"><i class="fa fa-external-link"></i></a></li>
-    </ul>
-
-    <div class="tab-content">
-        <div class="tab-pane active" id="demo-form-tab">
-            <iframe class="doc-demo-frame" id="demo-frame"></iframe>
+<form id="profileForm" method="post" class="form-horizontal">
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Date of birth</label>
+        <div class="col-xs-5">
+            <input type="text" class="form-control" name="dob" />
         </div>
+    </div>
 
-        
-        <div class="tab-pane" id="demo-programmatic-tab">
-            
-            <div data-demo-code="bootstrap">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;profileForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+    <div class="form-group">
+        <div class="col-xs-9 col-xs-offset-3">
+            <button type="submit" class="btn btn-default">Validate</button>
+        </div>
+    </div>
+</form>
+                        </div>
+
+                        <div class="tab-pane" id="datepicker-programmatic-tab">
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;//code.jquery.com/ui/1.11.3/jquery-ui.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+
+<span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;profileForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Email address<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Date of birth<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-5&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control emailAddress&quot;</span> <span class="na">name=</span><span class="s">&quot;primary_email&quot;</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-5 col-xs-offset-3&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control emailAddress&quot;</span> <span class="na">name=</span><span class="s">&quot;secondary_email&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;dob&quot;</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
 
@@ -241,55 +223,40 @@ $(document).ready(function() {
 
 <span class="nt">&lt;script&gt;</span>
 <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#profileForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
-        <span class="nx">framework</span><span class="o">:</span> <span class="s1">&#39;bootstrap&#39;</span><span class="p">,</span>
-        <span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
-            <span class="nx">valid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-ok&#39;</span><span class="p">,</span>
-            <span class="nx">invalid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-remove&#39;</span><span class="p">,</span>
-            <span class="nx">validating</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-refresh&#39;</span>
-        <span class="p">},</span>
-        <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
-            <span class="nx">email</span><span class="o">:</span> <span class="p">{</span>
-                <span class="c1">// All the email address field have emailAddress class</span>
-                <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;.emailAddress&#39;</span><span class="p">,</span>
-                <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
-                    <span class="nx">callback</span><span class="o">:</span> <span class="p">{</span>
-                        <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;You must enter at least one email address&#39;</span><span class="p">,</span>
-                        <span class="nx">callback</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">)</span> <span class="p">{</span>
-                            <span class="kd">var</span> <span class="nx">isEmpty</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
-                                <span class="c1">// Get the list of fields</span>
-                                <span class="nx">$fields</span> <span class="o">=</span> <span class="nx">validator</span><span class="p">.</span><span class="nx">getFieldElements</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">);</span>
-                            <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">$fields</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-                                <span class="k">if</span> <span class="p">(</span><span class="nx">$fields</span><span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="nx">i</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span> <span class="o">!==</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="p">{</span>
-                                    <span class="nx">isEmpty</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-                                    <span class="k">break</span><span class="p">;</span>
-                                <span class="p">}</span>
-                            <span class="p">}</span>
-
-                            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">isEmpty</span><span class="p">)</span> <span class="p">{</span>
-                                <span class="c1">// Update the status of callback validator for all fields</span>
-                                <span class="nx">validator</span><span class="p">.</span><span class="nx">updateStatus</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="nx">validator</span><span class="p">.</span><span class="nx">STATUS_VALID</span><span class="p">,</span> <span class="s1">&#39;callback&#39;</span><span class="p">);</span>
-                                <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
-                            <span class="p">}</span>
-
-                            <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#profileForm&#39;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">formValidation</span><span class="p">({</span>
+            <span class="nx">framework</span><span class="o">:</span> <span class="s1">&#39;bootstrap&#39;</span><span class="p">,</span>
+            <span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">valid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-ok&#39;</span><span class="p">,</span>
+                <span class="nx">invalid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-remove&#39;</span><span class="p">,</span>
+                <span class="nx">validating</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-refresh&#39;</span>
+            <span class="p">},</span>
+            <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">dob</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">notEmpty</span><span class="o">:</span> <span class="p">{</span>
+                            <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The date of birth is required&#39;</span>
+                        <span class="p">},</span>
+                        <span class="nx">date</span><span class="o">:</span> <span class="p">{</span>
+                            <span class="nx">format</span><span class="o">:</span> <span class="s1">&#39;MM/DD/YYYY&#39;</span><span class="p">,</span>
+                            <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The date of birth is not valid&#39;</span>
                         <span class="p">}</span>
-                    <span class="p">},</span>
-                    <span class="nx">emailAddress</span><span class="o">:</span> <span class="p">{</span>
-                        <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The value is not a valid email address&#39;</span>
                     <span class="p">}</span>
                 <span class="p">}</span>
             <span class="p">}</span>
-        <span class="p">}</span>
-    <span class="p">});</span>
+        <span class="p">})</span>
+        <span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;[name=&quot;dob&quot;]&#39;</span><span class="p">)</span>
+            <span class="p">.</span><span class="nx">datepicker</span><span class="p">({</span>
+                <span class="nx">onSelect</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">date</span><span class="p">,</span> <span class="nx">inst</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="c1">// Revalidate the field when choosing it from the datepicker</span>
+                    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#profileForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;revalidateField&#39;</span><span class="p">,</span> <span class="s1">&#39;dob&#39;</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">});</span>
 <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span></code></pre></div>
-            </div>
-            
-        </div>
-        
-    </div>
-</div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="col-md-3 hidden-print hidden-xs hidden-sm">
@@ -298,6 +265,40 @@ $(document).ready(function() {
         </div>
     </div>
 </div>
+
+<script>
+$(document).ready(function() {
+    $('#profileForm')
+        .formValidation({
+            framework: 'bootstrap',
+            icon: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                dob: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The date of birth is required'
+                        },
+                        date: {
+                            format: 'MM/DD/YYYY',
+                            message: 'The date of birth is not valid'
+                        }
+                    }
+                }
+            }
+        })
+        .find('[name="dob"]')
+            .datepicker({
+                onSelect: function(date, inst) {
+                    // Revalidate the field when choosing it from the datepicker
+                    $('#profileForm').formValidation('revalidateField', 'dob');
+                }
+            });
+});
+</script>
 
         <footer class="doc-footer">
     <div class="container">
