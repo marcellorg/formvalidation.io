@@ -10,7 +10,7 @@ $(function() {
     });
 
     $('form').each(function() {
-        $(this).on('success.form.bv', function(e) {
+        $(this).on('success.form.fv', function(e) {
             e.preventDefault();
         });
     });
