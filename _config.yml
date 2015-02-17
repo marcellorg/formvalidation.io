@@ -16,7 +16,6 @@ timezone:             Asia/Ho_Chi_Minh
 
 gems:
   - jekyll-sitemap
-  - jekyll-minifier
 
 # Custom variables
 # not defined by Jekyll
