@@ -13,7 +13,7 @@
         <label class="col-xs-3 control-label">Company <sup>*</sup></label>
         <div class="col-xs-5">
             <input type="text" class="form-control" name="company"
-                   required data-bv-notempty-message="The company name is required" />
+                   required data-fv-notempty-message="The company name is required" />
         </div>
         <div class="col-xs-2">
             <button type="button" class="btn btn-info btn-sm" data-toggle="#jobInfo">Add more info</button>
