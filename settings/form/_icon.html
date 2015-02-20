@@ -54,6 +54,14 @@ icon: {
     validating: 'fa fa-refresh'
 }
 {% endhighlight %}
+                        <p>There is a FontAwesome issue (<a href="https://github.com/FortAwesome/Font-Awesome/issues/4313">#41313</a>) that causes the icon to be aligned not properly when using with Bootstrap.
+                        While waiting for this issue to be fixed, you can resolve it by placing the FontAwesome CSS before Bootstrap CSS:</p>
+
+{% highlight html %}
+<!-- Load FontAwesome CSS before Bootstrap -->
+<link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css" />
+<link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css"/>
+{% endhighlight %}
                     </td>
                 </tr>
                 <tr>
@@ -83,10 +91,6 @@ icon: {
                 </tr>
             </tbody>
         </table>
-    </div>
-
-    <div class="doc-alert doc-alert-info">
-        When using <a href="http://fontawesome.io/icons">FontAwesome</a> icons, don't forget to insert FontAwesome CSS in your head tag
     </div>
 
     <h5>Using with Bootswatch</h5>
