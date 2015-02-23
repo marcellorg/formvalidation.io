@@ -4,6 +4,9 @@
 - title: "New example: Playing with jQuery UI Datepicker"
   url: "/examples/jquery-ui-datepicker/"
 
+- title: "New example: Playing with Flat UI"
+  url: "/examples/flat-ui/"
+
 - title: "New example: Playing with Typhead"
   url: "/examples/typeahead/"
 
