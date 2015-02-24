@@ -27,9 +27,10 @@ $('#productForm').formValidation({
         price: {
             validators: {
                 numeric: {
-                    transformer: function($field, validatorName) {
+                    transformer: function($field, validatorName, validator) {
                         // $field is the jQuery object presenting the field element
                         // validatorName is the name of current validator (numeric)
+                        // validator is the instance of plugin
 
                         // In fact, you might adjust this transformer to suit your usage
                         // In this case, this function simply replaces comma with blank space
