@@ -1,0 +1,255 @@
+<!doctype html>
+<html>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article#">
+    <meta charset="utf-8">
+<title>callback validator &rarr; Show all messages - FormValidation</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<meta http-equiv="Content-Language" content="en">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks">
+<meta name="keywords" content="FormValidation, BootstrapValidator, jQuery, form, validate, validation, validator, plugin, Bootstrap, Foundation, Pure, SemanticUI, UIKit">
+<meta name="author" content="Nguyen Huu Phuoc">
+<meta name="google-site-verification" content="FMmr8kYuIuW27-qJLOb1Z59OgiVgKNgAv4_eMARhIY8" />
+
+<meta name="twitter:site" content="@formvalidation" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks" />
+<meta name="twitter:title" content="callback validator &rarr; Show all messages - FormValidation" />
+<meta name="twitter:image" content="http://formvalidation.io/asset/img/logo.png" />
+
+<meta property="og:title" content="callback validator &rarr; Show all messages - FormValidation" />
+<meta property="og:description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://formvalidation.io/validators/callback/all-message/bootstrap.html" />
+<meta property="og:image" content="http://formvalidation.io/asset/img/logo.png" />
+<meta property="og:site_name" content="FormValidation" />
+
+<link rel="icon" type="image/x-icon" href="/asset/img/favicon.ico">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/fontawesome/4.2.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+
+<!--[if lt IE 9]>
+<script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-44786951-2']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/vendor/formvalidation/css/formValidation.min.css">
+    <link rel="stylesheet" href="/asset/css/demo.css">
+
+    <script src="//cdn.jsdelivr.net/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="/vendor/formvalidation/js/formValidation.min.js"></script>
+    <script src="/vendor/formvalidation/js/framework/bootstrap.min.js"></script>
+</head>
+<body class="demo-bootstrap">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9" id="demoContainer">
+                <form id="passwordForm" class="form-horizontal">
+    <div class="form-group" style="margin-bottom: 0;">
+        <label class="col-xs-3 control-label">Password</label>
+        <div class="col-xs-5">
+            <input type="password" class="form-control" name="pwd" />
+        </div>
+    </div>
+
+    <div class="form-group has-feedback has-error">
+        <div class="col-xs-9 col-xs-offset-3">
+            <!-- The message container -->
+            <div id="messageContainer"></div>
+        </div>
+    </div>
+</form>
+
+<script>
+$(document).ready(function() {
+    // The rules that a secure password need to follow
+    var PASSWORD_RULES = [
+        {
+            name: 'length',
+            message: 'It must be more than 8 characters long',
+            check: function(value) {
+                return value.length >= 8;
+            }
+        },
+        {
+            name: 'upperCase',
+            message: 'It must contain at least one upper case character',
+            check: function(value) {
+                return value !== value.toLowerCase();
+            }
+        },
+        {
+            name: 'lowerCase',
+            message: 'It must contain at least one lower case character',
+            check: function(value) {
+                return value !== value.toUpperCase();
+            }
+        },
+        {
+            name: 'digit',
+            message: 'It must contain at least one digit',
+            check: function(value) {
+                return value.search(/[0-9]/) >= 0;
+            }
+        }
+    ];
+
+    // Populate the message to given container
+    // The container will contain the message for each rule as following
+    //  <div id="messageContainer">
+    //      <small data-rule="rule name">... message ...</small>
+    //  </div>
+    for (var i = 0; i < PASSWORD_RULES.length; i++) {
+        $('<small/>')
+            .addClass('help-block')
+            .attr('data-rule', PASSWORD_RULES[i].name)
+            .html(PASSWORD_RULES[i].message)
+            .appendTo('#messageContainer');
+    }
+
+    $('#passwordForm')
+        .formValidation({
+            framework: 'bootstrap',
+            icon: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                pwd: {
+                    validators: {
+                        notEmpty: {
+                            message: 'It is required and cannot be empty'
+                        },
+                        callback: {
+                            callback: function(value, validator, $field) {
+                                if (value === '') {
+                                    return true;
+                                }
+
+                                var passedRules = [];
+
+                                // Loop over the rules
+                                for (var i = 0; i < PASSWORD_RULES.length; i++) {
+                                    if (PASSWORD_RULES[i].check(value)) {
+                                        passedRules.push(PASSWORD_RULES[i].name);
+                                    }
+                                }
+
+                                if (passedRules.length < PASSWORD_RULES.length) {
+                                    return {
+                                        valid: false,
+                                        passedRules: passedRules
+                                    }
+                                }
+
+                                return true;
+                            }
+                        }
+                    }
+                }
+            }
+        })
+        .on('err.field.fv', function(e, data) {
+            // Check if the password field doesn't pass the callback validator
+            if (data.field === 'pwd' && data.validator === 'callback') {
+                // Get the validator result
+                // result consists of valid, passedRules properties
+                var result = data.result;
+
+                // Hide the default message
+                data.element
+                    .closest('.form-group')
+                        .find('small[data-fv-for="pwd"][data-fv-validator="callback"]')
+                        .hide();
+
+                var $messages = $('#messageContainer').find('small[data-rule]');
+                for (var i = 0; i < PASSWORD_RULES.length; i++) {
+                    var $message = $messages.filter('[data-rule="' + PASSWORD_RULES[i].name + '"]');
+
+                    $.inArray(PASSWORD_RULES[i].name, result.passedRules) === -1
+                        ? $message.fadeIn()     // Hide the message if the field doesn't pass the rule
+                        : $message.fadeOut();   // Otherwise, show it
+                }
+            }
+        })
+        .on('success.field.fv', function(e, data) {
+            if (data.field === 'pwd') {
+                // Hide all messages if the field is valid
+                $('#messageContainer').find('small[data-rule]').hide();
+            }
+        });
+});
+</script>
+
+<script>
+$(document).ready(function() {
+    $('#passwordForm')
+        .on('err.field.fv', function(e, data) {
+            var $body  = $('body'),
+                $iframe = $body.data('iframe.fv');
+            if ($iframe) {
+                // Adjust the height of iframe
+                $iframe.height($body.get(0).clientHeight);
+            }
+        });
+});
+</script>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="demo-ad"><script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=bootstrapvalidatorcom" id="_carbonads_js"></script></div>
+            </div>
+        </div>
+    </div>
+
+<script>
+// You don't need to care about the following code
+// It's built for all demos
+$(document).ready(function() {
+    $('form').on('success.form.fv', function(e) {
+        e.preventDefault();
+    });
+
+    $(window).on('load', function() {
+        var $iframe = $(window.parent.document).find('iframe[src="/validators/callback/all-message/bootstrap.html"]');
+        if ($iframe.length) {
+            $('body').addClass('demo-frame-body').find('.demo-ad').hide();
+
+            // Adjust the height of iframes containing the demo for specific frameworks
+            var $container = $('#demoContainer');
+            setTimeout(function() {
+                $iframe.height($container.height()).css('visibility', 'visible').fadeIn('fast');
+            }, 1000);
+
+            // Set the internal data to get it later if I want
+            $('body').data('iframe.fv', $iframe);
+
+            $container
+                .find('form')
+                .on('status.field.fv', function(e, data) {
+                    $iframe.height($container.height());
+                });
+        }
+    });
+});
+</script>
+</body>
+</html>
