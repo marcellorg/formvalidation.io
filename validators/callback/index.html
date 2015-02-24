@@ -114,6 +114,12 @@ function(value, validator, $field) {
                     </ul>
 
                     {% include demo/tabs.html id="dynamic" frameworks="bootstrap" dir="dynamic-message" codes="programmatic" %}
+
+                    <h4>Showing all messages</h4>
+                    <p>It's also possible to show all the messages initially. Then whenever the password passes a particular rule, the message associated with the rule will disappear.</p>
+                    <p>Again, we need to trigger events to archive this. This time, the <a href="/settings/#event-field">field events</a> (<code>err.field.fv</code> and <code>success.field.fv</code>) are used.</p>
+
+                    {% include demo/tabs.html id="all-message" frameworks="bootstrap" dir="all-message" codes="programmatic" %}
                 </section>
 
                 {% include pagination.html %}
