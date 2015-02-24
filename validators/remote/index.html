@@ -123,7 +123,7 @@ url: function(validator) {
                         The message and other options can be updated on the fly via the <a href="/api/#update-message">updateMessage()</a> and <a href="/api/#update-option">updateOption()</a> methods
                     </div>
 
-                    <p>The <code>crossDomain</code>, <code>dataType</code>, <code>validKey</code> options are mostly used when you need to connect to external API endpoint.</p>
+                    <p>The <code>crossDomain</code>, <code>dataType</code>, <code>validKey</code> options are mostly used when you need to connect to external API endpoint. This <a href="/examples/using-mailgun-api-validate-email-address/">example</a> shows how to connect and use the <a href="http://www.mailgun.com/">Mailgun</a> API to validate an email address.</p>
 
                     <p>The remote URL has to return an encoded JSON of array containing the <code>valid</code> key (the key name can be changed by the <code>validKey</code> option):</p>
 {% highlight javascript %}

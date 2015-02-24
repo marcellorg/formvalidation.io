@@ -4,6 +4,9 @@
 - title: "Explore new add-ons page"
   url: "/addons/"
 
+- title: "New example: Using Mailgun API to validate email address"
+  url: "/examples/using-mailgun-api-validate-email-address/"
+
 - title: "New example: Playing with jQuery UI Datepicker"
   url: "/examples/jquery-ui-datepicker/"
 
