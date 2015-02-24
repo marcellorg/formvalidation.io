@@ -171,7 +171,7 @@ permalink: /
                 <h2>Download</h2>
                 <div class="doc-hr"></div>
 
-                <h3 id="downloadCounter">{{ site.github_downloads }}</h3>
+                <h3 id="downloadCounter">{{ site.num_downloads }}</h3>
                 <p>downloads so far</p>
                 <p><a href="/download/" class="btn">Download</a></p>
             </div>
@@ -191,42 +191,25 @@ $(function() {
         responsiveFallback: 767
     });
 
-    updateCounter('{{ site.github_downloads }}');
-
-    // Show the total of downloads
-    $.ajax({
-        dataType: 'jsonp',
-        url: 'https://api.github.com/repos/formvalidation/formvalidation/releases',
-        success: function(response) {
-            var total = 0;
-            if (response.data) {
-                for (var i in response.data) {
-                    for (var j in response.data[i].assets) {
-                        total += (response.data[i].assets[j].download_count || 0);
-                    }
-                }
-            }
-            var count = Math.floor(total / 1000 - 1) * 1000;
-            updateCounter(count);
-
-            var counter = setInterval(function() {
-                count++;
-                if (count > total) {
-                    clearInterval(counter);
-                } else {
-                    updateCounter(count);
-                }
-            }, 0.5);
-        }
-    });
-
     function updateCounter(count) {
         var t = count.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',').split('');
         t = $.map(t, function(item) {
             return (item === ',' ? ',' : '<span>' + item + '</span>');
         }).join('');
-        $('#downloadCounter').html(t);
+        $('#downloadCounter').html(t + '+');
     }
+
+    var total   = parseInt('{{ site.num_downloads }}', 10),
+        count   = Math.floor(total / 1000 - 1) * 1000,
+        counter = setInterval(function() {
+            count++;
+            if (count > total) {
+                clearInterval(counter);
+            } else {
+                updateCounter(count);
+            }
+        }, 0.5);
+    updateCounter(count);
 });
 </script>
 </body>

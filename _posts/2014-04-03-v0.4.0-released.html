@@ -7,7 +7,7 @@ author: nghuuphuoc
 
 <h3>New features</h3>
 <ul class="doc-list">
-    <li><i class="fa fa-star"></i> <a href="{{ site.repository.source }}/issues/14">#14</a>, <a href="{{ site.repository.source }}/issues/57">#57</a>: Set validator option by using <a href="/examples/#attribute">HTML 5 attributes</a></li>
+    <li><i class="fa fa-star"></i> #14, #57: Set validator option by using <a href="/examples/#attribute">HTML 5 attributes</a></li>
     <li><i class="fa fa-star"></i> Support <a href="/examples/#html5">HTML 5 input types</a>:</li>
 </ul>
 
@@ -68,7 +68,7 @@ data-bv-regexp-regexp="..."
             </tr>
             <tr>
                 <td><code>type="color"</code></td>
-                <td><a href="/validators/hexColor/">hexColor validator</a></td>
+                <td><a href="/validators/color/">color validator</a></td>
                 <td><code>data-bv-hexcolor="true"</code></td>
             </tr>
             <tr>
@@ -103,14 +103,14 @@ data-bv-between-max="..."
 </div>
 
 <ul class="doc-list">
-    <li><i class="fa fa-star"></i> <a href="{{ site.repository.source }}/issues/74">#74</a>, <a href="{{ site.repository.source }}/issues/103">#103</a>, <a href="{{ site.repository.source }}/issues/122">#122</a>: Set the custom <a href="/settings/#trigger">trigger event</a>. It's possible to use <code>data-bv-trigger</code> attribute or <code>trigger</code> option.</li>
-    <li><a href="{{ site.repository.source }}/issues/109">#109</a>: Add <a href="/api/#set-live-mode"><code>setLiveMode()</code> method</a> to turn on/off the live validating mode</li>
-    <li><a href="{{ site.repository.source }}/issues/114">#114</a>: Add <a href="/validators/iban/">iban validator</a> for validating IBAN (International Bank Account Number)</li>
-    <li><a href="{{ site.repository.source }}/issues/116">#116</a>: Add <a href="/validators/uuid/">uuid validator</a>, support UUID v3, v4, v5</li>
-    <li><a href="{{ site.repository.source }}/issues/128">#128</a>: Add <a href="/validators/numeric/">numeric validator</a></li>
-    <li><a href="{{ site.repository.source }}/issues/135">#135</a>: Add <a href="/validators/integer/">integer validator</a></li>
-    <li><a href="{{ site.repository.source }}/issues/138">#138</a>: Add <a href="/validators/hex/">hex validator</a></li>
-    <li><a href="{{ site.repository.source }}/issues/139">#139</a>: Add <a href="/validators/stringCase/">stringCase validator</a> to check a string is lower or upper case</li>
+    <li><i class="fa fa-star"></i> #74, #103, #122: Set the custom <a href="/settings/#trigger">trigger event</a>. It's possible to use <code>data-bv-trigger</code> attribute or <code>trigger</code> option.</li>
+    <li>#109: Add <a href="/api/#set-live-mode"><code>setLiveMode()</code> method</a> to turn on/off the live validating mode</li>
+    <li>#114: Add <a href="/validators/iban/">iban validator</a> for validating IBAN (International Bank Account Number)</li>
+    <li>#116: Add <a href="/validators/uuid/">uuid validator</a>, support UUID v3, v4, v5</li>
+    <li>#128: Add <a href="/validators/numeric/">numeric validator</a></li>
+    <li>#135: Add <a href="/validators/integer/">integer validator</a></li>
+    <li>#138: Add <a href="/validators/hex/">hex validator</a></li>
+    <li>#139: Add <a href="/validators/stringCase/">stringCase validator</a> to check a string is lower or upper case</li>
 </ul>
 
 <h3>Changes</h3>
@@ -121,15 +121,15 @@ data-bv-between-max="..."
 
 <h3>Improvements</h3>
 <ul class="doc-list">
-    <li><a href="{{ site.repository.source }}/issues/133">#133</a>: The <a href="/validators/regexp/">regexp validator</a> allows to pass a string</li>
-    <li><i class="fa fa-star"></i> <a href="{{ site.repository.source }}/issues/136">#136</a>: Support multiple elements with the <a href="/examples/validating-array-inputs/">same name</a></li>
-    <li><a href="{{ site.repository.source }}/pull/140">#140</a>: Do not validate hidden (<code>type="hidden"</code>) and invisible element, thanks to <a href="https://github.com/easonhan007">@easonhan007</a></li>
+    <li>#133: The <a href="/validators/regexp/">regexp validator</a> allows to pass a string</li>
+    <li><i class="fa fa-star"></i> #136: Support multiple elements with the <a href="/examples/validating-array-inputs/">same name</a></li>
+    <li>#140: Do not validate hidden (<code>type="hidden"</code>) and invisible element, thanks to <a href="https://github.com/easonhan007">@easonhan007</a></li>
 </ul>
 
 <h3>Bug fixes</h3>
 <ul class="doc-list">
-    <li><a href="{{ site.repository.source }}/issues/126">#126</a>: Submit button remains disabled after calling custom <code>submitHandler</code> and the form is valid</li>
-    <li><a href="{{ site.repository.source }}/issues/132">#132</a>: The <code>fields.[fieldName].message</code> option is not used when showing the error message</li>
+    <li>#126: Submit button remains disabled after calling custom <code>submitHandler</code> and the form is valid</li>
+    <li>#132: The <code>fields.[fieldName].message</code> option is not used when showing the error message</li>
 </ul>
 
 <h3>Contributors</h3>

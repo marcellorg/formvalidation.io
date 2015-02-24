@@ -31,11 +31,8 @@ license:
     gumroad_url:      https://gum.co/formvalidation-organization-license
     sellfy_url:       https://sellfy.com/p/eQiZ/
     sellfy_id:        eQiZ
-current_version:      0.6.0
-released_date:        2015.01.06
-github_downloads:     97,000
-repository:
-  source:             https://github.com/formvalidation/formvalidation
-  docs:               https://github.com/formvalidation/formvalidation.io/gh-pages
-  docs_edit:          https://github.com/formvalidation/formvalidation.io/edit/master
+current_version:      0.6.1
+released_date:        2015.02.28
+num_downloads:        100000
+support:              https://github.com/formvalidation/support/issues
 ga_code:              UA-44786951-2
