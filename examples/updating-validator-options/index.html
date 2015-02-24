@@ -39,6 +39,12 @@ $(form).formValidation({
                 <p>The validator options can be updated via the <a href="/api/#update-option">updateOption()</a> method.</p>
                 <p>Although <code>message</code> is common option of all validators, FormValidation provides the <a href="/api/#update-message">updateMessage()</a> method to update it instead of <code>updateOption()</code>.</p>
 
+                <div class="doc-alert doc-alert-info">
+                    <p>To update message of validators supporting <a href="/settings/#dynamic-message">dynamic message</a>, in additional to calling the updateMessage() method, you also might need to use the updateOption() method as following:</p>
+                    <p>$(form).formValidation('updateMessage', field, validatorName, newMessage);</p>
+                    <p>$(form).formValidation('updateOption', field, validatorName, 'message', newMessage);</p>
+                </div>
+
                 {% include demo/tabs.html id="demo" frameworks="bootstrap" codes="programmatic" %}
             </div>
 
