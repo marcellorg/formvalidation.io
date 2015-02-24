@@ -688,8 +688,8 @@ $(document).ready(function() {
                     <span class="kd">var</span> <span class="nx">$message</span> <span class="o">=</span> <span class="nx">$messages</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="s1">&#39;[data-rule=&quot;&#39;</span> <span class="o">+</span> <span class="nx">PASSWORD_RULES</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">name</span> <span class="o">+</span> <span class="s1">&#39;&quot;]&#39;</span><span class="p">);</span>
 
                     <span class="nx">$</span><span class="p">.</span><span class="nx">inArray</span><span class="p">(</span><span class="nx">PASSWORD_RULES</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">name</span><span class="p">,</span> <span class="nx">result</span><span class="p">.</span><span class="nx">passedRules</span><span class="p">)</span> <span class="o">===</span> <span class="o">-</span><span class="mi">1</span>
-                        <span class="o">?</span> <span class="nx">$message</span><span class="p">.</span><span class="nx">fadeIn</span><span class="p">()</span>     <span class="c1">// Hide the message if the field doesn&#39;t pass the rule</span>
-                        <span class="o">:</span> <span class="nx">$message</span><span class="p">.</span><span class="nx">fadeOut</span><span class="p">();</span>   <span class="c1">// Otherwise, show it</span>
+                        <span class="o">?</span> <span class="nx">$message</span><span class="p">.</span><span class="nx">fadeIn</span><span class="p">()</span>     <span class="c1">// Show the message if the field doesn&#39;t pass the rule</span>
+                        <span class="o">:</span> <span class="nx">$message</span><span class="p">.</span><span class="nx">fadeOut</span><span class="p">();</span>   <span class="c1">// Otherwise, hide it</span>
                 <span class="p">}</span>
             <span class="p">}</span>
         <span class="p">})</span>

@@ -185,8 +185,8 @@ $(document).ready(function() {
                     var $message = $messages.filter('[data-rule="' + PASSWORD_RULES[i].name + '"]');
 
                     $.inArray(PASSWORD_RULES[i].name, result.passedRules) === -1
-                        ? $message.fadeIn()     // Hide the message if the field doesn't pass the rule
-                        : $message.fadeOut();   // Otherwise, show it
+                        ? $message.fadeIn()     // Show the message if the field doesn't pass the rule
+                        : $message.fadeOut();   // Otherwise, hide it
                 }
             }
         })
