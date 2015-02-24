@@ -1,3 +1,6 @@
+- title: "v0.6.1 is released on 2015-02-28"
+  url: "/news/v0.6.1-released/"
+
 - title: "Explore new add-ons page"
   url: "/addons/"
 
@@ -18,9 +21,6 @@
 
 - title: "New example: Validating field with special name"
   url: "/examples/validating-field-special-name/"
-
-- title: "v0.6.0 is released on 2015-01-06"
-  url: "/news/v0.6.0-released/"
 
 - title: "New example: Validating multiple inputs as one"
   url: "/examples/validating-multiple-inputs-one/"

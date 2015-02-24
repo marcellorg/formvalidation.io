@@ -24,6 +24,7 @@ next:
                 <section>
                     <h2>Options</h2>
 
+                    <p><sup>*</sup> &mdash; Required option</p>
                     <div class="table-responsive">
                         <table class="table table-bordered table-striped">
                             <thead>
@@ -36,6 +37,12 @@ next:
                             </thead>
                             <tbody>
                                 <tr>
+                                    <td><code>crossDomain</code></td>
+                                    <td><code>data-fv-remote-crossdomain</code></td>
+                                    <td>Boolean</td>
+                                    <td>It's same as the <code>crossDomain</code> option of jQuery's <a href="http://api.jquery.com/jquery.ajax/">ajax</a>.</td>
+                                </tr>
+                                <tr>
                                     <td><code>data</code></td>
                                     <td><code>data-fv-remote-data</code></td>
                                     <td>Object</td>
@@ -43,6 +50,15 @@ next:
                                         The data sent to remote URL.<br />
                                         You don't need to use this option if there is only field, defined as field name, sent to the remote URL.<br/>
                                         When using <code>data-fv-remote-data</code> attribute, its value must be an encoded JSON string.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><code>dataType</code></td>
+                                    <td><code>data-fv-remote-datatype</code></td>
+                                    <td>String</td>
+                                    <td>
+                                        <p>The type of data which is returned by remote server. It's same as the <code>dataType</code> option of jQuery's <a href="http://api.jquery.com/jquery.ajax/">ajax</a>.</p>
+                                        <p>The available values are <code>json</code> <span class="label label-default">default</span>, <code>jsonp</code></p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -67,7 +83,10 @@ next:
                                     <td><code>type</code></td>
                                     <td><code>data-fv-remote-type</code></td>
                                     <td>String</td>
-                                    <td>The method used to send data to back-end. It can be <code>GET</code> <span class="label label-default">default</span> or <code>POST</code></td>
+                                    <td>
+                                        <p>The method used to send data to back-end. It can be <code>GET</code> <span class="label label-default">default</span> or <code>POST</code></p>
+                                        <div class="doc-alert doc-alert-info">From v0.5.2, the type option is GET, by default.</div>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td><code>url</code><sup>*</sup></td>
@@ -83,6 +102,15 @@ url: function(validator) {
 {% endhighlight %}
                                     </td>
                                 </tr>
+                                <tr>
+                                    <td><code>validKey</code></td>
+                                    <td><code>data-fv-remote-validkey</code></td>
+                                    <td>String</td>
+                                    <td>
+                                        <p>The valid key. It's <code>valid</code> by default.</p>
+                                        <p>This option is useful when connecting to external remote server or APIs provided by 3rd parties.</p>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -95,9 +123,9 @@ url: function(validator) {
                         The message and other options can be updated on the fly via the <a href="/api/#update-message">updateMessage()</a> and <a href="/api/#update-option">updateOption()</a> methods
                     </div>
 
-                    <div class="doc-alert doc-alert-info">From v0.5.2, the type option is GET, by default.</div>
+                    <p>The <code>crossDomain</code>, <code>dataType</code>, <code>validKey</code> options are mostly used when you need to connect to external API endpoint.</p>
 
-                    <p>The remote URL has to return an encoded JSON of array containing the <code>valid</code> key:</p>
+                    <p>The remote URL has to return an encoded JSON of array containing the <code>valid</code> key (the key name can be changed by the <code>validKey</code> option):</p>
 {% highlight javascript %}
 { "valid": true }
 {% endhighlight %}
