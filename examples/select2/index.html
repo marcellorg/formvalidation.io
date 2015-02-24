@@ -120,20 +120,21 @@ _gaq.push(['_trackPageview']);
 
     <div id="main" class="doc-content-wrapper">
         <div class="doc-notification" id="notification">
-    <i class="fa fa-bell-o"></i> <a href="/addons/">Explore new add-ons page</a>
+    <i class="fa fa-bell-o"></i> <a href="/news/v0.6.1-released/">v0.6.1 is released on 2015.02.24</a>
 </div>
 <script>
 $(document).ready(function() {
     var notifications = [],
         $message      = $('#notification').find('a').data('index', 0);
+    notifications.push({ title: 'v0.6.1 is released on 2015.02.24', url: '/news/v0.6.1-released/'});
     notifications.push({ title: 'Explore new add-ons page', url: '/addons/'});
+    notifications.push({ title: 'New example: Using Mailgun API to validate email address', url: '/examples/using-mailgun-api-validate-email-address/'});
     notifications.push({ title: 'New example: Playing with jQuery UI Datepicker', url: '/examples/jquery-ui-datepicker/'});
     notifications.push({ title: 'New example: Playing with Flat UI', url: '/examples/flat-ui/'});
     notifications.push({ title: 'New example: Playing with Typhead', url: '/examples/typeahead/'});
     notifications.push({ title: 'New example: Validating array of inputs', url: '/examples/validating-array-inputs/'});
     notifications.push({ title: 'New example: Updating validator options', url: '/examples/updating-validator-options/'});
     notifications.push({ title: 'New example: Validating field with special name', url: '/examples/validating-field-special-name/'});
-    notifications.push({ title: 'v0.6.0 is released on 2015-01-06', url: '/news/v0.6.0-released/'});
     notifications.push({ title: 'New example: Validating multiple inputs as one', url: '/examples/validating-multiple-inputs-one/'});
     notifications.push({ title: '3 ways to improve performance when using remote validator', url: '/validators/remote/#improving-the-performance'});
     notifications.push({ title: 'New example: Modifying the value before validating', url: '/examples/modifying-value-before-validating/'});
@@ -340,7 +341,7 @@ $(document).ready(function() {
             
             <a class="btn" href="/download/">Download</a>
             
-            <a class="btn" href="https://github.com/formvalidation/support">Report bug</a>
+            <a class="btn" href="https://github.com/formvalidation/support/issues">Report bug</a>
         </p>
         <p>
             &copy; 2013 - 2015 <a href="http://twitter.com/nghuuphuoc">Nguyen Huu Phuoc</a>. All rights reserved.<br/>

@@ -120,20 +120,21 @@ _gaq.push(['_trackPageview']);
 
     <div id="main" class="doc-content-wrapper">
         <div class="doc-notification" id="notification">
-    <i class="fa fa-bell-o"></i> <a href="/addons/">Explore new add-ons page</a>
+    <i class="fa fa-bell-o"></i> <a href="/news/v0.6.1-released/">v0.6.1 is released on 2015.02.24</a>
 </div>
 <script>
 $(document).ready(function() {
     var notifications = [],
         $message      = $('#notification').find('a').data('index', 0);
+    notifications.push({ title: 'v0.6.1 is released on 2015.02.24', url: '/news/v0.6.1-released/'});
     notifications.push({ title: 'Explore new add-ons page', url: '/addons/'});
+    notifications.push({ title: 'New example: Using Mailgun API to validate email address', url: '/examples/using-mailgun-api-validate-email-address/'});
     notifications.push({ title: 'New example: Playing with jQuery UI Datepicker', url: '/examples/jquery-ui-datepicker/'});
     notifications.push({ title: 'New example: Playing with Flat UI', url: '/examples/flat-ui/'});
     notifications.push({ title: 'New example: Playing with Typhead', url: '/examples/typeahead/'});
     notifications.push({ title: 'New example: Validating array of inputs', url: '/examples/validating-array-inputs/'});
     notifications.push({ title: 'New example: Updating validator options', url: '/examples/updating-validator-options/'});
     notifications.push({ title: 'New example: Validating field with special name', url: '/examples/validating-field-special-name/'});
-    notifications.push({ title: 'v0.6.0 is released on 2015-01-06', url: '/news/v0.6.0-released/'});
     notifications.push({ title: 'New example: Validating multiple inputs as one', url: '/examples/validating-multiple-inputs-one/'});
     notifications.push({ title: '3 ways to improve performance when using remote validator', url: '/validators/remote/#improving-the-performance'});
     notifications.push({ title: 'New example: Modifying the value before validating', url: '/examples/modifying-value-before-validating/'});
@@ -184,18 +185,18 @@ $(document).ready(function() {
 
 <h3>Improvements</h3>
 <ul class="doc-list">
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/106">#106</a>: Prevent the <a href="/api/#validate"><code>validate()</code> method</a> from submit the form automatically. So we can call <a href="/api/#validate"><code>validate()</code> method</a> to validate the form</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/131">#131</a>: Doesn't trigger validation on the first focus</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/145">#145</a>: The row state is now only marked as success if all fields on it are valid</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/157">#157</a>: Added support for element outside of form using the <a href="/settings/#field-selector"><code>selector</code> option</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/159">#159</a>, <a href="https://github.com/formvalidation/formvalidation/pull/163">#163</a>: User doesn't need to submit the form twice when remote validator complete, thanks to <a href="https://github.com/jswale">@jswale</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/166">#166</a>, <a href="https://github.com/formvalidation/formvalidation/pull/167">#167</a>: The <a href="/validators/phone/">phone validator</a> now also checks the length of US phone number, thanks to <a href="https://github.com/gercheq">@gercheq</a></li>
+    <li>#106: Prevent the <a href="/api/#validate"><code>validate()</code> method</a> from submit the form automatically. So we can call <a href="/api/#validate"><code>validate()</code> method</a> to validate the form</li>
+    <li>#131: Doesn't trigger validation on the first focus</li>
+    <li>#145: The row state is now only marked as success if all fields on it are valid</li>
+    <li>#157: Added support for element outside of form using the <a href="/settings/#field-selector"><code>selector</code> option</a></li>
+    <li>#159, #163: User doesn't need to submit the form twice when remote validator complete, thanks to <a href="https://github.com/jswale">@jswale</a></li>
+    <li>#166, #167: The <a href="/validators/phone/">phone validator</a> now also checks the length of US phone number, thanks to <a href="https://github.com/gercheq">@gercheq</a></li>
 </ul>
 
 <h3>Bug fixes</h3>
 <ul class="doc-list">
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/144">#144</a>, <a href="https://github.com/formvalidation/formvalidation/issues/158">#158</a>: Fixed an issue that the <a href="/settings/#form-submit-handler">custom submit handler</a> is not fired from the second time</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/162">#162</a>: Fix errors in IE 8, thanks to <a href="https://github.com/adgrafik">@adgrafik</a></li>
+    <li>#144, #158: Fixed an issue that the <a href="/settings/#form-submit-handler">custom submit handler</a> is not fired from the second time</li>
+    <li>#162: Fix errors in IE 8, thanks to <a href="https://github.com/adgrafik">@adgrafik</a></li>
 </ul>
 
 <h3>Contributors</h3>
@@ -236,7 +237,7 @@ $(document).ready(function() {
             
             <a class="btn" href="/download/">Download</a>
             
-            <a class="btn" href="https://github.com/formvalidation/support">Report bug</a>
+            <a class="btn" href="https://github.com/formvalidation/support/issues">Report bug</a>
         </p>
         <p>
             &copy; 2013 - 2015 <a href="http://twitter.com/nghuuphuoc">Nguyen Huu Phuoc</a>. All rights reserved.<br/>

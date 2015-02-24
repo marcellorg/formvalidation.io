@@ -120,20 +120,21 @@ _gaq.push(['_trackPageview']);
 
     <div id="main" class="doc-content-wrapper">
         <div class="doc-notification" id="notification">
-    <i class="fa fa-bell-o"></i> <a href="/addons/">Explore new add-ons page</a>
+    <i class="fa fa-bell-o"></i> <a href="/news/v0.6.1-released/">v0.6.1 is released on 2015.02.24</a>
 </div>
 <script>
 $(document).ready(function() {
     var notifications = [],
         $message      = $('#notification').find('a').data('index', 0);
+    notifications.push({ title: 'v0.6.1 is released on 2015.02.24', url: '/news/v0.6.1-released/'});
     notifications.push({ title: 'Explore new add-ons page', url: '/addons/'});
+    notifications.push({ title: 'New example: Using Mailgun API to validate email address', url: '/examples/using-mailgun-api-validate-email-address/'});
     notifications.push({ title: 'New example: Playing with jQuery UI Datepicker', url: '/examples/jquery-ui-datepicker/'});
     notifications.push({ title: 'New example: Playing with Flat UI', url: '/examples/flat-ui/'});
     notifications.push({ title: 'New example: Playing with Typhead', url: '/examples/typeahead/'});
     notifications.push({ title: 'New example: Validating array of inputs', url: '/examples/validating-array-inputs/'});
     notifications.push({ title: 'New example: Updating validator options', url: '/examples/updating-validator-options/'});
     notifications.push({ title: 'New example: Validating field with special name', url: '/examples/validating-field-special-name/'});
-    notifications.push({ title: 'v0.6.0 is released on 2015-01-06', url: '/news/v0.6.0-released/'});
     notifications.push({ title: 'New example: Validating multiple inputs as one', url: '/examples/validating-multiple-inputs-one/'});
     notifications.push({ title: '3 ways to improve performance when using remote validator', url: '/validators/remote/#improving-the-performance'});
     notifications.push({ title: 'New example: Modifying the value before validating', url: '/examples/modifying-value-before-validating/'});
@@ -173,6 +174,32 @@ $(document).ready(function() {
             <div class="col-md-9">
                 
                     <div class="doc-post">
+    <h2><a href="/news/v0.2.1-released/">BootstrapValidator v0.2.1 Released</a></h2>
+
+    <div class="doc-post-meta">
+        <a href="https://github.com/nghuuphuoc" title="@nghuuphuoc">
+            <img src="https://github.com/nghuuphuoc.png" />
+        </a>
+        <p>08 Nov 2013</p>
+    </div>
+
+    <div class="doc-post-content">
+        <h3>Improvements</h3>
+<ul class="doc-list">
+    <li>#29: Upgrade Bootstrap to v3.0.2</li>
+    <li>#30: Hide the error block containers before validating</li>
+</ul>
+
+<h3>Download</h3>
+<div>
+    <a class="btn btn-primary" href="/download/">bootstrapvalidator-dist-0.2.1.zip</a>
+</div>
+    </div>
+</div>
+
+                    <div class="doc-hr"></div>
+                
+                    <div class="doc-post">
     <h2><a href="/news/v0.2.0-released/">BootstrapValidator v0.2.0 Released</a></h2>
 
     <div class="doc-post-meta">
@@ -185,21 +212,21 @@ $(document).ready(function() {
     <div class="doc-post-content">
         <h3>New features</h3>
 <ul class="doc-list">
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/9">#9</a>: Add <a href="/validators/creditCard/">creditCard validator</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/18">#18</a>: Add <a href="/validators/different/">different validator</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/20">#20</a>: Add custom submit handler using <a href="/settings/#submit-handler"><code>submitHandler</code> option</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/21">#21</a>: Add <a href="/validators/callback/">callback validator</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/24">#24</a>: Add <a href="/settings/#form-live"><code>live</code> option</a></li>
+    <li>#9: Add <a href="/validators/creditCard/">creditCard validator</a></li>
+    <li>#18: Add <a href="/validators/different/">different validator</a></li>
+    <li>#20: Add custom submit handler using <a href="/settings/#submit-handler"><code>submitHandler</code> option</a></li>
+    <li>#21: Add <a href="/validators/callback/">callback validator</a></li>
+    <li>#24: Add <a href="/settings/#form-live"><code>live</code> option</a></li>
 </ul>
 
 <h3>Improvements</h3>
 <ul class="doc-list">
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/22">#22</a>: Support form that labels are placed in extra small (<code>col-xs-</code>), small (<code>col-sm-</code>), medium (<code>col-md-</code>) elements</li>
+    <li>#22: Support form that labels are placed in extra small (<code>col-xs-</code>), small (<code>col-sm-</code>), medium (<code>col-md-</code>) elements</li>
 </ul>
 
 <h3>Bug fixes</h3>
 <ul class="doc-list">
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/25">#25</a>: The <a href="/validators/regexp/">regexp validator</a> does not work</li>
+    <li>#25: The <a href="/validators/regexp/">regexp validator</a> does not work</li>
 </ul>
 
 <h3>Download</h3>
@@ -229,9 +256,9 @@ $(document).ready(function() {
 
 <h3>Improvements</h3>
 <ul class="doc-list">
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/16">#16</a>: Added disabling client side validation in HTML 5</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/17">#17</a>: Added support for default Bootstrap form without labels</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/19">#19</a>: Added support for select box validator</li>
+    <li>#16: Added disabling client side validation in HTML 5</li>
+    <li>#17: Added support for default Bootstrap form without labels</li>
+    <li>#19: Added support for select box validator</li>
 </ul>
 
 <h3>Download</h3>
@@ -262,7 +289,7 @@ $(document).ready(function() {
     <li><a href="/validators/digits/">digits validator</a></li>
     <li><a href="/validators/emailAddress/">emailAddress validator</a></li>
     <li><a href="/validators/greaterThan/">greaterThan validator</a></li>
-    <li><a href="/validators/hexColor/">hexColor validator</a></li>
+    <li><a href="/validators/color/">color validator</a></li>
     <li><a href="/validators/identical/">identical validator</a></li>
     <li><a href="/validators/lessThan/">lessThan validator</a></li>
     <li><a href="/validators/notEmpty/">notEmpty validator</a></li>
@@ -309,7 +336,7 @@ $(document).ready(function() {
             
             <a class="btn" href="/download/">Download</a>
             
-            <a class="btn" href="https://github.com/formvalidation/support">Report bug</a>
+            <a class="btn" href="https://github.com/formvalidation/support/issues">Report bug</a>
         </p>
         <p>
             &copy; 2013 - 2015 <a href="http://twitter.com/nghuuphuoc">Nguyen Huu Phuoc</a>. All rights reserved.<br/>

@@ -120,20 +120,21 @@ _gaq.push(['_trackPageview']);
 
     <div id="main" class="doc-content-wrapper">
         <div class="doc-notification" id="notification">
-    <i class="fa fa-bell-o"></i> <a href="/addons/">Explore new add-ons page</a>
+    <i class="fa fa-bell-o"></i> <a href="/news/v0.6.1-released/">v0.6.1 is released on 2015.02.24</a>
 </div>
 <script>
 $(document).ready(function() {
     var notifications = [],
         $message      = $('#notification').find('a').data('index', 0);
+    notifications.push({ title: 'v0.6.1 is released on 2015.02.24', url: '/news/v0.6.1-released/'});
     notifications.push({ title: 'Explore new add-ons page', url: '/addons/'});
+    notifications.push({ title: 'New example: Using Mailgun API to validate email address', url: '/examples/using-mailgun-api-validate-email-address/'});
     notifications.push({ title: 'New example: Playing with jQuery UI Datepicker', url: '/examples/jquery-ui-datepicker/'});
     notifications.push({ title: 'New example: Playing with Flat UI', url: '/examples/flat-ui/'});
     notifications.push({ title: 'New example: Playing with Typhead', url: '/examples/typeahead/'});
     notifications.push({ title: 'New example: Validating array of inputs', url: '/examples/validating-array-inputs/'});
     notifications.push({ title: 'New example: Updating validator options', url: '/examples/updating-validator-options/'});
     notifications.push({ title: 'New example: Validating field with special name', url: '/examples/validating-field-special-name/'});
-    notifications.push({ title: 'v0.6.0 is released on 2015-01-06', url: '/news/v0.6.0-released/'});
     notifications.push({ title: 'New example: Validating multiple inputs as one', url: '/examples/validating-multiple-inputs-one/'});
     notifications.push({ title: '3 ways to improve performance when using remote validator', url: '/validators/remote/#improving-the-performance'});
     notifications.push({ title: 'New example: Modifying the value before validating', url: '/examples/modifying-value-before-validating/'});
@@ -173,6 +174,44 @@ $(document).ready(function() {
             <div class="col-md-9">
                 
                     <div class="doc-post">
+    <h2><a href="/news/v0.3.3-released/">BootstrapValidator v0.3.3 Released</a></h2>
+
+    <div class="doc-post-meta">
+        <a href="https://github.com/nghuuphuoc" title="@nghuuphuoc">
+            <img src="https://github.com/nghuuphuoc.png" />
+        </a>
+        <p>27 Mar 2014</p>
+    </div>
+
+    <div class="doc-post-content">
+        <h3>Improvements</h3>
+<ul class="doc-list">
+    <li>#50: Don't validate disabled element</li>
+    <li>#120: Handle case where a field is removed after the bootstrap validation, thanks to <a href="https://github.com/patmoore">@patmoore</a></li>
+</ul>
+
+<h3>Bug fixes</h3>
+<ul class="doc-list">
+    <li>#34, #105: Cannot call <code>form.submit()</code> inside <a href="/settings/#form-submit-handler"><code>submitHandler</code></a></li>
+    <li>#77, #117: The <a href="/validators/notEmpty/">notEmpty validator</a> doesn't work on file input</li>
+</ul>
+
+<h3>Contributors</h3>
+<p>Thank to the contributor:</p>
+<ul class="doc-list">
+    <li><a href="https://github.com/patmoore">@patmoore</a></li>
+</ul>
+
+<h3>Download</h3>
+<div>
+    <a class="btn btn-primary" href="/download/">bootstrapvalidator-dist-0.3.3.zip</a>
+</div>
+    </div>
+</div>
+
+                    <div class="doc-hr"></div>
+                
+                    <div class="doc-post">
     <h2><a href="/news/v0.3.2-released/">BootstrapValidator v0.3.2 Released</a></h2>
 
     <div class="doc-post-meta">
@@ -185,20 +224,20 @@ $(document).ready(function() {
     <div class="doc-post-content">
         <h3>New features</h3>
 <ul class="doc-list">
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/5">#5</a>: Add <a href="/validators/ip/">ip validator</a>. Support both IPv4 and IPv6</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/6">#6</a>: Add <a href="/validators/isbn/">isbn validator</a>, support both ISBN 10 and ISBN 13</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/7">#7</a>: Add <a href="/validators/step/">step validator</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/56">#56</a>: Add <a href="/settings/#field-selector"><code>selector</code> option</a> for each field. The field can be defined by CSS validator instead of the <code>name</code> attribute</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/95">#95</a>: Add <a href="/validators/mac/">mac validator</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/96">#96</a>: Add <a href="/validators/base64/">base64 validator</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/97">#97</a>: Add <a href="/validators/cvv/">cvv validator</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/99">#99</a>, <a href="https://github.com/formvalidation/formvalidation/pull/100">#100</a>: Add <a href="/validators/phone/">phone validator</a>. Support US phone number only, thanks to <a href="https://github.com/gercheq">@gercheq</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/107">#107</a>: Add <a href="/settings/#field-err"><code>container</code> option</a> for each field to indicate where the error messages are shown</li>
+    <li>#5: Add <a href="/validators/ip/">ip validator</a>. Support both IPv4 and IPv6</li>
+    <li>#6: Add <a href="/validators/isbn/">isbn validator</a>, support both ISBN 10 and ISBN 13</li>
+    <li>#7: Add <a href="/validators/step/">step validator</a></li>
+    <li>#56: Add <a href="/settings/#field-selector"><code>selector</code> option</a> for each field. The field can be defined by CSS validator instead of the <code>name</code> attribute</li>
+    <li>#95: Add <a href="/validators/mac/">mac validator</a></li>
+    <li>#96: Add <a href="/validators/base64/">base64 validator</a></li>
+    <li>#97: Add <a href="/validators/cvv/">cvv validator</a></li>
+    <li>#99, #100: Add <a href="/validators/phone/">phone validator</a>. Support US phone number only, thanks to <a href="https://github.com/gercheq">@gercheq</a></li>
+    <li>#107: Add <a href="/settings/#field-err"><code>container</code> option</a> for each field to indicate where the error messages are shown</li>
 </ul>
 
 <h3>Improvements</h3>
 <ul class="doc-list">
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/112">#112</a>: <a href="/validators/creditCard/">creditCard validator</a> now validates both IIN ranges and length</li>
+    <li>#112: <a href="/validators/creditCard/">creditCard validator</a> now validates both IIN ranges and length</li>
 </ul>
 
 <h3>Contributors</h3>
@@ -229,9 +268,9 @@ $(document).ready(function() {
     <div class="doc-post-content">
         <h3>New features</h3>
 <ul class="doc-list">
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/4">#4</a>: Add <a href="/validators/date/"><code>date</code> validator</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/80">#80</a>: Add <a href="/settings/#field-enabled"><code>enabled</code> option</a> and <a href="/api/#enable-field-validators"><code>enableFieldValidators()</code> method</a> to enable/disable all validators to given field</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/90">#90</a>: Add <code>bower.json</code> file, thanks to <a href="https://github.com/ikanedo">@ikanedo</a></li>
+    <li>#4: Add <a href="/validators/date/">date</a> validator</li>
+    <li>#80: Add <a href="/settings/#field-enabled"><code>enabled</code> option</a> and <a href="/api/#enable-field-validators"><code>enableFieldValidators()</code> method</a> to enable/disable all validators to given field</li>
+    <li>#90: Add <code>bower.json</code> file, thanks to <a href="https://github.com/ikanedo">@ikanedo</a></li>
 </ul>
 
 <h3>Changes</h3>
@@ -241,15 +280,15 @@ $(document).ready(function() {
 
 <h3>Improvements</h3>
 <ul class="doc-list">
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/3">#3</a>, <a href="https://github.com/formvalidation/formvalidation/issues/92">#92</a>: Support more form controls on the same row</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/72">#72</a>, <a href="https://github.com/formvalidation/formvalidation/issues/79">#79</a>: Improve <a href="/api/#update-status"><code>updateStatus()</code> method</a> to make the plugin play well with another</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/102">#102</a>: The <a href="/api/#reset-form"><code>resetForm</code> method</a> now only resets fields with validator rules</li>
+    <li>#3, #92: Support more form controls on the same row</li>
+    <li>#72, #79: Improve <a href="/api/#update-status"><code>updateStatus()</code> method</a> to make the plugin play well with another</li>
+    <li>#102: The <a href="/api/#reset-form"><code>resetForm</code> method</a> now only resets fields with validator rules</li>
 </ul>
 
 <h3>Bug fixes</h3>
 <ul class="doc-list">
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/82">#82</a>, <a href="https://github.com/formvalidation/formvalidation/issues/84">#84</a>: The error messages aren't shown if the form field doesn't have label</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/89">#89</a>: <a href="/settings/#form-submit-handler"><code>submitHandler</code></a> or default submission isn't called after <a href="/validators/remote/">remote validation</a> completes</li>
+    <li>#82, #84: The error messages aren't shown if the form field doesn't have label</li>
+    <li>#89: <a href="/settings/#form-submit-handler"><code>submitHandler</code></a> or default submission isn't called after <a href="/validators/remote/">remote validation</a> completes</li>
 </ul>
 
 <h3>Contributors</h3>
@@ -280,34 +319,34 @@ $(document).ready(function() {
     <div class="doc-post-content">
         <h3>New features</h3>
 <ul class="doc-list">
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/26">#26</a>, <a href="https://github.com/formvalidation/formvalidation/issues/27">#27</a>, <a href="https://github.com/formvalidation/formvalidation/pull/67">#67</a>: Add <a href="/validators/choice/"><code>choice</code> validator</a>, thanks to <a href="https://github.com/emilchristensen">@emilchristensen</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/36">#36</a>, <a href="https://github.com/formvalidation/formvalidation/issues/58">#58</a>: Add method to <a href="/api/#validate">validate form</a> manually</li>
-    <li><i class="fa fa-star"></i> <a href="https://github.com/formvalidation/formvalidation/issues/44">#44</a>: Rewrite entirely using Deferred</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/48">#48</a>: Add optional <a href="/settings/#form-icon">feedback icons</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/76">#76</a>: Add <a href="/api/#reset-form"><code>resetForm()</code> method</a></li>
+    <li>#26, #27, #67: Add <a href="/validators/choice/"><code>choice</code> validator</a>, thanks to <a href="https://github.com/emilchristensen">@emilchristensen</a></li>
+    <li>#36, #58: Add method to <a href="/api/#validate">validate form</a> manually</li>
+    <li><i class="fa fa-star"></i> #44: Rewrite entirely using Deferred</li>
+    <li>#48: Add optional <a href="/settings/#form-icon">feedback icons</a></li>
+    <li>#76: Add <a href="/api/#reset-form"><code>resetForm()</code> method</a></li>
 </ul>
 
 <h3>Improvements</h3>
 <ul class="doc-list">
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/31">#31</a>: The <a href="/validators/remote/">remote validator</a> supports dynamic data</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/41">#41</a>: Disable submit button on successful form submit</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/42">#42</a>: Add submit button to <a href="/settings/#form-submit-handler"><code>submitHandler()</code></a> parameter</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/50">#50</a>: Don't validate disabled element</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/59">#59</a>: Add example for Rail field convention, thanks to <a href="https://github.com/narutosanjiv">@narutosanjiv</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/60">#60</a>: Update the installation guide, thanks to <a href="https://github.com/vaz">@vaz</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/64">#64</a>: Support <a href="/validators/zipCode/">Danish zip code</a>, thanks to <a href="https://github.com/emilchristensen">@emilchristensen</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/65">#65</a>: Support <a href="/validators/zipCode/">Sweden zip code</a>, thanks to <a href="https://github.com/emilchristensen">@emilchristensen</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/70">#70</a>: Support custom grid columns</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/71">#71</a>: Show all errors</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/73">#73</a>: Describe which version should be <a href="/getting-started/#including-library">included</a> in the Usage section</li>
+    <li>#31: The <a href="/validators/remote/">remote validator</a> supports dynamic data</li>
+    <li>#41: Disable submit button on successful form submit</li>
+    <li>#42: Add submit button to <a href="/settings/#form-submit-handler"><code>submitHandler()</code></a> parameter</li>
+    <li>#50: Don't validate disabled element</li>
+    <li>#59: Add example for Rail field convention, thanks to <a href="https://github.com/narutosanjiv">@narutosanjiv</a></li>
+    <li>#60: Update the installation guide, thanks to <a href="https://github.com/vaz">@vaz</a></li>
+    <li>#64: Support <a href="/validators/zipCode/">Danish zip code</a>, thanks to <a href="https://github.com/emilchristensen">@emilchristensen</a></li>
+    <li>#65: Support <a href="/validators/zipCode/">Sweden zip code</a>, thanks to <a href="https://github.com/emilchristensen">@emilchristensen</a></li>
+    <li>#70: Support custom grid columns</li>
+    <li>#71: Show all errors</li>
+    <li>#73: Describe which version should be <a href="/getting-started/#including-library">included</a> in the Usage section</li>
 </ul>
 
 <h3>Bug fixes</h3>
 <ul class="doc-list">
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/51">#51</a>: Submit after submit doesn't work</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/53">#53</a>, <a href="https://github.com/formvalidation/formvalidation/pull/54">#54</a>: Fix <a href="/validators/notEmpty/">notEmpty validator</a> for radios and checkboxes, thanks to <a href="https://github.com/kristian-puccio">@kristian-puccio</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/55">#55</a>: The plugin doesn't validate other fields if the <a href="/validators/remote/">remote validator</a> returns <code>true</code></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/62">#62</a>: The <a href="/validators/callback/">callback validator</a> passes wrong parameter, thanks to <a href="https://github.com/iplus">@iplus</a></li>
+    <li>#51: Submit after submit doesn't work</li>
+    <li>#53, #54: Fix <a href="/validators/notEmpty/">notEmpty validator</a> for radios and checkboxes, thanks to <a href="https://github.com/kristian-puccio">@kristian-puccio</a></li>
+    <li>#55: The plugin doesn't validate other fields if the <a href="/validators/remote/">remote validator</a> returns <code>true</code></li>
+    <li>#62: The <a href="/validators/callback/">callback validator</a> passes wrong parameter, thanks to <a href="https://github.com/iplus">@iplus</a></li>
 </ul>
 
 <h3>Contributors</h3>
@@ -341,47 +380,21 @@ $(document).ready(function() {
     <div class="doc-post-content">
         <h3>Improvements</h3>
 <ul class="doc-list">
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/15">#15</a>: Focus to the first invalid element</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/31">#31</a>: <a href="/validators/remote/">remote validator</a>: Allow to set additional data to remote URL</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/32">#32</a>, <a href="https://github.com/formvalidation/formvalidation/issues/43">#43</a>, <a href="https://github.com/formvalidation/formvalidation/issues/47">#47</a>: Only validate not empty field</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/39">#39</a>: Validate existing fields only</li>
+    <li>#15: Focus to the first invalid element</li>
+    <li>#31: <a href="/validators/remote/">remote validator</a>: Allow to set additional data to remote URL</li>
+    <li>#32, #43, #47: Only validate not empty field</li>
+    <li>#39: Validate existing fields only</li>
 </ul>
 
 <h3>Bug fixes</h3>
 <ul class="doc-list">
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/34">#34</a>: Avoid from calling form submit recursively</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/40">#40</a>: Fix the issue when the form label doesn't have class</li>
+    <li>#34: Avoid from calling form submit recursively</li>
+    <li>#40: Fix the issue when the form label doesn't have class</li>
 </ul>
 
 <h3>Download</h3>
 <div>
     <a class="btn btn-primary" href="/download/">bootstrapvalidator-dist-0.2.2.zip</a>
-</div>
-    </div>
-</div>
-
-                    <div class="doc-hr"></div>
-                
-                    <div class="doc-post">
-    <h2><a href="/news/v0.2.1-released/">BootstrapValidator v0.2.1 Released</a></h2>
-
-    <div class="doc-post-meta">
-        <a href="https://github.com/nghuuphuoc" title="@nghuuphuoc">
-            <img src="https://github.com/nghuuphuoc.png" />
-        </a>
-        <p>08 Nov 2013</p>
-    </div>
-
-    <div class="doc-post-content">
-        <h3>Improvements</h3>
-<ul class="doc-list">
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/29">#29</a>: Upgrade Bootstrap to v3.0.2</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/30">#30</a>: Hide the error block containers before validating</li>
-</ul>
-
-<h3>Download</h3>
-<div>
-    <a class="btn btn-primary" href="/download/">bootstrapvalidator-dist-0.2.1.zip</a>
 </div>
     </div>
 </div>
@@ -415,7 +428,7 @@ $(document).ready(function() {
             
             <a class="btn" href="/download/">Download</a>
             
-            <a class="btn" href="https://github.com/formvalidation/support">Report bug</a>
+            <a class="btn" href="https://github.com/formvalidation/support/issues">Report bug</a>
         </p>
         <p>
             &copy; 2013 - 2015 <a href="http://twitter.com/nghuuphuoc">Nguyen Huu Phuoc</a>. All rights reserved.<br/>

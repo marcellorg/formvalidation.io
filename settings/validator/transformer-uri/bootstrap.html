@@ -84,7 +84,7 @@ $(document).ready(function() {
                 validators: {
                     uri: {
                         message: 'The website address is not valid',
-                        transformer: function($field, validator) {
+                        transformer: function($field, validatorName, validator) {
                             // Get the field value
                             var value = $field.val();
 

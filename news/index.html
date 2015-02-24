@@ -120,20 +120,21 @@ _gaq.push(['_trackPageview']);
 
     <div id="main" class="doc-content-wrapper">
         <div class="doc-notification" id="notification">
-    <i class="fa fa-bell-o"></i> <a href="/addons/">Explore new add-ons page</a>
+    <i class="fa fa-bell-o"></i> <a href="/news/v0.6.1-released/">v0.6.1 is released on 2015.02.24</a>
 </div>
 <script>
 $(document).ready(function() {
     var notifications = [],
         $message      = $('#notification').find('a').data('index', 0);
+    notifications.push({ title: 'v0.6.1 is released on 2015.02.24', url: '/news/v0.6.1-released/'});
     notifications.push({ title: 'Explore new add-ons page', url: '/addons/'});
+    notifications.push({ title: 'New example: Using Mailgun API to validate email address', url: '/examples/using-mailgun-api-validate-email-address/'});
     notifications.push({ title: 'New example: Playing with jQuery UI Datepicker', url: '/examples/jquery-ui-datepicker/'});
     notifications.push({ title: 'New example: Playing with Flat UI', url: '/examples/flat-ui/'});
     notifications.push({ title: 'New example: Playing with Typhead', url: '/examples/typeahead/'});
     notifications.push({ title: 'New example: Validating array of inputs', url: '/examples/validating-array-inputs/'});
     notifications.push({ title: 'New example: Updating validator options', url: '/examples/updating-validator-options/'});
     notifications.push({ title: 'New example: Validating field with special name', url: '/examples/validating-field-special-name/'});
-    notifications.push({ title: 'v0.6.0 is released on 2015-01-06', url: '/news/v0.6.0-released/'});
     notifications.push({ title: 'New example: Validating multiple inputs as one', url: '/examples/validating-multiple-inputs-one/'});
     notifications.push({ title: '3 ways to improve performance when using remote validator', url: '/validators/remote/#improving-the-performance'});
     notifications.push({ title: 'New example: Modifying the value before validating', url: '/examples/modifying-value-before-validating/'});
@@ -171,6 +172,111 @@ $(document).ready(function() {
     <div class="container">
         <div class="row">
             <div class="col-md-9">
+                
+                    <div class="doc-post">
+    <h2><a href="/news/v0.6.1-released/">FormValidation v0.6.1 Released</a></h2>
+
+    <div class="doc-post-meta">
+        <a href="https://github.com/nghuuphuoc" title="@nghuuphuoc">
+            <img src="https://github.com/nghuuphuoc.png" />
+        </a>
+        <p>24 Feb 2015</p>
+    </div>
+
+    <div class="doc-post-content">
+        <h3>Highlight <i class="fa fa-star"></i></h3>
+<ul class="doc-list">
+    <li>#467: Add <code>dataType</code>, <code>crossDomain</code>, <code>validKey</code> options for <a href="/validators/remote/">remote</a> validator.</li>
+</ul>
+
+<p>It's possible to use remote validator to connect to external validator API, such as MailGun (#1315).</p>
+
+<ul class="doc-list">
+    <li>#1357: In addition to Bootstrap, Foundation, Pure, Semantic, UIKit, v0.6.1 provides the ability of supporting custom framework</li>
+</ul>
+
+<h3>New features</h3>
+<ul class="doc-list">
+    <li>#940: Add <code>declarative</code> option to support big form</li>
+    <li>#1328, #1330: Add Netherlands <a href="/validators/phone/">phone</a> validator, thanks to <a href="https://github.com/HendrikSwBase">@HendrikSwBase</a></li>
+    <li>#1347: Add Bulgarian <a href="/validators/zipCode/">zip code</a> validator, thanks to <a href="https://github.com/Izopi4a">@Izopi4a</a></li>
+    <li>#1350: Add Bulgarian <a href="/validators/phone/">phone number</a> validator, thanks to <a href="https://github.com/Izopi4a">@Izopi4a</a></li>
+    <li>#1355: Add Polish <a href="/validators/zipCode/">zip code</a> and <a href="/validators/id/">id</a> validators, thanks to <a href="https://github.com/tjagusz">@tjagusz</a></li>
+</ul>
+
+<h3>Improvements</h3>
+<ul class="doc-list">
+    <li>#1327: <a href="/validators/remote/">remote</a> validator fails if Ajax request fails</li>
+    <li>#1427: Update Netherlands <a href="/validators/phone/">phone number</a> validator, thanks to <a href="https://github.com/DiederikLascaris">@DiederikLascaris</a></li>
+    <li>Add plugin instance to the 3rd parameter of <a href="/settings/#validator-transformer">transformer</a> callback</li>
+    <li>Add Grunt task that runs the jasmine test suites</li>
+</ul>
+
+<h3>Bug fixes</h3>
+<p>This version fixed the <code>isValid()</code> method which should return <code>null</code> when there is not validated or being validated field.
+    It also solves the issues where the submit button is disabled even when the form is valid.</p>
+
+<ul class="doc-list">
+    <li>#962, #1318: remote validator and <code>isValid()</code> combined do not work</li>
+    <li>#1160: Submit button is disabled</li>
+    <li>#1171: Submit button being disabled</li>
+    <li>#1220: Can only submit form after changing a value</li>
+    <li>#1221, #1344: Remote validation trigger <code>err.form.fv</code></li>
+    <li>#1394: Submit incorrectly enabled even though form has errors</li>
+</ul>
+
+<p>Other issues are fixed in this version:</p>
+
+<ul class="doc-list">
+    <li>#1107, #1279, #1280, #1419: Show the <code>validating</code> icon when the field is being validated</li>
+    <li>#1282: Reset checkbox when calling <a href="/api/#reset-form">resetForm()</a> method</li>
+    <li>#1320: Fix Slovakia <a href="/validators/phone/">phone number</a> validator</li>
+    <li>#1343, #1369: Fix the issue where custom validator doesn't provide default message</li>
+    <li>#1379: Don't continue if there is no validators attached to fields</li>
+    <li>#1387: <a href="/settings/#validator-transformer">transformer</a> option doesn't work with <a href="/validators/notEmpty/">notEmpty</a> validator</li>
+    <li>#1389: Fix <code>isValidContainer()</code> and <code>validateContainer()</code> methods to support fields with the same name</li>
+</ul>
+
+<h3>Document</h3>
+<ul class="doc-list">
+    <li>#673: Update <a href="/validators/emailAddress/">emailAddress</a> validator document</li>
+    <li>#688: Add a <a href="/settings/#form-icon">notice</a> when using FontAwesome icon</li>
+    <li>#973, #1021, #1346: 3 ways to <a href="/validators/remote/#improving-the-performance">improve performance</a> when using remote validator</li>
+    <li>#1098, #1118, #1325: Add <a href="/examples/fuel-ux-wizard/">Playing with Fuel UX Wizard</a> example</li>
+    <li>#1109, #1326: Add <a href="/examples/typeahead/">Playing with Typehead</a> example</li>
+    <li>#1112: Support thousand separator</li>
+    <li>#1124, #1329: Fix <a href="/examples/ckeditor/">CKEditor example</a> on Firefox</li>
+    <li>#1205: Add <a href="/examples/bootstrap-material-design/">Playing with Bootstrap Material Design</a> example</li>
+    <li>#1308: Update <a href="/validators/creditCard/#showing-card-icon">Showing card icon</a> example</li>
+    <li>#1313: Add <a href="/examples/adding-warning-validation-state/">Adding warning validation state</a> example</li>
+    <li>#1315: Add <a href="/examples/using-mailgun-api-validate-email-address/">Using Mailgun API to validate email address</a> example</li>
+    <li>#1333: Update <a href="/examples/enabling-submit-button/">Enabling the submit button</a> example</li>
+    <li>#1378: Add <a href="/examples/validating-multiple-inputs-one/">Validating multiple inputs as one</a> example</li>
+    <li>#1388: Add <a href="/examples/field-value-changed-programmatically/">Field value is changed programmatically</a> example</li>
+    <li>#1390: Fix the <a href="/api/#is-valid">isValid()</a> method document</li>
+    <li>#1397: Add <a href="/examples/updating-validator-options/">Updating validator options</a> example</li>
+    <li>#1423: Update the <a href="/settings/#form-icon">UIKit icon usage</a></li>
+    <li>Fix the issue in <a href="/settings/#settings-structure">Settings Structure</a> section, thanks to <a href="https://github.com/DiederikLascaris">@DiederikLascaris</a></li>
+    <li>#29: Add <a href="/examples/jquery-ui-datepicker/">Playing with jQuery UI Datepicker</a> example</li>
+    <li>#33: Add <a href="/examples/flat-ui/">Playing with Flat UI</a> example</li>
+    <li>#37: Add <a href="/validators/callback/#showing-all-messages">Showing all messages when using callback validator</a> example</li>
+</ul>
+
+<h3>Language packages</h3>
+<ul class="doc-list">
+    <li>#1381: Update Slovak language package, thanks to <a href="https://github.com/PatrikGallik">@PatrikGallik</a></li>
+    <li>#1400: Update Belgian Dutch language package, thanks to <a href="https://github.com/jdt">@jdt</a></li>
+    <li>#1432: Fix some typos in the Hungarian translation, thanks to <a href="https://github.com/blackfyre">@blackfyre</a></li>
+</ul>
+
+<h3>Download</h3>
+<div>
+    <a class="btn btn-primary" href="/download/" title="Download FormValidation v0.6.1">FormValidation v0.6.1</a>
+</div>
+    </div>
+</div>
+
+                    <div class="doc-hr"></div>
                 
                     <div class="doc-post">
     <h2><a href="/news/upgrading-to-v0.6.0/">Upgrading to v0.6.0</a></h2>
@@ -515,101 +621,101 @@ $(document).ready(function() {
 
 <h3>Highlight <i class="fa fa-star"></i></h3>
 <ul class="doc-list">
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/744">#744</a>: Add <a href="/settings/#validator-transformer">transformer</a> option, allowing to hook the value of field before validating</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/1131">#1131</a>: Support add-on</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/1204">#1204</a>: Support Zurb Foundation framework</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/1210">#1210</a>: Support UI Kit framework</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/1211">#1211</a>: Support Semantic UI framework</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/1212">#1212</a>: Support Pure framework</li>
+    <li>#744: Add <a href="/settings/#validator-transformer">transformer</a> option, allowing to hook the value of field before validating</li>
+    <li>#1131: Support add-on</li>
+    <li>#1204: Support Zurb Foundation framework</li>
+    <li>#1210: Support UI Kit framework</li>
+    <li>#1211: Support Semantic UI framework</li>
+    <li>#1212: Support Pure framework</li>
 </ul>
 
 <h3>New features</h3>
 <ul class="doc-list">
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/708">#708</a>, <a href="https://github.com/formvalidation/formvalidation/issues/899">#899</a>: Add <code>setLocale()</code> and <code>getLocale()</code> methods to support multiple languages</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/718">#718</a>: Add <a href="/api/#validate-container">validateContainer()</a> method</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/1140">#1140</a>: Add UAE <a href="/validators/phone/">phone number</a> validator, thanks to <a href="https://github.com/s-a-y">@s-a-y</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/1153">#1153</a>: Add <a href="/validators/ein/">EIN</a> validator, thanks to <a href="https://github.com/joshuachestang">@joshuachestang</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/1165">#1165</a>: Add <a href="/validators/bic/">BIC (ISO 9362)</a> validator, thanks to <a href="https://github.com/thomaslhotta">@thomaslhotta</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/1185">#1185</a>: Add <code>composer.json</code> file, thanks to <a href="https://github.com/rbnvrw">@rbnvrw</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/1189">#1189</a>, <a href="https://github.com/formvalidation/formvalidation/issues/1194">#1194</a>: Add <a href="/settings/#form-err">err</a>, <a href="/settings/#form-icon">icon</a>, <a href="/settings/#form-row">row</a> options</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/1207">#1207</a>: Add Spanish <a href="/validators/zipCode/">postal code</a> validator, thanks to <a href="https://github.com/ethernet-zero">@ethernet-zero</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/1208">#1208</a>: Support Spanish <a href="/validators/id/">CIF</a> validator, thanks to <a href="https://github.com/ethernet-zero">@ethernet-zero</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/1227">#1227</a>, <a href="https://github.com/formvalidation/formvalidation/pull/1229">#1229</a>: Add India <a href="/validators/phone/">phone number</a> validator, thanks to <a href="https://github.com/waveking">@waveking</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/1230">#1230</a>, <a href="https://github.com/formvalidation/formvalidation/pull/1231">#1231</a>: Add India <a href="/validators/zipCode/">postal code</a> validator, thanks to <a href="https://github.com/waveking">@waveking</a></li>
+    <li>#708, #899: Add <code>setLocale()</code> and <code>getLocale()</code> methods to support multiple languages</li>
+    <li>#718: Add <a href="/api/#validate-container">validateContainer()</a> method</li>
+    <li>#1140: Add UAE <a href="/validators/phone/">phone number</a> validator, thanks to <a href="https://github.com/s-a-y">@s-a-y</a></li>
+    <li>#1153: Add <a href="/validators/ein/">EIN</a> validator, thanks to <a href="https://github.com/joshuachestang">@joshuachestang</a></li>
+    <li>#1165: Add <a href="/validators/bic/">BIC (ISO 9362)</a> validator, thanks to <a href="https://github.com/thomaslhotta">@thomaslhotta</a></li>
+    <li>#1185: Add <code>composer.json</code> file, thanks to <a href="https://github.com/rbnvrw">@rbnvrw</a></li>
+    <li>#1189, #1194: Add <a href="/settings/#form-err">err</a>, <a href="/settings/#form-icon">icon</a>, <a href="/settings/#form-row">row</a> options</li>
+    <li>#1207: Add Spanish <a href="/validators/zipCode/">postal code</a> validator, thanks to <a href="https://github.com/ethernet-zero">@ethernet-zero</a></li>
+    <li>#1208: Support Spanish <a href="/validators/id/">CIF</a> validator, thanks to <a href="https://github.com/ethernet-zero">@ethernet-zero</a></li>
+    <li>#1227, #1229: Add India <a href="/validators/phone/">phone number</a> validator, thanks to <a href="https://github.com/waveking">@waveking</a></li>
+    <li>#1230, #1231: Add India <a href="/validators/zipCode/">postal code</a> validator, thanks to <a href="https://github.com/waveking">@waveking</a></li>
 </ul>
 
 <h3>Changes</h3>
 <ul class="doc-list">
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/1167">#1167</a>: Remove hexColor validator. Use <a href="/validators/color/">color</a> validator instead</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/1272">#1272</a>: Change event <code>error.x.x</code> to <code>err.x.x</code> to avoid <code>window.onerror</code> being invoked by jQuery</li>
+    <li>#1167: Remove hexColor validator. Use <a href="/validators/color/">color</a> validator instead</li>
+    <li>#1272: Change event <code>error.x.x</code> to <code>err.x.x</code> to avoid <code>window.onerror</code> being invoked by jQuery</li>
     <li>Remove tab behavior from base class</li>
 </ul>
 
 <h3>Improvements</h3>
 <ul class="doc-list">
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/883">#883</a>: Look for the field inside form first when using selector, thanks to <a href="https://github.com/drebrez">@drebrez</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/908">#908</a>, <a href="https://github.com/formvalidation/formvalidation/pull/1156">#1156</a>: Add <code>allowEmptyProtocol</code> option to set optional protocol in <a href="/validators/uri/#options">uri</a> validator, thanks to <a href="https://github.com/krecik">@krecik</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/914">#914</a>, <a href="https://github.com/formvalidation/formvalidation/pull/1035">#1035</a>, <a href="https://github.com/formvalidation/formvalidation/issues/1163">#1163</a>: Improve <a href="/validators/identical/">identical</a> validator, thanks to <a href="https://github.com/jazzzz">@jazzzz</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/1037">#1037</a>: <a href="/validators/creditCard/#showing-card-icon">Show the credit card icon</a> based on its type</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/1083">#1083</a>, <a href="https://github.com/formvalidation/formvalidation/pull/1092/">#1092</a>: Showing tooltip/popover when moving over or clicking the feedback icon (Bootstrap 3.3.0), thanks to <a href="https://github.com/Arkni">@Arkni</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/1137">#1137</a>: Use <code>jQuery</code> instead of <code>window.jQuery</code></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/1154">#1154</a>: Allow to reuse data which is returned by the validator</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/1177">#1177</a>: Don't need to set the <a href="/validators/different/">different</a> validator for both fields</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/1186">#1186</a>, <a href="https://github.com/formvalidation/formvalidation/pull/1188">#1188</a>: Improve the <a href="/validators/id/">CPF</a> validator, thanks to <a href="https://github.com/igorescobar">@igorescobar</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/1197">#1197</a>: Add sample data for <a href="/validators/id/">CPF</a> validator, thanks to <a href="https://github.com/dgmike">@dgmike</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/1207">#1207</a>: Improve Spanish <a href="/validators/phone/">phone</a> validator, thanks to <a href="https://github.com/ethernet-zero">@ethernet-zero</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/1218">#1218</a>: Improve Slovenian <a href="/validators/vat/">vat number</a> validator, thanks to <a href="https://github.com/Glavic">@Glavic</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/1224">#1224</a>: Improve tooltip style when working with Semantic UI form, thanks to <a href="https://github.com/Arkni">@Arkni</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/1226">#1226</a>: Fix destroying Semantic UI popup, thanks to <a href="https://github.com/Arkni">@Arkni</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/1239">#1239</a>: Fix typo in UIKit class, thanks to <a href="https://github.com/Arkni">@Arkni</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/1252">#1252</a>: Validators return true for not supported countries</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/1255">#1255</a>, <a href="https://github.com/formvalidation/formvalidation/pull/1258">#1258</a>: Support to use a <code>Date</code> object as value for <a href="/validators/date/#options">min and max</a> options, thanks to <a href="https://github.com/Arkni">@Arkni</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/1261">#1261</a>: Improve <a href="/validators/cvv/">cvv</a> validator</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/1268">#1268</a>: <a href="/validators/uri/">uri</a> validator gets slower if more than 25 characters</li>
+    <li>#883: Look for the field inside form first when using selector, thanks to <a href="https://github.com/drebrez">@drebrez</a></li>
+    <li>#908, #1156: Add <code>allowEmptyProtocol</code> option to set optional protocol in <a href="/validators/uri/#options">uri</a> validator, thanks to <a href="https://github.com/krecik">@krecik</a></li>
+    <li>#914, #1035, #1163: Improve <a href="/validators/identical/">identical</a> validator, thanks to <a href="https://github.com/jazzzz">@jazzzz</a></li>
+    <li>#1037: <a href="/validators/creditCard/#showing-card-icon">Show the credit card icon</a> based on its type</li>
+    <li>#1083, #1092: Showing tooltip/popover when moving over or clicking the feedback icon (Bootstrap 3.3.0), thanks to <a href="https://github.com/Arkni">@Arkni</a></li>
+    <li>#1137: Use <code>jQuery</code> instead of <code>window.jQuery</code></li>
+    <li>#1154: Allow to reuse data which is returned by the validator</li>
+    <li>#1177: Don't need to set the <a href="/validators/different/">different</a> validator for both fields</li>
+    <li>#1186, #1188: Improve the <a href="/validators/id/">CPF</a> validator, thanks to <a href="https://github.com/igorescobar">@igorescobar</a></li>
+    <li>#1197: Add sample data for <a href="/validators/id/">CPF</a> validator, thanks to <a href="https://github.com/dgmike">@dgmike</a></li>
+    <li>#1207: Improve Spanish <a href="/validators/phone/">phone</a> validator, thanks to <a href="https://github.com/ethernet-zero">@ethernet-zero</a></li>
+    <li>#1218: Improve Slovenian <a href="/validators/vat/">vat number</a> validator, thanks to <a href="https://github.com/Glavic">@Glavic</a></li>
+    <li>#1224: Improve tooltip style when working with Semantic UI form, thanks to <a href="https://github.com/Arkni">@Arkni</a></li>
+    <li>#1226: Fix destroying Semantic UI popup, thanks to <a href="https://github.com/Arkni">@Arkni</a></li>
+    <li>#1239: Fix typo in UIKit class, thanks to <a href="https://github.com/Arkni">@Arkni</a></li>
+    <li>#1252: Validators return true for not supported countries</li>
+    <li>#1255, #1258: Support to use a <code>Date</code> object as value for <a href="/validators/date/#options">min and max</a> options, thanks to <a href="https://github.com/Arkni">@Arkni</a></li>
+    <li>#1261: Improve <a href="/validators/cvv/">cvv</a> validator</li>
+    <li>#1268: <a href="/validators/uri/">uri</a> validator gets slower if more than 25 characters</li>
     <li>The <a href="/api/#is-valid-container">isValidContainer()</a> method should return <code>null</code> if the container consists of at least one field which is not validated yet or being validated</li>
 </ul>
 
 <h3>Bug fixes</h3>
 <ul class="doc-list">
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/1101">#1101</a>: The <a href="/validators/cusip/">cusip</a> validator doesn't work</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/1102">#1102</a>: Fix the <a href="/validators/date/">date</a> validator issue where accepts <code>2014-11-1 23:</code> as valid <code>YYYY-MM-DD h:m</code> date</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/1105">#1105</a>: The <a href="/validators/color/">color</a> validator doesn't provide <code>html5Attributes</code> mapping</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/1125">#1125</a>, <a href="https://github.com/formvalidation/formvalidation/pull/1136">#1136</a>: Update Brazil <a href="/validators/id/">ID</a> validator to support working with Mask plugin, thanks to <a href="https://github.com/jonasesteves">@jonasesteves</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/1243">#1243</a>: Fix the icon without label class</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/1267">#1267</a>: <a href="/validators/identical/">identical</a> validator allows to compare with any input</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/1274">#1274</a>: Fix <a href="/api/#validate-container">validateContainer()</a> to use map value instead of key, thanks to <a href="https://github.com/jasonblalock">@jasonblalock</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/1279">#1279</a>, <a href="https://github.com/formvalidation/formvalidation/pull/1280">#1280</a>: Show the <code>validating</code> icon when the field is being validated, thanks to <a href="https://github.com/tmaly1980">@tmaly1980</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/1292">#1292</a>: Fix bug of US <a href="/validators/phone/">phone number</a> validator</li>
+    <li>#1101: The <a href="/validators/cusip/">cusip</a> validator doesn't work</li>
+    <li>#1102: Fix the <a href="/validators/date/">date</a> validator issue where accepts <code>2014-11-1 23:</code> as valid <code>YYYY-MM-DD h:m</code> date</li>
+    <li>#1105: The <a href="/validators/color/">color</a> validator doesn't provide <code>html5Attributes</code> mapping</li>
+    <li>#1125, #1136: Update Brazil <a href="/validators/id/">ID</a> validator to support working with Mask plugin, thanks to <a href="https://github.com/jonasesteves">@jonasesteves</a></li>
+    <li>#1243: Fix the icon without label class</li>
+    <li>#1267: <a href="/validators/identical/">identical</a> validator allows to compare with any input</li>
+    <li>#1274: Fix <a href="/api/#validate-container">validateContainer()</a> to use map value instead of key, thanks to <a href="https://github.com/jasonblalock">@jasonblalock</a></li>
+    <li>#1279, #1280: Show the <code>validating</code> icon when the field is being validated, thanks to <a href="https://github.com/tmaly1980">@tmaly1980</a></li>
+    <li>#1292: Fix bug of US <a href="/validators/phone/">phone number</a> validator</li>
 </ul>
 
 <h3>Document</h3>
 <ul class="doc-list">
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/800">#800</a>: Add <a href="/validators/uri/#using-with-regexp-validator">Using uri and regexp validators</a> example</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/825">#825</a>: Add <a href="/examples/bootstrap-datepicker/">Bootstrap Datepicker</a> example</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/919">#919</a>, <a href="https://github.com/formvalidation/formvalidation/issues/1114">#1114</a>: Add <a href="/examples/validating-google-recaptcha/">Google reCAPTCHA</a> example</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/941">#941</a>: Add <a href="/examples/clearing-field-when-clicking-icon/">Clearing field when clicking the icon</a> example</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/948">#948</a>, <a href="https://github.com/formvalidation/formvalidation/issues/978">#978</a>, <a href="https://github.com/formvalidation/formvalidation/issues/1032">#1032</a>, <a href="https://github.com/formvalidation/formvalidation/issues/1146">#1146</a>, <a href="https://github.com/formvalidation/formvalidation/issues/1162">#1162</a>: Add the <a href="/validators/emailAddress/#is-ab-valid-email-address">Is a@b valid email address</a> section</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/1034">#1034</a>: Add <a href="/examples/enabling-submit-button/">Only enable the submit button if all fields are valid</a> example</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/1078">#1078</a>, <a href="https://github.com/formvalidation/formvalidation/issues/1104">#1104</a>: Update the <a href="/examples/enabling-submit-button/">Enabling the submit button all the time</a> example</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/1106">#1106</a>: Add example to the <a href="/validators/phone/">phone</a> validator</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/1122">#1122</a>: Add third parameter to <code>callback</code> method of <a href="/validators/callback/">callback</a> validator, thanks to <a href="https://github.com/Arkni">@Arkni</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/1128">#1128</a>: Add link to the <a href="/examples/">Examples</a> from the <a href="/#2">homepage</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/1139">#1139</a>: Add sample <a href="/validators/phone/">United Arab Emirates phone numbers</a>, thanks to <a href="https://github.com/@s-a-y">@s-a-y</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/1143">#1143</a>, <a href="https://github.com/formvalidation/formvalidation/issues/1176">#1176</a>: Add <a href="/examples/form-submit-twice/">Form is submitted twice</a> example</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/1172">#1172</a>: Add <a href="/examples/requiring-at-least-one-field/">Requiring at least one field</a> example</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/1174">#1174</a>: Add <a href="/examples/pickadate/">Pickadate</a> example</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/1187">#1187</a>: Add sample <a href="/validators/id/">Brazil ID (CPF) numbers</a>, thanks to <a href="https://github.com/igorescobar">@igorescobar</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/1233">#1233</a>: Add sample <a href="/validators/zipCode/">India postal code numbers</a>, thanks to <a href="https://github.com/waveking">@waveking</a></li>
+    <li>#800: Add <a href="/validators/uri/#using-with-regexp-validator">Using uri and regexp validators</a> example</li>
+    <li>#825: Add <a href="/examples/bootstrap-datepicker/">Bootstrap Datepicker</a> example</li>
+    <li>#919, #1114: Add <a href="/examples/validating-google-recaptcha/">Google reCAPTCHA</a> example</li>
+    <li>#941: Add <a href="/examples/clearing-field-when-clicking-icon/">Clearing field when clicking the icon</a> example</li>
+    <li>#948, #978, #1032, #1146, #1162: Add the <a href="/validators/emailAddress/#is-ab-valid-email-address">Is a@b valid email address</a> section</li>
+    <li>#1034: Add <a href="/examples/enabling-submit-button/">Only enable the submit button if all fields are valid</a> example</li>
+    <li>#1078, #1104: Update the <a href="/examples/enabling-submit-button/">Enabling the submit button all the time</a> example</li>
+    <li>#1106: Add example to the <a href="/validators/phone/">phone</a> validator</li>
+    <li>#1122: Add third parameter to <code>callback</code> method of <a href="/validators/callback/">callback</a> validator, thanks to <a href="https://github.com/Arkni">@Arkni</a></li>
+    <li>#1128: Add link to the <a href="/examples/">Examples</a> from the <a href="/#2">homepage</a></li>
+    <li>#1139: Add sample <a href="/validators/phone/">United Arab Emirates phone numbers</a>, thanks to <a href="https://github.com/@s-a-y">@s-a-y</a></li>
+    <li>#1143, #1176: Add <a href="/examples/form-submit-twice/">Form is submitted twice</a> example</li>
+    <li>#1172: Add <a href="/examples/requiring-at-least-one-field/">Requiring at least one field</a> example</li>
+    <li>#1174: Add <a href="/examples/pickadate/">Pickadate</a> example</li>
+    <li>#1187: Add sample <a href="/validators/id/">Brazil ID (CPF) numbers</a>, thanks to <a href="https://github.com/igorescobar">@igorescobar</a></li>
+    <li>#1233: Add sample <a href="/validators/zipCode/">India postal code numbers</a>, thanks to <a href="https://github.com/waveking">@waveking</a></li>
 </ul>
 
 <h3>Language packages</h3>
 <ul class="doc-list">
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/1150">#1150</a>: Add Catalan language package, thanks to <a href="https://github.com/ArnauAregall">@ArnauAregall</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/1216">#1216</a>, <a href="https://github.com/formvalidation/formvalidation/pull/1248">#1248</a>: Add Slovak language package, thanks to <a href="https://github.com/budik21">@budik21</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/1217">#1217</a>, <a href="https://github.com/formvalidation/formvalidation/pull/1247">#1247</a>: Update Czech language package, thanks to <a href="https://github.com/budik21">@budik21</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/1225">#1225</a>: Add Finnish language package, thanks to <a href="https://github.com/traone">@traone</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/1246">#1246</a>: Add Hindi language package, thanks to <a href="https://github.com/gladiatorAsh">@gladiatorAsh</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/1321">#1321</a>: Add Basque language package, thanks to <a href="https://github.com/xabikip">@xabikip</a></li>
+    <li>#1150: Add Catalan language package, thanks to <a href="https://github.com/ArnauAregall">@ArnauAregall</a></li>
+    <li>#1216, #1248: Add Slovak language package, thanks to <a href="https://github.com/budik21">@budik21</a></li>
+    <li>#1217, #1247: Update Czech language package, thanks to <a href="https://github.com/budik21">@budik21</a></li>
+    <li>#1225: Add Finnish language package, thanks to <a href="https://github.com/traone">@traone</a></li>
+    <li>#1246: Add Hindi language package, thanks to <a href="https://github.com/gladiatorAsh">@gladiatorAsh</a></li>
+    <li>#1321: Add Basque language package, thanks to <a href="https://github.com/xabikip">@xabikip</a></li>
 </ul>
 
 <h3>Contributors</h3>
@@ -959,86 +1065,86 @@ $(&#39;#saveButton&#39;).on(&#39;click&#39;, function() {
     <div class="doc-post-content">
         <h3>New features</h3>
 <ul class="doc-list">
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/807">#807</a>, <a href="https://github.com/formvalidation/formvalidation/pull/821">#821</a>: Add <code>min</code>, <code>max</code> options for the <a href="/validators/date/">date</a> validator, thanks to <a href="https://github.com/Arkni">@Arkni</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/822">#822</a>: Add <a href="/validators/color/">color</a> validator, thanks to <a href="https://github.com/emilchristensen">@emilchristensen</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/844">#844</a>, <a href="https://github.com/formvalidation/formvalidation/pull/874">#874</a>: The <a href="/validators/stringLength/">stringLength</a> validator adds option to evaluate length in UTF-8 bytes, thanks to <a href="https://github.com/thx2001r">@thx2001r</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/960">#960</a>, <a href="https://github.com/formvalidation/formvalidation/issues/1052">#1052</a>: Add <code>trim</code> option for the <a href="/validators/stringLength/">stringLength</a> validator</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/1001">#1001</a>: Add <code>minFiles</code>, <code>maxFiles</code>, <code>minTotalSize</code>, <code>maxTotalSize</code> options for the <a href="/validators/file/">file</a> validator, thanks to <a href="https://github.com/morrizon">@morrizon</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/1008">#1008</a>: Add France <a href="/validators/zipCode/">postal code</a> validator, thanks to <a href="https://github.com/jazzzz">@jazzzz</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/1010">#1010</a>: Add Ireland <a href="/validators/zipCode/">postal code</a> validator, thanks to <a href="https://github.com/zmira">@zmira</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/1018">#1018</a>: Add German <a href="/validators/phone/">phone number</a> and <a href="/validators/zipCode/">postal code</a> validators, thanks to <a href="https://github.com/jhadenfeldt">@jhadenfeldt</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/1022">#1022</a>: Add Portugal <a href="/validators/zipCode/">postal code</a> validator, thanks to <a href="https://github.com/zmira">@zmira</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/1033">#1033</a>, <a href="https://github.com/formvalidation/formvalidation/issues/1043">#1043</a>, <a href="https://github.com/formvalidation/formvalidation/issues/1068">#1068</a>: Add <a href="/settings/#form-auto-focus">autoFocus</a> option</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/1072">#1072</a>: Add Austria and Switzerland <a href="/validators/zipCode/">postal code</a> validators, thanks to <a href="https://github.com/thomaslhotta">@thomaslhotta</a></li>
+    <li>#807, #821: Add <code>min</code>, <code>max</code> options for the <a href="/validators/date/">date</a> validator, thanks to <a href="https://github.com/Arkni">@Arkni</a></li>
+    <li>#822: Add <a href="/validators/color/">color</a> validator, thanks to <a href="https://github.com/emilchristensen">@emilchristensen</a></li>
+    <li>#844, #874: The <a href="/validators/stringLength/">stringLength</a> validator adds option to evaluate length in UTF-8 bytes, thanks to <a href="https://github.com/thx2001r">@thx2001r</a></li>
+    <li>#960, #1052: Add <code>trim</code> option for the <a href="/validators/stringLength/">stringLength</a> validator</li>
+    <li>#1001: Add <code>minFiles</code>, <code>maxFiles</code>, <code>minTotalSize</code>, <code>maxTotalSize</code> options for the <a href="/validators/file/">file</a> validator, thanks to <a href="https://github.com/morrizon">@morrizon</a></li>
+    <li>#1008: Add France <a href="/validators/zipCode/">postal code</a> validator, thanks to <a href="https://github.com/jazzzz">@jazzzz</a></li>
+    <li>#1010: Add Ireland <a href="/validators/zipCode/">postal code</a> validator, thanks to <a href="https://github.com/zmira">@zmira</a></li>
+    <li>#1018: Add German <a href="/validators/phone/">phone number</a> and <a href="/validators/zipCode/">postal code</a> validators, thanks to <a href="https://github.com/jhadenfeldt">@jhadenfeldt</a></li>
+    <li>#1022: Add Portugal <a href="/validators/zipCode/">postal code</a> validator, thanks to <a href="https://github.com/zmira">@zmira</a></li>
+    <li>#1033, #1043, #1068: Add <a href="/settings/#form-auto-focus">autoFocus</a> option</li>
+    <li>#1072: Add Austria and Switzerland <a href="/validators/zipCode/">postal code</a> validators, thanks to <a href="https://github.com/thomaslhotta">@thomaslhotta</a></li>
 </ul>
 
 <h3>Improvements</h3>
 <ul class="doc-list">
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/823">#823</a>: The <a href="/validators/hexColor/">hexColor</a> validator only accepts 6 hex character values when using HTML 5 <code>type='color'</code> attribute</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/864">#864</a>: Comma separator handling in <a href="/validators/greaterThan/">greaterThan</a>, <a href="/validators/lessThan/">lessThan</a> validators, thanks to <a href="https://github.com/mgibas">@mgibas</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/999">#999</a>, <a href="https://github.com/formvalidation/formvalidation/issues/1048">#1048</a>: Replace ',' with '.' to validate decimal numbers correct, thanks to <a href="https://github.com/johanronn77">@johanronn77</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/1002">#1002</a>: Put tooltip/popover on bottom if there is not enough space on top, thanks to <a href="https://github.com/jazzzz">@jazzzz</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/1015">#1015</a>: The <a href="/validators/remote/">remote</a> validator allows to set <code>data</code> options via HTML attributes, thanks to <a href="https://github.com/jazzzz">@jazzzz</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/1017">#1017</a>: <a href="/examples/attribute/">Enable validator</a> when setting <code>data-bv-validatorname="data-bv-validatorname"</code>, thanks to <a href="https://github.com/jazzzz">@jazzzz</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/1026">#1026</a>: Requires jQuery 1.9.1 or higher</li>
+    <li>#823: The <a href="/validators/color/">color</a> validator only accepts 6 hex character values when using HTML 5 <code>type='color'</code> attribute</li>
+    <li>#864: Comma separator handling in <a href="/validators/greaterThan/">greaterThan</a>, <a href="/validators/lessThan/">lessThan</a> validators, thanks to <a href="https://github.com/mgibas">@mgibas</a></li>
+    <li>#999, #1048: Replace ',' with '.' to validate decimal numbers correct, thanks to <a href="https://github.com/johanronn77">@johanronn77</a></li>
+    <li>#1002: Put tooltip/popover on bottom if there is not enough space on top, thanks to <a href="https://github.com/jazzzz">@jazzzz</a></li>
+    <li>#1015: The <a href="/validators/remote/">remote</a> validator allows to set <code>data</code> options via HTML attributes, thanks to <a href="https://github.com/jazzzz">@jazzzz</a></li>
+    <li>#1017: <a href="/examples/attribute/">Enable validator</a> when setting <code>data-bv-validatorname="data-bv-validatorname"</code>, thanks to <a href="https://github.com/jazzzz">@jazzzz</a></li>
+    <li>#1026: Requires jQuery 1.9.1 or higher</li>
 </ul>
 
 <h3>Bug fixes</h3>
 <ul class="doc-list">
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/343">#343</a>, <a href="https://github.com/formvalidation/formvalidation/issues/481">#481</a>, <a href="https://github.com/formvalidation/formvalidation/pull/1045">#1045</a>: Fix double submit with defered validators, thanks to <a href="https://github.com/jazzzz">@jazzzz</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/933">#933</a>, <a href="https://github.com/formvalidation/formvalidation/issues/959">#959</a>, <a href="https://github.com/formvalidation/formvalidation/issues/1047">#1047</a>: Tooltip/popover isn't destroyed when the field is valid</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/991">#991</a>: The field is validated only one time when setting <code>trigger: 'blur'</code>, <code>container: 'tooltip'</code></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/1014">#1014</a>: Fix <a href="/api/#is-valid-field">isValidField()</a> and <a href="/api/#validate-field">validateField()</a> methods for fields without validators, thanks to <a href="https://github.com/jazzzz">@jazzzz</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/1050">#1050</a>: Fix the issue when using multiple fields with same name, the tooltip of the last element is always shown</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/1055">#1055</a>, <a href="https://github.com/formvalidation/formvalidation/pull/1063">#1063</a>: The <a href="/settings/#event-field">error.field.bv</a> event isn't triggered if verbose is set to false, thanks to <a href="https://github.com/shineability">@shineability</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/1057">#1057</a>, <a href="https://github.com/formvalidation/formvalidation/pull/1063">#1063</a>: The <a href="/settings/#field-verbose">verbose</a> option for field doesn't override the form level, thanks to <a href="https://github.com/shineability">@shineability</a></li>
+    <li>#343, #481, #1045: Fix double submit with defered validators, thanks to <a href="https://github.com/jazzzz">@jazzzz</a></li>
+    <li>#933, #959, #1047: Tooltip/popover isn't destroyed when the field is valid</li>
+    <li>#991: The field is validated only one time when setting <code>trigger: 'blur'</code>, <code>container: 'tooltip'</code></li>
+    <li>#1014: Fix <a href="/api/#is-valid-field">isValidField()</a> and <a href="/api/#validate-field">validateField()</a> methods for fields without validators, thanks to <a href="https://github.com/jazzzz">@jazzzz</a></li>
+    <li>#1050: Fix the issue when using multiple fields with same name, the tooltip of the last element is always shown</li>
+    <li>#1055, #1063: The <a href="/settings/#event-field">error.field.bv</a> event isn't triggered if verbose is set to false, thanks to <a href="https://github.com/shineability">@shineability</a></li>
+    <li>#1057, #1063: The <a href="/settings/#field-verbose">verbose</a> option for field doesn't override the form level, thanks to <a href="https://github.com/shineability">@shineability</a></li>
 </ul>
 
 <h3>Document</h3>
 <ul class="doc-list">
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/848">#848</a>: Update the <a href="/validators/stringLength">stringLength</a> document, thanks to <a href="https://github.com/Relequestual">@Relequestual</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/885">#885</a>: Add a notification about setting <a href="/validators/identical/">identical</a> validator for both fields</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/912">#912</a>: Add <a href="/examples/using-language-package/">Using language package</a> example</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/920">#920</a>, <a href="https://github.com/formvalidation/formvalidation/pull/929">#929</a>, <a href="https://github.com/formvalidation/formvalidation/pull/936">#936</a>: Update the <a href="/examples/tooltip-popover-position/">Changing the tooltip, popover's position</a> example, thanks to <a href="https://github.com/Arkni">@Arkni</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/938">#938</a>: Add <a href="/validators/regexp/#html-5-example">time</a> validator example</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/979">#979</a>: Add <a href="/validators/stringLength/#using-with-rails-form">Rails usage</a> for stringLength validator</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/1006">#1006</a>: Fix the order of <a href="/settings/#validator-enabled">parameters</a> for <a href="/api/#enable-field-validators">enableFieldValidators()</a> method, thanks to <a href="https://github.com/mchrapka">@mchrapka</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/1009">#1009</a>: Fix mixed data/delay in <a href="/validators/remote/">remote</a> doc, thanks to <a href="https://github.com/jazzzz">@jazzzz</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/1019">#1019</a>: Updated docs for added German <a href="/validators/zipCode/">postal code</a> and <a href="/validators/phone/">phone number</a> validators, thanks to <a href="https://github.com/jhadenfeldt">@jhadenfeldt</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/1038">#1038</a>: Fix <a href="/examples/changing-tooltip-position/">Changing tooltip, popover's position</a> example link, thanks to <a href="https://github.com/Arkni">@Arkni</a></li>
+    <li>#848: Update the <a href="/validators/stringLength">stringLength</a> document, thanks to <a href="https://github.com/Relequestual">@Relequestual</a></li>
+    <li>#885: Add a notification about setting <a href="/validators/identical/">identical</a> validator for both fields</li>
+    <li>#912: Add <a href="/examples/using-language-package/">Using language package</a> example</li>
+    <li>#920, #929, #936: Update the <a href="/examples/tooltip-popover-position/">Changing the tooltip, popover's position</a> example, thanks to <a href="https://github.com/Arkni">@Arkni</a></li>
+    <li>#938: Add <a href="/validators/regexp/#html-5-example">time</a> validator example</li>
+    <li>#979: Add <a href="/validators/stringLength/#using-with-rails-form">Rails usage</a> for stringLength validator</li>
+    <li>#1006: Fix the order of <a href="/settings/#validator-enabled">parameters</a> for <a href="/api/#enable-field-validators">enableFieldValidators()</a> method, thanks to <a href="https://github.com/mchrapka">@mchrapka</a></li>
+    <li>#1009: Fix mixed data/delay in <a href="/validators/remote/">remote</a> doc, thanks to <a href="https://github.com/jazzzz">@jazzzz</a></li>
+    <li>#1019: Updated docs for added German <a href="/validators/zipCode/">postal code</a> and <a href="/validators/phone/">phone number</a> validators, thanks to <a href="https://github.com/jhadenfeldt">@jhadenfeldt</a></li>
+    <li>#1038: Fix <a href="/examples/changing-tooltip-position/">Changing tooltip, popover's position</a> example link, thanks to <a href="https://github.com/Arkni">@Arkni</a></li>
 </ul>
 
 <h3>Language packages</h3>
 <ul class="doc-list">
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/827">#827</a>: Update Dutch language package, thanks to <a href="https://github.com/JvanderHeide">@JvanderHeide</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/829">#829</a>: Update Swedish language package, thanks to <a href="https://github.com/ulsa">@ulsa</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/834">#834</a>: Update Ukrainian and Russian language packages, thanks to <a href="https://github.com/oleg-voloshyn">@oleg-voloshyn</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/835">#835</a>: Update Belgium (French) language package, thanks to <a href="https://github.com/neilime">@neilime</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/836">#836</a>: Update French language package, thanks to <a href="https://github.com/neilime">@neilime</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/837">#837</a>: Update Bulgarian language package, thanks to <a href="https://github.com/mraiur">@mraiur</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/846">#846</a>: Update simplified Chinese language package, thanks to <a href="https://github.com/shamiao">@shamiao</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/849">#849</a>: Update Serbian language package, thanks to <a href="https://github.com/markocrni">@markocrni</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/850">#850</a>, <a href="https://github.com/formvalidation/formvalidation/pull/851">#851</a>: Update Danish language package, thanks to <a href="https://github.com/Djarnis">@Djarnis</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/869">#869</a>: Update Polish language package, thanks to <a href="https://github.com/grzesiek">@grzesiek</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/870">#870</a>: Update Traditional Chinese language package, thanks to <a href="https://github.com/tureki">@tureki</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/871">#871</a>: Update Czech language package, thanks to <a href="https://github.com/cuchac">@cuchac</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/872">#872</a>: Update Indonesian language package, thanks to <a href="https://github.com/egig">@egig</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/879">#879</a>: Update Romanian language package, thanks to <a href="https://github.com/filipac">@filipac</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/880">#880</a>: Update Belgium (Dutch) language package, thanks to <a href="https://github.com/dokterpasta">@dokterpasta</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/881">#881</a>: Update Italian language package, thanks to <a href="https://github.com/maramazza">@maramazza</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/882">#882</a>: Update Spanish language package, thanks to <a href="https://github.com/vadail">@vadail</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/891">#891</a>: Update Portuguese (Brazil) language package, thanks to <a href="https://github.com/dgmike">@dgmike</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/893">#893</a>: Fix country name of Dominican Republic, thanks to <a href="https://github.com/sventech">@sventech</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/900">#900</a>: Update Persian (Farsi) language package, thanks to <a href="https://github.com/i0">@i0</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/903">#903</a>: Update Hungarian language package, thanks to <a href="https://github.com/blackfyre">@blackfyre</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/910">#910</a>: Update Greek language package, thanks to <a href="https://github.com/pRieStaKos">@pRieStaKos</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/913">#913</a>: Update Thai language package, thanks to <a href="https://github.com/figgaro">@figgaro</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/915">#915</a>: Update Turkish language package, thanks to <a href="https://github.com/CeRBeR666">@CeRBeR666</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/961">#961</a>: Update Chilean Spanish language package, thanks to <a href="https://github.com/marceloampuerop6">@marceloampuerop6</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/967">#967</a>: Add Hebrew language package, thanks to <a href="https://github.com/yakidahan">@yakidahan</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/974">#974</a>: Add Albanian language package, thanks to <a href="https://github.com/desaretiuss">@desaretiuss</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/1025">#1025</a>: Fix French emailAddress message, thanks to <a href="https://github.com/jazzzz">@jazzzz</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/1051">#1051</a>: Add Portuguese language package, thanks to <a href="https://github.com/rtbfreitas">@rtbfreitas</a></li>
+    <li>#827: Update Dutch language package, thanks to <a href="https://github.com/JvanderHeide">@JvanderHeide</a></li>
+    <li>#829: Update Swedish language package, thanks to <a href="https://github.com/ulsa">@ulsa</a></li>
+    <li>#834: Update Ukrainian and Russian language packages, thanks to <a href="https://github.com/oleg-voloshyn">@oleg-voloshyn</a></li>
+    <li>#835: Update Belgium (French) language package, thanks to <a href="https://github.com/neilime">@neilime</a></li>
+    <li>#836: Update French language package, thanks to <a href="https://github.com/neilime">@neilime</a></li>
+    <li>#837: Update Bulgarian language package, thanks to <a href="https://github.com/mraiur">@mraiur</a></li>
+    <li>#846: Update simplified Chinese language package, thanks to <a href="https://github.com/shamiao">@shamiao</a></li>
+    <li>#849: Update Serbian language package, thanks to <a href="https://github.com/markocrni">@markocrni</a></li>
+    <li>#850, #851: Update Danish language package, thanks to <a href="https://github.com/Djarnis">@Djarnis</a></li>
+    <li>#869: Update Polish language package, thanks to <a href="https://github.com/grzesiek">@grzesiek</a></li>
+    <li>#870: Update Traditional Chinese language package, thanks to <a href="https://github.com/tureki">@tureki</a></li>
+    <li>#871: Update Czech language package, thanks to <a href="https://github.com/cuchac">@cuchac</a></li>
+    <li>#872: Update Indonesian language package, thanks to <a href="https://github.com/egig">@egig</a></li>
+    <li>#879: Update Romanian language package, thanks to <a href="https://github.com/filipac">@filipac</a></li>
+    <li>#880: Update Belgium (Dutch) language package, thanks to <a href="https://github.com/dokterpasta">@dokterpasta</a></li>
+    <li>#881: Update Italian language package, thanks to <a href="https://github.com/maramazza">@maramazza</a></li>
+    <li>#882: Update Spanish language package, thanks to <a href="https://github.com/vadail">@vadail</a></li>
+    <li>#891: Update Portuguese (Brazil) language package, thanks to <a href="https://github.com/dgmike">@dgmike</a></li>
+    <li>#893: Fix country name of Dominican Republic, thanks to <a href="https://github.com/sventech">@sventech</a></li>
+    <li>#900: Update Persian (Farsi) language package, thanks to <a href="https://github.com/i0">@i0</a></li>
+    <li>#903: Update Hungarian language package, thanks to <a href="https://github.com/blackfyre">@blackfyre</a></li>
+    <li>#910: Update Greek language package, thanks to <a href="https://github.com/pRieStaKos">@pRieStaKos</a></li>
+    <li>#913: Update Thai language package, thanks to <a href="https://github.com/figgaro">@figgaro</a></li>
+    <li>#915: Update Turkish language package, thanks to <a href="https://github.com/CeRBeR666">@CeRBeR666</a></li>
+    <li>#961: Update Chilean Spanish language package, thanks to <a href="https://github.com/marceloampuerop6">@marceloampuerop6</a></li>
+    <li>#967: Add Hebrew language package, thanks to <a href="https://github.com/yakidahan">@yakidahan</a></li>
+    <li>#974: Add Albanian language package, thanks to <a href="https://github.com/desaretiuss">@desaretiuss</a></li>
+    <li>#1025: Fix French emailAddress message, thanks to <a href="https://github.com/jazzzz">@jazzzz</a></li>
+    <li>#1051: Add Portuguese language package, thanks to <a href="https://github.com/rtbfreitas">@rtbfreitas</a></li>
 </ul>
 
 <h3>Contributors</h3>
@@ -1095,163 +1201,6 @@ $(&#39;#saveButton&#39;).on(&#39;click&#39;, function() {
 
                     <div class="doc-hr"></div>
                 
-                    <div class="doc-post">
-    <h2><a href="/news/v0.5.2-released/">BootstrapValidator v0.5.2 Released</a></h2>
-
-    <div class="doc-post-meta">
-        <a href="https://github.com/nghuuphuoc" title="@nghuuphuoc">
-            <img src="https://github.com/nghuuphuoc.png" />
-        </a>
-        <p>25 Sep 2014</p>
-    </div>
-
-    <div class="doc-post-content">
-        <h3>New features</h3>
-<ul class="doc-list">
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/480">#480</a>: Add <code>verbose</code> option, thanks to <a href="https://github.com/mbezhanov">@mbezhanov</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/542">#542</a>, <a href="https://github.com/formvalidation/formvalidation/pull/666">#666</a>: Add blank validator, thanks to <a href="https://github.com/bermo">@bermo</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/617">#617</a>: Add <code>init</code> and <code>destroy</code> methods to validator</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/724">#724</a>: Add Venezuelan VAT number (RIF) validator, thanks to <a href="https://github.com/paquitodev">@paquitodev</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/739">#739</a>: Add China phone number validator, thanks to <a href="https://github.com/caijh">@caijh</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/743">#743</a>: Add Venezuela phone number validator, thanks to <a href="https://github.com/paquitodev">@paquitodev</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/760">#760</a>: Add Romania phone number validator, thanks to <a href="https://github.com/adrian-dks">@adrian-dks</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/761">#761</a>: Add Romania postal code validator, thanks to <a href="https://github.com/adrian-dks">@adrian-dks</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/785">#785</a>: Add Denmark phone number validator, thanks to <a href="https://github.com/emilchristensen">@emilchristensen</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/787">#787</a>: Add Thailand phone number and ID validator, thanks to <a href="https://github.com/figgaro">@figgaro</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/793">#793</a>, <a href="https://github.com/formvalidation/formvalidation/pull/798">#798</a>: Add Chinese citizen ID validator, thanks to <a href="https://github.com/shamiao">@shamiao</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/802">#802</a>: Add Russia phone number validator, thanks to <a href="https://github.com/cylon-v">@cylon-v</a>. <a href="https://github.com/formvalidation/formvalidation/pull/816">#816</a>: Improved by <a href="https://github.com/stepin">@stepin</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/816">#816</a>: Add Russian postal code validator, thanks to <a href="https://github.com/stepin">@stepin</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/867">#867</a>: Add Czech and Slovakia phone number and postal code validators, thanks to <a href="https://github.com/cuchac">@cuchac</a></li>
-</ul>
-
-<h3>Changes</h3>
-<ul class="doc-list">
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/753">#753</a>: Change the default type of <a href="/validators/remote/">remote</a> validator to GET</li>
-</ul>
-
-<h3>Improvements</h3>
-<ul class="doc-list">
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/249">#249</a>, <a href="https://github.com/formvalidation/formvalidation/issues/574">#574</a>, <a href="https://github.com/formvalidation/formvalidation/issues/669">#669</a>: Add <code>delay</code> option to the <a href="/validators/remote/">remote</a> validator, thanks to <a href="https://github.com/q-state">@q-state</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/345">#345</a>, <a href="https://github.com/formvalidation/formvalidation/pull/454">#454</a>: The <a href="/validators/different/">different</a> validator allows more than a 2-way comparison, thanks to <a href="https://github.com/AlaskanShade">@AlaskanShade</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/557">#557</a>, <a href="https://github.com/formvalidation/formvalidation/pull/569">#569</a>: The <a href="/settings/#form-err-container">container</a> option can be defined by a callback, thanks to <a href="https://github.com/mattrick">@mattrick</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/570">#570</a>: Use CSS classes instead of inline styling to fix icons with <code>input-group</code>, thanks to <a href="https://github.com/dlcrush">@dlcrush</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/578">#578</a>, <a href="https://github.com/formvalidation/formvalidation/pull/813">#813</a>: The <a href="/validators/stringLength/">stringLength</a> validator supports HTML 5 <code>minlength</code> attribute, thanks to <a href="https://github.com/emilchristensen">@emilchristensen</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/675">#675</a>: The <a href="/validators/emailAddress/">emailAddress</a> validator accepts multiple email addresses, thanks to <a href="https://github.com/kenny-evitt">@kenny-evitt</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/716">#716</a>, <a href="https://github.com/formvalidation/formvalidation/issues/765">#765</a>: Reuse data returned by <a href="/validators/callback/">callback</a>, <a href="/validators/remote/">remote</a>, custom validators</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/734">#734</a>: The <a href="/validators/uri/">uri</a> validator adds support for custom protocol, thanks to <a href="https://github.com/bcamarneiro">@bcamarneiro</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/737">#737</a>: Support VAT number without prefixing by country code</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/754">#754</a>: Support latest Bootstrap when using tooltip/popover to show the message</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/783">#783</a>: Improve behaviour of the <a href="/validators/different/">different</a> validator</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/792">#792</a>: Add "BootstrapValidator's JavaScript requires jQuery" warning, thanks to <a href="https://github.com/Arkni">@Arkni</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/803">#803</a>: Add <code>minSize</code> option for the <a href="/validators/file/">file</a> validator, thanks to <a href="https://github.com/Arkni">@Arkni</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/824">#824</a>: Add <a href="/validators/phone/">phone</a> number validator test suite</li>
-</ul>
-
-<h3>Bug fixes</h3>
-<ul class="doc-list">
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/611">#611</a>, <a href="https://github.com/formvalidation/formvalidation/issues/703">#703</a>: Tabs get red even form is valid</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/612">#612</a>, <a href="https://github.com/formvalidation/formvalidation/pull/740">#740</a>, <a href="https://github.com/formvalidation/formvalidation/pull/741">#741</a>: Fix the <a href="/validators/emailAddress/">emailAddress</a> issue which email@server is not valid email address, thanks to <a href="https://github.com/kromit">@kromit</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/687">#687</a>, <a href="https://github.com/formvalidation/formvalidation/pull/711">#711</a>: Keep disabled validators VALID, thanks to <a href="https://github.com/talberti">@talberti</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/725">#725</a>: Fix the issue when adding field which does not exist but is already set in "fields" option</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/732">#732</a>: Fix the issue when removing the radio or checkbox field</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/746">#746</a>: The form is still submitted when clicking on submit button which is set <code>onclick="return false;"</code></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/758">#758</a>: Using <a href="/validators/notEmpty/">notEmpty</a> validator with <code>type="number"</code></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/759">#759</a>, <a href="https://github.com/formvalidation/formvalidation/pull/764">#764</a>: The tooltip/popover isn't shown if there is disabled validator.
-        The tooltip/popover is shown automatically when the field gets the focus, thanks to <a href="https://github.com/leedorian">@leedorian</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/797">#797</a>, <a href="https://github.com/formvalidation/formvalidation/pull/799">#799</a>: Can't validate ipv4 and ipv6 at the same time. Add ip validator test suite, thanks to <a href="https://github.com/Arkni">@Arkni</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/816">#816</a>: Fix Russian <a href="/validators/vat/">VAT</a> number validator, thanks to <a href="https://github.com/stepin">@stepin</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/832">#832</a>: The form won't be validated if the submit button contains a HTML tag</li>
-</ul>
-
-<h3>Document</h3>
-<ul class="doc-list">
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/709">#709</a>, <a href="https://github.com/formvalidation/formvalidation/pull/715">#715</a>: Add <a href="/examples/bootstrap-select/">Bootstrap Select</a> and <a href="/examples/select2/">Select2</a> examples, thanks to <a href="https://github.com/Arkni">@Arkni</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/855">#855</a>, <a href="https://github.com/formvalidation/formvalidation/pull/858">#858</a>: Add <a href="/examples/tinymce/">TinyMCE</a> example, thanks to <a href="https://github.com/Arkni">@Arkni</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/859">#859</a>, <a href="https://github.com/formvalidation/formvalidation/issues/862">#862</a>, <a href="https://github.com/formvalidation/formvalidation/pull/865">#865</a>: Add <a href="/examples/tooltip-popover-position/">Changing tooltip/popover position</a> example, thanks to <a href="https://github.com/Arkni">@Arkni</a></li>
-</ul>
-
-<h3>Language packages</h3>
-<ul class="doc-list">
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/706">#706</a>: Japanese language package, thanks to <a href="https://github.com/tsuyoshifujii">@tsuyoshifujii</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/712">#712</a>: Swedish language package, thanks to <a href="https://github.com/ulsa">@ulsa</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/727">#727</a>: Belgium (French) language package, thanks to <a href="https://github.com/neilime">@neilime</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/729">#729</a>: Persian (Farsi) language package, thanks to <a href="https://github.com/i0">@i0</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/779">#779</a>: Romanian language package, thanks to <a href="https://github.com/filipac">@filipac</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/787">#787</a>: Thai language package, thanks to <a href="https://github.com/figgaro">@figgaro</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/788">#788</a>: Fully re-translated Simplified Chinese language package, thanks to <a href="https://github.com/shamiao">@shamiao</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/795">#795</a>: Re-translated traditional Chinese language package, thanks to <a href="https://github.com/tureki">@tureki</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/802">#802</a>: Russian language package, thanks to <a href="https://github.com/cylon-v">@cylon-v</a>. <a href="https://github.com/formvalidation/formvalidation/pull/816">#816</a>: Improved by <a href="https://github.com/stepin">@stepin</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/806">#806</a>: Ukrainian language package, thanks to <a href="https://github.com/oleg-voloshyn">@oleg-voloshyn</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/840">#840</a>: Serbian language package, thanks to <a href="https://github.com/markocrni">@markocrni</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/856">#856</a>: Norwegian language package, thanks to <a href="https://github.com/trondulseth">@trondulseth</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/868">#868</a>: Indonesian language package, thanks to <a href="https://github.com/egig">@egig</a></li>
-</ul>
-
-<h3>Upgrade from v0.5.x to v0.5.2</h3>
-<p>If you don't use the <a href="/validators/remote/">remote</a> validator, just download v0.5.2 package and override the CSS/JS bundle.</p>
-<p>Otherwise, please indicate the <code>type</code> option when using <a href="/validators/remote/">remote</a> validator:</p>
-
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">).</span><span class="nx">bootstrapValidator</span><span class="p">({</span>
-    <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">username</span><span class="o">:</span> <span class="p">{</span>
-            <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The username is not valid&#39;</span><span class="p">,</span>
-            <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
-                <span class="c1">// The validator will create an Ajax request</span>
-                <span class="c1">// sending { username: &#39;its value&#39; } to the back-end</span>
-                <span class="nx">remote</span><span class="o">:</span> <span class="p">{</span>
-                    <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The username is not available&#39;</span><span class="p">,</span>
-                    <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;/path/to/backend/&#39;</span><span class="p">,</span>
-                    <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;GET&#39;</span>     <span class="c1">// or &#39;POST&#39;</span>
-                <span class="p">}</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">});</span></code></pre></div>
-
-<h3>Contributors</h3>
-<p>Thanks to 30 contributors:</p>
-<ul class="doc-list">
-    <li><a href="https://github.com/adrian-dks">@adrian-dks</a></li>
-    <li><a href="https://github.com/AlaskanShade">@AlaskanShade</a></li>
-    <li><a href="https://github.com/Arkni">@Arkni</a></li>
-    <li><a href="https://github.com/bcamarneiro">@bcamarneiro</a></li>
-    <li><a href="https://github.com/bermo">@bermo</a></li>
-    <li><a href="https://github.com/caijh">@caijh</a></li>
-    <li><a href="https://github.com/cuchac">@cuchac</a></li>
-    <li><a href="https://github.com/cylon-v">@cylon-v</a></li>
-    <li><a href="https://github.com/dlcrush">@dlcrush</a></li>
-    <li><a href="https://github.com/egig">@egig</a></li>
-    <li><a href="https://github.com/emilchristensen">@emilchristensen</a></li>
-    <li><a href="https://github.com/figgaro">@figgaro</a></li>
-    <li><a href="https://github.com/filipac">@filipac</a></li>
-    <li><a href="https://github.com/i0">@i0</a></li>
-    <li><a href="https://github.com/kenny-evitt">@kenny-evitt</a></li>
-    <li><a href="https://github.com/kromit">@kromit</a></li>
-    <li><a href="https://github.com/leedorian">@leedorian</a></li>
-    <li><a href="https://github.com/mbezhanov">@mbezhanov</a></li>
-    <li><a href="https://github.com/markocrni">@markocrni</a></li>
-    <li><a href="https://github.com/mattrick">@mattrick</a></li>
-    <li><a href="https://github.com/neilime">@neilime</a></li>
-    <li><a href="https://github.com/oleg-voloshyn">@oleg-voloshyn</a></li>
-    <li><a href="https://github.com/paquitodev">@paquitodev</a></li>
-    <li><a href="https://github.com/q-state">@q-state</a></li>
-    <li><a href="https://github.com/shamiao">@shamiao</a></li>
-    <li><a href="https://github.com/stepin">@stepin</a></li>
-    <li><a href="https://github.com/talberti">@talberti</a></li>
-    <li><a href="https://github.com/tsuyoshifujii">@tsuyoshifujii</a></li>
-    <li><a href="https://github.com/tureki">@tureki</a></li>
-    <li><a href="https://github.com/ulsa">@ulsa</a></li>
-</ul>
-
-<h3>Download</h3>
-<div>
-    <a class="btn btn-primary" href="/download/">bootstrapvalidator-dist-0.5.2.zip</a>
-</div>
-    </div>
-</div>
-
-                    <div class="doc-hr"></div>
-                
 
                 <div class="doc-pagination">
                     
@@ -1277,7 +1226,7 @@ $(&#39;#saveButton&#39;).on(&#39;click&#39;, function() {
             
             <a class="btn" href="/download/">Download</a>
             
-            <a class="btn" href="https://github.com/formvalidation/support">Report bug</a>
+            <a class="btn" href="https://github.com/formvalidation/support/issues">Report bug</a>
         </p>
         <p>
             &copy; 2013 - 2015 <a href="http://twitter.com/nghuuphuoc">Nguyen Huu Phuoc</a>. All rights reserved.<br/>

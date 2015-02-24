@@ -120,20 +120,21 @@ _gaq.push(['_trackPageview']);
 
     <div id="main" class="doc-content-wrapper">
         <div class="doc-notification" id="notification">
-    <i class="fa fa-bell-o"></i> <a href="/addons/">Explore new add-ons page</a>
+    <i class="fa fa-bell-o"></i> <a href="/news/v0.6.1-released/">v0.6.1 is released on 2015.02.24</a>
 </div>
 <script>
 $(document).ready(function() {
     var notifications = [],
         $message      = $('#notification').find('a').data('index', 0);
+    notifications.push({ title: 'v0.6.1 is released on 2015.02.24', url: '/news/v0.6.1-released/'});
     notifications.push({ title: 'Explore new add-ons page', url: '/addons/'});
+    notifications.push({ title: 'New example: Using Mailgun API to validate email address', url: '/examples/using-mailgun-api-validate-email-address/'});
     notifications.push({ title: 'New example: Playing with jQuery UI Datepicker', url: '/examples/jquery-ui-datepicker/'});
     notifications.push({ title: 'New example: Playing with Flat UI', url: '/examples/flat-ui/'});
     notifications.push({ title: 'New example: Playing with Typhead', url: '/examples/typeahead/'});
     notifications.push({ title: 'New example: Validating array of inputs', url: '/examples/validating-array-inputs/'});
     notifications.push({ title: 'New example: Updating validator options', url: '/examples/updating-validator-options/'});
     notifications.push({ title: 'New example: Validating field with special name', url: '/examples/validating-field-special-name/'});
-    notifications.push({ title: 'v0.6.0 is released on 2015-01-06', url: '/news/v0.6.0-released/'});
     notifications.push({ title: 'New example: Validating multiple inputs as one', url: '/examples/validating-multiple-inputs-one/'});
     notifications.push({ title: '3 ways to improve performance when using remote validator', url: '/validators/remote/#improving-the-performance'});
     notifications.push({ title: 'New example: Modifying the value before validating', url: '/examples/modifying-value-before-validating/'});
@@ -182,28 +183,28 @@ $(document).ready(function() {
                 <div class="doc-post-content">
                     <h3>New features</h3>
 <ul class="doc-list">
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/77">#77</a>: Add <a href="/validators/file/">file validator</a></li>
-    <li><i class="fa fa-star"></i> <a href="https://github.com/formvalidation/formvalidation/issues/179">#179</a>: Add <a href="/validators/vat/">vat validator</a>, support 32 countries</li>
+    <li>#77: Add <a href="/validators/file/">file validator</a></li>
+    <li><i class="fa fa-star"></i> #179: Add <a href="/validators/vat/">vat validator</a>, support 32 countries</li>
 </ul>
 
 <h3>Improvements</h3>
 <ul class="doc-list">
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/198">#198</a>: Add Canadian Postal Code support for the <a href="/validators/zipCode/">zipCode validator</a>, thanks to <a href="https://github.com/Francismori7">@Francismori7</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/201">#201</a>: The <a href="/validators/choice/">choice validator</a> supports <code>select</code> element</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/202">#202</a>: Activate tab containing the first invalid field</li>
+    <li>#198: Add Canadian Postal Code support for the <a href="/validators/zipCode/">zipCode validator</a>, thanks to <a href="https://github.com/Francismori7">@Francismori7</a></li>
+    <li>#201: The <a href="/validators/choice/">choice validator</a> supports <code>select</code> element</li>
+    <li>#202: Activate tab containing the first invalid field</li>
 </ul>
 
 <h3>Bug fixes</h3>
 <ul class="doc-list">
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/205">#205</a>: Plugin method invocation</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/207">#207</a>: IE8 error</li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/209">#209</a>: The <a href="/settings/#form-excluded"><code>excluded: ':disabled'</code> setting</a> does not work on IE 8, thanks to <a href="https://github.com/adgrafik">@adgrafik</a></li>
-    <li><a href="https://github.com/formvalidation/formvalidation/issues/210">#210</a>: The <a href="/validators/isbn/">isbn validator</a> accepts letters and special characters</li>
+    <li>#205: Plugin method invocation</li>
+    <li>#207: IE8 error</li>
+    <li>#209: The <a href="/settings/#form-excluded"><code>excluded: ':disabled'</code> setting</a> does not work on IE 8, thanks to <a href="https://github.com/adgrafik">@adgrafik</a></li>
+    <li>#210: The <a href="/validators/isbn/">isbn validator</a> accepts letters and special characters</li>
 </ul>
 
 <h3>Document</h3>
 <ul class="doc-list">
-    <li><a href="https://github.com/formvalidation/formvalidation/pull/199">#199</a>: Update the <a href="/validators/zipCode/">zipCode validator</a> document, thanks to <a href="https://github.com/Francismori7">@Francismori7</a></li>
+    <li>#199: Update the <a href="/validators/zipCode/">zipCode validator</a> document, thanks to <a href="https://github.com/Francismori7">@Francismori7</a></li>
 </ul>
 
 <h3>Contributors</h3>
@@ -243,7 +244,7 @@ $(document).ready(function() {
             
             <a class="btn" href="/download/">Download</a>
             
-            <a class="btn" href="https://github.com/formvalidation/support">Report bug</a>
+            <a class="btn" href="https://github.com/formvalidation/support/issues">Report bug</a>
         </p>
         <p>
             &copy; 2013 - 2015 <a href="http://twitter.com/nghuuphuoc">Nguyen Huu Phuoc</a>. All rights reserved.<br/>

@@ -120,20 +120,21 @@ _gaq.push(['_trackPageview']);
 
     <div id="main" class="doc-content-wrapper">
         <div class="doc-notification" id="notification">
-    <i class="fa fa-bell-o"></i> <a href="/addons/">Explore new add-ons page</a>
+    <i class="fa fa-bell-o"></i> <a href="/news/v0.6.1-released/">v0.6.1 is released on 2015.02.24</a>
 </div>
 <script>
 $(document).ready(function() {
     var notifications = [],
         $message      = $('#notification').find('a').data('index', 0);
+    notifications.push({ title: 'v0.6.1 is released on 2015.02.24', url: '/news/v0.6.1-released/'});
     notifications.push({ title: 'Explore new add-ons page', url: '/addons/'});
+    notifications.push({ title: 'New example: Using Mailgun API to validate email address', url: '/examples/using-mailgun-api-validate-email-address/'});
     notifications.push({ title: 'New example: Playing with jQuery UI Datepicker', url: '/examples/jquery-ui-datepicker/'});
     notifications.push({ title: 'New example: Playing with Flat UI', url: '/examples/flat-ui/'});
     notifications.push({ title: 'New example: Playing with Typhead', url: '/examples/typeahead/'});
     notifications.push({ title: 'New example: Validating array of inputs', url: '/examples/validating-array-inputs/'});
     notifications.push({ title: 'New example: Updating validator options', url: '/examples/updating-validator-options/'});
     notifications.push({ title: 'New example: Validating field with special name', url: '/examples/validating-field-special-name/'});
-    notifications.push({ title: 'v0.6.0 is released on 2015-01-06', url: '/news/v0.6.0-released/'});
     notifications.push({ title: 'New example: Validating multiple inputs as one', url: '/examples/validating-multiple-inputs-one/'});
     notifications.push({ title: '3 ways to improve performance when using remote validator', url: '/validators/remote/#improving-the-performance'});
     notifications.push({ title: 'New example: Modifying the value before validating', url: '/examples/modifying-value-before-validating/'});
@@ -175,6 +176,7 @@ $(document).ready(function() {
                 <section>
                     <h2>Options</h2>
 
+                    <p><sup>*</sup> &mdash; Required option</p>
                     <div class="table-responsive">
                         <table class="table table-bordered table-striped">
                             <thead>
@@ -544,6 +546,28 @@ $(document).ready(function() {
                                 
                                 <tr>
                                     <td>18</td>
+                                    <td>Poland</td>
+                                    <td>PESEL</td>
+                                    <td>PL</td>
+                                    <td>
+                                        <ul class="doc-sample-list">
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="PL">83010411457</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="PL">87123116221</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="PL">39100413824</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="PL">36032806768</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="PL">04271113861</a> <i class="fa"></i></li>
+                                            
+                                        </ul>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>19</td>
                                     <td>Romania</td>
                                     <td>CNP</td>
                                     <td>RO</td>
@@ -565,7 +589,7 @@ $(document).ready(function() {
                                 </tr>
                                 
                                 <tr>
-                                    <td>19</td>
+                                    <td>20</td>
                                     <td>San Marino</td>
                                     <td></td>
                                     <td>SM</td>
@@ -577,7 +601,7 @@ $(document).ready(function() {
                                 </tr>
                                 
                                 <tr>
-                                    <td>20</td>
+                                    <td>21</td>
                                     <td>Serbia</td>
                                     <td>JMBG</td>
                                     <td>RS</td>
@@ -589,7 +613,7 @@ $(document).ready(function() {
                                 </tr>
                                 
                                 <tr>
-                                    <td>21</td>
+                                    <td>22</td>
                                     <td>Slovakia</td>
                                     <td>RC</td>
                                     <td>SK</td>
@@ -609,7 +633,7 @@ $(document).ready(function() {
                                 </tr>
                                 
                                 <tr>
-                                    <td>22</td>
+                                    <td>23</td>
                                     <td>Slovenia</td>
                                     <td>EMŠO</td>
                                     <td>SI</td>
@@ -623,7 +647,7 @@ $(document).ready(function() {
                                 </tr>
                                 
                                 <tr>
-                                    <td>23</td>
+                                    <td>24</td>
                                     <td>South Africa</td>
                                     <td>South African ID</td>
                                     <td>ZA</td>
@@ -641,7 +665,7 @@ $(document).ready(function() {
                                 </tr>
                                 
                                 <tr>
-                                    <td>24</td>
+                                    <td>25</td>
                                     <td>Spain</td>
                                     <td>DNI/NIE/CIF</td>
                                     <td>ES</td>
@@ -667,7 +691,7 @@ $(document).ready(function() {
                                 </tr>
                                 
                                 <tr>
-                                    <td>25</td>
+                                    <td>26</td>
                                     <td>Sweden</td>
                                     <td>personnummer</td>
                                     <td>SE</td>
@@ -687,7 +711,7 @@ $(document).ready(function() {
                                 </tr>
                                 
                                 <tr>
-                                    <td>26</td>
+                                    <td>27</td>
                                     <td>Switzerland</td>
                                     <td>AHV-Nr/No AVS</td>
                                     <td>CH</td>
@@ -703,7 +727,7 @@ $(document).ready(function() {
                                 </tr>
                                 
                                 <tr>
-                                    <td>27</td>
+                                    <td>28</td>
                                     <td>Thailand</td>
                                     <td></td>
                                     <td>TH</td>
@@ -792,6 +816,7 @@ $(document).ready(function() {
                 <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;MK&quot;</span><span class="nt">&gt;</span>Macedonia<span class="nt">&lt;/option&gt;</span>
                 <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;ME&quot;</span><span class="nt">&gt;</span>Montenegro<span class="nt">&lt;/option&gt;</span>
                 <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;NL&quot;</span><span class="nt">&gt;</span>Netherlands<span class="nt">&lt;/option&gt;</span>
+                <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;PL&quot;</span><span class="nt">&gt;</span>Poland<span class="nt">&lt;/option&gt;</span>
                 <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;RO&quot;</span><span class="nt">&gt;</span>Romania<span class="nt">&lt;/option&gt;</span>
                 <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;SM&quot;</span><span class="nt">&gt;</span>San Marino<span class="nt">&lt;/option&gt;</span>
                 <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;RS&quot;</span><span class="nt">&gt;</span>Serbia<span class="nt">&lt;/option&gt;</span>
@@ -875,6 +900,7 @@ $(document).ready(function() {
                 <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;MK&quot;</span><span class="nt">&gt;</span>Macedonia<span class="nt">&lt;/option&gt;</span>
                 <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;ME&quot;</span><span class="nt">&gt;</span>Montenegro<span class="nt">&lt;/option&gt;</span>
                 <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;NL&quot;</span><span class="nt">&gt;</span>Netherlands<span class="nt">&lt;/option&gt;</span>
+                <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;PL&quot;</span><span class="nt">&gt;</span>Poland<span class="nt">&lt;/option&gt;</span>
                 <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;RO&quot;</span><span class="nt">&gt;</span>Romania<span class="nt">&lt;/option&gt;</span>
                 <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;SM&quot;</span><span class="nt">&gt;</span>San Marino<span class="nt">&lt;/option&gt;</span>
                 <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;RS&quot;</span><span class="nt">&gt;</span>Serbia<span class="nt">&lt;/option&gt;</span>
@@ -980,7 +1006,7 @@ $(document).ready(function() {
             
             <a class="btn" href="/download/">Download</a>
             
-            <a class="btn" href="https://github.com/formvalidation/support">Report bug</a>
+            <a class="btn" href="https://github.com/formvalidation/support/issues">Report bug</a>
         </p>
         <p>
             &copy; 2013 - 2015 <a href="http://twitter.com/nghuuphuoc">Nguyen Huu Phuoc</a>. All rights reserved.<br/>
