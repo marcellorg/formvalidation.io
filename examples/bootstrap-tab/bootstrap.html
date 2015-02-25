@@ -207,10 +207,9 @@ $(document).ready(function() {
                             .find('i')
                             .removeClass('fa-check fa-times');
 
-            // Check if the submit button is clicked
-            if (data.fv.getSubmitButton()) {
-                // Check if all fields in tab are valid
-                var isValidTab = data.fv.isValidContainer($tabPane);
+            // Check if all fields in tab are valid
+            var isValidTab = data.fv.isValidContainer($tabPane);
+            if (isValidTab !== null) {
                 $icon.addClass(isValidTab ? 'fa-check' : 'fa-times');
             }
         });

@@ -173,6 +173,11 @@ $(document).ready(function() {
         <div class="row">
             <div class="col-md-9">
                 <p>The following example shows that the plugin works perfectly with <a href="http://getbootstrap.com/javascript/#tabs">Bootstrap Tabs</a>.</p>
+
+                <div class="doc-alert doc-alert-info">
+                    If you are thinking about the form wizard, look at some <a href="/examples/#wizard">wizard</a> examples
+                </div>
+
                 <p>By default, the fields in inactive tabs will not be validated because they are not visible. In order to validate them, we need to use the <a href="/settings#excluded">excluded</a> option:</p>
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">excluded</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;:disabled&#39;</span><span class="p">]</span></code></pre></div>
@@ -224,10 +229,9 @@ $(document).ready(function() {
                             <span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;i&#39;</span><span class="p">)</span>
                             <span class="p">.</span><span class="nx">removeClass</span><span class="p">(</span><span class="s1">&#39;fa-check fa-times&#39;</span><span class="p">);</span>
 
-            <span class="c1">// Check if the submit button is clicked</span>
-            <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">fv</span><span class="p">.</span><span class="nx">getSubmitButton</span><span class="p">())</span> <span class="p">{</span>
-                <span class="c1">// Check if all fields in tab are valid</span>
-                <span class="kd">var</span> <span class="nx">isValidTab</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">fv</span><span class="p">.</span><span class="nx">isValidContainer</span><span class="p">(</span><span class="nx">$tabPane</span><span class="p">);</span>
+            <span class="c1">// Check if all fields in tab are valid</span>
+            <span class="kd">var</span> <span class="nx">isValidTab</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">fv</span><span class="p">.</span><span class="nx">isValidContainer</span><span class="p">(</span><span class="nx">$tabPane</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">isValidTab</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
                 <span class="nx">$icon</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="nx">isValidTab</span> <span class="o">?</span> <span class="s1">&#39;fa-check&#39;</span> <span class="o">:</span> <span class="s1">&#39;fa-times&#39;</span><span class="p">);</span>
             <span class="p">}</span>
         <span class="p">});</span>
@@ -415,10 +419,9 @@ $(document).ready(function() {
                             <span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;i&#39;</span><span class="p">)</span>
                             <span class="p">.</span><span class="nx">removeClass</span><span class="p">(</span><span class="s1">&#39;fa-check fa-times&#39;</span><span class="p">);</span>
 
-            <span class="c1">// Check if the submit button is clicked</span>
-            <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">fv</span><span class="p">.</span><span class="nx">getSubmitButton</span><span class="p">())</span> <span class="p">{</span>
-                <span class="c1">// Check if all fields in tab are valid</span>
-                <span class="kd">var</span> <span class="nx">isValidTab</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">fv</span><span class="p">.</span><span class="nx">isValidContainer</span><span class="p">(</span><span class="nx">$tabPane</span><span class="p">);</span>
+            <span class="c1">// Check if all fields in tab are valid</span>
+            <span class="kd">var</span> <span class="nx">isValidTab</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">fv</span><span class="p">.</span><span class="nx">isValidContainer</span><span class="p">(</span><span class="nx">$tabPane</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">isValidTab</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
                 <span class="nx">$icon</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="nx">isValidTab</span> <span class="o">?</span> <span class="s1">&#39;fa-check&#39;</span> <span class="o">:</span> <span class="s1">&#39;fa-times&#39;</span><span class="p">);</span>
             <span class="p">}</span>
         <span class="p">});</span>
