@@ -1,7 +1,13 @@
 <section>
     <h2 id="is-valid-field">isValidField</h2>
 
-    <p><code>isValidField(field<sup>*</sup>): Boolean</code> &mdash; Check whether the field is valid or not. Returns <code>true</code> if all validators of field pass. Otherwise, returns <code>false</code>.</p>
+    <p><code>isValidField(field<sup>*</sup>): Boolean</code> &mdash; Check whether the field is valid or not. It can take one of three values:</p>
+    <ul class="doc-list">
+        <li><code>true</code> if the field passes all validators</li>
+        <li><code>false</code> if the field doesn't pass any validator</li>
+        <li><code>null</code> if there is at least one validator which isn't validated yet or being validated</li>
+    </ul>
+
     <div class="table-responsive">
         <table class="table table-bordered table-striped">
             <thead>
