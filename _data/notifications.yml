@@ -4,6 +4,9 @@
 - title: "Explore new add-ons page"
   url: "/addons/"
 
+- title: "New example: Loading and saving data in a modal"
+  url: "/examples/loading-saving-data-modal/"
+
 - title: "New example: Using Mailgun API to validate email address"
   url: "/examples/using-mailgun-api-validate-email-address/"
 
