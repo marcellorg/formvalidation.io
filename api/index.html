@@ -501,7 +501,13 @@ $(document).ready(function() {
                 <section>
     <h2 id="is-valid">isValid</h2>
 
-    <p><code>isValid(): Boolean</code> &mdash; Returns <code>true</code> if all form fields are valid. Otherwise, returns <code>false</code>.</p>
+    <p><code>isValid(): Boolean</code> &mdash; Check the form validity. It can take one of three values:</p>
+    <ul class="doc-list">
+        <li><code>true</code> if all fields are valid</li>
+        <li><code>false</code> if there is one invalid field</li>
+        <li><code>null</code> if there is at least one field which is not validated yet or being validated</li>
+    </ul>
+
     <p>Ensure that the <a href="#validate">validate()</a> method is already called before calling this one.</p>
 </section>
                 <div class="doc-hr"></div>
@@ -511,9 +517,9 @@ $(document).ready(function() {
 
     <p><code>isValidContainer(container<sup>*</sup>): Boolean</code> &mdash; It can take one of three values:</p>
     <ul class="doc-list">
-        <li><code>null</code> if the container consists of at least one field that isn't validated yet</li>
         <li><code>true</code> if all fields belonging to the container are valid</li>
         <li><code>false</code> if all fields belonging to the container are already validated and there is at least one invalid field</li>
+        <li><code>null</code> if the container consists of at least one field that isn't validated yet</li>
     </ul>
 
     <p>Using with the <a href="#validate-container">validateContainer(container)</a> method, these methods are useful when working with a wizard-like such as tabs, collapsible panels.</p>
@@ -546,7 +552,13 @@ $(document).ready(function() {
                 <section>
     <h2 id="is-valid-field">isValidField</h2>
 
-    <p><code>isValidField(field<sup>*</sup>): Boolean</code> &mdash; Check whether the field is valid or not. Returns <code>true</code> if all validators of field pass. Otherwise, returns <code>false</code>.</p>
+    <p><code>isValidField(field<sup>*</sup>): Boolean</code> &mdash; Check whether the field is valid or not. It can take one of three values:</p>
+    <ul class="doc-list">
+        <li><code>true</code> if the field passes all validators</li>
+        <li><code>false</code> if the field doesn't pass any validator</li>
+        <li><code>null</code> if there is at least one validator which isn't validated yet or being validated</li>
+    </ul>
+
     <div class="table-responsive">
         <table class="table table-bordered table-striped">
             <thead>
