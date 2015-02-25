@@ -15,6 +15,11 @@ permalink: /examples/bootstrap-tab/
         <div class="row">
             <div class="col-md-9">
                 <p>The following example shows that the plugin works perfectly with <a href="http://getbootstrap.com/javascript/#tabs">Bootstrap Tabs</a>.</p>
+
+                <div class="doc-alert doc-alert-info">
+                    If you are thinking about the form wizard, look at some <a href="/examples/#wizard">wizard</a> examples
+                </div>
+
                 <p>By default, the fields in inactive tabs will not be validated because they are not visible. In order to validate them, we need to use the <a href="/settings#excluded">excluded</a> option:</p>
 
 {% highlight javascript %}
@@ -71,10 +76,9 @@ $(document).ready(function() {
                             .find('i')
                             .removeClass('fa-check fa-times');
 
-            // Check if the submit button is clicked
-            if (data.fv.getSubmitButton()) {
-                // Check if all fields in tab are valid
-                var isValidTab = data.fv.isValidContainer($tabPane);
+            // Check if all fields in tab are valid
+            var isValidTab = data.fv.isValidContainer($tabPane);
+            if (isValidTab !== null) {
                 $icon.addClass(isValidTab ? 'fa-check' : 'fa-times');
             }
         });
