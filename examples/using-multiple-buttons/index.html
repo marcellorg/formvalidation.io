@@ -2,7 +2,7 @@
 <html>
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article#">
     <meta charset="utf-8">
-<title>Hiding success class - FormValidation</title>
+<title>Using multiple buttons - FormValidation</title>
 <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
 <meta http-equiv="Content-Language" content="en">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -15,14 +15,14 @@
 <meta name="twitter:site" content="@formvalidation" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks" />
-<meta name="twitter:title" content="Hiding success class - FormValidation" />
-<meta name="twitter:image" content="http://formvalidation.io/asset/img/logo.png" />
+<meta name="twitter:title" content="Using multiple buttons - FormValidation" />
+<meta name="twitter:image" content="http://formvalidation.io/examples/using-multiple-buttons/cover.png" />
 
-<meta property="og:title" content="Hiding success class - FormValidation" />
+<meta property="og:title" content="Using multiple buttons - FormValidation" />
 <meta property="og:description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://formvalidation.io/examples/hiding-success-class/" />
-<meta property="og:image" content="http://formvalidation.io/asset/img/logo.png" />
+<meta property="og:url" content="http://formvalidation.io/examples/using-multiple-buttons/" />
+<meta property="og:image" content="http://formvalidation.io/examples/using-multiple-buttons/cover.png" />
 <meta property="og:site_name" content="FormValidation" />
 
 <link rel="icon" type="image/x-icon" href="/asset/img/favicon.ico">
@@ -166,7 +166,7 @@ $(document).ready(function() {
 
         <div class="doc-content-container">
     <div class="doc-heading">
-        <h1>Hiding success class</h1>
+        <h1>Using multiple buttons</h1>
         <p>&larr; <a href="/examples/">Examples</a></p>
         <div id="shareButton" class="doc-share-button"></div>
     </div>
@@ -174,14 +174,19 @@ $(document).ready(function() {
     <div class="container">
         <div class="row">
             <div class="col-md-9">
-                <section>
-                    <h2>Hiding success class and tick icon</h2>
+                <p>A form might have multiple buttons. Clicking any of them will validate the form, but each button might do additional task.</p>
+                <p>For example, a form of writing article have three submit buttons:</p>
+                <ul class="doc-list">
+                    <li>A <strong>Save</strong> button saves the article and keeps the current publishing status</li>
+                    <li>A <strong>Save and publish</strong> button saves and publishes the article</li>
+                    <li>A <strong>Save as draft</strong> button saves the article as draft</li>
+                </ul>
+                <p>These buttons will execute form validation when being clicked.</p>
 
-                    <p>Based on the field status, the field and its container are marked as success or error element. For Bootstrap form, the plugin will add <code>has-success</code> or <code>has-error</code> class to the container element.</p>
-                    <p>If you think that it's better to indicate error status only due to the similarity of these status colors, you can remove <code>has-success</code> class from the container.</p>
-                    <p>It can be done by triggering the <a href="/settings#event-field">success.field.fv</a> event as below:</p>
+                <p>In order to archive this case, first, we need to trigger the <a href="/settings/#event-form">success.form.fv</a> event to perform custom handler when the form is valid.</p>
+                <p>Next, use the <a href="/api/#get-submit-button">getSubmitButton()</a> method to determine which button is clicked.</p>
 
-                    
+                
 
 
 
@@ -197,7 +202,7 @@ $(document).ready(function() {
             <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"><span class="doc-framework">Framework</span> <i class="caret"></i></a>
             <ul class="dropdown-menu" role="menu">
                 
-                <li><a href="/examples/hiding-success-class/bootstrap.html" data-demo-target="#demo-frame" data-demo-framework="bootstrap">Bootstrap</a></li>
+                <li><a href="/examples/using-multiple-buttons/bootstrap.html" data-demo-target="#demo-frame" data-demo-framework="bootstrap">Bootstrap</a></li>
                 
             </ul>
         </li>
@@ -205,7 +210,7 @@ $(document).ready(function() {
         
         <li><a href="#demo-programmatic-tab" data-toggle="tab">Programmatic code</a></li>
         
-        <li class="doc-demo-direct"><a href="/examples/hiding-success-class/bootstrap.html" data-toggle="tooltip" data-container="body" title="Open the demo in new tab" target="_blank"><i class="fa fa-external-link"></i></a></li>
+        <li class="doc-demo-direct"><a href="/examples/using-multiple-buttons/bootstrap.html" data-toggle="tooltip" data-container="body" title="Open the demo in new tab" target="_blank"><i class="fa fa-external-link"></i></a></li>
     </ul>
 
     <div class="tab-content">
@@ -217,64 +222,61 @@ $(document).ready(function() {
         <div class="tab-pane" id="demo-programmatic-tab">
             
             <div data-demo-code="bootstrap">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;proposalForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;label&gt;</span>Proposal title<span class="nt">&lt;/label&gt;</span>
-        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;title&quot;</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;//oss.maxcdn.com/bootbox/4.2.0/bootbox.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;label&gt;</span>Abstract<span class="nt">&lt;/label&gt;</span>
-        <span class="nt">&lt;textarea</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;abstract&quot;</span> <span class="na">rows=</span><span class="s">&quot;5&quot;</span><span class="nt">&gt;&lt;/textarea&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;style </span><span class="na">type=</span><span class="s">&quot;text/css&quot;</span><span class="nt">&gt;</span>
+<span class="c">/* Adjust feedback icon position */</span>
+<span class="nf">#articleForm</span> <span class="nc">.form-control-feedback</span> <span class="p">{</span>
+    <span class="k">right</span><span class="o">:</span> <span class="m">15px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nf">#articleForm</span> <span class="nc">.selectContainer</span> <span class="nc">.form-control-feedback</span> <span class="p">{</span>
+    <span class="k">right</span><span class="o">:</span> <span class="m">25px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
 
+<span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;articleForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;label&gt;</span>Topics<span class="nt">&lt;/label&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;label&gt;</span>
-                <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name=</span><span class="s">&quot;topics[]&quot;</span> <span class="na">value=</span><span class="s">&quot;angularjs&quot;</span> <span class="nt">/&gt;</span> AngularJS
-            <span class="nt">&lt;/label&gt;</span>
-        <span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;label&gt;</span>
-                <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name=</span><span class="s">&quot;topics[]&quot;</span> <span class="na">value=</span><span class="s">&quot;backbone&quot;</span> <span class="nt">/&gt;</span> Backbone
-            <span class="nt">&lt;/label&gt;</span>
-        <span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;label&gt;</span>
-                <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name=</span><span class="s">&quot;topics[]&quot;</span> <span class="na">value=</span><span class="s">&quot;emberjs&quot;</span> <span class="nt">/&gt;</span> EmberJS
-            <span class="nt">&lt;/label&gt;</span>
-        <span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;label&gt;</span>
-                <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name=</span><span class="s">&quot;topics[]&quot;</span> <span class="na">value=</span><span class="s">&quot;jquery&quot;</span> <span class="nt">/&gt;</span> jQuery
-            <span class="nt">&lt;/label&gt;</span>
-        <span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;label&gt;</span>
-                <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name=</span><span class="s">&quot;topics[]&quot;</span> <span class="na">value=</span><span class="s">&quot;nodejs&quot;</span> <span class="nt">/&gt;</span> NodeJS
-            <span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;row&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-8&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;control-label&quot;</span><span class="nt">&gt;</span>Title<span class="nt">&lt;/label&gt;</span>
+                <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;title&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-4 selectContainer&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;control-label&quot;</span><span class="nt">&gt;</span>Category<span class="nt">&lt;/label&gt;</span>
+                <span class="nt">&lt;select</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;category&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>Choose a category<span class="nt">&lt;/option&gt;</span>
+                    <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;html&quot;</span><span class="nt">&gt;</span>HTML<span class="nt">&lt;/option&gt;</span>
+                    <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;css&quot;</span><span class="nt">&gt;</span>CSS<span class="nt">&lt;/option&gt;</span>
+                    <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;javascript&quot;</span><span class="nt">&gt;</span>Javascript<span class="nt">&lt;/option&gt;</span>
+                <span class="nt">&lt;/select&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
 
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;label&gt;</span>Session type<span class="nt">&lt;/label&gt;</span>
-        <span class="nt">&lt;select</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;sessionType&quot;</span> <span class="na">style=</span><span class="s">&quot;width: 200px;&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>Choose the session type<span class="nt">&lt;/option&gt;</span>
-            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;presentation&quot;</span><span class="nt">&gt;</span>Presentation<span class="nt">&lt;/option&gt;</span>
-            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;panel&quot;</span><span class="nt">&gt;</span>Panel<span class="nt">&lt;/option&gt;</span>
-            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;workshop&quot;</span><span class="nt">&gt;</span>Workshop<span class="nt">&lt;/option&gt;</span>
-        <span class="nt">&lt;/select&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;control-label&quot;</span><span class="nt">&gt;</span>Summary<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;textarea</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;summary&quot;</span> <span class="na">rows=</span><span class="s">&quot;5&quot;</span><span class="nt">&gt;&lt;/textarea&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
 
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/button&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;control-label&quot;</span><span class="nt">&gt;</span>Content<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;textarea</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;content&quot;</span> <span class="na">rows=</span><span class="s">&quot;10&quot;</span><span class="nt">&gt;&lt;/textarea&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="c">&lt;!-- The default publishing status --&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;status&quot;</span> <span class="na">value=</span><span class="s">&quot;unpublished&quot;</span> <span class="nt">/&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-primary&quot;</span> <span class="na">id=</span><span class="s">&quot;saveButton&quot;</span><span class="nt">&gt;</span>Save<span class="nt">&lt;/button&gt;</span>
+        <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span> <span class="na">id=</span><span class="s">&quot;publishButton&quot;</span><span class="nt">&gt;</span>Save and publish<span class="nt">&lt;/button&gt;</span>
+        <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span> <span class="na">id=</span><span class="s">&quot;draftButton&quot;</span><span class="nt">&gt;</span>Save as draft<span class="nt">&lt;/button&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/form&gt;</span>
 
 <span class="nt">&lt;script&gt;</span>
 <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#proposalForm&#39;</span><span class="p">)</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#articleForm&#39;</span><span class="p">)</span>
         <span class="p">.</span><span class="nx">formValidation</span><span class="p">({</span>
             <span class="nx">framework</span><span class="o">:</span> <span class="s1">&#39;bootstrap&#39;</span><span class="p">,</span>
             <span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
@@ -284,57 +286,75 @@ $(document).ready(function() {
             <span class="p">},</span>
             <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
                 <span class="nx">title</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="c1">// The title field is placed inside .col-xs-8 element</span>
+                    <span class="nx">row</span><span class="o">:</span> <span class="s1">&#39;.col-xs-8&#39;</span><span class="p">,</span>
                     <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
                         <span class="nx">notEmpty</span><span class="o">:</span> <span class="p">{</span>
                             <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The title is required&#39;</span>
-                        <span class="p">}</span>
-                    <span class="p">}</span>
-                <span class="p">},</span>
-                <span class="kr">abstract</span><span class="o">:</span> <span class="p">{</span>
-                    <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
-                        <span class="nx">notEmpty</span><span class="o">:</span> <span class="p">{</span>
-                            <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The abstract is required&#39;</span>
                         <span class="p">},</span>
                         <span class="nx">stringLength</span><span class="o">:</span> <span class="p">{</span>
-                            <span class="nx">max</span><span class="o">:</span> <span class="mi">400</span><span class="p">,</span>
-                            <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The abstract must be less than 400 characters&#39;</span>
+                            <span class="nx">min</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+                            <span class="nx">max</span><span class="o">:</span> <span class="mi">80</span><span class="p">,</span>
+                            <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The username must be more than 10 and less than 80 characters long&#39;</span>
                         <span class="p">}</span>
                     <span class="p">}</span>
                 <span class="p">},</span>
-                <span class="s1">&#39;topics[]&#39;</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">category</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="c1">// The category field is placed inside .col-xs-4 element</span>
+                    <span class="nx">row</span><span class="o">:</span> <span class="s1">&#39;.col-xs-4&#39;</span><span class="p">,</span>
                     <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
                         <span class="nx">notEmpty</span><span class="o">:</span> <span class="p">{</span>
-                            <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The topic is required&#39;</span>
+                            <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The category is required&#39;</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                <span class="p">},</span>
+                <span class="nx">summary</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">notEmpty</span><span class="o">:</span> <span class="p">{</span>
+                            <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The summary is required&#39;</span>
                         <span class="p">},</span>
-                        <span class="nx">choice</span><span class="o">:</span> <span class="p">{</span>
-                            <span class="nx">min</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-                            <span class="nx">max</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
-                            <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;Please choose 2 - 3 topics&#39;</span>
+                        <span class="nx">stringLength</span><span class="o">:</span> <span class="p">{</span>
+                            <span class="nx">max</span><span class="o">:</span> <span class="mi">500</span><span class="p">,</span>
+                            <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The summary must be less than 500 characters long&#39;</span>
                         <span class="p">}</span>
                     <span class="p">}</span>
                 <span class="p">},</span>
-                <span class="nx">sessionType</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">content</span><span class="o">:</span> <span class="p">{</span>
                     <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
                         <span class="nx">notEmpty</span><span class="o">:</span> <span class="p">{</span>
-                            <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The session type is required&#39;</span>
+                            <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The content is required&#39;</span>
                         <span class="p">}</span>
                     <span class="p">}</span>
                 <span class="p">}</span>
             <span class="p">}</span>
         <span class="p">})</span>
-        <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;success.field.fv&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
-            <span class="c1">// $(e.target)  --&gt; The field element</span>
-            <span class="c1">// data.fv      --&gt; The FormValidation instance</span>
-            <span class="c1">// data.field   --&gt; The field name</span>
-            <span class="c1">// data.element --&gt; The field element</span>
+        <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;success.form.fv&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">$form</span>        <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">),</span>     <span class="c1">// Form instance</span>
+                <span class="c1">// Get the clicked button</span>
+                <span class="nx">$button</span>      <span class="o">=</span> <span class="nx">$form</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;formValidation&#39;</span><span class="p">).</span><span class="nx">getSubmitButton</span><span class="p">(),</span>
+                <span class="c1">// You might need to update the &quot;status&quot; field before submitting the form</span>
+                <span class="nx">$statusField</span> <span class="o">=</span> <span class="nx">$form</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;[name=&quot;status&quot;]&#39;</span><span class="p">);</span>
 
-            <span class="kd">var</span> <span class="nx">$parent</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">element</span><span class="p">.</span><span class="nx">parents</span><span class="p">(</span><span class="s1">&#39;.form-group&#39;</span><span class="p">);</span>
+            <span class="c1">// To demonstrate which button is clicked,</span>
+            <span class="c1">// I use Bootbox (http://bootboxjs.com/) to popup a simple message</span>
+            <span class="c1">// You might don&#39;t need to use it in real application</span>
+            <span class="k">switch</span> <span class="p">(</span><span class="nx">$button</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">))</span> <span class="p">{</span>
+                <span class="k">case</span> <span class="s1">&#39;publishButton&#39;</span><span class="o">:</span>
+                    <span class="nx">$statusField</span><span class="p">.</span><span class="nx">val</span><span class="p">(</span><span class="s1">&#39;publish&#39;</span><span class="p">);</span>
+                    <span class="nx">bootbox</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;The article will be published&#39;</span><span class="p">);</span>
+                    <span class="k">break</span><span class="p">;</span>
 
-            <span class="c1">// Remove the has-success class</span>
-            <span class="nx">$parent</span><span class="p">.</span><span class="nx">removeClass</span><span class="p">(</span><span class="s1">&#39;has-success&#39;</span><span class="p">);</span>
+                <span class="k">case</span> <span class="s1">&#39;draftButton&#39;</span><span class="o">:</span>
+                    <span class="nx">$statusField</span><span class="p">.</span><span class="nx">val</span><span class="p">(</span><span class="s1">&#39;draft&#39;</span><span class="p">);</span>
+                    <span class="nx">bootbox</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;The article will be saved as a draft&#39;</span><span class="p">);</span>
+                    <span class="k">break</span><span class="p">;</span>
 
-            <span class="c1">// Hide the success icon</span>
-            <span class="nx">data</span><span class="p">.</span><span class="nx">element</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;fv.icon&#39;</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+                <span class="k">case</span> <span class="s1">&#39;saveButton&#39;</span><span class="o">:</span>
+                <span class="k">default</span><span class="o">:</span>
+                    <span class="nx">$statusField</span><span class="p">.</span><span class="nx">val</span><span class="p">(</span><span class="s1">&#39;unpublished&#39;</span><span class="p">);</span>
+                    <span class="nx">bootbox</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;The article will be saved&#39;</span><span class="p">);</span>
+                    <span class="k">break</span><span class="p">;</span>
+            <span class="p">}</span>
         <span class="p">});</span>
 <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span></code></pre></div>
@@ -344,46 +364,9 @@ $(document).ready(function() {
         
     </div>
 </div>
-                </section>
-
-                <div class="doc-hr"></div>
-
-                <section>
-                    <h2>Hiding success class and tick icon when field is empty</h2>
-
-                    <p>Based on this approach, it's possible to hide success icon and remove the success CSS class from the container if the field is empty. You just simply change the <code>success.field.fv</code> event handler a little bit:</p>
-
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#proposalForm&#39;</span><span class="p">)</span>
-        <span class="p">.</span><span class="nx">formValidation</span><span class="p">({</span>
-            <span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
-                <span class="nx">valid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-ok&#39;</span><span class="p">,</span>
-                <span class="nx">invalid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-remove&#39;</span><span class="p">,</span>
-                <span class="nx">validating</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-refresh&#39;</span>
-            <span class="p">},</span>
-            <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
-                <span class="p">...</span>
-            <span class="p">}</span>
-        <span class="p">})</span>
-        <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;success.field.fv&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
-            <span class="c1">// If the field is empty</span>
-            <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">element</span><span class="p">.</span><span class="nx">val</span><span class="p">()</span> <span class="o">===</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="p">{</span>
-                <span class="kd">var</span> <span class="nx">$parent</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">element</span><span class="p">.</span><span class="nx">parents</span><span class="p">(</span><span class="s1">&#39;.form-group&#39;</span><span class="p">);</span>
-
-                <span class="c1">// Remove the has-success class</span>
-                <span class="nx">$parent</span><span class="p">.</span><span class="nx">removeClass</span><span class="p">(</span><span class="s1">&#39;has-success&#39;</span><span class="p">);</span>
-
-                <span class="c1">// Hide the success icon</span>
-                <span class="nx">data</span><span class="p">.</span><span class="nx">element</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;fv.icon&#39;</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
-            <span class="p">}</span>
-        <span class="p">});</span>
-<span class="p">});</span></code></pre></div>
-                </section>
             </div>
 
             <div class="col-md-3 hidden-print hidden-xs hidden-sm">
-                <div id="toc" class="doc-toc"></div>
-
                 <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=bootstrapvalidatorcom" id="_carbonads_js"></script>
             </div>
         </div>
