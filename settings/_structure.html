@@ -63,15 +63,19 @@ $(formSelector).formValidation({
     data-fv-live="enabled">
     ...
 </form>
-{% endhighlight %}
 
-{% highlight javascript %}
+<script>
 $(document).ready(function() {
     $(formSelector).formValidation({
         fields: ...
     });
 });
+</script>
 {% endhighlight %}
+
+    <div class="doc-alert doc-alert-info">
+        The <a href="/examples/attribute/">Setting validator options via HTML attributes</a> example shows how to use the declarative code in action.
+    </div>
 
     <p>In the next sections, you will see the full list of options for each level.</p>
 </section>
