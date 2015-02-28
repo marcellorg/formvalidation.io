@@ -232,13 +232,19 @@ $(document).ready(function() {
     <span class="na">data-fv-icon-validating=</span><span class="s">&quot;glyphicon glyphicon-refresh&quot;</span>
     <span class="na">data-fv-live=</span><span class="s">&quot;enabled&quot;</span><span class="nt">&gt;</span>
     ...
-<span class="nt">&lt;/form&gt;</span></code></pre></div>
+<span class="nt">&lt;/form&gt;</span>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="nx">formSelector</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
         <span class="nx">fields</span><span class="o">:</span> <span class="p">...</span>
     <span class="p">});</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span></code></pre></div>
+
+    <div class="doc-alert doc-alert-info">
+        The <a href="/examples/attribute/">Setting validator options via HTML attributes</a> example shows how to use the declarative code in action.
+    </div>
 
     <p>In the next sections, you will see the full list of options for each level.</p>
 </section>
@@ -1279,6 +1285,11 @@ $(document).ready(function() {
 
     <p><code>enabled: Boolean</code> &mdash; Enable or disable the field validators.</p>
     <p>If you want to enable or disable particular validator, use validator's <a href="#validator-enabled">enabled</a> option or <a href="/api#enable-field-validators">enableFieldValidators()</a> method.</p>
+
+    <h5>Example</h5>
+    <ul class="doc-list">
+        <li><a href="/examples/enable-validator/">Enabling validator</a></li>
+    </ul>
 </section>
     <div class="doc-hr-short"></div>
 
@@ -2234,6 +2245,10 @@ $(document).ready(function() {
         
     </div>
 </div>
+
+    <ul class="doc-list">
+        <li><a href="/examples/enable-validator/">Enabling validator</a></li>
+    </ul>
 </section>
     <div class="doc-hr-short"></div>
 
