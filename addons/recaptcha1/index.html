@@ -84,7 +84,8 @@ $('#signUpForm').formValidation({
 
                             <div class="tab-pane" id="declarative-tab">
                                 <div class="doc-alert doc-alert-info">
-                                    If you want use multiple add-ons, just simply separate them by a comma in data-fv-addons attribute
+                                    <p>If you want to use multiple add-ons, just simply separate them by a comma in data-fv-addons attribute:</p>
+                                    <p>data-fv-addons="reCaptcha1, requiredIcon, externalButton"</p>
                                 </div>
 
 {% highlight html %}
@@ -102,8 +103,9 @@ $('#signUpForm').formValidation({
                         </div>
                     </div>
 
-                    <p>The reCaptcha1 add-on provides the following option:</p>
+                    <p>The reCaptcha1 add-on provides the following options:</p>
 
+                    <p><sup>*</sup> &mdash; Required option</p>
                     <div class="table-responsive">
                         <table class="table table-bordered table-striped">
                             <thead>
@@ -116,19 +118,19 @@ $('#signUpForm').formValidation({
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><code>element</code></td>
+                                    <td><code>element</code><sup>*</sup></td>
                                     <td><code>data-fv-addons-recaptcha1-element</code></td>
                                     <td><code>String</code></td>
                                     <td>The ID of element showing the captcha</td>
                                 </tr>
                                 <tr>
-                                    <td><code>message</code></td>
+                                    <td><code>message</code><sup>*</sup></td>
                                     <td><code>data-fv-addons-recaptcha1-message</code></td>
                                     <td><code>String</code></td>
                                     <td>The error message that will be shown in case the captcha is not valid. You don't need to define it if the back-end URL above returns the message</td>
                                 </tr>
                                 <tr>
-                                    <td><code>siteKey</code></td>
+                                    <td><code>siteKey</code><sup>*</sup></td>
                                     <td><code>data-fv-addons-recaptcha1-sitekey</code></td>
                                     <td><code>String</code></td>
                                     <td>The site key provided by Google</td>
@@ -148,7 +150,7 @@ $('#signUpForm').formValidation({
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><code>url</code></td>
+                                    <td><code>url</code><sup>*</sup></td>
                                     <td><code>data-fv-addons-recaptcha1-url</code></td>
                                     <td><code>String</code></td>
                                     <td>
