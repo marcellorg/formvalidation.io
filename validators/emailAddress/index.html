@@ -114,9 +114,9 @@ examples:
                             <tbody>
                                 {% for item in page.examples %}
                                 <tr class="active"><td colspan="2">{{ item[0] | capitalize }}</td></tr>
-                                {% for ein in item[1] %}
+                                {% for emailAddress in item[1] %}
                                 <tr>
-                                    <td><a href="javascript: void(0);" class="sample">{{ ein }}</a></td>
+                                    <td><a href="javascript: void(0);" class="sample">{{ emailAddress }}</a></td>
                                     <td><i class="fa"></i></td>
                                 </tr>
                                 {% endfor %}
