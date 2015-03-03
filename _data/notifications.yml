@@ -7,6 +7,9 @@
 - title: "New example: Conditional validation"
   url: "/examples/conditional-validation/"
 
+- title: "New example: Playing with Bootstrap Combobox"
+  url: "/examples/bootstrap-combobox/"
+
 - title: "New example: Using multiple buttons"
   url: "/examples/using-multiple-buttons/"
 
