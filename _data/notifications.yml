@@ -4,6 +4,9 @@
 - title: "Explore new add-ons page"
   url: "/addons/"
 
+- title: "New example: Conditional validation"
+  url: "/examples/conditional-validation/"
+
 - title: "New example: Using multiple buttons"
   url: "/examples/using-multiple-buttons/"
 

@@ -14,18 +14,28 @@ permalink: /examples/enable-validator/
     <div class="container">
         <div class="row">
             <div class="col-md-9">
-                <p>This example demonstrates how to enable/disable validators on the fly.</p>
+                <section>
+                    <p>This example demonstrates how to enable/disable validators on the fly.</p>
 
-                <p>You might need two things:</p>
+                    <p>You might need two things:</p>
 
-                <ul class="doc-list">
-                    <li>The <a href="/settings#field-enabled">enabled</a> option: This option is used to enable/disable the field validators initially.</li>
-                    <li>The <a href="/api#enable-field-validators">enableFieldValidators()</a> method: This method enables/disables the field validators.</li>
-                </ul>
+                    <ul class="doc-list">
+                        <li>The <a href="/settings#field-enabled">enabled</a> option: This option is used to enable/disable the field validators initially.</li>
+                        <li>The <a href="/api#enable-field-validators">enableFieldValidators()</a> method: This method enables/disables the field validators.</li>
+                    </ul>
 
-                <p>In the following form, the new password is not required. Its validators are disabled. When user set the password, the validators will be enabled.</p>
+                    <p>In the following form, the new password is not required. Its validators are disabled. When user set the password, the validators will be enabled.</p>
 
-                {% include demo/tabs.html id="demo" frameworks="bootstrap" codes="programmatic" %}
+                    {% include demo/tabs.html id="demo" frameworks="bootstrap" codes="programmatic" %}
+                </section>
+
+                <section>
+                    <h2>Related example</h2>
+
+                    <ul class="doc-list">
+                        <li><a href="/examples/conditional-validation/">Conditional validation</a></li>
+                    </ul>
+                </section>
             </div>
 
             <div class="col-md-3 hidden-print hidden-xs hidden-sm">
