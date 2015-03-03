@@ -128,6 +128,7 @@ $(document).ready(function() {
         $message      = $('#notification').find('a').data('index', 0);
     notifications.push({ title: 'v0.6.1 is released on 2015.02.24', url: '/news/v0.6.1-released/'});
     notifications.push({ title: 'Explore new add-ons page', url: '/addons/'});
+    notifications.push({ title: 'New example: Conditional validation', url: '/examples/conditional-validation/'});
     notifications.push({ title: 'New example: Using multiple buttons', url: '/examples/using-multiple-buttons/'});
     notifications.push({ title: 'New example: Loading and saving data in a modal', url: '/examples/loading-saving-data-modal/'});
     notifications.push({ title: 'New example: Using Mailgun API to validate email address', url: '/examples/using-mailgun-api-validate-email-address/'});
@@ -174,18 +175,19 @@ $(document).ready(function() {
     <div class="container">
         <div class="row">
             <div class="col-md-9">
-                <p>This example demonstrates how to enable/disable validators on the fly.</p>
+                <section>
+                    <p>This example demonstrates how to enable/disable validators on the fly.</p>
 
-                <p>You might need two things:</p>
+                    <p>You might need two things:</p>
 
-                <ul class="doc-list">
-                    <li>The <a href="/settings#field-enabled">enabled</a> option: This option is used to enable/disable the field validators initially.</li>
-                    <li>The <a href="/api#enable-field-validators">enableFieldValidators()</a> method: This method enables/disables the field validators.</li>
-                </ul>
+                    <ul class="doc-list">
+                        <li>The <a href="/settings#field-enabled">enabled</a> option: This option is used to enable/disable the field validators initially.</li>
+                        <li>The <a href="/api#enable-field-validators">enableFieldValidators()</a> method: This method enables/disables the field validators.</li>
+                    </ul>
 
-                <p>In the following form, the new password is not required. Its validators are disabled. When user set the password, the validators will be enabled.</p>
+                    <p>In the following form, the new password is not required. Its validators are disabled. When user set the password, the validators will be enabled.</p>
 
-                
+                    
 
 
 
@@ -311,6 +313,15 @@ $(document).ready(function() {
         
     </div>
 </div>
+                </section>
+
+                <section>
+                    <h2>Related example</h2>
+
+                    <ul class="doc-list">
+                        <li><a href="/examples/conditional-validation/">Conditional validation</a></li>
+                    </ul>
+                </section>
             </div>
 
             <div class="col-md-3 hidden-print hidden-xs hidden-sm">
