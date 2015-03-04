@@ -27,8 +27,8 @@ $(document).ready(function() {
                 }
             }
         })
-        .on('success.field.fv', function(e, data) {
-            if (data.field === 'cc') {
+        .on('success.validator.fv', function(e, data) {
+            if (data.field === 'cc' && data.validator === 'creditCard') {
                 var $icon = data.element.data('fv.icon');
                 // data.result.type can be one of
                 // AMERICAN_EXPRESS, DINERS_CLUB, DINERS_CLUB_US, DISCOVER, JCB, LASER,
