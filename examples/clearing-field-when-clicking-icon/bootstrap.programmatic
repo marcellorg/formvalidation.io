@@ -1,3 +1,12 @@
+<style type="text/css">
+#productForm .form-control-feedback {
+    pointer-events: auto;
+}
+#productForm .form-control-feedback:hover {
+    cursor: pointer;
+}
+</style>
+
 <form id="productForm" method="post" class="form-horizontal">
     <div class="form-group">
         <label class="col-xs-3 control-label">Name</label>
@@ -40,7 +49,7 @@
 <script>
 $(document).ready(function() {
     $('#productForm')
-        // IMPORTANT: You must declare .on('init.field.bv')
+        // IMPORTANT: You must declare .on('init.field.fv')
         // before calling .formValidation(options)
         .on('init.field.fv', function(e, data) {
             // data.fv      --> The FormValidation instance

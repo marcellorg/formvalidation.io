@@ -22,6 +22,14 @@ permalink: /examples/clearing-field-when-clicking-icon/
                     <li>Using the <a href="/api#reset-field">resetField()</a> method to clear the field</li>
                 </ul>
 
+                <p>You also need to set <code>pointer-events: auto</code> style for the icon since it's reset to <code>none</code> by Bootstrap:</p>
+
+{% highlight css %}
+#productForm .form-control-feedback {
+    pointer-events: auto;
+}
+{% endhighlight %}
+
                 {% include demo/tabs.html id="demo" frameworks="bootstrap" codes="programmatic" %}
             </div>
 
