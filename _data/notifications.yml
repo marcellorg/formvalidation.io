@@ -4,6 +4,9 @@
 - title: "Explore new add-ons page"
   url: "/addons/"
 
+- title: "New example: Switching validators on the same field"
+  url: "/examples/switching-validators-same-field/"
+
 - title: "New example: Conditional validation"
   url: "/examples/conditional-validation/"
 
