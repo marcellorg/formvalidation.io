@@ -402,12 +402,12 @@ $(document).ready(function() {
 </script>
 <script>
 $(document).ready(function() {
-    $('#loginForm').on('success.form.bv', function(e) {
+    $('#loginForm').on('success.form.fv', function(e) {
         // Prevent form submission
         e.preventDefault();
 
         var $form     = $(e.target),
-            validator = $form.data('bootstrapValidator'),
+            validator = $form.data('formValidation'),
             username  = validator.getFieldElements('username').val();
 
         // Hide the modal containing the form

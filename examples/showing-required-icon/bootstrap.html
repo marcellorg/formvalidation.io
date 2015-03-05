@@ -103,8 +103,8 @@ _gaq.push(['_trackPageview']);
 <script>
 $(document).ready(function() {
     $('#productForm')
-        // IMPORTANT: You must declare .on('init.field.bv')
-        // before calling .bootstrapValidator(options)
+        // IMPORTANT: You must declare .on('init.field.fv')
+        // before calling .formValidation(options)
         .on('init.field.fv', function(e, data) {
             // data.fv      --> The FormValidation instance
             // data.field   --> The field name
