@@ -61,7 +61,16 @@ _gaq.push(['_trackPageview']);
     <div class="container">
         <div class="row">
             <div class="col-lg-9" id="demoContainer">
-                <form id="productForm" method="post" class="form-horizontal">
+                <style type="text/css">
+#productForm .form-control-feedback {
+    pointer-events: auto;
+}
+#productForm .form-control-feedback:hover {
+    cursor: pointer;
+}
+</style>
+
+<form id="productForm" method="post" class="form-horizontal">
     <div class="form-group">
         <label class="col-xs-3 control-label">Name</label>
         <div class="col-xs-5">
@@ -103,7 +112,7 @@ _gaq.push(['_trackPageview']);
 <script>
 $(document).ready(function() {
     $('#productForm')
-        // IMPORTANT: You must declare .on('init.field.bv')
+        // IMPORTANT: You must declare .on('init.field.fv')
         // before calling .formValidation(options)
         .on('init.field.fv', function(e, data) {
             // data.fv      --> The FormValidation instance

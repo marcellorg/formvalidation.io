@@ -184,6 +184,12 @@ $(document).ready(function() {
                     <li>Using the <a href="/api#reset-field">resetField()</a> method to clear the field</li>
                 </ul>
 
+                <p>You also need to set <code>pointer-events: auto</code> style for the icon since it's reset to <code>none</code> by Bootstrap:</p>
+
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nf">#productForm</span> <span class="nc">.form-control-feedback</span> <span class="p">{</span>
+    <span class="k">pointer</span><span class="o">-</span><span class="n">events</span><span class="o">:</span> <span class="k">auto</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+
                 
 
 
@@ -220,7 +226,16 @@ $(document).ready(function() {
         <div class="tab-pane" id="demo-programmatic-tab">
             
             <div data-demo-code="bootstrap">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;productForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;style </span><span class="na">type=</span><span class="s">&quot;text/css&quot;</span><span class="nt">&gt;</span>
+<span class="nf">#productForm</span> <span class="nc">.form-control-feedback</span> <span class="p">{</span>
+    <span class="k">pointer</span><span class="o">-</span><span class="n">events</span><span class="o">:</span> <span class="k">auto</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nf">#productForm</span> <span class="nc">.form-control-feedback</span><span class="nd">:hover</span> <span class="p">{</span>
+    <span class="k">cursor</span><span class="o">:</span> <span class="k">pointer</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+
+<span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;productForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Name<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-5&quot;</span><span class="nt">&gt;</span>
@@ -262,7 +277,7 @@ $(document).ready(function() {
 <span class="nt">&lt;script&gt;</span>
 <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#productForm&#39;</span><span class="p">)</span>
-        <span class="c1">// IMPORTANT: You must declare .on(&#39;init.field.bv&#39;)</span>
+        <span class="c1">// IMPORTANT: You must declare .on(&#39;init.field.fv&#39;)</span>
         <span class="c1">// before calling .formValidation(options)</span>
         <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;init.field.fv&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
             <span class="c1">// data.fv      --&gt; The FormValidation instance</span>
