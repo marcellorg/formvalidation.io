@@ -128,7 +128,7 @@ $(document).ready(function() {
         .find('input[name="job"], input[name="languages[]"]')
             // Init icheck elements
             .icheck({
-                // The tap option is only available in v0.2.0
+                // The tap option is only available in v2.0
                 tap: true,
                 checkboxClass: 'icheckbox_square-red',
                 radioClass: 'iradio_square-red'
