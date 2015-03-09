@@ -62,10 +62,10 @@ _gaq.push(['_trackPageview']);
         <div class="row">
             <div class="col-lg-9" id="demoContainer">
                 <!-- Include iCheck skin -->
-<link rel="stylesheet" href="//oss.maxcdn.com/icheck/1.0.2/skins/square/red.min.css" />
+<link rel="stylesheet" href="/vendor/icheck/skins/square/red.css" />
 
 <!-- Include iCheck plugin -->
-<script src="//oss.maxcdn.com/icheck/1.0.2/icheck.min.js"></script>
+<script src="/vendor/icheck/icheck.min.js"></script>
 
 <!-- Set the radio/checkbox position properly -->
 <style type="text/css">
@@ -189,8 +189,10 @@ $(document).ready(function() {
             }
         })
         .find('input[name="job"], input[name="languages[]"]')
-            // Init iCheck elements
-            .iCheck({
+            // Init icheck elements
+            .icheck({
+                // The tap option is only available in v0.2.0
+                tap: true,
                 checkboxClass: 'icheckbox_square-red',
                 radioClass: 'iradio_square-red'
             })
@@ -199,7 +201,8 @@ $(document).ready(function() {
                 // Get the field name
                 var field = $(this).attr('name');
                 $('#icheckForm').formValidation('revalidateField', field);
-            });
+            })
+            .end();
 });
 </script>
             </div>
