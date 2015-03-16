@@ -4,6 +4,9 @@
 - title: "New example: Playing with geocomplete"
   url: "/examples/geocomplete/"
 
+- title: "New example: Skip validation on specific submit button"
+  url: "/examples/skip-validation-specific-submit-button/"
+
 - title: "Explore new add-ons page"
   url: "/addons/"
 
@@ -24,48 +27,3 @@
 
 - title: "New example: Using Mailgun API to validate email address"
   url: "/examples/using-mailgun-api-validate-email-address/"
-
-- title: "New example: Playing with jQuery UI Datepicker"
-  url: "/examples/jquery-ui-datepicker/"
-
-- title: "New example: Playing with Flat UI"
-  url: "/examples/flat-ui/"
-
-- title: "New example: Playing with Typhead"
-  url: "/examples/typeahead/"
-
-- title: "New example: Validating array of inputs"
-  url: "/examples/validating-array-inputs/"
-
-- title: "New example: Updating validator options"
-  url: "/examples/updating-validator-options/"
-
-- title: "New example: Validating field with special name"
-  url: "/examples/validating-field-special-name/"
-
-- title: "New example: Validating multiple inputs as one"
-  url: "/examples/validating-multiple-inputs-one/"
-
-- title: "3 ways to improve performance when using remote validator"
-  url: "/validators/remote/#improving-the-performance"
-
-- title: "New example: Modifying the value before validating"
-  url: "/examples/modifying-value-before-validating/"
-
-- title: "New example: Playing with Bootstrap Wizard"
-  url: "/examples/bootstrap-wizard/"
-
-- title: "New example: Playing with Bootstrap Material Design"
-  url: "/examples/bootstrap-material-design/"
-
-- title: "New example: Playing with jQuery Steps"
-  url: "/examples/jquery-steps/"
-
-- title: "New example: Playing with Fuel UX Wizard"
-  url: "/examples/fuel-ux-wizard/"
-
-- title: "New example: Adding warning validation state"
-  url: "/examples/adding-warning-validation-state/"
-
-- title: "New example: Using tooltip to show message"
-  url: "/examples/using-tooltip-to-show-message/"

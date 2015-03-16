@@ -1,0 +1,52 @@
+---
+layout: default
+title: Skip validation on specific submit button
+permalink: /examples/skip-validation-specific-submit-button/
+---
+
+<div class="doc-content-container">
+    <div class="doc-heading">
+        <h1>Skip validation on specific submit button</h1>
+        <p>&larr; <a href="/examples/">Examples</a></p>
+        {% include share.html %}
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <p>Your form might have multiple submit buttons which have <code>type="submit"</code> attribute.
+                    By default, clicking on any submit button will perform validation and then submit the form if all the fields are valid.</p>
+
+                <p>If you want to skip the validation on specific submit button, just use the <a href="/settings/#form-button">button</a> option:</p>
+
+{% highlight javascript %}
+button: {
+    // The CSS selector indicates the button
+    selector: '[type="submit"]',
+
+    // The CSS class which is added to the button when it is disabled
+    disabled: ''
+}
+{% endhighlight %}
+
+                <p>The following employment form has two submit buttons, but the validation is only triggered when clicking on the <strong>Validate and Submit</strong> button:</p>
+
+{% highlight javascript %}
+$('#employmentForm').formValidation({
+    button: {
+        selector: '#validateButton',
+        disabled: 'disabled'
+    }
+    ...
+});
+{% endhighlight %}
+
+                {% include demo/tabs.html id="basic" frameworks="bootstrap" codes="programmatic" %}
+            </div>
+
+            <div class="col-md-3 hidden-print hidden-xs hidden-sm">
+                {% include ad.html %}
+            </div>
+        </div>
+    </div>
+</div>
