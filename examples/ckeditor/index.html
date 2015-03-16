@@ -98,7 +98,6 @@ _gaq.push(['_trackPageview']);
     <div class="doc-hr"></div>
 
     <ul>
-        <li><a href="https://github.com/formvalidation/" title="Fork FormValidation on Github">Github <i class="fa fa-github"></i></a></li>
         <li><a href="https://twitter.com/formvalidation/" title="Follow FormValidation on Twitter">Twitter <i class="fa fa-twitter"></i></a></li>
         <li><a href="https://www.facebook.com/formvalidation/" title="Like FormValidation on Facebook">Facebook <i class="fa fa-facebook"></i></a></li>
         <li><a href="https://plus.google.com/u/0/communities/114931136856987817254" title="Join FormValidation community on Google+">Google+ <i class="fa fa-google-plus"></i></a></li>
@@ -128,6 +127,7 @@ $(document).ready(function() {
         $message      = $('#notification').find('a').data('index', 0);
     notifications.push({ title: 'v0.6.1 is released on 2015.02.24', url: '/news/v0.6.1-released/'});
     notifications.push({ title: 'New example: Playing with geocomplete', url: '/examples/geocomplete/'});
+    notifications.push({ title: 'New example: Skip validation on specific submit button', url: '/examples/skip-validation-specific-submit-button/'});
     notifications.push({ title: 'Explore new add-ons page', url: '/addons/'});
     notifications.push({ title: 'New example: Switching validators on the same field', url: '/examples/switching-validators-same-field/'});
     notifications.push({ title: 'New example: Conditional validation', url: '/examples/conditional-validation/'});
@@ -135,21 +135,6 @@ $(document).ready(function() {
     notifications.push({ title: 'New example: Using multiple buttons', url: '/examples/using-multiple-buttons/'});
     notifications.push({ title: 'New example: Loading and saving data in a modal', url: '/examples/loading-saving-data-modal/'});
     notifications.push({ title: 'New example: Using Mailgun API to validate email address', url: '/examples/using-mailgun-api-validate-email-address/'});
-    notifications.push({ title: 'New example: Playing with jQuery UI Datepicker', url: '/examples/jquery-ui-datepicker/'});
-    notifications.push({ title: 'New example: Playing with Flat UI', url: '/examples/flat-ui/'});
-    notifications.push({ title: 'New example: Playing with Typhead', url: '/examples/typeahead/'});
-    notifications.push({ title: 'New example: Validating array of inputs', url: '/examples/validating-array-inputs/'});
-    notifications.push({ title: 'New example: Updating validator options', url: '/examples/updating-validator-options/'});
-    notifications.push({ title: 'New example: Validating field with special name', url: '/examples/validating-field-special-name/'});
-    notifications.push({ title: 'New example: Validating multiple inputs as one', url: '/examples/validating-multiple-inputs-one/'});
-    notifications.push({ title: '3 ways to improve performance when using remote validator', url: '/validators/remote/#improving-the-performance'});
-    notifications.push({ title: 'New example: Modifying the value before validating', url: '/examples/modifying-value-before-validating/'});
-    notifications.push({ title: 'New example: Playing with Bootstrap Wizard', url: '/examples/bootstrap-wizard/'});
-    notifications.push({ title: 'New example: Playing with Bootstrap Material Design', url: '/examples/bootstrap-material-design/'});
-    notifications.push({ title: 'New example: Playing with jQuery Steps', url: '/examples/jquery-steps/'});
-    notifications.push({ title: 'New example: Playing with Fuel UX Wizard', url: '/examples/fuel-ux-wizard/'});
-    notifications.push({ title: 'New example: Adding warning validation state', url: '/examples/adding-warning-validation-state/'});
-    notifications.push({ title: 'New example: Using tooltip to show message', url: '/examples/using-tooltip-to-show-message/'});
     
     setInterval(function() {
         $message.data('index', $message.data('index') + 1);
