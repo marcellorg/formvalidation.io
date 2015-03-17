@@ -1,11 +1,14 @@
 - title: "v0.6.1 is released on 2015.02.24"
   url: "/news/v0.6.1-released/"
 
-- title: "New example: Playing with geocomplete"
-  url: "/examples/geocomplete/"
+- title: "New example: Validating fields that depend on each other"
+  url: "/examples/validating-fields-depend-each-other/"
 
 - title: "New example: Skip validation on specific submit button"
   url: "/examples/skip-validation-specific-submit-button/"
+
+- title: "New example: Playing with geocomplete"
+  url: "/examples/geocomplete/"
 
 - title: "Explore new add-ons page"
   url: "/addons/"
@@ -24,6 +27,3 @@
 
 - title: "New example: Loading and saving data in a modal"
   url: "/examples/loading-saving-data-modal/"
-
-- title: "New example: Using Mailgun API to validate email address"
-  url: "/examples/using-mailgun-api-validate-email-address/"
