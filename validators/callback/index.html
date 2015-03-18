@@ -126,6 +126,7 @@ $(document).ready(function() {
     var notifications = [],
         $message      = $('#notification').find('a').data('index', 0);
     notifications.push({ title: 'v0.6.1 is released on 2015.02.24', url: '/news/v0.6.1-released/'});
+    notifications.push({ title: 'New example: Using data returned by validator', url: '/examples/using-data-returned-validator/'});
     notifications.push({ title: 'New example: Validating fields that depend on each other', url: '/examples/validating-fields-depend-each-other/'});
     notifications.push({ title: 'New example: Skip validation on specific submit button', url: '/examples/skip-validation-specific-submit-button/'});
     notifications.push({ title: 'New example: Playing with geocomplete', url: '/examples/geocomplete/'});
@@ -134,7 +135,6 @@ $(document).ready(function() {
     notifications.push({ title: 'New example: Conditional validation', url: '/examples/conditional-validation/'});
     notifications.push({ title: 'New example: Playing with Bootstrap Combobox', url: '/examples/bootstrap-combobox/'});
     notifications.push({ title: 'New example: Using multiple buttons', url: '/examples/using-multiple-buttons/'});
-    notifications.push({ title: 'New example: Loading and saving data in a modal', url: '/examples/loading-saving-data-modal/'});
     
     setInterval(function() {
         $message.data('index', $message.data('index') + 1);
@@ -231,6 +231,10 @@ $(document).ready(function() {
     <span class="p">}</span>
 <span class="p">}</span></code></pre></div>
                     <p>Look at the <a href="#dynamic-message-example">dynamic message</a> example.</p>
+
+                    <div class="doc-alert doc-alert-info">
+                        Look at this <a href="/examples/using-data-returned-validator/">example</a> if you want to attach more data to the returned value and reuse them later
+                    </div>
                 </section>
 
                 <div class="doc-hr"></div>

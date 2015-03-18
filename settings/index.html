@@ -126,6 +126,7 @@ $(document).ready(function() {
     var notifications = [],
         $message      = $('#notification').find('a').data('index', 0);
     notifications.push({ title: 'v0.6.1 is released on 2015.02.24', url: '/news/v0.6.1-released/'});
+    notifications.push({ title: 'New example: Using data returned by validator', url: '/examples/using-data-returned-validator/'});
     notifications.push({ title: 'New example: Validating fields that depend on each other', url: '/examples/validating-fields-depend-each-other/'});
     notifications.push({ title: 'New example: Skip validation on specific submit button', url: '/examples/skip-validation-specific-submit-button/'});
     notifications.push({ title: 'New example: Playing with geocomplete', url: '/examples/geocomplete/'});
@@ -134,7 +135,6 @@ $(document).ready(function() {
     notifications.push({ title: 'New example: Conditional validation', url: '/examples/conditional-validation/'});
     notifications.push({ title: 'New example: Playing with Bootstrap Combobox', url: '/examples/bootstrap-combobox/'});
     notifications.push({ title: 'New example: Using multiple buttons', url: '/examples/using-multiple-buttons/'});
-    notifications.push({ title: 'New example: Loading and saving data in a modal', url: '/examples/loading-saving-data-modal/'});
     
     setInterval(function() {
         $message.data('index', $message.data('index') + 1);
@@ -3807,6 +3807,8 @@ $(document).ready(function() {
         <ul class="doc-list">
             <li><a href="/examples/adding-warning-validation-state/">Adding warning validation state</a></li>
             <li><a href="/examples/showing-one-message/">Showing only one message each time</a></li>
+            <li><a href="/examples/using-data-returned-validator/">Using data returned by validator</a></li>
+            <li><a href="/examples/using-mailgun-api-validate-email-address/">Using Mailgun API to validate email address</a></li>
         </ul>
     </section>
 </section>
