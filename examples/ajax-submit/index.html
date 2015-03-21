@@ -163,7 +163,9 @@ $(document).ready(function() {
     <div class="container">
         <div class="row">
             <div class="col-md-9">
-                <p>By triggering the <a href="/settings/#event-form">success.form.fv</a> event, we can use Ajax to submit the form data.</p>
+                <section>
+                    <p>after clicking the <a href="/settings/#form-button">submit</a> button, FormValidation will submit the form if all the fields are valid.</p>
+                    <p>If you want to do additional tasks instead of submitting the form, you can trigger the <a href="/settings/#event-form">success.form.fv</a> event:</p>
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">)</span>
@@ -174,25 +176,139 @@ $(document).ready(function() {
             <span class="c1">// Prevent form submission</span>
             <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
 
-            <span class="c1">// Get the form instance</span>
-            <span class="kd">var</span> <span class="nx">$form</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">);</span>
+            <span class="c1">// Some instances you can use are</span>
+            <span class="kd">var</span> <span class="nx">$form</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">),</span>        <span class="c1">// The form instance</span>
+                <span class="nx">fv</span>    <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;formValidation&#39;</span><span class="p">);</span> <span class="c1">// FormValidation instance</span>
 
-            <span class="c1">// Get the FormValidation instance</span>
-            <span class="kd">var</span> <span class="nx">bv</span> <span class="o">=</span> <span class="nx">$form</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;formValidation&#39;</span><span class="p">);</span>
-
-            <span class="c1">// Use Ajax to submit form data</span>
-            <span class="nx">$</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="nx">$form</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;action&#39;</span><span class="p">),</span> <span class="nx">$form</span><span class="p">.</span><span class="nx">serialize</span><span class="p">(),</span> <span class="kd">function</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
-                <span class="c1">// ... Process the result ...</span>
-            <span class="p">},</span> <span class="s1">&#39;json&#39;</span><span class="p">);</span>
+            <span class="c1">// Do whatever you want here ...</span>
         <span class="p">});</span>
 <span class="p">});</span></code></pre></div>
 
-                <p>In the example above, you can see the form is prevented from doing default submission by using</p>
+                    <p>Inside the <code>success.form.fv</code> event handler, if you want to submit the form after doing your custom job, just simply use the <a href="/api/#default-submit">defaultSubmit()</a> method:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span></code></pre></div>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">formValidation</span><span class="p">({</span>
+            <span class="p">...</span> <span class="nx">options</span> <span class="p">...</span>
+        <span class="p">})</span>
+        <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;success.form.fv&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// Prevent form submission</span>
+            <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+
+            <span class="kd">var</span> <span class="nx">$form</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">),</span>
+                <span class="nx">fv</span>    <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;formValidation&#39;</span><span class="p">);</span>
+
+            <span class="c1">// Do whatever you want here ...</span>
+
+            <span class="c1">// Then submit the form as usual</span>
+            <span class="nx">fv</span><span class="p">.</span><span class="nx">defaultSubmit</span><span class="p">();</span>
+        <span class="p">});</span>
+<span class="p">});</span></code></pre></div>
+
+                    <p>The next sections demonstrates one of most frequent usage &mdash; using Ajax to submit the form.</p>
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Using Ajax to submit form data</h2>
+
+                    <p>The following code snippet uses the jQuery's <a href="http://api.jquery.com/serialize/">serialize()</a> method to get the form data,
+                        and then <a href="http://api.jquery.com/jquery.ajax/">ajax()</a> methods to send the data to the back-end endpoint: </p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">formValidation</span><span class="p">({</span>
+            <span class="p">...</span> <span class="nx">options</span> <span class="p">...</span>
+        <span class="p">})</span>
+        <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;success.form.fv&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// Prevent form submission</span>
+            <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+
+            <span class="kd">var</span> <span class="nx">$form</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">),</span>
+                <span class="nx">fv</span>    <span class="o">=</span> <span class="nx">$form</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;formValidation&#39;</span><span class="p">);</span>
+
+            <span class="c1">// Use Ajax to submit form data</span>
+            <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+                <span class="nx">url</span><span class="o">:</span> <span class="nx">$form</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;action&#39;</span><span class="p">),</span>
+                <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;POST&#39;</span><span class="p">,</span>
+                <span class="nx">data</span><span class="o">:</span> <span class="nx">$form</span><span class="p">.</span><span class="nx">serialize</span><span class="p">(),</span>
+                <span class="nx">success</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="c1">// ... Process the result ...</span>
+                <span class="p">}</span>
+            <span class="p">});</span>
+        <span class="p">});</span>
+<span class="p">});</span></code></pre></div>
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Using Ajax to submit form data including files</h2>
+
+                    <p>Assume that the form consists of file inputs:</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span> <span class="na">name=</span><span class="s">&quot;uploadedFiles&quot;</span> <span class="na">multiple</span> <span class="nt">/&gt;</span></code></pre></div>
+
+                    <p>You can use <a href="https://developer.mozilla.org/en-US/docs/Web/API/FormData">FormData</a> to collect the form data including selected files:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">formValidation</span><span class="p">({</span>
+            <span class="p">...</span> <span class="nx">options</span> <span class="p">...</span>
+        <span class="p">})</span>
+        <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;success.form.fv&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// Prevent form submission</span>
+            <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+
+            <span class="kd">var</span> <span class="nx">$form</span>    <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">),</span>
+                <span class="nx">formData</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FormData</span><span class="p">(),</span>
+                <span class="nx">params</span>   <span class="o">=</span> <span class="nx">$form</span><span class="p">.</span><span class="nx">serializeArray</span><span class="p">(),</span>
+                <span class="nx">files</span>    <span class="o">=</span> <span class="nx">$form</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;[name=&quot;uploadedFiles&quot;]&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">files</span><span class="p">;</span>
+
+            <span class="nx">$</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">files</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">file</span><span class="p">)</span> <span class="p">{</span>
+                <span class="c1">// Prefix the name of uploaded files with &quot;uploadedFiles-&quot;</span>
+                <span class="c1">// Of course, you can change it to any string</span>
+                <span class="nx">formData</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;uploadedFiles-&#39;</span> <span class="o">+</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">file</span><span class="p">);</span>
+            <span class="p">});</span>
+
+            <span class="nx">$</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">params</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">formData</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">val</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span> <span class="nx">val</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+            <span class="p">});</span>
+
+            <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+                <span class="nx">url</span><span class="o">:</span> <span class="nx">$form</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;action&#39;</span><span class="p">),</span>
+                <span class="nx">data</span><span class="o">:</span> <span class="nx">formData</span><span class="p">,</span>
+                <span class="nx">cache</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="nx">contentType</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="nx">processData</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;POST&#39;</span><span class="p">,</span>
+                <span class="nx">success</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="c1">// Process the result ...</span>
+                <span class="p">}</span>
+            <span class="p">});</span>
+        <span class="p">});</span>
+<span class="p">});</span></code></pre></div>
+
+                    <p>Please pay attention on <code>contentType</code> and <code>processData</code> options of the jQuery's <a href="http://api.jquery.com/jquery.ajax/">ajax()</a> method:</p>
+                    <ul class="doc-list">
+                        <li>Setting <code>contentType: false</code> tells jQuery to not add <code>Content-Type</code> to the request</li>
+                        <li>Setting <code>processData: false</code> tells jQuery to not convert our data (which is a FormData instance) to a string</li>
+                    </ul>
+
+                    <p>On the server side, you can get the uploaded files under the names <code>uploadedFiles-0</code>, <code>uploadedFiles-1</code>, and so forth, depending
+                        how many files are chosen.</p>
+
+                    <div class="doc-alert doc-alert-warning">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/API/FormData">FormData</a> are supported in modern browsers including IE 10+.
+                        You shouldn't use it if your application needs support previous versions of IE such as IE 8, IE 9.
+                    </div>
+                </section>
             </div>
 
             <div class="col-md-3 hidden-print hidden-xs hidden-sm">
+                <div id="toc" class="doc-toc"></div>
+
                 <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=bootstrapvalidatorcom" id="_carbonads_js"></script>
             </div>
         </div>
