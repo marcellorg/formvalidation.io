@@ -1,6 +1,9 @@
 - title: "v0.6.1 is released on 2015.02.24"
   url: "/news/v0.6.1-released/"
 
+- title: "New example: Playing with Fuel UX"
+  url: "/examples/fuel-ux/"
+
 - title: "New example: Using data returned by validator"
   url: "/examples/using-data-returned-validator/"
 
@@ -24,6 +27,3 @@
 
 - title: "New example: Playing with Bootstrap Combobox"
   url: "/examples/bootstrap-combobox/"
-
-- title: "New example: Using multiple buttons"
-  url: "/examples/using-multiple-buttons/"
