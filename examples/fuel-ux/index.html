@@ -1,0 +1,548 @@
+<!doctype html>
+<html>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article#">
+    <meta charset="utf-8">
+<title>Playing with Fuel UX - FormValidation</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<meta http-equiv="Content-Language" content="en">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks">
+<meta name="keywords" content="FormValidation, BootstrapValidator, jQuery, form, validate, validation, validator, plugin, Bootstrap, Foundation, Pure, SemanticUI, UIKit">
+<meta name="author" content="Nguyen Huu Phuoc">
+<meta name="google-site-verification" content="FMmr8kYuIuW27-qJLOb1Z59OgiVgKNgAv4_eMARhIY8" />
+
+<meta name="twitter:site" content="@formvalidation" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks" />
+<meta name="twitter:title" content="Playing with Fuel UX - FormValidation" />
+<meta name="twitter:image" content="http://formvalidation.io/asset/img/logo.png" />
+
+<meta property="og:title" content="Playing with Fuel UX - FormValidation" />
+<meta property="og:description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://formvalidation.io/examples/fuel-ux/" />
+<meta property="og:image" content="http://formvalidation.io/asset/img/logo.png" />
+<meta property="og:site_name" content="FormValidation" />
+
+<link rel="icon" type="image/x-icon" href="/asset/img/favicon.ico">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/3.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/fontawesome/4.2.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/vendor/formvalidation/css/formValidation.min.css">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:300,400,700">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Cardo:400,400italic,700">
+<link rel="stylesheet" href="/vendor/pygments/github.css">
+<link rel="stylesheet" href="/asset/css/style.css">
+
+<!--[if lt IE 9]>
+<script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src="/vendor/formvalidation/js/formValidation.min.js"></script>
+<script src="/vendor/formvalidation/js/framework/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-44786951-2']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+</head>
+<body>
+    <nav class="doc-nav" tabindex="-1">
+    <ul>
+        <li><a href="/">Home</a></li>
+    
+        
+        <li class=""><a href="/download/">Download</a></li>
+    
+        
+        <li class=""><a href="/getting-started/">Getting Started</a></li>
+    
+        
+        <li class=""><a href="/settings/">Settings</a></li>
+    
+        
+        <li class=""><a href="/api/">API</a></li>
+    
+        
+        <li class=""><a href="/validators/">Validators</a></li>
+    
+        
+        <li class=""><a href="/addons/"><span></span> Add-ons</a></li>
+    
+        
+        <li class="doc-nav-active"><a href="/examples/"><span></span> Examples</a></li>
+    
+        
+        <li class=""><a href="/developing/">Developing</a></li>
+    
+        
+        <li class=""><a href="/news/">News</a></li>
+    
+        
+        <li class=""><a href="/license/">License</a></li>
+    
+    </ul>
+
+    <div class="doc-hr"></div>
+
+    <ul>
+        <li><a href="https://twitter.com/formvalidation/" title="Follow FormValidation on Twitter">Twitter <i class="fa fa-twitter"></i></a></li>
+        <li><a href="https://www.facebook.com/formvalidation/" title="Like FormValidation on Facebook">Facebook <i class="fa fa-facebook"></i></a></li>
+        <li><a href="https://plus.google.com/u/0/communities/114931136856987817254" title="Join FormValidation community on Google+">Google+ <i class="fa fa-google-plus"></i></a></li>
+    </ul>
+
+    <div class="doc-hr"></div>
+
+    <div class="doc-creator">
+        <p>
+            Handcrafted with <span class="doc-heart"><i class="fa fa-heart"></i></span> and a lot of <i class="fa fa-coffee"></i><br />
+            by <a href="http://twitter.com/nghuuphuoc">@nghuuphuoc</a><br/>
+            <img src="/asset/img/logo.png" width="60px" height="60px" />
+        </p>
+        <p><a href="mailto: phuoc@huuphuoc.me" class="btn">Hire me</a></p>
+    </div>
+</nav>
+
+<a id="toggleButton" class="doc-nav-toggle" title="Toggle the navigation"><i class="fa fa-navicon"></i></a>
+
+    <div id="main" class="doc-content-wrapper">
+        <div class="doc-notification" id="notification">
+    <i class="fa fa-bell-o"></i> <a href="/news/v0.6.1-released/">v0.6.1 is released on 2015.02.24</a>
+</div>
+<script>
+$(document).ready(function() {
+    var notifications = [],
+        $message      = $('#notification').find('a').data('index', 0);
+    notifications.push({ title: 'v0.6.1 is released on 2015.02.24', url: '/news/v0.6.1-released/'});
+    notifications.push({ title: 'New example: Playing with Fuel UX', url: '/examples/fuel-ux/'});
+    notifications.push({ title: 'New example: Using data returned by validator', url: '/examples/using-data-returned-validator/'});
+    notifications.push({ title: 'New example: Validating fields that depend on each other', url: '/examples/validating-fields-depend-each-other/'});
+    notifications.push({ title: 'New example: Skip validation on specific submit button', url: '/examples/skip-validation-specific-submit-button/'});
+    notifications.push({ title: 'New example: Playing with geocomplete', url: '/examples/geocomplete/'});
+    notifications.push({ title: 'Explore new add-ons page', url: '/addons/'});
+    notifications.push({ title: 'New example: Switching validators on the same field', url: '/examples/switching-validators-same-field/'});
+    notifications.push({ title: 'New example: Conditional validation', url: '/examples/conditional-validation/'});
+    notifications.push({ title: 'New example: Playing with Bootstrap Combobox', url: '/examples/bootstrap-combobox/'});
+    
+    setInterval(function() {
+        $message.data('index', $message.data('index') + 1);
+        if ($message.data('index') >= notifications.length) {
+            $message.data('index', 0);
+        }
+        $message
+            .fadeOut('slow')
+            .promise()
+            .then(function() {
+                $message.attr('href', notifications[$message.data('index')].url)
+                        .html(notifications[$message.data('index')].title)
+                        .fadeIn('slow');
+            });
+    }, 5000);
+});
+</script>
+
+        <div class="doc-content-container">
+    <div class="doc-heading">
+        <h1>Playing with Fuel UX</h1>
+        <p>&larr; <a href="/examples/">Examples</a></p>
+        <div id="shareButton" class="doc-share-button"></div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <p><a href="http://getfuelux.com/">Fuel UX</a> extends <a href="http://getbootstrap.com/">Bootstrap</a> with some useful Javascript controls.</p>
+                <p>In this example, you will see an usage of integrating FormValidation with a few of <a href="http://getfuelux.com/javascript.html">Fuel UX controls</a>
+                    such as Datepicker, Pillbox, Radio, Selectlist.</p>
+
+                <div class="doc-alert doc-alert-info">
+                    You should look at the <a href="/examples#compatibility">basic principles</a> when integrating FormValidation with other plugins
+                </div>
+
+                <p>Because some of these Fuel UX controls have complex markup, it's not easy for us to <a href="/examples/adjusting-feedback-icon-position/">adjust</a> the <a href="/settings#form-icon">feedback icons</a>.</p>
+                <p>The trick here is that trigger the <a href="/settings#event-field">init.field.fv</a> event and move the icon to desired position:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#albumForm&#39;</span><span class="p">)</span>
+    <span class="c1">// IMPORTANT: on(&#39;init.field.fv&#39;) must be declared</span>
+    <span class="c1">// before calling .formValidation(...)</span>
+    <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;init.field.fv&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">$field</span>    <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">element</span><span class="p">,</span>               <span class="c1">// Field element</span>
+            <span class="nx">$icon</span>     <span class="o">=</span> <span class="nx">$field</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;fv.icon&#39;</span><span class="p">),</span>     <span class="c1">// Icon element</span>
+            <span class="nx">$messages</span> <span class="o">=</span> <span class="nx">$field</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;fv.messages&#39;</span><span class="p">);</span> <span class="c1">// Message container</span>
+
+        <span class="nx">$icon</span><span class="p">.</span><span class="nx">appendTo</span><span class="p">(</span><span class="nx">$messages</span><span class="p">);</span>
+    <span class="p">})</span>
+    <span class="p">.</span><span class="nx">formValidation</span><span class="p">(...);</span></code></pre></div>
+
+                <p>You can see how this trick is used in the <a href="/examples/showing-icon-custom-area/">Showing icons in custom area</a> example.</p>
+
+                <div class="doc-alert doc-alert-info">
+                    We also provide an <a href="/examples/fuel-ux-wizard/">example</a> showing how to play with <a href="http://getfuelux.com/javascript.html#wizard">Fuel UX Wizard, just in case you need it</a>
+                </div>
+
+                
+
+
+
+
+
+
+
+
+
+<div class="doc-demo">
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"><span class="doc-framework">Framework</span> <i class="caret"></i></a>
+            <ul class="dropdown-menu" role="menu">
+                
+                <li><a href="/examples/fuel-ux/bootstrap.html" data-demo-target="#demo-frame" data-demo-framework="bootstrap">Bootstrap</a></li>
+                
+            </ul>
+        </li>
+        <li class="active"><a href="#demo-form-tab" data-toggle="tab">Try it</a></li>
+        
+        <li><a href="#demo-programmatic-tab" data-toggle="tab">Programmatic code</a></li>
+        
+        <li class="doc-demo-direct"><a href="/examples/fuel-ux/bootstrap.html" data-toggle="tooltip" data-container="body" title="Open the demo in new tab" target="_blank"><i class="fa fa-external-link"></i></a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane active" id="demo-form-tab">
+            <iframe class="doc-demo-frame" id="demo-frame"></iframe>
+        </div>
+
+        
+        <div class="tab-pane" id="demo-programmatic-tab">
+            
+            <div data-demo-code="bootstrap">
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Include Fuel UX files --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;//www.fuelcdn.com/fuelux/3.6.4/css/fuelux.min.css&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;//www.fuelcdn.com/fuelux/3.6.4/js/fuelux.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;fuelux&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;albumForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Album name<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-5&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;name&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Artist(s)<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-7&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;pillbox&quot;</span> <span class="na">id=</span><span class="s">&quot;artistsPillbox&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;clearfix pill-group&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;pillbox-input-wrap btn-group&quot;</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control dropdown-toggle pillbox-add-item&quot;</span> <span class="nt">/&gt;</span>
+
+                            <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;dropdown-toggle sr-only&quot;</span><span class="nt">&gt;</span>
+                                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;caret&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
+                                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;sr-only&quot;</span><span class="nt">&gt;</span>Toggle Dropdown<span class="nt">&lt;/span&gt;</span>
+                            <span class="nt">&lt;/button&gt;</span>
+
+                            <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;suggest dropdown-menu&quot;</span> <span class="na">role=</span><span class="s">&quot;menu&quot;</span> <span class="na">data-toggle=</span><span class="s">&quot;dropdown&quot;</span> <span class="na">data-flip=</span><span class="s">&quot;auto&quot;</span><span class="nt">&gt;&lt;/ul&gt;</span>
+                        <span class="nt">&lt;/li&gt;</span>
+                    <span class="nt">&lt;/ul&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;artists&quot;</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;small</span> <span class="na">class=</span><span class="s">&quot;help-block&quot;</span><span class="nt">&gt;</span>Separate artists by a comma<span class="nt">&lt;/small&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Genre<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-4&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;btn-group selectlist&quot;</span> <span class="na">data-resize=</span><span class="s">&quot;auto&quot;</span> <span class="na">id=</span><span class="s">&quot;genreList&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;btn btn-default dropdown-toggle&quot;</span> <span class="na">data-toggle=</span><span class="s">&quot;dropdown&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;selected-label&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
+                        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;caret&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
+                        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;sr-only&quot;</span><span class="nt">&gt;</span>Toggle Dropdown<span class="nt">&lt;/span&gt;</span>
+                    <span class="nt">&lt;/button&gt;</span>
+                    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;dropdown-menu&quot;</span> <span class="na">role=</span><span class="s">&quot;menu&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;li</span> <span class="na">data-value=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Select a genre<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+                        <span class="nt">&lt;li</span> <span class="na">data-value=</span><span class="s">&quot;country&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Country<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+                        <span class="nt">&lt;li</span> <span class="na">data-value=</span><span class="s">&quot;folk&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Folk<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+                        <span class="nt">&lt;li</span> <span class="na">data-value=</span><span class="s">&quot;hiphop&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Hip Hop<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+                        <span class="nt">&lt;li</span> <span class="na">data-value=</span><span class="s">&quot;jazz&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Jazz<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+                        <span class="nt">&lt;li</span> <span class="na">data-value=</span><span class="s">&quot;pop&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Pop<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+                        <span class="nt">&lt;li</span> <span class="na">data-value=</span><span class="s">&quot;rnb&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>R<span class="err">&amp;</span>B<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+                        <span class="nt">&lt;li</span> <span class="na">data-value=</span><span class="s">&quot;rock&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Rock<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+                    <span class="nt">&lt;/ul&gt;</span>
+                    <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;hidden hidden-field&quot;</span> <span class="na">name=</span><span class="s">&quot;genre&quot;</span> <span class="na">readonly=</span><span class="s">&quot;readonly&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Release date<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-5&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">&quot;width: 180px;&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;datepicker&quot;</span> <span class="na">id=</span><span class="s">&quot;releasedDatePicker&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;input-group&quot;</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;releasedDate&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="nt">/&gt;</span>
+                            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;input-group-btn&quot;</span><span class="nt">&gt;</span>
+                                <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default dropdown-toggle&quot;</span> <span class="na">data-toggle=</span><span class="s">&quot;dropdown&quot;</span><span class="nt">&gt;</span>
+                                    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;glyphicon glyphicon-calendar&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
+                                    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;sr-only&quot;</span><span class="nt">&gt;</span>Toggle Calendar<span class="nt">&lt;/span&gt;</span>
+                                <span class="nt">&lt;/button&gt;</span>
+
+                                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;dropdown-menu dropdown-menu-right datepicker-calendar-wrapper&quot;</span> <span class="na">role=</span><span class="s">&quot;menu&quot;</span><span class="nt">&gt;</span>
+                                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;datepicker-calendar&quot;</span><span class="nt">&gt;</span>
+                                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;datepicker-calendar-header&quot;</span><span class="nt">&gt;</span>
+                                            <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;prev&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;glyphicon glyphicon-chevron-left&quot;</span><span class="nt">&gt;&lt;/span&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;sr-only&quot;</span><span class="nt">&gt;</span>Previous Month<span class="nt">&lt;/span&gt;&lt;/button&gt;</span>
+                                            <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;next&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;glyphicon glyphicon-chevron-right&quot;</span><span class="nt">&gt;&lt;/span&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;sr-only&quot;</span><span class="nt">&gt;</span>Next Month<span class="nt">&lt;/span&gt;&lt;/button&gt;</span>
+                                            <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;title&quot;</span> <span class="na">data-month=</span><span class="s">&quot;2&quot;</span> <span class="na">data-year=</span><span class="s">&quot;2015&quot;</span><span class="nt">&gt;</span>
+                                                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;month&quot;</span><span class="nt">&gt;</span>
+                                                    <span class="nt">&lt;span</span> <span class="na">data-month=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>January<span class="nt">&lt;/span&gt;</span>
+                                                    <span class="nt">&lt;span</span> <span class="na">data-month=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>February<span class="nt">&lt;/span&gt;</span>
+                                                    <span class="nt">&lt;span</span> <span class="na">data-month=</span><span class="s">&quot;2&quot;</span> <span class="na">class=</span><span class="s">&quot;current&quot;</span><span class="nt">&gt;</span>March<span class="nt">&lt;/span&gt;</span>
+                                                    <span class="nt">&lt;span</span> <span class="na">data-month=</span><span class="s">&quot;3&quot;</span><span class="nt">&gt;</span>April<span class="nt">&lt;/span&gt;</span>
+                                                    <span class="nt">&lt;span</span> <span class="na">data-month=</span><span class="s">&quot;4&quot;</span><span class="nt">&gt;</span>May<span class="nt">&lt;/span&gt;</span>
+                                                    <span class="nt">&lt;span</span> <span class="na">data-month=</span><span class="s">&quot;5&quot;</span><span class="nt">&gt;</span>June<span class="nt">&lt;/span&gt;</span>
+                                                    <span class="nt">&lt;span</span> <span class="na">data-month=</span><span class="s">&quot;6&quot;</span><span class="nt">&gt;</span>July<span class="nt">&lt;/span&gt;</span>
+                                                    <span class="nt">&lt;span</span> <span class="na">data-month=</span><span class="s">&quot;7&quot;</span><span class="nt">&gt;</span>August<span class="nt">&lt;/span&gt;</span>
+                                                    <span class="nt">&lt;span</span> <span class="na">data-month=</span><span class="s">&quot;8&quot;</span><span class="nt">&gt;</span>September<span class="nt">&lt;/span&gt;</span>
+                                                    <span class="nt">&lt;span</span> <span class="na">data-month=</span><span class="s">&quot;9&quot;</span><span class="nt">&gt;</span>October<span class="nt">&lt;/span&gt;</span>
+                                                    <span class="nt">&lt;span</span> <span class="na">data-month=</span><span class="s">&quot;10&quot;</span><span class="nt">&gt;</span>November<span class="nt">&lt;/span&gt;</span>
+                                                    <span class="nt">&lt;span</span> <span class="na">data-month=</span><span class="s">&quot;11&quot;</span><span class="nt">&gt;</span>December<span class="nt">&lt;/span&gt;</span>
+                                                <span class="nt">&lt;/span&gt;</span>
+                                                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;year&quot;</span><span class="nt">&gt;</span>2015<span class="nt">&lt;/span&gt;</span>
+                                            <span class="nt">&lt;/button&gt;</span>
+                                        <span class="nt">&lt;/div&gt;</span>
+                                        <span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">&quot;datepicker-calendar-days&quot;</span><span class="nt">&gt;</span>
+                                            <span class="nt">&lt;thead&gt;</span>
+                                            <span class="nt">&lt;tr&gt;</span>
+                                                <span class="nt">&lt;th&gt;</span>Su<span class="nt">&lt;/th&gt;</span>
+                                                <span class="nt">&lt;th&gt;</span>Mo<span class="nt">&lt;/th&gt;</span>
+                                                <span class="nt">&lt;th&gt;</span>Tu<span class="nt">&lt;/th&gt;</span>
+                                                <span class="nt">&lt;th&gt;</span>We<span class="nt">&lt;/th&gt;</span>
+                                                <span class="nt">&lt;th&gt;</span>Th<span class="nt">&lt;/th&gt;</span>
+                                                <span class="nt">&lt;th&gt;</span>Fr<span class="nt">&lt;/th&gt;</span>
+                                                <span class="nt">&lt;th&gt;</span>Sa<span class="nt">&lt;/th&gt;</span>
+                                            <span class="nt">&lt;/tr&gt;</span>
+                                            <span class="nt">&lt;/thead&gt;</span>
+                                            <span class="nt">&lt;tbody&gt;&lt;tr&gt;&lt;td</span> <span class="na">data-date=</span><span class="s">&quot;1&quot;</span> <span class="na">data-month=</span><span class="s">&quot;2&quot;</span> <span class="na">data-year=</span><span class="s">&quot;2015&quot;</span> <span class="na">class=</span><span class="s">&quot;past restricted&quot;</span> <span class="na">title=</span><span class="s">&quot;Restricted&quot;</span><span class="nt">&gt;&lt;span&gt;&lt;b</span> <span class="na">class=</span><span class="s">&quot;datepicker-date&quot;</span><span class="nt">&gt;</span>1<span class="nt">&lt;/b&gt;&lt;/span&gt;&lt;/td&gt;&lt;td</span> <span class="na">data-date=</span><span class="s">&quot;2&quot;</span> <span class="na">data-month=</span><span class="s">&quot;2&quot;</span> <span class="na">data-year=</span><span class="s">&quot;2015&quot;</span> <span class="na">class=</span><span class="s">&quot;past restricted&quot;</span> <span class="na">title=</span><span class="s">&quot;Restricted&quot;</span><span class="nt">&gt;&lt;span&gt;&lt;b</span> <span class="na">class=</span><span class="s">&quot;datepicker-date&quot;</span><span class="nt">&gt;</span>2<span class="nt">&lt;/b&gt;&lt;/span&gt;&lt;/td&gt;&lt;td</span> <span class="na">data-date=</span><span class="s">&quot;3&quot;</span> <span class="na">data-month=</span><span class="s">&quot;2&quot;</span> <span class="na">data-year=</span><span class="s">&quot;2015&quot;</span> <span class="na">class=</span><span class="s">&quot;past restricted&quot;</span> <span class="na">title=</span><span class="s">&quot;Restricted&quot;</span><span class="nt">&gt;&lt;span&gt;&lt;b</span> <span class="na">class=</span><span class="s">&quot;datepicker-date&quot;</span><span class="nt">&gt;</span>3<span class="nt">&lt;/b&gt;&lt;/span&gt;&lt;/td&gt;&lt;td</span> <span class="na">data-date=</span><span class="s">&quot;4&quot;</span> <span class="na">data-month=</span><span class="s">&quot;2&quot;</span> <span class="na">data-year=</span><span class="s">&quot;2015&quot;</span> <span class="na">class=</span><span class="s">&quot;past restricted&quot;</span> <span class="na">title=</span><span class="s">&quot;Restricted&quot;</span><span class="nt">&gt;&lt;span&gt;&lt;b</span> <span class="na">class=</span><span class="s">&quot;datepicker-date&quot;</span><span class="nt">&gt;</span>4<span class="nt">&lt;/b&gt;&lt;/span&gt;&lt;/td&gt;&lt;td</span> <span class="na">data-date=</span><span class="s">&quot;5&quot;</span> <span class="na">data-month=</span><span class="s">&quot;2&quot;</span> <span class="na">data-year=</span><span class="s">&quot;2015&quot;</span> <span class="na">class=</span><span class="s">&quot;past restricted&quot;</span> <span class="na">title=</span><span class="s">&quot;Restricted&quot;</span><span class="nt">&gt;&lt;span&gt;&lt;b</span> <span class="na">class=</span><span class="s">&quot;datepicker-date&quot;</span><span class="nt">&gt;</span>5<span class="nt">&lt;/b&gt;&lt;/span&gt;&lt;/td&gt;&lt;td</span> <span class="na">data-date=</span><span class="s">&quot;6&quot;</span> <span class="na">data-month=</span><span class="s">&quot;2&quot;</span> <span class="na">data-year=</span><span class="s">&quot;2015&quot;</span> <span class="na">class=</span><span class="s">&quot;past restricted&quot;</span> <span class="na">title=</span><span class="s">&quot;Restricted&quot;</span><span class="nt">&gt;&lt;span&gt;&lt;b</span> <span class="na">class=</span><span class="s">&quot;datepicker-date&quot;</span><span class="nt">&gt;</span>6<span class="nt">&lt;/b&gt;&lt;/span&gt;&lt;/td&gt;&lt;td</span> <span class="na">data-date=</span><span class="s">&quot;7&quot;</span> <span class="na">data-month=</span><span class="s">&quot;2&quot;</span> <span class="na">data-year=</span><span class="s">&quot;2015&quot;</span> <span class="na">class=</span><span class="s">&quot;past restricted&quot;</span> <span class="na">title=</span><span class="s">&quot;Restricted&quot;</span><span class="nt">&gt;&lt;span&gt;&lt;b</span> <span class="na">class=</span><span class="s">&quot;datepicker-date&quot;</span><span class="nt">&gt;</span>7<span class="nt">&lt;/b&gt;&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td</span> <span class="na">data-date=</span><span class="s">&quot;8&quot;</span> <span class="na">data-month=</span><span class="s">&quot;2&quot;</span> <span class="na">data-year=</span><span class="s">&quot;2015&quot;</span> <span class="na">class=</span><span class="s">&quot;past restricted&quot;</span> <span class="na">title=</span><span class="s">&quot;Restricted&quot;</span><span class="nt">&gt;&lt;span&gt;&lt;b</span> <span class="na">class=</span><span class="s">&quot;datepicker-date&quot;</span><span class="nt">&gt;</span>8<span class="nt">&lt;/b&gt;&lt;/span&gt;&lt;/td&gt;&lt;td</span> <span class="na">data-date=</span><span class="s">&quot;9&quot;</span> <span class="na">data-month=</span><span class="s">&quot;2&quot;</span> <span class="na">data-year=</span><span class="s">&quot;2015&quot;</span> <span class="na">class=</span><span class="s">&quot;past restricted&quot;</span> <span class="na">title=</span><span class="s">&quot;Restricted&quot;</span><span class="nt">&gt;&lt;span&gt;&lt;b</span> <span class="na">class=</span><span class="s">&quot;datepicker-date&quot;</span><span class="nt">&gt;</span>9<span class="nt">&lt;/b&gt;&lt;/span&gt;&lt;/td&gt;&lt;td</span> <span class="na">data-date=</span><span class="s">&quot;10&quot;</span> <span class="na">data-month=</span><span class="s">&quot;2&quot;</span> <span class="na">data-year=</span><span class="s">&quot;2015&quot;</span> <span class="na">class=</span><span class="s">&quot;past restricted&quot;</span> <span class="na">title=</span><span class="s">&quot;Restricted&quot;</span><span class="nt">&gt;&lt;span&gt;&lt;b</span> <span class="na">class=</span><span class="s">&quot;datepicker-date&quot;</span><span class="nt">&gt;</span>10<span class="nt">&lt;/b&gt;&lt;/span&gt;&lt;/td&gt;&lt;td</span> <span class="na">data-date=</span><span class="s">&quot;11&quot;</span> <span class="na">data-month=</span><span class="s">&quot;2&quot;</span> <span class="na">data-year=</span><span class="s">&quot;2015&quot;</span> <span class="na">class=</span><span class="s">&quot;past restricted&quot;</span> <span class="na">title=</span><span class="s">&quot;Restricted&quot;</span><span class="nt">&gt;&lt;span&gt;&lt;b</span> <span class="na">class=</span><span class="s">&quot;datepicker-date&quot;</span><span class="nt">&gt;</span>11<span class="nt">&lt;/b&gt;&lt;/span&gt;&lt;/td&gt;&lt;td</span> <span class="na">data-date=</span><span class="s">&quot;12&quot;</span> <span class="na">data-month=</span><span class="s">&quot;2&quot;</span> <span class="na">data-year=</span><span class="s">&quot;2015&quot;</span> <span class="na">class=</span><span class="s">&quot;past restricted&quot;</span> <span class="na">title=</span><span class="s">&quot;Restricted&quot;</span><span class="nt">&gt;&lt;span&gt;&lt;b</span> <span class="na">class=</span><span class="s">&quot;datepicker-date&quot;</span><span class="nt">&gt;</span>12<span class="nt">&lt;/b&gt;&lt;/span&gt;&lt;/td&gt;&lt;td</span> <span class="na">data-date=</span><span class="s">&quot;13&quot;</span> <span class="na">data-month=</span><span class="s">&quot;2&quot;</span> <span class="na">data-year=</span><span class="s">&quot;2015&quot;</span> <span class="na">class=</span><span class="s">&quot;past restricted&quot;</span> <span class="na">title=</span><span class="s">&quot;Restricted&quot;</span><span class="nt">&gt;&lt;span&gt;&lt;b</span> <span class="na">class=</span><span class="s">&quot;datepicker-date&quot;</span><span class="nt">&gt;</span>13<span class="nt">&lt;/b&gt;&lt;/span&gt;&lt;/td&gt;&lt;td</span> <span class="na">data-date=</span><span class="s">&quot;14&quot;</span> <span class="na">data-month=</span><span class="s">&quot;2&quot;</span> <span class="na">data-year=</span><span class="s">&quot;2015&quot;</span> <span class="na">class=</span><span class="s">&quot;past restricted&quot;</span> <span class="na">title=</span><span class="s">&quot;Restricted&quot;</span><span class="nt">&gt;&lt;span&gt;&lt;b</span> <span class="na">class=</span><span class="s">&quot;datepicker-date&quot;</span><span class="nt">&gt;</span>14<span class="nt">&lt;/b&gt;&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td</span> <span class="na">data-date=</span><span class="s">&quot;15&quot;</span> <span class="na">data-month=</span><span class="s">&quot;2&quot;</span> <span class="na">data-year=</span><span class="s">&quot;2015&quot;</span> <span class="na">class=</span><span class="s">&quot;past restricted&quot;</span> <span class="na">title=</span><span class="s">&quot;Restricted&quot;</span><span class="nt">&gt;&lt;span&gt;&lt;b</span> <span class="na">class=</span><span class="s">&quot;datepicker-date&quot;</span><span class="nt">&gt;</span>15<span class="nt">&lt;/b&gt;&lt;/span&gt;&lt;/td&gt;&lt;td</span> <span class="na">data-date=</span><span class="s">&quot;16&quot;</span> <span class="na">data-month=</span><span class="s">&quot;2&quot;</span> <span class="na">data-year=</span><span class="s">&quot;2015&quot;</span> <span class="na">class=</span><span class="s">&quot;past restricted&quot;</span> <span class="na">title=</span><span class="s">&quot;Restricted&quot;</span><span class="nt">&gt;&lt;span&gt;&lt;b</span> <span class="na">class=</span><span class="s">&quot;datepicker-date&quot;</span><span class="nt">&gt;</span>16<span class="nt">&lt;/b&gt;&lt;/span&gt;&lt;/td&gt;&lt;td</span> <span class="na">data-date=</span><span class="s">&quot;17&quot;</span> <span class="na">data-month=</span><span class="s">&quot;2&quot;</span> <span class="na">data-year=</span><span class="s">&quot;2015&quot;</span> <span class="na">class=</span><span class="s">&quot;past restricted&quot;</span> <span class="na">title=</span><span class="s">&quot;Restricted&quot;</span><span class="nt">&gt;&lt;span&gt;&lt;b</span> <span class="na">class=</span><span class="s">&quot;datepicker-date&quot;</span><span class="nt">&gt;</span>17<span class="nt">&lt;/b&gt;&lt;/span&gt;&lt;/td&gt;&lt;td</span> <span class="na">data-date=</span><span class="s">&quot;18&quot;</span> <span class="na">data-month=</span><span class="s">&quot;2&quot;</span> <span class="na">data-year=</span><span class="s">&quot;2015&quot;</span> <span class="na">class=</span><span class="s">&quot;past restricted&quot;</span> <span class="na">title=</span><span class="s">&quot;Restricted&quot;</span><span class="nt">&gt;&lt;span&gt;&lt;b</span> <span class="na">class=</span><span class="s">&quot;datepicker-date&quot;</span><span class="nt">&gt;</span>18<span class="nt">&lt;/b&gt;&lt;/span&gt;&lt;/td&gt;&lt;td</span> <span class="na">data-date=</span><span class="s">&quot;19&quot;</span> <span class="na">data-month=</span><span class="s">&quot;2&quot;</span> <span class="na">data-year=</span><span class="s">&quot;2015&quot;</span> <span class="na">class=</span><span class="s">&quot;past restricted&quot;</span> <span class="na">title=</span><span class="s">&quot;Restricted&quot;</span><span class="nt">&gt;&lt;span&gt;&lt;b</span> <span class="na">class=</span><span class="s">&quot;datepicker-date&quot;</span><span class="nt">&gt;</span>19<span class="nt">&lt;/b&gt;&lt;/span&gt;&lt;/td&gt;&lt;td</span> <span class="na">data-date=</span><span class="s">&quot;20&quot;</span> <span class="na">data-month=</span><span class="s">&quot;2&quot;</span> <span class="na">data-year=</span><span class="s">&quot;2015&quot;</span> <span class="na">class=</span><span class="s">&quot;past restricted&quot;</span> <span class="na">title=</span><span class="s">&quot;Restricted&quot;</span><span class="nt">&gt;&lt;span&gt;&lt;b</span> <span class="na">class=</span><span class="s">&quot;datepicker-date&quot;</span><span class="nt">&gt;</span>20<span class="nt">&lt;/b&gt;&lt;/span&gt;&lt;/td&gt;&lt;td</span> <span class="na">data-date=</span><span class="s">&quot;21&quot;</span> <span class="na">data-month=</span><span class="s">&quot;2&quot;</span> <span class="na">data-year=</span><span class="s">&quot;2015&quot;</span> <span class="na">class=</span><span class="s">&quot;past restricted&quot;</span> <span class="na">title=</span><span class="s">&quot;Restricted&quot;</span><span class="nt">&gt;&lt;span&gt;&lt;b</span> <span class="na">class=</span><span class="s">&quot;datepicker-date&quot;</span><span class="nt">&gt;</span>21<span class="nt">&lt;/b&gt;&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td</span> <span class="na">data-date=</span><span class="s">&quot;22&quot;</span> <span class="na">data-month=</span><span class="s">&quot;2&quot;</span> <span class="na">data-year=</span><span class="s">&quot;2015&quot;</span> <span class="na">class=</span><span class="s">&quot;past restricted&quot;</span> <span class="na">title=</span><span class="s">&quot;Restricted&quot;</span><span class="nt">&gt;&lt;span&gt;&lt;b</span> <span class="na">class=</span><span class="s">&quot;datepicker-date&quot;</span><span class="nt">&gt;</span>22<span class="nt">&lt;/b&gt;&lt;/span&gt;&lt;/td&gt;&lt;td</span> <span class="na">data-date=</span><span class="s">&quot;23&quot;</span> <span class="na">data-month=</span><span class="s">&quot;2&quot;</span> <span class="na">data-year=</span><span class="s">&quot;2015&quot;</span> <span class="na">class=</span><span class="s">&quot;past restricted&quot;</span> <span class="na">title=</span><span class="s">&quot;Restricted&quot;</span><span class="nt">&gt;&lt;span&gt;&lt;b</span> <span class="na">class=</span><span class="s">&quot;datepicker-date&quot;</span><span class="nt">&gt;</span>23<span class="nt">&lt;/b&gt;&lt;/span&gt;&lt;/td&gt;&lt;td</span> <span class="na">data-date=</span><span class="s">&quot;24&quot;</span> <span class="na">data-month=</span><span class="s">&quot;2&quot;</span> <span class="na">data-year=</span><span class="s">&quot;2015&quot;</span> <span class="na">class=</span><span class="s">&quot;current-day selected&quot;</span><span class="nt">&gt;&lt;span&gt;&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;datepicker-date&quot;</span><span class="nt">&gt;</span>24<span class="nt">&lt;/button&gt;&lt;/span&gt;&lt;/td&gt;&lt;td</span> <span class="na">data-date=</span><span class="s">&quot;25&quot;</span> <span class="na">data-month=</span><span class="s">&quot;2&quot;</span> <span class="na">data-year=</span><span class="s">&quot;2015&quot;</span><span class="nt">&gt;&lt;span&gt;&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;datepicker-date&quot;</span><span class="nt">&gt;</span>25<span class="nt">&lt;/button&gt;&lt;/span&gt;&lt;/td&gt;&lt;td</span> <span class="na">data-date=</span><span class="s">&quot;26&quot;</span> <span class="na">data-month=</span><span class="s">&quot;2&quot;</span> <span class="na">data-year=</span><span class="s">&quot;2015&quot;</span><span class="nt">&gt;&lt;span&gt;&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;datepicker-date&quot;</span><span class="nt">&gt;</span>26<span class="nt">&lt;/button&gt;&lt;/span&gt;&lt;/td&gt;&lt;td</span> <span class="na">data-date=</span><span class="s">&quot;27&quot;</span> <span class="na">data-month=</span><span class="s">&quot;2&quot;</span> <span class="na">data-year=</span><span class="s">&quot;2015&quot;</span><span class="nt">&gt;&lt;span&gt;&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;datepicker-date&quot;</span><span class="nt">&gt;</span>27<span class="nt">&lt;/button&gt;&lt;/span&gt;&lt;/td&gt;&lt;td</span> <span class="na">data-date=</span><span class="s">&quot;28&quot;</span> <span class="na">data-month=</span><span class="s">&quot;2&quot;</span> <span class="na">data-year=</span><span class="s">&quot;2015&quot;</span><span class="nt">&gt;&lt;span&gt;&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;datepicker-date&quot;</span><span class="nt">&gt;</span>28<span class="nt">&lt;/button&gt;&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td</span> <span class="na">data-date=</span><span class="s">&quot;29&quot;</span> <span class="na">data-month=</span><span class="s">&quot;2&quot;</span> <span class="na">data-year=</span><span class="s">&quot;2015&quot;</span><span class="nt">&gt;&lt;span&gt;&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;datepicker-date&quot;</span><span class="nt">&gt;</span>29<span class="nt">&lt;/button&gt;&lt;/span&gt;&lt;/td&gt;&lt;td</span> <span class="na">data-date=</span><span class="s">&quot;30&quot;</span> <span class="na">data-month=</span><span class="s">&quot;2&quot;</span> <span class="na">data-year=</span><span class="s">&quot;2015&quot;</span><span class="nt">&gt;&lt;span&gt;&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;datepicker-date&quot;</span><span class="nt">&gt;</span>30<span class="nt">&lt;/button&gt;&lt;/span&gt;&lt;/td&gt;&lt;td</span> <span class="na">data-date=</span><span class="s">&quot;31&quot;</span> <span class="na">data-month=</span><span class="s">&quot;2&quot;</span> <span class="na">data-year=</span><span class="s">&quot;2015&quot;</span><span class="nt">&gt;&lt;span&gt;&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;datepicker-date&quot;</span><span class="nt">&gt;</span>31<span class="nt">&lt;/button&gt;&lt;/span&gt;&lt;/td&gt;&lt;td</span> <span class="na">class=</span><span class="s">&quot;next-month&quot;</span> <span class="na">data-date=</span><span class="s">&quot;1&quot;</span> <span class="na">data-month=</span><span class="s">&quot;3&quot;</span> <span class="na">data-year=</span><span class="s">&quot;2015&quot;</span><span class="nt">&gt;&lt;span&gt;&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;datepicker-date&quot;</span><span class="nt">&gt;</span>1<span class="nt">&lt;/button&gt;&lt;/span&gt;&lt;/td&gt;&lt;td</span> <span class="na">class=</span><span class="s">&quot;next-month&quot;</span> <span class="na">data-date=</span><span class="s">&quot;2&quot;</span> <span class="na">data-month=</span><span class="s">&quot;3&quot;</span> <span class="na">data-year=</span><span class="s">&quot;2015&quot;</span><span class="nt">&gt;&lt;span&gt;&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;datepicker-date&quot;</span><span class="nt">&gt;</span>2<span class="nt">&lt;/button&gt;&lt;/span&gt;&lt;/td&gt;&lt;td</span> <span class="na">class=</span><span class="s">&quot;next-month&quot;</span> <span class="na">data-date=</span><span class="s">&quot;3&quot;</span> <span class="na">data-month=</span><span class="s">&quot;3&quot;</span> <span class="na">data-year=</span><span class="s">&quot;2015&quot;</span><span class="nt">&gt;&lt;span&gt;&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;datepicker-date&quot;</span><span class="nt">&gt;</span>3<span class="nt">&lt;/button&gt;&lt;/span&gt;&lt;/td&gt;&lt;td</span> <span class="na">class=</span><span class="s">&quot;next-month&quot;</span> <span class="na">data-date=</span><span class="s">&quot;4&quot;</span> <span class="na">data-month=</span><span class="s">&quot;3&quot;</span> <span class="na">data-year=</span><span class="s">&quot;2015&quot;</span><span class="nt">&gt;&lt;span&gt;&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;datepicker-date&quot;</span><span class="nt">&gt;</span>4<span class="nt">&lt;/button&gt;&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;</span>
+                                        <span class="nt">&lt;/table&gt;</span>
+                                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;datepicker-calendar-footer&quot;</span><span class="nt">&gt;</span>
+                                            <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;datepicker-today&quot;</span><span class="nt">&gt;</span>Today<span class="nt">&lt;/button&gt;</span>
+                                        <span class="nt">&lt;/div&gt;</span>
+                                    <span class="nt">&lt;/div&gt;</span>
+
+                                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;datepicker-wheels&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
+                                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;datepicker-wheels-month&quot;</span><span class="nt">&gt;</span>
+                                            <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">&quot;header&quot;</span><span class="nt">&gt;</span>Month<span class="nt">&lt;/h2&gt;</span>
+                                            <span class="nt">&lt;ul&gt;</span>
+                                                <span class="nt">&lt;li</span> <span class="na">data-month=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>Jan<span class="nt">&lt;/button&gt;&lt;/li&gt;</span>
+                                                <span class="nt">&lt;li</span> <span class="na">data-month=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>Feb<span class="nt">&lt;/button&gt;&lt;/li&gt;</span>
+                                                <span class="nt">&lt;li</span> <span class="na">data-month=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>Mar<span class="nt">&lt;/button&gt;&lt;/li&gt;</span>
+                                                <span class="nt">&lt;li</span> <span class="na">data-month=</span><span class="s">&quot;3&quot;</span><span class="nt">&gt;&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>Apr<span class="nt">&lt;/button&gt;&lt;/li&gt;</span>
+                                                <span class="nt">&lt;li</span> <span class="na">data-month=</span><span class="s">&quot;4&quot;</span><span class="nt">&gt;&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>May<span class="nt">&lt;/button&gt;&lt;/li&gt;</span>
+                                                <span class="nt">&lt;li</span> <span class="na">data-month=</span><span class="s">&quot;5&quot;</span><span class="nt">&gt;&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>Jun<span class="nt">&lt;/button&gt;&lt;/li&gt;</span>
+                                                <span class="nt">&lt;li</span> <span class="na">data-month=</span><span class="s">&quot;6&quot;</span><span class="nt">&gt;&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>Jul<span class="nt">&lt;/button&gt;&lt;/li&gt;</span>
+                                                <span class="nt">&lt;li</span> <span class="na">data-month=</span><span class="s">&quot;7&quot;</span><span class="nt">&gt;&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>Aug<span class="nt">&lt;/button&gt;&lt;/li&gt;</span>
+                                                <span class="nt">&lt;li</span> <span class="na">data-month=</span><span class="s">&quot;8&quot;</span><span class="nt">&gt;&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>Sep<span class="nt">&lt;/button&gt;&lt;/li&gt;</span>
+                                                <span class="nt">&lt;li</span> <span class="na">data-month=</span><span class="s">&quot;9&quot;</span><span class="nt">&gt;&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>Oct<span class="nt">&lt;/button&gt;&lt;/li&gt;</span>
+                                                <span class="nt">&lt;li</span> <span class="na">data-month=</span><span class="s">&quot;10&quot;</span><span class="nt">&gt;&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>Nov<span class="nt">&lt;/button&gt;&lt;/li&gt;</span>
+                                                <span class="nt">&lt;li</span> <span class="na">data-month=</span><span class="s">&quot;11&quot;</span><span class="nt">&gt;&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>Dec<span class="nt">&lt;/button&gt;&lt;/li&gt;</span>
+                                            <span class="nt">&lt;/ul&gt;</span>
+                                        <span class="nt">&lt;/div&gt;</span>
+                                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;datepicker-wheels-year&quot;</span><span class="nt">&gt;</span>
+                                            <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">&quot;header&quot;</span><span class="nt">&gt;</span>Year<span class="nt">&lt;/h2&gt;</span>
+                                            <span class="nt">&lt;ul&gt;&lt;/ul&gt;</span>
+                                        <span class="nt">&lt;/div&gt;</span>
+                                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;datepicker-wheels-footer clearfix&quot;</span><span class="nt">&gt;</span>
+                                            <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn datepicker-wheels-back&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;glyphicon glyphicon-arrow-left&quot;</span><span class="nt">&gt;&lt;/span&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;sr-only&quot;</span><span class="nt">&gt;</span>Return to Calendar<span class="nt">&lt;/span&gt;&lt;/button&gt;</span>
+                                            <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn datepicker-wheels-select&quot;</span><span class="nt">&gt;</span>Select <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;sr-only&quot;</span><span class="nt">&gt;</span>Month and Year<span class="nt">&lt;/span&gt;&lt;/button&gt;</span>
+                                        <span class="nt">&lt;/div&gt;</span>
+                                    <span class="nt">&lt;/div&gt;</span>
+                                <span class="nt">&lt;/div&gt;</span>
+                            <span class="nt">&lt;/div&gt;</span>
+                        <span class="nt">&lt;/div&gt;</span>
+                    <span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Review<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-7&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;textarea</span> <span class="na">name=</span><span class="s">&quot;review&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">rows=</span><span class="s">&quot;10&quot;</span><span class="nt">&gt;&lt;/textarea&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Rating<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-4&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;radio ratingRadio&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;radio-custom&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;sr-only&quot;</span> <span class="na">name=</span><span class="s">&quot;rating&quot;</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">value=</span><span class="s">&quot;awesome&quot;</span> <span class="nt">/&gt;</span> Awesome
+                    <span class="nt">&lt;/label&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;radio ratingRadio&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;radio-custom&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;sr-only&quot;</span> <span class="na">name=</span><span class="s">&quot;rating&quot;</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">value=</span><span class="s">&quot;ok&quot;</span> <span class="nt">/&gt;</span> OK
+                    <span class="nt">&lt;/label&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;radio ratingRadio&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;radio-custom&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;sr-only&quot;</span> <span class="na">name=</span><span class="s">&quot;rating&quot;</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">value=</span><span class="s">&quot;suck&quot;</span> <span class="nt">/&gt;</span> Sucks
+                    <span class="nt">&lt;/label&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-9 col-xs-offset-3&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span><span class="nt">&gt;</span>Add new album<span class="nt">&lt;/button&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/form&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#albumForm&#39;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;init.field.fv&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">$field</span>    <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">element</span><span class="p">,</span>
+                <span class="nx">$icon</span>     <span class="o">=</span> <span class="nx">$field</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;fv.icon&#39;</span><span class="p">),</span>
+                <span class="nx">$messages</span> <span class="o">=</span> <span class="nx">$field</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;fv.messages&#39;</span><span class="p">);</span>
+
+            <span class="nx">$icon</span><span class="p">.</span><span class="nx">appendTo</span><span class="p">(</span><span class="nx">$messages</span><span class="p">);</span>
+        <span class="p">})</span>
+        <span class="p">.</span><span class="nx">formValidation</span><span class="p">({</span>
+            <span class="nx">framework</span><span class="o">:</span> <span class="s1">&#39;bootstrap&#39;</span><span class="p">,</span>
+            <span class="nx">excluded</span><span class="o">:</span> <span class="s1">&#39;:disabled&#39;</span><span class="p">,</span>
+            <span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">valid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-ok&#39;</span><span class="p">,</span>
+                <span class="nx">invalid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-remove&#39;</span><span class="p">,</span>
+                <span class="nx">validating</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-refresh&#39;</span>
+            <span class="p">},</span>
+            <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">name</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">notEmpty</span><span class="o">:</span> <span class="p">{</span>
+                            <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The name is required&#39;</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                <span class="p">},</span>
+                <span class="nx">artists</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">notEmpty</span><span class="o">:</span> <span class="p">{</span>
+                            <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The artist(s) is required&#39;</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                <span class="p">},</span>
+                <span class="nx">genre</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">notEmpty</span><span class="o">:</span> <span class="p">{</span>
+                            <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The genre is required&#39;</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                <span class="p">},</span>
+                <span class="nx">releasedDate</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">notEmpty</span><span class="o">:</span> <span class="p">{</span>
+                            <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The release date is required&#39;</span>
+                        <span class="p">},</span>
+                        <span class="nx">date</span><span class="o">:</span> <span class="p">{</span>
+                            <span class="nx">format</span><span class="o">:</span> <span class="s1">&#39;MM/DD/YYYY&#39;</span><span class="p">,</span>
+                            <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The release date is not valid&#39;</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                <span class="p">},</span>
+                <span class="nx">rating</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">notEmpty</span><span class="o">:</span> <span class="p">{</span>
+                            <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The rating is required&#39;</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">});</span>
+
+    <span class="c1">// Using Pillbox</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#artistsPillbox&#39;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">pillbox</span><span class="p">({</span> <span class="nx">edit</span><span class="o">:</span> <span class="kc">true</span> <span class="p">})</span>
+        <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;added.fu.pillbox removed.fu.pillbox&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">items</span>   <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#artistsPillbox&#39;</span><span class="p">).</span><span class="nx">pillbox</span><span class="p">(</span><span class="s1">&#39;items&#39;</span><span class="p">),</span>
+                <span class="nx">artists</span> <span class="o">=</span> <span class="p">[];</span>
+            <span class="nx">$</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">items</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">k</span><span class="p">,</span> <span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">artists</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">v</span><span class="p">.</span><span class="nx">text</span><span class="p">);</span>
+            <span class="p">});</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#albumForm&#39;</span><span class="p">)</span>
+                <span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;[name=&quot;artists&quot;]&#39;</span><span class="p">)</span>
+                    <span class="p">.</span><span class="nx">val</span><span class="p">(</span><span class="nx">artists</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">))</span>
+                    <span class="p">.</span><span class="nx">end</span><span class="p">()</span>
+                <span class="p">.</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;revalidateField&#39;</span><span class="p">,</span> <span class="s1">&#39;artists&#39;</span><span class="p">);</span>
+        <span class="p">});</span>
+
+    <span class="c1">// Selectlist</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#genreList&#39;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">selectlist</span><span class="p">()</span>
+        <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;changed.fu.selectlist&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#albumForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;revalidateField&#39;</span><span class="p">,</span> <span class="s1">&#39;genre&#39;</span><span class="p">);</span>
+        <span class="p">});</span>
+
+    <span class="c1">// Datepicker</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#releasedDatePicker&#39;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">datepicker</span><span class="p">({</span>
+            <span class="nx">allowPastDates</span><span class="o">:</span> <span class="kc">true</span>
+        <span class="p">})</span>
+        <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;changed.fu.datepicker&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">date</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#albumForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;revalidateField&#39;</span><span class="p">,</span> <span class="s1">&#39;releasedDate&#39;</span><span class="p">);</span>
+        <span class="p">});</span>
+
+    <span class="c1">// Radio</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.ratingRadio&#39;</span><span class="p">).</span><span class="nx">radio</span><span class="p">();</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span></code></pre></div>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+            </div>
+
+            <div class="col-md-3 hidden-print hidden-xs hidden-sm">
+                <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=bootstrapvalidatorcom" id="_carbonads_js"></script>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <footer class="doc-footer">
+    <div class="container">
+        <p>
+            
+            <a class="btn" href="/download/">Download</a>
+            
+            <a class="btn" href="https://github.com/formvalidation/support/issues">Report bug</a>
+        </p>
+        <p>
+            &copy; 2013 - 2015 <a href="http://twitter.com/nghuuphuoc">Nguyen Huu Phuoc</a>. All rights reserved.<br/>
+            Handcrafted with <span class="doc-heart"><i class="fa fa-heart"></i></span> and a lot of <i class="fa fa-coffee"></i>
+        </p>
+    </div>
+</footer>
+    </div>
+
+<script src="/vendor/tocjs/js/toc.min.js"></script>
+<script src="/vendor/share/share.min.js"></script>
+<script src="/asset/js/app.js"></script>
+</body>
+</html>

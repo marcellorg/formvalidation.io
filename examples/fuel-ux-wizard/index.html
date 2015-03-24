@@ -126,6 +126,7 @@ $(document).ready(function() {
     var notifications = [],
         $message      = $('#notification').find('a').data('index', 0);
     notifications.push({ title: 'v0.6.1 is released on 2015.02.24', url: '/news/v0.6.1-released/'});
+    notifications.push({ title: 'New example: Playing with Fuel UX', url: '/examples/fuel-ux/'});
     notifications.push({ title: 'New example: Using data returned by validator', url: '/examples/using-data-returned-validator/'});
     notifications.push({ title: 'New example: Validating fields that depend on each other', url: '/examples/validating-fields-depend-each-other/'});
     notifications.push({ title: 'New example: Skip validation on specific submit button', url: '/examples/skip-validation-specific-submit-button/'});
@@ -134,7 +135,6 @@ $(document).ready(function() {
     notifications.push({ title: 'New example: Switching validators on the same field', url: '/examples/switching-validators-same-field/'});
     notifications.push({ title: 'New example: Conditional validation', url: '/examples/conditional-validation/'});
     notifications.push({ title: 'New example: Playing with Bootstrap Combobox', url: '/examples/bootstrap-combobox/'});
-    notifications.push({ title: 'New example: Using multiple buttons', url: '/examples/using-multiple-buttons/'});
     
     setInterval(function() {
         $message.data('index', $message.data('index') + 1);
@@ -169,6 +169,8 @@ $(document).ready(function() {
                 <div class="doc-alert doc-alert-info">
                     You should look at the <a href="/examples#wizard">wizard</a> section when integrating FormValidation with wizard-like components
                 </div>
+
+                <p>If you want to use more <a href="http://getfuelux.com/javascript.html">Fuel UX controls</a>, look at this <a href="/examples/fuel-ux/">example</a>.</p>
 
                 
 
