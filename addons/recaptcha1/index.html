@@ -3,7 +3,8 @@ layout: default
 title: reCaptcha1 add-on
 permalink: /addons/recaptcha1/
 image: /addons/recaptcha1/cover.png
-download: "https://github.com/formvalidation/addon-recaptcha/releases/download/v0.1.0/recaptcha1-v0.1.0.zip"
+file: "recaptcha1-v0.3.0.zip"
+download: "https://github.com/formvalidation/addon-recaptcha/releases/download/v0.3.0/recaptcha1-v0.3.0.zip"
 ---
 
 <div class="doc-content-container">
@@ -34,14 +35,14 @@ download: "https://github.com/formvalidation/addon-recaptcha/releases/download/v
                     <h3>Including the add-on</h3>
                     <ul class="doc-list">
                         <li>Download <a href="{{ page.download }}" class="addonDownloadButton" data-placement="bottom" data-container="body">reCaptcha1</a> add-on</li>
-                        <li>Include <code>reCaptcha1.js</code> (located in the <code>src</code> directory) to your page. Ensure that it's placed after <code>formValidation(.min).js</code></li>
+                        <li>Include <code>reCaptcha1.min.js</code> (located in the <code>dist</code> directory) to your page. Ensure that it's placed after <code>formValidation(.min).js</code></li>
                     </ul>
 {% highlight html %}
 <!-- FormValidation plugin -->
 <script src="/vendor/formvalidation/dist/js/formValidation.min.js"></script>
 
 <!-- Add-ons. You should place it inside /vendor/formvalidation/dist/js/addons directory -->
-<script src="/vendor/formvalidation/dist/js/addons/reCaptcha1.js"></script>
+<script src="/vendor/formvalidation/dist/js/addons/reCaptcha1.min.js"></script>
 
 <!-- Including reCaptcha provided by Google -->
 <script src="//www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>
@@ -211,6 +212,17 @@ echo json_encode(array(
 
                     {% include demo/tabs.html id="demo" frameworks="bootstrap" codes="programmatic,declarative" %}
                 </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h3>Change log</h3>
+
+                    <ul class="doc-list">
+                        <li>v0.3.0: Add Grunt build and minified files</li>
+                        <li>v0.1.0: First release</li>
+                    </ul>
+                </section>
             </div>
 
             <div class="col-md-3">
@@ -218,7 +230,7 @@ echo json_encode(array(
                     <div class="doc-addon-image"><img class="img-responsive" src="/addons/recaptcha1/cover.png" alt="FormValidation reCaptcha1 add-on" /></div>
 
                     <div class="doc-addon-meta">
-                        <a href="{{ page.download }}" class="btn btn-success addonDownloadButton" data-placement="bottom" data-container="body"><i class="fa fa-download"></i> recaptcha1-v0.1.0.zip</a>
+                        <a href="{{ page.download }}" class="btn btn-success addonDownloadButton" data-placement="bottom" data-container="body"><i class="fa fa-download"></i> {{ page.file }}</a>
                     </div>
                 </div>
 

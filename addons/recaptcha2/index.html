@@ -3,7 +3,8 @@ layout: default
 title: reCaptcha2 add-on
 permalink: /addons/recaptcha2/
 image: /addons/recaptcha2/cover.png
-download: "https://github.com/formvalidation/addon-recaptcha/releases/download/v0.2.0/recaptcha2-v0.2.0.zip"
+file: "recaptcha2-v0.3.0.zip"
+download: "https://github.com/formvalidation/addon-recaptcha/releases/download/v0.3.0/recaptcha2-v0.3.0.zip"
 ---
 
 <div class="doc-content-container">
@@ -34,14 +35,14 @@ download: "https://github.com/formvalidation/addon-recaptcha/releases/download/v
                     <h3>Including the add-on</h3>
                     <ul class="doc-list">
                         <li>Download <a href="{{ page.download }}" class="addonDownloadButton" data-placement="bottom" data-container="body">reCaptcha2</a> add-on</li>
-                        <li>Include <code>reCaptcha2.js</code> (located in the <code>src</code> directory) to your page. Ensure that it's placed after <code>formValidation(.min).js</code></li>
+                        <li>Include <code>reCaptcha2.min.js</code> (located in the <code>dist</code> directory) to your page. Ensure that it's placed after <code>formValidation(.min).js</code></li>
                     </ul>
 {% highlight html %}
 <!-- FormValidation plugin -->
 <script src="/vendor/formvalidation/dist/js/formValidation.min.js"></script>
 
 <!-- Add-ons. You should place it inside /vendor/formvalidation/dist/js/addons directory -->
-<script src="/vendor/formvalidation/dist/js/addons/reCaptcha2.js"></script>
+<script src="/vendor/formvalidation/dist/js/addons/reCaptcha2.min.js"></script>
 {% endhighlight %}
                 </section>
 
@@ -172,6 +173,24 @@ $('#signUpForm').formValidation({
 
                     {% include demo/tabs.html id="demo" frameworks="bootstrap" codes="programmatic,declarative" %}
                 </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h3>Change log</h3>
+
+                    <ul class="doc-list">
+                        <li>
+                            <p>v0.3.0:</p>
+                            <ul class="doc-list">
+                                <li>Support multiple reCAPTCHA v2 elements on the same page</li>
+                                <li>Add Grunt build and minified files</li>
+                            </ul>
+                        </li>
+                        <li>v0.2.0: Add localization support</li>
+                        <li>v0.1.0: First release</li>
+                    </ul>
+                </section>
             </div>
 
             <div class="col-md-3">
@@ -179,7 +198,7 @@ $('#signUpForm').formValidation({
                     <div class="doc-addon-image"><img class="img-responsive" src="/addons/recaptcha2/cover.png" alt="FormValidation reCaptcha2 add-on" /></div>
 
                     <div class="doc-addon-meta">
-                        <a href="{{ page.download }}" class="btn btn-success addonDownloadButton" data-placement="bottom" data-container="body"><i class="fa fa-download"></i> recaptcha2-v0.2.0.zip</a>
+                        <a href="{{ page.download }}" class="btn btn-success addonDownloadButton" data-placement="bottom" data-container="body"><i class="fa fa-download"></i> {{ page.file }}</a>
                     </div>
                 </div>
 

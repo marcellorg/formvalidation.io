@@ -1,7 +1,7 @@
 <!-- Include FormValidation files first -->
 
 <!-- Then include reCaptcha1 add-on -->
-<script src="/vendor/formvalidation/js/addons/reCaptcha1.js"></script>
+<script src="/vendor/formvalidation/js/addons/reCaptcha1.min.js"></script>
 
 <!-- Google reCaptcha v1 -->
 <script src="//www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>

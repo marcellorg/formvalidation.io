@@ -1,7 +1,7 @@
 <!-- Include FormValidation files first -->
 
 <!-- Then include reCaptcha2 add-on -->
-<script src="/vendor/formvalidation/js/addons/reCaptcha2.js"></script>
+<script src="/vendor/formvalidation/js/addons/reCaptcha2.min.js"></script>
 
 <form id="signUpForm" method="post" class="form-horizontal">
     <div class="form-group">

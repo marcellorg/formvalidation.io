@@ -1,5 +1,5 @@
-- title: "v0.6.1 is released on 2015.02.24"
-  url: "/news/v0.6.1-released/"
+- title: "reCaptcha2 add-on v0.3.0: Support multiple Google reCAPTCHA v2 elements on the same page"
+  url: "/addons/recaptcha2/"
 
 - title: "New example: Playing with Fuel UX"
   url: "/examples/fuel-ux/"
@@ -25,5 +25,5 @@
 - title: "New example: Conditional validation"
   url: "/examples/conditional-validation/"
 
-- title: "New example: Playing with Bootstrap Combobox"
-  url: "/examples/bootstrap-combobox/"
+- title: "v0.6.1 is released on 2015.02.24"
+  url: "/news/v0.6.1-released/"

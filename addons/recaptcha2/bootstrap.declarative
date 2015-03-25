@@ -3,7 +3,7 @@
 <script src="/vendor/formvalidation/dist/js/framework/bootstrap.min.js"></script>
 
 <!-- reCaptcha2 add-on -->
-<script src="/vendor/formvalidation/dist/js/addons/reCaptcha2.js"></script>
+<script src="/vendor/formvalidation/dist/js/addons/reCaptcha2.min.js"></script>
 
 <form id="signUpForm" method="post" class="form-horizontal"
     data-fv-addons="reCaptcha2"
