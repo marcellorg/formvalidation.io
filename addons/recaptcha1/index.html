@@ -119,13 +119,13 @@ _gaq.push(['_trackPageview']);
 
     <div id="main" class="doc-content-wrapper">
         <div class="doc-notification" id="notification">
-    <i class="fa fa-bell-o"></i> <a href="/news/v0.6.1-released/">v0.6.1 is released on 2015.02.24</a>
+    <i class="fa fa-bell-o"></i> <a href="/addons/recaptcha2/">reCaptcha2 add-on v0.3.0: Support multiple Google reCAPTCHA v2 elements on the same page</a>
 </div>
 <script>
 $(document).ready(function() {
     var notifications = [],
         $message      = $('#notification').find('a').data('index', 0);
-    notifications.push({ title: 'v0.6.1 is released on 2015.02.24', url: '/news/v0.6.1-released/'});
+    notifications.push({ title: 'reCaptcha2 add-on v0.3.0: Support multiple Google reCAPTCHA v2 elements on the same page', url: '/addons/recaptcha2/'});
     notifications.push({ title: 'New example: Playing with Fuel UX', url: '/examples/fuel-ux/'});
     notifications.push({ title: 'New example: Using data returned by validator', url: '/examples/using-data-returned-validator/'});
     notifications.push({ title: 'New example: Validating fields that depend on each other', url: '/examples/validating-fields-depend-each-other/'});
@@ -134,7 +134,7 @@ $(document).ready(function() {
     notifications.push({ title: 'Explore new add-ons page', url: '/addons/'});
     notifications.push({ title: 'New example: Switching validators on the same field', url: '/examples/switching-validators-same-field/'});
     notifications.push({ title: 'New example: Conditional validation', url: '/examples/conditional-validation/'});
-    notifications.push({ title: 'New example: Playing with Bootstrap Combobox', url: '/examples/bootstrap-combobox/'});
+    notifications.push({ title: 'v0.6.1 is released on 2015.02.24', url: '/news/v0.6.1-released/'});
     
     setInterval(function() {
         $message.data('index', $message.data('index') + 1);
@@ -180,14 +180,14 @@ $(document).ready(function() {
                 <section>
                     <h3>Including the add-on</h3>
                     <ul class="doc-list">
-                        <li>Download <a href="https://github.com/formvalidation/addon-recaptcha/releases/download/v0.1.0/recaptcha1-v0.1.0.zip" class="addonDownloadButton" data-placement="bottom" data-container="body">reCaptcha1</a> add-on</li>
-                        <li>Include <code>reCaptcha1.js</code> (located in the <code>src</code> directory) to your page. Ensure that it's placed after <code>formValidation(.min).js</code></li>
+                        <li>Download <a href="https://github.com/formvalidation/addon-recaptcha/releases/download/v0.3.0/recaptcha1-v0.3.0.zip" class="addonDownloadButton" data-placement="bottom" data-container="body">reCaptcha1</a> add-on</li>
+                        <li>Include <code>reCaptcha1.min.js</code> (located in the <code>dist</code> directory) to your page. Ensure that it's placed after <code>formValidation(.min).js</code></li>
                     </ul>
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- FormValidation plugin --&gt;</span>
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/vendor/formvalidation/dist/js/formValidation.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 
 <span class="c">&lt;!-- Add-ons. You should place it inside /vendor/formvalidation/dist/js/addons directory --&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/vendor/formvalidation/dist/js/addons/reCaptcha1.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/vendor/formvalidation/dist/js/addons/reCaptcha1.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 
 <span class="c">&lt;!-- Including reCaptcha provided by Google --&gt;</span>
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;//www.google.com/recaptcha/api/js/recaptcha_ajax.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></div>
@@ -387,7 +387,7 @@ $(document).ready(function() {
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Include FormValidation files first --&gt;</span>
 
 <span class="c">&lt;!-- Then include reCaptcha1 add-on --&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/vendor/formvalidation/js/addons/reCaptcha1.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/vendor/formvalidation/js/addons/reCaptcha1.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 
 <span class="c">&lt;!-- Google reCaptcha v1 --&gt;</span>
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;//www.google.com/recaptcha/api/js/recaptcha_ajax.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
@@ -501,7 +501,7 @@ $(document).ready(function() {
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/vendor/formvalidation/dist/js/framework/bootstrap.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 
 <span class="c">&lt;!-- reCaptcha1 add-on --&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/vendor/formvalidation/dist/js/addons/reCaptcha1.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/vendor/formvalidation/dist/js/addons/reCaptcha1.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 
 <span class="c">&lt;!-- Google reCaptcha v1 --&gt;</span>
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;//www.google.com/recaptcha/api/js/recaptcha_ajax.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
@@ -589,6 +589,17 @@ $(document).ready(function() {
     </div>
 </div>
                 </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h3>Change log</h3>
+
+                    <ul class="doc-list">
+                        <li>v0.3.0: Add Grunt build and minified files</li>
+                        <li>v0.1.0: First release</li>
+                    </ul>
+                </section>
             </div>
 
             <div class="col-md-3">
@@ -596,7 +607,7 @@ $(document).ready(function() {
                     <div class="doc-addon-image"><img class="img-responsive" src="/addons/recaptcha1/cover.png" alt="FormValidation reCaptcha1 add-on" /></div>
 
                     <div class="doc-addon-meta">
-                        <a href="https://github.com/formvalidation/addon-recaptcha/releases/download/v0.1.0/recaptcha1-v0.1.0.zip" class="btn btn-success addonDownloadButton" data-placement="bottom" data-container="body"><i class="fa fa-download"></i> recaptcha1-v0.1.0.zip</a>
+                        <a href="https://github.com/formvalidation/addon-recaptcha/releases/download/v0.3.0/recaptcha1-v0.3.0.zip" class="btn btn-success addonDownloadButton" data-placement="bottom" data-container="body"><i class="fa fa-download"></i> recaptcha1-v0.3.0.zip</a>
                     </div>
                 </div>
 
