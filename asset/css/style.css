@@ -571,6 +571,9 @@ h4 {
   top: 0;
   right: 0;
 }
+.doc-content-container h4.modal-title {
+  position: inherit;
+}
 .doc-toc {
   margin: 20px 0;
 }

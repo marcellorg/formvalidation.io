@@ -44,9 +44,9 @@ permalink: /examples/modal/
                 <section>
                     <h2>Setting options via HTML attributes</h2>
 
-                    <p>If you use <a href="#attribute">HTML attributes</a> to set the validator options, or <a href="#html5">HTML5 input</a> elements, you must set <code>excluded: [':disabled']</code>.</p>
+                    <p>If you use <a href="/examples/attribute/">HTML attributes</a> to set the validator options, or <a href="/examples/html5/">HTML5 input</a> elements, you must set <code>excluded: [':disabled']</code>.</p>
                     <p>By default, the plugin will not initialize the fields which are disabled, hidden, or not visible. Since the form is placed inside a model which is not visible after loading page, the fields/validators initialized with HTML attributes might be ignored.</p>
-                    <p>That's the reason why we need to set <code>excluded: [':disabled']</code>. Take a look at the <a href="/settings#excluded"><code>excluded</code> setting</a> for more information.</p>
+                    <p>That's the reason why we need to set <code>excluded: [':disabled']</code>. Take a look at the <a href="/settings#form-excluded">excluded</a> setting for more information.</p>
 
 {% highlight javascript %}
 $(document).ready(function() {
