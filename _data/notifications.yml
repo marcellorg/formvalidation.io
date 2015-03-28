@@ -1,3 +1,6 @@
+- title: "v0.6.2 is released on 2015.03.30"
+  url: "/news/v0.6.2-released/"
+
 - title: "reCaptcha2 add-on v0.3.0: Support multiple Google reCAPTCHA v2 elements on the same page"
   url: "/addons/recaptcha2/"
 
@@ -24,6 +27,3 @@
 
 - title: "New example: Conditional validation"
   url: "/examples/conditional-validation/"
-
-- title: "v0.6.1 is released on 2015.02.24"
-  url: "/news/v0.6.1-released/"
