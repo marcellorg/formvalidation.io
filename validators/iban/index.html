@@ -23,6 +23,7 @@ countries:
       example: AO06000600000100037131174
     - country: Austria
       code: AT
+      sepa: true
       example: AT611904300234573201
     - country: Azerbaijan
       code: AZ
@@ -35,6 +36,7 @@ countries:
       example: BA391290079401028494
     - country: Belgium
       code: BE
+      sepa: true
       example: BE68539007547034
     - country: Benin
       code: BJ
@@ -44,6 +46,7 @@ countries:
       example: BR9700360305000010009795493P1
     - country: Bulgaria
       code: BG
+      sepa: true
       example: BG80BNBG96611020345678
     - country: Burkina Faso
       code: BF
@@ -62,30 +65,40 @@ countries:
       example: CR0515202001026284066
     - country: Croatia
       code: HR
+      sepa: true
       example: HR1210010051863000160
     - country: Cyprus
       code: CY
+      sepa: true
       example: CY17002001280000001200527600
     - country: Czech Republic
       code: CZ
+      sepa: true
       example: CZ6508000000192000145399
     - country: Denmark
       code: DK
+      sepa: true
       example: DK5000400440116243
     - country: Dominican Republic
       code: DO
       example: DO28BAGR00000001212453611324
+    - country: East Timor
+      code: TL
+      example: TL380080012345678910157
     - country: Estonia
       code: EE
+      sepa: true
       example: EE382200221020145685
     - country: Faroe Islands
       code: FO
       example: FO1464600009692713
     - country: Finland
       code: FI
+      sepa: true
       example: FI2112345600000785
     - country: France
       code: FR
+      sepa: true
       example: FR1420041010050500013M02606
     - country: Guatemala
       code: GT
@@ -95,33 +108,40 @@ countries:
       example: GE29NB0000000101904917
     - country: Germany
       code: DE
+      sepa: true
       example: DE89370400440532013000
     - country: Gibraltar
       code: GI
+      sepa: true
       example: GI75NWBK000000007099453
     - country: Greece
       code: GR
+      sepa: true
       example: GR1601101250000000012300695
     - country: Greenland
       code: GL
       example: GL8964710001000206
     - country: Hungary
       code: HU
+      sepa: true
       example: HU42117730161111101800000000
     - country: Iceland
       code: IS
+      sepa: true
       example: IS140159260076545510730339
     - country: Iran
       code: IR
       example: IR580540105180021273113007
     - country: Ireland
       code: IE
+      sepa: true
       example: IE29AIBK93115212345678
     - country: Israel
       code: IL
       example: IL620108000000099999999
     - country: Italy
       code: IT
+      sepa: true
       example: IT60X0542811101000000123456
     - country: Ivory Coast
       code: CI
@@ -137,18 +157,22 @@ countries:
       example: KW74NBOK0000000000001000372151
     - country: Latvia
       code: LV
+      sepa: true
       example: LV80BANK0000435195001
     - country: Lebanon
       code: LB
       example: LB30099900000001001925579115
     - country: Liechtenstein
       code: LI
+      sepa: true
       example: LI21088100002324013AA
     - country: Lithuania
       code: LT
+      sepa: true
       example: LT121000011101001000
     - country: Luxembourg
       code: LU
+      sepa: true
       example: LU280019400644750000
     - country: Macedonia
       code: MK
@@ -158,6 +182,7 @@ countries:
       example: MG4600005030010101914016056
     - country: Malta
       code: MT
+      sepa: true
       example: MT84MALT011000012345MTLCAST001S
     - country: Mauritania
       code: MR
@@ -173,6 +198,7 @@ countries:
       example: MD24AG000225100013104168
     - country: Monaco
       code: MC
+      sepa: true
       example: MC5813488000010051108001292
     - country: Montenegro
       code: ME
@@ -182,9 +208,11 @@ countries:
       example: MZ59000100000011834194157
     - country: Netherlands
       code: NL
+      sepa: true
       example: NL91ABNA0417164300
     - country: Norway
       code: "NO"
+      sepa: true
       example: NO9386011117947
     - country: Pakistan
       code: PK
@@ -194,18 +222,25 @@ countries:
       example: PS92PALS000000000400123456702
     - country: Poland
       code: PL
+      sepa: true
       example: PL27114020040000300201355387
     - country: Portugal
       code: PT
+      sepa: true
       example: PT50000201231234567890154
     - country: Qatar
       code: QA
       example: QA58DOHB00001234567890ABCDEFG
+    - country: Republic of Kosovo
+      code: XK
+      example: XK051212012345678906
     - country: Romania
       code: RO
+      sepa: true
       example: RO49AAAA1B31007593840000
     - country: San Marino
       code: SM
+      sepa: true
       example: SM86U0322509800000000270100
     - country: Saudi Arabia
       code: SA
@@ -218,18 +253,23 @@ countries:
       example: RS35260005601001611379
     - country: Slovakia
       code: SK
+      sepa: true
       example: SK3112000000198742637541
     - country: Slovenia
       code: SI
+      sepa: true
       example: SI56191000000123438
     - country: Spain
       code: ES
+      sepa: true
       example: ES9121000418450200051332
     - country: Sweden
       code: SE
+      sepa: true
       example: SE3550000000054910000003
     - country: Switzerland
       code: CH
+      sepa: true
       example: CH9300762011623852957
     - country: Tunisia
       code: TN
@@ -242,6 +282,7 @@ countries:
       example: AE260211000000230064016
     - country: United Kingdom
       code: GB
+      sepa: true
       example: GB29NWBK60161331926819
     - country: Virgin Islands, British
       code: VG
@@ -290,6 +331,12 @@ related:
                                     <td>String</td>
                                     <td>The error message</td>
                                 </tr>
+                                <tr>
+                                    <td><code>sepa</code></td>
+                                    <td><code>data-fv-iban-sepa</code></td>
+                                    <td>Boolean</td>
+                                    <td>Set it to true (false) to indicate that the IBAN number must be (not be) from SEPA countries. The list of SEPA countries are indicated in the table below. By default, this option is not defined</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -320,7 +367,7 @@ related:
                                 {% for item in page.countries %}
                                 <tr>
                                     <td>{{ forloop.index }}</td>
-                                    <td>{{ item.country }}</td>
+                                    <td>{{ item.country }}{% if item.sepa %} <span class="label label-default">SEPA</span>{% endif %}</td>
                                     <td>{{ item.code }}</td>
                                     <td><a href="javascript: void(0);" class="sample">{{ item.example }}</a></td>
                                     <td><i class="fa"></i></td>
