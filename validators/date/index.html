@@ -64,7 +64,14 @@ next:
                                     <td><code>separator</code></td>
                                     <td><code>data-fv-date-separator</code></td>
                                     <td>String</td>
-                                    <td>Used to separate the day, month, and year. It is <code>/</code>, by default</td>
+                                    <td>
+                                        <p>Used to separate the day, month, and year. If it's not defined, the validator will look for the following separators automatically:</p>
+                                        <ul class="doc-list">
+                                            <li>/</li>
+                                            <li>-</li>
+                                            <li>. (which is used in most European countries)</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
