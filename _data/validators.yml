@@ -142,6 +142,10 @@
   version:      0.3.2
   description:  Validate a phone number
 
+- name:         promise
+  version:      0.6.2
+  description:  Use jQuery's Deferred to validate field's value
+
 - name:         regexp
   version:      0.1.0
   description:  Check if the value matches given Javascript regular expression
