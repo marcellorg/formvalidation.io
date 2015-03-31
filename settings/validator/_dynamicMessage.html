@@ -202,6 +202,33 @@ callback: {
                     </td>
                 </tr>
                 <tr>
+                    <td><a href="/validators/promise/">promise</a> validator</td>
+                    <td>
+{% highlight javascript %}
+promise: {
+    promise: function(value, validator, $field) {
+        var dfd = new $.Deferred();
+
+        // ... Do your logic checking
+
+        // Resolve when particular task is done
+        dfd.resolve({
+            valid: true, // or false
+            message: 'The error message'
+        });
+
+        // You can reject if there's error
+        dfd.reject({
+            message: 'Other message'
+        });
+
+        return dfd.promise();
+    }
+}
+{% endhighlight %}
+                    </td>
+                </tr>
+                <tr>
                     <td><a href="/validators/remote/">remote</a> validator</td>
                     <td>
                         <p>The backend returns a JSON string that consists of <code>valid</code> and <code>message</code> keys:</p>
@@ -244,7 +271,7 @@ callback: {
     <p>To turn off dynamic message:</p>
     <ul class="doc-list">
         <li>Don't use <code>%s</code> characters in the message</li>
-        <li>Don't include the <code>message</code> in the result returned by <a href="/validators/callback">callback</a>, <a href="/validators/remote">remote</a> validator, or <a href="/developing">your own validator</a>.</li>
+        <li>Don't include the <code>message</code> in the result returned by <a href="/validators/callback/">callback</a>, <a href="/validators/promise/">promise</a>, <a href="/validators/remote/">remote</a> validator, or <a href="/developing/">your own validator</a>.</li>
     </ul>
     <div class="table-responsive">
         <table class="table table-bordered table-striped">
@@ -275,6 +302,30 @@ callback: {
     callback: function(value, validator, $field) {
         // ... Do your logic checking
         return true;        // or false
+    }
+}
+{% endhighlight %}
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="/validators/promise/">promise</a> validator</td>
+                    <td>
+{% highlight javascript %}
+promise: {
+    promise: function(value, validator, $field) {
+        var dfd = new $.Deferred();
+
+        // ... Do your logic checking
+
+        // Resolve when particular task is done
+        dfd.resolve({
+            valid: true,  // or false
+        });
+
+        // You can reject if there's error
+        dfd.reject();
+
+        return dfd.promise();
     }
 }
 {% endhighlight %}

@@ -76,20 +76,24 @@ function(value, validator, $field) {
 
     // Resolve when particular task is done
     dfd.resolve({
-      valid: true, // or false,     // Required
-      message: 'Other message',     // Optional
-      key: value                    // You can attach more data to reuse later
+        valid: true, // or false,   // Required
+        message: 'Other message',   // Optional
+        key: value                  // You can attach more data to reuse later
     });
 
     // You can reject if there's error
     dfd.reject({
-      message: 'Other message',   // Optional
-      key: value                  // You can attach more data to reuse later
+        message: 'Other message',   // Optional
+        key: value                  // You can attach more data to reuse later
     });
 
     return dfd.promise();
 }
 {% endhighlight %}
+
+                    <div class="doc-alert doc-alert-info">
+                        Look at this <a href="/examples/using-data-returned-validator/">example</a> if you want to attach more data to the returned value and reuse them later
+                    </div>
                 </section>
 
                 <div class="doc-hr"></div>
