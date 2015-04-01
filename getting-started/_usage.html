@@ -227,13 +227,9 @@ Too much recursion error
             For complex form, use the <a href="/settings/#form-row-selector">row</a> option
         </div>
 
-        <h4>Name conflict</h4>
-        <p>Do not use the properties of a form, such as <code>submit</code>, <code>reset</code>, <code>length</code>, <code>method</code> to set the <code>name</code> or <code>id</code> attribute of form, field elements. Name conflicts can cause the problem.</p>
-        <p>For example, you cannot submit the form after validating if use <code>submit</code> to name the Submit button:</p>
-{% highlight html %}
-<button type="submit" name="submit" class="btn btn-primary">Submit</button>
-{% endhighlight %}
-        <p><a href="http://kangax.github.com/domlint/">DOMLint</a> has a complete list of rules to check the markup for these kind of problems.</p>
+        <div class="doc-alert doc-alert-warning">
+            Do NOT use name="submit" or id="submit" attribute for the submit button. Otherwise, the form <a href="/examples/cant-submit-form-after-validation">can't be submitted</a> after validation
+        </div>
 
         <p>The plugin supports all possible kind of forms, including:</p>
 
