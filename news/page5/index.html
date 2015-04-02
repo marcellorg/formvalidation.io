@@ -119,12 +119,14 @@ _gaq.push(['_trackPageview']);
 
     <div id="main" class="doc-content-wrapper">
         <div class="doc-notification" id="notification">
-    <i class="fa fa-bell-o"></i> <a href="/addons/recaptcha2/">reCaptcha2 add-on v0.3.0: Support multiple Google reCAPTCHA v2 elements on the same page</a>
+    <i class="fa fa-bell-o"></i> <a href="/news/v0.6.2-released/">v0.6.2 is released on 2015.04.02</a>
 </div>
 <script>
 $(document).ready(function() {
     var notifications = [],
         $message      = $('#notification').find('a').data('index', 0);
+    notifications.push({ title: 'v0.6.2 is released on 2015.04.02', url: '/news/v0.6.2-released/'});
+    notifications.push({ title: 'New promise validator', url: '/validators/promise/'});
     notifications.push({ title: 'reCaptcha2 add-on v0.3.0: Support multiple Google reCAPTCHA v2 elements on the same page', url: '/addons/recaptcha2/'});
     notifications.push({ title: 'New example: Playing with Fuel UX', url: '/examples/fuel-ux/'});
     notifications.push({ title: 'New example: Using data returned by validator', url: '/examples/using-data-returned-validator/'});
@@ -133,8 +135,6 @@ $(document).ready(function() {
     notifications.push({ title: 'New example: Playing with geocomplete', url: '/examples/geocomplete/'});
     notifications.push({ title: 'Explore new add-ons page', url: '/addons/'});
     notifications.push({ title: 'New example: Switching validators on the same field', url: '/examples/switching-validators-same-field/'});
-    notifications.push({ title: 'New example: Conditional validation', url: '/examples/conditional-validation/'});
-    notifications.push({ title: 'v0.6.1 is released on 2015.02.24', url: '/news/v0.6.1-released/'});
     
     setInterval(function() {
         $message.data('index', $message.data('index') + 1);
@@ -163,6 +163,40 @@ $(document).ready(function() {
     <div class="container">
         <div class="row">
             <div class="col-md-9">
+                
+                    <div class="doc-post">
+    <h2><a href="/news/v0.2.2-released/">BootstrapValidator v0.2.2 Released</a></h2>
+
+    <div class="doc-post-meta">
+        <a href="https://github.com/nghuuphuoc" title="@nghuuphuoc">
+            <img src="https://github.com/nghuuphuoc.png" />
+        </a>
+        <p>07 Jan 2014</p>
+    </div>
+
+    <div class="doc-post-content">
+        <h3>Improvements</h3>
+<ul class="doc-list">
+    <li>#15: Focus to the first invalid element</li>
+    <li>#31: <a href="/validators/remote/">remote validator</a>: Allow to set additional data to remote URL</li>
+    <li>#32, #43, #47: Only validate not empty field</li>
+    <li>#39: Validate existing fields only</li>
+</ul>
+
+<h3>Bug fixes</h3>
+<ul class="doc-list">
+    <li>#34: Avoid from calling form submit recursively</li>
+    <li>#40: Fix the issue when the form label doesn't have class</li>
+</ul>
+
+<h3>Download</h3>
+<div>
+    <a class="btn btn-primary" href="/download/">bootstrapvalidator-dist-0.2.2.zip</a>
+</div>
+    </div>
+</div>
+
+                    <div class="doc-hr"></div>
                 
                     <div class="doc-post">
     <h2><a href="/news/v0.2.1-released/">BootstrapValidator v0.2.1 Released</a></h2>

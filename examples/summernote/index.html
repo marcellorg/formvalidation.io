@@ -119,12 +119,14 @@ _gaq.push(['_trackPageview']);
 
     <div id="main" class="doc-content-wrapper">
         <div class="doc-notification" id="notification">
-    <i class="fa fa-bell-o"></i> <a href="/addons/recaptcha2/">reCaptcha2 add-on v0.3.0: Support multiple Google reCAPTCHA v2 elements on the same page</a>
+    <i class="fa fa-bell-o"></i> <a href="/news/v0.6.2-released/">v0.6.2 is released on 2015.04.02</a>
 </div>
 <script>
 $(document).ready(function() {
     var notifications = [],
         $message      = $('#notification').find('a').data('index', 0);
+    notifications.push({ title: 'v0.6.2 is released on 2015.04.02', url: '/news/v0.6.2-released/'});
+    notifications.push({ title: 'New promise validator', url: '/validators/promise/'});
     notifications.push({ title: 'reCaptcha2 add-on v0.3.0: Support multiple Google reCAPTCHA v2 elements on the same page', url: '/addons/recaptcha2/'});
     notifications.push({ title: 'New example: Playing with Fuel UX', url: '/examples/fuel-ux/'});
     notifications.push({ title: 'New example: Using data returned by validator', url: '/examples/using-data-returned-validator/'});
@@ -133,8 +135,6 @@ $(document).ready(function() {
     notifications.push({ title: 'New example: Playing with geocomplete', url: '/examples/geocomplete/'});
     notifications.push({ title: 'Explore new add-ons page', url: '/addons/'});
     notifications.push({ title: 'New example: Switching validators on the same field', url: '/examples/switching-validators-same-field/'});
-    notifications.push({ title: 'New example: Conditional validation', url: '/examples/conditional-validation/'});
-    notifications.push({ title: 'v0.6.1 is released on 2015.02.24', url: '/news/v0.6.1-released/'});
     
     setInterval(function() {
         $message.data('index', $message.data('index') + 1);
@@ -163,7 +163,7 @@ $(document).ready(function() {
     <div class="container">
         <div class="row">
             <div class="col-md-9">
-                <p>This example shows how to use FormValidation with <a href="http://hackerwins.github.io/summernote/">Summernote</a> plugin.</p>
+                <p>This example shows how to use FormValidation with <a href="http://summernote.org">Summernote</a> plugin.</p>
                 <div class="doc-alert doc-alert-info">
                     You should look at the <a href="/examples#compatibility">basic principles</a> when integrating FormValidation with other plugins
                 </div>
@@ -205,11 +205,10 @@ $(document).ready(function() {
             
             <div data-demo-code="bootstrap">
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Include Summernote CSS files --&gt;</span>
-<span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;//oss.maxcdn.com/summernote/0.5.1/summernote.css&quot;</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;//oss.maxcdn.com/summernote/0.5.1/summernote-bs3.css&quot;</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;/vendor/summernote/summernote.css&quot;</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span><span class="nt">&gt;</span>
 
 <span class="c">&lt;!-- Include Summernote JS file --&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;//oss.maxcdn.com/summernote/0.5.1/summernote.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/vendor/summernote/summernote.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 
 <span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;summernoteForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
@@ -223,6 +222,12 @@ $(document).ready(function() {
         <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Post content<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-9&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;textarea</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;content&quot;</span> <span class="na">style=</span><span class="s">&quot;height: 400px;&quot;</span><span class="nt">&gt;&lt;/textarea&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-9 col-xs-offset-3&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/button&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/form&gt;</span>
@@ -274,7 +279,8 @@ $(document).ready(function() {
                 <span class="nx">onpaste</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
                     <span class="nx">validateEditor</span><span class="p">();</span>
                 <span class="p">}</span>
-            <span class="p">});</span>
+            <span class="p">})</span>
+            <span class="p">.</span><span class="nx">end</span><span class="p">();</span>
 <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span></code></pre></div>
             </div>

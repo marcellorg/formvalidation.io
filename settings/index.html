@@ -119,12 +119,14 @@ _gaq.push(['_trackPageview']);
 
     <div id="main" class="doc-content-wrapper">
         <div class="doc-notification" id="notification">
-    <i class="fa fa-bell-o"></i> <a href="/addons/recaptcha2/">reCaptcha2 add-on v0.3.0: Support multiple Google reCAPTCHA v2 elements on the same page</a>
+    <i class="fa fa-bell-o"></i> <a href="/news/v0.6.2-released/">v0.6.2 is released on 2015.04.02</a>
 </div>
 <script>
 $(document).ready(function() {
     var notifications = [],
         $message      = $('#notification').find('a').data('index', 0);
+    notifications.push({ title: 'v0.6.2 is released on 2015.04.02', url: '/news/v0.6.2-released/'});
+    notifications.push({ title: 'New promise validator', url: '/validators/promise/'});
     notifications.push({ title: 'reCaptcha2 add-on v0.3.0: Support multiple Google reCAPTCHA v2 elements on the same page', url: '/addons/recaptcha2/'});
     notifications.push({ title: 'New example: Playing with Fuel UX', url: '/examples/fuel-ux/'});
     notifications.push({ title: 'New example: Using data returned by validator', url: '/examples/using-data-returned-validator/'});
@@ -133,8 +135,6 @@ $(document).ready(function() {
     notifications.push({ title: 'New example: Playing with geocomplete', url: '/examples/geocomplete/'});
     notifications.push({ title: 'Explore new add-ons page', url: '/addons/'});
     notifications.push({ title: 'New example: Switching validators on the same field', url: '/examples/switching-validators-same-field/'});
-    notifications.push({ title: 'New example: Conditional validation', url: '/examples/conditional-validation/'});
-    notifications.push({ title: 'v0.6.1 is released on 2015.02.24', url: '/news/v0.6.1-released/'});
     
     setInterval(function() {
         $message.data('index', $message.data('index') + 1);
@@ -375,7 +375,7 @@ $(document).ready(function() {
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">button</span><span class="o">:</span> <span class="p">{</span>
     <span class="c1">// The submit buttons selector</span>
-    <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;[type=&quot;submit&quot;]&#39;</span><span class="p">,</span>
+    <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;[type=&quot;submit&quot;]:not([formnovalidate])&#39;</span><span class="p">,</span>
 
     <span class="c1">// The disabled class</span>
     <span class="nx">disabled</span><span class="o">:</span> <span class="s1">&#39;&#39;</span>
@@ -705,7 +705,7 @@ $(document).ready(function() {
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span><span class="p">(</span><span class="nx">$field</span><span class="p">,</span> <span class="nx">validator</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// $field is jQuery object representing the field element</span>
-    <span class="c1">// validator is the BootstrapValidator instance</span>
+    <span class="c1">// validator is the plugin instance</span>
     <span class="c1">// return true or false;</span>
 <span class="p">}</span></code></pre></div>
 
@@ -1440,8 +1440,18 @@ $(document).ready(function() {
     <section>
     <h3 id="field-excluded">excluded</h3>
 
-    <p><code>excluded: Boolean</code> &mdash; Indicate whether or not the field is excluded.</p>
+    <p><code>excluded: Boolean|Function</code> &mdash; Indicate whether or not the field is excluded.</p>
     <p>To exclude a set of fields, you should use the <a href="#form-excluded">excluded</a> option for form.</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Use Boolean value</span>
+<span class="nx">excluded</span><span class="o">:</span> <span class="kc">true</span> <span class="nx">or</span> <span class="kc">false</span>
+
+<span class="c1">// Use the return value of a callback function</span>
+<span class="nx">excluded</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$field</span><span class="p">,</span> <span class="nx">validator</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// $field is the field element</span>
+    <span class="c1">// validator is the plugin instance</span>
+    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>    <span class="c1">// or false</span>
+<span class="p">}</span></code></pre></div>
 
     <h5>Example</h5>
     <ul class="doc-list">
@@ -3237,6 +3247,31 @@ $(document).ready(function() {
                     </td>
                 </tr>
                 <tr>
+                    <td><a href="/validators/promise/">promise</a> validator</td>
+                    <td>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">promise</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">promise</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">dfd</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">$</span><span class="p">.</span><span class="nx">Deferred</span><span class="p">();</span>
+
+        <span class="c1">// ... Do your logic checking</span>
+
+        <span class="c1">// Resolve when particular task is done</span>
+        <span class="nx">dfd</span><span class="p">.</span><span class="nx">resolve</span><span class="p">({</span>
+            <span class="nx">valid</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">// or false</span>
+            <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The error message&#39;</span>
+        <span class="p">});</span>
+
+        <span class="c1">// You can reject if there&#39;s error</span>
+        <span class="nx">dfd</span><span class="p">.</span><span class="nx">reject</span><span class="p">({</span>
+            <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;Other message&#39;</span>
+        <span class="p">});</span>
+
+        <span class="k">return</span> <span class="nx">dfd</span><span class="p">.</span><span class="nx">promise</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+                    </td>
+                </tr>
+                <tr>
                     <td><a href="/validators/remote/">remote</a> validator</td>
                     <td>
                         <p>The backend returns a JSON string that consists of <code>valid</code> and <code>message</code> keys:</p>
@@ -3275,7 +3310,7 @@ $(document).ready(function() {
     <p>To turn off dynamic message:</p>
     <ul class="doc-list">
         <li>Don't use <code>%s</code> characters in the message</li>
-        <li>Don't include the <code>message</code> in the result returned by <a href="/validators/callback">callback</a>, <a href="/validators/remote">remote</a> validator, or <a href="/developing">your own validator</a>.</li>
+        <li>Don't include the <code>message</code> in the result returned by <a href="/validators/callback/">callback</a>, <a href="/validators/promise/">promise</a>, <a href="/validators/remote/">remote</a> validator, or <a href="/developing/">your own validator</a>.</li>
     </ul>
     <div class="table-responsive">
         <table class="table table-bordered table-striped">
@@ -3303,6 +3338,28 @@ $(document).ready(function() {
     <span class="nx">callback</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">)</span> <span class="p">{</span>
         <span class="c1">// ... Do your logic checking</span>
         <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>        <span class="c1">// or false</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="/validators/promise/">promise</a> validator</td>
+                    <td>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">promise</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">promise</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">dfd</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">$</span><span class="p">.</span><span class="nx">Deferred</span><span class="p">();</span>
+
+        <span class="c1">// ... Do your logic checking</span>
+
+        <span class="c1">// Resolve when particular task is done</span>
+        <span class="nx">dfd</span><span class="p">.</span><span class="nx">resolve</span><span class="p">({</span>
+            <span class="nx">valid</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>  <span class="c1">// or false</span>
+        <span class="p">});</span>
+
+        <span class="c1">// You can reject if there&#39;s error</span>
+        <span class="nx">dfd</span><span class="p">.</span><span class="nx">reject</span><span class="p">();</span>
+
+        <span class="k">return</span> <span class="nx">dfd</span><span class="p">.</span><span class="nx">promise</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></div>
                     </td>

@@ -119,12 +119,14 @@ _gaq.push(['_trackPageview']);
 
     <div id="main" class="doc-content-wrapper">
         <div class="doc-notification" id="notification">
-    <i class="fa fa-bell-o"></i> <a href="/addons/recaptcha2/">reCaptcha2 add-on v0.3.0: Support multiple Google reCAPTCHA v2 elements on the same page</a>
+    <i class="fa fa-bell-o"></i> <a href="/news/v0.6.2-released/">v0.6.2 is released on 2015.04.02</a>
 </div>
 <script>
 $(document).ready(function() {
     var notifications = [],
         $message      = $('#notification').find('a').data('index', 0);
+    notifications.push({ title: 'v0.6.2 is released on 2015.04.02', url: '/news/v0.6.2-released/'});
+    notifications.push({ title: 'New promise validator', url: '/validators/promise/'});
     notifications.push({ title: 'reCaptcha2 add-on v0.3.0: Support multiple Google reCAPTCHA v2 elements on the same page', url: '/addons/recaptcha2/'});
     notifications.push({ title: 'New example: Playing with Fuel UX', url: '/examples/fuel-ux/'});
     notifications.push({ title: 'New example: Using data returned by validator', url: '/examples/using-data-returned-validator/'});
@@ -133,8 +135,6 @@ $(document).ready(function() {
     notifications.push({ title: 'New example: Playing with geocomplete', url: '/examples/geocomplete/'});
     notifications.push({ title: 'Explore new add-ons page', url: '/addons/'});
     notifications.push({ title: 'New example: Switching validators on the same field', url: '/examples/switching-validators-same-field/'});
-    notifications.push({ title: 'New example: Conditional validation', url: '/examples/conditional-validation/'});
-    notifications.push({ title: 'v0.6.1 is released on 2015.02.24', url: '/news/v0.6.1-released/'});
     
     setInterval(function() {
         $message.data('index', $message.data('index') + 1);
@@ -188,7 +188,13 @@ $(document).ready(function() {
                                     <td><code>message</code></td>
                                     <td><code>data-fv-iban-message</code></td>
                                     <td>String</td>
-                                    <td>The error message</td>
+                                    <td>The error message. The <a href="/settings/#dynamic-message">dynamic message</a> is supported</td>
+                                </tr>
+                                <tr>
+                                    <td><code>sepa</code></td>
+                                    <td><code>data-fv-iban-sepa</code></td>
+                                    <td>Boolean</td>
+                                    <td>Set it to true (false) to indicate that the IBAN number must be (not be) from SEPA countries. The list of SEPA countries are indicated in the table below. By default, this option is not defined</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -252,7 +258,7 @@ $(document).ready(function() {
                                 
                                 <tr>
                                     <td>5</td>
-                                    <td>Austria</td>
+                                    <td>Austria <span class="label label-default">SEPA</span></td>
                                     <td>AT</td>
                                     <td><a href="javascript: void(0);" class="sample">AT611904300234573201</a></td>
                                     <td><i class="fa"></i></td>
@@ -284,7 +290,7 @@ $(document).ready(function() {
                                 
                                 <tr>
                                     <td>9</td>
-                                    <td>Belgium</td>
+                                    <td>Belgium <span class="label label-default">SEPA</span></td>
                                     <td>BE</td>
                                     <td><a href="javascript: void(0);" class="sample">BE68539007547034</a></td>
                                     <td><i class="fa"></i></td>
@@ -308,7 +314,7 @@ $(document).ready(function() {
                                 
                                 <tr>
                                     <td>12</td>
-                                    <td>Bulgaria</td>
+                                    <td>Bulgaria <span class="label label-default">SEPA</span></td>
                                     <td>BG</td>
                                     <td><a href="javascript: void(0);" class="sample">BG80BNBG96611020345678</a></td>
                                     <td><i class="fa"></i></td>
@@ -356,7 +362,7 @@ $(document).ready(function() {
                                 
                                 <tr>
                                     <td>18</td>
-                                    <td>Croatia</td>
+                                    <td>Croatia <span class="label label-default">SEPA</span></td>
                                     <td>HR</td>
                                     <td><a href="javascript: void(0);" class="sample">HR1210010051863000160</a></td>
                                     <td><i class="fa"></i></td>
@@ -364,7 +370,7 @@ $(document).ready(function() {
                                 
                                 <tr>
                                     <td>19</td>
-                                    <td>Cyprus</td>
+                                    <td>Cyprus <span class="label label-default">SEPA</span></td>
                                     <td>CY</td>
                                     <td><a href="javascript: void(0);" class="sample">CY17002001280000001200527600</a></td>
                                     <td><i class="fa"></i></td>
@@ -372,7 +378,7 @@ $(document).ready(function() {
                                 
                                 <tr>
                                     <td>20</td>
-                                    <td>Czech Republic</td>
+                                    <td>Czech Republic <span class="label label-default">SEPA</span></td>
                                     <td>CZ</td>
                                     <td><a href="javascript: void(0);" class="sample">CZ6508000000192000145399</a></td>
                                     <td><i class="fa"></i></td>
@@ -380,7 +386,7 @@ $(document).ready(function() {
                                 
                                 <tr>
                                     <td>21</td>
-                                    <td>Denmark</td>
+                                    <td>Denmark <span class="label label-default">SEPA</span></td>
                                     <td>DK</td>
                                     <td><a href="javascript: void(0);" class="sample">DK5000400440116243</a></td>
                                     <td><i class="fa"></i></td>
@@ -396,14 +402,22 @@ $(document).ready(function() {
                                 
                                 <tr>
                                     <td>23</td>
-                                    <td>Estonia</td>
+                                    <td>East Timor</td>
+                                    <td>TL</td>
+                                    <td><a href="javascript: void(0);" class="sample">TL380080012345678910157</a></td>
+                                    <td><i class="fa"></i></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>24</td>
+                                    <td>Estonia <span class="label label-default">SEPA</span></td>
                                     <td>EE</td>
                                     <td><a href="javascript: void(0);" class="sample">EE382200221020145685</a></td>
                                     <td><i class="fa"></i></td>
                                 </tr>
                                 
                                 <tr>
-                                    <td>24</td>
+                                    <td>25</td>
                                     <td>Faroe Islands</td>
                                     <td>FO</td>
                                     <td><a href="javascript: void(0);" class="sample">FO1464600009692713</a></td>
@@ -411,23 +425,23 @@ $(document).ready(function() {
                                 </tr>
                                 
                                 <tr>
-                                    <td>25</td>
-                                    <td>Finland</td>
+                                    <td>26</td>
+                                    <td>Finland <span class="label label-default">SEPA</span></td>
                                     <td>FI</td>
                                     <td><a href="javascript: void(0);" class="sample">FI2112345600000785</a></td>
                                     <td><i class="fa"></i></td>
                                 </tr>
                                 
                                 <tr>
-                                    <td>26</td>
-                                    <td>France</td>
+                                    <td>27</td>
+                                    <td>France <span class="label label-default">SEPA</span></td>
                                     <td>FR</td>
                                     <td><a href="javascript: void(0);" class="sample">FR1420041010050500013M02606</a></td>
                                     <td><i class="fa"></i></td>
                                 </tr>
                                 
                                 <tr>
-                                    <td>27</td>
+                                    <td>28</td>
                                     <td>Guatemala</td>
                                     <td>GT</td>
                                     <td><a href="javascript: void(0);" class="sample">GT82TRAJ01020000001210029690</a></td>
@@ -435,7 +449,7 @@ $(document).ready(function() {
                                 </tr>
                                 
                                 <tr>
-                                    <td>28</td>
+                                    <td>29</td>
                                     <td>Georgia</td>
                                     <td>GE</td>
                                     <td><a href="javascript: void(0);" class="sample">GE29NB0000000101904917</a></td>
@@ -443,31 +457,31 @@ $(document).ready(function() {
                                 </tr>
                                 
                                 <tr>
-                                    <td>29</td>
-                                    <td>Germany</td>
+                                    <td>30</td>
+                                    <td>Germany <span class="label label-default">SEPA</span></td>
                                     <td>DE</td>
                                     <td><a href="javascript: void(0);" class="sample">DE89370400440532013000</a></td>
                                     <td><i class="fa"></i></td>
                                 </tr>
                                 
                                 <tr>
-                                    <td>30</td>
-                                    <td>Gibraltar</td>
+                                    <td>31</td>
+                                    <td>Gibraltar <span class="label label-default">SEPA</span></td>
                                     <td>GI</td>
                                     <td><a href="javascript: void(0);" class="sample">GI75NWBK000000007099453</a></td>
                                     <td><i class="fa"></i></td>
                                 </tr>
                                 
                                 <tr>
-                                    <td>31</td>
-                                    <td>Greece</td>
+                                    <td>32</td>
+                                    <td>Greece <span class="label label-default">SEPA</span></td>
                                     <td>GR</td>
                                     <td><a href="javascript: void(0);" class="sample">GR1601101250000000012300695</a></td>
                                     <td><i class="fa"></i></td>
                                 </tr>
                                 
                                 <tr>
-                                    <td>32</td>
+                                    <td>33</td>
                                     <td>Greenland</td>
                                     <td>GL</td>
                                     <td><a href="javascript: void(0);" class="sample">GL8964710001000206</a></td>
@@ -475,23 +489,23 @@ $(document).ready(function() {
                                 </tr>
                                 
                                 <tr>
-                                    <td>33</td>
-                                    <td>Hungary</td>
+                                    <td>34</td>
+                                    <td>Hungary <span class="label label-default">SEPA</span></td>
                                     <td>HU</td>
                                     <td><a href="javascript: void(0);" class="sample">HU42117730161111101800000000</a></td>
                                     <td><i class="fa"></i></td>
                                 </tr>
                                 
                                 <tr>
-                                    <td>34</td>
-                                    <td>Iceland</td>
+                                    <td>35</td>
+                                    <td>Iceland <span class="label label-default">SEPA</span></td>
                                     <td>IS</td>
                                     <td><a href="javascript: void(0);" class="sample">IS140159260076545510730339</a></td>
                                     <td><i class="fa"></i></td>
                                 </tr>
                                 
                                 <tr>
-                                    <td>35</td>
+                                    <td>36</td>
                                     <td>Iran</td>
                                     <td>IR</td>
                                     <td><a href="javascript: void(0);" class="sample">IR580540105180021273113007</a></td>
@@ -499,15 +513,15 @@ $(document).ready(function() {
                                 </tr>
                                 
                                 <tr>
-                                    <td>36</td>
-                                    <td>Ireland</td>
+                                    <td>37</td>
+                                    <td>Ireland <span class="label label-default">SEPA</span></td>
                                     <td>IE</td>
                                     <td><a href="javascript: void(0);" class="sample">IE29AIBK93115212345678</a></td>
                                     <td><i class="fa"></i></td>
                                 </tr>
                                 
                                 <tr>
-                                    <td>37</td>
+                                    <td>38</td>
                                     <td>Israel</td>
                                     <td>IL</td>
                                     <td><a href="javascript: void(0);" class="sample">IL620108000000099999999</a></td>
@@ -515,15 +529,15 @@ $(document).ready(function() {
                                 </tr>
                                 
                                 <tr>
-                                    <td>38</td>
-                                    <td>Italy</td>
+                                    <td>39</td>
+                                    <td>Italy <span class="label label-default">SEPA</span></td>
                                     <td>IT</td>
                                     <td><a href="javascript: void(0);" class="sample">IT60X0542811101000000123456</a></td>
                                     <td><i class="fa"></i></td>
                                 </tr>
                                 
                                 <tr>
-                                    <td>39</td>
+                                    <td>40</td>
                                     <td>Ivory Coast</td>
                                     <td>CI</td>
                                     <td><a href="javascript: void(0);" class="sample">CI05A00060174100178530011852</a></td>
@@ -531,7 +545,7 @@ $(document).ready(function() {
                                 </tr>
                                 
                                 <tr>
-                                    <td>40</td>
+                                    <td>41</td>
                                     <td>Jordan</td>
                                     <td>JO</td>
                                     <td><a href="javascript: void(0);" class="sample">JO94CBJO0010000000000131000302</a></td>
@@ -539,7 +553,7 @@ $(document).ready(function() {
                                 </tr>
                                 
                                 <tr>
-                                    <td>41</td>
+                                    <td>42</td>
                                     <td>Kazakhstan</td>
                                     <td>KZ</td>
                                     <td><a href="javascript: void(0);" class="sample">KZ176010251000042993</a></td>
@@ -547,7 +561,7 @@ $(document).ready(function() {
                                 </tr>
                                 
                                 <tr>
-                                    <td>42</td>
+                                    <td>43</td>
                                     <td>Kuwait</td>
                                     <td>KW</td>
                                     <td><a href="javascript: void(0);" class="sample">KW74NBOK0000000000001000372151</a></td>
@@ -555,15 +569,15 @@ $(document).ready(function() {
                                 </tr>
                                 
                                 <tr>
-                                    <td>43</td>
-                                    <td>Latvia</td>
+                                    <td>44</td>
+                                    <td>Latvia <span class="label label-default">SEPA</span></td>
                                     <td>LV</td>
                                     <td><a href="javascript: void(0);" class="sample">LV80BANK0000435195001</a></td>
                                     <td><i class="fa"></i></td>
                                 </tr>
                                 
                                 <tr>
-                                    <td>44</td>
+                                    <td>45</td>
                                     <td>Lebanon</td>
                                     <td>LB</td>
                                     <td><a href="javascript: void(0);" class="sample">LB30099900000001001925579115</a></td>
@@ -571,31 +585,31 @@ $(document).ready(function() {
                                 </tr>
                                 
                                 <tr>
-                                    <td>45</td>
-                                    <td>Liechtenstein</td>
+                                    <td>46</td>
+                                    <td>Liechtenstein <span class="label label-default">SEPA</span></td>
                                     <td>LI</td>
                                     <td><a href="javascript: void(0);" class="sample">LI21088100002324013AA</a></td>
                                     <td><i class="fa"></i></td>
                                 </tr>
                                 
                                 <tr>
-                                    <td>46</td>
-                                    <td>Lithuania</td>
+                                    <td>47</td>
+                                    <td>Lithuania <span class="label label-default">SEPA</span></td>
                                     <td>LT</td>
                                     <td><a href="javascript: void(0);" class="sample">LT121000011101001000</a></td>
                                     <td><i class="fa"></i></td>
                                 </tr>
                                 
                                 <tr>
-                                    <td>47</td>
-                                    <td>Luxembourg</td>
+                                    <td>48</td>
+                                    <td>Luxembourg <span class="label label-default">SEPA</span></td>
                                     <td>LU</td>
                                     <td><a href="javascript: void(0);" class="sample">LU280019400644750000</a></td>
                                     <td><i class="fa"></i></td>
                                 </tr>
                                 
                                 <tr>
-                                    <td>48</td>
+                                    <td>49</td>
                                     <td>Macedonia</td>
                                     <td>MK</td>
                                     <td><a href="javascript: void(0);" class="sample">MK07300000000042425</a></td>
@@ -603,7 +617,7 @@ $(document).ready(function() {
                                 </tr>
                                 
                                 <tr>
-                                    <td>49</td>
+                                    <td>50</td>
                                     <td>Madagascar</td>
                                     <td>MG</td>
                                     <td><a href="javascript: void(0);" class="sample">MG4600005030010101914016056</a></td>
@@ -611,15 +625,15 @@ $(document).ready(function() {
                                 </tr>
                                 
                                 <tr>
-                                    <td>50</td>
-                                    <td>Malta</td>
+                                    <td>51</td>
+                                    <td>Malta <span class="label label-default">SEPA</span></td>
                                     <td>MT</td>
                                     <td><a href="javascript: void(0);" class="sample">MT84MALT011000012345MTLCAST001S</a></td>
                                     <td><i class="fa"></i></td>
                                 </tr>
                                 
                                 <tr>
-                                    <td>51</td>
+                                    <td>52</td>
                                     <td>Mauritania</td>
                                     <td>MR</td>
                                     <td><a href="javascript: void(0);" class="sample">MR1300012000010000002037372</a></td>
@@ -627,7 +641,7 @@ $(document).ready(function() {
                                 </tr>
                                 
                                 <tr>
-                                    <td>52</td>
+                                    <td>53</td>
                                     <td>Mauritius</td>
                                     <td>MU</td>
                                     <td><a href="javascript: void(0);" class="sample">MU17BOMM0101101030300200000MUR</a></td>
@@ -635,7 +649,7 @@ $(document).ready(function() {
                                 </tr>
                                 
                                 <tr>
-                                    <td>53</td>
+                                    <td>54</td>
                                     <td>Mali</td>
                                     <td>ML</td>
                                     <td><a href="javascript: void(0);" class="sample">ML03D00890170001002120000447</a></td>
@@ -643,7 +657,7 @@ $(document).ready(function() {
                                 </tr>
                                 
                                 <tr>
-                                    <td>54</td>
+                                    <td>55</td>
                                     <td>Moldova</td>
                                     <td>MD</td>
                                     <td><a href="javascript: void(0);" class="sample">MD24AG000225100013104168</a></td>
@@ -651,15 +665,15 @@ $(document).ready(function() {
                                 </tr>
                                 
                                 <tr>
-                                    <td>55</td>
-                                    <td>Monaco</td>
+                                    <td>56</td>
+                                    <td>Monaco <span class="label label-default">SEPA</span></td>
                                     <td>MC</td>
                                     <td><a href="javascript: void(0);" class="sample">MC5813488000010051108001292</a></td>
                                     <td><i class="fa"></i></td>
                                 </tr>
                                 
                                 <tr>
-                                    <td>56</td>
+                                    <td>57</td>
                                     <td>Montenegro</td>
                                     <td>ME</td>
                                     <td><a href="javascript: void(0);" class="sample">ME25505000012345678951</a></td>
@@ -667,7 +681,7 @@ $(document).ready(function() {
                                 </tr>
                                 
                                 <tr>
-                                    <td>57</td>
+                                    <td>58</td>
                                     <td>Mozambique</td>
                                     <td>MZ</td>
                                     <td><a href="javascript: void(0);" class="sample">MZ59000100000011834194157</a></td>
@@ -675,23 +689,23 @@ $(document).ready(function() {
                                 </tr>
                                 
                                 <tr>
-                                    <td>58</td>
-                                    <td>Netherlands</td>
+                                    <td>59</td>
+                                    <td>Netherlands <span class="label label-default">SEPA</span></td>
                                     <td>NL</td>
                                     <td><a href="javascript: void(0);" class="sample">NL91ABNA0417164300</a></td>
                                     <td><i class="fa"></i></td>
                                 </tr>
                                 
                                 <tr>
-                                    <td>59</td>
-                                    <td>Norway</td>
+                                    <td>60</td>
+                                    <td>Norway <span class="label label-default">SEPA</span></td>
                                     <td>NO</td>
                                     <td><a href="javascript: void(0);" class="sample">NO9386011117947</a></td>
                                     <td><i class="fa"></i></td>
                                 </tr>
                                 
                                 <tr>
-                                    <td>60</td>
+                                    <td>61</td>
                                     <td>Pakistan</td>
                                     <td>PK</td>
                                     <td><a href="javascript: void(0);" class="sample">PK24SCBL0000001171495101</a></td>
@@ -699,7 +713,7 @@ $(document).ready(function() {
                                 </tr>
                                 
                                 <tr>
-                                    <td>61</td>
+                                    <td>62</td>
                                     <td>Palestine</td>
                                     <td>PS</td>
                                     <td><a href="javascript: void(0);" class="sample">PS92PALS000000000400123456702</a></td>
@@ -707,23 +721,23 @@ $(document).ready(function() {
                                 </tr>
                                 
                                 <tr>
-                                    <td>62</td>
-                                    <td>Poland</td>
+                                    <td>63</td>
+                                    <td>Poland <span class="label label-default">SEPA</span></td>
                                     <td>PL</td>
                                     <td><a href="javascript: void(0);" class="sample">PL27114020040000300201355387</a></td>
                                     <td><i class="fa"></i></td>
                                 </tr>
                                 
                                 <tr>
-                                    <td>63</td>
-                                    <td>Portugal</td>
+                                    <td>64</td>
+                                    <td>Portugal <span class="label label-default">SEPA</span></td>
                                     <td>PT</td>
                                     <td><a href="javascript: void(0);" class="sample">PT50000201231234567890154</a></td>
                                     <td><i class="fa"></i></td>
                                 </tr>
                                 
                                 <tr>
-                                    <td>64</td>
+                                    <td>65</td>
                                     <td>Qatar</td>
                                     <td>QA</td>
                                     <td><a href="javascript: void(0);" class="sample">QA58DOHB00001234567890ABCDEFG</a></td>
@@ -731,23 +745,31 @@ $(document).ready(function() {
                                 </tr>
                                 
                                 <tr>
-                                    <td>65</td>
-                                    <td>Romania</td>
+                                    <td>66</td>
+                                    <td>Republic of Kosovo</td>
+                                    <td>XK</td>
+                                    <td><a href="javascript: void(0);" class="sample">XK051212012345678906</a></td>
+                                    <td><i class="fa"></i></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>67</td>
+                                    <td>Romania <span class="label label-default">SEPA</span></td>
                                     <td>RO</td>
                                     <td><a href="javascript: void(0);" class="sample">RO49AAAA1B31007593840000</a></td>
                                     <td><i class="fa"></i></td>
                                 </tr>
                                 
                                 <tr>
-                                    <td>66</td>
-                                    <td>San Marino</td>
+                                    <td>68</td>
+                                    <td>San Marino <span class="label label-default">SEPA</span></td>
                                     <td>SM</td>
                                     <td><a href="javascript: void(0);" class="sample">SM86U0322509800000000270100</a></td>
                                     <td><i class="fa"></i></td>
                                 </tr>
                                 
                                 <tr>
-                                    <td>67</td>
+                                    <td>69</td>
                                     <td>Saudi Arabia</td>
                                     <td>SA</td>
                                     <td><a href="javascript: void(0);" class="sample">SA0380000000608010167519</a></td>
@@ -755,7 +777,7 @@ $(document).ready(function() {
                                 </tr>
                                 
                                 <tr>
-                                    <td>68</td>
+                                    <td>70</td>
                                     <td>Senegal</td>
                                     <td>SN</td>
                                     <td><a href="javascript: void(0);" class="sample">SN12K00100152000025690007542</a></td>
@@ -763,7 +785,7 @@ $(document).ready(function() {
                                 </tr>
                                 
                                 <tr>
-                                    <td>69</td>
+                                    <td>71</td>
                                     <td>Serbia</td>
                                     <td>RS</td>
                                     <td><a href="javascript: void(0);" class="sample">RS35260005601001611379</a></td>
@@ -771,47 +793,47 @@ $(document).ready(function() {
                                 </tr>
                                 
                                 <tr>
-                                    <td>70</td>
-                                    <td>Slovakia</td>
+                                    <td>72</td>
+                                    <td>Slovakia <span class="label label-default">SEPA</span></td>
                                     <td>SK</td>
                                     <td><a href="javascript: void(0);" class="sample">SK3112000000198742637541</a></td>
                                     <td><i class="fa"></i></td>
                                 </tr>
                                 
                                 <tr>
-                                    <td>71</td>
-                                    <td>Slovenia</td>
+                                    <td>73</td>
+                                    <td>Slovenia <span class="label label-default">SEPA</span></td>
                                     <td>SI</td>
                                     <td><a href="javascript: void(0);" class="sample">SI56191000000123438</a></td>
                                     <td><i class="fa"></i></td>
                                 </tr>
                                 
                                 <tr>
-                                    <td>72</td>
-                                    <td>Spain</td>
+                                    <td>74</td>
+                                    <td>Spain <span class="label label-default">SEPA</span></td>
                                     <td>ES</td>
                                     <td><a href="javascript: void(0);" class="sample">ES9121000418450200051332</a></td>
                                     <td><i class="fa"></i></td>
                                 </tr>
                                 
                                 <tr>
-                                    <td>73</td>
-                                    <td>Sweden</td>
+                                    <td>75</td>
+                                    <td>Sweden <span class="label label-default">SEPA</span></td>
                                     <td>SE</td>
                                     <td><a href="javascript: void(0);" class="sample">SE3550000000054910000003</a></td>
                                     <td><i class="fa"></i></td>
                                 </tr>
                                 
                                 <tr>
-                                    <td>74</td>
-                                    <td>Switzerland</td>
+                                    <td>76</td>
+                                    <td>Switzerland <span class="label label-default">SEPA</span></td>
                                     <td>CH</td>
                                     <td><a href="javascript: void(0);" class="sample">CH9300762011623852957</a></td>
                                     <td><i class="fa"></i></td>
                                 </tr>
                                 
                                 <tr>
-                                    <td>75</td>
+                                    <td>77</td>
                                     <td>Tunisia</td>
                                     <td>TN</td>
                                     <td><a href="javascript: void(0);" class="sample">TN5914207207100707129648</a></td>
@@ -819,7 +841,7 @@ $(document).ready(function() {
                                 </tr>
                                 
                                 <tr>
-                                    <td>76</td>
+                                    <td>78</td>
                                     <td>Turkey</td>
                                     <td>TR</td>
                                     <td><a href="javascript: void(0);" class="sample">TR330006100519786457841326</a></td>
@@ -827,7 +849,7 @@ $(document).ready(function() {
                                 </tr>
                                 
                                 <tr>
-                                    <td>77</td>
+                                    <td>79</td>
                                     <td>United Arab Emirates</td>
                                     <td>AE</td>
                                     <td><a href="javascript: void(0);" class="sample">AE260211000000230064016</a></td>
@@ -835,15 +857,15 @@ $(document).ready(function() {
                                 </tr>
                                 
                                 <tr>
-                                    <td>78</td>
-                                    <td>United Kingdom</td>
+                                    <td>80</td>
+                                    <td>United Kingdom <span class="label label-default">SEPA</span></td>
                                     <td>GB</td>
                                     <td><a href="javascript: void(0);" class="sample">GB29NWBK60161331926819</a></td>
                                     <td><i class="fa"></i></td>
                                 </tr>
                                 
                                 <tr>
-                                    <td>79</td>
+                                    <td>81</td>
                                     <td>Virgin Islands, British</td>
                                     <td>VG</td>
                                     <td><a href="javascript: void(0);" class="sample">VG96VPVG0000012345678901</a></td>

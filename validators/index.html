@@ -119,12 +119,14 @@ _gaq.push(['_trackPageview']);
 
     <div id="main" class="doc-content-wrapper">
         <div class="doc-notification" id="notification">
-    <i class="fa fa-bell-o"></i> <a href="/addons/recaptcha2/">reCaptcha2 add-on v0.3.0: Support multiple Google reCAPTCHA v2 elements on the same page</a>
+    <i class="fa fa-bell-o"></i> <a href="/news/v0.6.2-released/">v0.6.2 is released on 2015.04.02</a>
 </div>
 <script>
 $(document).ready(function() {
     var notifications = [],
         $message      = $('#notification').find('a').data('index', 0);
+    notifications.push({ title: 'v0.6.2 is released on 2015.04.02', url: '/news/v0.6.2-released/'});
+    notifications.push({ title: 'New promise validator', url: '/validators/promise/'});
     notifications.push({ title: 'reCaptcha2 add-on v0.3.0: Support multiple Google reCAPTCHA v2 elements on the same page', url: '/addons/recaptcha2/'});
     notifications.push({ title: 'New example: Playing with Fuel UX', url: '/examples/fuel-ux/'});
     notifications.push({ title: 'New example: Using data returned by validator', url: '/examples/using-data-returned-validator/'});
@@ -133,8 +135,6 @@ $(document).ready(function() {
     notifications.push({ title: 'New example: Playing with geocomplete', url: '/examples/geocomplete/'});
     notifications.push({ title: 'Explore new add-ons page', url: '/addons/'});
     notifications.push({ title: 'New example: Switching validators on the same field', url: '/examples/switching-validators-same-field/'});
-    notifications.push({ title: 'New example: Conditional validation', url: '/examples/conditional-validation/'});
-    notifications.push({ title: 'v0.6.1 is released on 2015.02.24', url: '/news/v0.6.1-released/'});
     
     setInterval(function() {
         $message.data('index', $message.data('index') + 1);
@@ -395,84 +395,90 @@ $(document).ready(function() {
                             
                             <tr>
                                 <td>37</td>
+                                <td><a href="/validators/promise/">promise</a></td>
+                                <td>Use jQuery's Deferred to validate field's value</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>38</td>
                                 <td><a href="/validators/regexp/">regexp</a></td>
                                 <td>Check if the value matches given Javascript regular expression</td>
                             </tr>
                             
                             <tr>
-                                <td>38</td>
+                                <td>39</td>
                                 <td><a href="/validators/remote/">remote</a></td>
                                 <td>Perform remote checking via Ajax request</td>
                             </tr>
                             
                             <tr>
-                                <td>39</td>
+                                <td>40</td>
                                 <td><a href="/validators/rtn/">rtn</a></td>
                                 <td>Validate a RTN (Routing transit number)</td>
                             </tr>
                             
                             <tr>
-                                <td>40</td>
+                                <td>41</td>
                                 <td><a href="/validators/sedol/">sedol</a></td>
                                 <td>Validate a SEDOL (Stock Exchange Daily Official List)</td>
                             </tr>
                             
                             <tr>
-                                <td>41</td>
+                                <td>42</td>
                                 <td><a href="/validators/siren/">siren</a></td>
                                 <td>Validate a Siren number</td>
                             </tr>
                             
                             <tr>
-                                <td>42</td>
+                                <td>43</td>
                                 <td><a href="/validators/siret/">siret</a></td>
                                 <td>Validate a Siret number</td>
                             </tr>
                             
                             <tr>
-                                <td>43</td>
+                                <td>44</td>
                                 <td><a href="/validators/step/">step</a></td>
                                 <td>Check if the value is valid step one</td>
                             </tr>
                             
                             <tr>
-                                <td>44</td>
+                                <td>45</td>
                                 <td><a href="/validators/stringCase/">stringCase</a></td>
                                 <td>Check if a string is a lower or upper case one</td>
                             </tr>
                             
                             <tr>
-                                <td>45</td>
+                                <td>46</td>
                                 <td><a href="/validators/stringLength/">stringLength</a></td>
                                 <td>Validate the length of a string</td>
                             </tr>
                             
                             <tr>
-                                <td>46</td>
+                                <td>47</td>
                                 <td><a href="/validators/uri/">uri</a></td>
                                 <td>Validate an URL address</td>
                             </tr>
                             
                             <tr>
-                                <td>47</td>
+                                <td>48</td>
                                 <td><a href="/validators/uuid/">uuid</a></td>
                                 <td>Validate an UUID, support v3, v4, v5</td>
                             </tr>
                             
                             <tr>
-                                <td>48</td>
+                                <td>49</td>
                                 <td><a href="/validators/vat/">vat</a></td>
                                 <td>Validate VAT number</td>
                             </tr>
                             
                             <tr>
-                                <td>49</td>
+                                <td>50</td>
                                 <td><a href="/validators/vin/">vin</a></td>
                                 <td>Validate an US VIN (Vehicle Identification Number)</td>
                             </tr>
                             
                             <tr>
-                                <td>50</td>
+                                <td>51</td>
                                 <td><a href="/validators/zipCode/">zipCode</a></td>
                                 <td>Validate a zip code</td>
                             </tr>

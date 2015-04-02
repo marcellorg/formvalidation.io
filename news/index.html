@@ -119,12 +119,14 @@ _gaq.push(['_trackPageview']);
 
     <div id="main" class="doc-content-wrapper">
         <div class="doc-notification" id="notification">
-    <i class="fa fa-bell-o"></i> <a href="/addons/recaptcha2/">reCaptcha2 add-on v0.3.0: Support multiple Google reCAPTCHA v2 elements on the same page</a>
+    <i class="fa fa-bell-o"></i> <a href="/news/v0.6.2-released/">v0.6.2 is released on 2015.04.02</a>
 </div>
 <script>
 $(document).ready(function() {
     var notifications = [],
         $message      = $('#notification').find('a').data('index', 0);
+    notifications.push({ title: 'v0.6.2 is released on 2015.04.02', url: '/news/v0.6.2-released/'});
+    notifications.push({ title: 'New promise validator', url: '/validators/promise/'});
     notifications.push({ title: 'reCaptcha2 add-on v0.3.0: Support multiple Google reCAPTCHA v2 elements on the same page', url: '/addons/recaptcha2/'});
     notifications.push({ title: 'New example: Playing with Fuel UX', url: '/examples/fuel-ux/'});
     notifications.push({ title: 'New example: Using data returned by validator', url: '/examples/using-data-returned-validator/'});
@@ -133,8 +135,6 @@ $(document).ready(function() {
     notifications.push({ title: 'New example: Playing with geocomplete', url: '/examples/geocomplete/'});
     notifications.push({ title: 'Explore new add-ons page', url: '/addons/'});
     notifications.push({ title: 'New example: Switching validators on the same field', url: '/examples/switching-validators-same-field/'});
-    notifications.push({ title: 'New example: Conditional validation', url: '/examples/conditional-validation/'});
-    notifications.push({ title: 'v0.6.1 is released on 2015.02.24', url: '/news/v0.6.1-released/'});
     
     setInterval(function() {
         $message.data('index', $message.data('index') + 1);
@@ -163,6 +163,82 @@ $(document).ready(function() {
     <div class="container">
         <div class="row">
             <div class="col-md-9">
+                
+                    <div class="doc-post">
+    <h2><a href="/news/v0.6.2-released/">FormValidation v0.6.2 Released</a></h2>
+
+    <div class="doc-post-meta">
+        <a href="https://github.com/nghuuphuoc" title="@nghuuphuoc">
+            <img src="https://github.com/nghuuphuoc.png" />
+        </a>
+        <p>02 Apr 2015</p>
+    </div>
+
+    <div class="doc-post-content">
+        <h3>Highlight <i class="fa fa-star"></i></h3>
+<ul class="doc-list">
+    <li>Add new <a href="/validators/promise/">promise</a> validator</li>
+    <li>Add <code>STATUS_IGNORED</code> status. The field will be ignored for the current validation if the validator returns <code>null</code></li>
+</ul>
+
+<h3>New features</h3>
+<ul class="doc-list">
+    <li><a href="/validators/iban/">iban</a> validator adds new sepa option that requires the IBAN number must be (or not) from the SEPA countries</li>
+    <li><a href="/validators/iban/">iban</a> validator now supports East Timor, Kosovo countries</li>
+</ul>
+
+<h3>Improvements</h3>
+<ul class="doc-list">
+    <li><a href="/validators/date/">date</a> validator supports dot (.) separator for European countries</li>
+    <li>#57, #82: <a href="/validators/iban/">iban</a> validator will return <code>false</code> if the country is not supported</li>
+    <li>#62: Allow to use callback for field's <a href="/settings/#field-excluded">excluded</a> option</li>
+    <li>#91: <a href="/examples/skip-validation-specific-submit-button/">Skip validation</a> on button using <code>formnovalidate</code> attribute</li>
+    <li>Add more examples for iban test suite</li>
+    <li>The field container and its feedback icon don't have success/error class if all field validators are disabled</li>
+</ul>
+
+<h3>Bug fixes</h3>
+<ul class="doc-list">
+    <li>#47: Spanish VAT validator doesn't work with some examples</li>
+    <li>#48: Override the options when adding field</li>
+    <li>#50: The Brazilian <a href="/validators/id/">ID</a> (CPF) number must have 11 digits</li>
+    <li>The <a href="/api/#update-message">updateMessage()</a> method must return the plugin instance for chaining</li>
+    <li>When calling <a href="/api/#reset-field">resetField(true)</a> and <a href="/api/#reset-form">resetForm(true)</a> methods, the field need be reset value before updating the status</li>
+</ul>
+
+<h3>Document</h3>
+<ul class="doc-list">
+    <li>#38: Add <a href="/examples/loading-saving-data-modal/">Loading and saving data in a modal</a> example</li>
+    <li>#43: Add <a href="/examples/bootstrap-combobox/">Playing with Bootstrap Combobox</a> example</li>
+    <li>#45: Update the <a href="/validators/creditCard/#showing-card-icon">Showing card icon</a> example</li>
+    <li>#49: Add <a href="/examples/switching-validators-same-field/">Switching validators on the same field</a> example</li>
+    <li>#54: Add <a href="/examples/geocomplete/">Playing with geocomplete</a> example</li>
+    <li>#61: Add <a href="/examples/validating-fields-depend-each-other/">Validating fields that depend on each other</a> example</li>
+    <li>#71: Add <a href="/examples/skip-validation-specific-submit-button/">Skip validation on specific submit button</a> example</li>
+    <li>#86: Update the <a href="/examples/summernote/">summernote</a> example that uses the latest version of Summernote</li>
+    <li>#88: Add <a href="/examples/cant-submit-form-after-validation/">Can't submit form after validation</a> example</li>
+    <li>Add <a href="/examples/conditional-validation/">Conditional validation</a> example</li>
+    <li>Add <a href="/examples/modifying-value-before-validating/">Modifying the value before validating</a> example</li>
+    <li>Add <a href="/examples/fuel-ux/">Playing with Fuel UX</a> example</li>
+    <li>Add <a href="/examples/using-data-returned-validator/">Using data returned by validator</a> example</li>
+    <li>Add <a href="/examples/using-multiple-buttons/">Using multiple buttons</a> example</li>
+    <li>Add <a href="/examples/using-tooltip-to-show-message/">Using tooltip to show message</a> example</li>
+    <li>Add <a href="/examples/validating-array-inputs/">Validating array of inputs</a> example</li>
+    <li>Fix the <a href="/examples/clearing-field-when-clicking-icon/">Clearing field when clicking the icon</a> example</li>
+    <li>Fix the <a href="/settings/#event-validator">validator event</a> description</li>
+    <li>Fix various links in the <a href="/examples/modal/">Bootstrap modal</a> example</li>
+    <li>Update the Ajax example, adding a section showing how to <a href="/examples/ajax-submit/#using-ajax-to-submit-form-data-including-files">upload files</a> with FormData</li>
+    <li>Update the <a href="/examples/icheck/">iCheck</a> example to support mobile browsers</li>
+</ul>
+
+<h3>Download</h3>
+<div>
+    <a class="btn btn-primary" href="/download/" title="Download FormValidation v0.6.2">FormValidation v0.6.2</a>
+</div>
+    </div>
+</div>
+
+                    <div class="doc-hr"></div>
                 
                     <div class="doc-post">
     <h2><a href="/news/v0.6.1-released/">FormValidation v0.6.1 Released</a></h2>
@@ -1038,155 +1114,6 @@ $(&#39;#saveButton&#39;).on(&#39;click&#39;, function() {
 <ul class="doc-list">
     <li><a href="http://learn.jquery.com/performance/optimize-selectors/">Optimize selectors</a></li>
 </ul>
-    </div>
-</div>
-
-                    <div class="doc-hr"></div>
-                
-                    <div class="doc-post">
-    <h2><a href="/news/v0.5.3-released/">BootstrapValidator v0.5.3 Released</a></h2>
-
-    <div class="doc-post-meta">
-        <a href="https://github.com/nghuuphuoc" title="@nghuuphuoc">
-            <img src="https://github.com/nghuuphuoc.png" />
-        </a>
-        <p>05 Nov 2014</p>
-    </div>
-
-    <div class="doc-post-content">
-        <h3>New features</h3>
-<ul class="doc-list">
-    <li>#807, #821: Add <code>min</code>, <code>max</code> options for the <a href="/validators/date/">date</a> validator, thanks to <a href="https://github.com/Arkni">@Arkni</a></li>
-    <li>#822: Add <a href="/validators/color/">color</a> validator, thanks to <a href="https://github.com/emilchristensen">@emilchristensen</a></li>
-    <li>#844, #874: The <a href="/validators/stringLength/">stringLength</a> validator adds option to evaluate length in UTF-8 bytes, thanks to <a href="https://github.com/thx2001r">@thx2001r</a></li>
-    <li>#960, #1052: Add <code>trim</code> option for the <a href="/validators/stringLength/">stringLength</a> validator</li>
-    <li>#1001: Add <code>minFiles</code>, <code>maxFiles</code>, <code>minTotalSize</code>, <code>maxTotalSize</code> options for the <a href="/validators/file/">file</a> validator, thanks to <a href="https://github.com/morrizon">@morrizon</a></li>
-    <li>#1008: Add France <a href="/validators/zipCode/">postal code</a> validator, thanks to <a href="https://github.com/jazzzz">@jazzzz</a></li>
-    <li>#1010: Add Ireland <a href="/validators/zipCode/">postal code</a> validator, thanks to <a href="https://github.com/zmira">@zmira</a></li>
-    <li>#1018: Add German <a href="/validators/phone/">phone number</a> and <a href="/validators/zipCode/">postal code</a> validators, thanks to <a href="https://github.com/jhadenfeldt">@jhadenfeldt</a></li>
-    <li>#1022: Add Portugal <a href="/validators/zipCode/">postal code</a> validator, thanks to <a href="https://github.com/zmira">@zmira</a></li>
-    <li>#1033, #1043, #1068: Add <a href="/settings/#form-auto-focus">autoFocus</a> option</li>
-    <li>#1072: Add Austria and Switzerland <a href="/validators/zipCode/">postal code</a> validators, thanks to <a href="https://github.com/thomaslhotta">@thomaslhotta</a></li>
-</ul>
-
-<h3>Improvements</h3>
-<ul class="doc-list">
-    <li>#823: The <a href="/validators/color/">color</a> validator only accepts 6 hex character values when using HTML 5 <code>type='color'</code> attribute</li>
-    <li>#864: Comma separator handling in <a href="/validators/greaterThan/">greaterThan</a>, <a href="/validators/lessThan/">lessThan</a> validators, thanks to <a href="https://github.com/mgibas">@mgibas</a></li>
-    <li>#999, #1048: Replace ',' with '.' to validate decimal numbers correct, thanks to <a href="https://github.com/johanronn77">@johanronn77</a></li>
-    <li>#1002: Put tooltip/popover on bottom if there is not enough space on top, thanks to <a href="https://github.com/jazzzz">@jazzzz</a></li>
-    <li>#1015: The <a href="/validators/remote/">remote</a> validator allows to set <code>data</code> options via HTML attributes, thanks to <a href="https://github.com/jazzzz">@jazzzz</a></li>
-    <li>#1017: <a href="/examples/attribute/">Enable validator</a> when setting <code>data-bv-validatorname="data-bv-validatorname"</code>, thanks to <a href="https://github.com/jazzzz">@jazzzz</a></li>
-    <li>#1026: Requires jQuery 1.9.1 or higher</li>
-</ul>
-
-<h3>Bug fixes</h3>
-<ul class="doc-list">
-    <li>#343, #481, #1045: Fix double submit with defered validators, thanks to <a href="https://github.com/jazzzz">@jazzzz</a></li>
-    <li>#933, #959, #1047: Tooltip/popover isn't destroyed when the field is valid</li>
-    <li>#991: The field is validated only one time when setting <code>trigger: 'blur'</code>, <code>container: 'tooltip'</code></li>
-    <li>#1014: Fix <a href="/api/#is-valid-field">isValidField()</a> and <a href="/api/#validate-field">validateField()</a> methods for fields without validators, thanks to <a href="https://github.com/jazzzz">@jazzzz</a></li>
-    <li>#1050: Fix the issue when using multiple fields with same name, the tooltip of the last element is always shown</li>
-    <li>#1055, #1063: The <a href="/settings/#event-field">error.field.bv</a> event isn't triggered if verbose is set to false, thanks to <a href="https://github.com/shineability">@shineability</a></li>
-    <li>#1057, #1063: The <a href="/settings/#field-verbose">verbose</a> option for field doesn't override the form level, thanks to <a href="https://github.com/shineability">@shineability</a></li>
-</ul>
-
-<h3>Document</h3>
-<ul class="doc-list">
-    <li>#848: Update the <a href="/validators/stringLength">stringLength</a> document, thanks to <a href="https://github.com/Relequestual">@Relequestual</a></li>
-    <li>#885: Add a notification about setting <a href="/validators/identical/">identical</a> validator for both fields</li>
-    <li>#912: Add <a href="/examples/using-language-package/">Using language package</a> example</li>
-    <li>#920, #929, #936: Update the <a href="/examples/tooltip-popover-position/">Changing the tooltip, popover's position</a> example, thanks to <a href="https://github.com/Arkni">@Arkni</a></li>
-    <li>#938: Add <a href="/validators/regexp/#html-5-example">time</a> validator example</li>
-    <li>#979: Add <a href="/validators/stringLength/#using-with-rails-form">Rails usage</a> for stringLength validator</li>
-    <li>#1006: Fix the order of <a href="/settings/#validator-enabled">parameters</a> for <a href="/api/#enable-field-validators">enableFieldValidators()</a> method, thanks to <a href="https://github.com/mchrapka">@mchrapka</a></li>
-    <li>#1009: Fix mixed data/delay in <a href="/validators/remote/">remote</a> doc, thanks to <a href="https://github.com/jazzzz">@jazzzz</a></li>
-    <li>#1019: Updated docs for added German <a href="/validators/zipCode/">postal code</a> and <a href="/validators/phone/">phone number</a> validators, thanks to <a href="https://github.com/jhadenfeldt">@jhadenfeldt</a></li>
-    <li>#1038: Fix <a href="/examples/changing-tooltip-position/">Changing tooltip, popover's position</a> example link, thanks to <a href="https://github.com/Arkni">@Arkni</a></li>
-</ul>
-
-<h3>Language packages</h3>
-<ul class="doc-list">
-    <li>#827: Update Dutch language package, thanks to <a href="https://github.com/JvanderHeide">@JvanderHeide</a></li>
-    <li>#829: Update Swedish language package, thanks to <a href="https://github.com/ulsa">@ulsa</a></li>
-    <li>#834: Update Ukrainian and Russian language packages, thanks to <a href="https://github.com/oleg-voloshyn">@oleg-voloshyn</a></li>
-    <li>#835: Update Belgium (French) language package, thanks to <a href="https://github.com/neilime">@neilime</a></li>
-    <li>#836: Update French language package, thanks to <a href="https://github.com/neilime">@neilime</a></li>
-    <li>#837: Update Bulgarian language package, thanks to <a href="https://github.com/mraiur">@mraiur</a></li>
-    <li>#846: Update simplified Chinese language package, thanks to <a href="https://github.com/shamiao">@shamiao</a></li>
-    <li>#849: Update Serbian language package, thanks to <a href="https://github.com/markocrni">@markocrni</a></li>
-    <li>#850, #851: Update Danish language package, thanks to <a href="https://github.com/Djarnis">@Djarnis</a></li>
-    <li>#869: Update Polish language package, thanks to <a href="https://github.com/grzesiek">@grzesiek</a></li>
-    <li>#870: Update Traditional Chinese language package, thanks to <a href="https://github.com/tureki">@tureki</a></li>
-    <li>#871: Update Czech language package, thanks to <a href="https://github.com/cuchac">@cuchac</a></li>
-    <li>#872: Update Indonesian language package, thanks to <a href="https://github.com/egig">@egig</a></li>
-    <li>#879: Update Romanian language package, thanks to <a href="https://github.com/filipac">@filipac</a></li>
-    <li>#880: Update Belgium (Dutch) language package, thanks to <a href="https://github.com/dokterpasta">@dokterpasta</a></li>
-    <li>#881: Update Italian language package, thanks to <a href="https://github.com/maramazza">@maramazza</a></li>
-    <li>#882: Update Spanish language package, thanks to <a href="https://github.com/vadail">@vadail</a></li>
-    <li>#891: Update Portuguese (Brazil) language package, thanks to <a href="https://github.com/dgmike">@dgmike</a></li>
-    <li>#893: Fix country name of Dominican Republic, thanks to <a href="https://github.com/sventech">@sventech</a></li>
-    <li>#900: Update Persian (Farsi) language package, thanks to <a href="https://github.com/i0">@i0</a></li>
-    <li>#903: Update Hungarian language package, thanks to <a href="https://github.com/blackfyre">@blackfyre</a></li>
-    <li>#910: Update Greek language package, thanks to <a href="https://github.com/pRieStaKos">@pRieStaKos</a></li>
-    <li>#913: Update Thai language package, thanks to <a href="https://github.com/figgaro">@figgaro</a></li>
-    <li>#915: Update Turkish language package, thanks to <a href="https://github.com/CeRBeR666">@CeRBeR666</a></li>
-    <li>#961: Update Chilean Spanish language package, thanks to <a href="https://github.com/marceloampuerop6">@marceloampuerop6</a></li>
-    <li>#967: Add Hebrew language package, thanks to <a href="https://github.com/yakidahan">@yakidahan</a></li>
-    <li>#974: Add Albanian language package, thanks to <a href="https://github.com/desaretiuss">@desaretiuss</a></li>
-    <li>#1025: Fix French emailAddress message, thanks to <a href="https://github.com/jazzzz">@jazzzz</a></li>
-    <li>#1051: Add Portuguese language package, thanks to <a href="https://github.com/rtbfreitas">@rtbfreitas</a></li>
-</ul>
-
-<h3>Contributors</h3>
-<p>Thanks to 40 contributors:</p>
-<ul class="doc-list">
-    <li><a href="https://github.com/Arkni">@Arkni</a></li>
-    <li><a href="https://github.com/blackfyre">@blackfyre</a></li>
-    <li><a href="https://github.com/CeRBeR666">@CeRBeR666</a></li>
-    <li><a href="https://github.com/cuchac">@cuchac</a></li>
-    <li><a href="https://github.com/desaretiuss">@desaretiuss</a></li>
-    <li><a href="https://github.com/dgmike">@dgmike</a></li>
-    <li><a href="https://github.com/Djarnis">@Djarnis</a></li>
-    <li><a href="https://github.com/dokterpasta">@dokterpasta</a></li>
-    <li><a href="https://github.com/egig">@egig</a></li>
-    <li><a href="https://github.com/emilchristensen">@emilchristensen</a></li>
-    <li><a href="https://github.com/figgaro">@figgaro</a></li>
-    <li><a href="https://github.com/filipac">@filipac</a></li>
-    <li><a href="https://github.com/grzesiek">@grzesiek</a></li>
-    <li><a href="https://github.com/i0">@i0</a></li>
-    <li><a href="https://github.com/jazzzz">@jazzzz</a></li>
-    <li><a href="https://github.com/jhadenfeldt">@jhadenfeldt</a></li>
-    <li><a href="https://github.com/johanronn77">@johanronn77</a></li>
-    <li><a href="https://github.com/JvanderHeide">@JvanderHeide</a></li>
-    <li><a href="https://github.com/marceloampuerop6">@marceloampuerop6</a></li>
-    <li><a href="https://github.com/maramazza">@maramazza</a></li>
-    <li><a href="https://github.com/markocrni">@markocrni</a></li>
-    <li><a href="https://github.com/mchrapka">@mchrapka</a></li>
-    <li><a href="https://github.com/mgibas">@mgibas</a></li>
-    <li><a href="https://github.com/morrizon">@morrizon</a></li>
-    <li><a href="https://github.com/mraiur">@mraiur</a></li>
-    <li><a href="https://github.com/neilime">@neilime</a></li>
-    <li><a href="https://github.com/oleg-voloshyn">@oleg-voloshyn</a></li>
-    <li><a href="https://github.com/pRieStaKos">@pRieStaKos</a></li>
-    <li><a href="https://github.com/Relequestual">@Relequestual</a></li>
-    <li><a href="https://github.com/rtbfreitas">@rtbfreitas</a></li>
-    <li><a href="https://github.com/shamiao">@shamiao</a></li>
-    <li><a href="https://github.com/shineability">@shineability</a></li>
-    <li><a href="https://github.com/sventech">@sventech</a></li>
-    <li><a href="https://github.com/thomaslhotta">@thomaslhotta</a></li>
-    <li><a href="https://github.com/thx2001r">@thx2001r</a></li>
-    <li><a href="https://github.com/tureki">@tureki</a></li>
-    <li><a href="https://github.com/ulsa">@ulsa</a></li>
-    <li><a href="https://github.com/vadail">@vadail</a></li>
-    <li><a href="https://github.com/yakidahan">@yakidahan</a></li>
-    <li><a href="https://github.com/zmira">@zmira</a></li>
-</ul>
-
-<h3>Download</h3>
-<div>
-    <a class="btn btn-primary" href="/download/" title="Download BootstrapValidator v0.5.3">BootstrapValidator v0.5.3</a>
-</div>
     </div>
 </div>
 

@@ -119,12 +119,14 @@ _gaq.push(['_trackPageview']);
 
     <div id="main" class="doc-content-wrapper">
         <div class="doc-notification" id="notification">
-    <i class="fa fa-bell-o"></i> <a href="/addons/recaptcha2/">reCaptcha2 add-on v0.3.0: Support multiple Google reCAPTCHA v2 elements on the same page</a>
+    <i class="fa fa-bell-o"></i> <a href="/news/v0.6.2-released/">v0.6.2 is released on 2015.04.02</a>
 </div>
 <script>
 $(document).ready(function() {
     var notifications = [],
         $message      = $('#notification').find('a').data('index', 0);
+    notifications.push({ title: 'v0.6.2 is released on 2015.04.02', url: '/news/v0.6.2-released/'});
+    notifications.push({ title: 'New promise validator', url: '/validators/promise/'});
     notifications.push({ title: 'reCaptcha2 add-on v0.3.0: Support multiple Google reCAPTCHA v2 elements on the same page', url: '/addons/recaptcha2/'});
     notifications.push({ title: 'New example: Playing with Fuel UX', url: '/examples/fuel-ux/'});
     notifications.push({ title: 'New example: Using data returned by validator', url: '/examples/using-data-returned-validator/'});
@@ -133,8 +135,6 @@ $(document).ready(function() {
     notifications.push({ title: 'New example: Playing with geocomplete', url: '/examples/geocomplete/'});
     notifications.push({ title: 'Explore new add-ons page', url: '/addons/'});
     notifications.push({ title: 'New example: Switching validators on the same field', url: '/examples/switching-validators-same-field/'});
-    notifications.push({ title: 'New example: Conditional validation', url: '/examples/conditional-validation/'});
-    notifications.push({ title: 'v0.6.1 is released on 2015.02.24', url: '/news/v0.6.1-released/'});
     
     setInterval(function() {
         $message.data('index', $message.data('index') + 1);
@@ -168,11 +168,12 @@ $(document).ready(function() {
 
     <ul class="doc-list">
         <li><a href="/examples/adjusting-feedback-icon-position/">Adjusting feedback icon position</a></li>
-        <li><a href="/examples/field-value-changed-programmatically/">Field value is changed programmatically</a> <span class="label label-success">New</span></li>
+        <li><a href="/examples/cant-submit-form-after-validation/">Can't submit form after validation</a> <span class="label label-success">New</span></li>
+        <li><a href="/examples/field-value-changed-programmatically/">Field value is changed programmatically</a></li>
         <li><a href="/examples/form-submit-twice/">Form is submitted twice</a></li>
         <li><a href="/examples/skip-validation-specific-submit-button/">Skip validation on specific submit button</a> <span class="label label-success">New</span></li>
         <li><a href="/examples/ajax-submit/">Using Ajax to submit the form</a> <span class="label label-info">Updated</span></li>
-        <li><a href="/examples/validating-field-special-name/">Validating field with special name</a> <span class="label label-success">New</span></li>
+        <li><a href="/examples/validating-field-special-name/">Validating field with special name</a></li>
     </ul>
 </section>
                 <div class="doc-hr"></div>
@@ -200,7 +201,7 @@ $(document).ready(function() {
 
     <ul class="doc-list">
         <li><a href="/examples/adding-dynamic-field/">Adding dynamic field</a></li>
-        <li><a href="/examples/adding-warning-validation-state/">Adding warning validation state</a> <span class="label label-success">New</span></li>
+        <li><a href="/examples/adding-warning-validation-state/">Adding warning validation state</a></li>
         <li><a href="/examples/changing-tooltip-position/">Changing tooltip position</a></li>
         <li><a href="/examples/complex-form/">Complex form</a></li>
         <li><a href="/examples/conditional-validation/">Conditional validation</a> <span class="label label-success">New</span></li>
@@ -216,9 +217,9 @@ $(document).ready(function() {
         <li><a href="/examples/showing-required-icon/">Showing required icon for the mandatory fields </a></li>
         <li><a href="/examples/showing-valid-message/">Showing valid message</a></li>
         <li><a href="/examples/switching-validators-same-field/">Switching validators on the same field</a> <span class="label label-success">New</span></li>
-        <li><a href="/examples/updating-validator-options/">Updating validator options</a> <span class="label label-success">New</span></li>
+        <li><a href="/examples/updating-validator-options/">Updating validator options</a></li>
         <li><a href="/examples/using-data-returned-validator/">Using data returned by validator</a> <span class="label label-success">New</span></li>
-        <li><a href="/examples/using-mailgun-api-validate-email-address/">Using Mailgun API to validate email address</a> <span class="label label-success">New</span></li>
+        <li><a href="/examples/using-mailgun-api-validate-email-address/">Using Mailgun API to validate email address</a></li>
         <li><a href="/examples/validating-google-recaptcha/">Validating Google reCAPTCHA</a></li>
         <li><a href="/examples/validating-fields-depend-each-other/">Validating fields that depend on each other</a> <span class="label label-success">New</span></li>
     </ul>
@@ -277,25 +278,25 @@ $(document).ready(function() {
         <li><a href="/examples/bootstrap-combobox/">Bootstrap Combobox</a> <span class="label label-success">New</span></li>
         <li><a href="/examples/bootstrap-datepicker/">Bootstrap Datepicker</a></li>
         <li><a href="/validators/date#datetime-picker-example">Bootstrap Datetime Picker</a></li>
-        <li><a href="/examples/bootstrap-material-design/">Bootstrap Material Design</a> <span class="label label-success">New</span></li>
+        <li><a href="/examples/bootstrap-material-design/">Bootstrap Material Design</a></li>
         <li><a href="/examples/bootstrap-multiselect/">Bootstrap Multiselect</a></li>
         <li><a href="/examples/bootstrap-select/">Bootstrap Select</a></li>
         <li><a href="/examples/bootstrap-tab/">Bootstrap Tabs</a></li>
         <li><a href="/examples/bootstrap-tagsinput/">Bootstrap Tags Input</a></li>
         <li><a href="/examples/chosen/">Chosen</a></li>
         <li><a href="/examples/ckeditor/">CKEditor</a></li>
-        <li><a href="/examples/flat-ui/">Flat UI</a> <span class="label label-success">New</span></li>
+        <li><a href="/examples/flat-ui/">Flat UI</a></li>
         <li><a href="/examples/fuel-ux/">Fuel UX</a> <span class="label label-success">New</span></li>
         <li><a href="/examples/geocomplete/">geocomplete</a> <span class="label label-success">New</span></li>
         <li><a href="/examples/icheck/">iCheck</a> <span class="label label-info">Updated</span></li>
-        <li><a href="/examples/jquery-ui-datepicker/">jQuery UI Datepicker</a> <span class="label label-success">New</span></li>
+        <li><a href="/examples/jquery-ui-datepicker/">jQuery UI Datepicker</a></li>
         <li><a href="/examples/mask/">Mask</a></li>
         <li><a href="/examples/pickadate/">Pickadate</a></li>
         <li><a href="/examples/raty/">Raty</a></li>
         <li><a href="/examples/select2/">Select2</a></li>
-        <li><a href="/examples/summernote/">Summernote</a></li>
+        <li><a href="/examples/summernote/">Summernote</a> <span class="label label-info">Updated</span></li>
         <li><a href="/examples/tinymce/">TinyMCE</a></li>
-        <li><a href="/examples/typeahead/">Typeahead</a> <span class="label label-success">New</span></li>
+        <li><a href="/examples/typeahead/">Typeahead</a></li>
     </ul>
 </section>
                 <div class="doc-hr"></div>
@@ -313,9 +314,9 @@ $(document).ready(function() {
 
     <p>Below is the list of examples showing how to use FormValidation with popular wizard plugins:</p>
     <ul class="doc-list">
-        <li><a href="/examples/bootstrap-wizard/">Bootstrap Wizard</a> <span class="label label-success">New</span></li>
-        <li><a href="/examples/fuel-ux-wizard/">Fuel UX Wizard</a> <span class="label label-success">New</span></li>
-        <li><a href="/examples/jquery-steps/">jQuery Steps</a> <span class="label label-success">New</span></li>
+        <li><a href="/examples/bootstrap-wizard/">Bootstrap Wizard</a></li>
+        <li><a href="/examples/fuel-ux-wizard/">Fuel UX Wizard</a></li>
+        <li><a href="/examples/jquery-steps/">jQuery Steps</a></li>
     </ul>
 </section>
 

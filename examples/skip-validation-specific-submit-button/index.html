@@ -119,12 +119,14 @@ _gaq.push(['_trackPageview']);
 
     <div id="main" class="doc-content-wrapper">
         <div class="doc-notification" id="notification">
-    <i class="fa fa-bell-o"></i> <a href="/addons/recaptcha2/">reCaptcha2 add-on v0.3.0: Support multiple Google reCAPTCHA v2 elements on the same page</a>
+    <i class="fa fa-bell-o"></i> <a href="/news/v0.6.2-released/">v0.6.2 is released on 2015.04.02</a>
 </div>
 <script>
 $(document).ready(function() {
     var notifications = [],
         $message      = $('#notification').find('a').data('index', 0);
+    notifications.push({ title: 'v0.6.2 is released on 2015.04.02', url: '/news/v0.6.2-released/'});
+    notifications.push({ title: 'New promise validator', url: '/validators/promise/'});
     notifications.push({ title: 'reCaptcha2 add-on v0.3.0: Support multiple Google reCAPTCHA v2 elements on the same page', url: '/addons/recaptcha2/'});
     notifications.push({ title: 'New example: Playing with Fuel UX', url: '/examples/fuel-ux/'});
     notifications.push({ title: 'New example: Using data returned by validator', url: '/examples/using-data-returned-validator/'});
@@ -133,8 +135,6 @@ $(document).ready(function() {
     notifications.push({ title: 'New example: Playing with geocomplete', url: '/examples/geocomplete/'});
     notifications.push({ title: 'Explore new add-ons page', url: '/addons/'});
     notifications.push({ title: 'New example: Switching validators on the same field', url: '/examples/switching-validators-same-field/'});
-    notifications.push({ title: 'New example: Conditional validation', url: '/examples/conditional-validation/'});
-    notifications.push({ title: 'v0.6.1 is released on 2015.02.24', url: '/news/v0.6.1-released/'});
     
     setInterval(function() {
         $message.data('index', $message.data('index') + 1);
@@ -163,20 +163,47 @@ $(document).ready(function() {
     <div class="container">
         <div class="row">
             <div class="col-md-9">
-                <p>Your form might have multiple submit buttons which have <code>type="submit"</code> attribute.
-                    By default, clicking on any submit button will perform validation and then submit the form if all the fields are valid.</p>
+                <section>
+                    <p>Your form might have multiple submit buttons which have <code>type="submit"</code> attribute.
+                        Clicking on any submit button will perform validation and then submit the form if all the fields are valid.</p>
 
-                <p>If you want to skip the validation on specific submit button, just use the <a href="/settings/#form-button">button</a> option:</p>
+                    <p>By default, the plugin will look for the buttons that are defined by the <a href="/settings/#form-button">button</a> option:</p>
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">button</span><span class="o">:</span> <span class="p">{</span>
     <span class="c1">// The CSS selector indicates the button</span>
-    <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;[type=&quot;submit&quot;]&#39;</span><span class="p">,</span>
+    <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;[type=&quot;submit&quot;]:not([formnovalidate])&#39;</span><span class="p">,</span>
 
     <span class="c1">// The CSS class which is added to the button when it is disabled</span>
     <span class="nx">disabled</span><span class="o">:</span> <span class="s1">&#39;&#39;</span>
 <span class="p">}</span></code></pre></div>
+                </section>
 
-                <p>The following employment form has two submit buttons, but the validation is only triggered when clicking on the <strong>Validate and Submit</strong> button:</p>
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Using the formnovalidate attribute</h2>
+
+                    <p>As seen in the <code>button.selector</code> option above, the plugin will ignore validation when clicking on the button that has <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#Attributes">formnovalidate</a> attribute.</p>
+                    <p>The simplest way to skip validation on particular button is to add <code>formnovalidate</code> attribute to it:</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Validate and submit if the form is valid --&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-primary&quot;</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/button&gt;</span>
+
+<span class="c">&lt;!-- Skip validation and just submit the form --&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-primary&quot;</span> <span class="na">formnovalidate</span><span class="nt">&gt;</span>Just submit<span class="nt">&lt;/button&gt;</span></code></pre></div>
+
+                    <div class="doc-alert doc-alert-warning">
+                        This solution is available only from v0.6.2 which default set of submit buttons do NOT include one having the formnovalidate attribute.
+                        If you are using the v0.6.0, v0.6.1, please use the second solution as described in the next section
+                    </div>
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Using the button option</h2>
+
+                    <p>The following employment form has two submit buttons, but the validation is only triggered when clicking on the <strong>Validate and Submit</strong> button:</p>
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#employmentForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
     <span class="nx">button</span><span class="o">:</span> <span class="p">{</span>
@@ -186,7 +213,7 @@ $(document).ready(function() {
     <span class="p">...</span>
 <span class="p">});</span></code></pre></div>
 
-                
+                    
 
 
 
@@ -387,6 +414,7 @@ $(document).ready(function() {
         
     </div>
 </div>
+                </section>
             </div>
 
             <div class="col-md-3 hidden-print hidden-xs hidden-sm">
