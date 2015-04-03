@@ -1,0 +1,277 @@
+<!doctype html>
+<html>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article#">
+    <meta charset="utf-8">
+<title>i18n add-on - FormValidation</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<meta http-equiv="Content-Language" content="en">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks">
+<meta name="keywords" content="FormValidation, BootstrapValidator, jQuery, form, validate, validation, validator, plugin, Bootstrap, Foundation, Pure, SemanticUI, UIKit">
+<meta name="author" content="Nguyen Huu Phuoc">
+<meta name="google-site-verification" content="FMmr8kYuIuW27-qJLOb1Z59OgiVgKNgAv4_eMARhIY8" />
+
+<meta name="twitter:site" content="@formvalidation" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks" />
+<meta name="twitter:title" content="i18n add-on - FormValidation" />
+<meta name="twitter:image" content="http://formvalidation.io/addons/i18n/cover.png" />
+
+<meta property="og:title" content="i18n add-on - FormValidation" />
+<meta property="og:description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://formvalidation.io/addons/i18n/bootstrap.html" />
+<meta property="og:image" content="http://formvalidation.io/addons/i18n/cover.png" />
+<meta property="og:site_name" content="FormValidation" />
+
+<link rel="icon" type="image/x-icon" href="/asset/img/favicon.ico">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/fontawesome/4.2.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+
+<!--[if lt IE 9]>
+<script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-44786951-2']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/vendor/formvalidation/css/formValidation.min.css">
+    <link rel="stylesheet" href="/asset/css/demo.css">
+
+    <script src="//cdn.jsdelivr.net/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="/vendor/formvalidation/js/formValidation.min.js"></script>
+    <script src="/vendor/formvalidation/js/framework/bootstrap.min.js"></script>
+</head>
+<body class="demo-bootstrap">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9" id="demoContainer">
+                <!-- Include FormValidation files first -->
+
+<!-- Then include mandatoryIcon add-on -->
+<script src="/vendor/formvalidation/js/addons/i18n.min.js"></script>
+
+<!-- Method 1: Include the language packages -->
+<script src="/vendor/formvalidation/js/language/vi_VN.js"></script>
+<script src="/vendor/formvalidation/js/language/fr_FR.js"></script>
+
+<div class="row" style="margin-bottom: 15px;">
+    <div class="col-xs-9 col-xs-offset-3">
+        <!-- A simple locale switcher -->
+        <div class="btn-group">
+            <!-- The data-locale attribute will be used later -->
+            <button type="button" class="btn btn-default active setLocaleButton" data-locale="en_US">English</button>
+            <button type="button" class="btn btn-default setLocaleButton" data-locale="fr_FR">Français</button>
+            <button type="button" class="btn btn-default setLocaleButton" data-locale="vi_VN">Tiếng Việt</button>
+        </div>
+    </div>
+</div>
+
+<form id="profileForm" method="post" class="form-horizontal">
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Username</label>
+        <div class="col-xs-5">
+            <input type="text" class="form-control" name="username" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Email address</label>
+        <div class="col-xs-5">
+            <input type="text" class="form-control" name="email" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Password</label>
+        <div class="col-xs-5">
+            <input type="password" class="form-control" name="password" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Gender</label>
+        <div class="col-xs-5">
+            <div class="radio">
+                <label>
+                    <input type="radio" name="gender" value="male" /> Male
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="gender" value="female" /> Female
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="gender" value="other" /> Other
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Date of birth</label>
+        <div class="col-xs-5">
+            <input type="text" class="form-control" name="birthday" placeholder="YYYY/MM/DD" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-xs-9 col-xs-offset-3">
+            <button type="submit" class="btn btn-default">Sign up</button>
+        </div>
+    </div>
+</form>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#profileForm').formValidation({
+        framework: 'bootstrap',
+        addOns: {
+            i18n: {}
+        },
+        icon: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            // Since the messages of notEmpty, stringLength, regexp are not set here,
+            // they will be taken from language package
+            username: {
+                validators: {
+                    notEmpty: {
+                    },
+                    stringLength: {
+                        min: 6,
+                        max: 30
+                    },
+                    regexp: {
+                        regexp: /^[a-zA-Z0-9]+$/
+                    },
+                    different: {
+                        field: 'password',
+                        // Method 2: Use a literal object to define messages
+                        message: {
+                            en_US: 'The username and password cannot be the same',
+                            vi_VN: 'Mật khẩu và tên đăng nhập phải khác nhau'
+                        }
+                    }
+                }
+            },
+            // Messages are taken from language package
+            email: {
+                validators: {
+                    notEmpty: {
+                    },
+                    emailAddress: {
+                    }
+                }
+            },
+            // Messages of notEmpty and stringLength validators
+            // are taken from language package
+            password: {
+                validators: {
+                    notEmpty: {
+                    },
+                    stringLength: {
+                        min: 8
+                    },
+                    different: {
+                        field: 'username',
+                        // Method 3: Use a callback to determine message in particular language
+                        message: function(validator, $field, validatorName) {
+                            return {
+                                en_US: 'The password can\'t be same as username',
+                                vi_VN: 'Mật khẩu phải khác tên đăng nhập'
+                            };
+                        }
+                    }
+                }
+            },
+            birthday: {
+                validators: {
+                    notEmpty: {
+                    },
+                    date: {
+                        format: 'YYYY/MM/DD'
+                    }
+                }
+            },
+            gender: {
+                validators: {
+                    notEmpty: {
+                    }
+                }
+            }
+        }
+    });
+
+    $('.setLocaleButton').on('click', function() {
+        $('.setLocaleButton').removeClass('active');
+        $(this).addClass('active');
+
+        // Change the locale
+        $('#profileForm').formValidation('setLocale', $(this).attr('data-locale'));
+    });
+});
+</script>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="demo-ad"><a href="mailto: hello@formvalidation.io">
+    <img class="img-responsive" src="/asset/img/adhere.png" title="Advertise on FormValidation" />
+</a></div>
+            </div>
+        </div>
+    </div>
+
+<script>
+// You don't need to care about the following code
+// It's built for all demos
+$(document).ready(function() {
+    $('form').on('success.form.fv', function(e) {
+        e.preventDefault();
+    });
+
+    $(window).on('load', function() {
+        var $iframe = $(window.parent.document).find('iframe[src="/addons/i18n/bootstrap.html"]');
+        if ($iframe.length) {
+            $('body').addClass('demo-frame-body').find('.demo-ad').hide();
+
+            // Adjust the height of iframes containing the demo for specific frameworks
+            var $container = $('#demoContainer');
+            setTimeout(function() {
+                $iframe.height($container.height()).css('visibility', 'visible').fadeIn('fast');
+            }, 1000);
+
+            // Set the internal data to get it later if I want
+            $('body').data('iframe.fv', $iframe);
+
+            $container
+                .find('form')
+                .on('status.field.fv', function(e, data) {
+                    $iframe.height($container.height());
+                });
+        }
+    });
+});
+</script>
+</body>
+</html>
