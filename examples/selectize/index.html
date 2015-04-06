@@ -2,7 +2,7 @@
 <html>
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article#">
     <meta charset="utf-8">
-<title>Requiring at least one field - FormValidation</title>
+<title>Playing with selectize - FormValidation</title>
 <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
 <meta http-equiv="Content-Language" content="en">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -15,13 +15,13 @@
 <meta name="twitter:site" content="@formvalidation" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks" />
-<meta name="twitter:title" content="Requiring at least one field - FormValidation" />
+<meta name="twitter:title" content="Playing with selectize - FormValidation" />
 <meta name="twitter:image" content="http://formvalidation.io/asset/img/logo.png" />
 
-<meta property="og:title" content="Requiring at least one field - FormValidation" />
+<meta property="og:title" content="Playing with selectize - FormValidation" />
 <meta property="og:description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://formvalidation.io/examples/requiring-at-least-one-field/" />
+<meta property="og:url" content="http://formvalidation.io/examples/selectize/" />
 <meta property="og:image" content="http://formvalidation.io/asset/img/logo.png" />
 <meta property="og:site_name" content="FormValidation" />
 
@@ -155,7 +155,7 @@ $(document).ready(function() {
 
         <div class="doc-content-container">
     <div class="doc-heading">
-        <h1>Requiring at least one field</h1>
+        <h1>Playing with selectize</h1>
         <p>&larr; <a href="/examples/">Examples</a></p>
         <div id="shareButton" class="doc-share-button"></div>
     </div>
@@ -163,17 +163,12 @@ $(document).ready(function() {
     <div class="container">
         <div class="row">
             <div class="col-md-9">
-                <p>In fact, the form might have multiple fields with the same validator rules but at least one of them is required.
-                    We can't use neither the <a href="/validators/notEmpty/">notEmpty</a> validator nor HTML 5 <a href="/examples/html5/">required</a>
-                    attribute for all of them.</p>
+                <p>This example shows how to use FormValidation with the <a href="http://brianreavis.github.io/selectize.js/">selectize</a> plugin.</p>
+                <div class="doc-alert doc-alert-info">
+                    You should look at the <a href="/examples#compatibility">basic principles</a> when integrating FormValidation with other plugins
+                </div>
 
-                <p>Fortunately, this can be done easily by</p>
-                <ul class="doc-list">
-                    <li>Using the <a href="/settings#field-selector">selector</a> option to define validators for all fields. So, we don't need
-                    to indicate the validator rules for each separate field.</li>
-                    <li>Using the <a href="/validators/callback/">callback</a> validator to check if one of fields is not empty.
-                    And then update the result of callback validator via the <a href="/api#update-status">updateStatus()</a> method.</li>
-                </ul>
+                <p>The form asks you to put 2-4 favorite Javascript frameworks.</p>
 
                 
 
@@ -191,90 +186,94 @@ $(document).ready(function() {
             <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"><span class="doc-framework">Framework</span> <i class="caret"></i></a>
             <ul class="dropdown-menu" role="menu">
                 
-                <li><a href="/examples/requiring-at-least-one-field/bootstrap.html" data-demo-target="#demo-frame" data-demo-framework="bootstrap">Bootstrap</a></li>
+                <li><a href="/examples/selectize/bootstrap.html" data-demo-target="#basic-frame" data-demo-framework="bootstrap">Bootstrap</a></li>
                 
             </ul>
         </li>
-        <li class="active"><a href="#demo-form-tab" data-toggle="tab">Try it</a></li>
+        <li class="active"><a href="#basic-form-tab" data-toggle="tab">Try it</a></li>
         
-        <li><a href="#demo-programmatic-tab" data-toggle="tab">Programmatic code</a></li>
+        <li><a href="#basic-programmatic-tab" data-toggle="tab">Programmatic code</a></li>
         
-        <li class="doc-demo-direct"><a href="/examples/requiring-at-least-one-field/bootstrap.html" data-toggle="tooltip" data-container="body" title="Open the demo in new tab" target="_blank"><i class="fa fa-external-link"></i></a></li>
+        <li class="doc-demo-direct"><a href="/examples/selectize/bootstrap.html" data-toggle="tooltip" data-container="body" title="Open the demo in new tab" target="_blank"><i class="fa fa-external-link"></i></a></li>
     </ul>
 
     <div class="tab-content">
-        <div class="tab-pane active" id="demo-form-tab">
-            <iframe class="doc-demo-frame" id="demo-frame"></iframe>
+        <div class="tab-pane active" id="basic-form-tab">
+            <iframe class="doc-demo-frame" id="basic-frame"></iframe>
         </div>
 
         
-        <div class="tab-pane" id="demo-programmatic-tab">
+        <div class="tab-pane" id="basic-programmatic-tab">
             
             <div data-demo-code="bootstrap">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;profileForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;//cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.0/css/selectize.min.css&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;//cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.0/css/selectize.bootstrap3.min.css&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;//cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.0/js/standalone/selectize.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+
+<span class="nt">&lt;style </span><span class="na">type=</span><span class="s">&quot;text/css&quot;</span><span class="nt">&gt;</span>
+<span class="nf">#selectizeForm</span> <span class="nc">.frameworkContainer</span> <span class="nc">.form-control-feedback</span> <span class="p">{</span>
+    <span class="k">right</span><span class="o">:</span> <span class="m">-15px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+
+<span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;selectizeForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Email address<span class="nt">&lt;/label&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-5&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control emailAddress&quot;</span> <span class="na">name=</span><span class="s">&quot;primary_email&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-4 control-label&quot;</span><span class="nt">&gt;</span>Favorite frameworks<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-6 frameworkContainer&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;frameworks&quot;</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
 
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-5 col-xs-offset-3&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control emailAddress&quot;</span> <span class="na">name=</span><span class="s">&quot;secondary_email&quot;</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-9 col-xs-offset-3&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span><span class="nt">&gt;</span>Validate<span class="nt">&lt;/button&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-6 col-xs-offset-4&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/button&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/form&gt;</span>
 
 <span class="nt">&lt;script&gt;</span>
 <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#profileForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
-        <span class="nx">framework</span><span class="o">:</span> <span class="s1">&#39;bootstrap&#39;</span><span class="p">,</span>
-        <span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
-            <span class="nx">valid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-ok&#39;</span><span class="p">,</span>
-            <span class="nx">invalid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-remove&#39;</span><span class="p">,</span>
-            <span class="nx">validating</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-refresh&#39;</span>
-        <span class="p">},</span>
-        <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
-            <span class="nx">email</span><span class="o">:</span> <span class="p">{</span>
-                <span class="c1">// All the email address field have emailAddress class</span>
-                <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;.emailAddress&#39;</span><span class="p">,</span>
-                <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
-                    <span class="nx">callback</span><span class="o">:</span> <span class="p">{</span>
-                        <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;You must enter at least one email address&#39;</span><span class="p">,</span>
-                        <span class="nx">callback</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">)</span> <span class="p">{</span>
-                            <span class="kd">var</span> <span class="nx">isEmpty</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
-                                <span class="c1">// Get the list of fields</span>
-                                <span class="nx">$fields</span> <span class="o">=</span> <span class="nx">validator</span><span class="p">.</span><span class="nx">getFieldElements</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">);</span>
-                            <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">$fields</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-                                <span class="k">if</span> <span class="p">(</span><span class="nx">$fields</span><span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="nx">i</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span> <span class="o">!==</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="p">{</span>
-                                    <span class="nx">isEmpty</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-                                    <span class="k">break</span><span class="p">;</span>
-                                <span class="p">}</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#selectizeForm&#39;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">formValidation</span><span class="p">({</span>
+            <span class="nx">framework</span><span class="o">:</span> <span class="s1">&#39;bootstrap&#39;</span><span class="p">,</span>
+            <span class="nx">excluded</span><span class="o">:</span> <span class="s1">&#39;:disabled&#39;</span><span class="p">,</span>
+            <span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">valid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-ok&#39;</span><span class="p">,</span>
+                <span class="nx">invalid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-remove&#39;</span><span class="p">,</span>
+                <span class="nx">validating</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-refresh&#39;</span>
+            <span class="p">},</span>
+            <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">frameworks</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">callback</span><span class="o">:</span> <span class="p">{</span>
+                            <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;Please indicate 2-4 Javascript frameworks&#39;</span><span class="p">,</span>
+                            <span class="nx">callback</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">)</span> <span class="p">{</span>
+                                <span class="c1">// Get the frameworks separated by a comma</span>
+                                <span class="kd">var</span> <span class="nx">frameworks</span> <span class="o">=</span> <span class="nx">validator</span><span class="p">.</span><span class="nx">getFieldElements</span><span class="p">(</span><span class="s1">&#39;frameworks&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">().</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">);</span>
+                                <span class="k">return</span> <span class="p">(</span><span class="nx">frameworks</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;=</span> <span class="mi">2</span> <span class="o">&amp;&amp;</span> <span class="nx">frameworks</span><span class="p">.</span><span class="nx">length</span> <span class="o">&lt;=</span> <span class="mi">4</span><span class="p">);</span>
                             <span class="p">}</span>
-
-                            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">isEmpty</span><span class="p">)</span> <span class="p">{</span>
-                                <span class="c1">// Update the status of callback validator for all fields</span>
-                                <span class="nx">validator</span><span class="p">.</span><span class="nx">updateStatus</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="nx">validator</span><span class="p">.</span><span class="nx">STATUS_VALID</span><span class="p">,</span> <span class="s1">&#39;callback&#39;</span><span class="p">);</span>
-                                <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
-                            <span class="p">}</span>
-
-                            <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
                         <span class="p">}</span>
-                    <span class="p">},</span>
-                    <span class="nx">emailAddress</span><span class="o">:</span> <span class="p">{</span>
-                        <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The value is not a valid email address&#39;</span>
                     <span class="p">}</span>
                 <span class="p">}</span>
             <span class="p">}</span>
-        <span class="p">}</span>
-    <span class="p">});</span>
+        <span class="p">})</span>
+        <span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;[name=&quot;frameworks&quot;]&#39;</span><span class="p">)</span>
+            <span class="p">.</span><span class="nx">selectize</span><span class="p">({</span>
+                <span class="nx">plugins</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;remove_button&#39;</span><span class="p">],</span>
+                <span class="nx">delimiter</span><span class="o">:</span> <span class="s1">&#39;,&#39;</span><span class="p">,</span>
+                <span class="nx">persist</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="nx">create</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">input</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">return</span> <span class="p">{</span>
+                        <span class="nx">value</span><span class="o">:</span> <span class="nx">input</span><span class="p">,</span>
+                        <span class="nx">text</span><span class="o">:</span> <span class="nx">input</span>
+                    <span class="p">};</span>
+                <span class="p">}</span>
+            <span class="p">})</span>
+            <span class="c1">// Revalidate the frameworks field when it is changed</span>
+            <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;change&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#selectizeForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;revalidateField&#39;</span><span class="p">,</span> <span class="s1">&#39;frameworks&#39;</span><span class="p">);</span>
+            <span class="p">})</span>
+            <span class="p">.</span><span class="nx">end</span><span class="p">();</span>
 <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span></code></pre></div>
             </div>
