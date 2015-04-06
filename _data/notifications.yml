@@ -7,6 +7,9 @@
 - title: "New i18n add-on: Support multiple languages"
   url: "/addons/i18n/"
 
+- title: "New example: Playing with selectize"
+  url: "/examples/selectize/"
+
 - title: "reCaptcha2 add-on v0.3.0: Support multiple Google reCAPTCHA v2 elements on the same page"
   url: "/addons/recaptcha2/"
 
@@ -24,6 +27,3 @@
 
 - title: "New example: Playing with geocomplete"
   url: "/examples/geocomplete/"
-
-- title: "New example: Switching validators on the same field"
-  url: "/examples/switching-validators-same-field/"
