@@ -48,7 +48,7 @@ err: {
     </div>
 
     <h4 id="form-err-container">container</h4>
-    <p><code>container: String</code> &mdash; Indicate where the error messages are shown. It is <code>null</code> by default.</p>
+    <p><code>container: String|Function</code> &mdash; Indicate where the error messages are shown. It is <code>null</code> by default.</p>
     <div class="table-responsive">
         <table class="table table-bordered table-striped">
             <thead>
@@ -61,6 +61,18 @@ err: {
                 <tr>
                     <td>CSS selector</td>
                     <td>All error messages are placed in element defined by this CSS selector</td>
+                </tr>
+                <tr>
+                    <td>A callback</td>
+                    <td>
+                        <p>A callback returns the element that the messages are placed in:</p>
+{% highlight javascript %}
+function($field, validator) {
+    // $field is the field element
+    // validator is the plugin instance
+};
+{% endhighlight %}
+                    </td>
                 </tr>
                 <tr>
                     <td><code>tooltip</code></td>

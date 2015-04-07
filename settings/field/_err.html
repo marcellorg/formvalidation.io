@@ -1,7 +1,7 @@
 <section>
     <h3 id="field-err">err</h3>
 
-    <p><code>err: String</code> &mdash; Indicate where the error messages are shown.</p>
+    <p><code>err: String|Function</code> &mdash; Indicate where the error messages are shown.</p>
     <div class="table-responsive">
         <table class="table table-bordered table-striped">
             <thead>
@@ -14,6 +14,18 @@
                 <tr>
                     <td>CSS selector</td>
                     <td>Error messages are placed in element defined by this CSS selector</td>
+                </tr>
+                <tr>
+                    <td>A callback</td>
+                    <td>
+                        <p>A callback returns the element that the messages are placed in:</p>
+{% highlight javascript %}
+function($field, validator) {
+    // $field is the field element
+    // validator is the plugin instance
+};
+{% endhighlight %}
+                    </td>
                 </tr>
                 <tr>
                     <td><code>tooltip</code></td>
@@ -31,4 +43,10 @@
     <p>The following form illustrates an usage of the <code>err</code> option. The error messages are shown in the element defined by a CSS selector.</p>
 
     {% include demo/tabs.html id="field-err" frameworks="bootstrap" dir="field/err" codes="programmatic" %}
+
+    <ul class="doc-list">
+        <li><a href="/examples/showing-message-custom-area/#using-container-option">Showing messages in custom area</a></li>
+        <li><a href="/examples/changing-tooltip-position">Changing tooltip's position</a></li>
+        <li><a href="/examples/using-tooltip-to-show-message/">Using tooltip to show message</a></li>
+    </ul>
 </section>

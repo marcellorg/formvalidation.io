@@ -48,6 +48,18 @@ permalink: /examples/showing-message-custom-area/
                                     <td>All error messages are placed in element defined by this CSS selector</td>
                                 </tr>
                                 <tr>
+                                    <td>A callback</td>
+                                    <td>
+                                        <p>A callback returns the element that the messages are placed in:</p>
+{% highlight javascript %}
+function($field, validator) {
+    // $field is the field element
+    // validator is the plugin instance
+};
+{% endhighlight %}
+                                    </td>
+                                </tr>
+                                <tr>
                                     <td><code>tooltip</code></td>
                                     <td>Error messages of each field are placed inside a tooltip</td>
                                 </tr>
@@ -62,6 +74,10 @@ permalink: /examples/showing-message-custom-area/
                     <p>The contact form below shows messages in an element located at the bottom of form.</p>
 
                     {% include demo/tabs.html id="container" frameworks="bootstrap" dir="container" codes="programmatic" %}
+
+                    <p>If you want to place messages which their positions depend on the field, you can use a callback. The following form places messages in the right:</p>
+
+                    {% include demo/tabs.html id="callback" frameworks="bootstrap" dir="callback" codes="programmatic" %}
                 </section>
 
                 <div class="doc-hr"></div>
