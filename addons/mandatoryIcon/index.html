@@ -167,10 +167,10 @@ $(document).ready(function() {
                 <p>Follow these steps to use this add-on:</p>
 
                 <section>
-                    <h3>Including the add-on</h3>
+                    <h2>Including the add-on</h2>
                     <ul class="doc-list">
-                        <li>Download <a href="https://github.com/formvalidation/addon-mandatoryicon/releases/download/v0.1.0/mandatoryIcon-v0.1.0.zip" class="addonDownloadButton" data-placement="bottom" data-container="body">mandatoryIcon</a> add-on</li>
-                        <li>Include <code>mandatoryIcon.js</code> (located in the <code>src</code> directory) to your page. Ensure that it's placed after <code>formValidation(.min).js</code></li>
+                        <li>Download <a href="https://github.com/formvalidation/addon-mandatoryicon/releases/download/v0.1.1/mandatoryIcon-v0.1.1.zip" class="addonDownloadButton" data-placement="bottom" data-container="body">mandatoryIcon</a> add-on</li>
+                        <li>Include <code>mandatoryIcon.min.js</code> (located in the <code>dist</code> directory) to your page. Ensure that it's placed after <code>formValidation(.min).js</code></li>
                     </ul>
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- FormValidation plugin --&gt;</span>
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/vendor/formvalidation/dist/js/formValidation.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
@@ -179,8 +179,10 @@ $(document).ready(function() {
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/vendor/formvalidation/dist/js/addons/mandatoryIcon.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></div>
                 </section>
 
+                <div class="doc-hr"></div>
+
                 <section>
-                    <h3>Calling the add-on</h3>
+                    <h2>Calling the add-on</h2>
                     <p>It's possible to call the add-on in both programmatic and declarative ways:</p>
 
                     <div class="doc-demo">
@@ -327,7 +329,7 @@ $(document).ready(function() {
                 <div class="doc-hr"></div>
 
                 <section>
-                    <h3>Example</h3>
+                    <h2>Example</h2>
 
                     <p>Below is the piece of code showing programmatic and declarative usages:</p>
 
@@ -372,7 +374,7 @@ $(document).ready(function() {
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Include FormValidation files first --&gt;</span>
 
 <span class="c">&lt;!-- Then include mandatoryIcon add-on --&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/vendor/formvalidation/js/addons/mandatoryIcon.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/vendor/formvalidation/js/addons/mandatoryIcon.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 
 <span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;productForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
@@ -485,7 +487,7 @@ $(document).ready(function() {
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/vendor/formvalidation/dist/js/framework/bootstrap.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 
 <span class="c">&lt;!-- mandatoryIcon add-on --&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/vendor/formvalidation/dist/js/addons/mandatoryIcon.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/vendor/formvalidation/dist/js/addons/mandatoryIcon.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 
 <span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;productForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span>
     <span class="na">data-fv-addons=</span><span class="s">&quot;mandatoryIcon&quot;</span>
@@ -561,6 +563,23 @@ $(document).ready(function() {
     </div>
 </div>
                 </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Change log</h2>
+
+                    <ul class="doc-list">
+                        <li>
+                            <p>v0.1.1:</p>
+                            <ul class="doc-list">
+                                <li>Don't add the mandatory icon to the field that the notEmpty or validators aren't enabled</li>
+                                <li>Add Grunt build and minified files</li>
+                            </ul>
+                        </li>
+                        <li>v0.1.0: First release</li>
+                    </ul>
+                </section>
             </div>
 
             <div class="col-md-3">
@@ -568,7 +587,7 @@ $(document).ready(function() {
                     <div class="doc-addon-image"><img class="img-responsive" src="/addons/mandatoryIcon/cover.png" alt="FormValidation mandatoryIcon add-on" /></div>
 
                     <div class="doc-addon-meta">
-                        <a href="https://github.com/formvalidation/addon-mandatoryicon/releases/download/v0.1.0/mandatoryIcon-v0.1.0.zip" class="btn btn-success addonDownloadButton" data-placement="bottom" data-container="body"><i class="fa fa-download"></i> mandatoryIcon-v0.1.0.zip</a>
+                        <a href="https://github.com/formvalidation/addon-mandatoryicon/releases/download/v0.1.1/mandatoryIcon-v0.1.1.zip" class="btn btn-success addonDownloadButton" data-placement="bottom" data-container="body"><i class="fa fa-download"></i> mandatoryIcon-v0.1.1.zip</a>
                     </div>
                 </div>
 
