@@ -3,7 +3,7 @@
 <script src="/vendor/formvalidation/dist/js/framework/bootstrap.min.js"></script>
 
 <!-- mandatoryIcon add-on -->
-<script src="/vendor/formvalidation/dist/js/addons/mandatoryIcon.js"></script>
+<script src="/vendor/formvalidation/dist/js/addons/mandatoryIcon.min.js"></script>
 
 <form id="productForm" method="post" class="form-horizontal"
     data-fv-addons="mandatoryIcon"

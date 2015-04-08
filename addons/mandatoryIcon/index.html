@@ -3,8 +3,8 @@ layout: default
 title: mandatoryIcon add-on
 permalink: /addons/mandatoryIcon/
 image: /addons/mandatoryIcon/cover.png
-file: "mandatoryIcon-v0.1.0.zip"
-download: "https://github.com/formvalidation/addon-mandatoryicon/releases/download/v0.1.0/mandatoryIcon-v0.1.0.zip"
+file: "mandatoryIcon-v0.1.1.zip"
+download: "https://github.com/formvalidation/addon-mandatoryicon/releases/download/v0.1.1/mandatoryIcon-v0.1.1.zip"
 ---
 
 <div class="doc-content-container">
@@ -21,10 +21,10 @@ download: "https://github.com/formvalidation/addon-mandatoryicon/releases/downlo
                 <p>Follow these steps to use this add-on:</p>
 
                 <section>
-                    <h3>Including the add-on</h3>
+                    <h2>Including the add-on</h2>
                     <ul class="doc-list">
                         <li>Download <a href="{{ page.download }}" class="addonDownloadButton" data-placement="bottom" data-container="body">mandatoryIcon</a> add-on</li>
-                        <li>Include <code>mandatoryIcon.js</code> (located in the <code>src</code> directory) to your page. Ensure that it's placed after <code>formValidation(.min).js</code></li>
+                        <li>Include <code>mandatoryIcon.min.js</code> (located in the <code>dist</code> directory) to your page. Ensure that it's placed after <code>formValidation(.min).js</code></li>
                     </ul>
 {% highlight html %}
 <!-- FormValidation plugin -->
@@ -35,8 +35,10 @@ download: "https://github.com/formvalidation/addon-mandatoryicon/releases/downlo
 {% endhighlight %}
                 </section>
 
+                <div class="doc-hr"></div>
+
                 <section>
-                    <h3>Calling the add-on</h3>
+                    <h2>Calling the add-on</h2>
                     <p>It's possible to call the add-on in both programmatic and declarative ways:</p>
 
                     <div class="doc-demo">
@@ -195,11 +197,28 @@ addOns: {
                 <div class="doc-hr"></div>
 
                 <section>
-                    <h3>Example</h3>
+                    <h2>Example</h2>
 
                     <p>Below is the piece of code showing programmatic and declarative usages:</p>
 
                     {% include demo/tabs.html id="demo" frameworks="bootstrap" codes="programmatic,declarative" %}
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Change log</h2>
+
+                    <ul class="doc-list">
+                        <li>
+                            <p>v0.1.1:</p>
+                            <ul class="doc-list">
+                                <li>Don't add the mandatory icon to the field that the notEmpty or validators aren't enabled</li>
+                                <li>Add Grunt build and minified files</li>
+                            </ul>
+                        </li>
+                        <li>v0.1.0: First release</li>
+                    </ul>
                 </section>
             </div>
 
