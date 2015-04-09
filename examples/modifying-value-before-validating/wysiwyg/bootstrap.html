@@ -16,13 +16,13 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks" />
 <meta name="twitter:title" content="Modifying the value before validating - FormValidation" />
-<meta name="twitter:image" content="http://formvalidation.io/examples/modifying-value-before-validating/cover.png" />
+<meta name="twitter:image" content="http://formvalidation.io/asset/img/logo.png" />
 
 <meta property="og:title" content="Modifying the value before validating - FormValidation" />
 <meta property="og:description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://formvalidation.io/examples/modifying-value-before-validating/bootstrap.html" />
-<meta property="og:image" content="http://formvalidation.io/examples/modifying-value-before-validating/cover.png" />
+<meta property="og:url" content="http://formvalidation.io/examples/modifying-value-before-validating/wysiwyg/bootstrap.html" />
+<meta property="og:image" content="http://formvalidation.io/asset/img/logo.png" />
 <meta property="og:site_name" content="FormValidation" />
 
 <link rel="icon" type="image/x-icon" href="/asset/img/favicon.ico">
@@ -61,14 +61,21 @@ _gaq.push(['_trackPageview']);
     <div class="container">
         <div class="row">
             <div class="col-lg-9" id="demoContainer">
-                <form id="productForm" class="form-horizontal">
+                <!-- Include TinyMCE js -->
+<script src="//tinymce.cachefly.net/4.1/tinymce.min.js"></script>
+
+<form id="articleForm" class="form-horizontal">
     <div class="form-group">
-        <label class="col-xs-3 control-label">Price</label>
-        <div class="col-xs-4">
-            <div class="input-group">
-                <div class="input-group-addon">$</div>
-                <input type="text" class="form-control" name="price" />
-            </div>
+        <label class="col-xs-3 control-label">Post title</label>
+        <div class="col-xs-5">
+            <input type="text" class="form-control" name="title" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Post content</label>
+        <div class="col-xs-9">
+            <textarea class="form-control" name="content" style="height: 200px;"></textarea>
         </div>
     </div>
 
@@ -81,25 +88,50 @@ _gaq.push(['_trackPageview']);
 
 <script>
 $(document).ready(function() {
-    $('#productForm').formValidation({
+    tinymce.init({
+        selector: 'textarea',
+        setup: function(editor) {
+            editor.on('keyup', function(e) {
+                // Revalidate the content field
+                $('#articleForm').formValidation('revalidateField', 'content');
+            });
+        }
+    });
+
+    $('#articleForm').formValidation({
         framework: 'bootstrap',
+        excluded: [':disabled'],
         icon: {
             valid: 'glyphicon glyphicon-ok',
             invalid: 'glyphicon glyphicon-remove',
             validating: 'glyphicon glyphicon-refresh'
         },
         fields: {
-            price: {
+            title: {
                 validators: {
                     notEmpty: {
-                        message: 'The price is required'
+                        message: 'The title is required'
+                    }
+                }
+            },
+            content: {
+                // Use the same transformer for all validators
+                transformer: function($field, validatorName, validator) {
+                    // Get the plain text without HTML
+                    var text = tinyMCE.activeEditor.getContent({
+                        format: 'text'
+                    });
+
+                    return text;
+                },
+                validators: {
+                    notEmpty: {
+                        message: 'The content is required'
                     },
-                    numeric: {
-                        message: 'The price must be a number',
-                        transformer: function($field, validatorName, validator) {
-                            var value = $field.val();
-                            return value.replace(',', '');
-                        }
+                    stringLength: {
+                        message: 'The content must be more than 10 and less than 500 characters',
+                        min: 10,
+                        max: 500
                     }
                 }
             }
@@ -126,7 +158,7 @@ $(document).ready(function() {
     });
 
     $(window).on('load', function() {
-        var $iframe = $(window.parent.document).find('iframe[src="/examples/modifying-value-before-validating/bootstrap.html"]');
+        var $iframe = $(window.parent.document).find('iframe[src="/examples/modifying-value-before-validating/wysiwyg/bootstrap.html"]');
         if ($iframe.length) {
             $('body').addClass('demo-frame-body').find('.demo-ad').hide();
 

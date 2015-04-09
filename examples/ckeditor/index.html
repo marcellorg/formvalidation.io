@@ -181,6 +181,11 @@ $(document).ready(function() {
     <span class="p">}</span>
 <span class="p">}</span></code></pre></div>
 
+                <div class="doc-alert doc-alert-info">
+                    Instead of using the <a href="/validators/callback/">callback</a> validator, you can <a href="/examples/modifying-value-before-validating/#using-with-wysiwyg-editors">use</a>
+                    the <a href="/settings/#validator-transformer">transformer</a> option to get the raw text provided by the editor before doing validations
+                </div>
+
                 <p>As mentioned in the <a href="/examples#compatibility">Compatibility</a> section, the bio field must be revalidated when it is changed by the editor:</p>
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
