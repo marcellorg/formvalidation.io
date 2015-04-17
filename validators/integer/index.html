@@ -126,6 +126,7 @@ $(document).ready(function() {
     var notifications = [],
         $message      = $('#notification').find('a').data('index', 0);
     notifications.push({ title: 'v0.6.2 is released on 2015.04.02', url: '/news/v0.6.2-released/'});
+    notifications.push({ title: 'New example: Getting notified while field is being validated', url: '/examples/getting-notified-field-being-validated/'});
     notifications.push({ title: 'New promise validator', url: '/validators/promise/'});
     notifications.push({ title: 'New i18n add-on: Support multiple languages', url: '/addons/i18n/'});
     notifications.push({ title: 'New example: Playing with selectize', url: '/examples/selectize/'});
@@ -134,7 +135,6 @@ $(document).ready(function() {
     notifications.push({ title: 'New example: Using data returned by validator', url: '/examples/using-data-returned-validator/'});
     notifications.push({ title: 'New example: Validating fields that depend on each other', url: '/examples/validating-fields-depend-each-other/'});
     notifications.push({ title: 'New example: Skip validation on specific submit button', url: '/examples/skip-validation-specific-submit-button/'});
-    notifications.push({ title: 'New example: Playing with geocomplete', url: '/examples/geocomplete/'});
     
     setInterval(function() {
         $message.data('index', $message.data('index') + 1);

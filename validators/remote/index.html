@@ -126,6 +126,7 @@ $(document).ready(function() {
     var notifications = [],
         $message      = $('#notification').find('a').data('index', 0);
     notifications.push({ title: 'v0.6.2 is released on 2015.04.02', url: '/news/v0.6.2-released/'});
+    notifications.push({ title: 'New example: Getting notified while field is being validated', url: '/examples/getting-notified-field-being-validated/'});
     notifications.push({ title: 'New promise validator', url: '/validators/promise/'});
     notifications.push({ title: 'New i18n add-on: Support multiple languages', url: '/addons/i18n/'});
     notifications.push({ title: 'New example: Playing with selectize', url: '/examples/selectize/'});
@@ -134,7 +135,6 @@ $(document).ready(function() {
     notifications.push({ title: 'New example: Using data returned by validator', url: '/examples/using-data-returned-validator/'});
     notifications.push({ title: 'New example: Validating fields that depend on each other', url: '/examples/validating-fields-depend-each-other/'});
     notifications.push({ title: 'New example: Skip validation on specific submit button', url: '/examples/skip-validation-specific-submit-button/'});
-    notifications.push({ title: 'New example: Playing with geocomplete', url: '/examples/geocomplete/'});
     
     setInterval(function() {
         $message.data('index', $message.data('index') + 1);
@@ -282,6 +282,12 @@ $(document).ready(function() {
 
                     <p>By default, the plugin will send an Ajax request to your back-end whenever you enter a character in field.
                         If the back-end takes time to process the request, it might slow down the website. In order to improve the performance, you can use following tips:</p>
+
+                    <div class="doc-alert doc-alert-info">
+                        It's also recommended to use the tips introduced in the
+                        <a href="/examples/getting-notified-field-being-validated/">Getting notified while field is being validated</a> example
+                        to improve the user experience of the application
+                    </div>
 
                     <h3>Using delay option</h3>
                     <p>By setting the <code>delay</code> option, the Ajax request is only fired once in the specific duration time.</p>
