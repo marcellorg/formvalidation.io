@@ -1,6 +1,9 @@
 - title: "v0.6.2 is released on 2015.04.02"
   url: "/news/v0.6.2-released/"
 
+- title: "New example: Supporting Skeleton framework"
+  url: "/examples/supporting-skeleton-framework/"
+
 - title: "New example: Getting notified while field is being validated"
   url: "/examples/getting-notified-field-being-validated/"
 
@@ -24,6 +27,3 @@
 
 - title: "New example: Validating fields that depend on each other"
   url: "/examples/validating-fields-depend-each-other/"
-
-- title: "New example: Skip validation on specific submit button"
-  url: "/examples/skip-validation-specific-submit-button/"

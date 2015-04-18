@@ -66,7 +66,7 @@
 
     <div class="row">
         <label class="three columns"></label>
-        <div class="nine columns">
+        <div class="eight columns">
             <label>
                 <input name="agree" type="checkbox" />
                 <span class="label-body">Agree with the terms and conditions</span>
@@ -76,7 +76,7 @@
 
     <div class="row">
         <label class="three columns"></label>
-        <div class="eight columns">
+        <div class="nine columns">
             <button type="submit" class="button-primary">Sign up</button>
         </div>
     </div>
