@@ -70,5 +70,8 @@ $(function() {
         });
     });
 
-    $('a[data-demo-framework="bootstrap"]').click();
+    $('.doc-demo').each(function() {
+        $(this).find('a[data-demo-framework]').eq(0).click();
+    });
+    // $('a[data-demo-framework="bootstrap"]').click();
 });
