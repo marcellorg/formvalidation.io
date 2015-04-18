@@ -126,6 +126,7 @@ $(document).ready(function() {
     var notifications = [],
         $message      = $('#notification').find('a').data('index', 0);
     notifications.push({ title: 'v0.6.2 is released on 2015.04.02', url: '/news/v0.6.2-released/'});
+    notifications.push({ title: 'New example: Supporting Skeleton framework', url: '/examples/supporting-skeleton-framework/'});
     notifications.push({ title: 'New example: Getting notified while field is being validated', url: '/examples/getting-notified-field-being-validated/'});
     notifications.push({ title: 'New promise validator', url: '/validators/promise/'});
     notifications.push({ title: 'New i18n add-on: Support multiple languages', url: '/addons/i18n/'});
@@ -134,7 +135,6 @@ $(document).ready(function() {
     notifications.push({ title: 'New example: Playing with Fuel UX', url: '/examples/fuel-ux/'});
     notifications.push({ title: 'New example: Using data returned by validator', url: '/examples/using-data-returned-validator/'});
     notifications.push({ title: 'New example: Validating fields that depend on each other', url: '/examples/validating-fields-depend-each-other/'});
-    notifications.push({ title: 'New example: Skip validation on specific submit button', url: '/examples/skip-validation-specific-submit-button/'});
     
     setInterval(function() {
         $message.data('index', $message.data('index') + 1);
@@ -167,6 +167,10 @@ $(document).ready(function() {
                 <section>
                     <h2>Give it a try</h2>
                     <p>Below is basic working examples of FormValidation using with <a href="http://getbootstrap.com">Bootstrap</a>, <a href="http://foundation.zurb.com/">Foundation</a>, <a href="http://purecss.io/">Pure</a>, <a href="http://semantic-ui.com/">Semantic UI</a> and <a href="http://getuikit.com/">UIKit</a> frameworks.</p>
+
+                    <div class="doc-alert doc-alert-info">
+                        FormValidation is designed to work with almost frameworks. This <a href="/examples/#supporting-other-frameworks">section</a> demonstrates the ability of using it with other frameworks such as <a href="http://getskeleton.com/">Skeleton</a>, <a href="http://www.basscss.com/">Basscss</a>, <a href="http://titon.io/en/toolkit">Titon</a>
+                    </div>
 
                     
 

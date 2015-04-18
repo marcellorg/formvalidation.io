@@ -126,6 +126,7 @@ $(document).ready(function() {
     var notifications = [],
         $message      = $('#notification').find('a').data('index', 0);
     notifications.push({ title: 'v0.6.2 is released on 2015.04.02', url: '/news/v0.6.2-released/'});
+    notifications.push({ title: 'New example: Supporting Skeleton framework', url: '/examples/supporting-skeleton-framework/'});
     notifications.push({ title: 'New example: Getting notified while field is being validated', url: '/examples/getting-notified-field-being-validated/'});
     notifications.push({ title: 'New promise validator', url: '/validators/promise/'});
     notifications.push({ title: 'New i18n add-on: Support multiple languages', url: '/addons/i18n/'});
@@ -134,7 +135,6 @@ $(document).ready(function() {
     notifications.push({ title: 'New example: Playing with Fuel UX', url: '/examples/fuel-ux/'});
     notifications.push({ title: 'New example: Using data returned by validator', url: '/examples/using-data-returned-validator/'});
     notifications.push({ title: 'New example: Validating fields that depend on each other', url: '/examples/validating-fields-depend-each-other/'});
-    notifications.push({ title: 'New example: Skip validation on specific submit button', url: '/examples/skip-validation-specific-submit-button/'});
     
     setInterval(function() {
         $message.data('index', $message.data('index') + 1);
@@ -319,6 +319,24 @@ $(document).ready(function() {
         <li><a href="/examples/bootstrap-wizard/">Bootstrap Wizard</a></li>
         <li><a href="/examples/fuel-ux-wizard/">Fuel UX Wizard</a></li>
         <li><a href="/examples/jquery-steps/">jQuery Steps</a></li>
+    </ul>
+</section>
+                <div class="doc-hr"></div>
+
+                <section>
+    <h2>Supporting other frameworks</h2>
+
+    <p>FormValidation supports popular frameworks which are <a href="http://getbootstrap.com">Bootstrap</a>,
+        <a href="http://foundation.zurb.com/">Foundation</a>, <a href="http://purecss.io/">Pure</a>,
+        <a href="http://semantic-ui.com/">Semantic UI</a> and <a href="http://getuikit.com/">UIKit</a>.</p>
+
+    <p>It's designed to work with other framework including your own one. This section introduces some examples demonstrating
+        the ways to work with other frameworks.</p>
+
+    <ul class="doc-list">
+        <li><a href="/examples/supporting-skeleton-framework/">Supporting Skeleton framework</a> <span class="label label-success">New</span></li>
+        <li>Supporting <a href="http://www.basscss.com/">Basscss</a> toolkit <span class="label label-info">Coming soon</span></li>
+        <li>Supporting <a href="http://titon.io/en/toolkit">Titon</a> toolkit <span class="label label-info">Coming soon</span></li>
     </ul>
 </section>
 
