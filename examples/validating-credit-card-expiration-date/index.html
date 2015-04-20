@@ -42,6 +42,10 @@ permalink: /examples/validating-credit-card-expiration-date/
                     <p>We will use the <a href="/validators/callback/">callback</a> validator to check the validity of month and year fields.
                         Because these fields depend on each other, the <a href="/api#update-status">updateStatus()</a> method is used to set month/year field as valid one.</p>
 
+                    <div class="doc-alert doc-alert-info">
+                        The example uses the <a href="/settings/#field-row">row</a> option to indicate the field container when using multiple fields in the same row
+                    </div>
+
                     {% include demo/tabs.html id="two-fields" frameworks="bootstrap" dir="two-fields" codes="programmatic" %}
                 </section>
 
