@@ -31,7 +31,7 @@ $(document).ready(function() {
                     },
                     callback: {
                         message: 'Expired',
-                        callback: function(value, validator) {
+                        callback: function(value, validator, $field) {
                             value = parseInt(value, 10);
                             var year         = validator.getFieldElements('expYear').val(),
                                 currentMonth = new Date().getMonth() + 1,
@@ -64,7 +64,7 @@ $(document).ready(function() {
                     },
                     callback: {
                         message: 'Expired',
-                        callback: function(value, validator) {
+                        callback: function(value, validator, $field) {
                             value = parseInt(value, 10);
                             var month        = validator.getFieldElements('expMonth').val(),
                                 currentMonth = new Date().getMonth() + 1,

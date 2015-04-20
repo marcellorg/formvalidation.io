@@ -1,6 +1,9 @@
 - title: "v0.6.2 is released on 2015.04.02"
   url: "/news/v0.6.2-released/"
 
+- title: "New example: Validating credit card expiration date"
+  url: "/examples/validating-credit-card-expiration-date/"
+
 - title: "New example: Supporting Skeleton framework"
   url: "/examples/supporting-skeleton-framework/"
 
@@ -24,6 +27,3 @@
 
 - title: "New example: Using data returned by validator"
   url: "/examples/using-data-returned-validator/"
-
-- title: "New example: Validating fields that depend on each other"
-  url: "/examples/validating-fields-depend-each-other/"
