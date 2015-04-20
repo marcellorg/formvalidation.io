@@ -126,6 +126,7 @@ $(document).ready(function() {
     var notifications = [],
         $message      = $('#notification').find('a').data('index', 0);
     notifications.push({ title: 'v0.6.2 is released on 2015.04.02', url: '/news/v0.6.2-released/'});
+    notifications.push({ title: 'New example: Validating credit card expiration date', url: '/examples/validating-credit-card-expiration-date/'});
     notifications.push({ title: 'New example: Supporting Skeleton framework', url: '/examples/supporting-skeleton-framework/'});
     notifications.push({ title: 'New example: Getting notified while field is being validated', url: '/examples/getting-notified-field-being-validated/'});
     notifications.push({ title: 'New promise validator', url: '/validators/promise/'});
@@ -134,7 +135,6 @@ $(document).ready(function() {
     notifications.push({ title: 'reCaptcha2 add-on v0.3.0: Support multiple Google reCAPTCHA v2 elements on the same page', url: '/addons/recaptcha2/'});
     notifications.push({ title: 'New example: Playing with Fuel UX', url: '/examples/fuel-ux/'});
     notifications.push({ title: 'New example: Using data returned by validator', url: '/examples/using-data-returned-validator/'});
-    notifications.push({ title: 'New example: Validating fields that depend on each other', url: '/examples/validating-fields-depend-each-other/'});
     
     setInterval(function() {
         $message.data('index', $message.data('index') + 1);
@@ -221,6 +221,7 @@ $(document).ready(function() {
         <li><a href="/examples/updating-validator-options/">Updating validator options</a></li>
         <li><a href="/examples/using-data-returned-validator/">Using data returned by validator</a> <span class="label label-success">New</span></li>
         <li><a href="/examples/using-mailgun-api-validate-email-address/">Using Mailgun API to validate email address</a></li>
+        <li><a href="/examples/validating-credit-card-expiration-date/">Validating credit card expiration date</a> <span class="label label-success">New</span></li>
         <li><a href="/examples/validating-google-recaptcha/">Validating Google reCAPTCHA</a></li>
         <li><a href="/examples/validating-fields-depend-each-other/">Validating fields that depend on each other</a> <span class="label label-success">New</span></li>
     </ul>

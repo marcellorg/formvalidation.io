@@ -126,6 +126,7 @@ $(document).ready(function() {
     var notifications = [],
         $message      = $('#notification').find('a').data('index', 0);
     notifications.push({ title: 'v0.6.2 is released on 2015.04.02', url: '/news/v0.6.2-released/'});
+    notifications.push({ title: 'New example: Validating credit card expiration date', url: '/examples/validating-credit-card-expiration-date/'});
     notifications.push({ title: 'New example: Supporting Skeleton framework', url: '/examples/supporting-skeleton-framework/'});
     notifications.push({ title: 'New example: Getting notified while field is being validated', url: '/examples/getting-notified-field-being-validated/'});
     notifications.push({ title: 'New promise validator', url: '/validators/promise/'});
@@ -134,7 +135,6 @@ $(document).ready(function() {
     notifications.push({ title: 'reCaptcha2 add-on v0.3.0: Support multiple Google reCAPTCHA v2 elements on the same page', url: '/addons/recaptcha2/'});
     notifications.push({ title: 'New example: Playing with Fuel UX', url: '/examples/fuel-ux/'});
     notifications.push({ title: 'New example: Using data returned by validator', url: '/examples/using-data-returned-validator/'});
-    notifications.push({ title: 'New example: Validating fields that depend on each other', url: '/examples/validating-fields-depend-each-other/'});
     
     setInterval(function() {
         $message.data('index', $message.data('index') + 1);
@@ -194,6 +194,10 @@ $(document).ready(function() {
 
                     <div class="doc-alert doc-alert-info">
                         The message option can be updated on the fly via the <a href="/api/#update-message">updateMessage()</a> method
+                    </div>
+
+                    <div class="doc-alert doc-alert-info">
+                        Looking at this <a href="/examples/validating-credit-card-expiration-date/">example</a> if you want to validate credit card expiration date
                     </div>
 
                     <p>Behind the scene, in addition to using the <a href="http://en.wikipedia.org/wiki/Luhn">Luhn algorithm</a>, the validator also validate the IIN ranges and length of credit card number.</p>
