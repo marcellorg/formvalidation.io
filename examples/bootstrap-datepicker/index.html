@@ -36,9 +36,66 @@ permalink: /examples/bootstrap-datepicker/
 
                     {% include demo/tabs.html id="range" frameworks="bootstrap" dir="range" codes="programmatic" %}
                 </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Start and end dates</h2>
+
+                    <p>Some forms requires both start and end dates. The start date must be earlier than the end one. And vice versa, the end date must be later the the start one.</p>
+
+                    <p>You can see that the <code>min</code> and <code>max</code> options are used as <a href="/settings/#dynamic-option">dynamic options</a>:</p>
+
+{% highlight javascript %}
+$('#eventForm').formValidation({
+    fields: {
+        startDate: {
+            validators: {
+                date: {
+                    max: 'endDate'
+                    ...
+                }
+            }
+        },
+        endDate: {
+            validators: {
+                date: {
+                    min: 'startDate'
+                    ...
+                }
+            }
+        }
+    }
+});
+{% endhighlight %}
+
+                    <p>Because the start and end date depend on each other, whenever one of them is changed, we need to revalidate the other if it is not valid:</p>
+
+{% highlight javascript %}
+$('#eventForm')
+    .formValidation(...)
+    .on('success.field.fv', function(e, data) {
+        // The success.field.fv is triggered when a field is valid
+        // data.field ---> the field name
+        // data.fv    ---> the plugin instance which you can call some APIs on
+
+        if (data.field === 'startDate' && data.fv.isValidField('endDate') === false) {
+            // We need to revalidate the end date
+            data.fv.revalidateField('endDate');
+        }
+
+        // Do the same check for the end date
+        // ...
+    });
+{% endhighlight %}
+
+                    {% include demo/tabs.html id="start-end" frameworks="bootstrap" dir="start-end" codes="programmatic" %}
+                </section>
             </div>
 
             <div class="col-md-3 hidden-print hidden-xs hidden-sm">
+                <div id="toc" class="doc-toc"></div>
+
                 {% include ad.html %}
             </div>
         </div>

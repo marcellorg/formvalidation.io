@@ -1,6 +1,9 @@
 - title: "v0.6.2 is released on 2015.04.02"
   url: "/news/v0.6.2-released/"
 
+- title: "New example: Validating start and end dates"
+  url: "/examples/bootstrap-datepicker/#start-and-end-dates"
+
 - title: "New example: Validating credit card expiration date"
   url: "/examples/validating-credit-card-expiration-date/"
 
@@ -24,6 +27,3 @@
 
 - title: "New example: Playing with Fuel UX"
   url: "/examples/fuel-ux/"
-
-- title: "New example: Using data returned by validator"
-  url: "/examples/using-data-returned-validator/"

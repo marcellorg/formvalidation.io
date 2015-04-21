@@ -1,7 +1,7 @@
 ---
 layout: demo/bootstrap
 title: Playing with Bootstrap Datepicker
-permalink: /examples/bootstrap-datepicker/basic/bootstrap.html
+permalink: /examples/bootstrap-datepicker/start-end/bootstrap.html
 sitemap: false
 ---
 
@@ -9,13 +9,16 @@ sitemap: false
 
 <script>
 $(document).ready(function() {
-    $('#datePicker')
+    var bodyHeight = $('body').height();
+
+    $('#startDatePicker, #endDatePicker')
         .on('show changeDate', function(e) {
             var $body  = $('body'),
                 $iframe = $body.data('iframe.fv');
             if ($iframe) {
                 // Adjust the height of iframe when showing the picker
-                $iframe.height($body.get(0).scrollHeight);
+                $iframe.height(bodyHeight + 100);
+                // $iframe.height($body.get(0).scrollHeight);
             }
         })
         .on('hide', function(e) {
@@ -23,7 +26,7 @@ $(document).ready(function() {
                 $iframe = $body.data('iframe.fv');
             if ($iframe) {
                 // Adjust the height of iframe when hiding the picker
-                $iframe.height($body.height());
+                $iframe.height($('body').height());
             }
         });
 });
