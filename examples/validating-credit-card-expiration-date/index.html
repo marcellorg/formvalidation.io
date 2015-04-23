@@ -176,7 +176,7 @@ $(document).ready(function() {
                     <p>This example introduces some approaches to solve this problem.</p>
 
                     <div class="doc-alert doc-alert-info">
-                        For demonstrating purpose, the expiration date is treated as valid if it is in the range of next month and next 10 year
+                        For demonstrating purpose, the expiration date is treated as valid if it is in the range of current month and next 10 year
                     </div>
                 </section>
 
@@ -276,7 +276,7 @@ $(document).ready(function() {
                                 <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
                             <span class="p">}</span>
                             <span class="nx">year</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">year</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
-                            <span class="k">if</span> <span class="p">(</span><span class="nx">year</span> <span class="o">&gt;</span> <span class="nx">currentYear</span> <span class="o">||</span> <span class="p">(</span><span class="nx">year</span> <span class="o">==</span> <span class="nx">currentYear</span> <span class="o">&amp;&amp;</span> <span class="nx">value</span> <span class="o">&gt;</span> <span class="nx">currentMonth</span><span class="p">))</span> <span class="p">{</span>
+                            <span class="k">if</span> <span class="p">(</span><span class="nx">year</span> <span class="o">&gt;</span> <span class="nx">currentYear</span> <span class="o">||</span> <span class="p">(</span><span class="nx">year</span> <span class="o">==</span> <span class="nx">currentYear</span> <span class="o">&amp;&amp;</span> <span class="nx">value</span> <span class="o">&gt;=</span> <span class="nx">currentMonth</span><span class="p">))</span> <span class="p">{</span>
                                 <span class="nx">validator</span><span class="p">.</span><span class="nx">updateStatus</span><span class="p">(</span><span class="s1">&#39;expYear&#39;</span><span class="p">,</span> <span class="s1">&#39;VALID&#39;</span><span class="p">);</span>
                                 <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
                             <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
@@ -309,7 +309,7 @@ $(document).ready(function() {
                                 <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
                             <span class="p">}</span>
                             <span class="nx">month</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">month</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
-                            <span class="k">if</span> <span class="p">(</span><span class="nx">value</span> <span class="o">&gt;</span> <span class="nx">currentYear</span> <span class="o">||</span> <span class="p">(</span><span class="nx">value</span> <span class="o">==</span> <span class="nx">currentYear</span> <span class="o">&amp;&amp;</span> <span class="nx">month</span> <span class="o">&gt;</span> <span class="nx">currentMonth</span><span class="p">))</span> <span class="p">{</span>
+                            <span class="k">if</span> <span class="p">(</span><span class="nx">value</span> <span class="o">&gt;</span> <span class="nx">currentYear</span> <span class="o">||</span> <span class="p">(</span><span class="nx">value</span> <span class="o">==</span> <span class="nx">currentYear</span> <span class="o">&amp;&amp;</span> <span class="nx">month</span> <span class="o">&gt;=</span> <span class="nx">currentMonth</span><span class="p">))</span> <span class="p">{</span>
                                 <span class="nx">validator</span><span class="p">.</span><span class="nx">updateStatus</span><span class="p">(</span><span class="s1">&#39;expMonth&#39;</span><span class="p">,</span> <span class="s1">&#39;VALID&#39;</span><span class="p">);</span>
                                 <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
                             <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
@@ -428,7 +428,7 @@ $(document).ready(function() {
                                 <span class="p">};</span>
                             <span class="p">}</span>
 
-                            <span class="k">if</span> <span class="p">(</span><span class="nx">year</span> <span class="o">&lt;</span> <span class="nx">currentYear</span> <span class="o">||</span> <span class="p">(</span><span class="nx">year</span> <span class="o">==</span> <span class="nx">currentYear</span> <span class="o">&amp;&amp;</span> <span class="nx">month</span> <span class="o">&lt;=</span> <span class="nx">currentMonth</span><span class="p">))</span> <span class="p">{</span>
+                            <span class="k">if</span> <span class="p">(</span><span class="nx">year</span> <span class="o">&lt;</span> <span class="nx">currentYear</span> <span class="o">||</span> <span class="p">(</span><span class="nx">year</span> <span class="o">==</span> <span class="nx">currentYear</span> <span class="o">&amp;&amp;</span> <span class="nx">month</span> <span class="o">&lt;</span> <span class="nx">currentMonth</span><span class="p">))</span> <span class="p">{</span>
                                 <span class="c1">// The date is expired</span>
                                 <span class="k">return</span> <span class="p">{</span>
                                     <span class="nx">valid</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>

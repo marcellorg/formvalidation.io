@@ -113,7 +113,7 @@ $(document).ready(function() {
                                 };
                             }
 
-                            if (year < currentYear || (year == currentYear && month <= currentMonth)) {
+                            if (year < currentYear || (year == currentYear && month < currentMonth)) {
                                 // The date is expired
                                 return {
                                     valid: false,

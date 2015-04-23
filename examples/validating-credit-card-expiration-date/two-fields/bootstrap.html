@@ -106,7 +106,7 @@ $(document).ready(function() {
                                 return true;
                             }
                             year = parseInt(year, 10);
-                            if (year > currentYear || (year == currentYear && value > currentMonth)) {
+                            if (year > currentYear || (year == currentYear && value >= currentMonth)) {
                                 validator.updateStatus('expYear', 'VALID');
                                 return true;
                             } else {
@@ -139,7 +139,7 @@ $(document).ready(function() {
                                 return false;
                             }
                             month = parseInt(month, 10);
-                            if (value > currentYear || (value == currentYear && month > currentMonth)) {
+                            if (value > currentYear || (value == currentYear && month >= currentMonth)) {
                                 validator.updateStatus('expMonth', 'VALID');
                                 return true;
                             } else {
