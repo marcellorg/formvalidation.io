@@ -126,6 +126,7 @@ $(document).ready(function() {
     var notifications = [],
         $message      = $('#notification').find('a').data('index', 0);
     notifications.push({ title: 'v0.6.2 is released on 2015.04.02', url: '/news/v0.6.2-released/'});
+    notifications.push({ title: 'New example: Asking credit card number to match with selected type', url: '/validators/creditCard/#asking-credit-card-number-to-match-with-selected-type'});
     notifications.push({ title: 'New example: Validating start and end dates', url: '/examples/bootstrap-datepicker/#start-and-end-dates'});
     notifications.push({ title: 'New example: Validating credit card expiration date', url: '/examples/validating-credit-card-expiration-date/'});
     notifications.push({ title: 'New example: Supporting Skeleton framework', url: '/examples/supporting-skeleton-framework/'});
@@ -381,6 +382,164 @@ $(document).ready(function() {
 <span class="nt">&lt;script&gt;</span>
 <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#creditCardForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">();</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span></code></pre></div>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+
+                    <h3>Asking credit card number to match with selected type</h3>
+                    <p>The following form asks to fill in the valid credit card number which matches the selected type.</p>
+                    
+
+
+
+
+
+
+
+
+
+<div class="doc-demo">
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"><span class="doc-framework">Framework</span> <i class="caret"></i></a>
+            <ul class="dropdown-menu" role="menu">
+                
+                <li><a href="/validators/creditCard/limit-type/bootstrap.html" data-demo-target="#limit-type-frame" data-demo-framework="bootstrap">Bootstrap</a></li>
+                
+            </ul>
+        </li>
+        <li class="active"><a href="#limit-type-form-tab" data-toggle="tab">Try it</a></li>
+        
+        <li><a href="#limit-type-programmatic-tab" data-toggle="tab">Programmatic code</a></li>
+        
+        <li class="doc-demo-direct"><a href="/validators/creditCard/limit-type/bootstrap.html" data-toggle="tooltip" data-container="body" title="Open the demo in new tab" target="_blank"><i class="fa fa-external-link"></i></a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane active" id="limit-type-form-tab">
+            <iframe class="doc-demo-frame" id="limit-type-frame"></iframe>
+        </div>
+
+        
+        <div class="tab-pane" id="limit-type-programmatic-tab">
+            
+            <div data-demo-code="bootstrap">
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;style </span><span class="na">type=</span><span class="s">&quot;text/css&quot;</span><span class="nt">&gt;</span>
+<span class="c">/**</span>
+<span class="c"> * Adjust feedback icon position</span>
+<span class="c"> * See http://formvalidation.io/examples/adjusting-feedback-icon-position/</span>
+<span class="c"> */</span>
+<span class="nf">#creditCardForm</span> <span class="nc">.selectContainer</span> <span class="nc">.form-control-feedback</span> <span class="p">{</span>
+    <span class="k">right</span><span class="o">:</span> <span class="m">-15px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+
+<span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;creditCardForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Credit card type<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 selectContainer&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;select</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;cardType&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>Select a type<span class="nt">&lt;/option&gt;</span>
+                <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;Ae&quot;</span><span class="nt">&gt;</span>American Express<span class="nt">&lt;/option&gt;</span>
+                <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;Master&quot;</span><span class="nt">&gt;</span>Master<span class="nt">&lt;/option&gt;</span>
+                <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;Visa&quot;</span><span class="nt">&gt;</span>Visa<span class="nt">&lt;/option&gt;</span>
+            <span class="nt">&lt;/select&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Credit card number<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-5&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;cc&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-9 col-xs-offset-3&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/button&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#creditCardForm&#39;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">formValidation</span><span class="p">({</span>
+            <span class="nx">framework</span><span class="o">:</span> <span class="s1">&#39;bootstrap&#39;</span><span class="p">,</span>
+            <span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">valid</span><span class="o">:</span> <span class="s1">&#39;fa fa-check&#39;</span><span class="p">,</span>
+                <span class="nx">invalid</span><span class="o">:</span> <span class="s1">&#39;fa fa-times&#39;</span><span class="p">,</span>
+                <span class="nx">validating</span><span class="o">:</span> <span class="s1">&#39;fa fa-refresh&#39;</span>
+            <span class="p">},</span>
+            <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">cardType</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">notEmpty</span><span class="o">:</span> <span class="p">{</span>
+                            <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The type is required&#39;</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                <span class="p">},</span>
+                <span class="nx">cc</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">notEmpty</span><span class="o">:</span> <span class="p">{</span>
+                            <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The credit card number is required&#39;</span>
+                        <span class="p">},</span>
+                        <span class="nx">creditCard</span><span class="o">:</span> <span class="p">{</span>
+                            <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The credit card number is not valid&#39;</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">})</span>
+        <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;success.validator.fv&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// data.field     ---&gt; The field name</span>
+            <span class="c1">// data.validator ---&gt; The validator name</span>
+            <span class="c1">// data.fv        ---&gt; The plugin instance</span>
+
+            <span class="c1">// Whenever user changes the card type,</span>
+            <span class="c1">// we need to revalidate the credit card number</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">field</span> <span class="o">===</span> <span class="s1">&#39;cardType&#39;</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">data</span><span class="p">.</span><span class="nx">fv</span><span class="p">.</span><span class="nx">revalidateField</span><span class="p">(</span><span class="s1">&#39;cc&#39;</span><span class="p">);</span>
+            <span class="p">}</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">field</span> <span class="o">===</span> <span class="s1">&#39;cc&#39;</span> <span class="o">&amp;&amp;</span> <span class="nx">data</span><span class="p">.</span><span class="nx">validator</span> <span class="o">===</span> <span class="s1">&#39;creditCard&#39;</span><span class="p">)</span> <span class="p">{</span>
+                <span class="c1">// data.result.type can be one of</span>
+                <span class="c1">// AMERICAN_EXPRESS, DINERS_CLUB, DINERS_CLUB_US, DISCOVER, JCB, LASER,</span>
+                <span class="c1">// MAESTRO, MASTERCARD, SOLO, UNIONPAY, VISA</span>
+
+                <span class="kd">var</span> <span class="nx">currentType</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+                <span class="k">switch</span> <span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">result</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">case</span> <span class="s1">&#39;AMERICAN_EXPRESS&#39;</span><span class="o">:</span>
+                        <span class="nx">currentType</span> <span class="o">=</span> <span class="s1">&#39;Ae&#39;</span><span class="p">;</span>         <span class="c1">// Ae is the value of American Express card in the select box</span>
+                        <span class="k">break</span><span class="p">;</span>
+
+                    <span class="k">case</span> <span class="s1">&#39;MASTERCARD&#39;</span><span class="o">:</span>
+                    <span class="k">case</span> <span class="s1">&#39;DINERS_CLUB_US&#39;</span><span class="o">:</span>
+                        <span class="nx">currentType</span> <span class="o">=</span> <span class="s1">&#39;Master&#39;</span><span class="p">;</span>     <span class="c1">// Master is the value of Master card in the select box</span>
+                        <span class="k">break</span><span class="p">;</span>
+
+                    <span class="k">case</span> <span class="s1">&#39;VISA&#39;</span><span class="o">:</span>
+                        <span class="nx">currentType</span> <span class="o">=</span> <span class="s1">&#39;Visa&#39;</span><span class="p">;</span>       <span class="c1">// Visa is the value of Visa card in the select box</span>
+                        <span class="k">break</span><span class="p">;</span>
+
+                    <span class="k">default</span><span class="o">:</span>
+                        <span class="k">break</span><span class="p">;</span>
+                <span class="p">}</span>
+
+                <span class="c1">// Get the selected type</span>
+                <span class="kd">var</span> <span class="nx">selectedType</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">fv</span><span class="p">.</span><span class="nx">getFieldElements</span><span class="p">(</span><span class="s1">&#39;cardType&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nx">selectedType</span> <span class="o">&amp;&amp;</span> <span class="nx">currentType</span> <span class="o">!==</span> <span class="nx">selectedType</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="c1">// The credit card type doesn&#39;t match with the selected one</span>
+                    <span class="c1">// Mark the field as not valid</span>
+                    <span class="nx">data</span><span class="p">.</span><span class="nx">fv</span><span class="p">.</span><span class="nx">updateStatus</span><span class="p">(</span><span class="s1">&#39;cc&#39;</span><span class="p">,</span> <span class="nx">data</span><span class="p">.</span><span class="nx">fv</span><span class="p">.</span><span class="nx">STATUS_INVALID</span><span class="p">,</span> <span class="s1">&#39;creditCard&#39;</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">});</span>
 <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span></code></pre></div>
             </div>
