@@ -28,7 +28,7 @@ mime_types:
     - ext: mid midi kar
       type: audio/midi
     - ext: mp3
-      type: audio/mpeg
+      type: audio/mpeg,audio/mp3
     - ext: ogg
       type: audio/ogg
     - ext: m4a
@@ -205,6 +205,31 @@ mime_types:
                             </tbody>
                         </table>
                     </div>
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Supporting multiple MIME types</h2>
+
+                    <p>The MIME type of given extension might be different on browsers. For example, MIME type of mp3 file is <code>audio/mpeg</code> on the Firefox, Opera, IE 7+ browsers. Meanwhile, at the time of writing, Google Chrome 42 returns <code>audio/mp3</code> for mp3 file.</p>
+                    <p>In this case, you should pass all the possible values separated by a comma to the <code>type</code> option as following:</p>
+
+{% highlight javascript %}
+$(form).formValidation({
+    fields: {
+        fileInput: {
+            validators: {
+                file: {
+                    extension: 'mp3',
+                    type: 'audio/mpeg,audio/mp3',
+                    message: 'Please choose a MP3 file'
+                }
+            }
+        }
+    }
+});
+{% endhighlight %}
                 </section>
 
                 <div class="doc-hr"></div>
