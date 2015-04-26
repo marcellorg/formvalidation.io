@@ -314,7 +314,7 @@ $(document).ready(function() {
                                 </tr>
                                 
                                 <tr>
-                                    <td>audio/mpeg</td>
+                                    <td>audio/mpeg,audio/mp3</td>
                                     <td>mp3</td>
                                 </tr>
                                 
@@ -451,6 +451,29 @@ $(document).ready(function() {
                             </tbody>
                         </table>
                     </div>
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Supporting multiple MIME types</h2>
+
+                    <p>The MIME type of given extension might be different on browsers. For example, MIME type of mp3 file is <code>audio/mpeg</code> on the Firefox, Opera, IE 7+ browsers. Meanwhile, at the time of writing, Google Chrome 42 returns <code>audio/mp3</code> for mp3 file.</p>
+                    <p>In this case, you should pass all the possible values separated by a comma to the <code>type</code> option as following:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
+    <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">fileInput</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">file</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">extension</span><span class="o">:</span> <span class="s1">&#39;mp3&#39;</span><span class="p">,</span>
+                    <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;audio/mpeg,audio/mp3&#39;</span><span class="p">,</span>
+                    <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;Please choose a MP3 file&#39;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span></code></pre></div>
                 </section>
 
                 <div class="doc-hr"></div>
