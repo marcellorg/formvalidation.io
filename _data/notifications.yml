@@ -1,5 +1,5 @@
-- title: "v0.6.2 is released on 2015.04.02"
-  url: "/news/v0.6.2-released/"
+- title: "New example: Adding fields with different names"
+  url: "/examples/adding-dynamic-field/#adding-fields-with-different-names"
 
 - title: "New example: Asking credit card number to match with selected type"
   url: "/validators/creditCard/#asking-credit-card-number-to-match-with-selected-type"
@@ -25,8 +25,5 @@
 - title: "New example: Playing with selectize"
   url: "/examples/selectize/"
 
-- title: "reCaptcha2 add-on v0.3.0: Support multiple Google reCAPTCHA v2 elements on the same page"
-  url: "/addons/recaptcha2/"
-
-- title: "New example: Playing with Fuel UX"
-  url: "/examples/fuel-ux/"
+- title: "v0.6.2 is released on 2015.04.02"
+  url: "/news/v0.6.2-released/"
