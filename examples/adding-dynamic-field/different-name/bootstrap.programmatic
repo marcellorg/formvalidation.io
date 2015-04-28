@@ -41,7 +41,7 @@
 <script>
 $(document).ready(function() {
     var titleValidators = {
-            row: '.col-xs-4',   // The title is placed inside a <div class="col-xs-3"> element
+            row: '.col-xs-4',   // The title is placed inside a <div class="col-xs-4"> element
             validators: {
                 notEmpty: {
                     message: 'The title is required'
