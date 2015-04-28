@@ -119,13 +119,13 @@ _gaq.push(['_trackPageview']);
 
     <div id="main" class="doc-content-wrapper">
         <div class="doc-notification" id="notification">
-    <i class="fa fa-bell-o"></i> <a href="/news/v0.6.2-released/">v0.6.2 is released on 2015.04.02</a>
+    <i class="fa fa-bell-o"></i> <a href="/examples/adding-dynamic-field/#adding-fields-with-different-names">New example: Adding fields with different names</a>
 </div>
 <script>
 $(document).ready(function() {
     var notifications = [],
         $message      = $('#notification').find('a').data('index', 0);
-    notifications.push({ title: 'v0.6.2 is released on 2015.04.02', url: '/news/v0.6.2-released/'});
+    notifications.push({ title: 'New example: Adding fields with different names', url: '/examples/adding-dynamic-field/#adding-fields-with-different-names'});
     notifications.push({ title: 'New example: Asking credit card number to match with selected type', url: '/validators/creditCard/#asking-credit-card-number-to-match-with-selected-type'});
     notifications.push({ title: 'New example: Validating start and end dates', url: '/examples/bootstrap-datepicker/#start-and-end-dates'});
     notifications.push({ title: 'New example: Validating credit card expiration date', url: '/examples/validating-credit-card-expiration-date/'});
@@ -134,8 +134,7 @@ $(document).ready(function() {
     notifications.push({ title: 'New promise validator', url: '/validators/promise/'});
     notifications.push({ title: 'New i18n add-on: Support multiple languages', url: '/addons/i18n/'});
     notifications.push({ title: 'New example: Playing with selectize', url: '/examples/selectize/'});
-    notifications.push({ title: 'reCaptcha2 add-on v0.3.0: Support multiple Google reCAPTCHA v2 elements on the same page', url: '/addons/recaptcha2/'});
-    notifications.push({ title: 'New example: Playing with Fuel UX', url: '/examples/fuel-ux/'});
+    notifications.push({ title: 'v0.6.2 is released on 2015.04.02', url: '/news/v0.6.2-released/'});
     
     setInterval(function() {
         $message.data('index', $message.data('index') + 1);
