@@ -1,6 +1,6 @@
 $(function() {
     // Create share button
-    new Share('#shareButton');
+    // new Share('#shareButton');
 
     $('[data-toggle="tooltip"]').tooltip();
 
