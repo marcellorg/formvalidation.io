@@ -119,12 +119,13 @@ _gaq.push(['_trackPageview']);
 
     <div id="main" class="doc-content-wrapper">
         <div class="doc-notification" id="notification">
-    <i class="fa fa-bell-o"></i> <a href="/examples/adding-dynamic-field/#adding-fields-with-different-names">New example: Adding fields with different names</a>
+    <i class="fa fa-bell-o"></i> <a href="/examples/ignoring-validation/">New example: Ignoring validation</a>
 </div>
 <script>
 $(document).ready(function() {
     var notifications = [],
         $message      = $('#notification').find('a').data('index', 0);
+    notifications.push({ title: 'New example: Ignoring validation', url: '/examples/ignoring-validation/'});
     notifications.push({ title: 'New example: Adding fields with different names', url: '/examples/adding-dynamic-field/#adding-fields-with-different-names'});
     notifications.push({ title: 'New example: Asking credit card number to match with selected type', url: '/validators/creditCard/#asking-credit-card-number-to-match-with-selected-type'});
     notifications.push({ title: 'New example: Validating start and end dates', url: '/examples/bootstrap-datepicker/#start-and-end-dates'});
@@ -133,7 +134,6 @@ $(document).ready(function() {
     notifications.push({ title: 'New example: Getting notified while field is being validated', url: '/examples/getting-notified-field-being-validated/'});
     notifications.push({ title: 'New promise validator', url: '/validators/promise/'});
     notifications.push({ title: 'New i18n add-on: Support multiple languages', url: '/addons/i18n/'});
-    notifications.push({ title: 'New example: Playing with selectize', url: '/examples/selectize/'});
     notifications.push({ title: 'v0.6.2 is released on 2015.04.02', url: '/news/v0.6.2-released/'});
     
     setInterval(function() {
@@ -189,6 +189,11 @@ $(document).ready(function() {
 <span class="p">}(</span><span class="nb">window</span><span class="p">.</span><span class="nx">jQuery</span><span class="p">));</span></code></pre></div>
 
                     <p>The validator must implement <code>validate()</code> method that returns <code>true</code> if the field is valid, or <code>false</code> otherwise.</p>
+
+                    <div class="doc-alert doc-alert-info">
+                        The validator is <a href="/examples/ignoring-validation/">ignored</a> if the validate method returns null
+                    </div>
+
                     <p><code>validatorName</code> is the validator name. Since the validators are distinct by the names, <code>validatorName</code> has to be different with <a href="/validators">built-in validators</a>.</p>
 
                     <p>To apply the validator to particular field:</p>
