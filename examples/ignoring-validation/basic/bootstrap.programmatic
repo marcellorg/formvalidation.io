@@ -1,0 +1,69 @@
+<form id="surveyForm" method="post">
+    <div class="form-group">
+        <label class="control-label">Which Javascript framework you like most?</label>
+        <div class="radio">
+            <label><input type="radio" name="framework" value="angular" /> Angular</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="framework" value="ember" /> Ember</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="framework" value="backbone" /> Backbone</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="framework" value="react" /> React</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="framework" value="Knockout" /> Knockout</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="framework" value="other" /> Other</label>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Please specify the framework:</label>
+        <input type="text" class="form-control" name="otherFramework" />
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-default">Submit</button>
+    </div>
+</form>
+
+<script>
+$(document).ready(function() {
+    $('#surveyForm')
+        .formValidation({
+            framework: 'bootstrap',
+            icon: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                framework: {
+                    validators: {
+                        notEmpty: {
+                            message: 'Please select a framework'
+                        }
+                    }
+                },
+                otherFramework: {
+                    validators: {
+                        callback: {
+                            message: 'Please specific the framework',
+                            callback: function(value, validator, $field) {
+                                var framework = $('#surveyForm').find('[name="framework"]:checked').val();
+                                return (framework !== 'other') ? true : (value !== '');
+                            }
+                        }
+                    }
+                }
+            }
+        })
+        .on('change', '[name="framework"]', function(e) {
+            $('#surveyForm').formValidation('revalidateField', 'otherFramework');
+        });
+});
+</script>

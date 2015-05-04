@@ -76,6 +76,10 @@ function(value, validator, $field) {
 }
 {% endhighlight %}
 
+                    <div class="doc-alert doc-alert-info">
+                        The validator is <a href="/examples/ignoring-validation/">ignored</a> if the callback method returns null
+                    </div>
+
                     <p>If you want to return a dynamic message, the callback function must return an object containing the <code>valid</code> and <code>message</code> members:</p>
 
 {% highlight javascript %}

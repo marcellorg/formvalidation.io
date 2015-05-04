@@ -94,6 +94,11 @@ function(value, validator, $field) {
 }
 {% endhighlight %}
 
+                    <div class="doc-alert doc-alert-info">
+                        <p>The validator is <a href="/examples/ignoring-validation/">ignored</a> if it resolves { valid: null }</p>
+                        <p>dfd.resolve({ valid: null });</p>
+                    </div>
+
                     <p>If the validation process takes time, it's recommended to use the tips introduced in the
                         <a href="/examples/getting-notified-field-being-validated/">Getting notified while field is being validated</a> example
                         to improve the user experience of the application.</p>

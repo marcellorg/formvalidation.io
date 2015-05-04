@@ -1,0 +1,201 @@
+---
+layout: default
+title: Ignoring validation
+permalink: /examples/ignoring-validation/
+image: /examples/ignoring-validation/cover.png
+---
+
+<div class="doc-content-container">
+    <div class="doc-heading">
+        <h1>Ignoring validation</h1>
+        <p>&larr; <a href="/examples/">Examples</a></p>
+        {% include share.html %}
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <section>
+                    <p>Consider the following example. It asks you about the Javascript framework you like most. You can choose one from the list of
+                        popular Javascript frameworks such as <a href="https://angularjs.org/">Angular</a>, <a href="http://emberjs.com/">Ember</a>,
+                        <a href="http://backbonejs.org/">Backbone</a>, <a href="https://facebook.github.io/react/">React</a>,
+                        <a href="http://knockoutjs.com/">Knockout</a>.</p>
+
+                    <p>If your favorite framework is not in the list, you must fill its name in a text box. You can use the
+                        <a href="/validators/callback/">callback</a> validator to validate this input:</p>
+
+{% highlight javascript %}
+$('#surveyForm').formValidation({
+    fields: {
+        ...
+        otherFramework: {
+            validators: {
+                callback: {
+                    message: 'Please specific the framework',
+                    callback: function(value, validator, $field) {
+                        var framework = $('#surveyForm').find('[name="framework"]:checked').val();
+
+                        return (framework !== 'other')
+                                // The field is valid if user picks a given framework from the list
+                                ? true
+                                // Otherwise, the field value is required
+                                : (value !== '');
+                    }
+                }
+            }
+        }
+    }
+});
+{% endhighlight %}
+
+                    <p>The logic inside the <code>callback</code> function is quite simple and easy to understand. The problem comes when you submit the form, the
+                        <code>otherFramework</code> field is marked as valid with a valid icon even if you choose a framework from the list.
+                        In that case, the <code>otherFramework</code> field should be completely ignored.</p>
+
+                    {% include demo/tabs.html id="basic" frameworks="bootstrap" dir="basic" codes="programmatic" %}
+
+                    <p>In order to fix that, the callback method just simply returns <code>null</code> instead of <code>true</code>:</p>
+
+{% highlight javascript %}
+$('#surveyForm').formValidation({
+    fields: {
+        ...
+        otherFramework: {
+            validators: {
+                callback: {
+                    callback: function(value, validator, $field) {
+                        var framework = $('#surveyForm').find('[name="framework"]:checked').val();
+
+                        return (framework !== 'other')
+                                // The field is IGNORED if user picks a given framework from the list
+                                // The callback method returns NULL
+                                ? null
+                                // Otherwise, the field value is required
+                                : (value !== '');
+                    }
+                }
+            }
+        }
+    }
+});
+{% endhighlight %}
+
+                    {% include demo/tabs.html id="ignore" frameworks="bootstrap" dir="ignore" codes="programmatic" %}
+
+                    <p>By returning <code>null</code>, the field validator is completed ignored. You don't need to
+                        <a href="/examples/hiding-success-class/">trigger event</a> to handle that as seen in the <a href="/examples/conditional-validation/#using-callback-validator">Conditional validation</a> example.</p>
+
+                    <div class="doc-alert doc-alert-info">
+                        When the field validation is ignored, its container will not have the success class, and the associated icon
+                        isn't shown.
+                    </div>
+
+                    <div class="doc-alert doc-alert-warning">
+                        This feature is only available from v0.6.2
+                    </div>
+
+                    <p>You can apply the same principle when using the validators from following list:</p>
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Validator</th>
+                                    <th>Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><a href="/validators/callback/">callback</a> validator</td>
+                                    <td>
+{% highlight javascript %}
+callback: {
+    callback: function(value, validator, $field) {
+        return null;
+
+        // If you want to attach more data to reuse later
+        return {
+            valid: null,
+            key: value,
+            otherKey: value
+        };
+    }
+}
+{% endhighlight %}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="/validators/promise/">promise</a> validator</td>
+                                    <td>
+{% highlight javascript %}
+promise: {
+    promise: function(value, validator, $field) {
+        var dfd = new $.Deferred();
+
+        // ... Do your logic checking
+
+        // Resolve when particular task is done
+        dfd.resolve({
+            valid: null
+        });
+
+        return dfd.promise();
+    }
+}
+{% endhighlight %}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="/validators/remote/">remote</a> validator</td>
+                                    <td>
+                                        <p>The backend returns a JSON string that consists of <code>valid</code> key:</p>
+{% highlight javascript %}
+{ valid: null }
+{% endhighlight %}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="/developing/">Your own</a> validator</td>
+                                    <td>
+{% highlight javascript %}
+(function($) {
+    FormValidation.Validator.yourValidatorName = {
+        validate: function(validator, $field, options) {
+            // ... Do your logic checking
+            return null;
+
+            // If you want to attach more data to reuse later
+            return {
+                valid: null,
+                key: value,
+                otherKey: value
+            };
+        }
+    };
+}(window.jQuery));
+{% endhighlight %}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Related examples</h2>
+
+                    <ul class="doc-list">
+                        <li><a href="/examples/conditional-validation/">Conditional validation</a></li>
+                        <li><a href="/examples/hiding-success-class/">Hiding success class</a></li>
+                    </ul>
+                </section>
+            </div>
+
+            <div class="col-md-3 hidden-print hidden-xs hidden-sm">
+                {% include ad.html %}
+            </div>
+        </div>
+    </div>
+</div>
