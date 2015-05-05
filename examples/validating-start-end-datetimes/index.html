@@ -1,0 +1,633 @@
+<!doctype html>
+<html>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article#">
+    <meta charset="utf-8">
+<title>Validating start and end date/times - FormValidation</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<meta http-equiv="Content-Language" content="en">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks">
+<meta name="keywords" content="FormValidation, BootstrapValidator, jQuery, form, validate, validation, validator, plugin, Bootstrap, Foundation, Pure, SemanticUI, UIKit">
+<meta name="author" content="Nguyen Huu Phuoc">
+<meta name="google-site-verification" content="FMmr8kYuIuW27-qJLOb1Z59OgiVgKNgAv4_eMARhIY8" />
+
+<meta name="twitter:site" content="@formvalidation" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks" />
+<meta name="twitter:title" content="Validating start and end date/times - FormValidation" />
+<meta name="twitter:image" content="http://formvalidation.io/examples/validating-start-end-datetimes/cover.png" />
+
+<meta property="og:title" content="Validating start and end date/times - FormValidation" />
+<meta property="og:description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://formvalidation.io/examples/validating-start-end-datetimes/" />
+<meta property="og:image" content="http://formvalidation.io/examples/validating-start-end-datetimes/cover.png" />
+<meta property="og:site_name" content="FormValidation" />
+
+<link rel="icon" type="image/x-icon" href="/asset/img/favicon.ico">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/3.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/fontawesome/4.2.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/vendor/formvalidation/css/formValidation.min.css">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:300,400,700">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Cardo:400,400italic,700">
+<link rel="stylesheet" href="/vendor/pygments/github.css">
+<link rel="stylesheet" href="/asset/css/style.css">
+
+<!--[if lt IE 9]>
+<script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src="/vendor/formvalidation/js/formValidation.min.js"></script>
+<script src="/vendor/formvalidation/js/framework/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-44786951-2']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+</head>
+<body>
+    <nav class="doc-nav" tabindex="-1">
+    <ul>
+        <li><a href="/">Home</a></li>
+    
+        
+        <li class=""><a href="/download/">Download</a></li>
+    
+        
+        <li class=""><a href="/getting-started/">Getting Started</a></li>
+    
+        
+        <li class=""><a href="/settings/">Settings</a></li>
+    
+        
+        <li class=""><a href="/api/">API</a></li>
+    
+        
+        <li class=""><a href="/validators/">Validators</a></li>
+    
+        
+        <li class=""><a href="/addons/"><span></span> Add-ons</a></li>
+    
+        
+        <li class="doc-nav-active"><a href="/examples/"><span></span> Examples</a></li>
+    
+        
+        <li class=""><a href="/developing/">Developing</a></li>
+    
+        
+        <li class=""><a href="/news/">News</a></li>
+    
+        
+        <li class=""><a href="/license/">License</a></li>
+    
+    </ul>
+
+    <div class="doc-hr"></div>
+
+    <ul>
+        <li><a href="https://twitter.com/formvalidation/" title="Follow FormValidation on Twitter">Twitter <i class="fa fa-twitter"></i></a></li>
+        <li><a href="https://www.facebook.com/formvalidation/" title="Like FormValidation on Facebook">Facebook <i class="fa fa-facebook"></i></a></li>
+        <li><a href="https://plus.google.com/u/0/communities/114931136856987817254" title="Join FormValidation community on Google+">Google+ <i class="fa fa-google-plus"></i></a></li>
+    </ul>
+
+    <div class="doc-hr"></div>
+
+    <div class="doc-creator">
+        <p>
+            Handcrafted with <span class="doc-heart"><i class="fa fa-heart"></i></span> and a lot of <i class="fa fa-coffee"></i><br />
+            by <a href="http://twitter.com/nghuuphuoc">@nghuuphuoc</a><br/>
+            <img src="/asset/img/logo.png" width="60px" height="60px" />
+        </p>
+        <p><a href="mailto: phuoc@huuphuoc.me" class="btn">Hire me</a></p>
+    </div>
+</nav>
+
+<a id="toggleButton" class="doc-nav-toggle" title="Toggle the navigation"><i class="fa fa-navicon"></i></a>
+
+    <div id="main" class="doc-content-wrapper">
+        <div class="doc-notification" id="notification">
+    <i class="fa fa-bell-o"></i> <a href="/examples/ignoring-validation/">New example: Ignoring validation</a>
+</div>
+<script>
+$(document).ready(function() {
+    var notifications = [],
+        $message      = $('#notification').find('a').data('index', 0);
+    notifications.push({ title: 'New example: Ignoring validation', url: '/examples/ignoring-validation/'});
+    notifications.push({ title: 'New example: Adding fields with different names', url: '/examples/adding-dynamic-field/#adding-fields-with-different-names'});
+    notifications.push({ title: 'New example: Asking credit card number to match with selected type', url: '/validators/creditCard/#asking-credit-card-number-to-match-with-selected-type'});
+    notifications.push({ title: 'New example: Validating start and end date/times', url: '/examples/validating-start-end-datetimes/'});
+    notifications.push({ title: 'New example: Validating credit card expiration date', url: '/examples/validating-credit-card-expiration-date/'});
+    notifications.push({ title: 'New example: Supporting Skeleton framework', url: '/examples/supporting-skeleton-framework/'});
+    notifications.push({ title: 'New example: Getting notified while field is being validated', url: '/examples/getting-notified-field-being-validated/'});
+    notifications.push({ title: 'New promise validator', url: '/validators/promise/'});
+    notifications.push({ title: 'New i18n add-on: Support multiple languages', url: '/addons/i18n/'});
+    notifications.push({ title: 'v0.6.2 is released on 2015.04.02', url: '/news/v0.6.2-released/'});
+    
+    setInterval(function() {
+        $message.data('index', $message.data('index') + 1);
+        if ($message.data('index') >= notifications.length) {
+            $message.data('index', 0);
+        }
+        $message
+            .fadeOut('slow')
+            .promise()
+            .then(function() {
+                $message.attr('href', notifications[$message.data('index')].url)
+                        .html(notifications[$message.data('index')].title)
+                        .fadeIn('slow');
+            });
+    }, 5000);
+});
+</script>
+
+        <div class="doc-content-container">
+    <div class="doc-heading">
+        <h1>Validating start and end datetimes</h1>
+        <p>&larr; <a href="/examples/">Examples</a></p>
+        <div id="shareButton" class="doc-share-button"></div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <section>
+                    <p>Some forms requires both start and end dates. The start date must be earlier than the end one. And vice versa, the end date must be later the the start one.</p>
+
+                    <p>The next sections introduce the solutions for different usages. One is for comparing date, and one for comparing time.</p>
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Comparing dates</h2>
+
+                    <p>In order to compare dates, you can use the <a href="/settings/#dynamic-option">dynamic options</a> <code>min</code> and <code>max</code>
+                        provided by the <a href="/validators/date/">date</a> validator:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#eventForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
+    <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">startDate</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">date</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">max</span><span class="o">:</span> <span class="s1">&#39;endDate&#39;</span>
+                    <span class="p">...</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="nx">endDate</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">date</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">min</span><span class="o">:</span> <span class="s1">&#39;startDate&#39;</span>
+                    <span class="p">...</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span></code></pre></div>
+
+                    <p>Because the start and end date depend on each other, whenever one of them is changed, we need to revalidate the other if it is not valid:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#eventForm&#39;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">formValidation</span><span class="p">(...)</span>
+    <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;success.field.fv&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// The success.field.fv is triggered when a field is valid</span>
+        <span class="c1">// data.field ---&gt; the field name</span>
+        <span class="c1">// data.fv    ---&gt; the plugin instance which you can call some APIs on</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">field</span> <span class="o">===</span> <span class="s1">&#39;startDate&#39;</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nx">data</span><span class="p">.</span><span class="nx">fv</span><span class="p">.</span><span class="nx">isValidField</span><span class="p">(</span><span class="s1">&#39;endDate&#39;</span><span class="p">))</span> <span class="p">{</span>
+            <span class="c1">// We need to revalidate the end date</span>
+            <span class="nx">data</span><span class="p">.</span><span class="nx">fv</span><span class="p">.</span><span class="nx">revalidateField</span><span class="p">(</span><span class="s1">&#39;endDate&#39;</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="c1">// Do the same check for the end date</span>
+        <span class="c1">// ...</span>
+    <span class="p">});</span></code></pre></div>
+
+                    <div class="doc-alert doc-alert-info">
+                        You also can use the onSuccess callback as seen in the <a href="/examples/validating-fields-depend-each-other/">Validating fields that depend on each other</a> example
+                    </div>
+
+                    <div class="doc-alert doc-alert-info">
+                        The start and end date fields in example use the <a href="/examples/bootstrap-datepicker/">Bootstrap Datepicker</a> plugin, but you can apply
+                        the same techniques in the case they do (or don't) use other date picker plugin
+                    </div>
+
+                    
+
+
+
+
+
+
+
+
+
+<div class="doc-demo">
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"><span class="doc-framework">Framework</span> <i class="caret"></i></a>
+            <ul class="dropdown-menu" role="menu">
+                
+                <li><a href="/examples/validating-start-end-datetimes/date/bootstrap.html" data-demo-target="#date-frame" data-demo-framework="bootstrap">Bootstrap</a></li>
+                
+            </ul>
+        </li>
+        <li class="active"><a href="#date-form-tab" data-toggle="tab">Try it</a></li>
+        
+        <li><a href="#date-programmatic-tab" data-toggle="tab">Programmatic code</a></li>
+        
+        <li class="doc-demo-direct"><a href="/examples/validating-start-end-datetimes/date/bootstrap.html" data-toggle="tooltip" data-container="body" title="Open the demo in new tab" target="_blank"><i class="fa fa-external-link"></i></a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane active" id="date-form-tab">
+            <iframe class="doc-demo-frame" id="date-frame"></iframe>
+        </div>
+
+        
+        <div class="tab-pane" id="date-programmatic-tab">
+            
+            <div data-demo-code="bootstrap">
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Include Bootstrap Datepicker --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.min.css&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker3.min.css&quot;</span> <span class="nt">/&gt;</span>
+
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+
+<span class="nt">&lt;style </span><span class="na">type=</span><span class="s">&quot;text/css&quot;</span><span class="nt">&gt;</span>
+<span class="c">/**</span>
+<span class="c"> * Override feedback icon position</span>
+<span class="c"> * See http://formvalidation.io/examples/adjusting-feedback-icon-position/</span>
+<span class="c"> */</span>
+<span class="nf">#eventForm</span> <span class="nc">.dateContainer</span> <span class="nc">.form-control-feedback</span> <span class="p">{</span>
+    <span class="k">top</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="k">right</span><span class="o">:</span> <span class="m">-15px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+
+<span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;eventForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Event<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-5&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;name&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Start date<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-5 dateContainer&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;input-group input-append date&quot;</span> <span class="na">id=</span><span class="s">&quot;startDatePicker&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;startDate&quot;</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;input-group-addon add-on&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;glyphicon glyphicon-calendar&quot;</span><span class="nt">&gt;&lt;/span&gt;&lt;/span&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>End date<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-5 dateContainer&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;input-group input-append date&quot;</span> <span class="na">id=</span><span class="s">&quot;endDatePicker&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;endDate&quot;</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;input-group-addon add-on&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;glyphicon glyphicon-calendar&quot;</span><span class="nt">&gt;&lt;/span&gt;&lt;/span&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-5 col-xs-offset-3&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span><span class="nt">&gt;</span>Validate<span class="nt">&lt;/button&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#startDatePicker&#39;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">datepicker</span><span class="p">({</span>
+            <span class="nx">format</span><span class="o">:</span> <span class="s1">&#39;mm/dd/yyyy&#39;</span>
+        <span class="p">})</span>
+        <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;changeDate&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// Revalidate the start date field</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#eventForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;revalidateField&#39;</span><span class="p">,</span> <span class="s1">&#39;startDate&#39;</span><span class="p">);</span>
+        <span class="p">});</span>
+
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#endDatePicker&#39;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">datepicker</span><span class="p">({</span>
+            <span class="nx">format</span><span class="o">:</span> <span class="s1">&#39;mm/dd/yyyy&#39;</span>
+        <span class="p">})</span>
+        <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;changeDate&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#eventForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;revalidateField&#39;</span><span class="p">,</span> <span class="s1">&#39;endDate&#39;</span><span class="p">);</span>
+        <span class="p">});</span>
+
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#eventForm&#39;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">formValidation</span><span class="p">({</span>
+            <span class="nx">framework</span><span class="o">:</span> <span class="s1">&#39;bootstrap&#39;</span><span class="p">,</span>
+            <span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">valid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-ok&#39;</span><span class="p">,</span>
+                <span class="nx">invalid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-remove&#39;</span><span class="p">,</span>
+                <span class="nx">validating</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-refresh&#39;</span>
+            <span class="p">},</span>
+            <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">name</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">notEmpty</span><span class="o">:</span> <span class="p">{</span>
+                            <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The name is required&#39;</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                <span class="p">},</span>
+                <span class="nx">startDate</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">notEmpty</span><span class="o">:</span> <span class="p">{</span>
+                            <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The start date is required&#39;</span>
+                        <span class="p">},</span>
+                        <span class="nx">date</span><span class="o">:</span> <span class="p">{</span>
+                            <span class="nx">format</span><span class="o">:</span> <span class="s1">&#39;MM/DD/YYYY&#39;</span><span class="p">,</span>
+                            <span class="nx">max</span><span class="o">:</span> <span class="s1">&#39;endDate&#39;</span><span class="p">,</span>
+                            <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The start date is not a valid&#39;</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                <span class="p">},</span>
+                <span class="nx">endDate</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">notEmpty</span><span class="o">:</span> <span class="p">{</span>
+                            <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The end date is required&#39;</span>
+                        <span class="p">},</span>
+                        <span class="nx">date</span><span class="o">:</span> <span class="p">{</span>
+                            <span class="nx">format</span><span class="o">:</span> <span class="s1">&#39;MM/DD/YYYY&#39;</span><span class="p">,</span>
+                            <span class="nx">min</span><span class="o">:</span> <span class="s1">&#39;startDate&#39;</span><span class="p">,</span>
+                            <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The end date is not a valid&#39;</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">})</span>
+        <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;success.field.fv&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">field</span> <span class="o">===</span> <span class="s1">&#39;startDate&#39;</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nx">data</span><span class="p">.</span><span class="nx">fv</span><span class="p">.</span><span class="nx">isValidField</span><span class="p">(</span><span class="s1">&#39;endDate&#39;</span><span class="p">))</span> <span class="p">{</span>
+                <span class="c1">// We need to revalidate the end date</span>
+                <span class="nx">data</span><span class="p">.</span><span class="nx">fv</span><span class="p">.</span><span class="nx">revalidateField</span><span class="p">(</span><span class="s1">&#39;endDate&#39;</span><span class="p">);</span>
+            <span class="p">}</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">field</span> <span class="o">===</span> <span class="s1">&#39;endDate&#39;</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nx">data</span><span class="p">.</span><span class="nx">fv</span><span class="p">.</span><span class="nx">isValidField</span><span class="p">(</span><span class="s1">&#39;startDate&#39;</span><span class="p">))</span> <span class="p">{</span>
+                <span class="c1">// We need to revalidate the start date</span>
+                <span class="nx">data</span><span class="p">.</span><span class="nx">fv</span><span class="p">.</span><span class="nx">revalidateField</span><span class="p">(</span><span class="s1">&#39;startDate&#39;</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">});</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span></code></pre></div>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Comparing times</h2>
+
+                    <p>The <a href="/validators/date/">date</a> validator requires the existence of all year, month and day parts. So it can't be used in this case.</p>
+                    <p>To solve our problem, we can use a combination of <a href="/validators/regexp/">regexp</a> and <a href="/validators/callback/">callback</a> validators.
+                        The first validator is used to check if the input matches with a pattern of time (<code>HH:mm</code>, for example),
+                        and the second one for comparing the time.</p>
+
+                    <p>In the callback method, we respectively compare the start and end time. If start time is earlier
+                        than the end one, we need to set the end time as valid by calling the <a href="/api/#update-status">updateStatus()</a> method:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#meetingForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
+    <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">startTime</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">verbose</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">callback</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">callback</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="c1">// Check if the start is earlier then the end one</span>
+                        <span class="k">if</span> <span class="p">(...)</span> <span class="p">{</span>
+                            <span class="c1">// The end time is also valid</span>
+                            <span class="c1">// So, we need to update its status</span>
+                            <span class="nx">validator</span><span class="p">.</span><span class="nx">updateStatus</span><span class="p">(</span><span class="s1">&#39;endTime&#39;</span><span class="p">,</span> <span class="nx">validator</span><span class="p">.</span><span class="nx">STATUS_VALID</span><span class="p">,</span> <span class="s1">&#39;callback&#39;</span><span class="p">);</span>
+                            <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+                        <span class="p">}</span>
+
+                        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="nx">endTime</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">verbose</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">callback</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">callback</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="c1">// Do the similar validation logic</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span></code></pre></div>
+
+                    <div class="doc-alert doc-alert-info">
+                        The example uses the <a href="/settings/#field-verbose">verbose: false</a> option and place the callback validator at the
+                        end of list of validators. It ensures that the time in the callback method already passes other validators, therefore it matches with
+                        the time pattern provided by the regexp validator
+                    </div>
+
+                    
+
+
+
+
+
+
+
+
+
+<div class="doc-demo">
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"><span class="doc-framework">Framework</span> <i class="caret"></i></a>
+            <ul class="dropdown-menu" role="menu">
+                
+                <li><a href="/examples/validating-start-end-datetimes/time/bootstrap.html" data-demo-target="#time-frame" data-demo-framework="bootstrap">Bootstrap</a></li>
+                
+            </ul>
+        </li>
+        <li class="active"><a href="#time-form-tab" data-toggle="tab">Try it</a></li>
+        
+        <li><a href="#time-programmatic-tab" data-toggle="tab">Programmatic code</a></li>
+        
+        <li class="doc-demo-direct"><a href="/examples/validating-start-end-datetimes/time/bootstrap.html" data-toggle="tooltip" data-container="body" title="Open the demo in new tab" target="_blank"><i class="fa fa-external-link"></i></a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane active" id="time-form-tab">
+            <iframe class="doc-demo-frame" id="time-frame"></iframe>
+        </div>
+
+        
+        <div class="tab-pane" id="time-programmatic-tab">
+            
+            <div data-demo-code="bootstrap">
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;meetingForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Start meeting time<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-5&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;startTime&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>End meeting time<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-5&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;endTime&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-5 col-xs-offset-3&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span><span class="nt">&gt;</span>Validate<span class="nt">&lt;/button&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// The pattern of times that accepts moments between 09:00 to 17:59</span>
+    <span class="kd">var</span> <span class="nx">TIME_PATTERN</span> <span class="o">=</span> <span class="sr">/^(09|1[0-7]{1}):[0-5]{1}[0-9]{1}$/</span><span class="p">;</span>
+
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#meetingForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
+        <span class="nx">framework</span><span class="o">:</span> <span class="s1">&#39;bootstrap&#39;</span><span class="p">,</span>
+        <span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">valid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-ok&#39;</span><span class="p">,</span>
+            <span class="nx">invalid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-remove&#39;</span><span class="p">,</span>
+            <span class="nx">validating</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-refresh&#39;</span>
+        <span class="p">},</span>
+        <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">startTime</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">verbose</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">notEmpty</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The start time is required&#39;</span>
+                    <span class="p">},</span>
+                    <span class="nx">regexp</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">regexp</span><span class="o">:</span> <span class="nx">TIME_PATTERN</span><span class="p">,</span>
+                        <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The start time must be between 09:00 and 17:59&#39;</span>
+                    <span class="p">},</span>
+                    <span class="nx">callback</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The start time must be earlier then the end one&#39;</span><span class="p">,</span>
+                        <span class="nx">callback</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">)</span> <span class="p">{</span>
+                            <span class="kd">var</span> <span class="nx">endTime</span> <span class="o">=</span> <span class="nx">validator</span><span class="p">.</span><span class="nx">getFieldElements</span><span class="p">(</span><span class="s1">&#39;endTime&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+                            <span class="k">if</span> <span class="p">(</span><span class="nx">endTime</span> <span class="o">===</span> <span class="s1">&#39;&#39;</span> <span class="o">||</span> <span class="o">!</span><span class="nx">TIME_PATTERN</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">endTime</span><span class="p">))</span> <span class="p">{</span>
+                                <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+                            <span class="p">}</span>
+                            <span class="kd">var</span> <span class="nx">startHour</span>    <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">value</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">10</span><span class="p">),</span>
+                                <span class="nx">startMinutes</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">value</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">10</span><span class="p">),</span>
+                                <span class="nx">endHour</span>      <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">endTime</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">10</span><span class="p">),</span>
+                                <span class="nx">endMinutes</span>   <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">endTime</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">10</span><span class="p">);</span>
+
+                            <span class="k">if</span> <span class="p">(</span><span class="nx">startHour</span> <span class="o">&lt;</span> <span class="nx">endHour</span> <span class="o">||</span> <span class="p">(</span><span class="nx">startHour</span> <span class="o">==</span> <span class="nx">endHour</span> <span class="o">&amp;&amp;</span> <span class="nx">startMinutes</span> <span class="o">&lt;</span> <span class="nx">endMinutes</span><span class="p">))</span> <span class="p">{</span>
+                                <span class="c1">// The end time is also valid</span>
+                                <span class="c1">// So, we need to update its status</span>
+                                <span class="nx">validator</span><span class="p">.</span><span class="nx">updateStatus</span><span class="p">(</span><span class="s1">&#39;endTime&#39;</span><span class="p">,</span> <span class="nx">validator</span><span class="p">.</span><span class="nx">STATUS_VALID</span><span class="p">,</span> <span class="s1">&#39;callback&#39;</span><span class="p">);</span>
+                                <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+                            <span class="p">}</span>
+
+                            <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">},</span>
+            <span class="nx">endTime</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">verbose</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">notEmpty</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The end time is required&#39;</span>
+                    <span class="p">},</span>
+                    <span class="nx">regexp</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">regexp</span><span class="o">:</span> <span class="nx">TIME_PATTERN</span><span class="p">,</span>
+                        <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The end time must be between 09:00 and 17:59&#39;</span>
+                    <span class="p">},</span>
+                    <span class="nx">callback</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The end time must be later then the start one&#39;</span><span class="p">,</span>
+                        <span class="nx">callback</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">)</span> <span class="p">{</span>
+                            <span class="kd">var</span> <span class="nx">startTime</span> <span class="o">=</span> <span class="nx">validator</span><span class="p">.</span><span class="nx">getFieldElements</span><span class="p">(</span><span class="s1">&#39;startTime&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+                            <span class="k">if</span> <span class="p">(</span><span class="nx">startTime</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span> <span class="o">||</span> <span class="o">!</span><span class="nx">TIME_PATTERN</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">startTime</span><span class="p">))</span> <span class="p">{</span>
+                                <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+                            <span class="p">}</span>
+                            <span class="kd">var</span> <span class="nx">startHour</span>    <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">startTime</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">10</span><span class="p">),</span>
+                                <span class="nx">startMinutes</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">startTime</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">10</span><span class="p">),</span>
+                                <span class="nx">endHour</span>      <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">value</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">10</span><span class="p">),</span>
+                                <span class="nx">endMinutes</span>   <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">value</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">10</span><span class="p">);</span>
+
+                            <span class="k">if</span> <span class="p">(</span><span class="nx">endHour</span> <span class="o">&gt;</span> <span class="nx">startHour</span> <span class="o">||</span> <span class="p">(</span><span class="nx">endHour</span> <span class="o">==</span> <span class="nx">startHour</span> <span class="o">&amp;&amp;</span> <span class="nx">endMinutes</span> <span class="o">&gt;</span> <span class="nx">startMinutes</span><span class="p">))</span> <span class="p">{</span>
+                                <span class="c1">// The start time is also valid</span>
+                                <span class="c1">// So, we need to update its status</span>
+                                <span class="nx">validator</span><span class="p">.</span><span class="nx">updateStatus</span><span class="p">(</span><span class="s1">&#39;startTime&#39;</span><span class="p">,</span> <span class="nx">validator</span><span class="p">.</span><span class="nx">STATUS_VALID</span><span class="p">,</span> <span class="s1">&#39;callback&#39;</span><span class="p">);</span>
+                                <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+                            <span class="p">}</span>
+
+                            <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span></code></pre></div>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+                </section>
+            </div>
+
+            <div class="col-md-3 hidden-print hidden-xs hidden-sm">
+                <div id="toc" class="doc-toc"></div>
+
+                <a href="mailto: hello@formvalidation.io">
+    <img class="img-responsive" src="/asset/img/adhere.png" title="Advertise on FormValidation" />
+</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <footer class="doc-footer">
+    <div class="container">
+        <p>
+            
+            <a class="btn" href="/download/">Download</a>
+            
+            <a class="btn" href="https://github.com/formvalidation/support/issues">Report bug</a>
+        </p>
+        <p>
+            &copy; 2013 - 2015 <a href="http://twitter.com/nghuuphuoc">Nguyen Huu Phuoc</a>. All rights reserved.<br/>
+            Handcrafted with <span class="doc-heart"><i class="fa fa-heart"></i></span> and a lot of <i class="fa fa-coffee"></i>
+        </p>
+    </div>
+</footer>
+    </div>
+
+<script src="/vendor/tocjs/js/toc.min.js"></script>
+<script src="/vendor/share/share.min.js"></script>
+<script src="/asset/js/app.js"></script>
+</body>
+</html>
