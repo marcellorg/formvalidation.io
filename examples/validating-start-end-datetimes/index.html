@@ -1,0 +1,152 @@
+---
+layout: default
+title: Validating start and end date/times
+permalink: /examples/validating-start-end-datetimes/
+image: /examples/validating-start-end-datetimes/cover.png
+---
+
+<div class="doc-content-container">
+    <div class="doc-heading">
+        <h1>Validating start and end datetimes</h1>
+        <p>&larr; <a href="/examples/">Examples</a></p>
+        {% include share.html %}
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <section>
+                    <p>Some forms requires both start and end dates. The start date must be earlier than the end one. And vice versa, the end date must be later the the start one.</p>
+
+                    <p>The next sections introduce the solutions for different usages. One is for comparing date, and one for comparing time.</p>
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Comparing dates</h2>
+
+                    <p>In order to compare dates, you can use the <a href="/settings/#dynamic-option">dynamic options</a> <code>min</code> and <code>max</code>
+                        provided by the <a href="/validators/date/">date</a> validator:</p>
+
+{% highlight javascript %}
+$('#eventForm').formValidation({
+    fields: {
+        startDate: {
+            validators: {
+                date: {
+                    max: 'endDate'
+                    ...
+                }
+            }
+        },
+        endDate: {
+            validators: {
+                date: {
+                    min: 'startDate'
+                    ...
+                }
+            }
+        }
+    }
+});
+{% endhighlight %}
+
+                    <p>Because the start and end date depend on each other, whenever one of them is changed, we need to revalidate the other if it is not valid:</p>
+
+{% highlight javascript %}
+$('#eventForm')
+    .formValidation(...)
+    .on('success.field.fv', function(e, data) {
+        // The success.field.fv is triggered when a field is valid
+        // data.field ---> the field name
+        // data.fv    ---> the plugin instance which you can call some APIs on
+
+        if (data.field === 'startDate' && !data.fv.isValidField('endDate')) {
+            // We need to revalidate the end date
+            data.fv.revalidateField('endDate');
+        }
+
+        // Do the same check for the end date
+        // ...
+    });
+{% endhighlight %}
+
+                    <div class="doc-alert doc-alert-info">
+                        You also can use the onSuccess callback as seen in the <a href="/examples/validating-fields-depend-each-other/">Validating fields that depend on each other</a> example
+                    </div>
+
+                    <div class="doc-alert doc-alert-info">
+                        The start and end date fields in example use the <a href="/examples/bootstrap-datepicker/">Bootstrap Datepicker</a> plugin, but you can apply
+                        the same techniques in the case they do (or don't) use other date picker plugin
+                    </div>
+
+                    {% include demo/tabs.html id="date" frameworks="bootstrap" dir="date" codes="programmatic" %}
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Comparing times</h2>
+
+                    <p>The <a href="/validators/date/">date</a> validator requires the existence of all year, month and day parts. So it can't be used in this case.</p>
+                    <p>To solve our problem, we can use a combination of <a href="/validators/regexp/">regexp</a> and <a href="/validators/callback/">callback</a> validators.
+                        The first validator is used to check if the input matches with a pattern of time (<code>HH:mm</code>, for example),
+                        and the second one for comparing the time.</p>
+
+                    <p>In the callback method, we respectively compare the start and end time. If start time is earlier
+                        than the end one, we need to set the end time as valid by calling the <a href="/api/#update-status">updateStatus()</a> method:</p>
+
+{% highlight javascript %}
+$('#meetingForm').formValidation({
+    fields: {
+        startTime: {
+            verbose: false,
+            validators: {
+                callback: {
+                    callback: function(value, validator, $field) {
+                        // Check if the start is earlier then the end one
+                        if (...) {
+                            // The end time is also valid
+                            // So, we need to update its status
+                            validator.updateStatus('endTime', validator.STATUS_VALID, 'callback');
+                            return true;
+                        }
+
+                        return false;
+                    }
+                }
+            }
+        },
+        endTime: {
+            verbose: false,
+            validators: {
+                callback: {
+                    callback: function(value, validator, $field) {
+                        // Do the similar validation logic
+                    }
+                }
+            }
+        }
+    }
+});
+{% endhighlight %}
+
+                    <div class="doc-alert doc-alert-info">
+                        The example uses the <a href="/settings/#field-verbose">verbose: false</a> option and place the callback validator at the
+                        end of list of validators. It ensures that the time in the callback method already passes other validators, therefore it matches with
+                        the time pattern provided by the regexp validator
+                    </div>
+
+                    {% include demo/tabs.html id="time" frameworks="bootstrap" dir="time" codes="programmatic" %}
+                </section>
+            </div>
+
+            <div class="col-md-3 hidden-print hidden-xs hidden-sm">
+                <div id="toc" class="doc-toc"></div>
+
+                {% include ad.html %}
+            </div>
+        </div>
+    </div>
+</div>

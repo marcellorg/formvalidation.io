@@ -7,8 +7,8 @@
 - title: "New example: Asking credit card number to match with selected type"
   url: "/validators/creditCard/#asking-credit-card-number-to-match-with-selected-type"
 
-- title: "New example: Validating start and end dates"
-  url: "/examples/bootstrap-datepicker/#start-and-end-dates"
+- title: "New example: Validating start and end date/times"
+  url: "/examples/validating-start-end-datetimes/"
 
 - title: "New example: Validating credit card expiration date"
   url: "/examples/validating-credit-card-expiration-date/"

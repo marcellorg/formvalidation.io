@@ -112,12 +112,12 @@ $(document).ready(function() {
             }
         })
         .on('success.field.fv', function(e, data) {
-            if (data.field === 'startDate' && data.fv.isValidField('endDate') === false) {
+            if (data.field === 'startDate' && !data.fv.isValidField('endDate')) {
                 // We need to revalidate the end date
                 data.fv.revalidateField('endDate');
             }
 
-            if (data.field === 'endDate' && data.fv.isValidField('startDate') === false) {
+            if (data.field === 'endDate' && !data.fv.isValidField('startDate')) {
                 // We need to revalidate the start date
                 data.fv.revalidateField('startDate');
             }
