@@ -127,835 +127,835 @@
   </url>
   <url>
     <loc>http://formvalidation.io/validators/vin/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/adding-dynamic-field/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/hiding-message/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/adjusting-feedback-icon-position/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/addons/mandatoryIcon/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/integrating-asp-net/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/validating-google-recaptcha/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/tinymce/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/raty/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/ignoring-validation/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/addons/recaptcha1/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/using-data-returned-validator/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/validating-array-inputs/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/flat-ui/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/ajax-submit/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/bootstrap-material-design/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/bootbox/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/geocomplete/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/download/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/requiring-at-least-one-field/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/showing-required-icon/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/clearing-field-when-clicking-icon/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/showing-message-custom-area/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/select2/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/addons/recaptcha2/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/loading-saving-data-modal/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/jquery-ui-datepicker/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/showing-valid-message/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/fuel-ux-wizard/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/mask/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/modifying-value-before-validating/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/using-mailgun-api-validate-email-address/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/modal/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/hiding-success-class/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/pickadate/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/showing-one-message/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/fuel-ux/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/api/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/validators/between/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/addons/i18n/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/enable-validator/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/bootstrap-combobox/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/bootstrap-tab/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/ckeditor/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/validators/callback/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/addons/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/form-submit-twice/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/bootstrap-multiselect/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/skip-validation-specific-submit-button/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/bootstrap-tagsinput/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/getting-notified-field-being-validated/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/updating-validator-options/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/selectize/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/validating-field-special-name/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/validating-fields-depend-each-other/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/validating-multiple-inputs-one/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/switching-validators-same-field/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/validators/digits/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/complex-form/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/settings/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/validators/different/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/using-multiple-buttons/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/jquery-steps/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/getting-started/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/using-language-package/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/validators/emailAddress/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/using-tooltip-to-show-message/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/validators/ein/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/validators/greaterThan/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/chosen/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/validators/base64/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/validators/iban/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/html5/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/attribute/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/bootstrap-select/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/validators/file/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/validators/ean/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/validators/imei/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/validators/bic/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/news/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/enabling-submit-button/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/validators/identical/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/validators/grid/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/validators/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/validators/choice/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/validators/isbn/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/typeahead/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/conditional-validation/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/validators/isin/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/validators/imo/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/developing/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/field-value-changed-programmatically/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/validators/color/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/cant-submit-form-after-validation/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/validators/issn/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/validators/mac/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/icheck/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/validators/meid/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/validators/creditCard/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/validators/cusip/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/validating-start-end-datetimes/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/validators/numeric/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/validators/phone/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/adding-warning-validation-state/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/validators/promise/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/bootstrap-wizard/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/validators/rtn/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/summernote/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/validators/remote/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/validators/cvv/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/validators/date/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/toggle/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/validators/ip/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/validators/stringCase/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/changing-tooltip-position/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/bootstrap-datepicker/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/bootstrap-button/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/validators/stringLength/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/validators/integer/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/validating-credit-card-expiration-date/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/validators/sedol/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/validators/hex/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/showing-icon-custom-area/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/validators/vat/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/supporting-skeleton-framework/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/validators/zipCode/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/validators/regexp/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/examples/integrating-rails/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/validators/notEmpty/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/validators/ismn/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/validators/uri/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/validators/siren/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/validators/id/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/validators/lessThan/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/validators/uuid/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/validators/siret/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://formvalidation.io/validators/step/</loc>
-    <lastmod>2015-05-05T22:18:01+07:00</lastmod>
+    <lastmod>2015-05-19T13:22:49+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
