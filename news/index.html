@@ -119,12 +119,13 @@ _gaq.push(['_trackPageview']);
 
     <div id="main" class="doc-content-wrapper">
         <div class="doc-notification" id="notification">
-    <i class="fa fa-bell-o"></i> <a href="/examples/ignoring-validation/">New example: Ignoring validation</a>
+    <i class="fa fa-bell-o"></i> <a href="/news/v0.6.3-released/">v0.6.3 is released on 2015.05.31</a>
 </div>
 <script>
 $(document).ready(function() {
     var notifications = [],
         $message      = $('#notification').find('a').data('index', 0);
+    notifications.push({ title: 'v0.6.3 is released on 2015.05.31', url: '/news/v0.6.3-released/'});
     notifications.push({ title: 'New example: Ignoring validation', url: '/examples/ignoring-validation/'});
     notifications.push({ title: 'New example: Adding fields with different names', url: '/examples/adding-dynamic-field/#adding-fields-with-different-names'});
     notifications.push({ title: 'New example: Asking credit card number to match with selected type', url: '/validators/creditCard/#asking-credit-card-number-to-match-with-selected-type'});
@@ -134,7 +135,6 @@ $(document).ready(function() {
     notifications.push({ title: 'New example: Getting notified while field is being validated', url: '/examples/getting-notified-field-being-validated/'});
     notifications.push({ title: 'New promise validator', url: '/validators/promise/'});
     notifications.push({ title: 'New i18n add-on: Support multiple languages', url: '/addons/i18n/'});
-    notifications.push({ title: 'v0.6.2 is released on 2015.04.02', url: '/news/v0.6.2-released/'});
     
     setInterval(function() {
         $message.data('index', $message.data('index') + 1);
@@ -165,12 +165,65 @@ $(document).ready(function() {
             <div class="col-md-9">
                 
                     <div class="doc-post">
+    <h2><a href="/news/v0.6.3-released/">FormValidation v0.6.3 Released</a></h2>
+
+    <div class="doc-post-meta">
+        <img src="https://github.com/nghuuphuoc.png" />
+        <p>31 May 2015</p>
+    </div>
+
+    <div class="doc-post-content">
+        <h3>New features</h3>
+<ul class="doc-list">
+    <li>#109: Add <code>prevalidate.form.fv</code> event that is triggered before validating the form</li>
+</ul>
+
+<h3>Improvements</h3>
+<ul class="doc-list">
+    <li>#92: Improve <a href="/validators/id/">Dutch national identification number (BSN)</a> validator. It doesn't accept numbers which have less than 8 digits</li>
+    <li>#99: Add the date to return value of the <a href="/validators/date/">date</a> validator. We can reuse it for additional job</li>
+    <li>#130: The <a href="/validators/remote/">remote</a> validator supports using <code>$field</code> and <code>value</code> in data/url callbacks</li>
+    <li>The <a href="/validators/isbn/">isbn</a> validator adds ISBN type to the return value</li>
+    <li>The <a href="/validators/ismn/">ismn</a> validator adds ISMN type to the return value</li>
+</ul>
+
+<h3>Bug fixes</h3>
+<ul class="doc-list">
+    <li>#102: Fix an issue on IE 10/11 that causes an input element with placeholder attribute to be validated automatically when it's focused</li>
+    <li>#148: Fix an issue that causes the validating icon to not shown when the field is being validated</li>
+</ul>
+
+<h3>Document</h3>
+<ul class="doc-list">
+    <li>#104: Add <a href="/validators/file/#supporting-multiple-mime-types">Supporting multiple MIME types</a> section</li>
+    <li>#110: Add <a href="/examples/validating-start-end-datetimes/">Validating start and end date/times</a> example</li>
+    <li>#116: Fix <code>exclude</code> option typo in the <a href="/examples/#wizard">wizard</a> examples</li>
+    <li>Add <a href="/examples/adding-dynamic-field/#adding-fields-with-different-names">Adding fields with different names</a> example</li>
+    <li>Add <a href="/validators/creditCard/#asking-credit-card-number-to-match-with-selected-type">Asking credit card number to match with selected type</a> example</li>
+    <li>Add <a href="/examples/getting-notified-field-being-validated/">Getting notified while field is being validated</a> example</li>
+    <li>Add <a href="/examples/ignoring-validation/">Ignoring validation</a> example</li>
+    <li>Add <a href="/examples/selectize/">Playing with selectize</a> example</li>
+    <li>Add <a href="/examples/supporting-skeleton-framework/">Supporting Skeleton framework</a> example</li>
+    <li>Add <a href="/examples/validating-credit-card-expiration-date/">Validating credit card expiration date</a> example</li>
+    <li>Fix <code>numreic</code> typo in the <a href="/validators/phone/">phone</a> validator</li>
+    <li>Update the <a href="/settings#form-err-container">err.container</a> option and the <a href="/examples/showing-message-custom-area/">Showing messages in custom area</a> example</li>
+    <li>Update the <a href="/examples/modifying-value-before-validating/">Modifying the value before validating</a> example</li>
+</ul>
+
+<h3>Download</h3>
+<div>
+    <a class="btn btn-primary" href="/download/" title="Download FormValidation v0.6.3">FormValidation v0.6.3</a>
+</div>
+    </div>
+</div>
+
+                    <div class="doc-hr"></div>
+                
+                    <div class="doc-post">
     <h2><a href="/news/v0.6.2-released/">FormValidation v0.6.2 Released</a></h2>
 
     <div class="doc-post-meta">
-        <a href="https://github.com/nghuuphuoc" title="@nghuuphuoc">
-            <img src="https://github.com/nghuuphuoc.png" />
-        </a>
+        <img src="https://github.com/nghuuphuoc.png" />
         <p>02 Apr 2015</p>
     </div>
 
@@ -244,9 +297,7 @@ $(document).ready(function() {
     <h2><a href="/news/v0.6.1-released/">FormValidation v0.6.1 Released</a></h2>
 
     <div class="doc-post-meta">
-        <a href="https://github.com/nghuuphuoc" title="@nghuuphuoc">
-            <img src="https://github.com/nghuuphuoc.png" />
-        </a>
+        <img src="https://github.com/nghuuphuoc.png" />
         <p>24 Feb 2015</p>
     </div>
 
@@ -349,9 +400,7 @@ $(document).ready(function() {
     <h2><a href="/news/upgrading-to-v0.6.0/">Upgrading to v0.6.0</a></h2>
 
     <div class="doc-post-meta">
-        <a href="https://github.com/nghuuphuoc" title="@nghuuphuoc">
-            <img src="https://github.com/nghuuphuoc.png" />
-        </a>
+        <img src="https://github.com/nghuuphuoc.png" />
         <p>06 Jan 2015</p>
     </div>
 
@@ -665,9 +714,7 @@ $(document).ready(function() {
     <h2><a href="/news/v0.6.0-released/">FormValidation v0.6.0 Released</a></h2>
 
     <div class="doc-post-meta">
-        <a href="https://github.com/nghuuphuoc" title="@nghuuphuoc">
-            <img src="https://github.com/nghuuphuoc.png" />
-        </a>
+        <img src="https://github.com/nghuuphuoc.png" />
         <p>06 Jan 2015</p>
     </div>
 
@@ -815,305 +862,6 @@ $(document).ready(function() {
 <div>
     <a class="btn btn-primary" href="/download/" title="Download FormValidation v0.6.0">FormValidation v0.6.0</a>
 </div>
-    </div>
-</div>
-
-                    <div class="doc-hr"></div>
-                
-                    <div class="doc-post">
-    <h2><a href="/news/best-jquery-practices/">Best jQuery practices</a></h2>
-
-    <div class="doc-post-meta">
-        <a href="https://github.com/nghuuphuoc" title="@nghuuphuoc">
-            <img src="https://github.com/nghuuphuoc.png" />
-        </a>
-        <p>15 Dec 2014</p>
-    </div>
-
-    <div class="doc-post-content">
-        <p>This post introduces best jQuery practices you should follow:</p>
-
-<h3>Loading from CDN</h3>
-<p>Instead of storing jQuery on your server, choose to load it from popular CDNs. It will decrease the page loading time.</p>
-
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Don&#39;t --&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/vendor/jquery/jquery.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-
-<span class="c">&lt;!-- Do --&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></div>
-
-<p>Below is the list of popular CDNs which you can find jQuery on:</p>
-<ul class="doc-list">
-    <li><a href="https://developers.google.com/speed/libraries/devguide#jquery">Google CDN</a></li>
-    <li><a href="http://www.asp.net/ajax/cdn#jQuery_Releases_on_the_CDN_0">Microsoft CDN</a></li>
-    <li><a href="http://jquery.com/download/#jquery-39-s-cdn-provided-by-maxcdn">jQuery CDN</a></li>
-    <li><a href="http://cdnjs.com/libraries/jquery/">CDNJS CDN</a></li>
-    <li><a href="http://www.jsdelivr.com/#!jquery">jsDelivr CDN</a></li>
-</ul>
-
-<p>There are some good practices, not only for jQuery, but also for other CSS, JS libraries when loading them from CDN:</p>
-
-<p><strong>Provide a fallback version in your server if loading from CDN fails</strong></p>
-
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-<span class="nt">&lt;script&gt;</span><span class="nb">window</span><span class="p">.</span><span class="nx">jQuery</span> <span class="o">||</span> <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">&quot;&lt;script src=&#39;/vendor/jquery/jquery.min.js&#39;&gt;\x3C/script&gt;&quot;</span><span class="p">);</span><span class="nt">&lt;/script&gt;</span></code></pre></div>
-
-<p><strong>Choosing the compressed version</strong></p>
-
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Don&#39;t --&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-
-<span class="c">&lt;!-- Do --&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></div>
-
-<p><strong>Placing the script at the bottom of page</strong></p>
-
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!doctype html&gt;</span>
-<span class="nt">&lt;head&gt;</span>
-    ...
-    <span class="c">&lt;!-- Don&#39;t --&gt;</span>
-    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-<span class="nt">&lt;/head&gt;</span>
-<span class="nt">&lt;body&gt;</span>
-    ...
-    <span class="c">&lt;!-- Do --&gt;</span>
-    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-<span class="nt">&lt;/body&gt;</span></code></pre></div>
-
-<p><strong>Using protocol-relative URL</strong></p>
-<p>Leaving http: or https: out of the URL. By doing this, the browser will choose to load the https URL of script if your page is severed under https.</p>
-
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Don&#39;t --&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-
-<span class="c">&lt;!-- Do --&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></div>
-
-<h3>Shorthand for the ready event</h3>
-
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Usual way</span>
-<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="p">...</span>
-<span class="p">});</span>
-
-<span class="c1">// The shorthand</span>
-<span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-
-<span class="p">});</span></code></pre></div>
-
-<h3>Naming jQuery object starting with $</h3>
-<p>With this naming convention, we can know whether or not a variable is a jQuery object.</p>
-
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Don&#39;t</span>
-<span class="kd">var</span> <span class="nx">form</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#contactForm&#39;</span><span class="p">);</span>
-
-<span class="c1">// Do</span>
-<span class="kd">var</span> <span class="nx">$form</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#contactForm&#39;</span><span class="p">);</span></code></pre></div>
-
-<h3>Using $this</h3>
-<p>Use $this variable at the beginning anonymous functions, for example, inside an each loop:</p>
-
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Don&#39;t</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;active&#39;</span><span class="p">);</span>
-    <span class="p">});</span>
-<span class="p">});</span>
-
-<span class="c1">// Do</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">$this</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
-    <span class="nx">$this</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="nx">$this</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;active&#39;</span><span class="p">);</span>
-    <span class="p">});</span>
-<span class="p">});</span></code></pre></div>
-
-<p>Someone prefer to use that or self. Don't forget to prefix with $ if it's jQuery object.</p>
-
-<h3>Caching jQuery objects</h3>
-<p>If a jQuery object is used multiple times, caching it will save the performance of script.</p>
-
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Don&#39;t</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.menu li&#39;</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="p">...</span> <span class="p">});</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.menu li&#39;</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="p">...</span> <span class="p">});</span>
-
-<span class="c1">// Do</span>
-<span class="kd">var</span> <span class="nx">$items</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.menu li&#39;</span><span class="p">);</span>
-<span class="nx">$items</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="p">...</span> <span class="p">});</span>
-
-<span class="c1">// Reuse it</span>
-<span class="nx">$items</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="p">...</span> <span class="p">});</span></code></pre></div>
-
-<h3>Chaining method</h3>
-<p>Chaining method is one of most powerful features of jQuery. It allows us to call multiple methods at the same time.</p>
-<div class="doc-alert doc-alert-info">
-    "Write less, do more", the jQuery's slogan, is perfectly right in this case
-</div>
-
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Don&#39;t</span>
-<span class="kd">var</span> <span class="nx">$a</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#about&#39;</span><span class="p">);</span>
-<span class="nx">$a</span><span class="p">.</span><span class="nx">hide</span><span class="p">();</span>
-<span class="nx">$a</span><span class="p">.</span><span class="nx">addClass</span><span class="p">();</span>
-<span class="nx">$a</span><span class="p">.</span><span class="nx">fadeIn</span><span class="p">();</span>
-<span class="nx">$a</span><span class="p">.</span><span class="nx">hide</span><span class="p">();</span>
-
-<span class="c1">// Do</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#about&#39;</span><span class="p">).</span><span class="nx">hide</span><span class="p">().</span><span class="nx">addClass</span><span class="p">().</span><span class="nx">fadeIn</span><span class="p">().</span><span class="nx">hide</span><span class="p">();</span>
-
-<span class="c1">// Better</span>
-<span class="c1">// Add line-break and indent for readability</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#about&#39;</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">hide</span><span class="p">()</span>
-    <span class="p">.</span><span class="nx">addClass</span><span class="p">()</span>
-    <span class="p">.</span><span class="nx">fadeIn</span><span class="p">()</span>
-    <span class="p">.</span><span class="nx">hide</span><span class="p">();</span></code></pre></div>
-
-<h3>Creating new element</h3>
-<p>When creating new element, try to use jQuery methods to manipulate the element instead of giving full HTML code.</p>
-
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Don&#39;t</span>
-<span class="kd">var</span> <span class="nx">$hidden</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;&lt;input class=&quot;form-control&quot; type=&quot;hidden&quot; name=&quot;foo&quot; value=&quot;bar&quot; /&gt;&#39;</span><span class="p">).</span><span class="nx">appendTo</span><span class="p">(</span><span class="s1">&#39;#form&#39;</span><span class="p">);</span>
-
-<span class="c1">// Do</span>
-<span class="kd">var</span> <span class="nx">$hidden</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;&lt;input/&gt;&#39;</span><span class="p">)</span>
-                <span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;form-control&#39;</span><span class="p">)</span>
-                <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;type&#39;</span><span class="p">,</span> <span class="s1">&#39;hidden&#39;</span><span class="p">)</span>
-                <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">)</span>
-                <span class="p">.</span><span class="nx">val</span><span class="p">(</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
-                <span class="p">.</span><span class="nx">appendTo</span><span class="p">(</span><span class="s1">&#39;#form&#39;</span><span class="p">);</span>
-
-<span class="c1">// Or</span>
-<span class="kd">var</span> <span class="nx">$hidden</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;&lt;input/&gt;&#39;</span><span class="p">,</span> <span class="p">{</span>
-                    <span class="kr">class</span><span class="o">:</span> <span class="s1">&#39;form-control&#39;</span><span class="p">,</span>
-                    <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;hidden&#39;</span><span class="p">,</span>
-                    <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;foo&#39;</span><span class="p">,</span>
-                    <span class="nx">value</span><span class="o">:</span> <span class="s1">&#39;bar&#39;</span>
-                <span class="p">})</span>
-                <span class="p">.</span><span class="nx">appendTo</span><span class="p">(</span><span class="s1">&#39;#form&#39;</span><span class="p">);</span></code></pre></div>
-
-<h3>Don't mix CSS with jQuery</h3>
-<p>Don't set the CSS styles for element directly. Using CSS class instead.</p>
-
-<div class="highlight"><pre><code class="language-html" data-lang="html">// Don&#39;t
-$(&#39;#button&#39;).css({
-    &#39;background-color&#39;: &#39;#5cb85c&#39;,
-    &#39;border-color&#39;: &#39;#4cae4c&#39;
-});
-
-// Do
-.success {
-    background-color: #5cb85c;
-    border-color: #4cae4c;
-}
-
-$(&#39;#button&#39;).addClass(&#39;success&#39;);</code></pre></div>
-
-<h3>Optimizing selectors</h3>
-
-<p><strong>Using ID selector</strong></p>
-<p>To retrieve the element by given ID, jQuery uses native document.getElementById() method which is faster than using Sizzle.</p>
-<div class="doc-alert doc-alert-info">
-    <a href="https://github.com/jquery/sizzle">Sizzle</a> is a pure-JavaScript CSS selector engine used by jQuery
-</div>
-
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Don&#39;t</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#wrapper #inner&#39;</span><span class="p">);</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;div#inner&#39;</span><span class="p">);</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.wrapper #inner&#39;</span><span class="p">);</span>
-
-<span class="c1">// Do</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#inner&#39;</span><span class="p">);</span></code></pre></div>
-
-<p><strong>Using ID-based selector</strong></p>
-
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Don&#39;t</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#container .row&#39;</span><span class="p">);</span>
-
-<span class="c1">// Faster</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#container&#39;</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;.row&#39;</span><span class="p">);</span></code></pre></div>
-
-<p><strong>Specificity</strong></p>
-<p>Be specific on the right-hand side of your selector, and less specific on the left.</p>
-
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Unoptimized</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;div.data .gonzalez&#39;</span><span class="p">);</span>
-
-<span class="c1">// Optimized</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.data td.gonzalez&#39;</span><span class="p">);</span></code></pre></div>
-
-<p><strong>Avoid the universal selectors</strong></p>
-
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Slow</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;div.container &gt; *&#39;</span><span class="p">);</span>
-
-<span class="c1">// Faster</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.container&#39;</span><span class="p">).</span><span class="nx">children</span><span class="p">();</span></code></pre></div>
-
-<p><strong>Avoid implied universal selectors</strong></p>
-<p>It's recommended to prefix a pseudo-class selectors (beginning with :) with a tag name or other selector. Otherwise, the universal selector (*) is still implied.</p>
-
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Don&#39;t</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.category :radio&#39;</span><span class="p">);</span>
-
-<span class="c1">// Do</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.category input:radio&#39;</span><span class="p">);</span></code></pre></div>
-
-<p><strong>Using filtering methods instead of pseudo selectors</strong></p>
-<p>When possible, use jQuery filter method instead of pseudo selectors. jQuery then uses querySelectorAll method which is faster than using Sizzle methods.</p>
-
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Don&#39;t</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.item:first&#39;</span><span class="p">)</span>
-
-<span class="c1">// Do</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.item&#39;</span><span class="p">).</span><span class="nx">eq</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span></code></pre></div>
-
-<h3>Don't use JS inline to bind events</h3>
-<p>Always using jQuery to bind events:</p>
-
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Don&#39;t --&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">&quot;saveButton&quot;</span> <span class="na">onclick=</span><span class="s">&quot;javascript: save();&quot;</span><span class="nt">&gt;</span>Save<span class="nt">&lt;/button&gt;</span>
-
-// Do
-$(&#39;#saveButton&#39;).on(&#39;click&#39;, function() {
-    ...
-});</code></pre></div>
-
-<h3>Using custom namespace for events</h3>
-<p>By using custom namespace, you can easily unbind the exact event without affecting to other event handlers which are bound to the element.</p>
-
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#saveButton&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click.bv&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="p">...</span>
-<span class="p">});</span>
-
-<span class="c1">// Later, it&#39;s possible to unbind the event handler</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#saveButton&#39;</span><span class="p">).</span><span class="nx">off</span><span class="p">(</span><span class="s1">&#39;click.bv&#39;</span><span class="p">);</span></code></pre></div>
-
-<h3>Don't put all parameters in Ajax URL</h3>
-<p>When sending data to remote URL using an Ajax request, use data option to send them instead of putting in the URL.</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Don&#39;t</span>
-<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
-    <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;/remote/url?param1=value1&amp;amp;param2=value2...&#39;</span>
-<span class="p">}});</span>
-
-<span class="c1">// Do</span>
-<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
-    <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;/remote/url&#39;</span><span class="p">,</span>
-    <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">param1</span><span class="o">:</span> <span class="s1">&#39;value1&#39;</span><span class="p">,</span>
-        <span class="nx">param2</span><span class="o">:</span> <span class="s1">&#39;value2&#39;</span>
-        <span class="p">...</span>
-    <span class="p">}</span>
-<span class="p">});</span></code></pre></div>
-
-<p>In the case the parameter might be too long (the article's content, for example), consider to use the POST method for both Ajax requests and the back-end.</p>
-<div class="doc-alert doc-alert-info">
-    Internet Explorer 8 (and earlier) <a href="http://support.microsoft.com/kb/208427">limits</a> 2083 characters in URL
-</div>
-
-<h3>References</h3>
-<ul class="doc-list">
-    <li><a href="http://learn.jquery.com/performance/optimize-selectors/">Optimize selectors</a></li>
-</ul>
     </div>
 </div>
 

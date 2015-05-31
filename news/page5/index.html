@@ -119,12 +119,13 @@ _gaq.push(['_trackPageview']);
 
     <div id="main" class="doc-content-wrapper">
         <div class="doc-notification" id="notification">
-    <i class="fa fa-bell-o"></i> <a href="/examples/ignoring-validation/">New example: Ignoring validation</a>
+    <i class="fa fa-bell-o"></i> <a href="/news/v0.6.3-released/">v0.6.3 is released on 2015.05.31</a>
 </div>
 <script>
 $(document).ready(function() {
     var notifications = [],
         $message      = $('#notification').find('a').data('index', 0);
+    notifications.push({ title: 'v0.6.3 is released on 2015.05.31', url: '/news/v0.6.3-released/'});
     notifications.push({ title: 'New example: Ignoring validation', url: '/examples/ignoring-validation/'});
     notifications.push({ title: 'New example: Adding fields with different names', url: '/examples/adding-dynamic-field/#adding-fields-with-different-names'});
     notifications.push({ title: 'New example: Asking credit card number to match with selected type', url: '/validators/creditCard/#asking-credit-card-number-to-match-with-selected-type'});
@@ -134,7 +135,6 @@ $(document).ready(function() {
     notifications.push({ title: 'New example: Getting notified while field is being validated', url: '/examples/getting-notified-field-being-validated/'});
     notifications.push({ title: 'New promise validator', url: '/validators/promise/'});
     notifications.push({ title: 'New i18n add-on: Support multiple languages', url: '/addons/i18n/'});
-    notifications.push({ title: 'v0.6.2 is released on 2015.04.02', url: '/news/v0.6.2-released/'});
     
     setInterval(function() {
         $message.data('index', $message.data('index') + 1);
@@ -165,12 +165,69 @@ $(document).ready(function() {
             <div class="col-md-9">
                 
                     <div class="doc-post">
+    <h2><a href="/news/v0.3.0-released/">BootstrapValidator v0.3.0 Released</a></h2>
+
+    <div class="doc-post-meta">
+        <img src="https://github.com/nghuuphuoc.png" />
+        <p>10 Mar 2014</p>
+    </div>
+
+    <div class="doc-post-content">
+        <h3>New features</h3>
+<ul class="doc-list">
+    <li>#26, #27, #67: Add <a href="/validators/choice/"><code>choice</code> validator</a>, thanks to <a href="https://github.com/emilchristensen">@emilchristensen</a></li>
+    <li>#36, #58: Add method to <a href="/api/#validate">validate form</a> manually</li>
+    <li><i class="fa fa-star"></i> #44: Rewrite entirely using Deferred</li>
+    <li>#48: Add optional <a href="/settings/#form-icon">feedback icons</a></li>
+    <li>#76: Add <a href="/api/#reset-form"><code>resetForm()</code> method</a></li>
+</ul>
+
+<h3>Improvements</h3>
+<ul class="doc-list">
+    <li>#31: The <a href="/validators/remote/">remote validator</a> supports dynamic data</li>
+    <li>#41: Disable submit button on successful form submit</li>
+    <li>#42: Add submit button to <a href="/settings/#form-submit-handler"><code>submitHandler()</code></a> parameter</li>
+    <li>#50: Don't validate disabled element</li>
+    <li>#59: Add example for Rail field convention, thanks to <a href="https://github.com/narutosanjiv">@narutosanjiv</a></li>
+    <li>#60: Update the installation guide, thanks to <a href="https://github.com/vaz">@vaz</a></li>
+    <li>#64: Support <a href="/validators/zipCode/">Danish zip code</a>, thanks to <a href="https://github.com/emilchristensen">@emilchristensen</a></li>
+    <li>#65: Support <a href="/validators/zipCode/">Sweden zip code</a>, thanks to <a href="https://github.com/emilchristensen">@emilchristensen</a></li>
+    <li>#70: Support custom grid columns</li>
+    <li>#71: Show all errors</li>
+    <li>#73: Describe which version should be <a href="/getting-started/#including-library">included</a> in the Usage section</li>
+</ul>
+
+<h3>Bug fixes</h3>
+<ul class="doc-list">
+    <li>#51: Submit after submit doesn't work</li>
+    <li>#53, #54: Fix <a href="/validators/notEmpty/">notEmpty validator</a> for radios and checkboxes, thanks to <a href="https://github.com/kristian-puccio">@kristian-puccio</a></li>
+    <li>#55: The plugin doesn't validate other fields if the <a href="/validators/remote/">remote validator</a> returns <code>true</code></li>
+    <li>#62: The <a href="/validators/callback/">callback validator</a> passes wrong parameter, thanks to <a href="https://github.com/iplus">@iplus</a></li>
+</ul>
+
+<h3>Contributors</h3>
+<p>Thank to the contributors:</p>
+<ul class="doc-list">
+    <li><a href="https://github.com/emilchristensen">@emilchristensen</a></li>
+    <li><a href="https://github.com/iplus">@iplus</a></li>
+    <li><a href="https://github.com/kristian-puccio">@kristian-puccio</a></li>
+    <li><a href="https://github.com/narutosanjiv">@narutosanjiv</a></li>
+</ul>
+
+<h3>Download</h3>
+<div>
+    <a class="btn btn-primary" href="/download/">bootstrapvalidator-dist-0.3.0.zip</a>
+</div>
+    </div>
+</div>
+
+                    <div class="doc-hr"></div>
+                
+                    <div class="doc-post">
     <h2><a href="/news/v0.2.2-released/">BootstrapValidator v0.2.2 Released</a></h2>
 
     <div class="doc-post-meta">
-        <a href="https://github.com/nghuuphuoc" title="@nghuuphuoc">
-            <img src="https://github.com/nghuuphuoc.png" />
-        </a>
+        <img src="https://github.com/nghuuphuoc.png" />
         <p>07 Jan 2014</p>
     </div>
 
@@ -202,9 +259,7 @@ $(document).ready(function() {
     <h2><a href="/news/v0.2.1-released/">BootstrapValidator v0.2.1 Released</a></h2>
 
     <div class="doc-post-meta">
-        <a href="https://github.com/nghuuphuoc" title="@nghuuphuoc">
-            <img src="https://github.com/nghuuphuoc.png" />
-        </a>
+        <img src="https://github.com/nghuuphuoc.png" />
         <p>08 Nov 2013</p>
     </div>
 
@@ -228,9 +283,7 @@ $(document).ready(function() {
     <h2><a href="/news/v0.2.0-released/">BootstrapValidator v0.2.0 Released</a></h2>
 
     <div class="doc-post-meta">
-        <a href="https://github.com/nghuuphuoc" title="@nghuuphuoc">
-            <img src="https://github.com/nghuuphuoc.png" />
-        </a>
+        <img src="https://github.com/nghuuphuoc.png" />
         <p>21 Oct 2013</p>
     </div>
 
@@ -267,9 +320,7 @@ $(document).ready(function() {
     <h2><a href="/news/v0.1.1-released/">BootstrapValidator v0.1.1 Released</a></h2>
 
     <div class="doc-post-meta">
-        <a href="https://github.com/nghuuphuoc" title="@nghuuphuoc">
-            <img src="https://github.com/nghuuphuoc.png" />
-        </a>
+        <img src="https://github.com/nghuuphuoc.png" />
         <p>17 Oct 2013</p>
     </div>
 
@@ -295,49 +346,10 @@ $(document).ready(function() {
 
                     <div class="doc-hr"></div>
                 
-                    <div class="doc-post">
-    <h2><a href="/news/v0.1.0-released/">BootstrapValidator v0.1.0 Released</a></h2>
-
-    <div class="doc-post-meta">
-        <a href="https://github.com/nghuuphuoc" title="@nghuuphuoc">
-            <img src="https://github.com/nghuuphuoc.png" />
-        </a>
-        <p>14 Oct 2013</p>
-    </div>
-
-    <div class="doc-post-content">
-        <p>I'm proud that the first release of BootstrapValidator is out today.</p>
-
-<h3>Built-in Validators</h3>
-<ul class="doc-list">
-    <li><a href="/validators/between/">between validator</a></li>
-    <li><a href="/validators/digits/">digits validator</a></li>
-    <li><a href="/validators/emailAddress/">emailAddress validator</a></li>
-    <li><a href="/validators/greaterThan/">greaterThan validator</a></li>
-    <li><a href="/validators/color/">color validator</a></li>
-    <li><a href="/validators/identical/">identical validator</a></li>
-    <li><a href="/validators/lessThan/">lessThan validator</a></li>
-    <li><a href="/validators/notEmpty/">notEmpty validator</a></li>
-    <li><a href="/validators/regexp/">regexp validator</a></li>
-    <li><a href="/validators/remote/">remote validator</a></li>
-    <li><a href="/validators/stringLength/">stringLength validator</a></li>
-    <li><a href="/validators/uri/">uri validator</a></li>
-    <li><a href="/validators/zipCode/">zipCode validator</a></li>
-</ul>
-
-<h3>Download</h3>
-<div>
-    <a class="btn btn-primary" href="/download/">bootstrapvalidator-dist-0.1.0.zip</a>
-</div>
-    </div>
-</div>
-
-                    <div class="doc-hr"></div>
-                
 
                 <div class="doc-pagination">
                     
-                        <span class="doc-pagination-older">&larr; Older</span>
+                        <a href="/news/page6" class="doc-pagination-older">&larr; Older</a>
                     
 
                     
