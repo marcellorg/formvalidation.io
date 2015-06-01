@@ -126,6 +126,7 @@ $(document).ready(function() {
     var notifications = [],
         $message      = $('#notification').find('a').data('index', 0);
     notifications.push({ title: 'v0.6.3 is released on 2015.05.31', url: '/news/v0.6.3-released/'});
+    notifications.push({ title: 'New example: Changing success and error colors', url: '/examples/changing-success-error-colors/'});
     notifications.push({ title: 'New example: Ignoring validation', url: '/examples/ignoring-validation/'});
     notifications.push({ title: 'New example: Adding fields with different names', url: '/examples/adding-dynamic-field/#adding-fields-with-different-names'});
     notifications.push({ title: 'New example: Asking credit card number to match with selected type', url: '/validators/creditCard/#asking-credit-card-number-to-match-with-selected-type'});
@@ -134,7 +135,6 @@ $(document).ready(function() {
     notifications.push({ title: 'New example: Supporting Skeleton framework', url: '/examples/supporting-skeleton-framework/'});
     notifications.push({ title: 'New example: Getting notified while field is being validated', url: '/examples/getting-notified-field-being-validated/'});
     notifications.push({ title: 'New promise validator', url: '/validators/promise/'});
-    notifications.push({ title: 'New i18n add-on: Support multiple languages', url: '/addons/i18n/'});
     
     setInterval(function() {
         $message.data('index', $message.data('index') + 1);
