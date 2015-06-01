@@ -188,11 +188,24 @@ $(document).ready(function() {
                                 <tr>
                                     <td><code>data</code></td>
                                     <td><code>data-fv-remote-data</code></td>
-                                    <td>Object</td>
+                                    <td>Object|Function</td>
                                     <td>
-                                        The data sent to remote URL.<br />
-                                        You don't need to use this option if there is only field, defined as field name, sent to the remote URL.<br/>
-                                        When using <code>data-fv-remote-data</code> attribute, its value must be an encoded JSON string.
+                                        <p>The data sent to remote URL.</p>
+                                        <p>You don't need to use this option if there is only field, defined as field name, sent to the remote URL.</p>
+                                        <p>If you want to use <a href="#sending-dynamic-data-example">dynamic data</a>, then use a callback as following:</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">data</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// validator is FormValidation instance</span>
+    <span class="c1">// $field is the field element</span>
+    <span class="c1">// value is the field value</span>
+
+    <span class="c1">// Return an object</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="nx">key</span><span class="o">:</span> <span class="nx">value</span><span class="p">,</span>
+        <span class="nx">otherKey</span><span class="o">:</span> <span class="nx">otherValue</span>
+    <span class="p">};</span>
+<span class="p">}</span></code></pre></div>
+
+                                        <p>When using <code>data-fv-remote-data</code> attribute, its value must be an encoded JSON string.</p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -236,9 +249,12 @@ $(document).ready(function() {
                                     <td><code>data-fv-remote-url</code></td>
                                     <td>String|Function</td>
                                     <td>The remote URL.<br/>
-                                        If you want to use a dynamic URL, then use the callback as following:
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">url</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">validator</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// validator is BootstrapValidator instance</span>
+                                        If you want to use a dynamic URL, then use a callback as following:
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">url</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// validator is FormValidation instance</span>
+    <span class="c1">// $field is the field element</span>
+    <span class="c1">// value is the field value</span>
+
     <span class="k">return</span> <span class="s1">&#39;the URL&#39;</span><span class="p">;</span>
 <span class="p">}</span></code></pre></div>
                                     </td>
@@ -564,7 +580,7 @@ $(document).ready(function() {
                     <span class="nx">remote</span><span class="o">:</span> <span class="p">{</span>
                         <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;/path/to/backend/&#39;</span><span class="p">,</span>
                         <span class="c1">// Send { username: &#39;its value&#39;, email: &#39;its value&#39; } to the back-end</span>
-                        <span class="nx">data</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">validator</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="nx">data</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
                             <span class="k">return</span> <span class="p">{</span>
                                 <span class="nx">email</span><span class="o">:</span> <span class="nx">validator</span><span class="p">.</span><span class="nx">getFieldElements</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span>
                             <span class="p">};</span>
@@ -579,7 +595,7 @@ $(document).ready(function() {
                     <span class="nx">remote</span><span class="o">:</span> <span class="p">{</span>
                         <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;/path/to/backend/&#39;</span><span class="p">,</span>
                         <span class="c1">// Send { email: &#39;its value&#39;, username: &#39;its value&#39; } to the back-end</span>
-                        <span class="nx">data</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">validator</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="nx">data</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
                             <span class="k">return</span> <span class="p">{</span>
                                 <span class="nx">username</span><span class="o">:</span> <span class="nx">validator</span><span class="p">.</span><span class="nx">getFieldElements</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span>
                             <span class="p">};</span>
