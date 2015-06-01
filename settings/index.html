@@ -3447,6 +3447,10 @@ $(document).ready(function() {
                     <td>Triggered after the form is initialized by the plugin</td>
                 </tr>
                 <tr>
+                    <td><code>prevalidate.form.fv</code></td>
+                    <td>Triggered before validating the form</td>
+                </tr>
+                <tr>
                     <td><code>err.form.fv</code></td>
                     <td>Triggered when the form is invalid</td>
                 </tr>
@@ -3492,7 +3496,7 @@ $(document).ready(function() {
 
         <span class="p">.</span><span class="nx">formValidation</span><span class="p">(</span><span class="nx">options</span><span class="p">)</span>
 
-        <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;err.form.fv&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;prevalidate.form.fv&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
             <span class="c1">// $(e.target) --&gt; The form instance</span>
             <span class="c1">// $(e.target).data(&#39;formValidation&#39;)</span>
             <span class="c1">//             --&gt; The FormValidation instance</span>
@@ -3500,9 +3504,16 @@ $(document).ready(function() {
             <span class="c1">// Do something ...</span>
         <span class="p">})</span>
 
+        <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;err.form.fv&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// The e parameter is same as one</span>
+            <span class="c1">// in the prevalidate.form.fv event above</span>
+
+            <span class="c1">// Do something ...</span>
+        <span class="p">})</span>
+
         <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;success.form.fv&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
             <span class="c1">// The e parameter is same as one</span>
-            <span class="c1">// in the err.form.fv event above</span>
+            <span class="c1">// in the prevalidate.form.fv event above</span>
 
             <span class="c1">// Do something ...</span>
         <span class="p">})</span>
@@ -3534,6 +3545,9 @@ $(document).ready(function() {
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">)</span>
         <span class="p">.</span><span class="nx">formValidation</span><span class="p">({</span>
+            <span class="nx">onPreValidate</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+                <span class="c1">// Do something ...</span>
+            <span class="p">},</span>
             <span class="nx">onError</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
                 <span class="c1">// Do something ...</span>
             <span class="p">},</span>
@@ -3547,9 +3561,15 @@ $(document).ready(function() {
                 <tr>
                     <td>Using HTML 5 attributes</td>
                     <td>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">data-fv-onerror=</span><span class="s">&quot;onFormError&quot;</span> <span class="na">data-fv-onsuccess=</span><span class="s">&quot;onFormSuccess&quot;</span><span class="nt">&gt;&lt;/form&gt;</span></code></pre></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">data-fv-onprevalidate=</span><span class="s">&quot;onPreValidateForm&quot;</span>
+      <span class="na">data-fv-onerror=</span><span class="s">&quot;onFormError&quot;</span>
+      <span class="na">data-fv-onsuccess=</span><span class="s">&quot;onFormSuccess&quot;</span><span class="nt">&gt;&lt;/form&gt;</span></code></pre></div>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">onFormError</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">onPreValidateForm</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Do something ...</span>
+<span class="p">};</span>
+
+<span class="kd">function</span> <span class="nx">onFormError</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// Do something ...</span>
 <span class="p">};</span>
 
