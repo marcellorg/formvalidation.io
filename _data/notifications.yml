@@ -1,6 +1,9 @@
 - title: "v0.6.3 is released on 2015.05.31"
   url: "/news/v0.6.3-released/"
 
+- title: "New example: Changing success and error colors"
+  url: "/examples/changing-success-error-colors/"
+
 - title: "New example: Ignoring validation"
   url: "/examples/ignoring-validation/"
 
@@ -24,6 +27,3 @@
 
 - title: "New promise validator"
   url: "/validators/promise/"
-
-- title: "New i18n add-on: Support multiple languages"
-  url: "/addons/i18n/"

@@ -1,0 +1,189 @@
+---
+layout: default
+title: Changing success and error colors
+permalink: /examples/changing-success-error-colors/
+---
+
+<div class="doc-content-container">
+    <div class="doc-heading">
+        <h1>Changing success and error colors</h1>
+        <p>&larr; <a href="/examples/">Examples</a></p>
+        {% include share.html %}
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <section>
+                    <p>We can distinguish a valid and invalid field by colors. The label, message and <a href="/settings/#form-icon">feedback icon</a> associated with a
+                    valid field usually have a color which looks like green. When the field is not valid, these elements have a red-like color.</p>
+
+                    <p>This example shows two approaches for changing these colors.</p>
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Overriding the colors</h2>
+
+                    <p>If your form uses the <a href="http://getbootstrap.com/">Bootstrap</a> framework, FormValidation adds <code>.has-success</code>
+                        or <code>.has-error</code> class defined by <a href="http://getbootstrap.com/css/#forms-control-validation">Bootstrap's validation state classes</a>
+                        to the field container based on the field validity.</p>
+
+                    <p>The label, field, message and feedback icon elements which have <code>.control-label</code>, <code>.form-control</code>,
+                        <code>.help-block</code>, and <code>.form-control-feedback</code> class will receive the associated validation styles:</p>
+
+{% highlight css %}
+/* Color of invalid field */
+.has-error .control-label,
+.has-error .help-block,
+.has-error .form-control-feedback {
+    color: #a94442;
+}
+
+/* Color of valid field */
+.has-success .control-label,
+.has-success .help-block,
+.has-success .form-control-feedback {
+    color: #3c763d;
+}
+{% endhighlight %}
+
+                    <p>So, it's quite easy for you to override these colors for all forms or particular form as below:</p>
+
+{% highlight css %}
+#loginForm .has-error .control-label,
+#loginForm .has-error .help-block,
+#loginForm .has-error .form-control-feedback {
+    color: #f39c12;
+}
+
+#loginForm .has-success .control-label,
+#loginForm .has-success .help-block,
+#loginForm .has-success .form-control-feedback {
+    color: #18bc9c;
+}
+{% endhighlight %}
+
+                    {% include demo/tabs.html id="override-colors" frameworks="bootstrap" dir="override-colors" codes="programmatic" %}
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Using the row option</h2>
+
+                    <p>As mentioned in the previous section, based on the field validity, the plugin will adds different
+                        classes for the field container.</p>
+                    <p>The valid and invalid classes can be defined via the <a href="/settings/#form-row">row</a> option which
+                        takes the following default values:</p>
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Framework</th>
+                                    <th>row option</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><a href="http://getbootstrap.com/css/#forms-control-validation">Bootstrap</a></td>
+                                    <td>
+{% highlight javascript %}
+row: {
+    valid: 'has-success',
+    invalid: 'has-error'
+}
+{% endhighlight %}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="http://foundation.zurb.com/docs/components/forms.html#error-states">Foundation</a></td>
+                                    <td>
+{% highlight javascript %}
+row: {
+    valid: 'fv-has-success',
+    invalid: 'error'
+}
+{% endhighlight %}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Pure</td>
+                                    <td>
+{% highlight javascript %}
+row: {
+    valid: 'fv-has-success',
+    invalid: 'fv-has-error'
+}
+{% endhighlight %}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="http://semantic-ui.com/collections/form.html#error">Semantic</a></td>
+                                    <td>
+{% highlight javascript %}
+row: {
+    valid: 'fv-has-success',
+    invalid: 'error'
+}
+{% endhighlight %}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>UIKit</td>
+                                    <td>
+{% highlight javascript %}
+row: {
+    valid: 'fv-has-success',
+    invalid: 'fv-has-error'
+}
+{% endhighlight %}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p>By using your own classes for these options, you can easily customize the look and feel of
+                        valid and invalid fields:</p>
+
+{% highlight css %}
+.field-error .control-label,
+.field-error .help-block,
+.field-error .form-control-feedback {
+    color: #ff0039;
+}
+
+.field-success .control-label,
+.field-success .help-block,
+.field-success .form-control-feedback {
+    color: #2780e3;
+}
+{% endhighlight %}
+
+{% highlight javascript %}
+$('#loginForm').formValidation({
+    row: {
+        valid: 'field-success',
+        invalid: 'field-error'
+    },
+    fields: {
+        ...
+    }
+});
+{% endhighlight %}
+
+                    {% include demo/tabs.html id="row-option" frameworks="bootstrap" dir="row-option" codes="programmatic" %}
+                </section>
+            </div>
+
+            <div class="col-md-3 hidden-print hidden-xs hidden-sm">
+                <div id="toc" class="doc-toc"></div>
+
+                {% include ad.html %}
+            </div>
+        </div>
+    </div>
+</div>
