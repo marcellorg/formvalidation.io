@@ -15,6 +15,10 @@
                     <td>Triggered after the form is initialized by the plugin</td>
                 </tr>
                 <tr>
+                    <td><code>prevalidate.form.fv</code></td>
+                    <td>Triggered before validating the form</td>
+                </tr>
+                <tr>
                     <td><code>err.form.fv</code></td>
                     <td>Triggered when the form is invalid</td>
                 </tr>
@@ -61,7 +65,7 @@ $(document).ready(function() {
 
         .formValidation(options)
 
-        .on('err.form.fv', function(e) {
+        .on('prevalidate.form.fv', function(e) {
             // $(e.target) --> The form instance
             // $(e.target).data('formValidation')
             //             --> The FormValidation instance
@@ -69,9 +73,16 @@ $(document).ready(function() {
             // Do something ...
         })
 
+        .on('err.form.fv', function(e) {
+            // The e parameter is same as one
+            // in the prevalidate.form.fv event above
+
+            // Do something ...
+        })
+
         .on('success.form.fv', function(e) {
             // The e parameter is same as one
-            // in the err.form.fv event above
+            // in the prevalidate.form.fv event above
 
             // Do something ...
         })
@@ -105,6 +116,9 @@ $(document).ready(function() {
 $(document).ready(function() {
     $(form)
         .formValidation({
+            onPreValidate: function(e) {
+                // Do something ...
+            },
             onError: function(e) {
                 // Do something ...
             },
@@ -120,10 +134,16 @@ $(document).ready(function() {
                     <td>Using HTML 5 attributes</td>
                     <td>
 {% highlight html %}
-<form data-fv-onerror="onFormError" data-fv-onsuccess="onFormSuccess"></form>
+<form data-fv-onprevalidate="onPreValidateForm"
+      data-fv-onerror="onFormError"
+      data-fv-onsuccess="onFormSuccess"></form>
 {% endhighlight %}
 
 {% highlight javascript %}
+function onPreValidateForm(e) {
+    // Do something ...
+};
+
 function onFormError(e) {
     // Do something ...
 };
