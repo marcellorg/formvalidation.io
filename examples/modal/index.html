@@ -166,6 +166,17 @@ $(document).ready(function() {
                 <section>
                     <p>It's possible to use the plugin with a form which is placed inside a <a href="http://getbootstrap.com/javascript/#modals">Bootstrap Modal</a>.</p>
 
+                    <p>By default, the plugin will not initialize the fields which are disabled, hidden, or not visible. Since the form is placed inside a model which is not visible after loading page, the plugin might ignore the fields.</p>
+                    <p>That's the reason why we need to set <code>excluded: [':disabled']</code>. Take a look at the <a href="/settings#form-excluded">excluded</a> setting for more information.</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#loginForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
+        <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;This value is not valid&#39;</span><span class="p">,</span>
+        <span class="nx">excluded</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;:disabled&#39;</span><span class="p">],</span>
+        <span class="p">...</span>
+    <span class="p">});</span>
+<span class="p">});</span></code></pre></div>
+
                     <div class="doc-demo">
                         <ul class="nav nav-tabs">
                             <li class="active"><a href="#modal-form-tab" data-toggle="tab">Try it</a></li>
@@ -266,6 +277,7 @@ $(document).ready(function() {
 <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#loginForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
         <span class="nx">framework</span><span class="o">:</span> <span class="s1">&#39;bootstrap&#39;</span><span class="p">,</span>
+        <span class="nx">excluded</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;:disabled&#39;</span><span class="p">],</span>
         <span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
             <span class="nx">valid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-ok&#39;</span><span class="p">,</span>
             <span class="nx">invalid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-remove&#39;</span><span class="p">,</span>
@@ -298,28 +310,10 @@ $(document).ready(function() {
                 <div class="doc-hr"></div>
 
                 <section>
-                    <h2>Setting options via HTML attributes</h2>
-
-                    <p>If you use <a href="/examples/attribute/">HTML attributes</a> to set the validator options, or <a href="/examples/html5/">HTML5 input</a> elements, you must set <code>excluded: [':disabled']</code>.</p>
-                    <p>By default, the plugin will not initialize the fields which are disabled, hidden, or not visible. Since the form is placed inside a model which is not visible after loading page, the fields/validators initialized with HTML attributes might be ignored.</p>
-                    <p>That's the reason why we need to set <code>excluded: [':disabled']</code>. Take a look at the <a href="/settings#form-excluded">excluded</a> setting for more information.</p>
-
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#loginForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
-        <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;This value is not valid&#39;</span><span class="p">,</span>
-        <span class="nx">excluded</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;:disabled&#39;</span><span class="p">],</span>
-        <span class="p">...</span>
-    <span class="p">});</span>
-<span class="p">});</span></code></pre></div>
-                </section>
-
-                <div class="doc-hr"></div>
-
-                <section>
                     <h2>Resetting form when showing the modal</h2>
 
                     <p>If you want to reset all the fields in form whenever the modal is shown, the <a href="/api#reset-form"><code>resetForm()</code> method</a> will help you:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#loginModal&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;shown.bs.modal&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#loginModal&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;hidden.bs.modal&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#loginForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;resetForm&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
 <span class="p">});</span></code></pre></div>
                 </section>
@@ -369,6 +363,7 @@ $(document).ready(function() {
 $(document).ready(function() {
     $('#loginForm').formValidation({
         framework: 'bootstrap',
+        excluded: [':disabled'],
         icon: {
             valid: 'glyphicon glyphicon-ok',
             invalid: 'glyphicon glyphicon-remove',
@@ -399,18 +394,20 @@ $(document).ready(function() {
         // Prevent form submission
         e.preventDefault();
 
-        var validator = $(e.target).data('formValidation');
+        var validator = $(e.target).data('formValidation'),
+            username  = validator.getFieldElements('username').val();
         $('#loginModal')
             .one('hidden.bs.modal', function() {
                 $('#welcomeModal')
                     .find('.username')
-                        .html(validator.getFieldElements('username').val()).end()
+                        .html(username)
+                        .end()
                     .modal('show');
             })
             .modal('hide');
     });
 
-    $('#loginModal').on('shown.bs.modal', function() {
+    $('#loginModal').on('hide.bs.modal', function() {
         $('#loginForm').formValidation('resetForm', true)
                        .find('[name="username"]').focus();
     });
