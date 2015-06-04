@@ -14,14 +14,77 @@ permalink: /examples/cant-submit-form-after-validation/
     <div class="container">
         <div class="row">
             <div class="col-md-9">
-                <p>After clicking the submit button, the plugin will submit the form automatically if all fields are valid.</p>
-                <p>If the form can't be submitted, the reason might be caused by using <code>name="submit"</code> or <code>id="submit"</code> attribute for the submit button.</p>
+                <section>
+                    <p>After clicking the submit button, the plugin will submit the form automatically if all fields are valid. There are some mistakes causing the issue that the form can't be submitted
+                        although the validation is working fine.</p>
+                    <p>This page collects some popular check list to avoid this problem.</p>
+                </section>
 
-                <p>Behind the scene, FormValidation uses the jQuery's <a href="https://api.jquery.com/submit/">submit()</a> method to submit the form.
-                    If the submit button has either <code>name="submit"</code> or <code>id="submit"</code> attribute, then <code>$(form)[0].submit</code> will
-                    return the submit button instance instead of submitting the form.</p>
+                <div class="doc-hr"></div>
 
-                <p>That's why we can't submit the form. The similar issue occurs when using special properties of form such as <code>reset</code>, <code>length</code>, <code>method</code>.</p>
+                <section>
+                    <h2>The target is not a form</h2>
+
+                    <p>When calling <code>$(target).formValidation()</code>, please ensure that the target is a HTML form element:</p>
+
+{% highlight html %}
+<!-- Do NOT -->
+<div id="container"></div>
+
+<script>
+$(document).ready(function() {
+    $('#container').formValidation({
+        ...
+    });
+});
+</script>
+
+<!-- Do -->
+<form id="myForm"></form>
+
+<script>
+$(document).ready(function() {
+    $('#myForm').formValidation({
+        ...
+    });
+});
+</script>
+{% endhighlight %}
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>The target's ID is duplicated</h2>
+
+                    <p>In the case you are using an ID selector, ensure that there is only one element on page having that ID:</p>
+
+{% highlight html %}
+<div id="payment"></div>
+
+<form id="payment"></form>
+
+<script>
+$(document).ready(function() {
+    $('#payment').formValidation({
+        ...
+    });
+});
+</script>
+{% endhighlight %}
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>The submit button's name is not valid</h2>
+
+                    <p>If the form can't be submitted, the reason might be caused by using <code>name="submit"</code> or <code>id="submit"</code> attribute for the submit button.</p>
+                    <p>Behind the scene, FormValidation uses the jQuery's <a href="https://api.jquery.com/submit/">submit()</a> method to submit the form.
+                        If the submit button has either <code>name="submit"</code> or <code>id="submit"</code> attribute, then <code>$(form)[0].submit</code> will
+                        return the submit button instance instead of submitting the form.</p>
+
+                    <p>That's why we can't submit the form. The similar issue occurs when using special properties of form such as <code>reset</code>, <code>length</code>, <code>method</code>.</p>
 
 {% highlight html %}
 <!-- Do NOT -->
@@ -31,10 +94,12 @@ permalink: /examples/cant-submit-form-after-validation/
 <button type="submit" name="submitButton" class="btn btn-primary">Submit</button>
 {% endhighlight %}
 
-                <p><a href="http://kangax.github.com/domlint/">DOMLint</a> has a complete list of rules to check the markup for these kind of problems.</p>
+                    <p><a href="http://kangax.github.com/domlint/">DOMLint</a> has a complete list of rules to check the markup for these kind of problems.</p>
+                </section>
             </div>
 
             <div class="col-md-3 hidden-print hidden-xs hidden-sm">
+                <div id="toc" class="doc-toc"></div>
                 {% include ad.html %}
             </div>
         </div>
