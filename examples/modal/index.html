@@ -17,6 +17,19 @@ permalink: /examples/modal/
                 <section>
                     <p>It's possible to use the plugin with a form which is placed inside a <a href="http://getbootstrap.com/javascript/#modals">Bootstrap Modal</a>.</p>
 
+                    <p>By default, the plugin will not initialize the fields which are disabled, hidden, or not visible. Since the form is placed inside a model which is not visible after loading page, the plugin might ignore the fields.</p>
+                    <p>That's the reason why we need to set <code>excluded: [':disabled']</code>. Take a look at the <a href="/settings#form-excluded">excluded</a> setting for more information.</p>
+
+{% highlight javascript %}
+$(document).ready(function() {
+    $('#loginForm').formValidation({
+        message: 'This value is not valid',
+        excluded: [':disabled'],
+        ...
+    });
+});
+{% endhighlight %}
+
                     <div class="doc-demo">
                         <ul class="nav nav-tabs">
                             <li class="active"><a href="#modal-form-tab" data-toggle="tab">Try it</a></li>
@@ -42,31 +55,11 @@ permalink: /examples/modal/
                 <div class="doc-hr"></div>
 
                 <section>
-                    <h2>Setting options via HTML attributes</h2>
-
-                    <p>If you use <a href="/examples/attribute/">HTML attributes</a> to set the validator options, or <a href="/examples/html5/">HTML5 input</a> elements, you must set <code>excluded: [':disabled']</code>.</p>
-                    <p>By default, the plugin will not initialize the fields which are disabled, hidden, or not visible. Since the form is placed inside a model which is not visible after loading page, the fields/validators initialized with HTML attributes might be ignored.</p>
-                    <p>That's the reason why we need to set <code>excluded: [':disabled']</code>. Take a look at the <a href="/settings#form-excluded">excluded</a> setting for more information.</p>
-
-{% highlight javascript %}
-$(document).ready(function() {
-    $('#loginForm').formValidation({
-        message: 'This value is not valid',
-        excluded: [':disabled'],
-        ...
-    });
-});
-{% endhighlight %}
-                </section>
-
-                <div class="doc-hr"></div>
-
-                <section>
                     <h2>Resetting form when showing the modal</h2>
 
                     <p>If you want to reset all the fields in form whenever the modal is shown, the <a href="/api#reset-form"><code>resetForm()</code> method</a> will help you:</p>
 {% highlight javascript %}
-$('#loginModal').on('shown.bs.modal', function() {
+$('#loginModal').on('hidden.bs.modal', function() {
     $('#loginForm').formValidation('resetForm', true);
 });
 {% endhighlight %}
@@ -110,18 +103,20 @@ $(document).ready(function() {
         // Prevent form submission
         e.preventDefault();
 
-        var validator = $(e.target).data('formValidation');
+        var validator = $(e.target).data('formValidation'),
+            username  = validator.getFieldElements('username').val();
         $('#loginModal')
             .one('hidden.bs.modal', function() {
                 $('#welcomeModal')
                     .find('.username')
-                        .html(validator.getFieldElements('username').val()).end()
+                        .html(username)
+                        .end()
                     .modal('show');
             })
             .modal('hide');
     });
 
-    $('#loginModal').on('shown.bs.modal', function() {
+    $('#loginModal').on('hide.bs.modal', function() {
         $('#loginForm').formValidation('resetForm', true)
                        .find('[name="username"]').focus();
     });
