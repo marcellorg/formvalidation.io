@@ -14,9 +14,18 @@ permalink: /examples/form-submit-twice/
     <div class="container">
         <div class="row">
             <div class="col-md-9">
-                <p>By default, after pressing the submit button, the plugin will validate fields and then submit the form if all fields are valid.</p>
-                <p>If you use a custom submit handler, the form might be submitted more than one time.</p>
-                <p>To prevent the plugin from submitting the form automatically, you can trigger the <a href="/settings/#event-form">success.form.fv</a> event:</p>
+                <section>
+                    <p>By default, after pressing the submit button, the plugin will validate fields and then submit the form if all fields are valid.
+                    If you use a custom submit handler, the form might be submitted more than one time.</p>
+                    <p>This page will help you how to solve the issue.</p>
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Triggering the success.form.fv event</h2>
+
+                    <p>To prevent the plugin from submitting the form automatically, you can trigger the <a href="/settings/#event-form">success.form.fv</a> event:</p>
 
 {% highlight javascript %}
 $(document).ready(function() {
@@ -43,7 +52,7 @@ $(document).ready(function() {
 });
 {% endhighlight %}
 
-                <p>You can use a custom submit handler like the following way:</p>
+                    <p>You can use a custom submit handler like the following way:</p>
 
 {% highlight javascript %}
 $(document).ready(function() {
@@ -68,13 +77,96 @@ $(document).ready(function() {
     });
 });
 {% endhighlight %}
+                </section>
 
-                <ul class="doc-list">
-                    <li><a href="/examples/ajax-submit">Using Ajax to submit the form</a></li>
-                </ul>
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Ensure that success.form.fv is triggered once</h2>
+
+                    <p>In some cases, even when using <code>e.preventDefault()</code> inside the <code>success.form.fv</code> event handler, the form is still submitted twice.
+                        The issue is caused by the fact that the <code>success.form.fv</code> event is triggered more than one time.</p>
+                    <p>For example, in the following snippet, we initialize the plugin and handle the event when clicking on particular button:</p>
+
+{% highlight javascript %}
+$(document).ready(function() {
+    $('#addToCartButton').on('click', function() {
+        $('#paymenForm')
+            .formValidation({
+                ... options ...
+            })
+            .on('success.form.fv', function(e) {
+                // Prevent form submission
+                e.preventDefault();
+
+                // Do custom handler
+                // such as sending data to server using Ajax ...
+            });
+    });
+});
+{% endhighlight %}
+                    <p>As you see, the <code>success.form.fv</code> event is handler inside the <code>addToCartButton</code> button click handler,
+                        the event will be triggered multiple times from the second, third, ... time you click the button.</p>
+                    <p>To solve this issue, you can remove the previous handler of <code>success.form.fv</code> event by either destroying the plugin instance before creating new one:</p>
+
+{% highlight javascript %}
+$(document).ready(function() {
+    $('#addToCartButton').on('click', function() {
+        $('#paymenForm')
+            // Destroy the plugin instance and all event attached with it
+            .formValidation('destroy')
+
+            .formValidation({
+                ... options ...
+            })
+
+            .on('success.form.fv', function(e) {
+                // Prevent form submission
+                e.preventDefault();
+
+                ...
+            });
+    });
+});
+{% endhighlight %}
+
+                    <p>or calling <code>.off('success.form.fv')</code>:</p>
+
+{% highlight javascript %}
+$(document).ready(function() {
+    $('#addToCartButton').on('click', function() {
+        $('#paymenForm')
+            .formValidation({
+                ... options ...
+            })
+
+            // Removed the previous success.form.fv handler
+            .off('success.form.fv')
+
+            .on('success.form.fv', function(e) {
+                // Prevent form submission
+                e.preventDefault();
+
+                ...
+            });
+    });
+});
+{% endhighlight %}
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Related example</h2>
+
+                    <ul class="doc-list">
+                        <li><a href="/examples/ajax-submit">Using Ajax to submit the form</a></li>
+                    </ul>
+                </section>
             </div>
 
             <div class="col-md-3 hidden-print hidden-xs hidden-sm">
+                <div id="toc" class="doc-toc"></div>
                 {% include ad.html %}
             </div>
         </div>
