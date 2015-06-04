@@ -163,14 +163,73 @@ $(document).ready(function() {
     <div class="container">
         <div class="row">
             <div class="col-md-9">
-                <p>After clicking the submit button, the plugin will submit the form automatically if all fields are valid.</p>
-                <p>If the form can't be submitted, the reason might be caused by using <code>name="submit"</code> or <code>id="submit"</code> attribute for the submit button.</p>
+                <section>
+                    <p>After clicking the submit button, the plugin will submit the form automatically if all fields are valid. There are some mistakes causing the issue that the form can't be submitted
+                        although the validation is working fine.</p>
+                    <p>This page collects some popular check list to avoid this problem.</p>
+                </section>
 
-                <p>Behind the scene, FormValidation uses the jQuery's <a href="https://api.jquery.com/submit/">submit()</a> method to submit the form.
-                    If the submit button has either <code>name="submit"</code> or <code>id="submit"</code> attribute, then <code>$(form)[0].submit</code> will
-                    return the submit button instance instead of submitting the form.</p>
+                <div class="doc-hr"></div>
 
-                <p>That's why we can't submit the form. The similar issue occurs when using special properties of form such as <code>reset</code>, <code>length</code>, <code>method</code>.</p>
+                <section>
+                    <h2>The target is not a form</h2>
+
+                    <p>When calling <code>$(target).formValidation()</code>, please ensure that the target is a HTML form element:</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Do NOT --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;container&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#container&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
+        <span class="p">...</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+
+<span class="c">&lt;!-- Do --&gt;</span>
+<span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;myForm&quot;</span><span class="nt">&gt;&lt;/form&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#myForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
+        <span class="p">...</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span></code></pre></div>
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>The target's ID is duplicated</h2>
+
+                    <p>In the case you are using an ID selector, ensure that there is only one element on page having that ID:</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;payment&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+
+<span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;payment&quot;</span><span class="nt">&gt;&lt;/form&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#payment&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
+        <span class="p">...</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span></code></pre></div>
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>The submit button's name is not valid</h2>
+
+                    <p>If the form can't be submitted, the reason might be caused by using <code>name="submit"</code> or <code>id="submit"</code> attribute for the submit button.</p>
+                    <p>Behind the scene, FormValidation uses the jQuery's <a href="https://api.jquery.com/submit/">submit()</a> method to submit the form.
+                        If the submit button has either <code>name="submit"</code> or <code>id="submit"</code> attribute, then <code>$(form)[0].submit</code> will
+                        return the submit button instance instead of submitting the form.</p>
+
+                    <p>That's why we can't submit the form. The similar issue occurs when using special properties of form such as <code>reset</code>, <code>length</code>, <code>method</code>.</p>
 
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Do NOT --&gt;</span>
 <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">name=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-primary&quot;</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/button&gt;</span>
@@ -178,10 +237,12 @@ $(document).ready(function() {
 <span class="c">&lt;!-- Do --&gt;</span>
 <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">name=</span><span class="s">&quot;submitButton&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-primary&quot;</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/button&gt;</span></code></pre></div>
 
-                <p><a href="http://kangax.github.com/domlint/">DOMLint</a> has a complete list of rules to check the markup for these kind of problems.</p>
+                    <p><a href="http://kangax.github.com/domlint/">DOMLint</a> has a complete list of rules to check the markup for these kind of problems.</p>
+                </section>
             </div>
 
             <div class="col-md-3 hidden-print hidden-xs hidden-sm">
+                <div id="toc" class="doc-toc"></div>
                 <div class="doc-ad">
     <h6>Advertising</h6>
 
