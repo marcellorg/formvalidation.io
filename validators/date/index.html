@@ -126,6 +126,7 @@ $(document).ready(function() {
     var notifications = [],
         $message      = $('#notification').find('a').data('index', 0);
     notifications.push({ title: 'v0.6.3 is released on 2015.05.31', url: '/news/v0.6.3-released/'});
+    notifications.push({ title: 'New example: Disabling date', url: '/validators/date/#disabling-date-example'});
     notifications.push({ title: 'New example: Changing success and error colors', url: '/examples/changing-success-error-colors/'});
     notifications.push({ title: 'New example: Ignoring validation', url: '/examples/ignoring-validation/'});
     notifications.push({ title: 'New example: Adding fields with different names', url: '/examples/adding-dynamic-field/#adding-fields-with-different-names'});
@@ -134,7 +135,6 @@ $(document).ready(function() {
     notifications.push({ title: 'New example: Validating credit card expiration date', url: '/examples/validating-credit-card-expiration-date/'});
     notifications.push({ title: 'New example: Supporting Skeleton framework', url: '/examples/supporting-skeleton-framework/'});
     notifications.push({ title: 'New example: Getting notified while field is being validated', url: '/examples/getting-notified-field-being-validated/'});
-    notifications.push({ title: 'New promise validator', url: '/validators/promise/'});
     
     setInterval(function() {
         $message.data('index', $message.data('index') + 1);
@@ -467,6 +467,12 @@ $(document).ready(function() {
                     <h3>Datetime picker example</h3>
                     <p>The form below is an example of using the date validator with <a href="http://eonasdan.github.io/bootstrap-datetimepicker/">Bootstrap Datetime Picker</a>:</p>
 
+                    <ul class="doc-list">
+                        <li><a href="/examples/bootstrap-datepicker/">Integrating with Bootstrap Datepicker</a></li>
+                        <li><a href="/examples/jquery-ui-datepicker/">Integrating with jQuery UI Datepicker</a></li>
+                        <li><a href="/examples/pickadate/">Integrating with Pickadate</a></li>
+                    </ul>
+
                     
 
 
@@ -564,6 +570,183 @@ $(document).ready(function() {
         
     </div>
 </div>
+
+                    <h3>Disabling date example</h3>
+
+                    <p>It's possible to disable a particular date by triggering the <a href="/settings/#event-validator">success.validator.fv</a> event and using the <a href="/api/#update-status">updateStatus()</a> method.
+                        The example below shows how to treat all Sundays as not valid date.</p>
+                    <p>You can try to choose a Sunday from the picker to see how it works in action.</p>
+
+                    
+
+
+
+
+
+
+
+
+
+<div class="doc-demo">
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"><span class="doc-framework">Framework</span> <i class="caret"></i></a>
+            <ul class="dropdown-menu" role="menu">
+                
+                <li><a href="/validators/date/disabling-dates/bootstrap.html" data-demo-target="#disabling-dates-frame" data-demo-framework="bootstrap">Bootstrap</a></li>
+                
+            </ul>
+        </li>
+        <li class="active"><a href="#disabling-dates-form-tab" data-toggle="tab">Try it</a></li>
+        
+        <li><a href="#disabling-dates-programmatic-tab" data-toggle="tab">Programmatic code</a></li>
+        
+        <li class="doc-demo-direct"><a href="/validators/date/disabling-dates/bootstrap.html" data-toggle="tooltip" data-container="body" title="Open the demo in new tab" target="_blank"><i class="fa fa-external-link"></i></a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane active" id="disabling-dates-form-tab">
+            <iframe class="doc-demo-frame" id="disabling-dates-frame"></iframe>
+        </div>
+
+        
+        <div class="tab-pane" id="disabling-dates-programmatic-tab">
+            
+            <div data-demo-code="bootstrap">
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Include Bootstrap Datepicker --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.min.css&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker3.min.css&quot;</span> <span class="nt">/&gt;</span>
+
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+
+<span class="nt">&lt;style </span><span class="na">type=</span><span class="s">&quot;text/css&quot;</span><span class="nt">&gt;</span>
+<span class="c">/**</span>
+<span class="c"> * Override feedback icon position</span>
+<span class="c"> * See http://formvalidation.io/examples/adjusting-feedback-icon-position/</span>
+<span class="c"> */</span>
+<span class="nf">#eventForm</span> <span class="nc">.form-control-feedback</span> <span class="p">{</span>
+    <span class="k">top</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="k">right</span><span class="o">:</span> <span class="m">-15px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+
+<span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;eventForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Event<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-5&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;name&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Date<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-5 date&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;input-group input-append date&quot;</span> <span class="na">id=</span><span class="s">&quot;datePicker&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;eventDate&quot;</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;input-group-addon add-on&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;glyphicon glyphicon-calendar&quot;</span><span class="nt">&gt;&lt;/span&gt;&lt;/span&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-5 col-xs-offset-3&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span><span class="nt">&gt;</span>Validate<span class="nt">&lt;/button&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#datePicker&#39;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">datepicker</span><span class="p">({</span>
+            <span class="nx">format</span><span class="o">:</span> <span class="s1">&#39;mm/dd/yyyy&#39;</span>
+        <span class="p">})</span>
+        <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;changeDate&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// Revalidate the date field</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#eventForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;revalidateField&#39;</span><span class="p">,</span> <span class="s1">&#39;eventDate&#39;</span><span class="p">);</span>
+        <span class="p">});</span>
+
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#eventForm&#39;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">formValidation</span><span class="p">({</span>
+            <span class="nx">framework</span><span class="o">:</span> <span class="s1">&#39;bootstrap&#39;</span><span class="p">,</span>
+            <span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">valid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-ok&#39;</span><span class="p">,</span>
+                <span class="nx">invalid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-remove&#39;</span><span class="p">,</span>
+                <span class="nx">validating</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-refresh&#39;</span>
+            <span class="p">},</span>
+            <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">name</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">notEmpty</span><span class="o">:</span> <span class="p">{</span>
+                            <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The name is required&#39;</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                <span class="p">},</span>
+                <span class="nx">eventDate</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">notEmpty</span><span class="o">:</span> <span class="p">{</span>
+                            <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The date is required&#39;</span>
+                        <span class="p">},</span>
+                        <span class="nx">date</span><span class="o">:</span> <span class="p">{</span>
+                            <span class="nx">format</span><span class="o">:</span> <span class="s1">&#39;MM/DD/YYYY&#39;</span><span class="p">,</span>
+                            <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The date is not a valid&#39;</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">})</span>
+        <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;success.validator.fv&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">field</span> <span class="o">===</span> <span class="s1">&#39;eventDate&#39;</span> <span class="o">&amp;&amp;</span> <span class="nx">data</span><span class="p">.</span><span class="nx">validator</span> <span class="o">===</span> <span class="s1">&#39;date&#39;</span> <span class="o">&amp;&amp;</span> <span class="nx">data</span><span class="p">.</span><span class="nx">result</span><span class="p">.</span><span class="nx">date</span><span class="p">)</span> <span class="p">{</span>
+                <span class="c1">// The eventDate field passes the date validator</span>
+                <span class="c1">// We can get the current date as a Javascript Date object</span>
+                <span class="kd">var</span> <span class="nx">currentDate</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">result</span><span class="p">.</span><span class="nx">date</span><span class="p">,</span>
+                    <span class="nx">day</span>         <span class="o">=</span> <span class="nx">currentDate</span><span class="p">.</span><span class="nx">getDay</span><span class="p">();</span>
+
+                <span class="c1">// If the selected date is Sunday</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nx">day</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="c1">// Treat the field as invalid</span>
+                    <span class="nx">data</span><span class="p">.</span><span class="nx">fv</span>
+                        <span class="p">.</span><span class="nx">updateStatus</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">field</span><span class="p">,</span> <span class="nx">data</span><span class="p">.</span><span class="nx">fv</span><span class="p">.</span><span class="nx">STATUS_INVALID</span><span class="p">,</span> <span class="nx">data</span><span class="p">.</span><span class="nx">validator</span><span class="p">)</span>
+                        <span class="p">.</span><span class="nx">updateMessage</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">field</span><span class="p">,</span> <span class="nx">data</span><span class="p">.</span><span class="nx">validator</span><span class="p">,</span> <span class="s1">&#39;Please choose a day except Sunday&#39;</span><span class="p">);</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                    <span class="c1">// Reset the message</span>
+                    <span class="nx">data</span><span class="p">.</span><span class="nx">fv</span><span class="p">.</span><span class="nx">updateMessage</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">field</span><span class="p">,</span> <span class="nx">data</span><span class="p">.</span><span class="nx">validator</span><span class="p">,</span> <span class="s1">&#39;The date is not valid&#39;</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">});</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span></code></pre></div>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+
+                    <p>If you want to show another message when user choose a Sunday, you can use the <a href="/api/#update-message">updateMessage()</a> method:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#eventForm&#39;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">formValidation</span><span class="p">({</span>
+        <span class="p">...</span>
+    <span class="p">})</span>
+    <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;success.validator.fv&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">field</span> <span class="o">===</span> <span class="s1">&#39;eventDate&#39;</span> <span class="o">&amp;&amp;</span> <span class="nx">data</span><span class="p">.</span><span class="nx">validator</span> <span class="o">===</span> <span class="s1">&#39;date&#39;</span> <span class="o">&amp;&amp;</span> <span class="nx">data</span><span class="p">.</span><span class="nx">result</span><span class="p">.</span><span class="nx">date</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">currentDate</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">result</span><span class="p">.</span><span class="nx">date</span><span class="p">,</span>
+                <span class="nx">day</span>         <span class="o">=</span> <span class="nx">currentDate</span><span class="p">.</span><span class="nx">getDay</span><span class="p">();</span>
+
+            <span class="c1">// If the selected date is Sunday</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">day</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                <span class="c1">// Treat the field as invalid</span>
+                <span class="nx">data</span><span class="p">.</span><span class="nx">fv</span>
+                    <span class="p">.</span><span class="nx">updateStatus</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">field</span><span class="p">,</span> <span class="nx">data</span><span class="p">.</span><span class="nx">fv</span><span class="p">.</span><span class="nx">STATUS_INVALID</span><span class="p">,</span> <span class="nx">data</span><span class="p">.</span><span class="nx">validator</span><span class="p">)</span>
+                    <span class="c1">// Update the message</span>
+                    <span class="p">.</span><span class="nx">updateMessage</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">field</span><span class="p">,</span> <span class="nx">data</span><span class="p">.</span><span class="nx">validator</span><span class="p">,</span> <span class="s1">&#39;Please choose a day except Sunday&#39;</span><span class="p">);</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="c1">// Reset the message</span>
+                <span class="nx">data</span><span class="p">.</span><span class="nx">fv</span><span class="p">.</span><span class="nx">updateMessage</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">field</span><span class="p">,</span> <span class="nx">data</span><span class="p">.</span><span class="nx">validator</span><span class="p">,</span> <span class="s1">&#39;The date is not valid&#39;</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">});</span></code></pre></div>
 
                     <h3>Custom format example</h3>
 
@@ -821,12 +1004,6 @@ $(document).ready(function() {
     </div>
 </div>
                 </section>
-
-                <ul class="doc-list">
-                    <li><a href="/examples/bootstrap-datepicker/">Integrating with Bootstrap Datepicker</a></li>
-                    <li><a href="/examples/jquery-ui-datepicker/">Integrating with jQuery UI Datepicker</a></li>
-                    <li><a href="/examples/pickadate/">Integrating with Pickadate</a></li>
-                </ul>
 
                 <div class="doc-pagination">
     
