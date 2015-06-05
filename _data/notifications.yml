@@ -1,6 +1,9 @@
 - title: "v0.6.3 is released on 2015.05.31"
   url: "/news/v0.6.3-released/"
 
+- title: "New example: Disabling date"
+  url: "/validators/date/#disabling-date-example"
+
 - title: "New example: Changing success and error colors"
   url: "/examples/changing-success-error-colors/"
 
@@ -24,6 +27,3 @@
 
 - title: "New example: Getting notified while field is being validated"
   url: "/examples/getting-notified-field-being-validated/"
-
-- title: "New promise validator"
-  url: "/validators/promise/"

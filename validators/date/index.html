@@ -221,7 +221,48 @@ next:
                     <h3>Datetime picker example</h3>
                     <p>The form below is an example of using the date validator with <a href="http://eonasdan.github.io/bootstrap-datetimepicker/">Bootstrap Datetime Picker</a>:</p>
 
+                    <ul class="doc-list">
+                        <li><a href="/examples/bootstrap-datepicker/">Integrating with Bootstrap Datepicker</a></li>
+                        <li><a href="/examples/jquery-ui-datepicker/">Integrating with jQuery UI Datepicker</a></li>
+                        <li><a href="/examples/pickadate/">Integrating with Pickadate</a></li>
+                    </ul>
+
                     {% include demo/tabs.html id="picker" frameworks="bootstrap" dir="picker" codes="programmatic" %}
+
+                    <h3>Disabling date example</h3>
+
+                    <p>It's possible to disable a particular date by triggering the <a href="/settings/#event-validator">success.validator.fv</a> event and using the <a href="/api/#update-status">updateStatus()</a> method.
+                        The example below shows how to treat all Sundays as not valid date.</p>
+                    <p>You can try to choose a Sunday from the picker to see how it works in action.</p>
+
+                    {% include demo/tabs.html id="disabling-dates" frameworks="bootstrap" dir="disabling-dates" codes="programmatic" %}
+
+                    <p>If you want to show another message when user choose a Sunday, you can use the <a href="/api/#update-message">updateMessage()</a> method:</p>
+
+{% highlight javascript %}
+$('#eventForm')
+    .formValidation({
+        ...
+    })
+    .on('success.validator.fv', function(e, data) {
+        if (data.field === 'eventDate' && data.validator === 'date' && data.result.date) {
+            var currentDate = data.result.date,
+                day         = currentDate.getDay();
+
+            // If the selected date is Sunday
+            if (day === 0) {
+                // Treat the field as invalid
+                data.fv
+                    .updateStatus(data.field, data.fv.STATUS_INVALID, data.validator)
+                    // Update the message
+                    .updateMessage(data.field, data.validator, 'Please choose a day except Sunday');
+            } else {
+                // Reset the message
+                data.fv.updateMessage(data.field, data.validator, 'The date is not valid');
+            }
+        }
+    });
+{% endhighlight %}
 
                     <h3>Custom format example</h3>
 
@@ -240,12 +281,6 @@ next:
 
                     {% include demo/tabs.html id="range-moment" frameworks="bootstrap" dir="range-moment" codes="programmatic" %}
                 </section>
-
-                <ul class="doc-list">
-                    <li><a href="/examples/bootstrap-datepicker/">Integrating with Bootstrap Datepicker</a></li>
-                    <li><a href="/examples/jquery-ui-datepicker/">Integrating with jQuery UI Datepicker</a></li>
-                    <li><a href="/examples/pickadate/">Integrating with Pickadate</a></li>
-                </ul>
 
                 {% include pagination.html %}
             </div>
