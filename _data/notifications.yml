@@ -1,6 +1,9 @@
 - title: "v0.6.3 is released on 2015.05.31"
   url: "/news/v0.6.3-released/"
 
+- title: "i18n add-on v0.1.1 is released"
+  url: "/addons/i18n/"
+
 - title: "New example: Disabling date"
   url: "/validators/date/#disabling-date-example"
 
@@ -24,6 +27,3 @@
 
 - title: "New example: Supporting Skeleton framework"
   url: "/examples/supporting-skeleton-framework/"
-
-- title: "New example: Getting notified while field is being validated"
-  url: "/examples/getting-notified-field-being-validated/"
