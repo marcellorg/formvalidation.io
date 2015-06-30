@@ -160,7 +160,12 @@ $(document).ready(function() {
                     },
                     stringLength: {
                         min: 6,
-                        max: 30
+                        max: 30,
+                        // Method 2: Use a literal object to define messages
+                        message: {
+                            en_US: 'The username must be between %s and %s characters long',
+                            vi_VN: 'Tên đăng nhập phải có ít nhất %s và nhiều nhất %s ký tự'
+                        }
                     },
                     regexp: {
                         regexp: /^[a-zA-Z0-9]+$/

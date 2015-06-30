@@ -189,7 +189,7 @@ $(document).ready(function() {
                 <section>
                     <h2>Including the add-on</h2>
                     <ul class="doc-list">
-                        <li>Download the <a href="https://github.com/formvalidation/addon-i18n/releases/download/v0.1.0/i18n-v0.1.0.zip" class="addonDownloadButton" data-placement="bottom" data-container="body">i18n</a> add-on</li>
+                        <li>Download the <a href="https://github.com/formvalidation/addon-i18n/releases/download/v0.1.1/i18n-v0.1.1.zip" class="addonDownloadButton" data-placement="bottom" data-container="body">i18n</a> add-on</li>
                         <li>Include <code>i18n.min.js</code> (located in the <code>dist</code> directory) to your page. Ensure that it's placed after <code>formValidation(.min).js</code></li>
                     </ul>
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- FormValidation plugin --&gt;</span>
@@ -472,7 +472,12 @@ $(document).ready(function() {
                     <span class="p">},</span>
                     <span class="nx">stringLength</span><span class="o">:</span> <span class="p">{</span>
                         <span class="nx">min</span><span class="o">:</span> <span class="mi">6</span><span class="p">,</span>
-                        <span class="nx">max</span><span class="o">:</span> <span class="mi">30</span>
+                        <span class="nx">max</span><span class="o">:</span> <span class="mi">30</span><span class="p">,</span>
+                        <span class="c1">// Method 2: Use a literal object to define messages</span>
+                        <span class="nx">message</span><span class="o">:</span> <span class="p">{</span>
+                            <span class="nx">en_US</span><span class="o">:</span> <span class="s1">&#39;The username must be between %s and %s characters long&#39;</span><span class="p">,</span>
+                            <span class="nx">vi_VN</span><span class="o">:</span> <span class="s1">&#39;Tên đăng nhập phải có ít nhất %s và nhiều nhất %s ký tự&#39;</span>
+                        <span class="p">}</span>
                     <span class="p">},</span>
                     <span class="nx">regexp</span><span class="o">:</span> <span class="p">{</span>
                         <span class="nx">regexp</span><span class="o">:</span> <span class="sr">/^[a-zA-Z0-9]+$/</span>
@@ -551,6 +556,22 @@ $(document).ready(function() {
     </div>
 </div>
                 </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Change log</h2>
+
+                    <ul class="doc-list">
+                        <li>
+                            <p>v0.1.1:</p>
+                            <ul class="doc-list">
+                                <li>Fix the issue when using with validators supporting dynamic message such as the <a href="/validators/stringLength/">stringLength</a></li>
+                            </ul>
+                        </li>
+                        <li>v0.1.0: First release</li>
+                    </ul>
+                </section>
             </div>
 
             <div class="col-md-3">
@@ -558,7 +579,7 @@ $(document).ready(function() {
                     <div class="doc-addon-image"><img class="img-responsive" src="/addons/i18n/cover.png" alt="FormValidation i18n add-on" /></div>
 
                     <div class="doc-addon-meta">
-                        <a href="https://github.com/formvalidation/addon-i18n/releases/download/v0.1.0/i18n-v0.1.0.zip" class="btn btn-success addonDownloadButton" data-placement="bottom" data-container="body"><i class="fa fa-download"></i> i18n-v0.1.0.zip</a>
+                        <a href="https://github.com/formvalidation/addon-i18n/releases/download/v0.1.1/i18n-v0.1.1.zip" class="btn btn-success addonDownloadButton" data-placement="bottom" data-container="body"><i class="fa fa-download"></i> i18n-v0.1.1.zip</a>
                     </div>
                 </div>
 
