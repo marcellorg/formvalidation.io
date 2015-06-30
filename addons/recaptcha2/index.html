@@ -28,7 +28,21 @@ download: "https://github.com/formvalidation/addon-recaptcha/releases/download/v
 
                 <section>
                     <h2>Registering keys</h2>
-                    <p>You need to register a site and secret keys at <a href="https://www.google.com/recaptcha/admin">https://www.google.com/recaptcha/admin</a></p>
+                    <p>You need to register a site and secret keys at <a href="https://www.google.com/recaptcha/admin">https://www.google.com/recaptcha/admin</a>.</p>
+                    <p><a href="https://developers.google.com/recaptcha/docs/display">reCaptcha</a> requires more steps to display the captcha which are</p>
+                    <ul class="doc-list">
+                        <li>Insert the Google reCaptcha API script to the page</li>
+                        <li>Add <code>data-sitekey</code> attribute to the element</li>
+                    </ul>
+                    <p>You <strong>DO NOT</strong> have to do these steps because they are done automatically by the add-on.</p>
+
+{% highlight html %}
+<!-- DO NOT need to add to your page -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+<div id="captchaContainer" data-sitekey="..."></div>
+{% endhighlight %}
+                    <p>In short, all you need are the site and secret keys provided by reCaptcha.</p>
                 </section>
 
                 <div class="doc-hr"></div>
@@ -88,7 +102,7 @@ $('#signUpForm').formValidation({
                             <div class="tab-pane" id="declarative-tab">
                                 <div class="doc-alert doc-alert-info">
                                     <p>If you want to use multiple add-ons, just simply separate them by a comma in data-fv-addons attribute:</p>
-                                    <p>data-fv-addons="reCaptcha2, requiredIcon, externalButton"</p>
+                                    <p>data-fv-addons="i18n, mandatoryIcon, recaptcha2"</p>
                                 </div>
 
 {% highlight html %}
