@@ -4,6 +4,9 @@
 - title: "i18n add-on v0.1.1 is released"
   url: "/addons/i18n/"
 
+- title: "New example: Terms and conditions agreement validation"
+  url: "/examples/terms-conditions-agreement-validation/"
+
 - title: "New example: Disabling date"
   url: "/validators/date/#disabling-date-example"
 
@@ -24,6 +27,3 @@
 
 - title: "New example: Validating credit card expiration date"
   url: "/examples/validating-credit-card-expiration-date/"
-
-- title: "New example: Supporting Skeleton framework"
-  url: "/examples/supporting-skeleton-framework/"

@@ -1,0 +1,123 @@
+---
+layout: default
+title: Terms and conditions agreement validation
+permalink: /examples/terms-conditions-agreement-validation/
+---
+
+<div class="doc-content-container">
+    <div class="doc-heading">
+        <h1>Terms and conditions agreement validation</h1>
+        <p>&larr; <a href="/examples/">Examples</a></p>
+        {% include share.html %}
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <section>
+                    <p>Showing and asking user to agree with terms and conditions is a common task, especially in registration forms.
+                        This example collects two popular approaches and shows how to force visitors to agree with the terms of use.</p>
+
+                    <div class="doc-alert doc-alert-info">
+                        It's recommended to use a <a href="/validators/callback/#basic-example">basic math calculation</a> captcha or <a href="/addons/recaptcha2/">Google reCaptcha</a> in a registration form
+                    </div>
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Showing terms and conditions in the same form</h2>
+
+                    <p>In the form below, the terms of use is shown in the same form. It's easy for you to use the <a href="/validators/notEmpty/">notEmpty</a> validator in this case:</p>
+
+{% highlight javascript %}
+$('#registrationForm').formValidation({
+    ...
+    fields: {
+        ...
+        agree: {
+            validators: {
+                notEmpty: {
+                    message: 'You must agree with the terms and conditions'
+                }
+            }
+        }
+    }
+});
+{% endhighlight %}
+
+                    {% include demo/tabs.html id="basic" frameworks="bootstrap" dir="basic" codes="programmatic" %}
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Showing terms and conditions in a modal</h2>
+
+                    <p>If the terms of use is too long and you want the user to pay more attention in reading it, it's great idea to place it in a modal.</p>
+                    <p>The modal consists of two buttons, one to indicate the agreement and the other to indicate the disagreement.</p>
+                    <p>The implementation can be described as following:</p>
+
+                    <h5>Step 1: Create a hidden input to determine whether user agree with the terms or not</h5>
+                    <p>Initially, the field's value is set as <code>no</code>:</p>
+
+{% highlight html %}
+<input type="hidden" name="agree" value="no" />
+{% endhighlight %}
+
+                    <h5>Step 2: Define validation rules for the field</h5>
+
+                    <p>FormValidation will ignore all hidden fields by default. In order to validate the field, we need to use the <a href="/settings/#field-excluded">excluded</a> option.
+                        It's easy to check if user agree with the terms by checking the field value via the <a href="/validators/callback/">callback</a> validator:</p>
+
+{% highlight javascript %}
+$('#registrationForm').formValidation({
+    ...
+    fields: {
+        ...
+        agree: {
+            excluded: false,
+            validators: {
+                callback: {
+                    message: 'You must agree with the terms and conditions',
+                    callback: function(value, validator, $field) {
+                        return value === 'yes';
+                    }
+                }
+            }
+        }
+    }
+});
+{% endhighlight %}
+
+                    <h5>Step 3: Handle the Agree and Disagree click event</h5>
+                    <p>When user click the <strong>Agree</strong> or <strong>Disagree</strong> button placed inside the modal, we need to set the hidden field's value to <code>yes</code> or <code>no</code>.</p>
+                    <p>Also, revalidate the field by using the <a href="/api/#revalidate-field">revalidateField()</a> method:</p>
+
+{% highlight javascript %}
+$('#agreeButton, #disagreeButton').on('click', function() {
+    var whichButton = $(this).attr('id');
+
+    $('#registrationForm')
+        .find('[name="agree"]')
+            .val(whichButton === 'agreeButton' ? 'yes' : 'no')
+            .end()
+        // Revalidate the field manually
+        .formValidation('revalidateField', 'agree');
+});
+{% endhighlight %}
+
+                    <p>Below is the working example demonstrating all the implementation steps above. The terms are placed inside a <a href="http://getbootstrap.com/javascript/#modals">Bootstrap modal</a>.</p>
+
+                    {% include demo/tabs.html id="modal" frameworks="bootstrap" dir="modal" codes="programmatic" %}
+                </section>
+            </div>
+
+            <div class="col-md-3 hidden-print hidden-xs hidden-sm">
+                <div id="toc" class="doc-toc"></div>
+
+                {% include ad.html %}
+            </div>
+        </div>
+    </div>
+</div>
