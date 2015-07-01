@@ -127,6 +127,7 @@ $(document).ready(function() {
         $message      = $('#notification').find('a').data('index', 0);
     notifications.push({ title: 'v0.6.3 is released on 2015.05.31', url: '/news/v0.6.3-released/'});
     notifications.push({ title: 'i18n add-on v0.1.1 is released', url: '/addons/i18n/'});
+    notifications.push({ title: 'New example: Terms and conditions agreement validation', url: '/examples/terms-conditions-agreement-validation/'});
     notifications.push({ title: 'New example: Disabling date', url: '/validators/date/#disabling-date-example'});
     notifications.push({ title: 'New example: Changing success and error colors', url: '/examples/changing-success-error-colors/'});
     notifications.push({ title: 'New example: Ignoring validation', url: '/examples/ignoring-validation/'});
@@ -134,7 +135,6 @@ $(document).ready(function() {
     notifications.push({ title: 'New example: Asking credit card number to match with selected type', url: '/validators/creditCard/#asking-credit-card-number-to-match-with-selected-type'});
     notifications.push({ title: 'New example: Validating start and end date/times', url: '/examples/validating-start-end-datetimes/'});
     notifications.push({ title: 'New example: Validating credit card expiration date', url: '/examples/validating-credit-card-expiration-date/'});
-    notifications.push({ title: 'New example: Supporting Skeleton framework', url: '/examples/supporting-skeleton-framework/'});
     
     setInterval(function() {
         $message.data('index', $message.data('index') + 1);
@@ -714,6 +714,10 @@ $(document).ready(function() {
         
     </div>
 </div>
+
+                    <ul class="doc-list">
+                        <li><a href="/examples/terms-conditions-agreement-validation/#showing-terms-and-conditions-in-a-modal">Terms and conditions agreement validation</a></li>
+                    </ul>
                 </section>
 
                 <div class="doc-hr"></div>
