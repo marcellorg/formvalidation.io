@@ -1002,7 +1002,7 @@ $(document).ready(function() {
 <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#zipCodeForm&#39;</span><span class="p">)</span>
         <span class="p">.</span><span class="nx">formValidation</span><span class="p">()</span>
-        <span class="c1">// Revalidate phone number when changing the country</span>
+        <span class="c1">// Revalidate the zipcode when changing the country</span>
         <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;change&#39;</span><span class="p">,</span> <span class="s1">&#39;[name=&quot;countrySelectBox&quot;]&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
             <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#zipCodeForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;revalidateField&#39;</span><span class="p">,</span> <span class="s1">&#39;postalCode&#39;</span><span class="p">);</span>
         <span class="p">});</span>
