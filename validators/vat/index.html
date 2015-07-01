@@ -326,7 +326,7 @@ related:
                                     <td>
                                         <ul class="doc-sample-list">
                                             {% for sample in item.examples %}
-                                            <li><a href="javascript: void(0);" class="sample">{{ sample }}</a> <i class="fa"></i></li>
+                                            <li><a href="javascript: void(0);" class="sample" data-country="{{ item.code }}">{{ sample }}</a> <i class="fa"></i></li>
                                             {% endfor %}
                                         </ul>
                                     </td>
@@ -365,7 +365,8 @@ related:
 $(document).ready(function() {
     $('.sample').on('click', function() {
         var formWindow = $('#basic-frame').get(0).contentWindow,
-            isValid    = formWindow.revalidateVat($(this).text());
+            country    = $(this).attr('data-country'),
+            isValid    = formWindow.revalidateVat($(this).text(), country);
 
         $(this)
             .parent()

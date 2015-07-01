@@ -51,7 +51,7 @@
 $(document).ready(function() {
     $('#zipCodeForm')
         .formValidation()
-        // Revalidate phone number when changing the country
+        // Revalidate the zipcode when changing the country
         .on('change', '[name="countrySelectBox"]', function(e) {
             $('#zipCodeForm').formValidation('revalidateField', 'postalCode');
         });
