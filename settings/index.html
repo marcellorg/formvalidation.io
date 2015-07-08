@@ -119,22 +119,22 @@ _gaq.push(['_trackPageview']);
 
     <div id="main" class="doc-content-wrapper">
         <div class="doc-notification" id="notification">
-    <i class="fa fa-bell-o"></i> <a href="/news/v0.6.3-released/">v0.6.3 is released on 2015.05.31</a>
+    <i class="fa fa-bell-o"></i> <a href="/examples/showing-custom-message-returned-from-server/">New example: Showing custom message returned from server</a>
 </div>
 <script>
 $(document).ready(function() {
     var notifications = [],
         $message      = $('#notification').find('a').data('index', 0);
-    notifications.push({ title: 'v0.6.3 is released on 2015.05.31', url: '/news/v0.6.3-released/'});
-    notifications.push({ title: 'i18n add-on v0.1.1 is released', url: '/addons/i18n/'});
+    notifications.push({ title: 'New example: Showing custom message returned from server', url: '/examples/showing-custom-message-returned-from-server/'});
     notifications.push({ title: 'New example: Terms and conditions agreement validation', url: '/examples/terms-conditions-agreement-validation/'});
+    notifications.push({ title: 'i18n add-on v0.1.1 is released', url: '/addons/i18n/'});
+    notifications.push({ title: 'v0.6.3 is released on 2015.05.31', url: '/news/v0.6.3-released/'});
     notifications.push({ title: 'New example: Disabling date', url: '/validators/date/#disabling-date-example'});
     notifications.push({ title: 'New example: Changing success and error colors', url: '/examples/changing-success-error-colors/'});
     notifications.push({ title: 'New example: Ignoring validation', url: '/examples/ignoring-validation/'});
     notifications.push({ title: 'New example: Adding fields with different names', url: '/examples/adding-dynamic-field/#adding-fields-with-different-names'});
     notifications.push({ title: 'New example: Asking credit card number to match with selected type', url: '/validators/creditCard/#asking-credit-card-number-to-match-with-selected-type'});
     notifications.push({ title: 'New example: Validating start and end date/times', url: '/examples/validating-start-end-datetimes/'});
-    notifications.push({ title: 'New example: Validating credit card expiration date', url: '/examples/validating-credit-card-expiration-date/'});
     
     setInterval(function() {
         $message.data('index', $message.data('index') + 1);
@@ -934,7 +934,11 @@ $(document).ready(function() {
     <section>
     <h3 id="form-message">message</h3>
 
-    <p><code>message: String</code> &mdash; The default error message for all fields. You can specify the error message for any fields.</p>
+    <p><code>message: String</code> &mdash; The default error message for all fields. You can specify the error message for any <a href="#field-message">fields</a> or <a href="#validator-message">validators</a>.</p>
+
+    <div class="doc-alert doc-alert-info">
+        This <a href="/examples/showing-custom-message-returned-from-server/">example</a> gives you an idea how to display custom messages returned from the server
+    </div>
 </section>
     <div class="doc-hr-short"></div>
 
