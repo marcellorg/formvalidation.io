@@ -1,0 +1,6 @@
+{
+  "result": "error",
+  "fields": {
+    "username": "It is not allowed to register with that username"
+  }
+}
