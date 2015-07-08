@@ -92,11 +92,19 @@ err: {
                 </tr>
                 <tr>
                     <td><code>row</code></td>
-                    <td><code>data-row-container</code></td>
+                    <td>
+                        <ul class="doc-list">
+                            <li><code>data-row-selector</code></li>
+                            <li><code>data-row-valid</code></li>
+                            <li><code>data-row-invalid</code></li>
+                        </ul>
+                    </td>
                     <td>
 {% highlight javascript %}
 row: {
-    container: null
+    selector: null,
+    valid: '',
+    invalid: ''
 }
 {% endhighlight %}
                     </td>
