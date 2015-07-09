@@ -119,17 +119,17 @@ _gaq.push(['_trackPageview']);
 
     <div id="main" class="doc-content-wrapper">
         <div class="doc-notification" id="notification">
-    <i class="fa fa-bell-o"></i> <a href="/examples/showing-custom-message-returned-from-server/">New example: Showing custom message returned from server</a>
+    <i class="fa fa-bell-o"></i> <a href="/examples/validating-custom-stripe-form/">New example: Validating custom Stripe form</a>
 </div>
 <script>
 $(document).ready(function() {
     var notifications = [],
         $message      = $('#notification').find('a').data('index', 0);
+    notifications.push({ title: 'New example: Validating custom Stripe form', url: '/examples/validating-custom-stripe-form/'});
     notifications.push({ title: 'New example: Showing custom message returned from server', url: '/examples/showing-custom-message-returned-from-server/'});
     notifications.push({ title: 'New example: Terms and conditions agreement validation', url: '/examples/terms-conditions-agreement-validation/'});
     notifications.push({ title: 'i18n add-on v0.1.1 is released', url: '/addons/i18n/'});
     notifications.push({ title: 'v0.6.3 is released on 2015.05.31', url: '/news/v0.6.3-released/'});
-    notifications.push({ title: 'New example: Disabling date', url: '/validators/date/#disabling-date-example'});
     notifications.push({ title: 'New example: Changing success and error colors', url: '/examples/changing-success-error-colors/'});
     notifications.push({ title: 'New example: Ignoring validation', url: '/examples/ignoring-validation/'});
     notifications.push({ title: 'New example: Adding fields with different names', url: '/examples/adding-dynamic-field/#adding-fields-with-different-names'});
