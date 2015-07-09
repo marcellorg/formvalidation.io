@@ -8,10 +8,10 @@
 
     <div class="form-group">
         <label class="col-xs-3 control-label">Expiration</label>
-        <div class="col-xs-2">
+        <div class="col-xs-3">
             <input type="text" class="form-control" placeholder="Month" data-stripe="exp-month" />
         </div>
-        <div class="col-xs-2">
+        <div class="col-xs-3">
             <input type="text" class="form-control" placeholder="Year" data-stripe="exp-year" />
         </div>
     </div>
@@ -47,6 +47,7 @@ $(document).ready(function() {
             },
             expMonth: {
                 selector: '[data-stripe="exp-month"]',
+                row: '.col-xs-3',
                 validators: {
                     notEmpty: {
                         message: 'The expiration month is required'
@@ -68,7 +69,7 @@ $(document).ready(function() {
                                 return true;
                             }
                             year = parseInt(year, 10);
-                            if (year > currentYear || (year == currentYear && value > currentMonth)) {
+                            if (year > currentYear || (year == currentYear && value >= currentMonth)) {
                                 validator.updateStatus('expYear', 'VALID');
                                 return true;
                             } else {
@@ -80,6 +81,7 @@ $(document).ready(function() {
             },
             expYear: {
                 selector: '[data-stripe="exp-year"]',
+                row: '.col-xs-3',
                 validators: {
                     notEmpty: {
                         message: 'The expiration year is required'
@@ -101,7 +103,7 @@ $(document).ready(function() {
                                 return false;
                             }
                             month = parseInt(month, 10);
-                            if (value > currentYear || (value == currentYear && month > currentMonth)) {
+                            if (value > currentYear || (value == currentYear && month >= currentMonth)) {
                                 validator.updateStatus('expMonth', 'VALID');
                                 return true;
                             } else {

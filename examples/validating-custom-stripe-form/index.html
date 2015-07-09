@@ -1,0 +1,312 @@
+---
+layout: default
+title: Validating custom Stripe form
+permalink: /examples/validating-custom-stripe-form/
+---
+
+<div class="doc-content-container">
+    <div class="doc-heading">
+        <h1>Validating custom Stripe form</h1>
+        <p>&larr; <a href="/examples/">Examples</a></p>
+        {% include share.html %}
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <section>
+                    <p><a href="https://stripe.com/">Stripe</a> is a popular payment platform. It's quite easy for
+                        developers to use and integrate its helpful APIs in a payment, checkout form.</p>
+                    <p>This example covers steps to help you create a payment form with <a href="http://getbootstrap.com/">Bootstrap</a>
+                        framework, validate it with <a href="/download/">FormValidation</a>. The credit card data is then processed
+                        by Stripe API.</p>
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Step 1: Creating a payment form</h2>
+
+                    <p>It's easy to use your favorite framework to create a standard payment form as following:</p>
+
+{% highlight html %}
+<form id="paymentForm" class="form-horizontal">
+    ...
+
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Credit card number</label>
+        <div class="col-xs-5">
+            <input type="text" class="form-control" data-stripe="number" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Expiration</label>
+        <div class="col-xs-3">
+            <input type="text" class="form-control" placeholder="Month" data-stripe="exp-month" />
+        </div>
+        <div class="col-xs-3">
+            <input type="text" class="form-control" placeholder="Year" data-stripe="exp-year" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-xs-3 control-label">CVV</label>
+        <div class="col-xs-2">
+            <input type="text" class="form-control" data-stripe="cvc" />
+        </div>
+    </div>
+
+    <input type="hidden" name="token" value="" />
+
+    ...
+</form>
+{% endhighlight %}
+
+                    <p>As you see, all fields for filling the credit card information don't have the <code>name</code> attribute.
+                        Instead, they use the <code>data-stripe</code> attribute which are defined by Stripe. The Stripe API then will
+                        collects the credit card data from fields using this attribute.</p>
+
+                    <div class="doc-alert doc-alert-warning">
+                        By not using the name attribute for sensitive fields, we can prevent them from sending to the server
+                        when the form is submitted.
+                    </div>
+
+                    <p>The form also includes a hidden field named <code>token</code>. Instead of storing the credit card data which are very sensitive,
+                        the form stores an equivalent token that is determined and returned by Stripe API.</p>
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Step 2: Adding validation rules</h2>
+
+                    <p>All credit card fields are nameless elements. How we can apply the validation rules for them?</p>
+                    <p>Fortunately, FormValidation provides the <a href="/settings/#field-selector">selector</a> option
+                        to support indicating fields via a CSS selector.</p>
+                    <p>We can use the built in <a href="/validators/">validators</a> for the credit card fields via their <code>data-stripe</code> attribute as following:</p>
+
+{% highlight javascript %}
+$('#paymentForm').formValidation({
+    fields: {
+        ccNumber: {
+            // The credit card number field can be retrieved
+            // by [data-stripe="number"] attribute
+            selector: '[data-stripe="number"]',
+            validators: {
+                notEmpty: {
+                    ...
+                },
+                creditCard: {
+                    ...
+                }
+            }
+        },
+        expMonth: {
+            selector: '[data-stripe="exp-month"]',
+            row: '.col-xs-3',
+            validators: {
+                notEmpty: {
+                    ...
+                },
+                digits: {
+                    ...
+                },
+                callback: {
+                    ...
+                }
+            }
+        },
+        expYear: {
+            selector: '[data-stripe="exp-year"]',
+            row: '.col-xs-3',
+            validators: {
+                notEmpty: {
+                    ...
+                },
+                digits: {
+                    ...
+                },
+                callback: {
+                    ...
+                }
+            }
+        },
+        cvvNumber: {
+            selector: '[data-stripe="cvc"]',
+            validators: {
+                notEmpty: {
+                    ...
+                },
+                cvv: {
+                    ...
+                    creditCardField: 'ccNumber'
+                }
+            }
+        }
+    }
+});
+{% endhighlight %}
+
+                    <div class="doc-alert doc-alert-info">
+                        The expiration month (expMonth) and year (expYear) fields use the <a href="/settings/#field-row">row</a> option
+                        to indicate that they're placed inside a custom container instead of a default Bootstrap .form-group one
+                    </div>
+
+                    <p>The table below list validators used for validating credit card data:</p>
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Validator</th>
+                                    <th>Purpose</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><a href="/validators/creditCard/">creditCard</a></td>
+                                    <td>Validate a credit card number</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="/validators/cvv/">cvv</a></td>
+                                    <td>Validate a CVV number</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="/validators/callback/">callback</a></td>
+                                    <td>Validate expiration month and year. For more details, see the <a href="/examples/validating-credit-card-expiration-date/">Validating credit card expiration date</a> example.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Step 3: Using Stripe API to collect credit card data</h2>
+
+                    <p>When the form passes our validation rules, it's time to send credit card data to Stripe and get back the token.
+                        It can be done by triggering the <a href="/settings/#event-form">success.form.fv</a> event:</p>
+
+{% highlight javascript %}
+// Change the key to your one
+Stripe.setPublishableKey('pk_test_IrimHhYZzZiCmaNo5riP9buX');
+
+$('#paymentForm')
+    .formValidation({
+        ...
+    })
+    .on('success.form.fv', function(e) {
+        // Prevent default form submission
+        e.preventDefault();
+
+        // Get the form element
+        var $form = $(e.target);
+
+        // Reset the token first
+        $form.find('[name="token"]').val('');
+
+        Stripe.card.createToken($form, function(status, response) {
+            if (response.error) {
+                // Show the error message
+                bootbox.alert(response.error.message);
+            } else {
+                // Set the token value
+                $form.find('[name="token"]').val(response.id);
+
+                // You can submit the form to back-end as usual
+                // $form.get(0).submit();
+
+                // Or using Ajax
+                $.ajax({
+                    url: '/path/to/your/back-end/',
+                    data: $form.serialize(),
+                    dataType: 'json'
+                }).success(function(data) {
+                    // Handle the response
+                    bootbox.alert(data.message);
+
+                    // Reset the form
+                    $form.formValidation('resetForm', true);
+                });
+            }
+        });
+    });
+{% endhighlight %}
+
+                    <p>Inside the handler of <code>Stripe.card.createToken</code>, we use <a href="http://bootboxjs.com/">bootboxjs</a>
+                        to show the error message from Stripe if there's something wrong with credit card data.
+                        Otherwise, we set the token value returned by Stripe API. This token then can be used to <a href="https://stripe.com/docs/tutorials/charges">charge</a> the customer.</p>
+
+                    <p>Optionally, you can use the <a href="/api/#reset-form">resetForm()</a> method to reset entire form in case
+                        you use Ajax to send the form data to server.</p>
+
+                    <p>You can see how all the steps are implemented in the working example below. We also provide some fake
+                        credit card numbers for testing:</p>
+
+                    <div class="doc-alert doc-alert-info">
+                        You also can use <a href="http://www.getcreditcardnumbers.com">www.getcreditcardnumbers.com</a> to generate fake credit card numbers for testing
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Card type</th>
+                                    <th>Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>American Express</td>
+                                    <td>340653705597107</td>
+                                </tr>
+                                <tr>
+                                    <td>Diners Club</td>
+                                    <td>30130708434187</td>
+                                </tr>
+                                <tr>
+                                    <td>Diners Club (US)</td>
+                                    <td>5517479515603901</td>
+                                </tr>
+                                <tr>
+                                    <td>Discover</td>
+                                    <td>6011734674929094</td>
+                                </tr>
+                                <tr>
+                                    <td>JCB</td>
+                                    <td>3566002020360505</td>
+                                </tr>
+                                <tr>
+                                    <td>Maestro</td>
+                                    <td>6762835098779303</td>
+                                </tr>
+                                <tr>
+                                    <td>Mastercard</td>
+                                    <td>5303765013600904</td>
+                                </tr>
+                                <tr>
+                                    <td>Visa</td>
+                                    <td>4929248980295542</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="doc-alert doc-alert-info">
+                        Don't use the real credit card number in the following form. The website also doesn't store any credit card data
+                    </div>
+
+                    {% include demo/tabs.html id="basic" frameworks="bootstrap" codes="programmatic" %}
+                </section>
+            </div>
+
+            <div class="col-md-3 hidden-print hidden-xs hidden-sm">
+                <div id="toc" class="doc-toc"></div>
+
+                {% include ad.html %}
+            </div>
+        </div>
+    </div>
+</div>
