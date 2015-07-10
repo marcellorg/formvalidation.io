@@ -28,11 +28,6 @@
 
 <script>
 $(document).ready(function() {
-    function validateEditor() {
-        // Revalidate the content when its value is changed by Summernote
-        $('#summernoteForm').formValidation('revalidateField', 'content');
-    }
-
     $('#summernoteForm')
         .formValidation({
             framework: 'bootstrap',
@@ -66,13 +61,11 @@ $(document).ready(function() {
         })
         .find('[name="content"]')
             .summernote({
-                height: 400,
-                onkeyup: function() {
-                    validateEditor();
-                },
-                onpaste: function() {
-                    validateEditor();
-                }
+                height: 400
+            })
+            .on('summernote.change', function(customEvent, contents, $editable) {
+                // Revalidate the content when its value is changed by Summernote
+                $('#summernoteForm').formValidation('revalidateField', 'content');
             })
             .end();
 });
