@@ -239,11 +239,6 @@ $(document).ready(function() {
 
 <span class="nt">&lt;script&gt;</span>
 <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">function</span> <span class="nx">validateEditor</span><span class="p">()</span> <span class="p">{</span>
-        <span class="c1">// Revalidate the content when its value is changed by Summernote</span>
-        <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#summernoteForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;revalidateField&#39;</span><span class="p">,</span> <span class="s1">&#39;content&#39;</span><span class="p">);</span>
-    <span class="p">}</span>
-
     <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#summernoteForm&#39;</span><span class="p">)</span>
         <span class="p">.</span><span class="nx">formValidation</span><span class="p">({</span>
             <span class="nx">framework</span><span class="o">:</span> <span class="s1">&#39;bootstrap&#39;</span><span class="p">,</span>
@@ -277,13 +272,11 @@ $(document).ready(function() {
         <span class="p">})</span>
         <span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;[name=&quot;content&quot;]&#39;</span><span class="p">)</span>
             <span class="p">.</span><span class="nx">summernote</span><span class="p">({</span>
-                <span class="nx">height</span><span class="o">:</span> <span class="mi">400</span><span class="p">,</span>
-                <span class="nx">onkeyup</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-                    <span class="nx">validateEditor</span><span class="p">();</span>
-                <span class="p">},</span>
-                <span class="nx">onpaste</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-                    <span class="nx">validateEditor</span><span class="p">();</span>
-                <span class="p">}</span>
+                <span class="nx">height</span><span class="o">:</span> <span class="mi">400</span>
+            <span class="p">})</span>
+            <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;summernote.change&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">customEvent</span><span class="p">,</span> <span class="nx">contents</span><span class="p">,</span> <span class="nx">$editable</span><span class="p">)</span> <span class="p">{</span>
+                <span class="c1">// Revalidate the content when its value is changed by Summernote</span>
+                <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#summernoteForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;revalidateField&#39;</span><span class="p">,</span> <span class="s1">&#39;content&#39;</span><span class="p">);</span>
             <span class="p">})</span>
             <span class="p">.</span><span class="nx">end</span><span class="p">();</span>
 <span class="p">});</span>
