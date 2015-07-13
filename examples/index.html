@@ -119,12 +119,13 @@ _gaq.push(['_trackPageview']);
 
     <div id="main" class="doc-content-wrapper">
         <div class="doc-notification" id="notification">
-    <i class="fa fa-bell-o"></i> <a href="/examples/validating-custom-stripe-form/">New example: Validating custom Stripe form</a>
+    <i class="fa fa-bell-o"></i> <a href="/examples/validating-percentage-values/">New example: Validating percentage values</a>
 </div>
 <script>
 $(document).ready(function() {
     var notifications = [],
         $message      = $('#notification').find('a').data('index', 0);
+    notifications.push({ title: 'New example: Validating percentage values', url: '/examples/validating-percentage-values/'});
     notifications.push({ title: 'New example: Validating custom Stripe form', url: '/examples/validating-custom-stripe-form/'});
     notifications.push({ title: 'New example: Showing custom message returned from server', url: '/examples/showing-custom-message-returned-from-server/'});
     notifications.push({ title: 'New example: Terms and conditions agreement validation', url: '/examples/terms-conditions-agreement-validation/'});
@@ -134,7 +135,6 @@ $(document).ready(function() {
     notifications.push({ title: 'New example: Ignoring validation', url: '/examples/ignoring-validation/'});
     notifications.push({ title: 'New example: Adding fields with different names', url: '/examples/adding-dynamic-field/#adding-fields-with-different-names'});
     notifications.push({ title: 'New example: Asking credit card number to match with selected type', url: '/validators/creditCard/#asking-credit-card-number-to-match-with-selected-type'});
-    notifications.push({ title: 'New example: Validating start and end date/times', url: '/examples/validating-start-end-datetimes/'});
     
     setInterval(function() {
         $message.data('index', $message.data('index') + 1);
@@ -199,7 +199,7 @@ $(document).ready(function() {
                 <div class="doc-hr"></div>
 
                 <section>
-    <h2>Advance</h2>
+    <h2>Advanced</h2>
 
     <ul class="doc-list">
         <li><a href="/examples/adding-dynamic-field/">Adding dynamic field</a> <span class="label label-info">Updated</span></li>
@@ -227,8 +227,9 @@ $(document).ready(function() {
         <li><a href="/examples/using-mailgun-api-validate-email-address/">Using Mailgun API to validate email address</a></li>
         <li><a href="/examples/validating-credit-card-expiration-date/">Validating credit card expiration date</a> <span class="label label-success">New</span></li>
         <li><a href="/examples/validating-custom-stripe-form/">Validating custom Stripe form</a> <span class="label label-success">New</span></li>
-        <li><a href="/examples/validating-google-recaptcha/">Validating Google reCAPTCHA</a></li>
         <li><a href="/examples/validating-fields-depend-each-other/">Validating fields that depend on each other</a></li>
+        <li><a href="/examples/validating-google-recaptcha/">Validating Google reCAPTCHA</a></li>
+        <li><a href="/examples/validating-percentage-values/">Validating percentage values</a> <span class="label label-success">New</span></li>
         <li><a href="/examples/validating-start-end-datetimes/">Validating start and end date/times</a> <span class="label label-success">New</span></li>
     </ul>
 </section>
@@ -289,6 +290,7 @@ $(document).ready(function() {
         <li><a href="/examples/bootstrap-material-design/">Bootstrap Material Design</a></li>
         <li><a href="/examples/bootstrap-multiselect/">Bootstrap Multiselect</a></li>
         <li><a href="/examples/bootstrap-select/">Bootstrap Select</a></li>
+        <li><a href="/examples/validating-percentage-values/#using-a-slider">Bootstrap Slider</a> <span class="label label-success">New</span></li>
         <li><a href="/examples/bootstrap-tab/">Bootstrap Tabs</a></li>
         <li><a href="/examples/bootstrap-tagsinput/">Bootstrap Tags Input</a></li>
         <li><a href="/examples/chosen/">Chosen</a></li>

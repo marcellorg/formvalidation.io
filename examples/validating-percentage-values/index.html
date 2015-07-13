@@ -1,0 +1,796 @@
+<!doctype html>
+<html>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article#">
+    <meta charset="utf-8">
+<title>Validating percentage values - FormValidation</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<meta http-equiv="Content-Language" content="en">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks">
+<meta name="keywords" content="FormValidation, BootstrapValidator, jQuery, form, validate, validation, validator, plugin, Bootstrap, Foundation, Pure, SemanticUI, UIKit">
+<meta name="author" content="Nguyen Huu Phuoc">
+<meta name="google-site-verification" content="FMmr8kYuIuW27-qJLOb1Z59OgiVgKNgAv4_eMARhIY8" />
+
+<meta name="twitter:site" content="@formvalidation" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks" />
+<meta name="twitter:title" content="Validating percentage values - FormValidation" />
+<meta name="twitter:image" content="http://formvalidation.io/asset/img/logo.png" />
+
+<meta property="og:title" content="Validating percentage values - FormValidation" />
+<meta property="og:description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://formvalidation.io/examples/validating-percentage-values/" />
+<meta property="og:image" content="http://formvalidation.io/asset/img/logo.png" />
+<meta property="og:site_name" content="FormValidation" />
+
+<link rel="icon" type="image/x-icon" href="/asset/img/favicon.ico">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/3.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/fontawesome/4.2.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/vendor/formvalidation/css/formValidation.min.css">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:300,400,700">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Cardo:400,400italic,700">
+<link rel="stylesheet" href="/vendor/pygments/github.css">
+<link rel="stylesheet" href="/asset/css/style.css">
+
+<!--[if lt IE 9]>
+<script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src="/vendor/formvalidation/js/formValidation.min.js"></script>
+<script src="/vendor/formvalidation/js/framework/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-44786951-2']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+</head>
+<body>
+    <nav class="doc-nav" tabindex="-1">
+    <ul>
+        <li><a href="/">Home</a></li>
+    
+        
+        <li class=""><a href="/download/">Download</a></li>
+    
+        
+        <li class=""><a href="/getting-started/">Getting Started</a></li>
+    
+        
+        <li class=""><a href="/settings/">Settings</a></li>
+    
+        
+        <li class=""><a href="/api/">API</a></li>
+    
+        
+        <li class=""><a href="/validators/">Validators</a></li>
+    
+        
+        <li class=""><a href="/addons/"><span></span> Add-ons</a></li>
+    
+        
+        <li class="doc-nav-active"><a href="/examples/"><span></span> Examples</a></li>
+    
+        
+        <li class=""><a href="/developing/">Developing</a></li>
+    
+        
+        <li class=""><a href="/news/">News</a></li>
+    
+        
+        <li class=""><a href="/license/">License</a></li>
+    
+    </ul>
+
+    <div class="doc-hr"></div>
+
+    <ul>
+        <li><a href="https://twitter.com/formvalidation/" title="Follow FormValidation on Twitter">Twitter <i class="fa fa-twitter"></i></a></li>
+        <li><a href="https://www.facebook.com/formvalidation/" title="Like FormValidation on Facebook">Facebook <i class="fa fa-facebook"></i></a></li>
+        <li><a href="https://plus.google.com/u/0/communities/114931136856987817254" title="Join FormValidation community on Google+">Google+ <i class="fa fa-google-plus"></i></a></li>
+    </ul>
+
+    <div class="doc-hr"></div>
+
+    <div class="doc-creator">
+        <p>
+            Handcrafted with <span class="doc-heart"><i class="fa fa-heart"></i></span> and a lot of <i class="fa fa-coffee"></i><br />
+            by <a href="http://twitter.com/nghuuphuoc">@nghuuphuoc</a><br/>
+            <img src="/asset/img/logo.png" width="60px" height="60px" />
+        </p>
+        <p><a href="mailto: phuoc@huuphuoc.me" class="btn">Hire me</a></p>
+    </div>
+</nav>
+
+<a id="toggleButton" class="doc-nav-toggle" title="Toggle the navigation"><i class="fa fa-navicon"></i></a>
+
+    <div id="main" class="doc-content-wrapper">
+        <div class="doc-notification" id="notification">
+    <i class="fa fa-bell-o"></i> <a href="/examples/validating-percentage-values/">New example: Validating percentage values</a>
+</div>
+<script>
+$(document).ready(function() {
+    var notifications = [],
+        $message      = $('#notification').find('a').data('index', 0);
+    notifications.push({ title: 'New example: Validating percentage values', url: '/examples/validating-percentage-values/'});
+    notifications.push({ title: 'New example: Validating custom Stripe form', url: '/examples/validating-custom-stripe-form/'});
+    notifications.push({ title: 'New example: Showing custom message returned from server', url: '/examples/showing-custom-message-returned-from-server/'});
+    notifications.push({ title: 'New example: Terms and conditions agreement validation', url: '/examples/terms-conditions-agreement-validation/'});
+    notifications.push({ title: 'i18n add-on v0.1.1 is released', url: '/addons/i18n/'});
+    notifications.push({ title: 'v0.6.3 is released on 2015.05.31', url: '/news/v0.6.3-released/'});
+    notifications.push({ title: 'New example: Changing success and error colors', url: '/examples/changing-success-error-colors/'});
+    notifications.push({ title: 'New example: Ignoring validation', url: '/examples/ignoring-validation/'});
+    notifications.push({ title: 'New example: Adding fields with different names', url: '/examples/adding-dynamic-field/#adding-fields-with-different-names'});
+    notifications.push({ title: 'New example: Asking credit card number to match with selected type', url: '/validators/creditCard/#asking-credit-card-number-to-match-with-selected-type'});
+    
+    setInterval(function() {
+        $message.data('index', $message.data('index') + 1);
+        if ($message.data('index') >= notifications.length) {
+            $message.data('index', 0);
+        }
+        $message
+            .fadeOut('slow')
+            .promise()
+            .then(function() {
+                $message.attr('href', notifications[$message.data('index')].url)
+                        .html(notifications[$message.data('index')].title)
+                        .fadeIn('slow');
+            });
+    }, 5000);
+});
+</script>
+
+        <div class="doc-content-container">
+    <div class="doc-heading">
+        <h1>Validating percentage values</h1>
+        <p>&larr; <a href="/examples/">Examples</a></p>
+        <div id="shareButton" class="doc-share-button"></div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <section>
+                    <p>This example introduces the approach to validate percentage fields which have to satisfy two conditions:</p>
+                    <ul class="doc-list">
+                        <li>Each field must present a number between 0 and 100</li>
+                        <li>The sum of all field values have to equal to 100</li>
+                    </ul>
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Using usual text inputs</h2>
+
+                    <p>To find out the solution for our requirement, we can think of using the normal text inputs for percentage fields.
+                        ALl the inputs have the same name and are initialized with default value as following:</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;percentage[]&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">value=</span><span class="s">&quot;0&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;percentage[]&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">value=</span><span class="s">&quot;0&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;percentage[]&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">value=</span><span class="s">&quot;0&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;percentage[]&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">value=</span><span class="s">&quot;0&quot;</span> <span class="nt">/&gt;</span>
+<span class="c">&lt;!-- More if you want --&gt;</span></code></pre></div>
+
+                    <p>Now, for the first condition, we can use the <a href="/validators/between/">between</a> validator to ask the percentage to be between 0 to 100:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#sumForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
+    <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s1">&#39;percentage[]&#39;</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">between</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">min</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="nx">max</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span>
+                    <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The percentage must be between 0 and 100&#39;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span></code></pre></div>
+
+                    <div class="doc-alert doc-alert-info">
+                        Don't forget to wrap the field name between single or double quotes when <a href="/examples/validating-field-special-name/">validating the field with special name</a>
+                    </div>
+
+                    <p>In order to solve the second requirement, we need to use the <a href="/validators/callback/">callback</a> validator.
+                        The idea is quite simple:</p>
+                    <ul class="doc-list">
+                        <li>Calculate the sum of all fields by looping over them</li>
+                        <li>Compare the sum with 100. If the sum equals to 100 exactly, we treat all fields as valid by using the <a href="/api/#update-status">updateStatus()</a> method.</li>
+                    </ul>
+
+                    <p>The following snippet code shows how it is implemented:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#sumForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
+    <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s1">&#39;percentage[]&#39;</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">between</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="p">...</span>
+                <span class="p">},</span>
+                <span class="nx">callback</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The sum of percentages must be 100&#39;</span><span class="p">,</span>
+                    <span class="nx">callback</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="kd">var</span> <span class="nx">percentage</span> <span class="o">=</span> <span class="nx">validator</span><span class="p">.</span><span class="nx">getFieldElements</span><span class="p">(</span><span class="s1">&#39;percentage[]&#39;</span><span class="p">),</span>
+                            <span class="nx">length</span>     <span class="o">=</span> <span class="nx">percentage</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span>
+                            <span class="nx">sum</span>        <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+                        <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                            <span class="nx">sum</span> <span class="o">+=</span> <span class="nb">parseFloat</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="nx">percentage</span><span class="p">[</span><span class="nx">i</span><span class="p">]).</span><span class="nx">val</span><span class="p">());</span>
+                        <span class="p">}</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="nx">sum</span> <span class="o">===</span> <span class="mi">100</span><span class="p">)</span> <span class="p">{</span>
+                            <span class="nx">validator</span><span class="p">.</span><span class="nx">updateStatus</span><span class="p">(</span><span class="s1">&#39;percentage[]&#39;</span><span class="p">,</span> <span class="s1">&#39;VALID&#39;</span><span class="p">,</span> <span class="s1">&#39;callback&#39;</span><span class="p">);</span>
+                            <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+                        <span class="p">}</span>
+
+                        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span></code></pre></div>
+
+                    <p>You can try the implementation by playing with the form below:</p>
+
+                    
+
+
+
+
+
+
+
+
+
+<div class="doc-demo">
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"><span class="doc-framework">Framework</span> <i class="caret"></i></a>
+            <ul class="dropdown-menu" role="menu">
+                
+                <li><a href="/examples/validating-percentage-values/basic/bootstrap.html" data-demo-target="#basic-frame" data-demo-framework="bootstrap">Bootstrap</a></li>
+                
+            </ul>
+        </li>
+        <li class="active"><a href="#basic-form-tab" data-toggle="tab">Try it</a></li>
+        
+        <li><a href="#basic-programmatic-tab" data-toggle="tab">Programmatic code</a></li>
+        
+        <li class="doc-demo-direct"><a href="/examples/validating-percentage-values/basic/bootstrap.html" data-toggle="tooltip" data-container="body" title="Open the demo in new tab" target="_blank"><i class="fa fa-external-link"></i></a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane active" id="basic-form-tab">
+            <iframe class="doc-demo-frame" id="basic-frame"></iframe>
+        </div>
+
+        
+        <div class="tab-pane" id="basic-programmatic-tab">
+            
+            <div data-demo-code="bootstrap">
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;sumForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Percentages<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-4&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;percentage[]&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">value=</span><span class="s">&quot;0&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-4 col-xs-offset-3&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;percentage[]&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">value=</span><span class="s">&quot;0&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-4 col-xs-offset-3&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;percentage[]&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">value=</span><span class="s">&quot;0&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-4 col-xs-offset-3&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;percentage[]&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">value=</span><span class="s">&quot;0&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-9 col-xs-offset-3&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-primary&quot;</span><span class="nt">&gt;</span>Validate<span class="nt">&lt;/button&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#sumForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
+        <span class="nx">framework</span><span class="o">:</span> <span class="s1">&#39;bootstrap&#39;</span><span class="p">,</span>
+        <span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">valid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-ok&#39;</span><span class="p">,</span>
+            <span class="nx">invalid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-remove&#39;</span><span class="p">,</span>
+            <span class="nx">validating</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-refresh&#39;</span>
+        <span class="p">},</span>
+        <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s1">&#39;percentage[]&#39;</span><span class="o">:</span> <span class="p">{</span>
+                <span class="c1">// Setting verbose to false ensures that</span>
+                <span class="c1">// the callback validator is only performed</span>
+                <span class="c1">// when the field already passes the between validator</span>
+                <span class="nx">verbose</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">between</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">min</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                        <span class="nx">max</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span>
+                        <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The percentage must be between 0 and 100&#39;</span>
+                    <span class="p">},</span>
+                    <span class="nx">callback</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The sum of percentages must be 100&#39;</span><span class="p">,</span>
+                        <span class="nx">callback</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">)</span> <span class="p">{</span>
+                            <span class="kd">var</span> <span class="nx">percentage</span> <span class="o">=</span> <span class="nx">validator</span><span class="p">.</span><span class="nx">getFieldElements</span><span class="p">(</span><span class="s1">&#39;percentage[]&#39;</span><span class="p">),</span>
+                                <span class="nx">length</span>     <span class="o">=</span> <span class="nx">percentage</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span>
+                                <span class="nx">sum</span>        <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+                            <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                                <span class="nx">sum</span> <span class="o">+=</span> <span class="nb">parseFloat</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="nx">percentage</span><span class="p">[</span><span class="nx">i</span><span class="p">]).</span><span class="nx">val</span><span class="p">());</span>
+                            <span class="p">}</span>
+                            <span class="k">if</span> <span class="p">(</span><span class="nx">sum</span> <span class="o">===</span> <span class="mi">100</span><span class="p">)</span> <span class="p">{</span>
+                                <span class="nx">validator</span><span class="p">.</span><span class="nx">updateStatus</span><span class="p">(</span><span class="s1">&#39;percentage[]&#39;</span><span class="p">,</span> <span class="s1">&#39;VALID&#39;</span><span class="p">,</span> <span class="s1">&#39;callback&#39;</span><span class="p">);</span>
+                                <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+                            <span class="p">}</span>
+
+                            <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span></code></pre></div>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Showing only one message</h2>
+
+                    <p>If you click the <strong>Validate</strong> button in the form above, because all fields don't pass
+                        the <code>callback</code> validator, all messages are shown up.</p>
+                    <p>We can optimize it a little bit by using the <a href="/settings/#field-err">err</a>
+                        option to indicate the same container for placing messages. Since we use the same name for fields,
+                        there's only one message shown at any time.</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-9 col-xs-offset-3&quot;</span><span class="nt">&gt;</span>
+        <span class="c">&lt;!-- The message container --&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;messageContainer&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#sumForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
+    <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s1">&#39;percentage[]&#39;</span><span class="o">:</span> <span class="p">{</span>
+            <span class="c1">// The message container</span>
+            <span class="nx">err</span><span class="o">:</span> <span class="s1">&#39;#messageContainer&#39;</span><span class="p">,</span>
+
+            <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                <span class="p">...</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span></code></pre></div>
+
+                    <p>The following image shows how the messages are shown when using (and not) the <code>err</code> option:</p>
+
+                    <p class="text-center">
+                        <img src="using-err-option.png" alt="Using the err option" />
+                    </p>
+
+                    
+
+
+
+
+
+
+
+
+
+<div class="doc-demo">
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"><span class="doc-framework">Framework</span> <i class="caret"></i></a>
+            <ul class="dropdown-menu" role="menu">
+                
+                <li><a href="/examples/validating-percentage-values/message-container/bootstrap.html" data-demo-target="#message-container-frame" data-demo-framework="bootstrap">Bootstrap</a></li>
+                
+            </ul>
+        </li>
+        <li class="active"><a href="#message-container-form-tab" data-toggle="tab">Try it</a></li>
+        
+        <li><a href="#message-container-programmatic-tab" data-toggle="tab">Programmatic code</a></li>
+        
+        <li class="doc-demo-direct"><a href="/examples/validating-percentage-values/message-container/bootstrap.html" data-toggle="tooltip" data-container="body" title="Open the demo in new tab" target="_blank"><i class="fa fa-external-link"></i></a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane active" id="message-container-form-tab">
+            <iframe class="doc-demo-frame" id="message-container-frame"></iframe>
+        </div>
+
+        
+        <div class="tab-pane" id="message-container-programmatic-tab">
+            
+            <div data-demo-code="bootstrap">
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;sumForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Percentages<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-4&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;percentage[]&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">value=</span><span class="s">&quot;0&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-4 col-xs-offset-3&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;percentage[]&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">value=</span><span class="s">&quot;0&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-4 col-xs-offset-3&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;percentage[]&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">value=</span><span class="s">&quot;0&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-4 col-xs-offset-3&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;percentage[]&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">value=</span><span class="s">&quot;0&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-9 col-xs-offset-3&quot;</span><span class="nt">&gt;</span>
+            <span class="c">&lt;!-- The message container --&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;messageContainer&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-9 col-xs-offset-3&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-primary&quot;</span><span class="nt">&gt;</span>Validate<span class="nt">&lt;/button&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#sumForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
+        <span class="nx">framework</span><span class="o">:</span> <span class="s1">&#39;bootstrap&#39;</span><span class="p">,</span>
+        <span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">valid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-ok&#39;</span><span class="p">,</span>
+            <span class="nx">invalid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-remove&#39;</span><span class="p">,</span>
+            <span class="nx">validating</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-refresh&#39;</span>
+        <span class="p">},</span>
+        <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s1">&#39;percentage[]&#39;</span><span class="o">:</span> <span class="p">{</span>
+                <span class="c1">// Setting verbose to false ensures that</span>
+                <span class="c1">// the callback validator is only performed</span>
+                <span class="c1">// when the field already passes the between validator</span>
+                <span class="nx">verbose</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+
+                <span class="c1">// The message container</span>
+                <span class="nx">err</span><span class="o">:</span> <span class="s1">&#39;#messageContainer&#39;</span><span class="p">,</span>
+
+                <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">between</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">min</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                        <span class="nx">max</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span>
+                        <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The percentage must be between 0 and 100&#39;</span>
+                    <span class="p">},</span>
+                    <span class="nx">callback</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The sum of percentages must be 100&#39;</span><span class="p">,</span>
+                        <span class="nx">callback</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">)</span> <span class="p">{</span>
+                            <span class="kd">var</span> <span class="nx">percentage</span> <span class="o">=</span> <span class="nx">validator</span><span class="p">.</span><span class="nx">getFieldElements</span><span class="p">(</span><span class="s1">&#39;percentage[]&#39;</span><span class="p">),</span>
+                                <span class="nx">length</span>     <span class="o">=</span> <span class="nx">percentage</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span>
+                                <span class="nx">sum</span>        <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+                            <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                                <span class="nx">sum</span> <span class="o">+=</span> <span class="nb">parseFloat</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="nx">percentage</span><span class="p">[</span><span class="nx">i</span><span class="p">]).</span><span class="nx">val</span><span class="p">());</span>
+                            <span class="p">}</span>
+                            <span class="k">if</span> <span class="p">(</span><span class="nx">sum</span> <span class="o">===</span> <span class="mi">100</span><span class="p">)</span> <span class="p">{</span>
+                                <span class="nx">validator</span><span class="p">.</span><span class="nx">updateStatus</span><span class="p">(</span><span class="s1">&#39;percentage[]&#39;</span><span class="p">,</span> <span class="s1">&#39;VALID&#39;</span><span class="p">,</span> <span class="s1">&#39;callback&#39;</span><span class="p">);</span>
+                                <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+                            <span class="p">}</span>
+
+                            <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span></code></pre></div>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Using a slider</h2>
+
+                    <p>Instead of the normal text inputs, we can use a slider to allow user to choose a percentage value between 0 and 100.
+                        In this approach, we will use the <a href="http://seiyria.com/bootstrap-slider/">Bootstrap Slider</a>
+                        which works well with the <a href="http://getbootstrap.com/">Bootstrap</a> framework.</p>
+                    <p>Using the slider ensures the value will belong to the given ranges, so the <a href="/validators/between/">between</a>
+                        validator isn't necessary in this case.</p>
+                    <p>After dragging the slider, we need to <a href="/api/#revalidate-field">revalidate</a> the associated input:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#sumForm&#39;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;[name=&quot;percentage[]&quot;]&#39;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
+                <span class="c1">// Create a slider</span>
+                <span class="p">.</span><span class="nx">slider</span><span class="p">({</span>
+                    <span class="nx">min</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="nx">max</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span>
+                    <span class="nx">step</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+                    <span class="nx">tooltip</span><span class="o">:</span> <span class="s1">&#39;hide&#39;</span>
+                <span class="p">})</span>
+                <span class="c1">// Triggered after dragging the slider</span>
+                <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;slide&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="kd">var</span> <span class="nx">$field</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">);</span>
+                    <span class="nx">$field</span>
+                        <span class="p">.</span><span class="nx">closest</span><span class="p">(</span><span class="s1">&#39;.form-group&#39;</span><span class="p">)</span>
+                            <span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;.percentageValue&#39;</span><span class="p">)</span>
+                            <span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="nx">$field</span><span class="p">.</span><span class="nx">slider</span><span class="p">(</span><span class="s1">&#39;getValue&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;%&#39;</span><span class="p">);</span>
+
+                    <span class="c1">// Revalidate the field</span>
+                    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#sumForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;revalidateField&#39;</span><span class="p">,</span> <span class="nx">$field</span><span class="p">);</span>
+                <span class="p">});</span>
+        <span class="p">})</span></code></pre></div>
+
+                    <div class="doc-alert doc-alert-info">
+                        Take a look at these <a href="/examples/#compatibility">principles</a> when integrating FormValidation with other plugins
+                    </div>
+
+                    
+
+
+
+
+
+
+
+
+
+<div class="doc-demo">
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"><span class="doc-framework">Framework</span> <i class="caret"></i></a>
+            <ul class="dropdown-menu" role="menu">
+                
+                <li><a href="/examples/validating-percentage-values/bootstrap-slider/bootstrap.html" data-demo-target="#bootstrap-slider-frame" data-demo-framework="bootstrap">Bootstrap</a></li>
+                
+            </ul>
+        </li>
+        <li class="active"><a href="#bootstrap-slider-form-tab" data-toggle="tab">Try it</a></li>
+        
+        <li><a href="#bootstrap-slider-programmatic-tab" data-toggle="tab">Programmatic code</a></li>
+        
+        <li class="doc-demo-direct"><a href="/examples/validating-percentage-values/bootstrap-slider/bootstrap.html" data-toggle="tooltip" data-container="body" title="Open the demo in new tab" target="_blank"><i class="fa fa-external-link"></i></a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane active" id="bootstrap-slider-form-tab">
+            <iframe class="doc-demo-frame" id="bootstrap-slider-frame"></iframe>
+        </div>
+
+        
+        <div class="tab-pane" id="bootstrap-slider-programmatic-tab">
+            
+            <div data-demo-code="bootstrap">
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/4.10.0/css/bootstrap-slider.min.css&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;style </span><span class="na">type=</span><span class="s">&quot;text/css&quot;</span><span class="nt">&gt;</span>
+<span class="c">/*</span>
+<span class="c">Adjust feedback icon position:</span>
+<span class="c">http://formvalidation.io/examples/adjusting-feedback-icon-position/</span>
+<span class="c">*/</span>
+<span class="nf">#sumForm</span> <span class="nc">.sliderContainer</span> <span class="nc">.form-control-feedback</span> <span class="p">{</span>
+    <span class="k">top</span><span class="o">:</span> <span class="m">-6px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+
+<span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;sumForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Percentages<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-5 sliderContainer&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;percentage[]&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">value=</span><span class="s">&quot;0&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-3&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;percentageValue&quot;</span><span class="nt">&gt;</span>0%<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-5 col-xs-offset-3 sliderContainer&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;percentage[]&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">value=</span><span class="s">&quot;0&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-3&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;percentageValue&quot;</span><span class="nt">&gt;</span>0%<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-5 col-xs-offset-3 sliderContainer&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;percentage[]&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">value=</span><span class="s">&quot;0&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-3&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;percentageValue&quot;</span><span class="nt">&gt;</span>0%<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-5 col-xs-offset-3 sliderContainer&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;percentage[]&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">value=</span><span class="s">&quot;0&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-3&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;percentageValue&quot;</span><span class="nt">&gt;</span>0%<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-9 col-xs-offset-3&quot;</span><span class="nt">&gt;</span>
+            <span class="c">&lt;!-- The message container --&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;messageContainer&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-9 col-xs-offset-3&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-primary&quot;</span><span class="nt">&gt;</span>Validate<span class="nt">&lt;/button&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/4.10.0/bootstrap-slider.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#sumForm&#39;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;[name=&quot;percentage[]&quot;]&#39;</span><span class="p">)</span>
+            <span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
+                    <span class="c1">// Create a slider</span>
+                    <span class="p">.</span><span class="nx">slider</span><span class="p">({</span>
+                        <span class="nx">min</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                        <span class="nx">max</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span>
+                        <span class="nx">step</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+                        <span class="nx">tooltip</span><span class="o">:</span> <span class="s1">&#39;hide&#39;</span>
+                    <span class="p">})</span>
+                    <span class="c1">// Triggered after dragging the slider</span>
+                    <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;slide&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="kd">var</span> <span class="nx">$field</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">);</span>
+                        <span class="nx">$field</span>
+                            <span class="p">.</span><span class="nx">closest</span><span class="p">(</span><span class="s1">&#39;.form-group&#39;</span><span class="p">)</span>
+                                <span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;.percentageValue&#39;</span><span class="p">)</span>
+                                <span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="nx">$field</span><span class="p">.</span><span class="nx">slider</span><span class="p">(</span><span class="s1">&#39;getValue&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;%&#39;</span><span class="p">);</span>
+
+                        <span class="c1">// Revalidate the field</span>
+                        <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#sumForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;revalidateField&#39;</span><span class="p">,</span> <span class="nx">$field</span><span class="p">);</span>
+                    <span class="p">});</span>
+            <span class="p">})</span>
+            <span class="p">.</span><span class="nx">end</span><span class="p">()</span>
+        <span class="p">.</span><span class="nx">formValidation</span><span class="p">({</span>
+            <span class="nx">framework</span><span class="o">:</span> <span class="s1">&#39;bootstrap&#39;</span><span class="p">,</span>
+            <span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">valid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-ok&#39;</span><span class="p">,</span>
+                <span class="nx">invalid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-remove&#39;</span><span class="p">,</span>
+                <span class="nx">validating</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-refresh&#39;</span>
+            <span class="p">},</span>
+            <span class="nx">excluded</span><span class="o">:</span> <span class="s1">&#39;:disabled&#39;</span><span class="p">,</span>
+            <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
+                <span class="s1">&#39;percentage[]&#39;</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="c1">// Setting verbose to false ensures that</span>
+                    <span class="c1">// the callback validator is only performed</span>
+                    <span class="c1">// when the field already passes the between validator</span>
+                    <span class="nx">verbose</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                    <span class="nx">err</span><span class="o">:</span> <span class="s1">&#39;#messageContainer&#39;</span><span class="p">,</span>
+                    <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">callback</span><span class="o">:</span> <span class="p">{</span>
+                            <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The sum of percentages must be 100&#39;</span><span class="p">,</span>
+                            <span class="nx">callback</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">)</span> <span class="p">{</span>
+                                <span class="kd">var</span> <span class="nx">percentage</span> <span class="o">=</span> <span class="nx">validator</span><span class="p">.</span><span class="nx">getFieldElements</span><span class="p">(</span><span class="s1">&#39;percentage[]&#39;</span><span class="p">),</span>
+                                    <span class="nx">length</span>     <span class="o">=</span> <span class="nx">percentage</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span>
+                                    <span class="nx">sum</span>        <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+                                <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                                    <span class="nx">sum</span> <span class="o">+=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="nx">percentage</span><span class="p">[</span><span class="nx">i</span><span class="p">]).</span><span class="nx">val</span><span class="p">(),</span> <span class="mi">10</span><span class="p">);</span>
+                                    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="nx">percentage</span><span class="p">[</span><span class="nx">i</span><span class="p">]).</span><span class="nx">val</span><span class="p">(),</span> <span class="mi">10</span><span class="p">),</span> <span class="nx">sum</span><span class="p">);</span>
+                                <span class="p">}</span>
+                                <span class="k">if</span> <span class="p">(</span><span class="nx">sum</span> <span class="o">===</span> <span class="mi">100</span><span class="p">)</span> <span class="p">{</span>
+                                    <span class="nx">validator</span><span class="p">.</span><span class="nx">updateStatus</span><span class="p">(</span><span class="s1">&#39;percentage[]&#39;</span><span class="p">,</span> <span class="s1">&#39;VALID&#39;</span><span class="p">,</span> <span class="s1">&#39;callback&#39;</span><span class="p">);</span>
+                                    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+                                <span class="p">}</span>
+
+                                <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+                            <span class="p">}</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">});</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span></code></pre></div>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+                </section>
+            </div>
+
+            <div class="col-md-3 hidden-print hidden-xs hidden-sm">
+                <div id="toc" class="doc-toc"></div>
+
+                <div class="doc-ad">
+    <h6>Advertising</h6>
+
+    <a href="https://emailyoyo.com/api/" class="thumbnail" target="_blank">
+        <img class="img-responsive" src="/asset/img/banner/emailyoyo.gif" title="Email YoYo: Real time email validation" />
+    </a>
+
+    <a href="mailto: hello@formvalidation.io" class="thumbnail">
+        <img class="img-responsive" src="/asset/img/adhere.png" title="Advertise on FormValidation" />
+    </a>
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <footer class="doc-footer">
+    <div class="container">
+        <p>
+            
+            <a class="btn" href="/download/">Download</a>
+            
+            <a class="btn" href="https://github.com/formvalidation/support/issues">Report bug</a>
+        </p>
+        <p>
+            &copy; 2013 - 2015 <a href="http://twitter.com/nghuuphuoc">Nguyen Huu Phuoc</a>. All rights reserved.<br/>
+            Handcrafted with <span class="doc-heart"><i class="fa fa-heart"></i></span> and a lot of <i class="fa fa-coffee"></i>
+        </p>
+    </div>
+</footer>
+    </div>
+
+<script src="/vendor/tocjs/js/toc.min.js"></script>
+<script src="/vendor/share/share.min.js"></script>
+<script src="/asset/js/app.js"></script>
+</body>
+</html>
