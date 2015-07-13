@@ -1,0 +1,78 @@
+<form id="sumForm" method="post" class="form-horizontal">
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Percentages</label>
+        <div class="col-xs-4">
+            <input class="form-control" name="percentage[]" type="text" value="0" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-xs-4 col-xs-offset-3">
+            <input class="form-control" name="percentage[]" type="text" value="0" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-xs-4 col-xs-offset-3">
+            <input class="form-control" name="percentage[]" type="text" value="0" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-xs-4 col-xs-offset-3">
+            <input class="form-control" name="percentage[]" type="text" value="0" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-xs-9 col-xs-offset-3">
+            <button type="submit" class="btn btn-primary">Validate</button>
+        </div>
+    </div>
+</form>
+
+<script>
+$(document).ready(function() {
+    $('#sumForm').formValidation({
+        framework: 'bootstrap',
+        icon: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            'percentage[]': {
+                // Setting verbose to false ensures that
+                // the callback validator is only performed
+                // when the field already passes the between validator
+                verbose: false,
+                validators: {
+                    between: {
+                        min: 0,
+                        max: 100,
+                        message: 'The percentage must be between 0 and 100'
+                    },
+                    callback: {
+                        message: 'The sum of percentages must be 100',
+                        callback: function(value, validator, $field) {
+                            var percentage = validator.getFieldElements('percentage[]'),
+                                length     = percentage.length,
+                                sum        = 0;
+
+                            for (var i = 0; i < length; i++) {
+                                sum += parseFloat($(percentage[i]).val());
+                            }
+                            if (sum === 100) {
+                                validator.updateStatus('percentage[]', 'VALID', 'callback');
+                                return true;
+                            }
+
+                            return false;
+                        }
+                    }
+                }
+            }
+        }
+    });
+});
+</script>

@@ -1,0 +1,206 @@
+---
+layout: default
+title: Validating percentage values
+permalink: /examples/validating-percentage-values/
+---
+
+<div class="doc-content-container">
+    <div class="doc-heading">
+        <h1>Validating percentage values</h1>
+        <p>&larr; <a href="/examples/">Examples</a></p>
+        {% include share.html %}
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <section>
+                    <p>This example introduces the approach to validate percentage fields which have to satisfy two conditions:</p>
+                    <ul class="doc-list">
+                        <li>Each field must present a number between 0 and 100</li>
+                        <li>The sum of all field values have to equal to 100</li>
+                    </ul>
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Using usual text inputs</h2>
+
+                    <p>To find out the solution for our requirement, we can think of using the normal text inputs for percentage fields.
+                        ALl the inputs have the same name and are initialized with default value as following:</p>
+
+{% highlight html %}
+<input class="form-control" name="percentage[]" type="text" value="0" />
+<input class="form-control" name="percentage[]" type="text" value="0" />
+<input class="form-control" name="percentage[]" type="text" value="0" />
+<input class="form-control" name="percentage[]" type="text" value="0" />
+<!-- More if you want -->
+{% endhighlight %}
+
+                    <p>Now, for the first condition, we can use the <a href="/validators/between/">between</a> validator to ask the percentage to be between 0 to 100:</p>
+
+{% highlight javascript %}
+$('#sumForm').formValidation({
+    fields: {
+        'percentage[]': {
+            validators: {
+                between: {
+                    min: 0,
+                    max: 100,
+                    message: 'The percentage must be between 0 and 100'
+                }
+            }
+        }
+    }
+});
+{% endhighlight %}
+
+                    <div class="doc-alert doc-alert-info">
+                        Don't forget to wrap the field name between single or double quotes when <a href="/examples/validating-field-special-name/">validating the field with special name</a>
+                    </div>
+
+                    <p>In order to solve the second requirement, we need to use the <a href="/validators/callback/">callback</a> validator.
+                        The idea is quite simple:</p>
+                    <ul class="doc-list">
+                        <li>Calculate the sum of all fields by looping over them</li>
+                        <li>Compare the sum with 100. If the sum equals to 100 exactly, we treat all fields as valid by using the <a href="/api/#update-status">updateStatus()</a> method.</li>
+                    </ul>
+
+                    <p>The following snippet code shows how it is implemented:</p>
+
+{% highlight javascript %}
+$('#sumForm').formValidation({
+    fields: {
+        'percentage[]': {
+            validators: {
+                between: {
+                    ...
+                },
+                callback: {
+                    message: 'The sum of percentages must be 100',
+                    callback: function(value, validator, $field) {
+                        var percentage = validator.getFieldElements('percentage[]'),
+                            length     = percentage.length,
+                            sum        = 0;
+
+                        for (var i = 0; i < length; i++) {
+                            sum += parseFloat($(percentage[i]).val());
+                        }
+                        if (sum === 100) {
+                            validator.updateStatus('percentage[]', 'VALID', 'callback');
+                            return true;
+                        }
+
+                        return false;
+                    }
+                }
+            }
+        }
+    }
+});
+{% endhighlight %}
+
+                    <p>You can try the implementation by playing with the form below:</p>
+
+                    {% include demo/tabs.html id="basic" frameworks="bootstrap" dir="basic" codes="programmatic" %}
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Showing only one message</h2>
+
+                    <p>If you click the <strong>Validate</strong> button in the form above, because all fields don't pass
+                        the <code>callback</code> validator, all messages are shown up.</p>
+                    <p>We can optimize it a little bit by using the <a href="/settings/#field-err">err</a>
+                        option to indicate the same container for placing messages. Since we use the same name for fields,
+                        there's only one message shown at any time.</p>
+
+{% highlight html %}
+<div class="form-group">
+    <div class="col-xs-9 col-xs-offset-3">
+        <!-- The message container -->
+        <div id="messageContainer"></div>
+    </div>
+</div>
+{% endhighlight %}
+
+{% highlight javascript %}
+$('#sumForm').formValidation({
+    fields: {
+        'percentage[]': {
+            // The message container
+            err: '#messageContainer',
+
+            validators: {
+                ...
+            }
+        }
+    }
+});
+{% endhighlight %}
+
+                    <p>The following image shows how the messages are shown when using (and not) the <code>err</code> option:</p>
+
+                    <p class="text-center">
+                        <img src="using-err-option.png" alt="Using the err option" />
+                    </p>
+
+                    {% include demo/tabs.html id="message-container" frameworks="bootstrap" dir="message-container" codes="programmatic" %}
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Using a slider</h2>
+
+                    <p>Instead of the normal text inputs, we can use a slider to allow user to choose a percentage value between 0 and 100.
+                        In this approach, we will use the <a href="http://seiyria.com/bootstrap-slider/">Bootstrap Slider</a>
+                        which works well with the <a href="http://getbootstrap.com/">Bootstrap</a> framework.</p>
+                    <p>Using the slider ensures the value will belong to the given ranges, so the <a href="/validators/between/">between</a>
+                        validator isn't necessary in this case.</p>
+                    <p>After dragging the slider, we need to <a href="/api/#revalidate-field">revalidate</a> the associated input:</p>
+
+{% highlight javascript %}
+$('#sumForm')
+    .find('[name="percentage[]"]')
+        .each(function() {
+            $(this)
+                // Create a slider
+                .slider({
+                    min: 0,
+                    max: 100,
+                    step: 1,
+                    tooltip: 'hide'
+                })
+                // Triggered after dragging the slider
+                .on('slide', function(e) {
+                    var $field = $(e.target);
+                    $field
+                        .closest('.form-group')
+                            .find('.percentageValue')
+                            .html($field.slider('getValue') + '%');
+
+                    // Revalidate the field
+                    $('#sumForm').formValidation('revalidateField', $field);
+                });
+        })
+{% endhighlight %}
+
+                    <div class="doc-alert doc-alert-info">
+                        Take a look at these <a href="/examples/#compatibility">principles</a> when integrating FormValidation with other plugins
+                    </div>
+
+                    {% include demo/tabs.html id="bootstrap-slider" frameworks="bootstrap" dir="bootstrap-slider" codes="programmatic" %}
+                </section>
+            </div>
+
+            <div class="col-md-3 hidden-print hidden-xs hidden-sm">
+                <div id="toc" class="doc-toc"></div>
+
+                {% include ad.html %}
+            </div>
+        </div>
+    </div>
+</div>
