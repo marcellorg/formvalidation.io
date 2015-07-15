@@ -1,0 +1,226 @@
+<form class="jotform-form" action="http://submit.jotform.me/submit.php" method="post" name="form_51937699295476" id="timeOffForm">
+    <input type="hidden" name="formID" value="51937699295476"/>
+
+    <div class="form-all">
+        <ul class="form-section page-section">
+            <li class="form-line jf-required" data-type="control_fullname">
+                <label class="form-label form-label-left form-label-auto">
+                    Employee Name <span class="form-required">*</span>
+                </label>
+
+                <div class="form-input jf-required">
+                    <span class="form-sub-label-container" style="vertical-align: top;">
+                        <input class="form-textbox validate[required]" type="text" style="width: 200px;" name="employeeName[first]" />
+                        <label class="form-sub-label">First Name</label>
+                    </span>
+
+                    <span class="form-sub-label-container" style="vertical-align: top">
+                        <input class="form-textbox validate[required]" type="text" style="width: 200px;" name="employeeName[last]" />
+                        <label class="form-sub-label">Last Name</label>
+                    </span>
+                </div>
+            </li>
+
+            <li class="form-line jf-required" data-type="control_email">
+                <label class="form-label form-label-left form-label-auto">
+                    E-mail <span class="form-required">*</span>
+                </label>
+
+                <div class="form-input jf-required">
+                    <input type="email" class="form-textbox validate[required, Email]" name="email" size="30" />
+                </div>
+            </li>
+
+            <li class="form-line jf-required" data-type="control_phone">
+                <label class="form-label form-label-left form-label-auto">
+                    Contact Number <span class="form-required">*</span>
+                </label>
+
+                <div class="form-input jf-required">
+                    <span class="form-sub-label-container" style="vertical-align: top">
+                        <input class="form-textbox validate[required]" type="tel" name="contactNumber[area]" style="width: 200px;" />
+                        <label class="form-sub-label">Area Code</label>
+                    </span>
+
+                    <span class="form-sub-label-container" style="vertical-align: top">
+                        <input class="form-textbox validate[required]" type="tel" name="contactNumber[phone]" style="width: 200px;" />
+                        <label class="form-sub-label">Phone Number</label>
+                    </span>
+                </div>
+            </li>
+
+            <li class="form-line jf-required" data-type="control_textbox">
+                <label class="form-label form-label-left form-label-auto">
+                    Start Date<span class="form-required">*</span>
+                </label>
+
+                <div class="form-input jf-required">
+                    <input type="text" class="form-textbox validate[required]" data-type="input-textbox" name="startDate" size="20" value="" />
+                </div>
+            </li>
+
+            <li class="form-line jf-required" data-type="control_textbox">
+                <label class="form-label form-label-left form-label-auto">
+                    End Date<span class="form-required">*</span>
+                </label>
+
+                <div class="form-input jf-required">
+                    <input type="text" class="form-textbox validate[required]" data-type="input-textbox" name="endDate" size="20" value="" />
+                </div>
+            </li>
+
+            <li class="form-line jf-required" data-type="control_textbox">
+                <label class="form-label form-label-left form-label-auto">
+                    Start to work on<span class="form-required">*</span>
+                </label>
+
+                <div class="form-input jf-required">
+                    <input type="text" class="form-textbox validate[required]" data-type="input-textbox" name="startToWork" size="20" value="" />
+                </div>
+            </li>
+
+            <li class="form-line jf-required" data-type="control_dropdown">
+                <label class="form-label form-label-left form-label-auto">
+                    Reason <span class="form-required">*</span>
+                </label>
+
+                <div class="form-input jf-required">
+                    <select class="form-dropdown validate[required]" style="width: 200px" name="reason">
+                        <option value=""></option>
+                        <option value="Vacation">Vacation</option>
+                        <option value="Personal Leave">Personal Leave</option>
+                        <option value="Sick">Sick</option>
+                        <option value="Others">Others</option>
+                    </select>
+                </div>
+            </li>
+
+            <li class="form-line" data-type="control_textarea">
+                <label class="form-label form-label-left">Additional Comments</label>
+                <div class="form-input jf-required">
+                    <textarea class="form-textarea" name="additionalComments" cols="30" rows="7"></textarea>
+                </div>
+            </li>
+
+            <li class="form-line" data-type="control_button">
+                <div class="form-input-wide">
+                    <div style="margin-left: 206px" class="form-buttons-wrapper">
+                        <button type="submit" class="form-submit-button">Submit</button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Generated by JotForm -->
+    <input type="hidden" id="simple_spc" name="simple_spc" value="51937699295476"/>
+    <script type="text/javascript">
+        document.getElementById("si" + "mple" + "_spc").value = "51937699295476-51937699295476";
+    </script>
+</form>
+
+<script>
+$(document).ready(function () {
+    $('#timeOffForm').formValidation({
+        framework: 'jotform',
+        icon: {
+            valid: 'fa fa-check',
+            invalid: 'fa fa-times',
+            validating: 'fa fa-refresh',
+            feedback: 'fv-control-feedback'
+        },
+        fields: {
+            'employeeName[first]': {
+                row: '.form-sub-label-container',
+                validators: {
+                    notEmpty: {
+                        message: 'The first name is required'
+                    }
+                }
+            },
+            'employeeName[last]': {
+                row: '.form-sub-label-container',
+                validators: {
+                    notEmpty: {
+                        message: 'The last name is required'
+                    }
+                }
+            },
+            email: {
+                validators: {
+                    notEmpty: {
+                        message: 'The email address is required'
+                    },
+                    emailAddress: {
+                        message: 'The email address is not valid'
+                    }
+                }
+            },
+            'contactNumber[area]': {
+                row: '.form-sub-label-container',
+                validators: {
+                    notEmpty: {
+                        message: 'The area code is required'
+                    },
+                    digits: {
+                        message: 'The area code can consist of number only'
+                    }
+                }
+            },
+            'contactNumber[phone]': {
+                row: '.form-sub-label-container',
+                validators: {
+                    notEmpty: {
+                        message: 'The phone number is required'
+                    },
+                    digits: {
+                        message: 'The phone number can consist of number only'
+                    }
+                }
+            },
+            startDate: {
+                validators: {
+                    notEmpty: {
+                        message: 'The start date is required'
+                    },
+                    date: {
+                        format: 'YYYY-MM-DD',
+                        message: 'The start date must follow YYYY-MM-DD format'
+                    }
+                }
+            },
+            endDate: {
+                validators: {
+                    notEmpty: {
+                        message: 'The end date is required'
+                    },
+                    date: {
+                        format: 'YYYY-MM-DD',
+                        message: 'The end date must follow YYYY-MM-DD format and be later than the start date',
+                        min: 'startDate'
+                    }
+                }
+            },
+            startToWork: {
+                validators: {
+                    notEmpty: {
+                        message: 'The date to start working on is required'
+                    },
+                    date: {
+                        format: 'YYYY-MM-DD',
+                        message: 'The working date must follow YYYY-MM-DD format and be later than the end date',
+                        min: 'endDate'
+                    }
+                }
+            },
+            reason: {
+                validators: {
+                    notEmpty: {
+                        message: 'The reason is required'
+                    }
+                }
+            }
+        }
+    });
+});
+</script>
