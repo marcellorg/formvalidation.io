@@ -111,7 +111,55 @@ row: {
         </table>
     </div>
 
-    <h5>Example:</h5>
+    <h4 id="form-row-add-validating-class">Adding custom class to field container while it is being validated</h4>
+
+    <p>There's no built-in option like <code>row.validating</code> but it's possible to add a custom class to the field container
+        while validating it.</p>
+    <p>To archive it, you can trigger the <a href="/settings/#event-field">status.field.fv</a> event. The following
+        code snippet demonstrates how to do it while the field is being validated by the <a href="/validators/remote/">remote</a> validator:</p>
+
+{% highlight javascript %}
+$(form)
+    .formValidation({
+        framework: 'bootstrap',
+        fields: {
+            // You might need to change username to your field name
+            username: {
+                validators: {
+                    remote: {
+                        type: 'POST',
+                        url: '/path/to/your/api/',
+                        message: 'The username is not available'
+                    }
+                }
+            }
+        }
+    })
+    .on('status.field.fv', function(e, data) {
+        // data.field is the field name
+        // data.status is the current status of validator
+        // data.element is the field element
+
+        if (data.field === 'username') {
+            // Assume that the form uses the Bootstrap framework
+            // and has a standard structure
+            // Each pair of field and label are placed inside a .form-group element
+
+            // Determine the field container
+            var $container = data.element.closest('.form-group');
+
+            (data.status === 'VALIDATING')
+                ? $container.addClass('custom-class')
+                : $container.removeClass('custom-class');
+        }
+    });
+{% endhighlight %}
+
+    <div class="doc-alert doc-alert-info">
+        If you want get more attention from user while the field is being validated, take a look at this <a href="/examples/getting-notified-field-being-validated/">example</a>
+    </div>
+
+    <h5>Example</h5>
     <ul class="doc-list">
         <li><a href="/examples/changing-success-error-colors/">Changing success and error colors</a></li>
     </ul>
