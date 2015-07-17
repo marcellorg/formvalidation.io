@@ -1189,7 +1189,53 @@ $(document).ready(function() {
         </table>
     </div>
 
-    <h5>Example:</h5>
+    <h4 id="form-row-add-validating-class">Adding custom class to field container while it is being validated</h4>
+
+    <p>There's no built-in option like <code>row.validating</code> but it's possible to add a custom class to the field container
+        while validating it.</p>
+    <p>To archive it, you can trigger the <a href="/settings/#event-field">status.field.fv</a> event. The following
+        code snippet demonstrates how to do it while the field is being validated by the <a href="/validators/remote/">remote</a> validator:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">formValidation</span><span class="p">({</span>
+        <span class="nx">framework</span><span class="o">:</span> <span class="s1">&#39;bootstrap&#39;</span><span class="p">,</span>
+        <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
+            <span class="c1">// You might need to change username to your field name</span>
+            <span class="nx">username</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">remote</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;POST&#39;</span><span class="p">,</span>
+                        <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;/path/to/your/api/&#39;</span><span class="p">,</span>
+                        <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The username is not available&#39;</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">})</span>
+    <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;status.field.fv&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// data.field is the field name</span>
+        <span class="c1">// data.status is the current status of validator</span>
+        <span class="c1">// data.element is the field element</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">field</span> <span class="o">===</span> <span class="s1">&#39;username&#39;</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// Assume that the form uses the Bootstrap framework</span>
+            <span class="c1">// and has a standard structure</span>
+            <span class="c1">// Each pair of field and label are placed inside a .form-group element</span>
+
+            <span class="c1">// Determine the field container</span>
+            <span class="kd">var</span> <span class="nx">$container</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">element</span><span class="p">.</span><span class="nx">closest</span><span class="p">(</span><span class="s1">&#39;.form-group&#39;</span><span class="p">);</span>
+
+            <span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="s1">&#39;VALIDATING&#39;</span><span class="p">)</span>
+                <span class="o">?</span> <span class="nx">$container</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;custom-class&#39;</span><span class="p">)</span>
+                <span class="o">:</span> <span class="nx">$container</span><span class="p">.</span><span class="nx">removeClass</span><span class="p">(</span><span class="s1">&#39;custom-class&#39;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">});</span></code></pre></div>
+
+    <div class="doc-alert doc-alert-info">
+        If you want get more attention from user while the field is being validated, take a look at this <a href="/examples/getting-notified-field-being-validated/">example</a>
+    </div>
+
+    <h5>Example</h5>
     <ul class="doc-list">
         <li><a href="/examples/changing-success-error-colors/">Changing success and error colors</a></li>
     </ul>
