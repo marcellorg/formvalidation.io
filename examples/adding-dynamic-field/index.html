@@ -75,6 +75,49 @@ permalink: /examples/adding-dynamic-field/
 
                     {% include demo/tabs.html id="different-name" frameworks="bootstrap" dir="different-name" codes="programmatic" %}
                 </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Using other plugin for added fields</h2>
+
+                    <p>Sometime, the added fields aren't just simply a normal input such as text box, text area. They can be used with
+                        other plugins such as a date picker, an auto-completed control, etc.</p>
+                    <p>In this case, the field should be initially as a normal text input, and then integrated with other plugin after being added.</p>
+                    <p>The following sample code attaches a date picker to newly added input by triggering the <a href="/settings#event-form">added.field.fv</a> event:</p>
+
+{% highlight javascript %}
+$('#taskForm')
+    .formValidation({
+        ...
+    })
+    .on('added.field.fv', function(e, data) {
+        // data.field   --> The field name
+        // data.element --> The new field element
+        // data.options --> The new field options
+
+        if (data.field === 'dueDate[]') {
+            // The new due date field is just added
+            // Create a new date picker
+            data.element
+                .parent()
+                .datepicker({
+                    format: 'yyyy/mm/dd'
+                })
+                .on('changeDate', function(evt) {
+                    // Revalidate the date field
+                    $('#taskForm').formValidation('revalidateField', data.element);
+                });
+        }
+    });
+{% endhighlight %}
+
+                    <div class="doc-alert doc-alert-info">
+                        You should look at the <a href="/examples#compatibility">basic principles</a> when integrating FormValidation with other plugins
+                    </div>
+
+                    {% include demo/tabs.html id="using-other-plugin" frameworks="bootstrap" dir="using-other-plugin" codes="programmatic" %}
+                </section>
             </div>
 
             <div class="col-md-3 hidden-print hidden-xs hidden-sm">
