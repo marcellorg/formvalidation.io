@@ -1,0 +1,535 @@
+<!doctype html>
+<html>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article#">
+    <meta charset="utf-8">
+<title>Contact form - FormValidation</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<meta http-equiv="Content-Language" content="en">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks">
+<meta name="keywords" content="FormValidation, BootstrapValidator, jQuery, form, validate, validation, validator, plugin, Bootstrap, Foundation, Pure, SemanticUI, UIKit">
+<meta name="author" content="Nguyen Huu Phuoc">
+<meta name="google-site-verification" content="FMmr8kYuIuW27-qJLOb1Z59OgiVgKNgAv4_eMARhIY8" />
+
+<meta name="twitter:site" content="@formvalidation" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks" />
+<meta name="twitter:title" content="Contact form - FormValidation" />
+<meta name="twitter:image" content="http://formvalidation.io/asset/img/logo.png" />
+
+<meta property="og:title" content="Contact form - FormValidation" />
+<meta property="og:description" content="FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://formvalidation.io/examples/contact-form/" />
+<meta property="og:image" content="http://formvalidation.io/asset/img/logo.png" />
+<meta property="og:site_name" content="FormValidation" />
+
+<link rel="icon" type="image/x-icon" href="/asset/img/favicon.ico">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/3.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/fontawesome/4.2.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/vendor/formvalidation/css/formValidation.min.css">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:300,400,700">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Cardo:400,400italic,700">
+<link rel="stylesheet" href="/vendor/pygments/github.css">
+<link rel="stylesheet" href="/asset/css/style.css">
+
+<!--[if lt IE 9]>
+<script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src="/vendor/formvalidation/js/formValidation.min.js"></script>
+<script src="/vendor/formvalidation/js/framework/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-44786951-2']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+</head>
+<body>
+    <nav class="doc-nav" tabindex="-1">
+    <ul>
+        <li><a href="/">Home</a></li>
+    
+        
+        <li class=""><a href="/download/">Download</a></li>
+    
+        
+        <li class=""><a href="/getting-started/">Getting Started</a></li>
+    
+        
+        <li class=""><a href="/settings/">Settings</a></li>
+    
+        
+        <li class=""><a href="/api/">API</a></li>
+    
+        
+        <li class=""><a href="/validators/">Validators</a></li>
+    
+        
+        <li class=""><a href="/addons/"><span></span> Add-ons</a></li>
+    
+        
+        <li class="doc-nav-active"><a href="/examples/"><span></span> Examples</a></li>
+    
+        
+        <li class=""><a href="/developing/">Developing</a></li>
+    
+        
+        <li class=""><a href="/news/">News</a></li>
+    
+        
+        <li class=""><a href="/license/">License</a></li>
+    
+    </ul>
+
+    <div class="doc-hr"></div>
+
+    <ul>
+        <li><a href="https://twitter.com/formvalidation/" title="Follow FormValidation on Twitter">Twitter <i class="fa fa-twitter"></i></a></li>
+        <li><a href="https://www.facebook.com/formvalidation/" title="Like FormValidation on Facebook">Facebook <i class="fa fa-facebook"></i></a></li>
+        <li><a href="https://plus.google.com/u/0/communities/114931136856987817254" title="Join FormValidation community on Google+">Google+ <i class="fa fa-google-plus"></i></a></li>
+    </ul>
+
+    <div class="doc-hr"></div>
+
+    <div class="doc-creator">
+        <p>
+            Handcrafted with <span class="doc-heart"><i class="fa fa-heart"></i></span> and a lot of <i class="fa fa-coffee"></i><br />
+            by <a href="http://twitter.com/nghuuphuoc">@nghuuphuoc</a><br/>
+            <img src="/asset/img/logo.png" width="60px" height="60px" />
+        </p>
+        <p><a href="mailto: phuoc@huuphuoc.me" class="btn">Hire me</a></p>
+    </div>
+</nav>
+
+<a id="toggleButton" class="doc-nav-toggle" title="Toggle the navigation"><i class="fa fa-navicon"></i></a>
+
+    <div id="main" class="doc-content-wrapper">
+        <div class="doc-notification" id="notification">
+    <i class="fa fa-bell-o"></i> <a href="/examples/contact-form/">New example: Contact form</a>
+</div>
+<script>
+$(document).ready(function() {
+    var notifications = [],
+        $message      = $('#notification').find('a').data('index', 0);
+    notifications.push({ title: 'New example: Contact form', url: '/examples/contact-form/'});
+    notifications.push({ title: 'New example: Validating form generated by JotForm', url: '/examples/jot-form/'});
+    notifications.push({ title: 'New example: Validating percentage values', url: '/examples/validating-percentage-values/'});
+    notifications.push({ title: 'New example: Validating custom Stripe form', url: '/examples/validating-custom-stripe-form/'});
+    notifications.push({ title: 'New example: Showing custom message returned from server', url: '/examples/showing-custom-message-returned-from-server/'});
+    notifications.push({ title: 'New example: Terms and conditions agreement validation', url: '/examples/terms-conditions-agreement-validation/'});
+    notifications.push({ title: 'i18n add-on v0.1.1 is released', url: '/addons/i18n/'});
+    notifications.push({ title: 'v0.6.3 is released on 2015.05.31', url: '/news/v0.6.3-released/'});
+    notifications.push({ title: 'New example: Ignoring validation', url: '/examples/ignoring-validation/'});
+    notifications.push({ title: 'New example: Adding fields with different names', url: '/examples/adding-dynamic-field/#adding-fields-with-different-names'});
+    
+    setInterval(function() {
+        $message.data('index', $message.data('index') + 1);
+        if ($message.data('index') >= notifications.length) {
+            $message.data('index', 0);
+        }
+        $message
+            .fadeOut('slow')
+            .promise()
+            .then(function() {
+                $message.attr('href', notifications[$message.data('index')].url)
+                        .html(notifications[$message.data('index')].title)
+                        .fadeIn('slow');
+            });
+    }, 5000);
+});
+</script>
+
+        <div class="doc-content-container">
+    <div class="doc-heading">
+        <h1>Contact form</h1>
+        <p>&larr; <a href="/examples/">Examples</a></p>
+        <div id="shareButton" class="doc-share-button"></div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <section>
+                    <p>A contact form is one of most popular form in every web sites. This example introduces steps to make a contact form with client-side technologies only:</p>
+                    <ul class="doc-list">
+                        <li>Validating the form with <a href="/download/">FormValidation</a></li>
+                        <li>Using <a href="https://www.mandrill.com/">Mandrill API</a> to send the message to your mailbox</li>
+                    </ul>
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Validating a contact form</h2>
+
+                    <p>A contact form need to collect some useful information from visitors. The following table
+                        shows a collection of popular information and the validators that are used to validate the associated input:</p>
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Information</th>
+                                    <th>Validators</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>First and last name</td>
+                                    <td><a href="/validators/notEmpty/">notEmpty</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Phone number</td>
+                                    <td><a href="/validators/regexp/">regexp</a>. You can use the built-in <a href="/validators/phone/">phone</a> validator</td>
+                                </tr>
+                                <tr>
+                                    <td>Email address</td>
+                                    <td><a href="/validators/notEmpty/">notEmpty</a>, <a href="/validators/emailAddress/">emailAddress</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Message</td>
+                                    <td><a href="/validators/notEmpty/">notEmpty</a>, <a href="/validators/stringLength/">stringLength</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Captcha</td>
+                                    <td><a href="/validators/callback/">callback</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="doc-alert doc-alert-info">
+                        The example demonstrates a way of generating a simple <a href="/validators/callback/#basic-example">math calculation</a> captcha.
+                        Anyway, you're recommended to use <a href="/addons/recaptcha2/">recaptcha2</a> add-on that supports <a href="https://www.google.com/recaptcha/">Google reCAPTCHA</a>.
+                    </div>
+
+                    
+
+
+
+
+
+
+
+
+
+<div class="doc-demo">
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"><span class="doc-framework">Framework</span> <i class="caret"></i></a>
+            <ul class="dropdown-menu" role="menu">
+                
+                <li><a href="/examples/contact-form/bootstrap.html" data-demo-target="#basic-frame" data-demo-framework="bootstrap">Bootstrap</a></li>
+                
+            </ul>
+        </li>
+        <li class="active"><a href="#basic-form-tab" data-toggle="tab">Try it</a></li>
+        
+        <li><a href="#basic-programmatic-tab" data-toggle="tab">Programmatic code</a></li>
+        
+        <li class="doc-demo-direct"><a href="/examples/contact-form/bootstrap.html" data-toggle="tooltip" data-container="body" title="Open the demo in new tab" target="_blank"><i class="fa fa-external-link"></i></a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane active" id="basic-form-tab">
+            <iframe class="doc-demo-frame" id="basic-frame"></iframe>
+        </div>
+
+        
+        <div class="tab-pane" id="basic-programmatic-tab">
+            
+            <div data-demo-code="bootstrap">
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;contactForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Full name<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-4&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;firstName&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;First name&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-4&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;lastName&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Last name&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Phone number<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-5&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;phoneNumber&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Email address<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-5&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;email&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Message<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-9&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;textarea</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;message&quot;</span> <span class="na">rows=</span><span class="s">&quot;7&quot;</span><span class="nt">&gt;&lt;/textarea&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span> <span class="na">id=</span><span class="s">&quot;captchaOperation&quot;</span><span class="nt">&gt;&lt;/label&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-3&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;captcha&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-9 col-xs-offset-3&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-primary&quot;</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/button&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Generate a simple captcha</span>
+    <span class="kd">function</span> <span class="nx">randomNumber</span><span class="p">(</span><span class="nx">min</span><span class="p">,</span> <span class="nx">max</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="p">(</span><span class="nx">max</span> <span class="o">-</span> <span class="nx">min</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="nx">min</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">function</span> <span class="nx">generateCaptcha</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#captchaOperation&#39;</span><span class="p">).</span><span class="nx">html</span><span class="p">([</span><span class="nx">randomNumber</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="nx">randomNumber</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span> <span class="s1">&#39;=&#39;</span><span class="p">].</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">));</span>
+    <span class="p">}</span>
+
+    <span class="nx">generateCaptcha</span><span class="p">();</span>
+
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#contactForm&#39;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">formValidation</span><span class="p">({</span>
+            <span class="nx">framework</span><span class="o">:</span> <span class="s1">&#39;bootstrap&#39;</span><span class="p">,</span>
+            <span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">valid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-ok&#39;</span><span class="p">,</span>
+                <span class="nx">invalid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-remove&#39;</span><span class="p">,</span>
+                <span class="nx">validating</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-refresh&#39;</span>
+            <span class="p">},</span>
+            <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">firstName</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">row</span><span class="o">:</span> <span class="s1">&#39;.col-xs-4&#39;</span><span class="p">,</span>
+                    <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">notEmpty</span><span class="o">:</span> <span class="p">{</span>
+                            <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The first name is required&#39;</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                <span class="p">},</span>
+                <span class="nx">lastName</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">row</span><span class="o">:</span> <span class="s1">&#39;.col-xs-4&#39;</span><span class="p">,</span>
+                    <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">notEmpty</span><span class="o">:</span> <span class="p">{</span>
+                            <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The last name is required&#39;</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                <span class="p">},</span>
+                <span class="nx">phoneNumber</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">notEmpty</span><span class="o">:</span> <span class="p">{</span>
+                            <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The phone number is required&#39;</span>
+                        <span class="p">},</span>
+                        <span class="nx">regexp</span><span class="o">:</span> <span class="p">{</span>
+                            <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The phone number can only contain the digits, spaces, -, (, ), + and .&#39;</span><span class="p">,</span>
+                            <span class="nx">regexp</span><span class="o">:</span> <span class="sr">/^[0-9\s\-()+\.]+$/</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                <span class="p">},</span>
+                <span class="nx">email</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">notEmpty</span><span class="o">:</span> <span class="p">{</span>
+                            <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The email address is required&#39;</span>
+                        <span class="p">},</span>
+                        <span class="nx">emailAddress</span><span class="o">:</span> <span class="p">{</span>
+                            <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The input is not a valid email address&#39;</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                <span class="p">},</span>
+                <span class="nx">message</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">notEmpty</span><span class="o">:</span> <span class="p">{</span>
+                            <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The message is required&#39;</span>
+                        <span class="p">},</span>
+                        <span class="nx">stringLength</span><span class="o">:</span> <span class="p">{</span>
+                            <span class="nx">max</span><span class="o">:</span> <span class="mi">700</span><span class="p">,</span>
+                            <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The message must be less than 700 characters long&#39;</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                <span class="p">},</span>
+                <span class="nx">captcha</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">callback</span><span class="o">:</span> <span class="p">{</span>
+                            <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;Wrong answer&#39;</span><span class="p">,</span>
+                            <span class="nx">callback</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">)</span> <span class="p">{</span>
+                                <span class="kd">var</span> <span class="nx">items</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#captchaOperation&#39;</span><span class="p">).</span><span class="nx">html</span><span class="p">().</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">),</span>
+                                    <span class="nx">sum</span>   <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">items</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">+</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">items</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+                                <span class="k">return</span> <span class="nx">value</span> <span class="o">==</span> <span class="nx">sum</span><span class="p">;</span>
+                            <span class="p">}</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">})</span>
+        <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;err.form.fv&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// Regenerate the captcha</span>
+            <span class="nx">generateCaptcha</span><span class="p">();</span>
+        <span class="p">});</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span></code></pre></div>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Sending email with Mandrill API</h2>
+
+                    <p><a href="http://mandrill.com/">Mandrill</a> provides a reliable, secure delivery API for transactional emails from websites and applications.
+                        It's easy for developers to integrate sending emails with <a href="https://mandrillapp.com/api/docs/">its API</a> which are available in various programming languages.</p>
+                    <p>The following piece of code <a href="/examples/ajax-submit/">uses an Ajax request</a> to send the needed information to <a href="https://mandrillapp.com/api/docs/messages.JSON.html">Mandrill API</a>:</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;contactForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+    <span class="c">&lt;!-- This container will be shown after sending new message --&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;alertContainer&quot;</span> <span class="na">class=</span><span class="s">&quot;alert&quot;</span> <span class="na">style=</span><span class="s">&quot;display: none;&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+
+    <span class="c">&lt;!-- Form fields --&gt;</span>
+    ...
+<span class="nt">&lt;/form&gt;</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#contactForm&#39;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">formValidation</span><span class="p">({</span>
+        <span class="p">...</span>
+    <span class="p">})</span>
+    <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;success.form.fv&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Prevent default form submission</span>
+        <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+
+        <span class="c1">// Change these values to match with your application</span>
+        <span class="kd">var</span> <span class="nx">MANDRILL_API_KEY</span> <span class="o">=</span> <span class="s1">&#39;replace-it-with-your-Mandrill-API-key&#39;</span><span class="p">,</span>
+            <span class="nx">EMAIL_SUBJECT</span>    <span class="o">=</span> <span class="s1">&#39;Contact form&#39;</span><span class="p">,</span>
+            <span class="nx">RECEIVER_EMAIL</span>   <span class="o">=</span> <span class="s1">&#39;hello@formvalidation.io&#39;</span><span class="p">;</span>
+
+        <span class="kd">var</span> <span class="nx">$form</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">),</span>
+            <span class="c1">// Generate a message based on submitted form data</span>
+            <span class="nx">body</span>  <span class="o">=</span> <span class="p">[</span>
+                <span class="s1">&#39;&lt;strong&gt;Name:&lt;/strong&gt; &#39;</span> <span class="o">+</span> <span class="nx">$form</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;[name=&quot;firstName&quot;]&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="nx">$form</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;[name=&quot;lastName&quot;]&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
+                <span class="s1">&#39;&lt;strong&gt;Phone number:&lt;/strong&gt; &#39;</span> <span class="o">+</span> <span class="p">(</span><span class="nx">$form</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;[name=&quot;phoneNumber&quot;]&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span> <span class="o">||</span> <span class="s1">&#39;n/a&#39;</span><span class="p">),</span>
+                <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;&lt;strong&gt;Message:&lt;/strong&gt; &#39;</span><span class="p">,</span>
+                <span class="nx">$form</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;[name=&quot;message&quot;]&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span>
+            <span class="p">].</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;&lt;br/&gt;&#39;</span><span class="p">);</span>
+
+        <span class="c1">// Send the message</span>
+        <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+            <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;POST&#39;</span><span class="p">,</span>
+            <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;http://mandrillapp.com/api/1.0/messages/send.json&#39;</span><span class="p">,</span>
+            <span class="nx">contentType</span><span class="o">:</span> <span class="s1">&#39;text/plain&#39;</span><span class="p">,</span>
+            <span class="nx">dataType</span><span class="o">:</span> <span class="s1">&#39;json&#39;</span><span class="p">,</span>
+            <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">key</span><span class="o">:</span> <span class="nx">MANDRILL_API_KEY</span><span class="p">,</span>
+                <span class="nx">message</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">from_name</span><span class="o">:</span> <span class="nx">$form</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;[name=&quot;fullName&quot;]&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
+                    <span class="nx">from_email</span><span class="o">:</span> <span class="nx">$form</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;[name=&quot;email&quot;]&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
+                    <span class="nx">to</span><span class="o">:</span> <span class="p">[</span>
+                        <span class="p">{</span>
+                            <span class="nx">email</span><span class="o">:</span> <span class="nx">RECEIVER_EMAIL</span><span class="p">,</span>
+                            <span class="s1">&#39;type&#39;</span><span class="o">:</span> <span class="s1">&#39;to&#39;</span>
+                        <span class="p">}</span>
+                    <span class="p">],</span>
+                    <span class="nx">auto_text</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+                    <span class="nx">subject</span><span class="o">:</span> <span class="nx">EMAIL_SUBJECT</span><span class="p">,</span>
+                    <span class="nx">html</span><span class="o">:</span> <span class="nx">body</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// Clear the form</span>
+            <span class="nx">$form</span><span class="p">.</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;resetForm&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+
+            <span class="c1">// Regenerate the captcha</span>
+            <span class="nx">generateCaptcha</span><span class="p">();</span>
+
+            <span class="c1">// Show the message</span>
+            <span class="nx">response</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="s1">&#39;error&#39;</span>
+                <span class="o">?</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#alertContainer&#39;</span><span class="p">)</span>
+                    <span class="p">.</span><span class="nx">removeClass</span><span class="p">(</span><span class="s1">&#39;alert-success&#39;</span><span class="p">)</span>
+                    <span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;alert-warning&#39;</span><span class="p">)</span>
+                    <span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s1">&#39;Sorry, cannot send the message&#39;</span><span class="p">)</span>
+                    <span class="p">.</span><span class="nx">show</span><span class="p">()</span>
+                <span class="o">:</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#alertContainer&#39;</span><span class="p">)</span>
+                    <span class="p">.</span><span class="nx">removeClass</span><span class="p">(</span><span class="s1">&#39;alert-warning&#39;</span><span class="p">)</span>
+                    <span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;alert-success&#39;</span><span class="p">)</span>
+                    <span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s1">&#39;Your message has been successfully sent&#39;</span><span class="p">)</span>
+                    <span class="p">.</span><span class="nx">show</span><span class="p">();</span>
+        <span class="p">}).</span><span class="nx">fail</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">jqXHR</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">,</span> <span class="nx">errorThrown</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#alertContainer&#39;</span><span class="p">)</span>
+                <span class="p">.</span><span class="nx">removeClass</span><span class="p">(</span><span class="s1">&#39;alert-success&#39;</span><span class="p">)</span>
+                <span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;alert-warning&#39;</span><span class="p">)</span>
+                <span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s1">&#39;Sorry, cannot send the message&#39;</span><span class="p">)</span>
+                <span class="p">.</span><span class="nx">show</span><span class="p">();</span>
+        <span class="p">});</span></code></pre></div>
+
+                    <div class="doc-alert doc-alert-warning">
+                        Due to the cross domain issue, the Ajax request above doesn't work on the Internet Explorer (IE) browser version 8, 9.
+                        In order to support these IE versions, you should take a look at the <a href="https://github.com/MoonScript/jQuery-ajaxTransport-XDomainRequest">jQuery-ajaxTransport-XDomainRequest</a> script.
+                    </div>
+                </section>
+            </div>
+
+            <div class="col-md-3 hidden-print hidden-xs hidden-sm">
+                <div id="toc" class="doc-toc"></div>
+
+                <div class="doc-ad">
+    <h6>Advertising</h6>
+
+    <a href="https://emailyoyo.com/api/" class="thumbnail" target="_blank">
+        <img class="img-responsive" src="/asset/img/banner/emailyoyo.gif" title="Email YoYo: Real time email validation" />
+    </a>
+
+    <a href="mailto: hello@formvalidation.io" class="thumbnail">
+        <img class="img-responsive" src="/asset/img/adhere.png" title="Advertise on FormValidation" />
+    </a>
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <footer class="doc-footer">
+    <div class="container">
+        <p>
+            
+            <a class="btn" href="/download/">Download</a>
+            
+            <a class="btn" href="https://github.com/formvalidation/support/issues">Report bug</a>
+        </p>
+        <p>
+            &copy; 2013 - 2015 <a href="http://twitter.com/nghuuphuoc">Nguyen Huu Phuoc</a>. All rights reserved.<br/>
+            Handcrafted with <span class="doc-heart"><i class="fa fa-heart"></i></span> and a lot of <i class="fa fa-coffee"></i>
+        </p>
+    </div>
+</footer>
+    </div>
+
+<script src="/vendor/tocjs/js/toc.min.js"></script>
+<script src="/vendor/share/share.min.js"></script>
+<script src="/asset/js/app.js"></script>
+</body>
+</html>
