@@ -1,0 +1,181 @@
+---
+layout: default
+title: Contact form
+permalink: /examples/contact-form/
+---
+
+<div class="doc-content-container">
+    <div class="doc-heading">
+        <h1>Contact form</h1>
+        <p>&larr; <a href="/examples/">Examples</a></p>
+        {% include share.html %}
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <section>
+                    <p>A contact form is one of most popular form in every web sites. This example introduces steps to make a contact form with client-side technologies only:</p>
+                    <ul class="doc-list">
+                        <li>Validating the form with <a href="/download/">FormValidation</a></li>
+                        <li>Using <a href="https://www.mandrill.com/">Mandrill API</a> to send the message to your mailbox</li>
+                    </ul>
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Validating a contact form</h2>
+
+                    <p>A contact form need to collect some useful information from visitors. The following table
+                        shows a collection of popular information and the validators that are used to validate the associated input:</p>
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Information</th>
+                                    <th>Validators</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>First and last name</td>
+                                    <td><a href="/validators/notEmpty/">notEmpty</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Phone number</td>
+                                    <td><a href="/validators/regexp/">regexp</a>. You can use the built-in <a href="/validators/phone/">phone</a> validator</td>
+                                </tr>
+                                <tr>
+                                    <td>Email address</td>
+                                    <td><a href="/validators/notEmpty/">notEmpty</a>, <a href="/validators/emailAddress/">emailAddress</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Message</td>
+                                    <td><a href="/validators/notEmpty/">notEmpty</a>, <a href="/validators/stringLength/">stringLength</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Captcha</td>
+                                    <td><a href="/validators/callback/">callback</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="doc-alert doc-alert-info">
+                        The example demonstrates a way of generating a simple <a href="/validators/callback/#basic-example">math calculation</a> captcha.
+                        Anyway, you're recommended to use <a href="/addons/recaptcha2/">recaptcha2</a> add-on that supports <a href="https://www.google.com/recaptcha/">Google reCAPTCHA</a>.
+                    </div>
+
+                    {% include demo/tabs.html id="basic" frameworks="bootstrap" codes="programmatic" %}
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Sending email with Mandrill API</h2>
+
+                    <p><a href="http://mandrill.com/">Mandrill</a> provides a reliable, secure delivery API for transactional emails from websites and applications.
+                        It's easy for developers to integrate sending emails with <a href="https://mandrillapp.com/api/docs/">its API</a> which are available in various programming languages.</p>
+                    <p>The following piece of code <a href="/examples/ajax-submit/">uses an Ajax request</a> to send the needed information to <a href="https://mandrillapp.com/api/docs/messages.JSON.html">Mandrill API</a>:</p>
+
+{% highlight html %}
+<form id="contactForm" method="post" class="form-horizontal">
+    <!-- This container will be shown after sending new message -->
+    <div id="alertContainer" class="alert" style="display: none;"></div>
+
+    <!-- Form fields -->
+    ...
+</form>
+{% endhighlight %}
+
+{% highlight javascript %}
+$('#contactForm')
+    .formValidation({
+        ...
+    })
+    .on('success.form.fv', function(e) {
+        // Prevent default form submission
+        e.preventDefault();
+
+        // Change these values to match with your application
+        var MANDRILL_API_KEY = 'replace-it-with-your-Mandrill-API-key',
+            EMAIL_SUBJECT    = 'Contact form',
+            RECEIVER_EMAIL   = 'hello@formvalidation.io';
+
+        var $form = $(e.target),
+            // Generate a message based on submitted form data
+            body  = [
+                '<strong>Name:</strong> ' + $form.find('[name="firstName"]').val() + ' ' + $form.find('[name="lastName"]').val(),
+                '<strong>Phone number:</strong> ' + ($form.find('[name="phoneNumber"]').val() || 'n/a'),
+                '',
+                '<strong>Message:</strong> ',
+                $form.find('[name="message"]').val()
+            ].join('<br/>');
+
+        // Send the message
+        $.ajax({
+            type: 'POST',
+            url: 'http://mandrillapp.com/api/1.0/messages/send.json',
+            contentType: 'text/plain',
+            dataType: 'json',
+            data: {
+                key: MANDRILL_API_KEY,
+                message: {
+                    from_name: $form.find('[name="fullName"]').val(),
+                    from_email: $form.find('[name="email"]').val(),
+                    to: [
+                        {
+                            email: RECEIVER_EMAIL,
+                            'type': 'to'
+                        }
+                    ],
+                    auto_text: true,
+                    subject: EMAIL_SUBJECT,
+                    html: body
+                }
+            }
+        }).done(function(response) {
+            // Clear the form
+            $form.formValidation('resetForm', true);
+
+            // Regenerate the captcha
+            generateCaptcha();
+
+            // Show the message
+            response.status === 'error'
+                ? $('#alertContainer')
+                    .removeClass('alert-success')
+                    .addClass('alert-warning')
+                    .html('Sorry, cannot send the message')
+                    .show()
+                : $('#alertContainer')
+                    .removeClass('alert-warning')
+                    .addClass('alert-success')
+                    .html('Your message has been successfully sent')
+                    .show();
+        }).fail(function(jqXHR, textStatus, errorThrown) {
+            $('#alertContainer')
+                .removeClass('alert-success')
+                .addClass('alert-warning')
+                .html('Sorry, cannot send the message')
+                .show();
+        });
+{% endhighlight %}
+
+                    <div class="doc-alert doc-alert-warning">
+                        Due to the cross domain issue, the Ajax request above doesn't work on the Internet Explorer (IE) browser version 8, 9.
+                        In order to support these IE versions, you should take a look at the <a href="https://github.com/MoonScript/jQuery-ajaxTransport-XDomainRequest">jQuery-ajaxTransport-XDomainRequest</a> script.
+                    </div>
+                </section>
+            </div>
+
+            <div class="col-md-3 hidden-print hidden-xs hidden-sm">
+                <div id="toc" class="doc-toc"></div>
+
+                {% include ad.html %}
+            </div>
+        </div>
+    </div>
+</div>
