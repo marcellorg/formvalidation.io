@@ -164,7 +164,7 @@ $(document).ready(function() {
         <div class="row">
             <div class="col-md-9">
                 <section>
-                    <p>A contact form is one of most popular form in every web sites. This example introduces steps to make a contact form with client-side technologies only:</p>
+                    <p>A contact form is one of most popular form in every web sites. This example introduces steps to make a contact form:</p>
                     <ul class="doc-list">
                         <li>Validating the form with <a href="/download/">FormValidation</a></li>
                         <li>Using <a href="https://www.mandrill.com/">Mandrill API</a> to send the message to your mailbox</li>
@@ -423,7 +423,7 @@ $(document).ready(function() {
         <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
 
         <span class="c1">// Change these values to match with your application</span>
-        <span class="kd">var</span> <span class="nx">MANDRILL_API_KEY</span> <span class="o">=</span> <span class="s1">&#39;replace-it-with-your-Mandrill-API-key&#39;</span><span class="p">,</span>
+        <span class="kd">var</span> <span class="nx">MANDRILL_API_KEY</span> <span class="o">=</span> <span class="s1">&#39;YOUR-MANDRILL-API-KEY&#39;</span><span class="p">,</span>
             <span class="nx">EMAIL_SUBJECT</span>    <span class="o">=</span> <span class="s1">&#39;Contact form&#39;</span><span class="p">,</span>
             <span class="nx">RECEIVER_EMAIL</span>   <span class="o">=</span> <span class="s1">&#39;hello@formvalidation.io&#39;</span><span class="p">;</span>
 
@@ -490,6 +490,99 @@ $(document).ready(function() {
                         Due to the cross domain issue, the Ajax request above doesn't work on the Internet Explorer (IE) browser version 8, 9.
                         In order to support these IE versions, you should take a look at the <a href="https://github.com/MoonScript/jQuery-ajaxTransport-XDomainRequest">jQuery-ajaxTransport-XDomainRequest</a> script.
                     </div>
+
+                    <p>Although the code above doesn't require to touch your server side, the visitors can view the source and use your API key.
+                        To avoid that, you can send the form data to your back-end first:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#contactForm&#39;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">formValidation</span><span class="p">({</span>
+        <span class="p">...</span>
+    <span class="p">})</span>
+    <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;success.form.fv&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Prevent default form submission</span>
+        <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+
+        <span class="kd">var</span> <span class="nx">$form</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">);</span>
+
+        <span class="c1">// Send all form data to back-end</span>
+        <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+            <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;/path/to/your/send-mail.php&#39;</span><span class="p">,</span>
+            <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;POST&#39;</span><span class="p">,</span>
+            <span class="nx">data</span><span class="o">:</span> <span class="nx">$form</span><span class="p">.</span><span class="nx">serialize</span><span class="p">(),</span>
+            <span class="nx">dataType</span><span class="o">:</span> <span class="s1">&#39;json&#39;</span><span class="p">,</span>
+            <span class="nx">success</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+                <span class="c1">// Clear the form</span>
+                <span class="nx">$form</span><span class="p">.</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;resetForm&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+
+                <span class="c1">// Regenerate the captcha</span>
+                <span class="nx">generateCaptcha</span><span class="p">();</span>
+
+                 <span class="c1">// Show the message</span>
+                <span class="nx">response</span><span class="p">.</span><span class="nx">result</span> <span class="o">===</span> <span class="s1">&#39;error&#39;</span>
+                    <span class="o">?</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#alertContainer&#39;</span><span class="p">)</span>
+                        <span class="p">.</span><span class="nx">removeClass</span><span class="p">(</span><span class="s1">&#39;alert-success&#39;</span><span class="p">)</span>
+                        <span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;alert-warning&#39;</span><span class="p">)</span>
+                        <span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s1">&#39;Sorry, cannot send the message&#39;</span><span class="p">)</span>
+                        <span class="p">.</span><span class="nx">show</span><span class="p">()</span>
+                    <span class="o">:</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#alertContainer&#39;</span><span class="p">)</span>
+                        <span class="p">.</span><span class="nx">removeClass</span><span class="p">(</span><span class="s1">&#39;alert-warning&#39;</span><span class="p">)</span>
+                        <span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;alert-success&#39;</span><span class="p">)</span>
+                        <span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s1">&#39;Your message has been successfully sent&#39;</span><span class="p">)</span>
+                        <span class="p">.</span><span class="nx">show</span><span class="p">();</span>
+            <span class="p">}</span>
+        <span class="p">});</span>
+    <span class="p">});</span></code></pre></div>
+
+                    <p>And then the back-end sends the email using <a href="https://mandrillapp.com/api/docs/">Mandrill API</a>.
+                        The following code shows how to do it with PHP:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="c1">// send-mail.php</span>
+
+<span class="c1">// Download Mandrill PHP library from</span>
+<span class="c1">// https://bitbucket.org/mailchimp/mandrill-api-php/get/master.zip</span>
+<span class="k">require_once</span> <span class="s1">&#39;/path/to/Mandrill.php&#39;</span><span class="p">;</span>
+
+<span class="k">try</span> <span class="p">{</span>
+    <span class="c1">// See https://mandrillapp.com/api/docs/index.php.html</span>
+    <span class="nv">$mandrill</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Mandrill</span><span class="p">(</span><span class="s1">&#39;YOUR-MANDRILL-API-KEY&#39;</span><span class="p">);</span>
+
+    <span class="c1">// Build the message body</span>
+    <span class="nv">$body</span>     <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;&lt;strong&gt;Name:&lt;/strong&gt; &#39;</span> <span class="o">+</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;firstName&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;lastName&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;&lt;strong&gt;Phone number:&lt;/strong&gt; &#39;</span> <span class="o">+</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;phoneNumber&#39;</span><span class="p">])</span> <span class="o">?</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;phoneNumber&#39;</span><span class="p">]</span> <span class="o">:</span> <span class="s1">&#39;n/a&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;&lt;strong&gt;Message:&lt;/strong&gt; &#39;</span><span class="p">,</span>
+        <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;message&#39;</span><span class="p">],</span>
+    <span class="p">);</span>
+    <span class="nv">$body</span>     <span class="o">=</span> <span class="nb">implode</span><span class="p">(</span><span class="s1">&#39;&lt;br/&gt;&#39;</span><span class="p">,</span> <span class="nv">$body</span><span class="p">);</span>
+
+    <span class="nv">$message</span>  <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;html&#39;</span>       <span class="o">=&gt;</span> <span class="nv">$body</span><span class="p">,</span>
+        <span class="s1">&#39;subject&#39;</span>    <span class="o">=&gt;</span> <span class="s1">&#39;Contact form&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;from_email&#39;</span> <span class="o">=&gt;</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;email&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;from_name&#39;</span>  <span class="o">=&gt;</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;firstName&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;lastName&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;to&#39;</span>         <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+            <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;change-to-your-email-address@domain.com&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;name&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;Change to your name&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;type&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;to&#39;</span>
+            <span class="p">)</span>
+        <span class="p">),</span>
+        <span class="s1">&#39;headers&#39;</span>    <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+            <span class="s1">&#39;Reply-To&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;message.reply@example.com&#39;</span>
+        <span class="p">),</span>
+    <span class="p">);</span>
+    <span class="nv">$async</span>  <span class="o">=</span> <span class="k">false</span><span class="p">;</span>
+    <span class="nv">$result</span> <span class="o">=</span> <span class="nv">$mandrill</span><span class="o">-&gt;</span><span class="na">messages</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">(</span><span class="nv">$message</span><span class="p">,</span> <span class="nv">$async</span><span class="p">);</span>
+
+    <span class="k">echo</span> <span class="nb">json_encode</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;result&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;ok&#39;</span><span class="p">,</span>
+    <span class="p">));</span>
+<span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">Mandrill_Error</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="nb">json_encode</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;result&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;error&#39;</span><span class="p">,</span>
+    <span class="p">));</span>
+<span class="p">}</span></code></pre></div>
                 </section>
             </div>
 
