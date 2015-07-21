@@ -15,7 +15,7 @@ permalink: /examples/contact-form/
         <div class="row">
             <div class="col-md-9">
                 <section>
-                    <p>A contact form is one of most popular form in every web sites. This example introduces steps to make a contact form with client-side technologies only:</p>
+                    <p>A contact form is one of most popular form in every web sites. This example introduces steps to make a contact form:</p>
                     <ul class="doc-list">
                         <li>Validating the form with <a href="/download/">FormValidation</a></li>
                         <li>Using <a href="https://www.mandrill.com/">Mandrill API</a> to send the message to your mailbox</li>
@@ -100,7 +100,7 @@ $('#contactForm')
         e.preventDefault();
 
         // Change these values to match with your application
-        var MANDRILL_API_KEY = 'replace-it-with-your-Mandrill-API-key',
+        var MANDRILL_API_KEY = 'YOUR-MANDRILL-API-KEY',
             EMAIL_SUBJECT    = 'Contact form',
             RECEIVER_EMAIL   = 'hello@formvalidation.io';
 
@@ -168,6 +168,103 @@ $('#contactForm')
                         Due to the cross domain issue, the Ajax request above doesn't work on the Internet Explorer (IE) browser version 8, 9.
                         In order to support these IE versions, you should take a look at the <a href="https://github.com/MoonScript/jQuery-ajaxTransport-XDomainRequest">jQuery-ajaxTransport-XDomainRequest</a> script.
                     </div>
+
+                    <p>Although the code above doesn't require to touch your server side, the visitors can view the source and use your API key.
+                        To avoid that, you can send the form data to your back-end first:</p>
+
+{% highlight javascript %}
+$('#contactForm')
+    .formValidation({
+        ...
+    })
+    .on('success.form.fv', function(e) {
+        // Prevent default form submission
+        e.preventDefault();
+
+        var $form = $(e.target);
+
+        // Send all form data to back-end
+        $.ajax({
+            url: '/path/to/your/send-mail.php',
+            type: 'POST',
+            data: $form.serialize(),
+            dataType: 'json',
+            success: function(response) {
+                // Clear the form
+                $form.formValidation('resetForm', true);
+
+                // Regenerate the captcha
+                generateCaptcha();
+
+                 // Show the message
+                response.result === 'error'
+                    ? $('#alertContainer')
+                        .removeClass('alert-success')
+                        .addClass('alert-warning')
+                        .html('Sorry, cannot send the message')
+                        .show()
+                    : $('#alertContainer')
+                        .removeClass('alert-warning')
+                        .addClass('alert-success')
+                        .html('Your message has been successfully sent')
+                        .show();
+            }
+        });
+    });
+{% endhighlight %}
+
+                    <p>And then the back-end sends the email using <a href="https://mandrillapp.com/api/docs/">Mandrill API</a>.
+                        The following code shows how to do it with PHP:</p>
+
+{% highlight php %}
+<?php
+// send-mail.php
+
+// Download Mandrill PHP library from
+// https://bitbucket.org/mailchimp/mandrill-api-php/get/master.zip
+require_once '/path/to/Mandrill.php';
+
+try {
+    // See https://mandrillapp.com/api/docs/index.php.html
+    $mandrill = new Mandrill('YOUR-MANDRILL-API-KEY');
+
+    // Build the message body
+    $body     = array(
+        '<strong>Name:</strong> ' + $_POST['firstName'] + ' ' + $_POST['lastName'],
+        '<strong>Phone number:</strong> ' + isset($_POST['phoneNumber']) ? $_POST['phoneNumber'] : 'n/a',
+        '<strong>Message:</strong> ',
+        $_POST['message'],
+    );
+    $body     = implode('<br/>', $body);
+
+    $message  = array(
+        'html'       => $body,
+        'subject'    => 'Contact form',
+        'from_email' => $_POST['email'],
+        'from_name'  => $_POST['firstName'] + ' ' + $_POST['lastName'],
+        'to'         => array(
+            array(
+                'email' => 'change-to-your-email-address@domain.com',
+                'name'  => 'Change to your name',
+                'type'  => 'to'
+            )
+        ),
+        'headers'    => array(
+            'Reply-To' => 'message.reply@example.com'
+        ),
+    );
+    $async  = false;
+    $result = $mandrill->messages->send($message, $async);
+
+    echo json_encode(array(
+        'result' => 'ok',
+    ));
+} catch(Mandrill_Error $e) {
+    echo json_encode(array(
+        'result' => 'error',
+    ));
+}
+{% endhighlight %}
                 </section>
             </div>
 
