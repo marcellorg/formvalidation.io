@@ -1,0 +1,120 @@
+<form id="profileForm" method="post" class="form-horizontal">
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Emails</label>
+        <div class="col-xs-5">
+            <input type="text" class="form-control" name="email[]" />
+        </div>
+        <div class="col-xs-4">
+            <button type="button" class="btn btn-default addButton"><i class="fa fa-plus"></i></button>
+        </div>
+    </div>
+
+    <!-- The template containing an email field and a Remove button -->
+    <div class="form-group hide" id="emailTemplate">
+        <div class="col-xs-offset-3 col-xs-5">
+            <input class="form-control" type="text" name="email[]" />
+        </div>
+        <div class="col-xs-4">
+            <button type="button" class="btn btn-default removeButton"><i class="fa fa-minus"></i></button>
+        </div>
+    </div>
+
+    <!-- Message container -->
+    <div class="form-group">
+        <div class="col-xs-9 col-xs-offset-3">
+            <div id="messageContainer"></div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-xs-5 col-xs-offset-3">
+            <button type="submit" class="btn btn-default">Submit</button>
+        </div>
+    </div>
+</form>
+
+<script>
+$(document).ready(function() {
+    $('#profileForm')
+        .formValidation({
+            framework: 'bootstrap',
+            icon: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                'email[]': {
+                    err: '#messageContainer',
+                    validators: {
+                        emailAddress: {
+                            message: 'The value is not a valid email address'
+                        },
+                        callback: {
+                            callback: function(value, validator, $field) {
+                                var $emails          = validator.getFieldElements('email[]'),
+                                    numEmails        = $emails.length,
+                                    notEmptyCount    = 0,
+                                    obj              = {},
+                                    duplicateRemoved = [];
+
+                                for (var i = 0; i < numEmails; i++) {
+                                    var v = $emails.eq(i).val();
+                                    if (v !== '') {
+                                        obj[v] = 0;
+                                        notEmptyCount++;
+                                    }
+                                }
+
+                                for (i in obj) {
+                                    duplicateRemoved.push(obj[i]);
+                                }
+
+                                if (duplicateRemoved.length === 0) {
+                                    return {
+                                        valid: false,
+                                        message: 'You must fill at least one email address'
+                                    };
+                                } else if (duplicateRemoved.length !== notEmptyCount) {
+                                    return {
+                                        valid: false,
+                                        message: 'The email address must be unique'
+                                    };
+                                }
+
+                                validator.updateStatus('email[]', validator.STATUS_VALID, 'callback');
+                                return true;
+                            }
+                        }
+                    }
+                }
+            }
+        })
+
+        // Add button click handler
+        .on('click', '.addButton', function() {
+            var $template = $('#emailTemplate'),
+                $clone    = $template
+                                .clone()
+                                .removeClass('hide')
+                                .removeAttr('id')
+                                .insertBefore($template),
+                $email    = $clone.find('[name="email[]"]');
+
+            // Add new field
+            $('#profileForm').formValidation('addField', $email);
+        })
+
+        // Remove button click handler
+        .on('click', '.removeButton', function() {
+            var $row   = $(this).closest('.form-group'),
+                $email = $row.find('[name="email[]"]');
+
+            // Remove element containing the email
+            $row.remove();
+
+            // Remove field
+            $('#profileForm').formValidation('removeField', $email);
+        });
+});
+</script>

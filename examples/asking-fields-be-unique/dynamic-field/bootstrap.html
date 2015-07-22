@@ -1,0 +1,22 @@
+---
+layout: demo/bootstrap
+title: Asking fields to be unique
+permalink: /examples/asking-fields-be-unique/dynamic-field/bootstrap.html
+sitemap: false
+---
+
+{% include_relative bootstrap.programmatic %}
+
+<script>
+$(document).ready(function() {
+    $('#profileForm')
+        .on('added.field.fv removed.field.fv', function(e, data) {
+            var $body  = $('body'),
+                $iframe = $body.data('iframe.fv');
+            if ($iframe) {
+                // Adjust the height of iframe
+                $iframe.height($body.height());
+            }
+        });
+});
+</script>

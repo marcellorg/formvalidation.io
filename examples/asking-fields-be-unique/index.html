@@ -1,0 +1,215 @@
+---
+layout: default
+title: Asking fields to be unique
+permalink: /examples/asking-fields-be-unique/
+---
+
+<div class="doc-content-container">
+    <div class="doc-heading">
+        <h1>Asking fields to be unique</h1>
+        <p>&larr; <a href="/examples/">Examples</a></p>
+        {% include share.html %}
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <section>
+                    <p>Sometime the user need to fill multiple fields in form, also each of them must be unique. Any of them has to be different to the remaining.
+                        You might think of using the <a href="/validators/different/">different</a> validator which requires two fields to be different to each other,
+                        such as an username and password shouldn't be the same. In our case, the different validator isn't useful because the number of fields
+                        for doing comparison are unknown.</p>
+
+                    <p>The form in this example asks user to provide some email addresses. User is also required to fill at least one email address.
+                        Each of them, if present, must be unique. This kind of form can be seen in a lot of forms nowadays.</p>
+
+                    <p>The approach illustrated in this example is that:</p>
+                    <ul class="doc-list">
+                        <li>Use the <a href="/validators/emailAddress/">emailAddress</a> validator to ensure each field need to be a valid email address</li>
+                        <li>Use the <a href="/validators/callback/">callback</a> validator to check if the list of email addresses consist duplicated item</li>
+                        <li>If all fields pass these validators, we then use the <a href="/api/#update-status">updateStatus()</a> method to set them as valid fields</li>
+                    </ul>
+
+                    <p>That are straight forward steps. The next sections show the implementation in details.</p>
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Checking duplicate items in array</h2>
+
+                    <p>In order to check whether an array contains duplicated items or not, we can use the easy way suggested by <a href="https://twitter.com/Nosredna">Rhett Anderson</a>:</p>
+
+{% highlight javascript %}
+function hasDuplicatedItems(inputArray) {
+    var obj              = {},
+        numItems         = inputArray.length,
+        duplicateRemoved = [];
+
+    for (var i = 0; i < numItems; i++) {
+        obj[inputArray[i]] = 0;
+    }
+
+    for (i in obj) {
+        duplicateRemoved.push(obj[i]);
+    }
+
+    return duplicateRemoved.length === numItems;
+}
+{% endhighlight %}
+
+                    <div class="doc-alert doc-alert-info">
+                        For more information, you can read the Rhett Anderson's original post <a href="https://dreaminginjavascript.wordpress.com/2008/08/22/eliminating-duplicates/">Eliminating Duplicates</a>
+                    </div>
+
+                    <p>Since the array of email addresses might consist of empty item, we need to adjust the code above a little bit to ensure that
+                        the array has at least one not-empty item and doesn't contain any duplicated items:</p>
+
+{% highlight javascript %}
+// Assume that $emails are the list of email elements
+var numEmails        = $emails.length,
+    notEmptyCount    = 0,
+    obj              = {},
+    duplicateRemoved = [];
+
+for (var i = 0; i < numEmails; i++) {
+    var v = $emails.eq(i).val();
+    if (v !== '') {
+        obj[v] = 0;
+        notEmptyCount++;
+    }
+}
+
+for (i in obj) {
+    duplicateRemoved.push(obj[i]);
+}
+
+if (duplicateRemoved.length === 0) {
+    // All the items are empty
+} else if (duplicateRemoved.length !== notEmptyCount) {
+    // The list of emails have duplicated items
+}
+{% endhighlight %}
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Using the same names</h2>
+
+                    <p>The example code below demonstrates the implementation when all email fields use <a href="/examples/validating-array-inputs/#inputs-with-same-names">the same names</a>, <code>email[]</code>, for example.</p>
+                    <p>It also uses the <a href="/settings/#dynamic-message">dynamic message</a> feature that allows to show a different message
+                        depending on a particular condition:</p>
+
+{% highlight javascript %}
+$('#profileForm').formValidation({
+    fields: {
+        'email[]': {
+            err: '#messageContainer',
+            validators: {
+                emailAddress: {
+                    message: 'The value is not a valid email address'
+                },
+                callback: {
+                    callback: function(value, validator, $field) {
+                        ...
+
+                        if (duplicateRemoved.length === 0) {
+                            return {
+                                valid: false,
+                                message: 'You must fill at least one email address'
+                            };
+                        } else if (duplicateRemoved.length !== notEmptyCount) {
+                            return {
+                                valid: false,
+                                message: 'The email address must be unique'
+                            };
+                        }
+
+                        // Set all fields as valid
+                        validator.updateStatus('email[]', validator.STATUS_VALID, 'callback');
+                        return true;
+                    }
+                }
+            }
+        }
+    }
+})
+{% endhighlight %}
+
+                    <p>The code also shows an usage of the <a href="/settings/#field-err">err</a> option which displays the message at the given container.
+                        This option also ensures that all the messages are shown once in case we use the same name for fields.
+                        If this option is omitted, then you will see different messages for each of invalid field.</p>
+
+                    {% include demo/tabs.html id="basic" frameworks="bootstrap" dir="basic" codes="programmatic" %}
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Using different names</h2>
+
+                    <p>What if the email fields have <a href="/examples/validating-array-inputs/#inputs-with-different-names">different names</a>? How we can set the validator rules for them?</p>
+                    <p>In this case, we can use a same CSS class for all email fields</p>
+
+{% highlight html %}
+<input type="text" class="form-control userEmail" name="user.email[0]" />
+<input type="text" class="form-control userEmail" name="user.email[1]" />
+<input type="text" class="form-control userEmail" name="user.email[2]" />
+<input type="text" class="form-control userEmail" name="user.email[3]" />
+<!-- and so forth -->
+{% endhighlight %}
+
+                    <p>and then use the <a href="/settings/#field-selector">selector</a> option to apply the same set of validation rules for them:</p>
+
+{% highlight javascript %}
+$('#profileForm').formValidation({
+    fields: {
+        emails: {
+            // All email fields have .userEmail class
+            selector: '.userEmail',
+            err: '#messageContainer',
+            validators: {
+                ...
+            }
+        }
+    }
+});
+{% endhighlight %}
+
+                    {% include demo/tabs.html id="selector" frameworks="bootstrap" dir="selector" codes="programmatic" %}
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Supporting dynamic fields</h2>
+
+                    <p>The last section shows how to keep the code above working with dynamic fields. We can add or remove field by using the
+                        <a href="/api/#add-field">addField()</a> and <a href="/api/#remove-field">removeField()</a> methods, respectively.</p>
+                    <p>You can look at the <a href="/examples/adding-dynamic-field/">Adding dynamic field</a> example to see
+                        how these methods are used in action.</p>
+
+                    {% include demo/tabs.html id="dynamic-field" frameworks="bootstrap" dir="dynamic-field" codes="programmatic" %}
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Related example</h2>
+
+                    <ul class="doc-list">
+                        <li><a href="/examples/adding-dynamic-field/">Adding dynamic field</a></li>
+                        <li><a href="/examples/validating-array-inputs/">Validating array of inputs</a></li>
+                    </ul>
+                </section>
+            </div>
+
+            <div class="col-md-3 hidden-print hidden-xs hidden-sm">
+                <div id="toc" class="doc-toc"></div>
+
+                {% include ad.html %}
+            </div>
+        </div>
+    </div>
+</div>

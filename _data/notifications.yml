@@ -1,3 +1,6 @@
+- title: "New example: Asking fields to be unique"
+  url: "/examples/asking-fields-be-unique/"
+
 - title: "New example: Contact form"
   url: "/examples/contact-form/"
 
@@ -24,6 +27,3 @@
 
 - title: "New example: Ignoring validation"
   url: "/examples/ignoring-validation/"
-
-- title: "New example: Adding fields with different names"
-  url: "/examples/adding-dynamic-field/#adding-fields-with-different-names"

@@ -1,0 +1,104 @@
+<form id="profileForm" method="post" class="form-horizontal">
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Emails</label>
+        <div class="col-xs-5">
+            <input type="text" class="form-control" name="email[]" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-xs-5 col-xs-offset-3">
+            <input type="text" class="form-control" name="email[]" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-xs-5 col-xs-offset-3">
+            <input type="text" class="form-control" name="email[]" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-xs-5 col-xs-offset-3">
+            <input type="text" class="form-control" name="email[]" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-xs-5 col-xs-offset-3">
+            <input type="text" class="form-control" name="email[]" />
+        </div>
+    </div>
+
+    <!-- Message container -->
+    <div class="form-group">
+        <div class="col-xs-9 col-xs-offset-3">
+            <div id="messageContainer"></div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-xs-5 col-xs-offset-3">
+            <button type="submit" class="btn btn-default">Submit</button>
+        </div>
+    </div>
+</form>
+
+<script>
+$(document).ready(function() {
+    $('#profileForm').formValidation({
+        framework: 'bootstrap',
+        icon: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            'email[]': {
+                err: '#messageContainer',
+                validators: {
+                    emailAddress: {
+                        message: 'The value is not a valid email address'
+                    },
+                    callback: {
+                        callback: function(value, validator, $field) {
+                            var $emails          = validator.getFieldElements('email[]'),
+                                numEmails        = $emails.length,
+                                notEmptyCount    = 0,
+                                obj              = {},
+                                duplicateRemoved = [];
+
+                            for (var i = 0; i < numEmails; i++) {
+                                var v = $emails.eq(i).val();
+                                if (v !== '') {
+                                    obj[v] = 0;
+                                    notEmptyCount++;
+                                }
+                            }
+
+                            for (i in obj) {
+                                duplicateRemoved.push(obj[i]);
+                            }
+
+                            if (duplicateRemoved.length === 0) {
+                                return {
+                                    valid: false,
+                                    message: 'You must fill at least one email address'
+                                };
+                            } else if (duplicateRemoved.length !== notEmptyCount) {
+                                return {
+                                    valid: false,
+                                    message: 'The email address must be unique'
+                                };
+                            }
+
+                            validator.updateStatus('email[]', validator.STATUS_VALID, 'callback');
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+    });
+});
+</script>
