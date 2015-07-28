@@ -167,7 +167,32 @@ $(document).ready(function() {
                 <div class="doc-alert doc-alert-info">
                     You should look at the <a href="/examples#compatibility">basic principles</a> when integrating FormValidation with other plugins
                 </div>
-                <p>The <strong>Browser</strong> option requires to choose 2-3 browsers.</p>
+
+                <p>In order to display the <a href="/settings/#form-icon">feedback icon</a> at the right place when using with
+                    the <a href="http://davidstutz.github.io/bootstrap-multiselect/#configuration-options">enableFiltering</a> option,
+                    the multiple select element must be initialized after calling <code>.formValidation()</code> on form:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#multiselectForm&#39;</span><span class="p">)</span>
+    <span class="c1">// Initializing formValidation first</span>
+    <span class="p">.</span><span class="nx">formValidation</span><span class="p">({</span>
+        <span class="nx">excluded</span><span class="o">:</span> <span class="s1">&#39;:disabled&#39;</span><span class="p">,</span>
+        <span class="p">...</span>
+    <span class="p">})</span>
+    <span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;[name=&quot;gender&quot;]&#39;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">multiselect</span><span class="p">({</span>
+            <span class="p">...</span>
+        <span class="p">})</span>
+        <span class="p">.</span><span class="nx">end</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;[name=&quot;browsers&quot;]&#39;</span><span class="p">)</span>
+        <span class="c1">// And multiselect later</span>
+        <span class="p">.</span><span class="nx">multiselect</span><span class="p">({</span>
+            <span class="nx">enableFiltering</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nx">includeSelectAllOption</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="p">...</span>
+        <span class="p">})</span>
+        <span class="p">.</span><span class="nx">end</span><span class="p">();</span></code></pre></div>
+
+                <p>In the following example, the <strong>Browser</strong> option requires to choose 2-3 browsers.</p>
 
                 
 
@@ -248,43 +273,12 @@ $(document).ready(function() {
     <span class="c1">// and adjustByScrollHeight(), adjustByHeight() methods</span>
     <span class="c1">// They are for this specific demo</span>
     <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#multiselectForm&#39;</span><span class="p">)</span>
-        <span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;[name=&quot;gender&quot;]&#39;</span><span class="p">)</span>
-            <span class="p">.</span><span class="nx">multiselect</span><span class="p">({</span>
-                <span class="nx">onChange</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">element</span><span class="p">,</span> <span class="nx">checked</span><span class="p">)</span> <span class="p">{</span>
-                    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#multiselectForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;revalidateField&#39;</span><span class="p">,</span> <span class="s1">&#39;gender&#39;</span><span class="p">);</span>
-
-                    <span class="nx">adjustByScrollHeight</span><span class="p">();</span>
-                <span class="p">},</span>
-                <span class="nx">onDropdownShown</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-                    <span class="nx">adjustByScrollHeight</span><span class="p">();</span>
-                <span class="p">},</span>
-                <span class="nx">onDropdownHidden</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-                    <span class="nx">adjustByHeight</span><span class="p">();</span>
-                <span class="p">}</span>
-            <span class="p">})</span>
-            <span class="p">.</span><span class="nx">end</span><span class="p">()</span>
-        <span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;[name=&quot;browsers&quot;]&#39;</span><span class="p">)</span>
-            <span class="p">.</span><span class="nx">multiselect</span><span class="p">({</span>
-                <span class="c1">// Re-validate the multiselect field when it is changed</span>
-                <span class="nx">onChange</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">element</span><span class="p">,</span> <span class="nx">checked</span><span class="p">)</span> <span class="p">{</span>
-                    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#multiselectForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;revalidateField&#39;</span><span class="p">,</span> <span class="s1">&#39;browsers&#39;</span><span class="p">);</span>
-
-                    <span class="nx">adjustByScrollHeight</span><span class="p">();</span>
-                <span class="p">},</span>
-                <span class="nx">onDropdownShown</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-                    <span class="nx">adjustByScrollHeight</span><span class="p">();</span>
-                <span class="p">},</span>
-                <span class="nx">onDropdownHidden</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-                    <span class="nx">adjustByHeight</span><span class="p">();</span>
-                <span class="p">}</span>
-            <span class="p">})</span>
-            <span class="p">.</span><span class="nx">end</span><span class="p">()</span>
         <span class="p">.</span><span class="nx">formValidation</span><span class="p">({</span>
             <span class="nx">framework</span><span class="o">:</span> <span class="s1">&#39;bootstrap&#39;</span><span class="p">,</span>
             <span class="c1">// Exclude only disabled fields</span>
             <span class="c1">// The invisible fields set by Bootstrap Multiselect must be validated</span>
             <span class="nx">excluded</span><span class="o">:</span> <span class="s1">&#39;:disabled&#39;</span><span class="p">,</span>
-            <span class="nx">feedbackIcons</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
                 <span class="nx">valid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-ok&#39;</span><span class="p">,</span>
                 <span class="nx">invalid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-remove&#39;</span><span class="p">,</span>
                 <span class="nx">validating</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-refresh&#39;</span>
@@ -311,7 +305,40 @@ $(document).ready(function() {
                     <span class="p">}</span>
                 <span class="p">}</span>
             <span class="p">}</span>
-        <span class="p">});</span>
+        <span class="p">})</span>
+        <span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;[name=&quot;gender&quot;]&#39;</span><span class="p">)</span>
+            <span class="p">.</span><span class="nx">multiselect</span><span class="p">({</span>
+                <span class="nx">onChange</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">element</span><span class="p">,</span> <span class="nx">checked</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#multiselectForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;revalidateField&#39;</span><span class="p">,</span> <span class="s1">&#39;gender&#39;</span><span class="p">);</span>
+
+                    <span class="nx">adjustByScrollHeight</span><span class="p">();</span>
+                <span class="p">},</span>
+                <span class="nx">onDropdownShown</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">adjustByScrollHeight</span><span class="p">();</span>
+                <span class="p">},</span>
+                <span class="nx">onDropdownHidden</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">adjustByHeight</span><span class="p">();</span>
+                <span class="p">}</span>
+            <span class="p">})</span>
+            <span class="p">.</span><span class="nx">end</span><span class="p">()</span>
+        <span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;[name=&quot;browsers&quot;]&#39;</span><span class="p">)</span>
+            <span class="p">.</span><span class="nx">multiselect</span><span class="p">({</span>
+                <span class="nx">enableFiltering</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="nx">includeSelectAllOption</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="c1">// Re-validate the multiselect field when it is changed</span>
+                <span class="nx">onChange</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">element</span><span class="p">,</span> <span class="nx">checked</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#multiselectForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;revalidateField&#39;</span><span class="p">,</span> <span class="s1">&#39;browsers&#39;</span><span class="p">);</span>
+
+                    <span class="nx">adjustByScrollHeight</span><span class="p">();</span>
+                <span class="p">},</span>
+                <span class="nx">onDropdownShown</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">adjustByScrollHeight</span><span class="p">();</span>
+                <span class="p">},</span>
+                <span class="nx">onDropdownHidden</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">adjustByHeight</span><span class="p">();</span>
+                <span class="p">}</span>
+            <span class="p">})</span>
+            <span class="p">.</span><span class="nx">end</span><span class="p">();</span>
 
     <span class="c1">// You don&#39;t need to care about these methods</span>
     <span class="kd">function</span> <span class="nx">adjustByHeight</span><span class="p">()</span> <span class="p">{</span>
