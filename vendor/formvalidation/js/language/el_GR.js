@@ -4,7 +4,7 @@
      * Translated by @pRieStaKos
      */
     FormValidation.I18n = $.extend(true, FormValidation.I18n, {
-        'gr_EL': {
+        'el_GR': {
             base64: {
                 'default': 'Παρακαλώ εισάγετε μια έγκυρη κωδικοποίηση base 64'
             },

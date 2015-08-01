@@ -4,7 +4,7 @@
      * Translated by @neilime
      */
     FormValidation.I18n = $.extend(true, FormValidation.I18n, {
-        'be_FR': {
+        'fr_BE': {
             base64: {
                 'default': 'Veuillez fournir une donnée correctement encodée en Base64'
             },
