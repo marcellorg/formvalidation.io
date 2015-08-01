@@ -4,7 +4,7 @@
      * Translated by @dokterpasta. Improved by @jdt
      */
     FormValidation.I18n = $.extend(true, FormValidation.I18n, {
-        'be_NL': {
+        'nl_BE': {
             base64: {
                 'default': 'Geef een geldige base 64 geëncodeerde tekst in'
             },

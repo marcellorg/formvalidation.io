@@ -8,10 +8,10 @@
   file:   eu_ES.js
   author: xabikip
 - name:   Belgium (French)
-  file:   be_FR.js
+  file:   fr_BE.js
   author: neilime
 - name:   Belgium (Netherland)
-  file:   be_NL.js
+  file:   nl_BE.js
   author: dokterpasta
 - name:   Bulgarian
   file:   bg_BG.js
@@ -50,7 +50,7 @@
   file:   de_DE.js
   author: logemann
 - name:   Greek
-  file:   gr_EL.js
+  file:   el_GR.js
   author: pRieStaKos
 - name:   Hebrew
   file:   he_IL.js
