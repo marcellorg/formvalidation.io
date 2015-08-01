@@ -1709,6 +1709,11 @@ $(document).ready(function() {
 
     <p><code>selector: String</code> &mdash; The CSS selector to indicate the field. It is used in case that it's not possible to use the <code>name</code> attribute for the field.</p>
 
+    <div class="doc-alert doc-alert-warning">
+        When using the selector option, ensure that the field doesn't use some <a href="/examples/html5/">HTML 5 attributes</a>
+        (such as required, maxlength, etc.) that enables validators automatically
+    </div>
+
     <h5>Example</h5>
     <p>Instead of using the <code>name</code> attribute, the following form uses the <code>selector</code> option to define the fields:</p>
 
