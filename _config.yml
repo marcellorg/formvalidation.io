@@ -19,7 +19,7 @@ gems:
 
 # Custom variables
 # not defined by Jekyll
-description:          FormValidation - The best jQuery plugin to validate form fields, support Bootstrap, Foundation, Pure, Semantic, UIKit frameworks
+description:          FormValidation - The best jQuery validation plugin to validate form fields, support Bootstrap, Zurb Foundation, Pure, Semantic, UIKit frameworks
 license:
   developer:
     price:            25$
