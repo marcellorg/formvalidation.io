@@ -20,12 +20,12 @@ countries:
       decimalSeparatorDesc: A dot (<code>.</code>)
       valid:
         - "95"
+        - "095"
+        - "0095"
         - "295"
         - "7295"
         - "67295"
-        - "967295"
         - "967295.00"
-        - "4294967295"
         - "4294967295.000"
       invalid:
         - "7,295"
@@ -188,24 +188,13 @@ countries:
                     </div>
 
                     <p>The <code>thousandsSeparator</code> and <code>decimalSeparator</code> options are useful if your country use particular separators for thousands and decimal parts.
-                        See the <a href="#supporting-locales">Supporting locales</a> example in the next section for more details.</p>
+                        See the next <a href="#supporting-locales">supporting locales</a> section for more details.</p>
                 </section>
 
                 <div class="doc-hr"></div>
 
                 <section>
-                    <h2>Examples</h2>
-
-                    <h3>Basic example</h3>
-
-                    {% include demo/tabs.html id="basic" frameworks="bootstrap" dir="basic" codes="programmatic,declarative" %}
-
-                    <h3>HTML 5 example</h3>
-
-                    <p>You can use HTML 5 <code>type="number"</code> attribute to enable the integer validator.</p>
-                    {% include demo/tabs.html id="html5" frameworks="bootstrap" dir="html5" codes="declarative" %}
-
-                    <h3>Supporting locales</h3>
+                    <h2>Supporting locales</h2>
 
                     <p>The thousands and decimal separators might take different value in certain countries. The following table introduces
                         some popular values that are defined by various countries.</p>
@@ -259,11 +248,26 @@ $('#integerForm')
 
                     <div class="doc-alert doc-alert-info">
                         Since the thousands and decimal separators are various, the field should use type="text" attribute.
-                        Using type="number" for field will restrict the input to use default separators for an integer numbers
+                        Using type="number" for field will restrict the input to use default separators for an integer number
                         (an empty string for thousands, and a dot for decimal parts)
                     </div>
 
                     {% include demo/tabs.html id="locale" frameworks="bootstrap" dir="locale" codes="programmatic" %}
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Examples</h2>
+
+                    <h3>Basic example</h3>
+
+                    {% include demo/tabs.html id="basic" frameworks="bootstrap" dir="basic" codes="programmatic,declarative" %}
+
+                    <h3>HTML 5 example</h3>
+
+                    <p>You can use HTML 5 <code>type="number"</code> attribute to enable the integer validator.</p>
+                    {% include demo/tabs.html id="html5" frameworks="bootstrap" dir="html5" codes="declarative" %}
                 </section>
 
                 <div class="doc-hr"></div>
