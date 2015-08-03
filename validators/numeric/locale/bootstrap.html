@@ -1,0 +1,211 @@
+<!doctype html>
+<html>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article#">
+    <meta charset="utf-8">
+<title>numeric validator &rarr; Supporting locales - FormValidation</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<meta http-equiv="Content-Language" content="en">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="FormValidation - The best jQuery validation plugin to validate form fields, support Bootstrap, Zurb Foundation, Pure, Semantic, UIKit frameworks">
+<meta name="keywords" content="FormValidation, BootstrapValidator, form validation, form validate, form validator, jQuery validation plugin, jquery validate plugin, jquery validator plugin, Zurb Foundation validation, Pure validation, SemanticUI validation, UIKit validation, Skeleton validation, Bootstrap, Zurb Foundation, Pure, SemanticUI, UIKit, Skeleton">
+<meta name="author" content="Nguyen Huu Phuoc">
+<meta name="google-site-verification" content="FMmr8kYuIuW27-qJLOb1Z59OgiVgKNgAv4_eMARhIY8" />
+
+<meta name="twitter:site" content="@formvalidation" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="FormValidation - The best jQuery validation plugin to validate form fields, support Bootstrap, Zurb Foundation, Pure, Semantic, UIKit frameworks" />
+<meta name="twitter:title" content="numeric validator &rarr; Supporting locales - FormValidation" />
+<meta name="twitter:image" content="http://formvalidation.io/asset/img/logo.png" />
+
+<meta property="og:title" content="numeric validator &rarr; Supporting locales - FormValidation" />
+<meta property="og:description" content="FormValidation - The best jQuery validation plugin to validate form fields, support Bootstrap, Zurb Foundation, Pure, Semantic, UIKit frameworks" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://formvalidation.io/validators/numeric/locale/bootstrap.html" />
+<meta property="og:image" content="http://formvalidation.io/asset/img/logo.png" />
+<meta property="og:site_name" content="FormValidation" />
+
+<link rel="icon" type="image/x-icon" href="/asset/img/favicon.ico">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/fontawesome/4.2.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+
+<!--[if lt IE 9]>
+<script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-44786951-2']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/vendor/formvalidation/css/formValidation.min.css">
+    <link rel="stylesheet" href="/asset/css/demo.css">
+
+    <script src="//cdn.jsdelivr.net/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="/vendor/formvalidation/js/formValidation.min.js"></script>
+    <script src="/vendor/formvalidation/js/framework/bootstrap.min.js"></script>
+</head>
+<body class="demo-bootstrap">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9" id="demoContainer">
+                <form id="numericForm" class="form-horizontal">
+    <div class="form-group">
+        <label class="col-xs-4 control-label">Country</label>
+        <div class="col-xs-3">
+            <select class="form-control" name="country">
+                <option value="">Choose a country</option>
+                <option value="en_US">United States</option>
+                <option value="fr_FR">France</option>
+                <option value="it_IT">Italy</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-xs-4 control-label">Type a number</label>
+        <div class="col-xs-4">
+            <input type="text" class="form-control" name="number" />
+        </div>
+    </div>
+</form>
+
+<script>
+$(document).ready(function() {
+    $('#numericForm')
+        .formValidation({
+            framework: 'bootstrap',
+            icon: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                number: {
+                    validators: {
+                        numeric: {
+                            message: 'The value is not a number',
+                            // The default separators
+                            thousandsSeparator: '',
+                            decimalSeparator: '.'
+                        }
+                    }
+                }
+            }
+        })
+        .on('change', '[name="country"]', function() {
+            var thousandsSeparator = '',
+                decimalSeparator   = '.';
+            switch ($(this).val()) {
+                case 'en_US':
+                    thousandsSeparator = ',';
+                    decimalSeparator   = '.';
+                    break;
+
+                case 'fr_FR':
+                    thousandsSeparator = ' ';
+                    decimalSeparator   = ',';
+                    break;
+
+                case 'it_IT':
+                    thousandsSeparator = '.';
+                    decimalSeparator   = ',';
+                    break;
+
+                case '':
+                default:
+                    thousandsSeparator = '';
+                    decimalSeparator   = '.';
+                    break;
+            }
+
+            $('#numericForm')
+                // Update the options
+                .formValidation('updateOption', 'number', 'numeric', 'thousandsSeparator', thousandsSeparator)
+                .formValidation('updateOption', 'number', 'numeric', 'decimalSeparator', decimalSeparator)
+                // and revalidate the number
+                .formValidation('revalidateField', 'number');
+        })
+});
+</script>
+
+<script>
+function revalidateNumber(thousandsSeparator, decimalSeparator, country, number) {
+    var $form = $('form'),
+        fv    = $form.data('formValidation');
+
+    $form
+        .find('[name="country"]').val(country).end()
+        .find('[name="number"]').val(number).end();
+
+    fv
+        .updateOption('number', 'numeric', 'thousandsSeparator', thousandsSeparator)
+        .updateOption('number', 'numeric', 'decimalSeparator', decimalSeparator)
+        .revalidateField('number');
+
+    return fv.isValidField('number');
+}
+</script>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="demo-ad"><div class="doc-ad">
+    <h6>Advertising</h6>
+
+    <a href="https://emailyoyo.com/api/" class="thumbnail" target="_blank">
+        <img class="img-responsive" src="/asset/img/banner/emailyoyo.gif" title="Email YoYo: Real time email validation" />
+    </a>
+
+    <a href="mailto: hello@formvalidation.io" class="thumbnail">
+        <img class="img-responsive" src="/asset/img/adhere.png" title="Advertise on FormValidation" />
+    </a>
+</div></div>
+            </div>
+        </div>
+    </div>
+
+<script>
+// You don't need to care about the following code
+// It's built for all demos
+$(document).ready(function() {
+    $('form').on('success.form.fv', function(e) {
+        e.preventDefault();
+    });
+
+    $(window).on('load', function() {
+        var $iframe = $(window.parent.document).find('iframe[src="/validators/numeric/locale/bootstrap.html"]');
+        if ($iframe.length) {
+            $('body').addClass('demo-frame-body').find('.demo-ad').hide();
+
+            // Adjust the height of iframes containing the demo for specific frameworks
+            var $container = $('#demoContainer');
+            setTimeout(function() {
+                $iframe.height($container.height()).css('visibility', 'visible').fadeIn('fast');
+            }, 1000);
+
+            // Set the internal data to get it later if I want
+            $('body').data('iframe.fv', $iframe);
+
+            $container
+                .find('form')
+                .on('status.field.fv', function(e, data) {
+                    $iframe.height($container.height());
+                });
+        }
+    });
+});
+</script>
+</body>
+</html>
