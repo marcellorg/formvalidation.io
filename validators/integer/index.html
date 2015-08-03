@@ -184,6 +184,32 @@ $(document).ready(function() {
                                     <td>String</td>
                                     <td>The error message</td>
                                 </tr>
+                                <tr>
+                                    <td><code>thousandsSeparator</code> <span class="label label-info">v0.7.0+</span></td>
+                                    <td><code>data-fv-integer-thousandsseparator</code></td>
+                                    <td>String</td>
+                                    <td>
+                                        The thousands separator. The popular values are
+                                        <ul class="doc-list">
+                                            <li>An empty string <span class="label label-default">default</span></li>
+                                            <li>A bank space</li>
+                                            <li>A comma (<code>,</code>)</li>
+                                            <li>A dot (<code>.</code>)</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><code>decimalSeparator</code> <span class="label label-info">v0.7.0+</span></td>
+                                    <td><code>data-fv-integer-decimalseparator</code></td>
+                                    <td>String</td>
+                                    <td>
+                                        The decimal separator. The popular values are
+                                        <ul class="doc-list">
+                                            <li>A dot (<code>.</code>) <span class="label label-default">default</span></li>
+                                            <li>A comma (<code>,</code>)</li>
+                                        </ul>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -196,8 +222,11 @@ $(document).ready(function() {
                     </div>
 
                     <div class="doc-alert doc-alert-info">
-                        The message option can be updated on the fly via the <a href="/api/#update-message">updateMessage()</a> method
+                        The message and other options can be updated on the fly via the <a href="/api/#update-message">updateMessage()</a> and <a href="/api/#update-option">updateOption()</a> methods
                     </div>
+
+                    <p>The <code>thousandsSeparator</code> and <code>decimalSeparator</code> options are useful if your country use particular separators for thousands and decimal parts.
+                        See the <a href="#supporting-locales">Supporting locales</a> example in the next section for more details.</p>
                 </section>
 
                 <div class="doc-hr"></div>
@@ -387,6 +416,366 @@ $(document).ready(function() {
         
     </div>
 </div>
+
+                    <h3>Supporting locales</h3>
+
+                    <p>The thousands and decimal separators might take different value in certain countries. The following table introduces
+                        some popular values that are defined by various countries.</p>
+                    <p>You can click the sample number to test:</p>
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Country</th>
+                                    <th>Thousands separator</th>
+                                    <th>Decimal separator</th>
+                                    <th>Valid examples</th>
+                                    <th>Invalid examples</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                                <tr>
+                                    <td></td>
+                                    <td>An empty string</td>
+                                    <td>A dot (<code>.</code>)</td>
+                                    <td>
+                                        <ul class="doc-sample-list">
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="" data-thousandsseparator="" data-decimalseparator=".">95</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="" data-thousandsseparator="" data-decimalseparator=".">295</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="" data-thousandsseparator="" data-decimalseparator=".">7295</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="" data-thousandsseparator="" data-decimalseparator=".">67295</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="" data-thousandsseparator="" data-decimalseparator=".">967295</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="" data-thousandsseparator="" data-decimalseparator=".">967295.00</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="" data-thousandsseparator="" data-decimalseparator=".">4294967295</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="" data-thousandsseparator="" data-decimalseparator=".">4294967295.000</a> <i class="fa"></i></li>
+                                            
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <ul class="doc-sample-list">
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="" data-thousandsseparator="" data-decimalseparator=".">7,295</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="" data-thousandsseparator="" data-decimalseparator=".">67,295</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="" data-thousandsseparator="" data-decimalseparator=".">967,295</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="" data-thousandsseparator="" data-decimalseparator=".">4967,295</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="" data-thousandsseparator="" data-decimalseparator=".">67295.01</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="" data-thousandsseparator="" data-decimalseparator=".">4,294,967,295,00</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="" data-thousandsseparator="" data-decimalseparator=".">4294967295.001</a> <i class="fa"></i></li>
+                                            
+                                        </ul>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>United States</td>
+                                    <td>A comma (<code>,</code>)</td>
+                                    <td>A dot (<code>.</code>)</td>
+                                    <td>
+                                        <ul class="doc-sample-list">
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="en_US" data-thousandsseparator="," data-decimalseparator=".">95</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="en_US" data-thousandsseparator="," data-decimalseparator=".">295</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="en_US" data-thousandsseparator="," data-decimalseparator=".">7,295</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="en_US" data-thousandsseparator="," data-decimalseparator=".">67,295</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="en_US" data-thousandsseparator="," data-decimalseparator=".">967,295</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="en_US" data-thousandsseparator="," data-decimalseparator=".">967,295.00</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="en_US" data-thousandsseparator="," data-decimalseparator=".">4,294,967,295</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="en_US" data-thousandsseparator="," data-decimalseparator=".">4,294,967,295.00</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="en_US" data-thousandsseparator="," data-decimalseparator=".">4,294,967,295.000</a> <i class="fa"></i></li>
+                                            
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <ul class="doc-sample-list">
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="en_US" data-thousandsseparator="," data-decimalseparator=".">7295</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="en_US" data-thousandsseparator="," data-decimalseparator=".">67295.01</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="en_US" data-thousandsseparator="," data-decimalseparator=".">4,294,967,295.0001</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="en_US" data-thousandsseparator="," data-decimalseparator=".">4967,295</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="en_US" data-thousandsseparator="," data-decimalseparator=".">4294,967,295.00</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="en_US" data-thousandsseparator="," data-decimalseparator=".">4,294,967,295,00</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="en_US" data-thousandsseparator="," data-decimalseparator=".">42,94,967,295.00</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="en_US" data-thousandsseparator="," data-decimalseparator=".">42,94,967295.00</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="en_US" data-thousandsseparator="," data-decimalseparator=".">4294,967,295.00</a> <i class="fa"></i></li>
+                                            
+                                        </ul>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>France</td>
+                                    <td>A blank space</td>
+                                    <td>A comma (<code>,</code>)</td>
+                                    <td>
+                                        <ul class="doc-sample-list">
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="fr_FR" data-thousandsseparator=" " data-decimalseparator=",">95</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="fr_FR" data-thousandsseparator=" " data-decimalseparator=",">295</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="fr_FR" data-thousandsseparator=" " data-decimalseparator=",">67 295</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="fr_FR" data-thousandsseparator=" " data-decimalseparator=",">967 295</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="fr_FR" data-thousandsseparator=" " data-decimalseparator=",">967 295,00</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="fr_FR" data-thousandsseparator=" " data-decimalseparator=",">4 294 967 295</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="fr_FR" data-thousandsseparator=" " data-decimalseparator=",">4 294 967 295,00</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="fr_FR" data-thousandsseparator=" " data-decimalseparator=",">4 294 967 295,000</a> <i class="fa"></i></li>
+                                            
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <ul class="doc-sample-list">
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="fr_FR" data-thousandsseparator=" " data-decimalseparator=",">7295</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="fr_FR" data-thousandsseparator=" " data-decimalseparator=",">67295,01</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="fr_FR" data-thousandsseparator=" " data-decimalseparator=",">4 294 967 295,0001</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="fr_FR" data-thousandsseparator=" " data-decimalseparator=",">4967 295</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="fr_FR" data-thousandsseparator=" " data-decimalseparator=",">4294 967 295,00</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="fr_FR" data-thousandsseparator=" " data-decimalseparator=",">4 294 967 295.00</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="fr_FR" data-thousandsseparator=" " data-decimalseparator=",">42 94 967 295,00</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="fr_FR" data-thousandsseparator=" " data-decimalseparator=",">42 94 967295,00</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="fr_FR" data-thousandsseparator=" " data-decimalseparator=",">4294 967 295,00</a> <i class="fa"></i></li>
+                                            
+                                        </ul>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>Italy</td>
+                                    <td>A dot (<code>.</code>)</td>
+                                    <td>A comma (<code>,</code>)</td>
+                                    <td>
+                                        <ul class="doc-sample-list">
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="it_IT" data-thousandsseparator="." data-decimalseparator=",">95</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="it_IT" data-thousandsseparator="." data-decimalseparator=",">295</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="it_IT" data-thousandsseparator="." data-decimalseparator=",">7.295</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="it_IT" data-thousandsseparator="." data-decimalseparator=",">67.295</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="it_IT" data-thousandsseparator="." data-decimalseparator=",">967.295</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="it_IT" data-thousandsseparator="." data-decimalseparator=",">967.295,00</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="it_IT" data-thousandsseparator="." data-decimalseparator=",">4.294.967.295</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="it_IT" data-thousandsseparator="." data-decimalseparator=",">4.294.967.295,00</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="it_IT" data-thousandsseparator="." data-decimalseparator=",">4.294.967.295,000</a> <i class="fa"></i></li>
+                                            
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <ul class="doc-sample-list">
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="it_IT" data-thousandsseparator="." data-decimalseparator=",">7295</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="it_IT" data-thousandsseparator="." data-decimalseparator=",">67295,01</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="it_IT" data-thousandsseparator="." data-decimalseparator=",">4.294.967.295,0001</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="it_IT" data-thousandsseparator="." data-decimalseparator=",">4967.295</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="it_IT" data-thousandsseparator="." data-decimalseparator=",">967.295.00</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="it_IT" data-thousandsseparator="." data-decimalseparator=",">4294.967.295,00</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="it_IT" data-thousandsseparator="." data-decimalseparator=",">4.294.967.295.00</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="it_IT" data-thousandsseparator="." data-decimalseparator=",">42.94.967.295,00</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="it_IT" data-thousandsseparator="." data-decimalseparator=",">42.94.967295,00</a> <i class="fa"></i></li>
+                                            
+                                            <li><a href="javascript: void(0);" class="sample" data-country="it_IT" data-thousandsseparator="." data-decimalseparator=",">4294.967.295,00</a> <i class="fa"></i></li>
+                                            
+                                        </ul>
+                                    </td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p>The example also uses the <a href="/api/#update-option">updateOption()</a> method to set values for <code>thousandsSeparator</code> and <code>decimalSeparator</code> options.</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#integerForm&#39;</span><span class="p">)</span>
+    <span class="c1">// Update the options</span>
+    <span class="p">.</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;updateOption&#39;</span><span class="p">,</span> <span class="s1">&#39;number&#39;</span><span class="p">,</span> <span class="s1">&#39;integer&#39;</span><span class="p">,</span> <span class="s1">&#39;thousandsSeparator&#39;</span><span class="p">,</span> <span class="nx">thousandsSeparator</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;updateOption&#39;</span><span class="p">,</span> <span class="s1">&#39;number&#39;</span><span class="p">,</span> <span class="s1">&#39;integer&#39;</span><span class="p">,</span> <span class="s1">&#39;decimalSeparator&#39;</span><span class="p">,</span> <span class="nx">decimalSeparator</span><span class="p">);</span></code></pre></div>
+
+                    <div class="doc-alert doc-alert-info">
+                        Since the thousands and decimal separators are various, the field should use type="text" attribute.
+                        Using type="number" for field will restrict the input to use default separators for an integer numbers
+                        (an empty string for thousands, and a dot for decimal parts)
+                    </div>
+
+                    
+
+
+
+
+
+
+
+
+
+<div class="doc-demo">
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"><span class="doc-framework">Framework</span> <i class="caret"></i></a>
+            <ul class="dropdown-menu" role="menu">
+                
+                <li><a href="/validators/integer/locale/bootstrap.html" data-demo-target="#locale-frame" data-demo-framework="bootstrap">Bootstrap</a></li>
+                
+            </ul>
+        </li>
+        <li class="active"><a href="#locale-form-tab" data-toggle="tab">Try it</a></li>
+        
+        <li><a href="#locale-programmatic-tab" data-toggle="tab">Programmatic code</a></li>
+        
+        <li class="doc-demo-direct"><a href="/validators/integer/locale/bootstrap.html" data-toggle="tooltip" data-container="body" title="Open the demo in new tab" target="_blank"><i class="fa fa-external-link"></i></a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane active" id="locale-form-tab">
+            <iframe class="doc-demo-frame" id="locale-frame"></iframe>
+        </div>
+
+        
+        <div class="tab-pane" id="locale-programmatic-tab">
+            
+            <div data-demo-code="bootstrap">
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;integerForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-4 control-label&quot;</span><span class="nt">&gt;</span>Country<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-3&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;select</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;country&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>Choose a country<span class="nt">&lt;/option&gt;</span>
+                <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;en_US&quot;</span><span class="nt">&gt;</span>United States<span class="nt">&lt;/option&gt;</span>
+                <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;fr_FR&quot;</span><span class="nt">&gt;</span>France<span class="nt">&lt;/option&gt;</span>
+                <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;it_IT&quot;</span><span class="nt">&gt;</span>Italy<span class="nt">&lt;/option&gt;</span>
+            <span class="nt">&lt;/select&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-4 control-label&quot;</span><span class="nt">&gt;</span>Type an integer number<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-4&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;number&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#integerForm&#39;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">formValidation</span><span class="p">({</span>
+            <span class="nx">framework</span><span class="o">:</span> <span class="s1">&#39;bootstrap&#39;</span><span class="p">,</span>
+            <span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">valid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-ok&#39;</span><span class="p">,</span>
+                <span class="nx">invalid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-remove&#39;</span><span class="p">,</span>
+                <span class="nx">validating</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-refresh&#39;</span>
+            <span class="p">},</span>
+            <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">number</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">integer</span><span class="o">:</span> <span class="p">{</span>
+                            <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The value is not an integer&#39;</span><span class="p">,</span>
+                            <span class="c1">// The default separators</span>
+                            <span class="nx">thousandsSeparator</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                            <span class="nx">decimalSeparator</span><span class="o">:</span> <span class="s1">&#39;.&#39;</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">})</span>
+        <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;change&#39;</span><span class="p">,</span> <span class="s1">&#39;[name=&quot;country&quot;]&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">thousandsSeparator</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                <span class="nx">decimalSeparator</span>   <span class="o">=</span> <span class="s1">&#39;.&#39;</span><span class="p">;</span>
+            <span class="k">switch</span> <span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">val</span><span class="p">())</span> <span class="p">{</span>
+                <span class="k">case</span> <span class="s1">&#39;en_US&#39;</span><span class="o">:</span>
+                    <span class="nx">thousandsSeparator</span> <span class="o">=</span> <span class="s1">&#39;,&#39;</span><span class="p">;</span>
+                    <span class="nx">decimalSeparator</span>   <span class="o">=</span> <span class="s1">&#39;.&#39;</span><span class="p">;</span>
+                    <span class="k">break</span><span class="p">;</span>
+
+                <span class="k">case</span> <span class="s1">&#39;fr_FR&#39;</span><span class="o">:</span>
+                    <span class="nx">thousandsSeparator</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="p">;</span>
+                    <span class="nx">decimalSeparator</span>   <span class="o">=</span> <span class="s1">&#39;,&#39;</span><span class="p">;</span>
+                    <span class="k">break</span><span class="p">;</span>
+
+                <span class="k">case</span> <span class="s1">&#39;it_IT&#39;</span><span class="o">:</span>
+                    <span class="nx">thousandsSeparator</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span><span class="p">;</span>
+                    <span class="nx">decimalSeparator</span>   <span class="o">=</span> <span class="s1">&#39;,&#39;</span><span class="p">;</span>
+                    <span class="k">break</span><span class="p">;</span>
+
+                <span class="k">case</span> <span class="s1">&#39;&#39;</span><span class="o">:</span>
+                <span class="k">default</span><span class="o">:</span>
+                    <span class="nx">thousandsSeparator</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+                    <span class="nx">decimalSeparator</span>   <span class="o">=</span> <span class="s1">&#39;.&#39;</span><span class="p">;</span>
+                    <span class="k">break</span><span class="p">;</span>
+            <span class="p">}</span>
+
+            <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#integerForm&#39;</span><span class="p">)</span>
+                <span class="c1">// Update the options</span>
+                <span class="p">.</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;updateOption&#39;</span><span class="p">,</span> <span class="s1">&#39;number&#39;</span><span class="p">,</span> <span class="s1">&#39;integer&#39;</span><span class="p">,</span> <span class="s1">&#39;thousandsSeparator&#39;</span><span class="p">,</span> <span class="nx">thousandsSeparator</span><span class="p">)</span>
+                <span class="p">.</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;updateOption&#39;</span><span class="p">,</span> <span class="s1">&#39;number&#39;</span><span class="p">,</span> <span class="s1">&#39;integer&#39;</span><span class="p">,</span> <span class="s1">&#39;decimalSeparator&#39;</span><span class="p">,</span> <span class="nx">decimalSeparator</span><span class="p">)</span>
+                <span class="c1">// and revalidate the number</span>
+                <span class="p">.</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;revalidateField&#39;</span><span class="p">,</span> <span class="s1">&#39;number&#39;</span><span class="p">);</span>
+        <span class="p">})</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span></code></pre></div>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
                 </section>
 
                 <div class="doc-hr"></div>
@@ -436,6 +825,27 @@ $(document).ready(function() {
         </div>
     </div>
 </div>
+
+<script>
+$(document).ready(function() {
+    $('.sample').on('click', function() {
+        var thousandsSeparator = $(this).attr('data-thousandsseparator'),
+            decimalSeparator   = $(this).attr('data-decimalseparator'),
+            country            = $(this).attr('data-country'),
+            number             = $(this).text(),
+            formWindow         = $('#locale-frame').get(0).contentWindow,
+            isValid            = formWindow.revalidateNumber(thousandsSeparator, decimalSeparator, country, number);
+
+        $(this)
+            .parent()
+                .removeClass('doc-sample-error doc-sample-success')
+                .addClass(isValid ? 'doc-sample-success' : 'doc-sample-error')
+            .find('i')
+                .removeClass('fa-check fa-times')
+                .addClass(isValid ? 'fa-check' : 'fa-times');
+    });
+});
+</script>
 
         <footer class="doc-footer">
     <div class="container">
