@@ -1,0 +1,1036 @@
+<!doctype html>
+<html>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article#">
+    <meta charset="utf-8">
+<title>Validating international phone numbers - FormValidation</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<meta http-equiv="Content-Language" content="en">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="FormValidation - The best jQuery validation plugin to validate form fields, support Bootstrap, Zurb Foundation, Pure, Semantic, UIKit frameworks">
+<meta name="keywords" content="FormValidation, BootstrapValidator, form validation, form validate, form validator, jQuery validation plugin, jquery validate plugin, jquery validator plugin, Zurb Foundation validation, Pure validation, SemanticUI validation, UIKit validation, Skeleton validation, Bootstrap, Zurb Foundation, Pure, SemanticUI, UIKit, Skeleton">
+<meta name="author" content="Nguyen Huu Phuoc">
+<meta name="google-site-verification" content="FMmr8kYuIuW27-qJLOb1Z59OgiVgKNgAv4_eMARhIY8" />
+
+<meta name="twitter:site" content="@formvalidation" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="FormValidation - The best jQuery validation plugin to validate form fields, support Bootstrap, Zurb Foundation, Pure, Semantic, UIKit frameworks" />
+<meta name="twitter:title" content="Validating international phone numbers - FormValidation" />
+<meta name="twitter:image" content="http://formvalidation.io/asset/img/logo.png" />
+
+<meta property="og:title" content="Validating international phone numbers - FormValidation" />
+<meta property="og:description" content="FormValidation - The best jQuery validation plugin to validate form fields, support Bootstrap, Zurb Foundation, Pure, Semantic, UIKit frameworks" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://formvalidation.io/examples/validating-international-phone-numbers/" />
+<meta property="og:image" content="http://formvalidation.io/asset/img/logo.png" />
+<meta property="og:site_name" content="FormValidation" />
+
+<link rel="icon" type="image/x-icon" href="/asset/img/favicon.ico">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/3.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/fontawesome/4.2.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/vendor/formvalidation/css/formValidation.min.css">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:300,400,700">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Cardo:400,400italic,700">
+<link rel="stylesheet" href="/vendor/pygments/github.css">
+<link rel="stylesheet" href="/asset/css/style.css">
+
+<!--[if lt IE 9]>
+<script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src="/vendor/formvalidation/js/formValidation.min.js"></script>
+<script src="/vendor/formvalidation/js/framework/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-44786951-2']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+</head>
+<body>
+    <nav class="doc-nav" tabindex="-1">
+    <ul>
+        <li><a href="/">Home</a></li>
+    
+        
+        <li class=""><a href="/download/">Download</a></li>
+    
+        
+        <li class=""><a href="/getting-started/">Getting Started</a></li>
+    
+        
+        <li class=""><a href="/settings/">Settings</a></li>
+    
+        
+        <li class=""><a href="/api/">API</a></li>
+    
+        
+        <li class=""><a href="/validators/">Validators</a></li>
+    
+        
+        <li class=""><a href="/addons/"><span></span> Add-ons</a></li>
+    
+        
+        <li class="doc-nav-active"><a href="/examples/"><span></span> Examples</a></li>
+    
+        
+        <li class=""><a href="/developing/">Developing</a></li>
+    
+        
+        <li class=""><a href="/news/">News</a></li>
+    
+        
+        <li class=""><a href="/license/">License</a></li>
+    
+    </ul>
+
+    <div class="doc-hr"></div>
+
+    <ul>
+        <li><a href="https://twitter.com/formvalidation/" title="Follow FormValidation on Twitter">Twitter <i class="fa fa-twitter"></i></a></li>
+        <li><a href="https://www.facebook.com/formvalidation/" title="Like FormValidation on Facebook">Facebook <i class="fa fa-facebook"></i></a></li>
+        <li><a href="https://plus.google.com/u/0/communities/114931136856987817254" title="Join FormValidation community on Google+">Google+ <i class="fa fa-google-plus"></i></a></li>
+    </ul>
+
+    <div class="doc-hr"></div>
+
+    <div class="doc-creator">
+        <p>
+            Handcrafted with <span class="doc-heart"><i class="fa fa-heart"></i></span> and a lot of <i class="fa fa-coffee"></i><br />
+            by <a href="http://twitter.com/nghuuphuoc">@nghuuphuoc</a><br/>
+            <img src="/asset/img/logo.png" width="60px" height="60px" />
+        </p>
+        <p><a href="mailto: phuoc@huuphuoc.me" class="btn">Hire me</a></p>
+    </div>
+</nav>
+
+<a id="toggleButton" class="doc-nav-toggle" title="Toggle the navigation"><i class="fa fa-navicon"></i></a>
+
+    <div id="main" class="doc-content-wrapper">
+        <div class="doc-notification" id="notification">
+    <i class="fa fa-bell-o"></i> <a href="/news/v0.7.0-released/">v0.7.0 is released on 2015.08.01</a>
+</div>
+<script>
+$(document).ready(function() {
+    var notifications = [],
+        $message      = $('#notification').find('a').data('index', 0);
+    notifications.push({ title: 'v0.7.0 is released on 2015.08.01', url: '/news/v0.7.0-released/'});
+    notifications.push({ title: 'New example: Validating international phone numbers', url: '/examples/validating-international-phone-numbers/'});
+    notifications.push({ title: 'New example: Asking fields to be unique', url: '/examples/asking-fields-be-unique/'});
+    notifications.push({ title: 'New example: Contact form', url: '/examples/contact-form/'});
+    notifications.push({ title: 'New example: Validating form generated by JotForm', url: '/examples/jot-form/'});
+    notifications.push({ title: 'New example: Validating percentage values', url: '/examples/validating-percentage-values/'});
+    notifications.push({ title: 'New example: Validating custom Stripe form', url: '/examples/validating-custom-stripe-form/'});
+    notifications.push({ title: 'New example: Showing custom message returned from server', url: '/examples/showing-custom-message-returned-from-server/'});
+    notifications.push({ title: 'New example: Terms and conditions agreement validation', url: '/examples/terms-conditions-agreement-validation/'});
+    notifications.push({ title: 'New example: Ignoring validation', url: '/examples/ignoring-validation/'});
+    
+    setInterval(function() {
+        $message.data('index', $message.data('index') + 1);
+        if ($message.data('index') >= notifications.length) {
+            $message.data('index', 0);
+        }
+        $message
+            .fadeOut('slow')
+            .promise()
+            .then(function() {
+                $message.attr('href', notifications[$message.data('index')].url)
+                        .html(notifications[$message.data('index')].title)
+                        .fadeIn('slow');
+            });
+    }, 5000);
+});
+</script>
+
+        <div class="doc-content-container">
+    <div class="doc-heading">
+        <h1>Validating international phone numbers</h1>
+        <p>&larr; <a href="/examples/">Examples</a></p>
+        <div id="shareButton" class="doc-share-button"></div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <section>
+                    <p><a href="/download/">FormValidation</a> provides the built-in <a href="/validators/phone/">phone</a> validator to validate the phone number in various countries.
+                        Behind the scenes, it uses Javascript regular expressions to check if a given number matches the pattern of phone numbers in particular country.
+                        Therefore, despite the fact that it doesn't cover all possible formats of phone number in the world,
+                        you can use the <a href="/validators/regexp/">regexp</a> validator to test a phone number in your country.</p>
+
+                    <p>This example helps you validate an international phone numbers by using a different approach. We will use the
+                        <a href="https://github.com/Bluefieldscom/intl-tel-input">intl-tel-input</a> plugin for that purpose.</p>
+
+                    <p><strong>intl-tel-input</strong> is a popular jQuery plugin for entering and validating international telephone numbers. Below is some of its advanced features:</p>
+                    <ul class="doc-list">
+                        <li>Provides a very friendly user interface to enter a phone number. All countries are shown as a drop list with the flags and suggestion phone number</li>
+                        <li>Provides a up-to-date the patterns of phone numbers in the world. The data is taken from Google <a href="https://github.com/googlei18n/libphonenumber">libphonenumber</a> library
+                            so they are fully stable</li>
+                        <li>Has a few of APIs to validate and integrate with other tools</li>
+                    </ul>
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Using the intl-tel-input plugin</h2>
+
+                    <p>It's quite easy to use the intl-tel-input plugin for an input field:</p>
+                    <ul class="doc-list">
+                        <li>Download <a href="https://github.com/Bluefieldscom/intl-tel-input/releases">its latest version</a></li>
+                        <li>Include its CSS, Javascript files</li>
+                    </ul>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- The paths might be changed to suit with your folder structure --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;/vendor/intl-tel-input/build/css/intlTelInput.css&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/vendor/intl-tel-input/build/js/intlTelInput.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></div>
+
+                    <ul class="doc-list">
+                        <li>Attach the plugin to field</li>
+                    </ul>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#contactForm&#39;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;[name=&quot;phoneNumber&quot;]&#39;</span><span class="p">)</span>
+            <span class="p">.</span><span class="nx">intlTelInput</span><span class="p">({</span>
+                <span class="nx">utilsScript</span><span class="o">:</span> <span class="s1">&#39;/vendor/intl-tel-input/lib/libphonenumber/build/utils.js&#39;</span><span class="p">,</span>
+                <span class="nx">autoPlaceholder</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="nx">preferredCountries</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;fr&#39;</span><span class="p">,</span> <span class="s1">&#39;us&#39;</span><span class="p">,</span> <span class="s1">&#39;gb&#39;</span><span class="p">]</span>
+            <span class="p">});</span>
+<span class="p">});</span></code></pre></div>
+
+                    <p>In the next sections, you will see how to integrate the intl-tel-input plugin with FormValidation.</p>
+
+                    <div class="doc-alert doc-alert-info">
+                        You should look at the <a href="/examples#compatibility">basic principles</a> when integrating FormValidation with other plugins
+                    </div>
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Using the callback validator</h2>
+
+                    <p>We can make the intl-tel-input plugin work with FormValidation easily by combining its <a href="https://github.com/Bluefieldscom/intl-tel-input#public-methods">isValidNumber()</a>
+                        method and the <a href="/validators/callback/">callback</a> validator:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#contactForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
+    <span class="p">...</span>
+    <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">phoneNumber</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">callback</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The phone number is not valid&#39;</span><span class="p">,</span>
+                    <span class="nx">callback</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="k">return</span> <span class="nx">value</span> <span class="o">===</span> <span class="s1">&#39;&#39;</span> <span class="o">||</span> <span class="nx">$field</span><span class="p">.</span><span class="nx">intlTelInput</span><span class="p">(</span><span class="s1">&#39;isValidNumber&#39;</span><span class="p">);</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span></code></pre></div>
+
+                    <p>There is an important note that the input must be revalidated when the user choose another country from the drop list.
+                        Unfortunately, intl-tel-input doesn't provide an event or callback that is execute after choosing a country.
+                        But it can be done by using a simple <code>click</code> event handler on the countries list which has <code>.country-list</code> class:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#contactForm&#39;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">formValidation</span><span class="p">(...)</span>
+    <span class="c1">// Revalidate the number when changing the country</span>
+    <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="s1">&#39;.country-list&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#contactForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;revalidateField&#39;</span><span class="p">,</span> <span class="s1">&#39;phoneNumber&#39;</span><span class="p">);</span>
+    <span class="p">});</span></code></pre></div>
+
+                    <p>The field is revalidated by the <a href="/api/#revalidate-field">revalidateField()</a> method.</p>
+
+                    <p>You can try this approach yourself in the live form below:</p>
+
+                    
+
+
+
+
+
+
+
+
+
+<div class="doc-demo">
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"><span class="doc-framework">Framework</span> <i class="caret"></i></a>
+            <ul class="dropdown-menu" role="menu">
+                
+                <li><a href="/examples/validating-international-phone-numbers/callback/bootstrap.html" data-demo-target="#callback-frame" data-demo-framework="bootstrap">Bootstrap</a></li>
+                
+            </ul>
+        </li>
+        <li class="active"><a href="#callback-form-tab" data-toggle="tab">Try it</a></li>
+        
+        <li><a href="#callback-programmatic-tab" data-toggle="tab">Programmatic code</a></li>
+        
+        <li class="doc-demo-direct"><a href="/examples/validating-international-phone-numbers/callback/bootstrap.html" data-toggle="tooltip" data-container="body" title="Open the demo in new tab" target="_blank"><i class="fa fa-external-link"></i></a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane active" id="callback-form-tab">
+            <iframe class="doc-demo-frame" id="callback-frame"></iframe>
+        </div>
+
+        
+        <div class="tab-pane" id="callback-programmatic-tab">
+            
+            <div data-demo-code="bootstrap">
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;/vendor/intl-tel-input/build/css/intlTelInput.css&quot;</span> <span class="nt">/&gt;</span>
+
+<span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;contactForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Phone number<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-5&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;tel&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;phoneNumber&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/vendor/intl-tel-input/build/js/intlTelInput.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#contactForm&#39;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;[name=&quot;phoneNumber&quot;]&#39;</span><span class="p">)</span>
+            <span class="p">.</span><span class="nx">intlTelInput</span><span class="p">({</span>
+                <span class="nx">utilsScript</span><span class="o">:</span> <span class="s1">&#39;/vendor/intl-tel-input/lib/libphonenumber/build/utils.js&#39;</span><span class="p">,</span>
+                <span class="nx">autoPlaceholder</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="nx">preferredCountries</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;fr&#39;</span><span class="p">,</span> <span class="s1">&#39;us&#39;</span><span class="p">,</span> <span class="s1">&#39;gb&#39;</span><span class="p">]</span>
+            <span class="p">});</span>
+
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#contactForm&#39;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">formValidation</span><span class="p">({</span>
+            <span class="nx">framework</span><span class="o">:</span> <span class="s1">&#39;bootstrap&#39;</span><span class="p">,</span>
+            <span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">valid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-ok&#39;</span><span class="p">,</span>
+                <span class="nx">invalid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-remove&#39;</span><span class="p">,</span>
+                <span class="nx">validating</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-refresh&#39;</span>
+            <span class="p">},</span>
+            <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">phoneNumber</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">callback</span><span class="o">:</span> <span class="p">{</span>
+                            <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The phone number is not valid&#39;</span><span class="p">,</span>
+                            <span class="nx">callback</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">)</span> <span class="p">{</span>
+                                <span class="k">return</span> <span class="nx">value</span> <span class="o">===</span> <span class="s1">&#39;&#39;</span> <span class="o">||</span> <span class="nx">$field</span><span class="p">.</span><span class="nx">intlTelInput</span><span class="p">(</span><span class="s1">&#39;isValidNumber&#39;</span><span class="p">);</span>
+                            <span class="p">}</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">})</span>
+        <span class="c1">// Revalidate the number when changing the country</span>
+        <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="s1">&#39;.country-list&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#contactForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;revalidateField&#39;</span><span class="p">,</span> <span class="s1">&#39;phoneNumber&#39;</span><span class="p">);</span>
+        <span class="p">});</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span></code></pre></div>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Developing custom validator</h2>
+
+                    <p>If you often use intl-tel-input plugin in multiple forms, it's the right time to write a custom validator
+                        and reuse it whenever you want.</p>
+
+                    <p>It's easy to <a href="/developing/">develop new validator</a>, say that it's named as <code>intPhoneNumber</code>:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Define new validator</span>
+    <span class="nx">FormValidation</span><span class="p">.</span><span class="nx">Validator</span><span class="p">.</span><span class="nx">intPhoneNumber</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="nx">init</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// Attach the intlTelInput on field</span>
+            <span class="nx">$field</span><span class="p">.</span><span class="nx">intlTelInput</span><span class="p">({</span>
+                <span class="nx">utilsScript</span><span class="o">:</span> <span class="s1">&#39;/vendor/intl-tel-input/lib/libphonenumber/build/utils.js&#39;</span><span class="p">,</span>
+                <span class="nx">autoPlaceholder</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="nx">preferredCountries</span><span class="o">:</span> <span class="s1">&#39;fr,us,gb&#39;</span><span class="p">,</span>
+            <span class="p">});</span>
+
+            <span class="c1">// Revalidate the field when changing the country</span>
+            <span class="kd">var</span> <span class="nx">$form</span>     <span class="o">=</span> <span class="nx">validator</span><span class="p">.</span><span class="nx">getForm</span><span class="p">(),</span>
+                <span class="nx">fieldName</span> <span class="o">=</span> <span class="nx">$field</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;data-fv-field&#39;</span><span class="p">);</span>
+            <span class="nx">$form</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click.country.intphonenumber&#39;</span><span class="p">,</span> <span class="s1">&#39;.country-list&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                <span class="nx">$form</span><span class="p">.</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;revalidateField&#39;</span><span class="p">,</span> <span class="nx">fieldName</span><span class="p">);</span>
+            <span class="p">});</span>
+        <span class="p">},</span>
+
+        <span class="nx">destroy</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">$field</span><span class="p">.</span><span class="nx">intlTelInput</span><span class="p">(</span><span class="s1">&#39;destroy&#39;</span><span class="p">);</span>
+
+            <span class="c1">// Turn off the event</span>
+            <span class="nx">validator</span><span class="p">.</span><span class="nx">getForm</span><span class="p">().</span><span class="nx">off</span><span class="p">(</span><span class="s1">&#39;click.country.intphonenumber&#39;</span><span class="p">);</span>
+        <span class="p">},</span>
+
+        <span class="nx">validate</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">$field</span><span class="p">.</span><span class="nx">val</span><span class="p">()</span> <span class="o">===</span> <span class="s1">&#39;&#39;</span> <span class="o">||</span> <span class="nx">$field</span><span class="p">.</span><span class="nx">intlTelInput</span><span class="p">(</span><span class="s1">&#39;isValidNumber&#39;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">};</span>
+<span class="p">});</span></code></pre></div>
+
+                    <p>The following table recaps the purpose of <code>init</code>, <code>destroy</code> and <code>validate</code> methods used above:</p>
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Method</th>
+                                    <th>Functionality</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>init</code></td>
+                                    <td>This method does anything you need to prepare the validation. It's called once right after attaching the validator to field</td>
+                                </tr>
+                                <tr>
+                                    <td><code>destroy</code></td>
+                                    <td>This method is called when you destroy the FormValidation instance by using the <a href="/api/#destroy">destroy()</a> method</td>
+                                </tr>
+                                <tr>
+                                    <td><code>validate</code></td>
+                                    <td>This is the validation method. It returns <code>true</code> or <code>false</code> that indicates the field is valid or invalid</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p>These methods take three parameters:</p>
+                    <ul class="doc-list">
+                        <li><code>validator</code> is the FormValidation instance</li>
+                        <li><code>$field</code> is the field element</li>
+                        <li><code>options</code> is an object containing the validator options</li>
+                    </ul>
+
+                    <p>Applying the new validator to field is easy:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#contactForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
+    <span class="p">...</span>
+    <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">phoneNumber</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">intPhoneNumber</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The phone number is not valid&#39;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span></code></pre></div>
+
+                    <p>There's still a small thing we should improve. As seen in the code above, there're some hard coded options when attaching intl-tel-input to field:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">FormValidation</span><span class="p">.</span><span class="nx">Validator</span><span class="p">.</span><span class="nx">intPhoneNumber</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">init</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// The utilsScript, autoPlaceholder and preferredCountries options are fixed</span>
+        <span class="nx">$field</span><span class="p">.</span><span class="nx">intlTelInput</span><span class="p">({</span>
+            <span class="nx">utilsScript</span><span class="o">:</span> <span class="s1">&#39;/vendor/intl-tel-input/lib/libphonenumber/build/utils.js&#39;</span><span class="p">,</span>
+            <span class="nx">autoPlaceholder</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nx">preferredCountries</span><span class="o">:</span> <span class="s1">&#39;fr,us,gb&#39;</span><span class="p">,</span>
+        <span class="p">});</span>
+
+        <span class="p">...</span>
+    <span class="p">}</span>
+
+    <span class="p">...</span>
+<span class="p">};</span></code></pre></div>
+
+                    <p>You don't need to worry about this. It's possible to define and pass options to the <code>options</code> parameter as following:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">FormValidation</span><span class="p">.</span><span class="nx">Validator</span><span class="p">.</span><span class="nx">intPhoneNumber</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">html5Attributes</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;message&#39;</span><span class="p">,</span>
+        <span class="nx">autoplaceholder</span><span class="o">:</span> <span class="s1">&#39;autoPlaceholder&#39;</span><span class="p">,</span>
+        <span class="nx">preferredcountries</span><span class="o">:</span> <span class="s1">&#39;preferredCountries&#39;</span><span class="p">,</span>
+        <span class="nx">utilsscript</span><span class="o">:</span> <span class="s1">&#39;utilsScript&#39;</span>
+    <span class="p">},</span>
+
+    <span class="nx">init</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Determine the preferred countries</span>
+        <span class="kd">var</span> <span class="nx">autoPlaceholder</span>    <span class="o">=</span> <span class="nx">options</span><span class="p">.</span><span class="nx">autoPlaceholder</span> <span class="o">===</span> <span class="kc">true</span> <span class="o">||</span> <span class="nx">options</span><span class="p">.</span><span class="nx">autoPlaceholder</span> <span class="o">===</span> <span class="s1">&#39;true&#39;</span><span class="p">,</span>
+            <span class="nx">preferredCountries</span> <span class="o">=</span> <span class="nx">options</span><span class="p">.</span><span class="nx">preferredCountries</span> <span class="o">||</span> <span class="s1">&#39;us&#39;</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="s1">&#39;string&#39;</span> <span class="o">===</span> <span class="k">typeof</span> <span class="nx">preferredCountries</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">preferredCountries</span> <span class="o">=</span> <span class="nx">preferredCountries</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="c1">// Attach the intlTelInput on field</span>
+        <span class="nx">$field</span><span class="p">.</span><span class="nx">intlTelInput</span><span class="p">({</span>
+            <span class="nx">utilsScript</span><span class="o">:</span> <span class="nx">options</span><span class="p">.</span><span class="nx">utilsScript</span> <span class="o">||</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+            <span class="nx">autoPlaceholder</span><span class="o">:</span> <span class="nx">autoPlaceholder</span><span class="p">,</span>
+            <span class="nx">preferredCountries</span><span class="o">:</span> <span class="nx">preferredCountries</span>
+        <span class="p">});</span>
+
+        <span class="p">...</span>
+    <span class="p">}</span>
+
+    <span class="p">...</span>
+<span class="p">};</span></code></pre></div>
+
+                    <p>The <code>html5Attributes</code> property defines the HTML attributes which can be mapped with the validator options.
+                        These attributes can be used in the <a href="/examples/attribute/">declarative mode</a>, for example:</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">&quot;phoneNumber&quot;</span>
+    <span class="na">data-fv-intphonenumber=</span><span class="s">&quot;true&quot;</span>
+    <span class="na">data-fv-intphonenumber-autoplaceholder=</span><span class="s">&quot;true&quot;</span>
+    <span class="na">data-fv-intphonenumber-preferredcountries=</span><span class="s">&quot;fr,us,gb&quot;</span>
+    <span class="na">data-fv-intphonenumber-utilsscript=</span><span class="s">&quot;/vendor/intl-tel-input/lib/libphonenumber/build/utils.js&quot;</span>
+    <span class="na">data-fv-intphonenumber-message=</span><span class="s">&quot;The phone number is not valid&quot;</span> <span class="nt">/&gt;</span></code></pre></div>
+
+                    <p>The snippet code below is a programmatic usage of passing the options:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#contactForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
+    <span class="p">...</span>
+    <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">phoneNumber</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">intPhoneNumber</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">utilsScript</span><span class="o">:</span> <span class="s1">&#39;/vendor/intl-tel-input/lib/libphonenumber/build/utils.js&#39;</span><span class="p">,</span>
+                    <span class="nx">autoPlaceholder</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+                    <span class="nx">preferredCountries</span><span class="o">:</span> <span class="s1">&#39;fr,us,gb&#39;</span><span class="p">,</span>
+                    <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The phone number is not valid&#39;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span></code></pre></div>
+
+                    <p>You can take a look at the code tab to see how all of these things work together:</p>
+
+                    
+
+
+
+
+
+
+
+
+
+<div class="doc-demo">
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"><span class="doc-framework">Framework</span> <i class="caret"></i></a>
+            <ul class="dropdown-menu" role="menu">
+                
+                <li><a href="/examples/validating-international-phone-numbers/custom/bootstrap.html" data-demo-target="#custom-frame" data-demo-framework="bootstrap">Bootstrap</a></li>
+                
+            </ul>
+        </li>
+        <li class="active"><a href="#custom-form-tab" data-toggle="tab">Try it</a></li>
+        
+        <li><a href="#custom-programmatic-tab" data-toggle="tab">Programmatic code</a></li>
+        
+        <li class="doc-demo-direct"><a href="/examples/validating-international-phone-numbers/custom/bootstrap.html" data-toggle="tooltip" data-container="body" title="Open the demo in new tab" target="_blank"><i class="fa fa-external-link"></i></a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane active" id="custom-form-tab">
+            <iframe class="doc-demo-frame" id="custom-frame"></iframe>
+        </div>
+
+        
+        <div class="tab-pane" id="custom-programmatic-tab">
+            
+            <div data-demo-code="bootstrap">
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;/vendor/intl-tel-input/build/css/intlTelInput.css&quot;</span> <span class="nt">/&gt;</span>
+
+<span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;contactForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Phone number<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-5&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;tel&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;phoneNumber&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/vendor/intl-tel-input/build/js/intlTelInput.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Define new validator</span>
+    <span class="nx">FormValidation</span><span class="p">.</span><span class="nx">Validator</span><span class="p">.</span><span class="nx">intPhoneNumber</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="nx">html5Attributes</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;message&#39;</span><span class="p">,</span>
+            <span class="nx">autoplaceholder</span><span class="o">:</span> <span class="s1">&#39;autoPlaceholder&#39;</span><span class="p">,</span>
+            <span class="nx">preferredcountries</span><span class="o">:</span> <span class="s1">&#39;preferredCountries&#39;</span><span class="p">,</span>
+            <span class="nx">utilsscript</span><span class="o">:</span> <span class="s1">&#39;utilsScript&#39;</span>
+        <span class="p">},</span>
+
+        <span class="nx">init</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// Determine the preferred countries</span>
+            <span class="kd">var</span> <span class="nx">autoPlaceholder</span>    <span class="o">=</span> <span class="nx">options</span><span class="p">.</span><span class="nx">autoPlaceholder</span> <span class="o">===</span> <span class="kc">true</span> <span class="o">||</span> <span class="nx">options</span><span class="p">.</span><span class="nx">autoPlaceholder</span> <span class="o">===</span> <span class="s1">&#39;true&#39;</span><span class="p">,</span>
+                <span class="nx">preferredCountries</span> <span class="o">=</span> <span class="nx">options</span><span class="p">.</span><span class="nx">preferredCountries</span> <span class="o">||</span> <span class="s1">&#39;us&#39;</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="s1">&#39;string&#39;</span> <span class="o">===</span> <span class="k">typeof</span> <span class="nx">preferredCountries</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">preferredCountries</span> <span class="o">=</span> <span class="nx">preferredCountries</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">);</span>
+            <span class="p">}</span>
+
+            <span class="c1">// Attach the intlTelInput on field</span>
+            <span class="nx">$field</span><span class="p">.</span><span class="nx">intlTelInput</span><span class="p">({</span>
+                <span class="nx">utilsScript</span><span class="o">:</span> <span class="nx">options</span><span class="p">.</span><span class="nx">utilsScript</span> <span class="o">||</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                <span class="nx">autoPlaceholder</span><span class="o">:</span> <span class="nx">autoPlaceholder</span><span class="p">,</span>
+                <span class="nx">preferredCountries</span><span class="o">:</span> <span class="nx">preferredCountries</span>
+            <span class="p">});</span>
+
+            <span class="c1">// Revalidate the field when changing the country</span>
+            <span class="kd">var</span> <span class="nx">$form</span>     <span class="o">=</span> <span class="nx">validator</span><span class="p">.</span><span class="nx">getForm</span><span class="p">(),</span>
+                <span class="nx">fieldName</span> <span class="o">=</span> <span class="nx">$field</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;data-fv-field&#39;</span><span class="p">);</span>
+            <span class="nx">$form</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click.country.intphonenumber&#39;</span><span class="p">,</span> <span class="s1">&#39;.country-list&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                <span class="nx">$form</span><span class="p">.</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;revalidateField&#39;</span><span class="p">,</span> <span class="nx">fieldName</span><span class="p">);</span>
+            <span class="p">});</span>
+        <span class="p">},</span>
+
+        <span class="nx">destroy</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">$field</span><span class="p">.</span><span class="nx">intlTelInput</span><span class="p">(</span><span class="s1">&#39;destroy&#39;</span><span class="p">);</span>
+
+            <span class="nx">validator</span><span class="p">.</span><span class="nx">getForm</span><span class="p">().</span><span class="nx">off</span><span class="p">(</span><span class="s1">&#39;click.country.intphonenumber&#39;</span><span class="p">);</span>
+        <span class="p">},</span>
+
+        <span class="nx">validate</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">$field</span><span class="p">.</span><span class="nx">val</span><span class="p">()</span> <span class="o">===</span> <span class="s1">&#39;&#39;</span> <span class="o">||</span> <span class="nx">$field</span><span class="p">.</span><span class="nx">intlTelInput</span><span class="p">(</span><span class="s1">&#39;isValidNumber&#39;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">};</span>
+
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#contactForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
+        <span class="nx">framework</span><span class="o">:</span> <span class="s1">&#39;bootstrap&#39;</span><span class="p">,</span>
+        <span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">valid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-ok&#39;</span><span class="p">,</span>
+            <span class="nx">invalid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-remove&#39;</span><span class="p">,</span>
+            <span class="nx">validating</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-refresh&#39;</span>
+        <span class="p">},</span>
+        <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">phoneNumber</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">intPhoneNumber</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">utilsScript</span><span class="o">:</span> <span class="s1">&#39;/vendor/intl-tel-input/lib/libphonenumber/build/utils.js&#39;</span><span class="p">,</span>
+                        <span class="nx">autoPlaceholder</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+                        <span class="nx">preferredCountries</span><span class="o">:</span> <span class="s1">&#39;fr,us,gb&#39;</span><span class="p">,</span>
+                        <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The phone number is not valid&#39;</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span></code></pre></div>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Bonus: Showing useful validation message</h2>
+
+                    <p>What if you want to provide more descriptive validation message. For example, how to inform the user that
+                        the number is too short, too long or even not a number.</p>
+
+                    <p>We can archive this requirement by adding a <a href="/settings/#dynamic-message">dynamic message</a> supported by the <a href="/validators/callback/#dynamic-message-example">callback</a> validator.</p>
+                    <p>The message is determined based on the validation error that is retrieved by the <code>getValidationError()</code> method:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#contactForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
+    <span class="p">...</span>
+    <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">phoneNumber</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">callback</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">callback</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="kd">var</span> <span class="nx">isValid</span> <span class="o">=</span> <span class="nx">value</span> <span class="o">===</span> <span class="s1">&#39;&#39;</span> <span class="o">||</span> <span class="nx">$field</span><span class="p">.</span><span class="nx">intlTelInput</span><span class="p">(</span><span class="s1">&#39;isValidNumber&#39;</span><span class="p">),</span>
+                            <span class="nx">err</span>     <span class="o">=</span> <span class="nx">$field</span><span class="p">.</span><span class="nx">intlTelInput</span><span class="p">(</span><span class="s1">&#39;getValidationError&#39;</span><span class="p">),</span>
+                            <span class="nx">message</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+                        <span class="k">switch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+                            <span class="k">case</span> <span class="nx">intlTelInputUtils</span><span class="p">.</span><span class="nx">validationError</span><span class="p">.</span><span class="nx">INVALID_COUNTRY_CODE</span><span class="o">:</span>
+                                <span class="nx">message</span> <span class="o">=</span> <span class="s1">&#39;The country code is not valid&#39;</span><span class="p">;</span>
+                                <span class="k">break</span><span class="p">;</span>
+
+                            <span class="k">case</span> <span class="nx">intlTelInputUtils</span><span class="p">.</span><span class="nx">validationError</span><span class="p">.</span><span class="nx">TOO_SHORT</span><span class="o">:</span>
+                                <span class="nx">message</span> <span class="o">=</span> <span class="s1">&#39;The phone number is too short&#39;</span><span class="p">;</span>
+                                <span class="k">break</span><span class="p">;</span>
+
+                            <span class="k">case</span> <span class="nx">intlTelInputUtils</span><span class="p">.</span><span class="nx">validationError</span><span class="p">.</span><span class="nx">TOO_LONG</span><span class="o">:</span>
+                                <span class="nx">message</span> <span class="o">=</span> <span class="s1">&#39;The phone number is too long&#39;</span><span class="p">;</span>
+                                <span class="k">break</span><span class="p">;</span>
+
+                            <span class="k">case</span> <span class="nx">intlTelInputUtils</span><span class="p">.</span><span class="nx">validationError</span><span class="p">.</span><span class="nx">NOT_A_NUMBER</span><span class="o">:</span>
+                                <span class="nx">message</span> <span class="o">=</span> <span class="s1">&#39;The value is not a number&#39;</span><span class="p">;</span>
+                                <span class="k">break</span><span class="p">;</span>
+
+                            <span class="k">default</span><span class="o">:</span>
+                                <span class="nx">message</span> <span class="o">=</span> <span class="s1">&#39;The phone number is not valid&#39;</span><span class="p">;</span>
+                                <span class="k">break</span><span class="p">;</span>
+                        <span class="p">}</span>
+
+                        <span class="k">return</span> <span class="p">{</span>
+                            <span class="nx">valid</span><span class="o">:</span> <span class="nx">isValid</span><span class="p">,</span>
+                            <span class="nx">message</span><span class="o">:</span> <span class="nx">message</span>
+                        <span class="p">};</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span></code></pre></div>
+
+                    <p>Here is the full working demonstration:</p>
+
+                    
+
+
+
+
+
+
+
+
+
+<div class="doc-demo">
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"><span class="doc-framework">Framework</span> <i class="caret"></i></a>
+            <ul class="dropdown-menu" role="menu">
+                
+                <li><a href="/examples/validating-international-phone-numbers/message/bootstrap.html" data-demo-target="#message-frame" data-demo-framework="bootstrap">Bootstrap</a></li>
+                
+            </ul>
+        </li>
+        <li class="active"><a href="#message-form-tab" data-toggle="tab">Try it</a></li>
+        
+        <li><a href="#message-programmatic-tab" data-toggle="tab">Programmatic code</a></li>
+        
+        <li class="doc-demo-direct"><a href="/examples/validating-international-phone-numbers/message/bootstrap.html" data-toggle="tooltip" data-container="body" title="Open the demo in new tab" target="_blank"><i class="fa fa-external-link"></i></a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane active" id="message-form-tab">
+            <iframe class="doc-demo-frame" id="message-frame"></iframe>
+        </div>
+
+        
+        <div class="tab-pane" id="message-programmatic-tab">
+            
+            <div data-demo-code="bootstrap">
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;/vendor/intl-tel-input/build/css/intlTelInput.css&quot;</span> <span class="nt">/&gt;</span>
+
+<span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;contactForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Phone number<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-5&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;tel&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;phoneNumber&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/vendor/intl-tel-input/build/js/intlTelInput.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#contactForm&#39;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;[name=&quot;phoneNumber&quot;]&#39;</span><span class="p">)</span>
+            <span class="p">.</span><span class="nx">intlTelInput</span><span class="p">({</span>
+                <span class="nx">utilsScript</span><span class="o">:</span> <span class="s1">&#39;/vendor/intl-tel-input/lib/libphonenumber/build/utils.js&#39;</span><span class="p">,</span>
+                <span class="nx">autoPlaceholder</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="nx">preferredCountries</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;fr&#39;</span><span class="p">,</span> <span class="s1">&#39;us&#39;</span><span class="p">,</span> <span class="s1">&#39;gb&#39;</span><span class="p">]</span>
+            <span class="p">});</span>
+
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#contactForm&#39;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">formValidation</span><span class="p">({</span>
+            <span class="nx">framework</span><span class="o">:</span> <span class="s1">&#39;bootstrap&#39;</span><span class="p">,</span>
+            <span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">valid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-ok&#39;</span><span class="p">,</span>
+                <span class="nx">invalid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-remove&#39;</span><span class="p">,</span>
+                <span class="nx">validating</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-refresh&#39;</span>
+            <span class="p">},</span>
+            <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">phoneNumber</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">callback</span><span class="o">:</span> <span class="p">{</span>
+                            <span class="nx">callback</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">)</span> <span class="p">{</span>
+                                <span class="kd">var</span> <span class="nx">isValid</span> <span class="o">=</span> <span class="nx">value</span> <span class="o">===</span> <span class="s1">&#39;&#39;</span> <span class="o">||</span> <span class="nx">$field</span><span class="p">.</span><span class="nx">intlTelInput</span><span class="p">(</span><span class="s1">&#39;isValidNumber&#39;</span><span class="p">),</span>
+                                    <span class="nx">err</span>     <span class="o">=</span> <span class="nx">$field</span><span class="p">.</span><span class="nx">intlTelInput</span><span class="p">(</span><span class="s1">&#39;getValidationError&#39;</span><span class="p">),</span>
+                                    <span class="nx">message</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+                                <span class="k">switch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+                                    <span class="k">case</span> <span class="nx">intlTelInputUtils</span><span class="p">.</span><span class="nx">validationError</span><span class="p">.</span><span class="nx">INVALID_COUNTRY_CODE</span><span class="o">:</span>
+                                        <span class="nx">message</span> <span class="o">=</span> <span class="s1">&#39;The country code is not valid&#39;</span><span class="p">;</span>
+                                        <span class="k">break</span><span class="p">;</span>
+
+                                    <span class="k">case</span> <span class="nx">intlTelInputUtils</span><span class="p">.</span><span class="nx">validationError</span><span class="p">.</span><span class="nx">TOO_SHORT</span><span class="o">:</span>
+                                        <span class="nx">message</span> <span class="o">=</span> <span class="s1">&#39;The phone number is too short&#39;</span><span class="p">;</span>
+                                        <span class="k">break</span><span class="p">;</span>
+
+                                    <span class="k">case</span> <span class="nx">intlTelInputUtils</span><span class="p">.</span><span class="nx">validationError</span><span class="p">.</span><span class="nx">TOO_LONG</span><span class="o">:</span>
+                                        <span class="nx">message</span> <span class="o">=</span> <span class="s1">&#39;The phone number is too long&#39;</span><span class="p">;</span>
+                                        <span class="k">break</span><span class="p">;</span>
+
+                                    <span class="k">case</span> <span class="nx">intlTelInputUtils</span><span class="p">.</span><span class="nx">validationError</span><span class="p">.</span><span class="nx">NOT_A_NUMBER</span><span class="o">:</span>
+                                        <span class="nx">message</span> <span class="o">=</span> <span class="s1">&#39;The value is not a number&#39;</span><span class="p">;</span>
+                                        <span class="k">break</span><span class="p">;</span>
+
+                                    <span class="k">default</span><span class="o">:</span>
+                                        <span class="nx">message</span> <span class="o">=</span> <span class="s1">&#39;The phone number is not valid&#39;</span><span class="p">;</span>
+                                        <span class="k">break</span><span class="p">;</span>
+                                <span class="p">}</span>
+
+                                <span class="k">return</span> <span class="p">{</span>
+                                    <span class="nx">valid</span><span class="o">:</span> <span class="nx">isValid</span><span class="p">,</span>
+                                    <span class="nx">message</span><span class="o">:</span> <span class="nx">message</span>
+                                <span class="p">};</span>
+                            <span class="p">}</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">})</span>
+        <span class="c1">// Revalidate the number when changing the country</span>
+        <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="s1">&#39;.country-list&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#contactForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;revalidateField&#39;</span><span class="p">,</span> <span class="s1">&#39;phoneNumber&#39;</span><span class="p">);</span>
+        <span class="p">});</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span></code></pre></div>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Bonus: Asking number to match given type</h2>
+
+                    <p>The patterns provided by Google <a href="https://github.com/googlei18n/libphonenumber">libphonenumber</a>
+                        covers most of possible types of a phone number such as mobile, fixed line, free phone lines, voice over IP, etc.</p>
+
+                    <div class="doc-alert doc-alert-info">
+                        You can see the full list of these types from source code of <a href="https://github.com/googlei18n/libphonenumber/blob/master/javascript/i18n/phonenumbers/phonenumberutil.js#L896">phonenumberutil.js</a>
+                    </div>
+
+                    <p>The type can be retrieved by <code>getNumberType()</code> method. By adding the type to the callback return value, and reuse it later,
+                        we can treat a phone number as invalid if it doesn't match our type.</p>
+                    <p>The following code illustrates how to accept the mobile phone numbers only:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#contactForm&#39;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">formValidation</span><span class="p">({</span>
+        <span class="p">...</span>
+        <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">phoneNumber</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">callback</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The phone number is not valid&#39;</span><span class="p">,</span>
+                        <span class="nx">callback</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">)</span> <span class="p">{</span>
+                            <span class="k">return</span> <span class="p">{</span>
+                                <span class="nx">valid</span><span class="o">:</span> <span class="nx">value</span> <span class="o">===</span> <span class="s1">&#39;&#39;</span> <span class="o">||</span> <span class="nx">$field</span><span class="p">.</span><span class="nx">intlTelInput</span><span class="p">(</span><span class="s1">&#39;isValidNumber&#39;</span><span class="p">),</span>
+                                <span class="nx">type</span><span class="o">:</span> <span class="nx">$field</span><span class="p">.</span><span class="nx">intlTelInput</span><span class="p">(</span><span class="s1">&#39;getNumberType&#39;</span><span class="p">)</span>
+                            <span class="p">};</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">})</span>
+    <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;success.validator.fv&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">field</span> <span class="o">===</span> <span class="s1">&#39;phoneNumber&#39;</span> <span class="o">&amp;&amp;</span> <span class="nx">data</span><span class="p">.</span><span class="nx">validator</span> <span class="o">===</span> <span class="s1">&#39;callback&#39;</span> <span class="o">&amp;&amp;</span> <span class="nx">data</span><span class="p">.</span><span class="nx">element</span><span class="p">.</span><span class="nx">val</span><span class="p">()</span> <span class="o">!==</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">result</span><span class="p">.</span><span class="nx">type</span> <span class="o">!==</span> <span class="nx">intlTelInputUtils</span><span class="p">.</span><span class="nx">numberType</span><span class="p">.</span><span class="nx">MOBILE</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">data</span><span class="p">.</span><span class="nx">fv</span>
+                    <span class="c1">// Mark the field as invalid</span>
+                    <span class="p">.</span><span class="nx">updateStatus</span><span class="p">(</span><span class="s1">&#39;phoneNumber&#39;</span><span class="p">,</span> <span class="s1">&#39;INVALID&#39;</span><span class="p">,</span> <span class="s1">&#39;callback&#39;</span><span class="p">)</span>
+                    <span class="c1">// Update the message</span>
+                    <span class="p">.</span><span class="nx">updateMessage</span><span class="p">(</span><span class="s1">&#39;phoneNumber&#39;</span><span class="p">,</span> <span class="s1">&#39;callback&#39;</span><span class="p">,</span> <span class="s1">&#39;We accept the mobile numbers only&#39;</span><span class="p">);</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="c1">// Reset the message</span>
+                <span class="nx">data</span><span class="p">.</span><span class="nx">fv</span><span class="p">.</span><span class="nx">updateMessage</span><span class="p">(</span><span class="s1">&#39;phoneNumber&#39;</span><span class="p">,</span> <span class="s1">&#39;callback&#39;</span><span class="p">,</span> <span class="s1">&#39;The phone number is not valid&#39;</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">});</span></code></pre></div>
+
+                    <div class="doc-alert doc-alert-warning">
+                        For United States, getNumberType() returns FIXED_LINE_OR_MOBILE because there's no way to differentiate between fixed-line and mobile numbers
+                    </div>
+
+                    <p>In short, it handles the <a href="/settings/#event-validator">success.validator.fv</a> event which is triggered when the field passes a validator.
+                        Then depend on the <code>type</code> returned by the validation result, it can use the <a href="/api/#update-status">updateStatus()</a> method
+                        to mark field as invalid one.</p>
+                    <p>The <a href="/api/#update-message">updateMessage()</a> method is also used to set or reset the validation message.</p>
+
+                    <div class="doc-alert doc-alert-info">
+                        Take a look at the <a href="/examples/using-data-returned-validator/">using data returned by validator</a> and <a href="/validators/creditCard/#asking-credit-card-number-to-match-with-selected-type">Asking credit card number to match with selected type</a> examples to get
+                        inspired of the idea
+                    </div>
+
+                    
+
+
+
+
+
+
+
+
+
+<div class="doc-demo">
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"><span class="doc-framework">Framework</span> <i class="caret"></i></a>
+            <ul class="dropdown-menu" role="menu">
+                
+                <li><a href="/examples/validating-international-phone-numbers/ask-type/bootstrap.html" data-demo-target="#ask-type-frame" data-demo-framework="bootstrap">Bootstrap</a></li>
+                
+            </ul>
+        </li>
+        <li class="active"><a href="#ask-type-form-tab" data-toggle="tab">Try it</a></li>
+        
+        <li><a href="#ask-type-programmatic-tab" data-toggle="tab">Programmatic code</a></li>
+        
+        <li class="doc-demo-direct"><a href="/examples/validating-international-phone-numbers/ask-type/bootstrap.html" data-toggle="tooltip" data-container="body" title="Open the demo in new tab" target="_blank"><i class="fa fa-external-link"></i></a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane active" id="ask-type-form-tab">
+            <iframe class="doc-demo-frame" id="ask-type-frame"></iframe>
+        </div>
+
+        
+        <div class="tab-pane" id="ask-type-programmatic-tab">
+            
+            <div data-demo-code="bootstrap">
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;/vendor/intl-tel-input/build/css/intlTelInput.css&quot;</span> <span class="nt">/&gt;</span>
+
+<span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;contactForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Phone number<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-5&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;tel&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;phoneNumber&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/vendor/intl-tel-input/build/js/intlTelInput.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#contactForm&#39;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;[name=&quot;phoneNumber&quot;]&#39;</span><span class="p">)</span>
+            <span class="p">.</span><span class="nx">intlTelInput</span><span class="p">({</span>
+                <span class="nx">utilsScript</span><span class="o">:</span> <span class="s1">&#39;/vendor/intl-tel-input/lib/libphonenumber/build/utils.js&#39;</span><span class="p">,</span>
+                <span class="nx">autoPlaceholder</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="nx">preferredCountries</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;fr&#39;</span><span class="p">,</span> <span class="s1">&#39;us&#39;</span><span class="p">,</span> <span class="s1">&#39;gb&#39;</span><span class="p">]</span>
+            <span class="p">});</span>
+
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#contactForm&#39;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">formValidation</span><span class="p">({</span>
+            <span class="nx">framework</span><span class="o">:</span> <span class="s1">&#39;bootstrap&#39;</span><span class="p">,</span>
+            <span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">valid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-ok&#39;</span><span class="p">,</span>
+                <span class="nx">invalid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-remove&#39;</span><span class="p">,</span>
+                <span class="nx">validating</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-refresh&#39;</span>
+            <span class="p">},</span>
+            <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">phoneNumber</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="nx">callback</span><span class="o">:</span> <span class="p">{</span>
+                            <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The phone number is not valid&#39;</span><span class="p">,</span>
+                            <span class="nx">callback</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">)</span> <span class="p">{</span>
+                                <span class="k">return</span> <span class="p">{</span>
+                                    <span class="nx">valid</span><span class="o">:</span> <span class="nx">value</span> <span class="o">===</span> <span class="s1">&#39;&#39;</span> <span class="o">||</span> <span class="nx">$field</span><span class="p">.</span><span class="nx">intlTelInput</span><span class="p">(</span><span class="s1">&#39;isValidNumber&#39;</span><span class="p">),</span>
+                                    <span class="nx">type</span><span class="o">:</span> <span class="nx">$field</span><span class="p">.</span><span class="nx">intlTelInput</span><span class="p">(</span><span class="s1">&#39;getNumberType&#39;</span><span class="p">)</span>
+                                <span class="p">};</span>
+                            <span class="p">}</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">})</span>
+        <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;success.validator.fv&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">field</span> <span class="o">===</span> <span class="s1">&#39;phoneNumber&#39;</span> <span class="o">&amp;&amp;</span> <span class="nx">data</span><span class="p">.</span><span class="nx">validator</span> <span class="o">===</span> <span class="s1">&#39;callback&#39;</span> <span class="o">&amp;&amp;</span> <span class="nx">data</span><span class="p">.</span><span class="nx">element</span><span class="p">.</span><span class="nx">val</span><span class="p">()</span> <span class="o">!==</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="p">{</span>
+                <span class="c1">// You can see type of phone number by printing out data.result.type</span>
+                <span class="c1">// console.log(data.result.type);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">result</span><span class="p">.</span><span class="nx">type</span> <span class="o">!==</span> <span class="nx">intlTelInputUtils</span><span class="p">.</span><span class="nx">numberType</span><span class="p">.</span><span class="nx">MOBILE</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">data</span><span class="p">.</span><span class="nx">fv</span>
+                        <span class="c1">// Mark the field as invalid</span>
+                        <span class="p">.</span><span class="nx">updateStatus</span><span class="p">(</span><span class="s1">&#39;phoneNumber&#39;</span><span class="p">,</span> <span class="s1">&#39;INVALID&#39;</span><span class="p">,</span> <span class="s1">&#39;callback&#39;</span><span class="p">)</span>
+                        <span class="c1">// Update the message</span>
+                        <span class="p">.</span><span class="nx">updateMessage</span><span class="p">(</span><span class="s1">&#39;phoneNumber&#39;</span><span class="p">,</span> <span class="s1">&#39;callback&#39;</span><span class="p">,</span> <span class="s1">&#39;We accept the mobile numbers only&#39;</span><span class="p">);</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                    <span class="c1">// Reset the message</span>
+                    <span class="nx">data</span><span class="p">.</span><span class="nx">fv</span><span class="p">.</span><span class="nx">updateMessage</span><span class="p">(</span><span class="s1">&#39;phoneNumber&#39;</span><span class="p">,</span> <span class="s1">&#39;callback&#39;</span><span class="p">,</span> <span class="s1">&#39;The phone number is not valid&#39;</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">})</span>
+        <span class="c1">// Revalidate the number when changing the country</span>
+        <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="s1">&#39;.country-list&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#contactForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;revalidateField&#39;</span><span class="p">,</span> <span class="s1">&#39;phoneNumber&#39;</span><span class="p">);</span>
+        <span class="p">});</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span></code></pre></div>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+                </section>
+            </div>
+
+            <div class="col-md-3 hidden-print hidden-xs hidden-sm">
+                <div id="toc" class="doc-toc"></div>
+
+                <div class="doc-ad">
+    <h6>Advertising</h6>
+
+    <a href="https://emailyoyo.com/api/" class="thumbnail" target="_blank">
+        <img class="img-responsive" src="/asset/img/banner/emailyoyo.gif" title="Email YoYo: Real time email validation" />
+    </a>
+
+    <a href="mailto: hello@formvalidation.io" class="thumbnail">
+        <img class="img-responsive" src="/asset/img/adhere.png" title="Advertise on FormValidation" />
+    </a>
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <footer class="doc-footer">
+    <div class="container">
+        <p>
+            
+            <a class="btn" href="/download/">Download</a>
+            
+            <a class="btn" href="https://github.com/formvalidation/support/issues">Report bug</a>
+        </p>
+        <p>
+            &copy; 2013 - 2015 <a href="http://twitter.com/nghuuphuoc">Nguyen Huu Phuoc</a>. All rights reserved.<br/>
+            Handcrafted with <span class="doc-heart"><i class="fa fa-heart"></i></span> and a lot of <i class="fa fa-coffee"></i>
+        </p>
+    </div>
+</footer>
+    </div>
+
+<script src="/vendor/tocjs/js/toc.min.js"></script>
+<script src="/vendor/share/share.min.js"></script>
+<script src="/asset/js/app.js"></script>
+</body>
+</html>
