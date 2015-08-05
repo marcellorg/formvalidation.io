@@ -1,0 +1,68 @@
+<link rel="stylesheet" href="/vendor/intl-tel-input/build/css/intlTelInput.css" />
+
+<form id="contactForm" class="form-horizontal">
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Phone number</label>
+        <div class="col-xs-5">
+            <input type="tel" class="form-control" name="phoneNumber" />
+        </div>
+    </div>
+</form>
+
+<script src="/vendor/intl-tel-input/build/js/intlTelInput.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('#contactForm')
+        .find('[name="phoneNumber"]')
+            .intlTelInput({
+                utilsScript: '/vendor/intl-tel-input/lib/libphonenumber/build/utils.js',
+                autoPlaceholder: true,
+                preferredCountries: ['fr', 'us', 'gb']
+            });
+
+    $('#contactForm')
+        .formValidation({
+            framework: 'bootstrap',
+            icon: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                phoneNumber: {
+                    validators: {
+                        callback: {
+                            message: 'The phone number is not valid',
+                            callback: function(value, validator, $field) {
+                                return {
+                                    valid: value === '' || $field.intlTelInput('isValidNumber'),
+                                    type: $field.intlTelInput('getNumberType')
+                                };
+                            }
+                        }
+                    }
+                }
+            }
+        })
+        .on('success.validator.fv', function(e, data) {
+            if (data.field === 'phoneNumber' && data.validator === 'callback' && data.element.val() !== '') {
+                // You can see type of phone number by printing out data.result.type
+                // console.log(data.result.type);
+                if (data.result.type !== intlTelInputUtils.numberType.MOBILE) {
+                    data.fv
+                        // Mark the field as invalid
+                        .updateStatus('phoneNumber', 'INVALID', 'callback')
+                        // Update the message
+                        .updateMessage('phoneNumber', 'callback', 'We accept the mobile numbers only');
+                } else {
+                    // Reset the message
+                    data.fv.updateMessage('phoneNumber', 'callback', 'The phone number is not valid');
+                }
+            }
+        })
+        // Revalidate the number when changing the country
+        .on('click', '.country-list', function() {
+            $('#contactForm').formValidation('revalidateField', 'phoneNumber');
+        });
+});
+</script>

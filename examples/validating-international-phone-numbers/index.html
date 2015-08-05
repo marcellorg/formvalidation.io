@@ -1,0 +1,443 @@
+---
+layout: default
+title: Validating international phone numbers
+permalink: /examples/validating-international-phone-numbers/
+---
+
+<div class="doc-content-container">
+    <div class="doc-heading">
+        <h1>Validating international phone numbers</h1>
+        <p>&larr; <a href="/examples/">Examples</a></p>
+        {% include share.html %}
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <section>
+                    <p><a href="/download/">FormValidation</a> provides the built-in <a href="/validators/phone/">phone</a> validator to validate the phone number in various countries.
+                        Behind the scenes, it uses Javascript regular expressions to check if a given number matches the pattern of phone numbers in particular country.
+                        Therefore, despite the fact that it doesn't cover all possible formats of phone number in the world,
+                        you can use the <a href="/validators/regexp/">regexp</a> validator to test a phone number in your country.</p>
+
+                    <p>This example helps you validate an international phone numbers by using a different approach. We will use the
+                        <a href="https://github.com/Bluefieldscom/intl-tel-input">intl-tel-input</a> plugin for that purpose.</p>
+
+                    <p><strong>intl-tel-input</strong> is a popular jQuery plugin for entering and validating international telephone numbers. Below is some of its advanced features:</p>
+                    <ul class="doc-list">
+                        <li>Provides a very friendly user interface to enter a phone number. All countries are shown as a drop list with the flags and suggestion phone number</li>
+                        <li>Provides a up-to-date the patterns of phone numbers in the world. The data is taken from Google <a href="https://github.com/googlei18n/libphonenumber">libphonenumber</a> library
+                            so they are fully stable</li>
+                        <li>Has a few of APIs to validate and integrate with other tools</li>
+                    </ul>
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Using the intl-tel-input plugin</h2>
+
+                    <p>It's quite easy to use the intl-tel-input plugin for an input field:</p>
+                    <ul class="doc-list">
+                        <li>Download <a href="https://github.com/Bluefieldscom/intl-tel-input/releases">its latest version</a></li>
+                        <li>Include its CSS, Javascript files</li>
+                    </ul>
+
+{% highlight html %}
+<!-- The paths might be changed to suit with your folder structure -->
+<link rel="stylesheet" href="/vendor/intl-tel-input/build/css/intlTelInput.css" />
+<script src="/vendor/intl-tel-input/build/js/intlTelInput.min.js"></script>
+{% endhighlight %}
+
+                    <ul class="doc-list">
+                        <li>Attach the plugin to field</li>
+                    </ul>
+
+{% highlight javascript %}
+$(document).ready(function() {
+    $('#contactForm')
+        .find('[name="phoneNumber"]')
+            .intlTelInput({
+                utilsScript: '/vendor/intl-tel-input/lib/libphonenumber/build/utils.js',
+                autoPlaceholder: true,
+                preferredCountries: ['fr', 'us', 'gb']
+            });
+});
+{% endhighlight %}
+
+                    <p>In the next sections, you will see how to integrate the intl-tel-input plugin with FormValidation.</p>
+
+                    <div class="doc-alert doc-alert-info">
+                        You should look at the <a href="/examples#compatibility">basic principles</a> when integrating FormValidation with other plugins
+                    </div>
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Using the callback validator</h2>
+
+                    <p>We can make the intl-tel-input plugin work with FormValidation easily by combining its <a href="https://github.com/Bluefieldscom/intl-tel-input#public-methods">isValidNumber()</a>
+                        method and the <a href="/validators/callback/">callback</a> validator:</p>
+
+{% highlight javascript %}
+$('#contactForm').formValidation({
+    ...
+    fields: {
+        phoneNumber: {
+            validators: {
+                callback: {
+                    message: 'The phone number is not valid',
+                    callback: function(value, validator, $field) {
+                        return value === '' || $field.intlTelInput('isValidNumber');
+                    }
+                }
+            }
+        }
+    }
+});
+{% endhighlight %}
+
+                    <p>There is an important note that the input must be revalidated when the user choose another country from the drop list.
+                        Unfortunately, intl-tel-input doesn't provide an event or callback that is execute after choosing a country.
+                        But it can be done by using a simple <code>click</code> event handler on the countries list which has <code>.country-list</code> class:</p>
+
+{% highlight javascript %}
+$('#contactForm')
+    .formValidation(...)
+    // Revalidate the number when changing the country
+    .on('click', '.country-list', function() {
+        $('#contactForm').formValidation('revalidateField', 'phoneNumber');
+    });
+{% endhighlight %}
+
+                    <p>The field is revalidated by the <a href="/api/#revalidate-field">revalidateField()</a> method.</p>
+
+                    <p>You can try this approach yourself in the live form below:</p>
+
+                    {% include demo/tabs.html id="callback" frameworks="bootstrap" dir="callback" codes="programmatic" %}
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Developing custom validator</h2>
+
+                    <p>If you often use intl-tel-input plugin in multiple forms, it's the right time to write a custom validator
+                        and reuse it whenever you want.</p>
+
+                    <p>It's easy to <a href="/developing/">develop new validator</a>, say that it's named as <code>intPhoneNumber</code>:</p>
+
+{% highlight javascript %}
+$(document).ready(function() {
+    // Define new validator
+    FormValidation.Validator.intPhoneNumber = {
+        init: function(validator, $field, options) {
+            // Attach the intlTelInput on field
+            $field.intlTelInput({
+                utilsScript: '/vendor/intl-tel-input/lib/libphonenumber/build/utils.js',
+                autoPlaceholder: true,
+                preferredCountries: 'fr,us,gb',
+            });
+
+            // Revalidate the field when changing the country
+            var $form     = validator.getForm(),
+                fieldName = $field.attr('data-fv-field');
+            $form.on('click.country.intphonenumber', '.country-list', function() {
+                $form.formValidation('revalidateField', fieldName);
+            });
+        },
+
+        destroy: function(validator, $field, options) {
+            $field.intlTelInput('destroy');
+
+            // Turn off the event
+            validator.getForm().off('click.country.intphonenumber');
+        },
+
+        validate: function(validator, $field, options) {
+            return $field.val() === '' || $field.intlTelInput('isValidNumber');
+        }
+    };
+});
+{% endhighlight %}
+
+                    <p>The following table recaps the purpose of <code>init</code>, <code>destroy</code> and <code>validate</code> methods used above:</p>
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Method</th>
+                                    <th>Functionality</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>init</code></td>
+                                    <td>This method does anything you need to prepare the validation. It's called once right after attaching the validator to field</td>
+                                </tr>
+                                <tr>
+                                    <td><code>destroy</code></td>
+                                    <td>This method is called when you destroy the FormValidation instance by using the <a href="/api/#destroy">destroy()</a> method</td>
+                                </tr>
+                                <tr>
+                                    <td><code>validate</code></td>
+                                    <td>This is the validation method. It returns <code>true</code> or <code>false</code> that indicates the field is valid or invalid</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p>These methods take three parameters:</p>
+                    <ul class="doc-list">
+                        <li><code>validator</code> is the FormValidation instance</li>
+                        <li><code>$field</code> is the field element</li>
+                        <li><code>options</code> is an object containing the validator options</li>
+                    </ul>
+
+                    <p>Applying the new validator to field is easy:</p>
+
+{% highlight javascript %}
+$('#contactForm').formValidation({
+    ...
+    fields: {
+        phoneNumber: {
+            validators: {
+                intPhoneNumber: {
+                    message: 'The phone number is not valid'
+                }
+            }
+        }
+    }
+});
+{% endhighlight %}
+
+                    <p>There's still a small thing we should improve. As seen in the code above, there're some hard coded options when attaching intl-tel-input to field:</p>
+
+{% highlight javascript %}
+FormValidation.Validator.intPhoneNumber = {
+    init: function(validator, $field, options) {
+        // The utilsScript, autoPlaceholder and preferredCountries options are fixed
+        $field.intlTelInput({
+            utilsScript: '/vendor/intl-tel-input/lib/libphonenumber/build/utils.js',
+            autoPlaceholder: true,
+            preferredCountries: 'fr,us,gb',
+        });
+
+        ...
+    }
+
+    ...
+};
+{% endhighlight %}
+
+                    <p>You don't need to worry about this. It's possible to define and pass options to the <code>options</code> parameter as following:</p>
+
+{% highlight javascript %}
+FormValidation.Validator.intPhoneNumber = {
+    html5Attributes: {
+        message: 'message',
+        autoplaceholder: 'autoPlaceholder',
+        preferredcountries: 'preferredCountries',
+        utilsscript: 'utilsScript'
+    },
+
+    init: function(validator, $field, options) {
+        // Determine the preferred countries
+        var autoPlaceholder    = options.autoPlaceholder === true || options.autoPlaceholder === 'true',
+            preferredCountries = options.preferredCountries || 'us';
+        if ('string' === typeof preferredCountries) {
+            preferredCountries = preferredCountries.split(',');
+        }
+
+        // Attach the intlTelInput on field
+        $field.intlTelInput({
+            utilsScript: options.utilsScript || '',
+            autoPlaceholder: autoPlaceholder,
+            preferredCountries: preferredCountries
+        });
+
+        ...
+    }
+
+    ...
+};
+{% endhighlight %}
+
+                    <p>The <code>html5Attributes</code> property defines the HTML attributes which can be mapped with the validator options.
+                        These attributes can be used in the <a href="/examples/attribute/">declarative mode</a>, for example:</p>
+
+{% highlight html %}
+<input name="phoneNumber"
+    data-fv-intphonenumber="true"
+    data-fv-intphonenumber-autoplaceholder="true"
+    data-fv-intphonenumber-preferredcountries="fr,us,gb"
+    data-fv-intphonenumber-utilsscript="/vendor/intl-tel-input/lib/libphonenumber/build/utils.js"
+    data-fv-intphonenumber-message="The phone number is not valid" />
+{% endhighlight %}
+
+                    <p>The snippet code below is a programmatic usage of passing the options:</p>
+
+{% highlight javascript %}
+$('#contactForm').formValidation({
+    ...
+    fields: {
+        phoneNumber: {
+            validators: {
+                intPhoneNumber: {
+                    utilsScript: '/vendor/intl-tel-input/lib/libphonenumber/build/utils.js',
+                    autoPlaceholder: true,
+                    preferredCountries: 'fr,us,gb',
+                    message: 'The phone number is not valid'
+                }
+            }
+        }
+    }
+});
+{% endhighlight %}
+
+                    <p>You can take a look at the code tab to see how all of these things work together:</p>
+
+                    {% include demo/tabs.html id="custom" frameworks="bootstrap" dir="custom" codes="programmatic" %}
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Bonus: Showing useful validation message</h2>
+
+                    <p>What if you want to provide more descriptive validation message. For example, how to inform the user that
+                        the number is too short, too long or even not a number.</p>
+
+                    <p>We can archive this requirement by adding a <a href="/settings/#dynamic-message">dynamic message</a> supported by the <a href="/validators/callback/#dynamic-message-example">callback</a> validator.</p>
+                    <p>The message is determined based on the validation error that is retrieved by the <code>getValidationError()</code> method:</p>
+
+{% highlight javascript %}
+$('#contactForm').formValidation({
+    ...
+    fields: {
+        phoneNumber: {
+            validators: {
+                callback: {
+                    callback: function(value, validator, $field) {
+                        var isValid = value === '' || $field.intlTelInput('isValidNumber'),
+                            err     = $field.intlTelInput('getValidationError'),
+                            message = null;
+                        switch (err) {
+                            case intlTelInputUtils.validationError.INVALID_COUNTRY_CODE:
+                                message = 'The country code is not valid';
+                                break;
+
+                            case intlTelInputUtils.validationError.TOO_SHORT:
+                                message = 'The phone number is too short';
+                                break;
+
+                            case intlTelInputUtils.validationError.TOO_LONG:
+                                message = 'The phone number is too long';
+                                break;
+
+                            case intlTelInputUtils.validationError.NOT_A_NUMBER:
+                                message = 'The value is not a number';
+                                break;
+
+                            default:
+                                message = 'The phone number is not valid';
+                                break;
+                        }
+
+                        return {
+                            valid: isValid,
+                            message: message
+                        };
+                    }
+                }
+            }
+        }
+    }
+});
+{% endhighlight %}
+
+                    <p>Here is the full working demonstration:</p>
+
+                    {% include demo/tabs.html id="message" frameworks="bootstrap" dir="message" codes="programmatic" %}
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Bonus: Asking number to match given type</h2>
+
+                    <p>The patterns provided by Google <a href="https://github.com/googlei18n/libphonenumber">libphonenumber</a>
+                        covers most of possible types of a phone number such as mobile, fixed line, free phone lines, voice over IP, etc.</p>
+
+                    <div class="doc-alert doc-alert-info">
+                        You can see the full list of these types from source code of <a href="https://github.com/googlei18n/libphonenumber/blob/master/javascript/i18n/phonenumbers/phonenumberutil.js#L896">phonenumberutil.js</a>
+                    </div>
+
+                    <p>The type can be retrieved by <code>getNumberType()</code> method. By adding the type to the callback return value, and reuse it later,
+                        we can treat a phone number as invalid if it doesn't match our type.</p>
+                    <p>The following code illustrates how to accept the mobile phone numbers only:</p>
+
+{% highlight javascript %}
+$('#contactForm')
+    .formValidation({
+        ...
+        fields: {
+            phoneNumber: {
+                validators: {
+                    callback: {
+                        message: 'The phone number is not valid',
+                        callback: function(value, validator, $field) {
+                            return {
+                                valid: value === '' || $field.intlTelInput('isValidNumber'),
+                                type: $field.intlTelInput('getNumberType')
+                            };
+                        }
+                    }
+                }
+            }
+        }
+    })
+    .on('success.validator.fv', function(e, data) {
+        if (data.field === 'phoneNumber' && data.validator === 'callback' && data.element.val() !== '') {
+            if (data.result.type !== intlTelInputUtils.numberType.MOBILE) {
+                data.fv
+                    // Mark the field as invalid
+                    .updateStatus('phoneNumber', 'INVALID', 'callback')
+                    // Update the message
+                    .updateMessage('phoneNumber', 'callback', 'We accept the mobile numbers only');
+            } else {
+                // Reset the message
+                data.fv.updateMessage('phoneNumber', 'callback', 'The phone number is not valid');
+            }
+        }
+    });
+{% endhighlight %}
+
+                    <div class="doc-alert doc-alert-warning">
+                        For United States, getNumberType() returns FIXED_LINE_OR_MOBILE because there's no way to differentiate between fixed-line and mobile numbers
+                    </div>
+
+                    <p>In short, it handles the <a href="/settings/#event-validator">success.validator.fv</a> event which is triggered when the field passes a validator.
+                        Then depend on the <code>type</code> returned by the validation result, it can use the <a href="/api/#update-status">updateStatus()</a> method
+                        to mark field as invalid one.</p>
+                    <p>The <a href="/api/#update-message">updateMessage()</a> method is also used to set or reset the validation message.</p>
+
+                    <div class="doc-alert doc-alert-info">
+                        Take a look at the <a href="/examples/using-data-returned-validator/">using data returned by validator</a> and <a href="/validators/creditCard/#asking-credit-card-number-to-match-with-selected-type">Asking credit card number to match with selected type</a> examples to get
+                        inspired of the idea
+                    </div>
+
+                    {% include demo/tabs.html id="ask-type" frameworks="bootstrap" dir="ask-type" codes="programmatic" %}
+                </section>
+            </div>
+
+            <div class="col-md-3 hidden-print hidden-xs hidden-sm">
+                <div id="toc" class="doc-toc"></div>
+
+                {% include ad.html %}
+            </div>
+        </div>
+    </div>
+</div>
