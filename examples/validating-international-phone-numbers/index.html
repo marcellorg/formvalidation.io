@@ -20,14 +20,14 @@ permalink: /examples/validating-international-phone-numbers/
                         Therefore, despite the fact that it doesn't cover all possible formats of phone number in the world,
                         you can use the <a href="/validators/regexp/">regexp</a> validator to test a phone number in your country.</p>
 
-                    <p>This example helps you validate an international phone numbers by using a different approach. We will use the
+                    <p>This example helps you validate an international phone number by using a different approach. We will use the
                         <a href="https://github.com/Bluefieldscom/intl-tel-input">intl-tel-input</a> plugin for that purpose.</p>
 
                     <p><strong>intl-tel-input</strong> is a popular jQuery plugin for entering and validating international telephone numbers. Below is some of its advanced features:</p>
                     <ul class="doc-list">
                         <li>Provides a very friendly user interface to enter a phone number. All countries are shown as a drop list with the flags and suggestion phone number</li>
-                        <li>Provides a up-to-date the patterns of phone numbers in the world. The data is taken from Google <a href="https://github.com/googlei18n/libphonenumber">libphonenumber</a> library
-                            so they are fully stable</li>
+                        <li>Provides up-to-date patterns of phone numbers in the world. The data are taken from Google <a href="https://github.com/googlei18n/libphonenumber">libphonenumber</a> library
+                            so they are completely stable</li>
                         <li>Has a few of APIs to validate and integrate with other tools</li>
                     </ul>
                 </section>
@@ -99,8 +99,8 @@ $('#contactForm').formValidation({
 {% endhighlight %}
 
                     <p>There is an important note that the input must be revalidated when the user choose another country from the drop list.
-                        Unfortunately, intl-tel-input doesn't provide an event or callback that is execute after choosing a country.
-                        But it can be done by using a simple <code>click</code> event handler on the countries list which has <code>.country-list</code> class:</p>
+                        Unfortunately, intl-tel-input doesn't provide an event or callback that is executed after choosing a country.
+                        But it can be done by using a simple <code>click</code> event handler on the countries list element which has <code>.country-list</code> class:</p>
 
 {% highlight javascript %}
 $('#contactForm')
@@ -126,7 +126,7 @@ $('#contactForm')
                     <p>If you often use intl-tel-input plugin in multiple forms, it's the right time to write a custom validator
                         and reuse it whenever you want.</p>
 
-                    <p>It's easy to <a href="/developing/">develop new validator</a>, say that it's named as <code>intPhoneNumber</code>:</p>
+                    <p>It's easy to <a href="/developing/">develop new validator</a>, assume that it's named as <code>intPhoneNumber</code>:</p>
 
 {% highlight javascript %}
 $(document).ready(function() {
@@ -175,7 +175,10 @@ $(document).ready(function() {
                             <tbody>
                                 <tr>
                                     <td><code>init</code></td>
-                                    <td>This method does anything you need to prepare the validation. It's called once right after attaching the validator to field</td>
+                                    <td>
+                                        <p>This method does anything you need to prepare the validation.</p>
+                                        <p>It's called once right after attaching the validator to field</p>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td><code>destroy</code></td>
@@ -191,7 +194,7 @@ $(document).ready(function() {
 
                     <p>These methods take three parameters:</p>
                     <ul class="doc-list">
-                        <li><code>validator</code> is the FormValidation instance</li>
+                        <li><code>validator</code> is the FormValidation instance. So you can call <a href="/api/">public methods</a> on it</li>
                         <li><code>$field</code> is the field element</li>
                         <li><code>options</code> is an object containing the validator options</li>
                     </ul>
@@ -375,8 +378,8 @@ $('#contactForm').formValidation({
                         You can see the full list of these types from source code of <a href="https://github.com/googlei18n/libphonenumber/blob/master/javascript/i18n/phonenumbers/phonenumberutil.js#L896">phonenumberutil.js</a>
                     </div>
 
-                    <p>The type can be retrieved by <code>getNumberType()</code> method. By adding the type to the callback return value, and reuse it later,
-                        we can treat a phone number as invalid if it doesn't match our type.</p>
+                    <p>The type can be retrieved by the <code>getNumberType()</code> method. By adding the type to the callback return value, and reuse it later,
+                        we can treat a phone number as invalid one if it doesn't match our type.</p>
                     <p>The following code illustrates how to accept the mobile phone numbers only:</p>
 
 {% highlight javascript %}
@@ -425,7 +428,7 @@ $('#contactForm')
                     <p>The <a href="/api/#update-message">updateMessage()</a> method is also used to set or reset the validation message.</p>
 
                     <div class="doc-alert doc-alert-info">
-                        Take a look at the <a href="/examples/using-data-returned-validator/">using data returned by validator</a> and <a href="/validators/creditCard/#asking-credit-card-number-to-match-with-selected-type">Asking credit card number to match with selected type</a> examples to get
+                        Take a look at the <a href="/examples/using-data-returned-validator/">Using data returned by validator</a> and <a href="/validators/creditCard/#asking-credit-card-number-to-match-with-selected-type">Asking credit card number to match with selected type</a> examples to get
                         inspired of the idea
                     </div>
 
