@@ -194,7 +194,7 @@ $(document).ready(function() {
                 <section>
                     <h2>Including the add-on</h2>
                     <ul class="doc-list">
-                        <li>Download <a href="https://github.com/formvalidation/addon-recaptcha/releases/download/v0.3.0/recaptcha2-v0.3.0.zip" class="addonDownloadButton" data-placement="bottom" data-container="body">reCaptcha2</a> add-on</li>
+                        <li>Download <a href="https://github.com/formvalidation/addon-recaptcha/releases/download/v0.3.1/recaptcha2-v0.3.1.zip" class="addonDownloadButton" data-placement="bottom" data-container="body">reCaptcha2</a> add-on</li>
                         <li>Include <code>reCaptcha2.min.js</code> (located in the <code>dist</code> directory) to your page. Ensure that it's placed after <code>formValidation(.min).js</code></li>
                     </ul>
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- FormValidation plugin --&gt;</span>
@@ -296,6 +296,12 @@ $(document).ready(function() {
                                     <td><code>data-fv-addons-recaptcha2-sitekey</code></td>
                                     <td><code>String</code></td>
                                     <td>The site key provided by Google</td>
+                                </tr>
+                                <tr>
+                                    <td><code>sToken</code></td>
+                                    <td><code>data-fv-addons-recaptcha2-stoken</code></td>
+                                    <td><code>String</code></td>
+                                    <td>The <a href="https://developers.google.com/recaptcha/docs/secure_token">secure token</a></td>
                                 </tr>
                                 <tr>
                                     <td><code>theme</code></td>
@@ -620,6 +626,7 @@ $(document).ready(function() {
                     <h2>Change log</h2>
 
                     <ul class="doc-list">
+                        <li>v0.3.1: Add <code>sToken</code> option</li>
                         <li>
                             <p>v0.3.0:</p>
                             <ul class="doc-list">
@@ -638,7 +645,7 @@ $(document).ready(function() {
                     <div class="doc-addon-image"><img class="img-responsive" src="/addons/recaptcha2/cover.png" alt="FormValidation reCaptcha2 add-on" /></div>
 
                     <div class="doc-addon-meta">
-                        <a href="https://github.com/formvalidation/addon-recaptcha/releases/download/v0.3.0/recaptcha2-v0.3.0.zip" class="btn btn-success addonDownloadButton" data-placement="bottom" data-container="body"><i class="fa fa-download"></i> recaptcha2-v0.3.0.zip</a>
+                        <a href="https://github.com/formvalidation/addon-recaptcha/releases/download/v0.3.1/recaptcha2-v0.3.1.zip" class="btn btn-success addonDownloadButton" data-placement="bottom" data-container="body"><i class="fa fa-download"></i> recaptcha2-v0.3.1.zip</a>
                     </div>
                 </div>
 
