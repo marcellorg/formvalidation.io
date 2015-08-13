@@ -2,7 +2,7 @@
 $(document).ready(function() {
     $('#loginForm').formValidation({
         framework: 'bootstrap',
-        excluded: [':disabled'],
+        excluded: ':disabled',
         icon: {
             valid: 'glyphicon glyphicon-ok',
             invalid: 'glyphicon glyphicon-remove',

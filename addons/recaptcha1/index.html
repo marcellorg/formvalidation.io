@@ -231,7 +231,7 @@ echo json_encode(array(
                 </section>
             </div>
 
-            <div class="col-md-3">
+            <div class="col-md-3 hidden-print hidden-xs hidden-sm">
                 <div class="doc-addon">
                     <div class="doc-addon-image"><img class="img-responsive" src="/addons/recaptcha1/cover.png" alt="FormValidation reCaptcha1 add-on" /></div>
 
@@ -240,9 +240,7 @@ echo json_encode(array(
                     </div>
                 </div>
 
-                <div class="hidden-print hidden-xs hidden-sm">
-                    {% include ad.html %}
-                </div>
+                {% include sidebar.html %}
             </div>
         </div>
     </div>

@@ -18,13 +18,13 @@ permalink: /examples/modal/
                     <p>It's possible to use the plugin with a form which is placed inside a <a href="http://getbootstrap.com/javascript/#modals">Bootstrap Modal</a>.</p>
 
                     <p>By default, the plugin will not initialize the fields which are disabled, hidden, or not visible. Since the form is placed inside a model which is not visible after loading page, the plugin might ignore the fields.</p>
-                    <p>That's the reason why we need to set <code>excluded: [':disabled']</code>. Take a look at the <a href="/settings#form-excluded">excluded</a> setting for more information.</p>
+                    <p>That's the reason why we need to set <code>excluded: ':disabled'</code>. Take a look at the <a href="/settings#form-excluded">excluded</a> setting for more information.</p>
 
 {% highlight javascript %}
 $(document).ready(function() {
     $('#loginForm').formValidation({
         message: 'This value is not valid',
-        excluded: [':disabled'],
+        excluded: ':disabled',
         ...
     });
 });
@@ -77,7 +77,7 @@ $('#loginModal').on('hidden.bs.modal', function() {
             </div>
 
             <div class="col-md-3 hidden-print hidden-xs hidden-sm">
-                {% include ad.html %}
+                {% include sidebar.html %}
             </div>
         </div>
     </div>
@@ -87,7 +87,7 @@ $('#loginModal').on('hidden.bs.modal', function() {
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
-                <h4>Welcome back, <span class="username"></span></h4>
+                <h5>Welcome back, <span class="username"></span></h5>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
