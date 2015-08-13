@@ -59,7 +59,7 @@ _gaq.push(['_trackPageview']);
 </head>
 <body class="demo-semantic">
     <div class="ui grid" id="demoContainer">
-        <div class="twelve wide column">
+        <div class="sixteen wide column">
             <div class="ui grid">
     <div class="twelve wide column centered">
         <form id="messageForm" class="ui form">
@@ -122,20 +122,6 @@ $(document).ready(function() {
 });
 </script>
         </div>
-
-        <div class="four wide column">
-            <div class="demo-ad"><div class="doc-ad">
-    <h6>Advertising</h6>
-
-    <a href="https://emailyoyo.com/api/" class="thumbnail" target="_blank">
-        <img class="img-responsive" src="/asset/img/banner/emailyoyo.gif" title="Email YoYo: Real time email validation" />
-    </a>
-
-    <a href="mailto: hello@formvalidation.io" class="thumbnail">
-        <img class="img-responsive" src="/asset/img/adhere.png" title="Advertise on FormValidation" />
-    </a>
-</div></div>
-        </div>
     </div>
 
 <script>
@@ -154,7 +140,7 @@ $(document).ready(function() {
     $(window).on('load', function() {
         var $iframe = $(window.parent.document).find('iframe[src="/examples/using-tooltip-to-show-message/mix/semantic.html"]');
         if ($iframe.length) {
-            $('body').addClass('demo-frame-body').find('.demo-ad').hide();
+            //$('body').addClass('demo-frame-body').find('.demo-ad').hide();
 
             // Adjust the height of iframes containing the demo for specific frameworks
             var $container = $('#demoContainer');

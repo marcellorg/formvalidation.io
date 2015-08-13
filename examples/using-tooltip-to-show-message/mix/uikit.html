@@ -59,7 +59,7 @@ _gaq.push(['_trackPageview']);
 </head>
 <body class="demo-uikit">
     <div class="uk-grid">
-        <div class="uk-width-3-4" id="demoContainer">
+        <div class="uk-width-1-1" id="demoContainer">
             <form id="messageForm" class="uk-form uk-form-horizontal">
     <div class="uk-form-row">
         <label class="uk-form-label">Message</label>
@@ -123,20 +123,6 @@ $(document).ready(function() {
 });
 </script>
         </div>
-
-        <div class="uk-width-1-4">
-            <div class="demo-ad"><div class="doc-ad">
-    <h6>Advertising</h6>
-
-    <a href="https://emailyoyo.com/api/" class="thumbnail" target="_blank">
-        <img class="img-responsive" src="/asset/img/banner/emailyoyo.gif" title="Email YoYo: Real time email validation" />
-    </a>
-
-    <a href="mailto: hello@formvalidation.io" class="thumbnail">
-        <img class="img-responsive" src="/asset/img/adhere.png" title="Advertise on FormValidation" />
-    </a>
-</div></div>
-        </div>
     </div>
 
 <script>
@@ -150,7 +136,7 @@ $(document).ready(function() {
     $(window).on('load', function() {
         var $iframe = $(window.parent.document).find('iframe[src="/examples/using-tooltip-to-show-message/mix/uikit.html"]');
         if ($iframe.length) {
-            $('body').addClass('demo-frame-body').find('.demo-ad').hide();
+            //$('body').addClass('demo-frame-body').find('.demo-ad').hide();
 
             // Adjust the height of iframes containing the demo for specific frameworks
             var $container = $('#demoContainer');

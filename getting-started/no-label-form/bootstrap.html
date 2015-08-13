@@ -60,7 +60,7 @@ _gaq.push(['_trackPageview']);
 <body class="demo-bootstrap">
     <div class="container">
         <div class="row">
-            <div class="col-lg-9" id="demoContainer">
+            <div class="col-xs-12" id="demoContainer">
                 <form id="signinForm">
     <div class="form-group">
         <input type="text" class="form-control" name="username" placeholder="Username" />
@@ -112,20 +112,6 @@ $(document).ready(function() {
 });
 </script>
             </div>
-
-            <div class="col-lg-3">
-                <div class="demo-ad"><div class="doc-ad">
-    <h6>Advertising</h6>
-
-    <a href="https://emailyoyo.com/api/" class="thumbnail" target="_blank">
-        <img class="img-responsive" src="/asset/img/banner/emailyoyo.gif" title="Email YoYo: Real time email validation" />
-    </a>
-
-    <a href="mailto: hello@formvalidation.io" class="thumbnail">
-        <img class="img-responsive" src="/asset/img/adhere.png" title="Advertise on FormValidation" />
-    </a>
-</div></div>
-            </div>
         </div>
     </div>
 
@@ -140,7 +126,7 @@ $(document).ready(function() {
     $(window).on('load', function() {
         var $iframe = $(window.parent.document).find('iframe[src="/getting-started/no-label-form/bootstrap.html"]');
         if ($iframe.length) {
-            $('body').addClass('demo-frame-body').find('.demo-ad').hide();
+            //$('body').addClass('demo-frame-body').find('.demo-ad').hide();
 
             // Adjust the height of iframes containing the demo for specific frameworks
             var $container = $('#demoContainer');
