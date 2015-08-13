@@ -104,6 +104,7 @@ $(document).ready(function() {
         },
         fields: {
             firstName: {
+                row: '.six',
                 validators: {
                     notEmpty: {
                         message: 'The first name is required'
@@ -111,6 +112,7 @@ $(document).ready(function() {
                 }
             },
             lastName: {
+                row: '.six',
                 validators: {
                     notEmpty: {
                         message: 'The last name is required'

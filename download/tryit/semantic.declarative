@@ -9,6 +9,7 @@
         <div class="six wide column">
             <div class="ui input icon">
                 <input name="firstName" type="text" placeholder="First name"
+                    data-fv-row=".six"
                     data-fv-notempty="true"
                     data-fv-notempty-message="The first name is required" />
             </div>
@@ -17,6 +18,7 @@
         <div class="six wide column">
             <div class="ui input icon">
                 <input name="lastName" type="text" placeholder="Last name"
+                    data-fv-row=".six"
                     data-fv-notempty="true"
                     data-fv-notempty-message="The last name is required" />
             </div>
