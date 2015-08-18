@@ -126,6 +126,7 @@ $(document).ready(function() {
     var notifications = [],
         $message      = $('#notification').find('a').data('index', 0);
     notifications.push({ title: 'v0.7.0 is released on 2015.08.01', url: '/news/v0.7.0-released/'});
+    notifications.push({ title: 'New example: Showing messages in a modal', url: '/examples/showing-messages-modal/'});
     notifications.push({ title: 'New example: Validating international phone numbers', url: '/examples/validating-international-phone-numbers/'});
     notifications.push({ title: 'New example: Asking fields to be unique', url: '/examples/asking-fields-be-unique/'});
     notifications.push({ title: 'New example: Contact form', url: '/examples/contact-form/'});
@@ -134,7 +135,6 @@ $(document).ready(function() {
     notifications.push({ title: 'New example: Validating custom Stripe form', url: '/examples/validating-custom-stripe-form/'});
     notifications.push({ title: 'New example: Showing custom message returned from server', url: '/examples/showing-custom-message-returned-from-server/'});
     notifications.push({ title: 'New example: Terms and conditions agreement validation', url: '/examples/terms-conditions-agreement-validation/'});
-    notifications.push({ title: 'New example: Ignoring validation', url: '/examples/ignoring-validation/'});
     
     setInterval(function() {
         $message.data('index', $message.data('index') + 1);
@@ -735,7 +735,7 @@ $(document).ready(function() {
             <span class="p">}</span>
 
             <span class="c1">// Hide the default message</span>
-            <span class="c1">// $field.data(&#39;fv.messages&#39;) returns the default element containing the messages</span>
+            <span class="c1">// data.element.data(&#39;fv.messages&#39;) returns the field messages element</span>
             <span class="nx">data</span><span class="p">.</span><span class="nx">element</span>
                 <span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;fv.messages&#39;</span><span class="p">)</span>
                 <span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;.help-block[data-fv-for=&quot;&#39;</span> <span class="o">+</span> <span class="nx">data</span><span class="p">.</span><span class="nx">field</span> <span class="o">+</span> <span class="s1">&#39;&quot;]&#39;</span><span class="p">)</span>
@@ -754,6 +754,16 @@ $(document).ready(function() {
         
     </div>
 </div>
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Related example</h2>
+
+                    <ul class="doc-list">
+                        <li><a href="/examples/showing-messages-modal/">Showing messages in a modal</a></li>
+                    </ul>
                 </section>
             </div>
 

@@ -126,6 +126,7 @@ $(document).ready(function() {
     var notifications = [],
         $message      = $('#notification').find('a').data('index', 0);
     notifications.push({ title: 'v0.7.0 is released on 2015.08.01', url: '/news/v0.7.0-released/'});
+    notifications.push({ title: 'New example: Showing messages in a modal', url: '/examples/showing-messages-modal/'});
     notifications.push({ title: 'New example: Validating international phone numbers', url: '/examples/validating-international-phone-numbers/'});
     notifications.push({ title: 'New example: Asking fields to be unique', url: '/examples/asking-fields-be-unique/'});
     notifications.push({ title: 'New example: Contact form', url: '/examples/contact-form/'});
@@ -134,7 +135,6 @@ $(document).ready(function() {
     notifications.push({ title: 'New example: Validating custom Stripe form', url: '/examples/validating-custom-stripe-form/'});
     notifications.push({ title: 'New example: Showing custom message returned from server', url: '/examples/showing-custom-message-returned-from-server/'});
     notifications.push({ title: 'New example: Terms and conditions agreement validation', url: '/examples/terms-conditions-agreement-validation/'});
-    notifications.push({ title: 'New example: Ignoring validation', url: '/examples/ignoring-validation/'});
     
     setInterval(function() {
         $message.data('index', $message.data('index') + 1);
@@ -673,6 +673,7 @@ $(document).ready(function() {
 
     <ul class="doc-list">
         <li><a href="/examples/showing-message-custom-area/#using-container-option">Showing messages in custom area</a></li>
+        <li><a href="/examples/showing-messages-modal/">Showing messages in a modal</a></li>
         <li><a href="/examples/changing-tooltip-position">Changing tooltip's position</a></li>
         <li><a href="/examples/using-tooltip-to-show-message/">Using tooltip to show message</a></li>
     </ul>
@@ -3675,6 +3676,7 @@ $(document).ready(function() {
     <ul class="doc-list">
         <li><a href="/examples/ajax-submit">Using Ajax to submit the form</a></li>
         <li><a href="/examples/showing-message-custom-area/#using-events">Showing messages in custom area</a></li>
+        <li><a href="/examples/showing-messages-modal/">Showing messages in a modal</a></li>
     </ul>
 </section>
     <div class="doc-hr-short"></div>
