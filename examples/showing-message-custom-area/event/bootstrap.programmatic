@@ -142,7 +142,7 @@ $(document).ready(function() {
             }
 
             // Hide the default message
-            // $field.data('fv.messages') returns the default element containing the messages
+            // data.element.data('fv.messages') returns the field messages element
             data.element
                 .data('fv.messages')
                 .find('.help-block[data-fv-for="' + data.field + '"]')

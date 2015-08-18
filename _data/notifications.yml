@@ -1,6 +1,9 @@
 - title: "v0.7.0 is released on 2015.08.01"
   url: "/news/v0.7.0-released/"
 
+- title: "New example: Showing messages in a modal"
+  url: "/examples/showing-messages-modal/"
+
 - title: "New example: Validating international phone numbers"
   url: "/examples/validating-international-phone-numbers/"
 
@@ -24,6 +27,3 @@
 
 - title: "New example: Terms and conditions agreement validation"
   url: "/examples/terms-conditions-agreement-validation/"
-
-- title: "New example: Ignoring validation"
-  url: "/examples/ignoring-validation/"

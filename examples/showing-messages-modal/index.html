@@ -1,0 +1,153 @@
+---
+layout: default
+title: Showing messages in a modal
+permalink: /examples/showing-messages-modal/
+---
+
+<div class="doc-content-container">
+    <div class="doc-heading">
+        <h1>Showing messages in a modal</h1>
+        <p>&larr; <a href="/examples/">Examples</a></p>
+        {% include share.html %}
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <section>
+                    <p>By default, <a href="/download/">FormValidation</a> will place error messages right below the field.
+                        In this example, I will show you a way of placing the messages in a <a href="http://getbootstrap.com/javascript/#modals">Bootstrap modal</a>.
+                        All messages are then shown up when user click the submit button.</p>
+
+                    <p>Although the live forms in this example use the Bootstrap modal component, the same approach can be used with other modal, dialog libraries
+                        as long as they provide methods to show and hide the modal.
+                        Below are some of popular one:</p>
+                    <ul class="doc-list">
+                        <li><a href="http://bootboxjs.com/">bootboxjs</a></li>
+                        <li><a href="http://nakupanda.github.io/bootstrap3-dialog/">bootstrap3-dialog</a></li>
+                        <li><a href="https://jqueryui.com/dialog/">jQuery UI dialog</a></li>
+                        <li><a href="http://vodkabears.github.io/remodal/">remodal</a></li>
+                        <li><a href="https://github.com/kylefox/jquery-modal">jquery-modal</a></li>
+                    </ul>
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Using the container option</h2>
+
+                    <p>Assume that you want to place all messages inside a div element which belongs to body of a Bootstrap modal as following:</p>
+{% highlight html %}
+<form id="signupForm" method="post" class="form-horizontal">
+    ...
+</form>
+
+<!-- Modal for displaying the messages -->
+<div class="modal fade" id="messageModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            ...
+
+            <div class="modal-body">
+                <!-- The messages container -->
+                <div id="errors"></div>
+            </div>
+
+            ...
+        </div>
+    </div>
+</div>
+{% endhighlight %}
+
+                    <p>In order to archive that, we can set the <a href="/settings/#form-err">err.container</a> option to CSS selector which indicates the messages container:</p>
+
+{% highlight javascript %}
+$('#signupForm').formValidation({
+    err: {
+        container: '#errors'
+    },
+    ...
+});
+{% endhighlight %}
+
+                    <p>Finally, trigger the <a href="/settings/#event-form">err.form.fv</a> event which is called when the form is not valid to <a href="http://getbootstrap.com/javascript/#modals-methods">display the modal</a>:</p>
+
+{% highlight javascript %}
+$('#signupForm').on('err.form.fv', function(e) {
+    // Show the message modal
+    $('#messageModal').modal('show');
+});
+{% endhighlight %}
+
+                    <p>It's too easy, isn't it?</p>
+                    <p>In the following form, you can fill in some fields and click the <strong>Sign up</strong> button to see how it works:</p>
+
+                    {% include demo/tabs.html id="container" frameworks="bootstrap" dir="container" codes="programmatic" %}
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Bonus: Focusing on the field when clicking the message</h2>
+
+                    <p>In the example above, all the messages are simply placed inside a modal. There's no connections between
+                        each particular message with associated field. It will give better experiences if the invalid field is focused when we click on any of its message.</p>
+                    <p>This can be done by triggering some events as described in details in the <a href="/examples/showing-message-custom-area/#using-events">Showing messages in custom area</a> example.</p>
+
+                    <p>In the piece of code below, there's only one additional thing which is that we need to hide the modal before focusing on the field:</p>
+
+{% highlight javascript %}
+$('#signupForm')
+    .formValidation(...)
+    .on('err.field.fv', function(e, data) {
+        ...
+
+        // Loop over the messages
+        for (var i in messages) {
+            // Create new 'li' element to show the message
+            $('<li/>')
+                .attr('data-field', data.field)
+                .wrapInner(
+                    $('<a/>')
+                        .attr('href', 'javascript: void(0);')
+                        .html(messages[i])
+                        .on('click', function(e) {
+                            // Hide the modal first
+                            $('#messageModal').modal('hide');
+
+                            // Focus on the invalid field
+                            data.element.focus();
+                        })
+                )
+                .appendTo('#errors');
+        }
+
+        ...
+    });
+{% endhighlight %}
+
+                    <div class="doc-alert doc-alert-info">
+                        Again, it's recommended to look at <a href="/examples/showing-message-custom-area/#using-events">this section</a>
+                        to understand how the events are used to archive what we want
+                    </div>
+
+                    {% include demo/tabs.html id="focusing" frameworks="bootstrap" dir="focusing" codes="programmatic" %}
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Related example</h2>
+
+                    <ul class="doc-list">
+                        <li><a href="/examples/showing-message-custom-area/">Showing messages in custom area</a></li>
+                    </ul>
+                </section>
+            </div>
+
+            <div class="col-md-3 hidden-print hidden-xs hidden-sm">
+                {% include sidebar.html %}
+            </div>
+        </div>
+    </div>
+</div>
