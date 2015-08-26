@@ -72,6 +72,7 @@
     <div class="form-group">
         <div class="col-xs-5 col-xs-offset-3">
             <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="button" class="btn btn-default" id="resetButton">Reset</button>
         </div>
     </div>
 </form>
@@ -79,5 +80,13 @@
 <script type="text/javascript">
 $(document).ready(function() {
     $('#signUpForm').formValidation();
+
+    $('#resetButton').on('click', function() {
+        // Reset the recaptcha
+        grecaptcha.reset();
+
+        // Reset form
+        $('#signUpForm').formValidation('resetForm', true);
+    });
 });
 </script>

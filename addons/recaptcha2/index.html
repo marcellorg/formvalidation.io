@@ -3,8 +3,8 @@ layout: default
 title: reCaptcha2 add-on
 permalink: /addons/recaptcha2/
 image: /addons/recaptcha2/cover.png
-file: "recaptcha2-v0.3.1.zip"
-download: "https://github.com/formvalidation/addon-recaptcha/releases/download/v0.3.1/recaptcha2-v0.3.1.zip"
+file: "recaptcha2-v0.4.0.zip"
+download: "https://github.com/formvalidation/addon-recaptcha/releases/download/v0.4.0/recaptcha2-v0.4.0.zip"
 ---
 
 <div class="doc-content-container">
@@ -191,6 +191,54 @@ $('#signUpForm').formValidation({
                 <div class="doc-hr"></div>
 
                 <section>
+                    <h2>API</h2>
+
+                    <p>Following is the list of methods provided directly by <code>FormValidation.AddOn.reCaptcha2</code>:</p>
+
+                    <h3>reset</h3>
+                    <p><code>reset(element<sup>*</sup>)</code> &mdash; Reset the captcha element. It reset the checkbox captcha element and generate a new captcha.</p>
+
+                    <p><sup>*</sup> &mdash; Required option</p>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Type</th>
+                                <th>Description</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><code>element</code><sup>*</sup></td>
+                                <td>String</td>
+                                <td>The ID of element showing the captcha</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+{% highlight javascript %}
+FormValidation.AddOn.reCaptcha2.reset('captchaContainer');
+{% endhighlight %}
+
+                    <p>This method doesn't remove the feedback icon and validation messages of captcha. To do that,
+                        you need to call the <a href="/api/#reset-form">resetForm()</a> or <a href="/api/#reset-field">resetField()</a> method.</p>
+
+{% highlight javascript %}
+// Reset entire form
+$(yourForm).formValidation('resetForm', true);
+
+// Or just reset the captcha field
+$(yourForm).formValidation('resetField', 'g-recaptcha-response', true);
+{% endhighlight %}
+
+                    <p>See the <a href="#resetting-the-captcha">Resetting the captcha</a> for a simple usage.</p>
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
                     <h2>Example</h2>
 
                     <p>Below is the piece of code showing programmatic and declarative usages:</p>
@@ -219,7 +267,7 @@ $('#signUpForm').formValidation({
     </div>
 </form>
 
-<script type="text/javascript">
+<script>
 $(document).ready(function() {
     $('#signUpForm').formValidation({
         ...
@@ -247,6 +295,23 @@ $(document).ready(function() {
                         Don't forget to wrap the captcha field's name (g-recaptcha-response) between single or double quote.
                         See the <a href="/examples/validating-field-special-name/">Validating field with special name</a> example for more use cases.
                     </div>
+
+                    <h3>Resetting the captcha</h3>
+
+                    <p>If you want to reset the entire form including the feedback icon and messages, calling <a href="/api/#reset-form">resetForm()</a> doesn't enough.</p>
+                    <p>In addition to that, we also need to call the <a href="#reset">reset()</a> method:</p>
+
+{% highlight javascript %}
+$('#resetButton').on('click', function() {
+    // Reset the recaptcha
+    FormValidation.AddOn.reCaptcha2.reset('captchaContainer');
+
+    // Reset form
+    $('#signUpForm').formValidation('resetForm', true);
+});
+{% endhighlight %}
+
+                    <p>Click the <strong>Reset</strong> button in the example above to see how it works.</p>
                 </section>
 
                 <div class="doc-hr"></div>
@@ -255,6 +320,7 @@ $(document).ready(function() {
                     <h2>Change log</h2>
 
                     <ul class="doc-list">
+                        <li>v0.4.0: Add <code>reset()</code> method to reset the captcha element</li>
                         <li>v0.3.1: Add <code>sToken</code> option</li>
                         <li>
                             <p>v0.3.0:</p>
