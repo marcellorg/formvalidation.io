@@ -83,7 +83,7 @@ $(document).ready(function() {
 
     $('#resetButton').on('click', function() {
         // Reset the recaptcha
-        grecaptcha.reset();
+        FormValidation.AddOn.reCaptcha2.reset('captchaContainer');
 
         // Reset form
         $('#signUpForm').formValidation('resetForm', true);
