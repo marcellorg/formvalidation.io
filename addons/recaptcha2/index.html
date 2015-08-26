@@ -618,7 +618,7 @@ $(document).ready(function() {
 
     <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#resetButton&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
         <span class="c1">// Reset the recaptcha</span>
-        <span class="nx">grecaptcha</span><span class="p">.</span><span class="nx">reset</span><span class="p">();</span>
+        <span class="nx">FormValidation</span><span class="p">.</span><span class="nx">AddOn</span><span class="p">.</span><span class="nx">reCaptcha2</span><span class="p">.</span><span class="nx">reset</span><span class="p">(</span><span class="s1">&#39;captchaContainer&#39;</span><span class="p">);</span>
 
         <span class="c1">// Reset form</span>
         <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#signUpForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;resetForm&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
