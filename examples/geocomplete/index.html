@@ -349,7 +349,7 @@ $(document).ready(function() {
             <span class="p">.</span><span class="nx">geocomplete</span><span class="p">({</span>
                 <span class="nx">details</span><span class="o">:</span> <span class="s1">&#39;#addressDetails&#39;</span><span class="p">,</span>
                 <span class="nx">map</span><span class="o">:</span> <span class="s1">&#39;#map&#39;</span><span class="p">,</span>
-                <span class="nx">blur</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="nx">blur</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
                 <span class="nx">restoreValueAfterBlur</span><span class="o">:</span> <span class="kc">true</span>
             <span class="p">})</span>
             <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;geocode:result&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
@@ -420,7 +420,7 @@ $(document).ready(function() {
             .geocomplete({
                 details: '#addressDetails',
                 map: '#map',
-                blur: true,
+                blur: false,
                 restoreValueAfterBlur: true
             })
             .on('geocode:result', function(e, result) {
