@@ -39,7 +39,7 @@ $(document).ready(function() {
             .geocomplete({
                 details: '#addressDetails',
                 map: '#map',
-                blur: true,
+                blur: false,
                 restoreValueAfterBlur: true
             })
             .on('geocode:result', function(e, result) {
