@@ -169,13 +169,13 @@ $(document).ready(function() {
                     <p>By default, the plugin will not initialize the fields which are disabled, hidden, or not visible. Since the form is placed inside a model which is not visible after loading page, the plugin might ignore the fields.</p>
                     <p>That's the reason why we need to set <code>excluded: ':disabled'</code>. Take a look at the <a href="/settings#form-excluded">excluded</a> setting for more information.</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#loginForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
         <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;This value is not valid&#39;</span><span class="p">,</span>
         <span class="nx">excluded</span><span class="o">:</span> <span class="s1">&#39;:disabled&#39;</span><span class="p">,</span>
         <span class="p">...</span>
     <span class="p">});</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
                     <div class="doc-demo">
                         <ul class="nav nav-tabs">
@@ -230,7 +230,7 @@ $(document).ready(function() {
                             </div>
 
                             <div class="tab-pane" id="modal-programmatic-tab">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-center&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-center&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span> <span class="na">data-toggle=</span><span class="s">&quot;modal&quot;</span> <span class="na">data-target=</span><span class="s">&quot;#loginModal&quot;</span><span class="nt">&gt;</span>Login<span class="nt">&lt;/button&gt;</span>
 <span class="nt">&lt;/p&gt;</span>
 
@@ -301,7 +301,7 @@ $(document).ready(function() {
         <span class="p">}</span>
     <span class="p">});</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
                             </div>
                         </div>
                     </div>
@@ -313,9 +313,9 @@ $(document).ready(function() {
                     <h2>Resetting form when showing the modal</h2>
 
                     <p>If you want to reset all the fields in form whenever the modal is shown, the <a href="/api#reset-form"><code>resetForm()</code> method</a> will help you:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#loginModal&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;hidden.bs.modal&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#loginModal&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;hidden.bs.modal&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#loginForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;resetForm&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
                 </section>
 
                 <div class="doc-hr"></div>

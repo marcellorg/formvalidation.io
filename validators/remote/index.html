@@ -193,7 +193,7 @@ $(document).ready(function() {
                                         <p>The data sent to remote URL.</p>
                                         <p>You don't need to use this option if there is only field, defined as field name, sent to the remote URL.</p>
                                         <p>If you want to use <a href="#sending-dynamic-data-example">dynamic data</a>, then use a callback as following:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">data</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">data</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// validator is FormValidation instance</span>
     <span class="c1">// $field is the field element</span>
     <span class="c1">// value is the field value</span>
@@ -203,7 +203,7 @@ $(document).ready(function() {
         <span class="nx">key</span><span class="o">:</span> <span class="nx">value</span><span class="p">,</span>
         <span class="nx">otherKey</span><span class="o">:</span> <span class="nx">otherValue</span>
     <span class="p">};</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
                                         <p>When using <code>data-fv-remote-data</code> attribute, its value must be an encoded JSON string.</p>
                                     </td>
@@ -250,13 +250,13 @@ $(document).ready(function() {
                                     <td>String|Function</td>
                                     <td>The remote URL.<br/>
                                         If you want to use a dynamic URL, then use a callback as following:
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">url</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">url</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// validator is FormValidation instance</span>
     <span class="c1">// $field is the field element</span>
     <span class="c1">// value is the field value</span>
 
     <span class="k">return</span> <span class="s1">&#39;the URL&#39;</span><span class="p">;</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
                                     </td>
                                 </tr>
                                 <tr>
@@ -283,9 +283,9 @@ $(document).ready(function() {
                     <p>The <code>crossDomain</code>, <code>dataType</code>, <code>validKey</code> options are mostly used when you need to connect to external API endpoint. This <a href="/examples/using-mailgun-api-validate-email-address/">example</a> shows how to connect and use the <a href="http://www.mailgun.com/">Mailgun</a> API to validate an email address.</p>
 
                     <p>The remote URL has to return an encoded JSON of array containing the <code>valid</code> key (the key name can be changed by the <code>validKey</code> option):</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span> <span class="s2">&quot;valid&quot;</span><span class="o">:</span> <span class="kc">true</span> <span class="p">}</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span> <span class="s2">&quot;valid&quot;</span><span class="o">:</span> <span class="kc">true</span> <span class="p">}</span></code></pre></figure>
                     <p>or</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span> <span class="s2">&quot;valid&quot;</span><span class="o">:</span> <span class="kc">false</span> <span class="p">}</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span> <span class="s2">&quot;valid&quot;</span><span class="o">:</span> <span class="kc">false</span> <span class="p">}</span></code></pre></figure>
 
                     <div class="doc-alert doc-alert-info">
                         The validator is <a href="/examples/ignoring-validation/">ignored</a> if the remote URL responses { "valid": null }
@@ -313,7 +313,7 @@ $(document).ready(function() {
                     <h3>Using delay option</h3>
                     <p>By setting the <code>delay</code> option, the Ajax request is only fired once in the specific duration time.</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#registrationForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#registrationForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
     <span class="nx">framework</span><span class="o">:</span> <span class="s1">&#39;bootstrap&#39;</span><span class="p">,</span>
     <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">username</span><span class="o">:</span> <span class="p">{</span>
@@ -326,13 +326,13 @@ $(document).ready(function() {
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">}</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
                     <h3>Using threshold option</h3>
                     <p>The <a href="/settings/#field-threshold">threshold</a> option indicates value that asks validators not to perform validations unless the length of field value is greater than this number.</p>
                     <p>In the snippet code below, the remote validator will not send Ajax request until the username field has at least 5 characters:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#registrationForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#registrationForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
     <span class="nx">framework</span><span class="o">:</span> <span class="s1">&#39;bootstrap&#39;</span><span class="p">,</span>
     <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">username</span><span class="o">:</span> <span class="p">{</span>
@@ -345,7 +345,7 @@ $(document).ready(function() {
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">}</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
                     <h3>Using verbose option</h3>
                     <p>Client first, server last. If the field uses multiple validators, the validators processed in the client should be done first.
@@ -355,7 +355,7 @@ $(document).ready(function() {
                     <p>In the following code, the remote validator is only processed if the field satisfies all <a href="/validators/notEmpty/">notEmpty</a>, <a href="/validators/stringLength/">stringLength</a>, <a href="/validators/regexp/">regexp</a> validators.</p>
 
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#registrationForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#registrationForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
     <span class="nx">framework</span><span class="o">:</span> <span class="s1">&#39;bootstrap&#39;</span><span class="p">,</span>
     <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">username</span><span class="o">:</span> <span class="p">{</span>
@@ -381,7 +381,7 @@ $(document).ready(function() {
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">}</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
                 </section>
 
                 <div class="doc-hr"></div>
@@ -399,7 +399,7 @@ $(document).ready(function() {
 
                         <div class="tab-content">
                             <div class="tab-pane active" id="example-programmatic-tab">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;registrationForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;registrationForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-lg-3 control-label&quot;</span><span class="nt">&gt;</span>Username<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-lg-5&quot;</span><span class="nt">&gt;</span>
@@ -428,11 +428,11 @@ $(document).ready(function() {
         <span class="p">}</span>
     <span class="p">});</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
                             </div>
 
                             <div class="tab-pane" id="example-php-tab">
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 <span class="c1">// The back-end then will determine if the username is available or not,</span>
 <span class="c1">// and finally returns a JSON { &quot;valid&quot;: true } or { &quot;valid&quot;: false }</span>
 <span class="c1">// The code bellow demonstrates a simple back-end written in PHP</span>
@@ -446,7 +446,7 @@ $(document).ready(function() {
 <span class="c1">// Finally, return a JSON</span>
 <span class="k">echo</span> <span class="nb">json_encode</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
     <span class="s1">&#39;valid&#39;</span> <span class="o">=&gt;</span> <span class="nv">$isAvailable</span><span class="p">,</span>
-<span class="p">));</span></code></pre></div>
+<span class="p">));</span></code></pre></figure>
                             </div>
                         </div>
                     </div>
@@ -461,7 +461,7 @@ $(document).ready(function() {
 
                         <div class="tab-content">
                             <div class="tab-pane active" id="staticdata-programmatic-tab">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;registrationForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;registrationForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-lg-3 control-label&quot;</span><span class="nt">&gt;</span>Username<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-lg-5&quot;</span><span class="nt">&gt;</span>
@@ -513,11 +513,11 @@ $(document).ready(function() {
         <span class="p">}</span>
     <span class="p">});</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
                             </div>
 
                             <div class="tab-pane" id="staticdata-php-tab">
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 <span class="c1">// The code bellow demonstrates a simple back-end written in PHP</span>
 <span class="c1">// Determine which field you want to check its existence</span>
 <span class="nv">$isAvailable</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
@@ -540,7 +540,7 @@ $(document).ready(function() {
 <span class="c1">// Finally, return a JSON</span>
 <span class="k">echo</span> <span class="nb">json_encode</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
     <span class="s1">&#39;valid&#39;</span> <span class="o">=&gt;</span> <span class="nv">$isAvailable</span><span class="p">,</span>
-<span class="p">));</span></code></pre></div>
+<span class="p">));</span></code></pre></figure>
                             </div>
                         </div>
                     </div>
@@ -548,7 +548,7 @@ $(document).ready(function() {
                     <h3>Sending dynamic data example</h3>
                     <p>For instance, the registration form need to validate both the username and emails.</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;registrationForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;registrationForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-lg-3 control-label&quot;</span><span class="nt">&gt;</span>Username<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-lg-5&quot;</span><span class="nt">&gt;</span>
@@ -608,7 +608,7 @@ $(document).ready(function() {
         <span class="p">}</span>
     <span class="p">});</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
 
                     <h3>Overriding name example</h3>
 
@@ -618,7 +618,7 @@ $(document).ready(function() {
                     <p>For example, the <i>Sign up</i> and <i>Profile</i> forms use the same back-end URL to validate the email address which is declared with different name.</p>
                     <p>In this case, use the same <code>data-fv-remote-name</code> attribute and the back-end will get the same data key.</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- In the signup form, the email address field is named as &quot;login&quot; --&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- In the signup form, the email address field is named as &quot;login&quot; --&gt;</span>
 <span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;signupForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-lg-3 control-label&quot;</span><span class="nt">&gt;</span>Email<span class="nt">&lt;/label&gt;</span>
@@ -626,9 +626,9 @@ $(document).ready(function() {
             <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;login&quot;</span> <span class="na">data-fv-remote-name=</span><span class="s">&quot;email&quot;</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/form&gt;</span></code></pre></div>
+<span class="nt">&lt;/form&gt;</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- In the edit profile form, the email address field is named as &quot;email&quot; --&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- In the edit profile form, the email address field is named as &quot;email&quot; --&gt;</span>
 <span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;profileForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-lg-3 control-label&quot;</span><span class="nt">&gt;</span>Email<span class="nt">&lt;/label&gt;</span>
@@ -636,13 +636,13 @@ $(document).ready(function() {
             <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;email&quot;</span> <span class="na">data-fv-remote-name=</span><span class="s">&quot;email&quot;</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/form&gt;</span></code></pre></div>
+<span class="nt">&lt;/form&gt;</span></code></pre></figure>
 
                     <h4>Using same backend for different fields</h4>
                     <p>Assume that the profile form asks you to update multiple email address (primary, secondary, for example).
                     These emails will be validated by the same backend.</p>
                     <p>In this case, just use the same <code>data-fv-remote-name</code> attribute for these email address fields.</p>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;profileForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;profileForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-lg-3 control-label&quot;</span><span class="nt">&gt;</span>Primary email<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-lg-5&quot;</span><span class="nt">&gt;</span>
@@ -656,7 +656,7 @@ $(document).ready(function() {
                 <span class="na">name=</span><span class="s">&quot;secondary_email&quot;</span> <span class="na">data-fv-remote-name=</span><span class="s">&quot;email&quot;</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/form&gt;</span></code></pre></div>
+<span class="nt">&lt;/form&gt;</span></code></pre></figure>
 
                     <h3>More examples</h3>
                     <ul class="doc-list">

@@ -189,7 +189,7 @@ $(document).ready(function() {
 
                     <p>In order to check whether an array contains duplicated items or not, we can use the easy way suggested by <a href="https://twitter.com/Nosredna">Rhett Anderson</a>:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">hasDuplicatedItems</span><span class="p">(</span><span class="nx">inputArray</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">hasDuplicatedItems</span><span class="p">(</span><span class="nx">inputArray</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">obj</span>              <span class="o">=</span> <span class="p">{},</span>
         <span class="nx">numItems</span>         <span class="o">=</span> <span class="nx">inputArray</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span>
         <span class="nx">duplicateRemoved</span> <span class="o">=</span> <span class="p">[];</span>
@@ -203,7 +203,7 @@ $(document).ready(function() {
     <span class="p">}</span>
 
     <span class="k">return</span> <span class="nx">duplicateRemoved</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="nx">numItems</span><span class="p">;</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
                     <div class="doc-alert doc-alert-info">
                         For more information, you can read the Rhett Anderson's original post <a href="https://dreaminginjavascript.wordpress.com/2008/08/22/eliminating-duplicates/">Eliminating Duplicates</a>
@@ -212,7 +212,7 @@ $(document).ready(function() {
                     <p>Since the array of email addresses might consist of empty item, we need to adjust the code above a little bit to ensure that
                         the array has at least one not-empty item and doesn't contain any duplicated items:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Assume that $emails are the list of email elements</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Assume that $emails are the list of email elements</span>
 <span class="kd">var</span> <span class="nx">numEmails</span>        <span class="o">=</span> <span class="nx">$emails</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span>
     <span class="nx">notEmptyCount</span>    <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
     <span class="nx">obj</span>              <span class="o">=</span> <span class="p">{},</span>
@@ -234,7 +234,7 @@ $(document).ready(function() {
     <span class="c1">// All the items are empty</span>
 <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">duplicateRemoved</span><span class="p">.</span><span class="nx">length</span> <span class="o">!==</span> <span class="nx">notEmptyCount</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// The list of emails have duplicated items</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
                 </section>
 
                 <div class="doc-hr"></div>
@@ -246,7 +246,7 @@ $(document).ready(function() {
                     <p>It also uses the <a href="/settings/#dynamic-message">dynamic message</a> feature that allows to show a different message
                         depending on a particular condition:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#profileForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#profileForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
     <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
         <span class="s1">&#39;email[]&#39;</span><span class="o">:</span> <span class="p">{</span>
             <span class="nx">err</span><span class="o">:</span> <span class="s1">&#39;#messageContainer&#39;</span><span class="p">,</span>
@@ -278,17 +278,13 @@ $(document).ready(function() {
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">}</span>
-<span class="p">})</span></code></pre></div>
+<span class="p">})</span></code></pre></figure>
 
                     <p>The code also shows an usage of the <a href="/settings/#field-err">err</a> option which displays the message at the given container.
                         This option also ensures that all the messages are shown once in case we use the same name for fields.
                         If this option is omitted, then you will see different messages for each of invalid field.</p>
 
                     
-
-
-
-
 
 
 
@@ -320,7 +316,7 @@ $(document).ready(function() {
         <div class="tab-pane" id="basic-programmatic-tab">
             
             <div data-demo-code="bootstrap">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;profileForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;profileForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Emails<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-5&quot;</span><span class="nt">&gt;</span>
@@ -423,7 +419,7 @@ $(document).ready(function() {
         <span class="p">}</span>
     <span class="p">});</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
             </div>
             
         </div>
@@ -440,15 +436,15 @@ $(document).ready(function() {
                     <p>What if the email fields have <a href="/examples/validating-array-inputs/#inputs-with-different-names">different names</a>? How we can set the validator rules for them?</p>
                     <p>In this case, we can use a same CSS class for all email fields</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control userEmail&quot;</span> <span class="na">name=</span><span class="s">&quot;user.email[0]&quot;</span> <span class="nt">/&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control userEmail&quot;</span> <span class="na">name=</span><span class="s">&quot;user.email[0]&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control userEmail&quot;</span> <span class="na">name=</span><span class="s">&quot;user.email[1]&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control userEmail&quot;</span> <span class="na">name=</span><span class="s">&quot;user.email[2]&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control userEmail&quot;</span> <span class="na">name=</span><span class="s">&quot;user.email[3]&quot;</span> <span class="nt">/&gt;</span>
-<span class="c">&lt;!-- and so forth --&gt;</span></code></pre></div>
+<span class="c">&lt;!-- and so forth --&gt;</span></code></pre></figure>
 
                     <p>and then use the <a href="/settings/#field-selector">selector</a> option to apply the same set of validation rules for them:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#profileForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#profileForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
     <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">emails</span><span class="o">:</span> <span class="p">{</span>
             <span class="c1">// All email fields have .userEmail class</span>
@@ -459,13 +455,9 @@ $(document).ready(function() {
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">}</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
                     
-
-
-
-
 
 
 
@@ -497,7 +489,7 @@ $(document).ready(function() {
         <div class="tab-pane" id="selector-programmatic-tab">
             
             <div data-demo-code="bootstrap">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;profileForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;profileForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Emails<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-5&quot;</span><span class="nt">&gt;</span>
@@ -602,7 +594,7 @@ $(document).ready(function() {
         <span class="p">}</span>
     <span class="p">});</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
             </div>
             
         </div>
@@ -622,10 +614,6 @@ $(document).ready(function() {
                         how these methods are used in action.</p>
 
                     
-
-
-
-
 
 
 
@@ -657,7 +645,7 @@ $(document).ready(function() {
         <div class="tab-pane" id="dynamic-field-programmatic-tab">
             
             <div data-demo-code="bootstrap">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;profileForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;profileForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Emails<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-5&quot;</span><span class="nt">&gt;</span>
@@ -776,7 +764,7 @@ $(document).ready(function() {
             <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#profileForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;removeField&#39;</span><span class="p">,</span> <span class="nx">$email</span><span class="p">);</span>
         <span class="p">});</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
             </div>
             
         </div>

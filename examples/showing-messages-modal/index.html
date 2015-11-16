@@ -186,7 +186,7 @@ $(document).ready(function() {
                     <h2>Using the container option</h2>
 
                     <p>Assume that you want to place all messages inside a div element which belongs to body of a Bootstrap modal as following:</p>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;signupForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;signupForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
     ...
 <span class="nt">&lt;/form&gt;</span>
 
@@ -204,32 +204,28 @@ $(document).ready(function() {
             ...
         <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span></code></pre></div>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
 
                     <p>In order to archive that, we can set the <a href="/settings/#form-err">err.container</a> option to CSS selector which indicates the messages container:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#signupForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#signupForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
     <span class="nx">err</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">container</span><span class="o">:</span> <span class="s1">&#39;#errors&#39;</span>
     <span class="p">},</span>
     <span class="p">...</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
                     <p>Finally, trigger the <a href="/settings/#event-form">err.form.fv</a> event which is called when the form is not valid to <a href="http://getbootstrap.com/javascript/#modals-methods">display the modal</a>:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#signupForm&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;err.form.fv&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#signupForm&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;err.form.fv&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// Show the message modal</span>
     <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#messageModal&#39;</span><span class="p">).</span><span class="nx">modal</span><span class="p">(</span><span class="s1">&#39;show&#39;</span><span class="p">);</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
                     <p>It's too easy, isn't it?</p>
                     <p>In the following form, you can fill in some fields and click the <strong>Sign up</strong> button to see how it works:</p>
 
                     
-
-
-
-
 
 
 
@@ -261,7 +257,7 @@ $(document).ready(function() {
         <div class="tab-pane" id="container-programmatic-tab">
             
             <div data-demo-code="bootstrap">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;signupForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;signupForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Full name<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-4&quot;</span><span class="nt">&gt;</span>
@@ -440,7 +436,7 @@ $(document).ready(function() {
             <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#messageModal&#39;</span><span class="p">).</span><span class="nx">modal</span><span class="p">(</span><span class="s1">&#39;show&#39;</span><span class="p">);</span>
         <span class="p">});</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
             </div>
             
         </div>
@@ -460,7 +456,7 @@ $(document).ready(function() {
 
                     <p>In the piece of code below, there's only one additional thing which is that we need to hide the modal before focusing on the field:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#signupForm&#39;</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#signupForm&#39;</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">formValidation</span><span class="p">(...)</span>
     <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;err.field.fv&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
         <span class="p">...</span>
@@ -486,7 +482,7 @@ $(document).ready(function() {
         <span class="p">}</span>
 
         <span class="p">...</span>
-    <span class="p">});</span></code></pre></div>
+    <span class="p">});</span></code></pre></figure>
 
                     <div class="doc-alert doc-alert-info">
                         Again, it's recommended to look at <a href="/examples/showing-message-custom-area/#using-events">this section</a>
@@ -494,10 +490,6 @@ $(document).ready(function() {
                     </div>
 
                     
-
-
-
-
 
 
 
@@ -529,7 +521,7 @@ $(document).ready(function() {
         <div class="tab-pane" id="focusing-programmatic-tab">
             
             <div data-demo-code="bootstrap">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;signupForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;signupForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Full name<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-4&quot;</span><span class="nt">&gt;</span>
@@ -754,7 +746,7 @@ $(document).ready(function() {
             <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#messageModal&#39;</span><span class="p">).</span><span class="nx">modal</span><span class="p">(</span><span class="s1">&#39;show&#39;</span><span class="p">);</span>
         <span class="p">});</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
             </div>
             
         </div>

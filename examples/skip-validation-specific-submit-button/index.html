@@ -169,13 +169,13 @@ $(document).ready(function() {
 
                     <p>By default, the plugin will look for the buttons that are defined by the <a href="/settings/#form-button">button</a> option:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">button</span><span class="o">:</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">button</span><span class="o">:</span> <span class="p">{</span>
     <span class="c1">// The CSS selector indicates the button</span>
     <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;[type=&quot;submit&quot;]:not([formnovalidate])&#39;</span><span class="p">,</span>
 
     <span class="c1">// The CSS class which is added to the button when it is disabled</span>
     <span class="nx">disabled</span><span class="o">:</span> <span class="s1">&#39;&#39;</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
                 </section>
 
                 <div class="doc-hr"></div>
@@ -186,11 +186,11 @@ $(document).ready(function() {
                     <p>As seen in the <code>button.selector</code> option above, the plugin will ignore validation when clicking on the button that has <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#Attributes">formnovalidate</a> attribute.</p>
                     <p>The simplest way to skip validation on particular button is to add <code>formnovalidate</code> attribute to it:</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Validate and submit if the form is valid --&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Validate and submit if the form is valid --&gt;</span>
 <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-primary&quot;</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/button&gt;</span>
 
 <span class="c">&lt;!-- Skip validation and just submit the form --&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-primary&quot;</span> <span class="na">formnovalidate</span><span class="nt">&gt;</span>Just submit<span class="nt">&lt;/button&gt;</span></code></pre></div>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-primary&quot;</span> <span class="na">formnovalidate</span><span class="nt">&gt;</span>Just submit<span class="nt">&lt;/button&gt;</span></code></pre></figure>
 
                     <div class="doc-alert doc-alert-warning">
                         This solution is available only from v0.6.2 which default set of submit buttons do NOT include one having the formnovalidate attribute.
@@ -205,19 +205,15 @@ $(document).ready(function() {
 
                     <p>The following employment form has two submit buttons, but the validation is only triggered when clicking on the <strong>Validate and Submit</strong> button:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#employmentForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#employmentForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
     <span class="nx">button</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;#validateButton&#39;</span><span class="p">,</span>
         <span class="nx">disabled</span><span class="o">:</span> <span class="s1">&#39;disabled&#39;</span>
     <span class="p">}</span>
     <span class="p">...</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
                     
-
-
-
-
 
 
 
@@ -249,7 +245,7 @@ $(document).ready(function() {
         <div class="tab-pane" id="basic-programmatic-tab">
             
             <div data-demo-code="bootstrap">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;style </span><span class="na">type=</span><span class="s">&quot;text/css&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;style </span><span class="na">type=</span><span class="s">&quot;text/css&quot;</span><span class="nt">&gt;</span>
 <span class="c">/**</span>
 <span class="c"> * Adjust feedback icon position.</span>
 <span class="c"> * See the following example for more information:</span>
@@ -407,7 +403,7 @@ $(document).ready(function() {
         <span class="p">}</span>
     <span class="p">});</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
             </div>
             
         </div>

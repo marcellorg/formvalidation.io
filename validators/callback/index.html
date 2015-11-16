@@ -205,14 +205,14 @@ $(document).ready(function() {
 
                     <p>The callback method must follow the format below:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// value is the value of field</span>
     <span class="c1">// validator is instance of BootstrapValidator</span>
     <span class="c1">// $field is the jQuery object representing the field element</span>
 
     <span class="c1">// Check the field validity</span>
     <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>    <span class="c1">// or false</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
                     <div class="doc-alert doc-alert-info">
                         The validator is <a href="/examples/ignoring-validation/">ignored</a> if the callback method returns null
@@ -220,7 +220,7 @@ $(document).ready(function() {
 
                     <p>If you want to return a dynamic message, the callback function must return an object containing the <code>valid</code> and <code>message</code> members:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// ... Do your logic checking</span>
     <span class="k">if</span> <span class="p">(...)</span> <span class="p">{</span>
         <span class="k">return</span> <span class="p">{</span>
@@ -233,7 +233,7 @@ $(document).ready(function() {
         <span class="nx">valid</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>       <span class="c1">// or true</span>
         <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;Other error message&#39;</span>
     <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
                     <p>Look at the <a href="#dynamic-message-example">dynamic message</a> example.</p>
 
                     <div class="doc-alert doc-alert-info">
@@ -257,10 +257,6 @@ $(document).ready(function() {
                     <p>The captcha is also generated after form submission by triggering the <a href="/settings/#event-form">err.form.fv</a> event.</p>
 
                     
-
-
-
-
 
 
 
@@ -294,7 +290,7 @@ $(document).ready(function() {
         <div class="tab-pane" id="basic-programmatic-tab">
             
             <div data-demo-code="bootstrap">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;captchaForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;captchaForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span> <span class="na">id=</span><span class="s">&quot;captchaOperation&quot;</span><span class="nt">&gt;&lt;/label&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-5&quot;</span><span class="nt">&gt;</span>
@@ -349,7 +345,7 @@ $(document).ready(function() {
             <span class="nx">generateCaptcha</span><span class="p">();</span>
         <span class="p">});</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
             </div>
             
         </div>
@@ -357,7 +353,7 @@ $(document).ready(function() {
         <div class="tab-pane" id="basic-declarative-tab">
             
             <div data-demo-code="bootstrap">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;callbackForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;callbackForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span>
     <span class="na">data-fv-framework=</span><span class="s">&quot;bootstrap&quot;</span>
     <span class="na">data-fv-icon-valid=</span><span class="s">&quot;glyphicon glyphicon-ok&quot;</span>
     <span class="na">data-fv-icon-invalid=</span><span class="s">&quot;glyphicon glyphicon-remove&quot;</span>
@@ -399,7 +395,7 @@ $(document).ready(function() {
 
     <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#callbackForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">();</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
             </div>
             
         </div>
@@ -417,10 +413,6 @@ $(document).ready(function() {
                     </ul>
 
                     
-
-
-
-
 
 
 
@@ -452,7 +444,7 @@ $(document).ready(function() {
         <div class="tab-pane" id="dynamic-programmatic-tab">
             
             <div data-demo-code="bootstrap">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;securePasswordForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;securePasswordForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Password<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-5&quot;</span><span class="nt">&gt;</span>
@@ -523,7 +515,7 @@ $(document).ready(function() {
         <span class="p">}</span>
     <span class="p">});</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
             </div>
             
         </div>
@@ -536,10 +528,6 @@ $(document).ready(function() {
                     <p>Again, we need to trigger events to archive this. This time, the <a href="/settings/#event-field">field events</a> (<code>err.field.fv</code> and <code>success.field.fv</code>) are used.</p>
 
                     
-
-
-
-
 
 
 
@@ -571,7 +559,7 @@ $(document).ready(function() {
         <div class="tab-pane" id="all-message-programmatic-tab">
             
             <div data-demo-code="bootstrap">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;passwordForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;passwordForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span> <span class="na">style=</span><span class="s">&quot;margin-bottom: 0;&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Password<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-5&quot;</span><span class="nt">&gt;</span>
@@ -707,7 +695,7 @@ $(document).ready(function() {
             <span class="p">}</span>
         <span class="p">});</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
             </div>
             
         </div>

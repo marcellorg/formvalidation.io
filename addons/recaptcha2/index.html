@@ -182,10 +182,10 @@ $(document).ready(function() {
                     </ul>
                     <p>You <strong>DO NOT</strong> have to do these steps because they are done automatically by the add-on.</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- DO NOT need to add to your page --&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- DO NOT need to add to your page --&gt;</span>
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;https://www.google.com/recaptcha/api.js&quot;</span> <span class="na">async</span> <span class="na">defer</span><span class="nt">&gt;&lt;/script&gt;</span>
 
-<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;captchaContainer&quot;</span> <span class="na">data-sitekey=</span><span class="s">&quot;...&quot;</span><span class="nt">&gt;&lt;/div&gt;</span></code></pre></div>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;captchaContainer&quot;</span> <span class="na">data-sitekey=</span><span class="s">&quot;...&quot;</span><span class="nt">&gt;&lt;/div&gt;</span></code></pre></figure>
                     <p>In short, all you need are the site and secret keys provided by reCaptcha.</p>
                 </section>
 
@@ -197,11 +197,11 @@ $(document).ready(function() {
                         <li>Download <a href="https://github.com/formvalidation/addon-recaptcha/releases/download/v0.4.0/recaptcha2-v0.4.0.zip" class="addonDownloadButton" data-placement="bottom" data-container="body">reCaptcha2</a> add-on</li>
                         <li>Include <code>reCaptcha2.min.js</code> (located in the <code>dist</code> directory) to your page. Ensure that it's placed after <code>formValidation(.min).js</code></li>
                     </ul>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- FormValidation plugin --&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- FormValidation plugin --&gt;</span>
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/vendor/formvalidation/dist/js/formValidation.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 
 <span class="c">&lt;!-- Add-ons. You should place it inside /vendor/formvalidation/dist/js/addons directory --&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/vendor/formvalidation/dist/js/addons/reCaptcha2.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/vendor/formvalidation/dist/js/addons/reCaptcha2.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></figure>
                 </section>
 
                 <div class="doc-hr"></div>
@@ -218,7 +218,7 @@ $(document).ready(function() {
 
                         <div class="tab-content">
                             <div class="tab-pane active" id="programmatic-tab">
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#signUpForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#signUpForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
     <span class="nx">framework</span><span class="o">:</span> <span class="s1">&#39;...&#39;</span><span class="p">,</span>
     <span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
         <span class="p">...</span>
@@ -236,7 +236,7 @@ $(document).ready(function() {
     <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
         <span class="p">...</span>
     <span class="p">}</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
                             </div>
 
                             <div class="tab-pane" id="declarative-tab">
@@ -245,7 +245,7 @@ $(document).ready(function() {
                                     <p>data-fv-addons="i18n, mandatoryIcon, recaptcha2"</p>
                                 </div>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;signUpForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;signUpForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span>
     <span class="na">data-fv-addons=</span><span class="s">&quot;reCaptcha2&quot;</span>
     <span class="na">data-fv-addons-recaptcha2-element=</span><span class="s">&quot;captchaContainer&quot;</span>
     <span class="na">data-fv-addons-recaptcha2-language=</span><span class="s">&quot;en&quot;</span>
@@ -254,7 +254,7 @@ $(document).ready(function() {
     <span class="na">data-fv-addons-recaptcha2-timeout=</span><span class="s">&quot;120&quot;</span>
     <span class="na">data-fv-addons-recaptcha2-message=</span><span class="s">&quot;The captcha is not valid&quot;</span><span class="nt">&gt;</span>
     ...
-<span class="nt">&lt;/form&gt;</span></code></pre></div>
+<span class="nt">&lt;/form&gt;</span></code></pre></figure>
                             </div>
                         </div>
                     </div>
@@ -356,16 +356,16 @@ $(document).ready(function() {
                         </table>
                     </div>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">FormValidation</span><span class="p">.</span><span class="nx">AddOn</span><span class="p">.</span><span class="nx">reCaptcha2</span><span class="p">.</span><span class="nx">reset</span><span class="p">(</span><span class="s1">&#39;captchaContainer&#39;</span><span class="p">);</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">FormValidation</span><span class="p">.</span><span class="nx">AddOn</span><span class="p">.</span><span class="nx">reCaptcha2</span><span class="p">.</span><span class="nx">reset</span><span class="p">(</span><span class="s1">&#39;captchaContainer&#39;</span><span class="p">);</span></code></pre></figure>
 
                     <p>This method doesn't remove the feedback icon and validation messages of captcha. To do that,
                         you need to call the <a href="/api/#reset-form">resetForm()</a> or <a href="/api/#reset-field">resetField()</a> method.</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Reset entire form</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Reset entire form</span>
 <span class="nx">$</span><span class="p">(</span><span class="nx">yourForm</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;resetForm&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
 
 <span class="c1">// Or just reset the captcha field</span>
-<span class="nx">$</span><span class="p">(</span><span class="nx">yourForm</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;resetField&#39;</span><span class="p">,</span> <span class="s1">&#39;g-recaptcha-response&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span></code></pre></div>
+<span class="nx">$</span><span class="p">(</span><span class="nx">yourForm</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;resetField&#39;</span><span class="p">,</span> <span class="s1">&#39;g-recaptcha-response&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span></code></pre></figure>
 
                     <p>See the <a href="#resetting-the-captcha">Resetting the captcha</a> for a simple usage.</p>
                 </section>
@@ -378,10 +378,6 @@ $(document).ready(function() {
                     <p>Below is the piece of code showing programmatic and declarative usages:</p>
 
                     
-
-
-
-
 
 
 
@@ -415,7 +411,7 @@ $(document).ready(function() {
         <div class="tab-pane" id="demo-programmatic-tab">
             
             <div data-demo-code="bootstrap">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Include FormValidation files first --&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Include FormValidation files first --&gt;</span>
 
 <span class="c">&lt;!-- Then include reCaptcha2 add-on --&gt;</span>
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/vendor/formvalidation/js/addons/reCaptcha2.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
@@ -525,7 +521,7 @@ $(document).ready(function() {
         <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#signUpForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;resetForm&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
     <span class="p">});</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
             </div>
             
         </div>
@@ -533,7 +529,7 @@ $(document).ready(function() {
         <div class="tab-pane" id="demo-declarative-tab">
             
             <div data-demo-code="bootstrap">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- FormValidation plugin and the class supports validating Bootstrap form --&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- FormValidation plugin and the class supports validating Bootstrap form --&gt;</span>
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/vendor/formvalidation/dist/js/formValidation.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/vendor/formvalidation/dist/js/framework/bootstrap.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 
@@ -624,7 +620,7 @@ $(document).ready(function() {
         <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#signUpForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;resetForm&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
     <span class="p">});</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
             </div>
             
         </div>
@@ -637,7 +633,7 @@ $(document).ready(function() {
                     <p>It's possible to place error message of the captcha in a custom area by using the <a href="/settings/#field-err">err</a> option.</p>
                     <p>Behind the scenes, the captcha field's name generated by Google reCaptcha is <code>g-recaptcha-response</code>, so we can apply the <code>err</code> option for this field as usual:</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;signUpForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;signUpForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Captcha<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-8&quot;</span><span class="nt">&gt;</span>
@@ -674,7 +670,7 @@ $(document).ready(function() {
         <span class="p">}</span>
     <span class="p">});</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
 
                     <div class="doc-alert doc-alert-warning">
                         Don't forget to wrap the captcha field's name (g-recaptcha-response) between single or double quote.
@@ -686,13 +682,13 @@ $(document).ready(function() {
                     <p>If you want to reset the entire form including the feedback icon and messages, calling <a href="/api/#reset-form">resetForm()</a> doesn't enough.</p>
                     <p>In addition to that, we also need to call the <a href="#reset">reset()</a> method:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#resetButton&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#resetButton&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="c1">// Reset the recaptcha</span>
     <span class="nx">FormValidation</span><span class="p">.</span><span class="nx">AddOn</span><span class="p">.</span><span class="nx">reCaptcha2</span><span class="p">.</span><span class="nx">reset</span><span class="p">(</span><span class="s1">&#39;captchaContainer&#39;</span><span class="p">);</span>
 
     <span class="c1">// Reset form</span>
     <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#signUpForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;resetForm&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
                     <p>Click the <strong>Reset</strong> button in the example above to see how it works.</p>
                 </section>

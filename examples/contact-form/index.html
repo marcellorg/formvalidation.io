@@ -223,10 +223,6 @@ $(document).ready(function() {
 
 
 
-
-
-
-
 <div class="doc-demo">
     <ul class="nav nav-tabs">
         <li role="presentation" class="dropdown">
@@ -253,7 +249,7 @@ $(document).ready(function() {
         <div class="tab-pane" id="basic-programmatic-tab">
             
             <div data-demo-code="bootstrap">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;contactForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;contactForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Full name<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-4&quot;</span><span class="nt">&gt;</span>
@@ -388,7 +384,7 @@ $(document).ready(function() {
             <span class="nx">generateCaptcha</span><span class="p">();</span>
         <span class="p">});</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
             </div>
             
         </div>
@@ -406,15 +402,15 @@ $(document).ready(function() {
                         It's easy for developers to integrate sending emails with <a href="https://mandrillapp.com/api/docs/">its API</a> which are available in various programming languages.</p>
                     <p>The following piece of code <a href="/examples/ajax-submit/">uses an Ajax request</a> to send the needed information to <a href="https://mandrillapp.com/api/docs/messages.JSON.html">Mandrill API</a>:</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;contactForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;contactForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
     <span class="c">&lt;!-- This container will be shown after sending new message --&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;alertContainer&quot;</span> <span class="na">class=</span><span class="s">&quot;alert&quot;</span> <span class="na">style=</span><span class="s">&quot;display: none;&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
 
     <span class="c">&lt;!-- Form fields --&gt;</span>
     ...
-<span class="nt">&lt;/form&gt;</span></code></pre></div>
+<span class="nt">&lt;/form&gt;</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#contactForm&#39;</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#contactForm&#39;</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">formValidation</span><span class="p">({</span>
         <span class="p">...</span>
     <span class="p">})</span>
@@ -484,7 +480,7 @@ $(document).ready(function() {
                 <span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;alert-warning&#39;</span><span class="p">)</span>
                 <span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s1">&#39;Sorry, cannot send the message&#39;</span><span class="p">)</span>
                 <span class="p">.</span><span class="nx">show</span><span class="p">();</span>
-        <span class="p">});</span></code></pre></div>
+        <span class="p">});</span></code></pre></figure>
 
                     <div class="doc-alert doc-alert-warning">
                         Due to the cross domain issue, the Ajax request above doesn't work on the Internet Explorer (IE) browser version 8, 9.
@@ -494,7 +490,7 @@ $(document).ready(function() {
                     <p>Although the code above doesn't require to touch your server side, the visitors can view the source and use your API key.
                         To avoid that, you can send the form data to your back-end first:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#contactForm&#39;</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#contactForm&#39;</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">formValidation</span><span class="p">({</span>
         <span class="p">...</span>
     <span class="p">})</span>
@@ -531,12 +527,12 @@ $(document).ready(function() {
                         <span class="p">.</span><span class="nx">show</span><span class="p">();</span>
             <span class="p">}</span>
         <span class="p">});</span>
-    <span class="p">});</span></code></pre></div>
+    <span class="p">});</span></code></pre></figure>
 
                     <p>And then the back-end sends the email using <a href="https://mandrillapp.com/api/docs/">Mandrill API</a>.
                         The following code shows how to do it with PHP:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 <span class="c1">// send-mail.php</span>
 
 <span class="c1">// Download Mandrill PHP library from</span>
@@ -582,7 +578,7 @@ $(document).ready(function() {
     <span class="k">echo</span> <span class="nb">json_encode</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
         <span class="s1">&#39;result&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;error&#39;</span><span class="p">,</span>
     <span class="p">));</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
                 </section>
             </div>
 

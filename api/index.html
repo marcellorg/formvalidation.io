@@ -167,18 +167,18 @@ $(document).ready(function() {
     <h2>Usage</h2>
 
     <p>After initializing the form with the plugin using <code>$(form).formValidation(options)</code>, there are two ways to call the plugin method:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Get plugin instance</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Get plugin instance</span>
 <span class="kd">var</span> <span class="nx">formValidation</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;formValidation&#39;</span><span class="p">);</span>
 
 <span class="c1">// and then call method</span>
-<span class="nx">formValidation</span><span class="p">.</span><span class="nx">methodName</span><span class="p">(</span><span class="nx">parameters</span><span class="p">)</span></code></pre></div>
+<span class="nx">formValidation</span><span class="p">.</span><span class="nx">methodName</span><span class="p">(</span><span class="nx">parameters</span><span class="p">)</span></code></pre></figure>
 
     <p>or:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="nx">methodName</span><span class="p">,</span> <span class="nx">parameters</span><span class="p">);</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="nx">methodName</span><span class="p">,</span> <span class="nx">parameters</span><span class="p">);</span></code></pre></figure>
 
     <p>The first way mostly returns the <code>FormValidation</code> instance, meanwhile the second one always returns the jQuery object representing the form.</p>
     <p>So, it's possible to chain methods as below:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// The first way</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// The first way</span>
 <span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;formValidation&#39;</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">updateStatus</span><span class="p">(</span><span class="s1">&#39;birthday&#39;</span><span class="p">,</span> <span class="s1">&#39;NOT_VALIDATED&#39;</span><span class="p">)</span>
@@ -187,7 +187,7 @@ $(document).ready(function() {
 <span class="c1">// The second one</span>
 <span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;updateStatus&#39;</span><span class="p">,</span> <span class="s1">&#39;birthday&#39;</span><span class="p">,</span> <span class="s1">&#39;NOT_VALIDATED&#39;</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;validateField&#39;</span><span class="p">,</span> <span class="s1">&#39;birthday&#39;</span><span class="p">);</span></code></pre></div>
+    <span class="p">.</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;validateField&#39;</span><span class="p">,</span> <span class="s1">&#39;birthday&#39;</span><span class="p">);</span></code></pre></figure>
 
     <p>Below is the list of public methods provided by the plugin.</p>
 
@@ -232,7 +232,7 @@ $(document).ready(function() {
 
     <p>If you want to do additional task after adding new field, then trigger the <a href="/settings/#event-form">added.field.fv</a> event:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">)</span>
         <span class="p">.</span><span class="nx">formValidation</span><span class="p">(</span><span class="nx">options</span><span class="p">)</span>
         <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;added.field.fv&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
@@ -246,7 +246,7 @@ $(document).ready(function() {
 
             <span class="c1">// Do something ...</span>
         <span class="p">});</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
     <h5>Example</h5>
     <ul class="doc-list">
@@ -608,7 +608,7 @@ $(document).ready(function() {
 
     <p>By triggering the <a href="/settings/#event-form">removed.field.fv</a> event, you can perform additional task after removing given field:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">)</span>
         <span class="p">.</span><span class="nx">formValidation</span><span class="p">(</span><span class="nx">options</span><span class="p">)</span>
         <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;removed.field.fv&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
@@ -621,7 +621,7 @@ $(document).ready(function() {
 
             <span class="c1">// Do something ...</span>
         <span class="p">});</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
     <h5>Example</h5>
     <ul class="doc-list">
@@ -689,8 +689,8 @@ $(document).ready(function() {
         </table>
     </div>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="nx">options</span><span class="p">);</span>
-<span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;formValidation&#39;</span><span class="p">).</span><span class="nx">resetForm</span><span class="p">();</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="nx">options</span><span class="p">);</span>
+<span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;formValidation&#39;</span><span class="p">).</span><span class="nx">resetForm</span><span class="p">();</span></code></pre></figure>
 </section>
                 <div class="doc-hr"></div>
 
@@ -704,13 +704,13 @@ $(document).ready(function() {
 
     <p>Behind the scenes, the method is equivalent to:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;formValidation&#39;</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;formValidation&#39;</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">updateStatus</span><span class="p">(</span><span class="nx">field</span><span class="p">,</span> <span class="s1">&#39;NOT_VALIDATED&#39;</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">validateField</span><span class="p">(</span><span class="nx">field</span><span class="p">);</span>
 
 <span class="c1">// Or</span>
 <span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;updateStatus&#39;</span><span class="p">,</span> <span class="nx">field</span><span class="p">,</span> <span class="s1">&#39;NOT_VALIDATED&#39;</span><span class="p">)</span>
-       <span class="p">.</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;validateField&#39;</span><span class="p">,</span> <span class="nx">field</span><span class="p">);</span></code></pre></div>
+       <span class="p">.</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;validateField&#39;</span><span class="p">,</span> <span class="nx">field</span><span class="p">);</span></code></pre></figure>
 
     <div class="table-responsive">
         <table class="table table-bordered table-striped">
@@ -735,10 +735,6 @@ $(document).ready(function() {
     <p>The following example describes how to re-validate a field which uses with <a href="http://eonasdan.github.io/bootstrap-datetimepicker/">Boostrap Datetime Picker</a>:</p>
 
     
-
-
-
-
 
 
 
@@ -770,7 +766,7 @@ $(document).ready(function() {
         <div class="tab-pane" id="date-picker-programmatic-tab">
             
             <div data-demo-code="bootstrap">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;/vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css&quot;</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="nt">/&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;/vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css&quot;</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;style </span><span class="na">type=</span><span class="s">&quot;text/css&quot;</span><span class="nt">&gt;</span>
 <span class="nf">#datetimeForm</span> <span class="nc">.has-feedback</span> <span class="nc">.form-control-feedback</span> <span class="p">{</span>
     <span class="k">top</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
@@ -826,7 +822,7 @@ $(document).ready(function() {
             <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#datetimeForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;revalidateField&#39;</span><span class="p">,</span> <span class="s1">&#39;datetimePicker&#39;</span><span class="p">);</span>
         <span class="p">});</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
             </div>
             
         </div>
@@ -984,11 +980,11 @@ $(document).ready(function() {
 
     <p><code>validate(): FormValidation</code> &mdash; Validate form manually. It is useful when you want to validate form by clicking a button or a link instead of a submit buttons.</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="nx">options</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;validate&#39;</span><span class="p">);</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="nx">options</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;validate&#39;</span><span class="p">);</span>
 
 <span class="c1">// or</span>
 <span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="nx">options</span><span class="p">);</span>
-<span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;formValidation&#39;</span><span class="p">).</span><span class="nx">validate</span><span class="p">();</span></code></pre></div>
+<span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;formValidation&#39;</span><span class="p">).</span><span class="nx">validate</span><span class="p">();</span></code></pre></figure>
 </section>
                 <div class="doc-hr"></div>
 

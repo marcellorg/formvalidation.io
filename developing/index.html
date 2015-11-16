@@ -167,7 +167,7 @@ $(document).ready(function() {
                     <h2>Writing new validator</h2>
                     <p>A validator has to follow the syntax:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">FormValidation</span><span class="p">.</span><span class="nx">Validator</span><span class="p">.</span><span class="nx">validatorName</span> <span class="o">=</span> <span class="p">{</span>
         <span class="cm">/**</span>
 <span class="cm">         * @param {FormValidation.Base} validator The validator plugin instance</span>
@@ -186,7 +186,7 @@ $(document).ready(function() {
             <span class="c1">// otherwise return false</span>
         <span class="p">}</span>
     <span class="p">};</span>
-<span class="p">}(</span><span class="nb">window</span><span class="p">.</span><span class="nx">jQuery</span><span class="p">));</span></code></pre></div>
+<span class="p">}(</span><span class="nb">window</span><span class="p">.</span><span class="nx">jQuery</span><span class="p">));</span></code></pre></figure>
 
                     <p>The validator must implement <code>validate()</code> method that returns <code>true</code> if the field is valid, or <code>false</code> otherwise.</p>
 
@@ -198,7 +198,7 @@ $(document).ready(function() {
 
                     <p>To apply the validator to particular field:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
     <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">fieldName</span><span class="o">:</span> <span class="p">{</span>
             <span class="c1">// Replace validatorName with the name of validator</span>
@@ -207,7 +207,7 @@ $(document).ready(function() {
             <span class="nx">validatorName</span><span class="o">:</span> <span class="nx">validatorOptions</span>
         <span class="p">}</span>
     <span class="p">}</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
                     <div class="doc-alert doc-alert-info">
                         To see how built-in validators are developed, you can look at their sources located inside the <code>src/js/validator</code> directory.
@@ -216,7 +216,7 @@ $(document).ready(function() {
                     <h3>Dynamic message</h3>
                     <p>If you want to set dynamic error message, the validator must return an object that consists of <code>valid</code> and <code>message</code> members:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">FormValidation</span><span class="p">.</span><span class="nx">Validator</span><span class="p">.</span><span class="nx">validatorName</span> <span class="o">=</span> <span class="p">{</span>
         <span class="nx">validate</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
             <span class="c1">// ... Do your logic checking</span>
@@ -233,7 +233,7 @@ $(document).ready(function() {
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">};</span>
-<span class="p">}(</span><span class="nb">window</span><span class="p">.</span><span class="nx">jQuery</span><span class="p">));</span></code></pre></div>
+<span class="p">}(</span><span class="nb">window</span><span class="p">.</span><span class="nx">jQuery</span><span class="p">));</span></code></pre></figure>
                     <div class="doc-alert doc-alert-info">
                         Look at this <a href="/examples/using-data-returned-validator/">example</a> if you want to attach more data to the returned value and reuse them later
                     </div>
@@ -253,7 +253,7 @@ $(document).ready(function() {
                     </ul>
                     <p>In fact, you can add more conditions to make a secure password.</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">FormValidation</span><span class="p">.</span><span class="nx">Validator</span><span class="p">.</span><span class="nx">password</span> <span class="o">=</span> <span class="p">{</span>
         <span class="nx">validate</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
             <span class="kd">var</span> <span class="nx">value</span> <span class="o">=</span> <span class="nx">$field</span><span class="p">.</span><span class="nx">val</span><span class="p">();</span>
@@ -284,13 +284,9 @@ $(document).ready(function() {
             <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
         <span class="p">}</span>
     <span class="p">};</span>
-<span class="p">}(</span><span class="nb">window</span><span class="p">.</span><span class="nx">jQuery</span><span class="p">));</span></code></pre></div>
+<span class="p">}(</span><span class="nb">window</span><span class="p">.</span><span class="nx">jQuery</span><span class="p">));</span></code></pre></figure>
 
                     
-
-
-
-
 
 
 
@@ -330,7 +326,7 @@ $(document).ready(function() {
         <div class="tab-pane" id="password-programmatic-tab">
             
             <div data-demo-code="bootstrap">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;passwordBootstrapForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;passwordBootstrapForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Password<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-5&quot;</span><span class="nt">&gt;</span>
@@ -392,11 +388,11 @@ $(document).ready(function() {
         <span class="p">}</span>
     <span class="p">});</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
             </div>
             
             <div data-demo-code="foundation">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;passwordFoundationForm&quot;</span> <span class="na">class=</span><span class="s">&quot;fv-form-horizontal&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;passwordFoundationForm&quot;</span> <span class="na">class=</span><span class="s">&quot;fv-form-horizontal&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;row&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;small-3 columns&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;right&quot;</span><span class="nt">&gt;</span>Password<span class="nt">&lt;/label&gt;</span>
@@ -460,11 +456,11 @@ $(document).ready(function() {
         <span class="p">}</span>
     <span class="p">});</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
             </div>
             
             <div data-demo-code="pure">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;passwordPureForm&quot;</span> <span class="na">class=</span><span class="s">&quot;pure-form pure-form-aligned&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;passwordPureForm&quot;</span> <span class="na">class=</span><span class="s">&quot;pure-form pure-form-aligned&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;pure-control-group&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;label&gt;</span>Password<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;password&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;pwd&quot;</span> <span class="nt">/&gt;</span>
@@ -523,11 +519,11 @@ $(document).ready(function() {
         <span class="p">}</span>
     <span class="p">});</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
             </div>
             
             <div data-demo-code="semantic">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;passwordSemanticForm&quot;</span> <span class="na">class=</span><span class="s">&quot;ui grid form fv-form-horizontal&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;passwordSemanticForm&quot;</span> <span class="na">class=</span><span class="s">&quot;ui grid form fv-form-horizontal&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;row field&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;four wide column&quot;</span><span class="nt">&gt;</span>Password<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;eight wide column&quot;</span><span class="nt">&gt;</span>
@@ -593,11 +589,11 @@ $(document).ready(function() {
         <span class="p">}</span>
     <span class="p">});</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
             </div>
             
             <div data-demo-code="uikit">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;passwordUikitForm&quot;</span> <span class="na">class=</span><span class="s">&quot;uk-form uk-form-horizontal&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;passwordUikitForm&quot;</span> <span class="na">class=</span><span class="s">&quot;uk-form uk-form-horizontal&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;uk-form-row&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;uk-form-label&quot;</span><span class="nt">&gt;</span>Password<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;uk-form-controls&quot;</span><span class="nt">&gt;</span>
@@ -660,7 +656,7 @@ $(document).ready(function() {
         <span class="p">}</span>
     <span class="p">});</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
             </div>
             
         </div>
@@ -672,7 +668,7 @@ $(document).ready(function() {
                         which condition the password doesn't pass. It informs the same <code>The password is not valid</code> message in all cases.</p>
                     <p>Using <a href="#dynamic-message">dynamic message</a> ability, it's easy to make the validator more friendly.</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">FormValidation</span><span class="p">.</span><span class="nx">Validator</span><span class="p">.</span><span class="nx">securePassword</span> <span class="o">=</span> <span class="p">{</span>
         <span class="nx">validate</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
             <span class="kd">var</span> <span class="nx">value</span> <span class="o">=</span> <span class="nx">$field</span><span class="p">.</span><span class="nx">val</span><span class="p">();</span>
@@ -715,14 +711,10 @@ $(document).ready(function() {
             <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
         <span class="p">}</span>
     <span class="p">};</span>
-<span class="p">}(</span><span class="nb">window</span><span class="p">.</span><span class="nx">jQuery</span><span class="p">));</span></code></pre></div>
+<span class="p">}(</span><span class="nb">window</span><span class="p">.</span><span class="nx">jQuery</span><span class="p">));</span></code></pre></figure>
                     <p>Now, the form shows exactly condition that we want the password to satisfy.</p>
 
                     
-
-
-
-
 
 
 
@@ -754,7 +746,7 @@ $(document).ready(function() {
         <div class="tab-pane" id="secure-password-programmatic-tab">
             
             <div data-demo-code="bootstrap">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;securePasswordForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;securePasswordForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Password<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-5&quot;</span><span class="nt">&gt;</span>
@@ -835,7 +827,7 @@ $(document).ready(function() {
         <span class="p">}</span>
     <span class="p">});</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
             </div>
             
         </div>

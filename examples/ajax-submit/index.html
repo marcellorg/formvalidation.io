@@ -167,7 +167,7 @@ $(document).ready(function() {
                     <p>After clicking the <a href="/settings/#form-button">submit</a> button, FormValidation will submit the form if all the fields are valid.</p>
                     <p>If you want to do additional tasks instead of submitting the form, you can trigger the <a href="/settings/#event-form">success.form.fv</a> event:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">)</span>
         <span class="p">.</span><span class="nx">formValidation</span><span class="p">({</span>
             <span class="p">...</span> <span class="nx">options</span> <span class="p">...</span>
@@ -182,11 +182,11 @@ $(document).ready(function() {
 
             <span class="c1">// Do whatever you want here ...</span>
         <span class="p">});</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
                     <p>Inside the <code>success.form.fv</code> event handler, if you want to submit the form after doing your custom job, just simply use the <a href="/api/#default-submit">defaultSubmit()</a> method:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">)</span>
         <span class="p">.</span><span class="nx">formValidation</span><span class="p">({</span>
             <span class="p">...</span> <span class="nx">options</span> <span class="p">...</span>
@@ -203,7 +203,7 @@ $(document).ready(function() {
             <span class="c1">// Then submit the form as usual</span>
             <span class="nx">fv</span><span class="p">.</span><span class="nx">defaultSubmit</span><span class="p">();</span>
         <span class="p">});</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
                     <p>The next sections demonstrates one of most frequent usage &mdash; using Ajax to submit the form.</p>
                 </section>
@@ -216,7 +216,7 @@ $(document).ready(function() {
                     <p>The following code snippet uses the jQuery's <a href="http://api.jquery.com/serialize/">serialize()</a> method to get the form data,
                         and then <a href="http://api.jquery.com/jquery.ajax/">ajax()</a> methods to send the data to the back-end endpoint: </p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">)</span>
         <span class="p">.</span><span class="nx">formValidation</span><span class="p">({</span>
             <span class="p">...</span> <span class="nx">options</span> <span class="p">...</span>
@@ -238,7 +238,7 @@ $(document).ready(function() {
                 <span class="p">}</span>
             <span class="p">});</span>
         <span class="p">});</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
                 </section>
 
                 <div class="doc-hr"></div>
@@ -248,11 +248,11 @@ $(document).ready(function() {
 
                     <p>Assume that the form consists of file input:</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span> <span class="na">name=</span><span class="s">&quot;uploadedFiles&quot;</span> <span class="na">multiple</span> <span class="nt">/&gt;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span> <span class="na">name=</span><span class="s">&quot;uploadedFiles&quot;</span> <span class="na">multiple</span> <span class="nt">/&gt;</span></code></pre></figure>
 
                     <p>You can use <a href="https://developer.mozilla.org/en-US/docs/Web/API/FormData">FormData</a> to collect the form data including selected files:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">)</span>
         <span class="p">.</span><span class="nx">formValidation</span><span class="p">({</span>
             <span class="p">...</span> <span class="nx">options</span> <span class="p">...</span>
@@ -288,7 +288,7 @@ $(document).ready(function() {
                 <span class="p">}</span>
             <span class="p">});</span>
         <span class="p">});</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
                     <p>Please pay attention on <code>contentType</code> and <code>processData</code> options of the jQuery's <a href="http://api.jquery.com/jquery.ajax/">ajax()</a> method:</p>
                     <ul class="doc-list">
@@ -313,14 +313,14 @@ $(document).ready(function() {
                     <p><a href="https://github.com/malsup/form/">jQuery Form</a> plugin allows us to submit the form, including sending files with an Ajax request easily.</p>
                     <p>The following snippet shows how to use jQuery Form's <a href="http://jquery.malsup.com/form/#api">ajaxSubmit()</a> method to send all form data, including selected files to the server:</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Including jQuery Form plugin --&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Including jQuery Form plugin --&gt;</span>
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;https://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 
 <span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;testForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
     ...
-<span class="nt">&lt;/form&gt;</span></code></pre></div>
+<span class="nt">&lt;/form&gt;</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#testForm&#39;</span><span class="p">)</span>
         <span class="p">.</span><span class="nx">formValidation</span><span class="p">({</span>
             <span class="p">...</span> <span class="nx">options</span> <span class="p">...</span>
@@ -340,7 +340,7 @@ $(document).ready(function() {
                 <span class="p">}</span>
             <span class="p">});</span>
         <span class="p">});</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
                 </section>
 
                 <div class="doc-hr"></div>

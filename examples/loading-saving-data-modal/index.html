@@ -181,7 +181,7 @@ $(document).ready(function() {
                     <p>Our example will use Bootbox because it allows to create programmatic dialog boxes easily.</p>
                     <p>When showing the form that consists of data loaded from server, you shouldn't use a string containing entire form markup:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Don&#39;t</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Don&#39;t</span>
 <span class="kd">var</span> <span class="nx">message</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;&lt;form id=&quot;userForm&quot;&gt;&#39;</span><span class="p">,</span>
         <span class="s1">&#39;&lt;input type=&quot;text&quot; name=&quot;email&quot; value=&quot;...&quot; /&gt;&#39;</span><span class="p">,</span>
@@ -190,11 +190,11 @@ $(document).ready(function() {
 
 <span class="nx">bootbox</span><span class="p">.</span><span class="nx">dialog</span><span class="p">({</span>
     <span class="nx">message</span><span class="o">:</span> <span class="nx">message</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
                     <p>Instead, prepare a form, populate the data and pass the form element:</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html">// Do
+<figure class="highlight"><pre><code class="language-html" data-lang="html">// Do
 <span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;userForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">style=</span><span class="s">&quot;display: none;&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">name=</span><span class="s">&quot;email&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/form&gt;</span>
@@ -203,13 +203,13 @@ $(&#39;#userForm&#39;).find(&#39;[name=&quot;email&quot;]&#39;).val(...);
 
 bootbox.dialog({
     message: $(&#39;#userForm&#39;)
-});</code></pre></div>
+});</code></pre></figure>
 
                     <p>By doing this, we can easily adjust the form markup as well as manage the DOM.</p>
 
                     <p>The example also triggers event to <a href="/examples/ajax-submit/">save the form data</a> via an Ajax request:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#userForm&#39;</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#userForm&#39;</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">formValidation</span><span class="p">({</span>
         <span class="p">...</span>
     <span class="p">})</span>
@@ -223,17 +223,13 @@ bootbox.dialog({
         <span class="p">}).</span><span class="nx">success</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
             <span class="c1">// ... Process the result</span>
         <span class="p">});</span>
-    <span class="p">});</span></code></pre></div>
+    <span class="p">});</span></code></pre></figure>
 
                     <div class="doc-alert doc-alert-info">
                         To demonstrates loading and saving data via Ajax requests, the example uses <a href="http://jsonplaceholder.typicode.com/">jsonplaceholder</a>, a fake REST API service
                     </div>
 
                     
-
-
-
-
 
 
 
@@ -265,7 +261,7 @@ bootbox.dialog({
         <div class="tab-pane" id="demo-programmatic-tab">
             
             <div data-demo-code="bootstrap">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;//oss.maxcdn.com/bootbox/4.2.0/bootbox.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;//oss.maxcdn.com/bootbox/4.2.0/bootbox.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 
 <span class="c">&lt;!--</span>
 <span class="c">Data items are displayed in table cells.</span>
@@ -509,7 +505,7 @@ bootbox.dialog({
         <span class="p">});</span>
     <span class="p">});</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
             </div>
             
         </div>

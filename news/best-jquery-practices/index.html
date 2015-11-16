@@ -175,11 +175,11 @@ $(document).ready(function() {
 <h3>Loading from CDN</h3>
 <p>Instead of storing jQuery on your server, choose to load it from popular CDNs. It will decrease the page loading time.</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Don&#39;t --&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Don&#39;t --&gt;</span>
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/vendor/jquery/jquery.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 
 <span class="c">&lt;!-- Do --&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></figure>
 
 <p>Below is the list of popular CDNs which you can find jQuery on:</p>
 <ul class="doc-list">
@@ -194,20 +194,20 @@ $(document).ready(function() {
 
 <p><strong>Provide a fallback version in your server if loading from CDN fails</strong></p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-<span class="nt">&lt;script&gt;</span><span class="nb">window</span><span class="p">.</span><span class="nx">jQuery</span> <span class="o">||</span> <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">&quot;&lt;script src=&#39;/vendor/jquery/jquery.min.js&#39;&gt;\x3C/script&gt;&quot;</span><span class="p">);</span><span class="nt">&lt;/script&gt;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script&gt;</span><span class="nb">window</span><span class="p">.</span><span class="nx">jQuery</span> <span class="o">||</span> <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">&quot;&lt;script src=&#39;/vendor/jquery/jquery.min.js&#39;&gt;\x3C/script&gt;&quot;</span><span class="p">);</span><span class="nt">&lt;/script&gt;</span></code></pre></figure>
 
 <p><strong>Choosing the compressed version</strong></p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Don&#39;t --&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Don&#39;t --&gt;</span>
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 
 <span class="c">&lt;!-- Do --&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></figure>
 
 <p><strong>Placing the script at the bottom of page</strong></p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!doctype html&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!doctype html&gt;</span>
 <span class="nt">&lt;head&gt;</span>
     ...
     <span class="c">&lt;!-- Don&#39;t --&gt;</span>
@@ -217,20 +217,20 @@ $(document).ready(function() {
     ...
     <span class="c">&lt;!-- Do --&gt;</span>
     <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-<span class="nt">&lt;/body&gt;</span></code></pre></div>
+<span class="nt">&lt;/body&gt;</span></code></pre></figure>
 
 <p><strong>Using protocol-relative URL</strong></p>
 <p>Leaving http: or https: out of the URL. By doing this, the browser will choose to load the https URL of script if your page is severed under https.</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Don&#39;t --&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Don&#39;t --&gt;</span>
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 
 <span class="c">&lt;!-- Do --&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></figure>
 
 <h3>Shorthand for the ready event</h3>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Usual way</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Usual way</span>
 <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="p">...</span>
 <span class="p">});</span>
@@ -238,21 +238,21 @@ $(document).ready(function() {
 <span class="c1">// The shorthand</span>
 <span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
 
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
 <h3>Naming jQuery object starting with $</h3>
 <p>With this naming convention, we can know whether or not a variable is a jQuery object.</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Don&#39;t</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Don&#39;t</span>
 <span class="kd">var</span> <span class="nx">form</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#contactForm&#39;</span><span class="p">);</span>
 
 <span class="c1">// Do</span>
-<span class="kd">var</span> <span class="nx">$form</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#contactForm&#39;</span><span class="p">);</span></code></pre></div>
+<span class="kd">var</span> <span class="nx">$form</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#contactForm&#39;</span><span class="p">);</span></code></pre></figure>
 
 <h3>Using $this</h3>
 <p>Use $this variable at the beginning anonymous functions, for example, inside an each loop:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Don&#39;t</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Don&#39;t</span>
 <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
         <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;active&#39;</span><span class="p">);</span>
@@ -265,14 +265,14 @@ $(document).ready(function() {
     <span class="nx">$this</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
         <span class="nx">$this</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;active&#39;</span><span class="p">);</span>
     <span class="p">});</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
 <p>Someone prefer to use that or self. Don't forget to prefix with $ if it's jQuery object.</p>
 
 <h3>Caching jQuery objects</h3>
 <p>If a jQuery object is used multiple times, caching it will save the performance of script.</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Don&#39;t</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Don&#39;t</span>
 <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.menu li&#39;</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="p">...</span> <span class="p">});</span>
 <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.menu li&#39;</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="p">...</span> <span class="p">});</span>
 
@@ -281,7 +281,7 @@ $(document).ready(function() {
 <span class="nx">$items</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="p">...</span> <span class="p">});</span>
 
 <span class="c1">// Reuse it</span>
-<span class="nx">$items</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="p">...</span> <span class="p">});</span></code></pre></div>
+<span class="nx">$items</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="p">...</span> <span class="p">});</span></code></pre></figure>
 
 <h3>Chaining method</h3>
 <p>Chaining method is one of most powerful features of jQuery. It allows us to call multiple methods at the same time.</p>
@@ -289,7 +289,7 @@ $(document).ready(function() {
     "Write less, do more", the jQuery's slogan, is perfectly right in this case
 </div>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Don&#39;t</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Don&#39;t</span>
 <span class="kd">var</span> <span class="nx">$a</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#about&#39;</span><span class="p">);</span>
 <span class="nx">$a</span><span class="p">.</span><span class="nx">hide</span><span class="p">();</span>
 <span class="nx">$a</span><span class="p">.</span><span class="nx">addClass</span><span class="p">();</span>
@@ -305,12 +305,12 @@ $(document).ready(function() {
     <span class="p">.</span><span class="nx">hide</span><span class="p">()</span>
     <span class="p">.</span><span class="nx">addClass</span><span class="p">()</span>
     <span class="p">.</span><span class="nx">fadeIn</span><span class="p">()</span>
-    <span class="p">.</span><span class="nx">hide</span><span class="p">();</span></code></pre></div>
+    <span class="p">.</span><span class="nx">hide</span><span class="p">();</span></code></pre></figure>
 
 <h3>Creating new element</h3>
 <p>When creating new element, try to use jQuery methods to manipulate the element instead of giving full HTML code.</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Don&#39;t</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Don&#39;t</span>
 <span class="kd">var</span> <span class="nx">$hidden</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;&lt;input class=&quot;form-control&quot; type=&quot;hidden&quot; name=&quot;foo&quot; value=&quot;bar&quot; /&gt;&#39;</span><span class="p">).</span><span class="nx">appendTo</span><span class="p">(</span><span class="s1">&#39;#form&#39;</span><span class="p">);</span>
 
 <span class="c1">// Do</span>
@@ -328,12 +328,12 @@ $(document).ready(function() {
                     <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;foo&#39;</span><span class="p">,</span>
                     <span class="nx">value</span><span class="o">:</span> <span class="s1">&#39;bar&#39;</span>
                 <span class="p">})</span>
-                <span class="p">.</span><span class="nx">appendTo</span><span class="p">(</span><span class="s1">&#39;#form&#39;</span><span class="p">);</span></code></pre></div>
+                <span class="p">.</span><span class="nx">appendTo</span><span class="p">(</span><span class="s1">&#39;#form&#39;</span><span class="p">);</span></code></pre></figure>
 
 <h3>Don't mix CSS with jQuery</h3>
 <p>Don't set the CSS styles for element directly. Using CSS class instead.</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html">// Don&#39;t
+<figure class="highlight"><pre><code class="language-html" data-lang="html">// Don&#39;t
 $(&#39;#button&#39;).css({
     &#39;background-color&#39;: &#39;#5cb85c&#39;,
     &#39;border-color&#39;: &#39;#4cae4c&#39;
@@ -345,7 +345,7 @@ $(&#39;#button&#39;).css({
     border-color: #4cae4c;
 }
 
-$(&#39;#button&#39;).addClass(&#39;success&#39;);</code></pre></div>
+$(&#39;#button&#39;).addClass(&#39;success&#39;);</code></pre></figure>
 
 <h3>Optimizing selectors</h3>
 
@@ -355,81 +355,81 @@ $(&#39;#button&#39;).addClass(&#39;success&#39;);</code></pre></div>
     <a href="https://github.com/jquery/sizzle">Sizzle</a> is a pure-JavaScript CSS selector engine used by jQuery
 </div>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Don&#39;t</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Don&#39;t</span>
 <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#wrapper #inner&#39;</span><span class="p">);</span>
 <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;div#inner&#39;</span><span class="p">);</span>
 <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.wrapper #inner&#39;</span><span class="p">);</span>
 
 <span class="c1">// Do</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#inner&#39;</span><span class="p">);</span></code></pre></div>
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#inner&#39;</span><span class="p">);</span></code></pre></figure>
 
 <p><strong>Using ID-based selector</strong></p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Don&#39;t</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Don&#39;t</span>
 <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#container .row&#39;</span><span class="p">);</span>
 
 <span class="c1">// Faster</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#container&#39;</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;.row&#39;</span><span class="p">);</span></code></pre></div>
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#container&#39;</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;.row&#39;</span><span class="p">);</span></code></pre></figure>
 
 <p><strong>Specificity</strong></p>
 <p>Be specific on the right-hand side of your selector, and less specific on the left.</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Unoptimized</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Unoptimized</span>
 <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;div.data .gonzalez&#39;</span><span class="p">);</span>
 
 <span class="c1">// Optimized</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.data td.gonzalez&#39;</span><span class="p">);</span></code></pre></div>
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.data td.gonzalez&#39;</span><span class="p">);</span></code></pre></figure>
 
 <p><strong>Avoid the universal selectors</strong></p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Slow</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Slow</span>
 <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;div.container &gt; *&#39;</span><span class="p">);</span>
 
 <span class="c1">// Faster</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.container&#39;</span><span class="p">).</span><span class="nx">children</span><span class="p">();</span></code></pre></div>
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.container&#39;</span><span class="p">).</span><span class="nx">children</span><span class="p">();</span></code></pre></figure>
 
 <p><strong>Avoid implied universal selectors</strong></p>
 <p>It's recommended to prefix a pseudo-class selectors (beginning with :) with a tag name or other selector. Otherwise, the universal selector (*) is still implied.</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Don&#39;t</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Don&#39;t</span>
 <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.category :radio&#39;</span><span class="p">);</span>
 
 <span class="c1">// Do</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.category input:radio&#39;</span><span class="p">);</span></code></pre></div>
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.category input:radio&#39;</span><span class="p">);</span></code></pre></figure>
 
 <p><strong>Using filtering methods instead of pseudo selectors</strong></p>
 <p>When possible, use jQuery filter method instead of pseudo selectors. jQuery then uses querySelectorAll method which is faster than using Sizzle methods.</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Don&#39;t</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Don&#39;t</span>
 <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.item:first&#39;</span><span class="p">)</span>
 
 <span class="c1">// Do</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.item&#39;</span><span class="p">).</span><span class="nx">eq</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span></code></pre></div>
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.item&#39;</span><span class="p">).</span><span class="nx">eq</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span></code></pre></figure>
 
 <h3>Don't use JS inline to bind events</h3>
 <p>Always using jQuery to bind events:</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Don&#39;t --&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Don&#39;t --&gt;</span>
 <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">&quot;saveButton&quot;</span> <span class="na">onclick=</span><span class="s">&quot;javascript: save();&quot;</span><span class="nt">&gt;</span>Save<span class="nt">&lt;/button&gt;</span>
 
 // Do
 $(&#39;#saveButton&#39;).on(&#39;click&#39;, function() {
     ...
-});</code></pre></div>
+});</code></pre></figure>
 
 <h3>Using custom namespace for events</h3>
 <p>By using custom namespace, you can easily unbind the exact event without affecting to other event handlers which are bound to the element.</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#saveButton&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click.bv&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#saveButton&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click.bv&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="p">...</span>
 <span class="p">});</span>
 
 <span class="c1">// Later, it&#39;s possible to unbind the event handler</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#saveButton&#39;</span><span class="p">).</span><span class="nx">off</span><span class="p">(</span><span class="s1">&#39;click.bv&#39;</span><span class="p">);</span></code></pre></div>
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#saveButton&#39;</span><span class="p">).</span><span class="nx">off</span><span class="p">(</span><span class="s1">&#39;click.bv&#39;</span><span class="p">);</span></code></pre></figure>
 
 <h3>Don't put all parameters in Ajax URL</h3>
 <p>When sending data to remote URL using an Ajax request, use data option to send them instead of putting in the URL.</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Don&#39;t</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Don&#39;t</span>
 <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
     <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;/remote/url?param1=value1&amp;amp;param2=value2...&#39;</span>
 <span class="p">}});</span>
@@ -442,7 +442,7 @@ $(&#39;#saveButton&#39;).on(&#39;click&#39;, function() {
         <span class="nx">param2</span><span class="o">:</span> <span class="s1">&#39;value2&#39;</span>
         <span class="p">...</span>
     <span class="p">}</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
 <p>In the case the parameter might be too long (the article's content, for example), consider to use the POST method for both Ajax requests and the back-end.</p>
 <div class="doc-alert doc-alert-info">
@@ -457,11 +457,11 @@ $(&#39;#saveButton&#39;).on(&#39;click&#39;, function() {
 
                 <div class="doc-pagination">
                     
-                        <a href="/news/v0.5.3-released/" class="doc-pagination-older">&larr; PREVIOUS</a>
+                        <a href="/news/v0-5-3-released/" class="doc-pagination-older">&larr; PREVIOUS</a>
                     
 
                     
-                        <a href="/news/v0.6.0-released/" class="doc-pagination-newer">NEXT &rarr;</a>
+                        <a href="/news/v0-6-0-released/" class="doc-pagination-newer">NEXT &rarr;</a>
                     
                 </div>
             </div>

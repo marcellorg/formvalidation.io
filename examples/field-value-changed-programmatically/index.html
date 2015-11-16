@@ -167,20 +167,16 @@ $(document).ready(function() {
                     FormValidation doesn't change the field validity and update the feedback icon.</p>
                 <p>You need to ask the plugin to revalidate it by calling the <a href="/api#revalidate-field">revalidateField()</a> method.</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Update the field value</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Update the field value</span>
 <span class="nx">$fieldElement</span><span class="p">.</span><span class="nx">val</span><span class="p">(</span><span class="nx">newValue</span><span class="p">);</span>
 
 <span class="c1">// Revalidate it</span>
-<span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;revalidateField&#39;</span><span class="p">,</span> <span class="nx">fieldName</span><span class="p">);</span></code></pre></div>
+<span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;revalidateField&#39;</span><span class="p">,</span> <span class="nx">fieldName</span><span class="p">);</span></code></pre></figure>
 
                 <p>It's one of principles when <a href="/examples#compatibility">integrating</a> FormValidation with 3rd party plugins.</p>
                 <p>In the following example, after clicking the <strong>Set values</strong> button, the <strong>First name</strong> and <strong>Last name</strong> field are revalidated.</p>
 
                 
-
-
-
-
 
 
 
@@ -212,7 +208,7 @@ $(document).ready(function() {
         <div class="tab-pane" id="demo-programmatic-tab">
             
             <div data-demo-code="bootstrap">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;profileForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;profileForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Full name<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-4&quot;</span><span class="nt">&gt;</span>
@@ -271,7 +267,7 @@ $(document).ready(function() {
             <span class="p">.</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;revalidateField&#39;</span><span class="p">,</span> <span class="s1">&#39;lastName&#39;</span><span class="p">);</span>
     <span class="p">});</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
             </div>
             
         </div>

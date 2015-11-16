@@ -178,7 +178,7 @@ $(document).ready(function() {
                         <li>Create a file named <code>jotform.js</code> with the following content:</li>
                     </ul>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">FormValidation</span><span class="p">.</span><span class="nx">Framework</span><span class="p">.</span><span class="nx">Jotform</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">element</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">options</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span> <span class="p">{</span>
             <span class="nx">button</span><span class="o">:</span> <span class="p">{</span>
@@ -213,13 +213,13 @@ $(document).ready(function() {
     <span class="c1">// The JotForm class need to extend from the FormValidation&#39;s Base one</span>
     <span class="nx">FormValidation</span><span class="p">.</span><span class="nx">Framework</span><span class="p">.</span><span class="nx">Jotform</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">extend</span><span class="p">({},</span> <span class="nx">FormValidation</span><span class="p">.</span><span class="nx">Base</span><span class="p">.</span><span class="nx">prototype</span><span class="p">,</span> <span class="p">{</span>
     <span class="p">});</span>
-<span class="p">}(</span><span class="nx">jQuery</span><span class="p">));</span></code></pre></div>
+<span class="p">}(</span><span class="nx">jQuery</span><span class="p">));</span></code></pre></figure>
 
                     <ul class="doc-list">
                         <li>Create a file named <code>jotform.css</code> with the following content:</li>
                     </ul>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">.</span><span class="nx">fv</span><span class="o">-</span><span class="nx">form</span><span class="o">-</span><span class="nx">jotform</span> <span class="p">.</span><span class="nx">form</span><span class="o">-</span><span class="nx">label</span><span class="o">-</span><span class="nx">left</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">.</span><span class="nx">fv</span><span class="o">-</span><span class="nx">form</span><span class="o">-</span><span class="nx">jotform</span> <span class="p">.</span><span class="nx">form</span><span class="o">-</span><span class="nx">label</span><span class="o">-</span><span class="nx">left</span> <span class="p">{</span>
     <span class="nx">width</span><span class="o">:</span> <span class="mi">200</span><span class="nx">px</span> <span class="o">!</span><span class="nx">important</span><span class="p">;</span>
 <span class="p">}</span>
 
@@ -248,7 +248,7 @@ $(document).ready(function() {
 <span class="p">}</span>
 <span class="p">.</span><span class="nx">fv</span><span class="o">-</span><span class="nx">form</span><span class="o">-</span><span class="nx">jotform</span> <span class="p">.</span><span class="nx">form</span><span class="o">-</span><span class="nx">sub</span><span class="o">-</span><span class="nx">label</span><span class="o">-</span><span class="nx">container</span> <span class="p">.</span><span class="nx">fv</span><span class="o">-</span><span class="nx">control</span><span class="o">-</span><span class="nx">feedback</span> <span class="p">{</span>
     <span class="nx">top</span><span class="o">:</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
                     <p>You should place <code>jotform.js</code> and <code>jotform.css</code> in <code>formvalidation/dist/js/framework</code> and <code>formvalidation/dist/css</code> directories respectively.</p>
                 </section>
@@ -258,7 +258,7 @@ $(document).ready(function() {
                 <section>
                     <h2>Including the library</h2>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- The default form styles provided by JotForm --&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- The default form styles provided by JotForm --&gt;</span>
 <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;/vendor/jotform/css/form.css&quot;</span><span class="nt">&gt;</span>
 
 <span class="c">&lt;!-- Optional: You can include additional theme of JotForm such as nova --&gt;</span>
@@ -276,7 +276,7 @@ $(document).ready(function() {
 
 <span class="c">&lt;!-- FormValidation plugin and the class supports validating JotForm form --&gt;</span>
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/vendor/formvalidation/dist/js/formValidation.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/vendor/formvalidation/dist/js/framework/jotform.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/vendor/formvalidation/dist/js/framework/jotform.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></figure>
                 </section>
 
                 <div class="doc-hr"></div>
@@ -286,10 +286,10 @@ $(document).ready(function() {
 
                     <p>When calling <code>.formValidation()</code>, you need to set the <a href="/settings/#form-framework">framework</a> option:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
     <span class="nx">framework</span><span class="o">:</span> <span class="s1">&#39;jotform&#39;</span><span class="p">,</span>
     <span class="p">...</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
                     <p>The following form is taken from the <a href="http://www.jotform.com/form-templates/time-off-request-form">Time off request</a> example provided by JotForm.
                         The form markup is also cleaned up.</p>
@@ -301,7 +301,7 @@ $(document).ready(function() {
                     <p>Instead of using JotForm's date input which consists of three separated day, month, and year fields, we use a simple text input for filling a date.
                         We can easily apply the <a href="/validators/date/">date</a> validator and use <code>min</code> option as a <a href="/settings/#dynamic-option">dynamic option</a>:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#timeOffForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#timeOffForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
     <span class="nx">framework</span><span class="o">:</span> <span class="s1">&#39;jotform&#39;</span><span class="p">,</span>
     <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">startDate</span><span class="o">:</span> <span class="p">{</span>
@@ -334,17 +334,13 @@ $(document).ready(function() {
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">}</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
                     <div class="doc-alert doc-alert-info">
                         Some of fields use the <a href="/settings/#field-row">row</a> option to support multiple fields in the same row container
                     </div>
 
                     
-
-
-
-
 
 
 
@@ -376,7 +372,7 @@ $(document).ready(function() {
         <div class="tab-pane" id="basic-programmatic-tab">
             
             <div data-demo-code="jotform">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">&quot;jotform-form&quot;</span> <span class="na">action=</span><span class="s">&quot;http://submit.jotform.me/submit.php&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">name=</span><span class="s">&quot;form_51937699295476&quot;</span> <span class="na">id=</span><span class="s">&quot;timeOffForm&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">&quot;jotform-form&quot;</span> <span class="na">action=</span><span class="s">&quot;http://submit.jotform.me/submit.php&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">name=</span><span class="s">&quot;form_51937699295476&quot;</span> <span class="na">id=</span><span class="s">&quot;timeOffForm&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;formID&quot;</span> <span class="na">value=</span><span class="s">&quot;51937699295476&quot;</span><span class="nt">/&gt;</span>
 
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-all&quot;</span><span class="nt">&gt;</span>
@@ -601,7 +597,7 @@ $(document).ready(function() {
         <span class="p">}</span>
     <span class="p">});</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
             </div>
             
         </div>

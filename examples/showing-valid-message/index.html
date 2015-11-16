@@ -168,7 +168,7 @@ $(document).ready(function() {
                     <p>The quick answer is YES. This example shows you how to implement this feature.</p>
                     <p>Assuming that our form has two text boxes which are username and password.</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;signupForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;signupForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-sm-3 control-label&quot;</span><span class="nt">&gt;</span>Username<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-sm-5&quot;</span><span class="nt">&gt;</span>
@@ -188,11 +188,11 @@ $(document).ready(function() {
             <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span><span class="nt">&gt;</span>Signup<span class="nt">&lt;/button&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/form&gt;</span></code></pre></div>
+<span class="nt">&lt;/form&gt;</span></code></pre></figure>
 
                     <p>As usual, the plugin is called by following snippet code:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#signupForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
         <span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
             <span class="p">...</span>
@@ -210,7 +210,7 @@ $(document).ready(function() {
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">});</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
                     <p>The implementation idea consists of four steps as following.</p>
                 </section>
@@ -222,7 +222,7 @@ $(document).ready(function() {
 
                     <p>I add an option named <code>validMessage</code> for each field. As the name suggests, the plugin will show the valid message when the field is valid.</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#signupForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
         <span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
             <span class="p">...</span>
@@ -242,7 +242,7 @@ $(document).ready(function() {
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">});</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
                     <p>We can get the option value later via the <a href="/api#get-options"><code>getOptions()</code> method</a>.</p>
                 </section>
@@ -256,7 +256,7 @@ $(document).ready(function() {
                     <p>Behind the scenes, FormValidation places each error message in a <code>span</code> element. The field error messages are placed inside an element which can be retrieved by <code>$field.data('bv.messages')</code>.</p>
                     <p>To make the example easily to follow, I simply create a <code>span</code> element right after each field for showing the valid message:</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;signupForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;signupForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-sm-3 control-label&quot;</span><span class="nt">&gt;</span>Username<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-sm-5&quot;</span><span class="nt">&gt;</span>
@@ -274,11 +274,11 @@ $(document).ready(function() {
     <span class="nt">&lt;/div&gt;</span>
 
     ...
-<span class="nt">&lt;/form&gt;</span></code></pre></div>
+<span class="nt">&lt;/form&gt;</span></code></pre></figure>
 
                     <p>In fact, the number of fields might be greater than two as in our example. Therefore, it is much better if these valid message elements are created dynamically. It's quite easy to do it by triggering the <a href="/settings#event-field"><code>init.field.fv</code> event</a>:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#signupForm&#39;</span><span class="p">)</span>
         <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;init.field.fv&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
             <span class="kd">var</span> <span class="nx">field</span>  <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">field</span><span class="p">,</span>        <span class="c1">// Get the field name</span>
@@ -303,7 +303,7 @@ $(document).ready(function() {
         <span class="p">.</span><span class="nx">formValidation</span><span class="p">({</span>
             <span class="p">...</span>
         <span class="p">});</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
                     <div class="doc-alert doc-alert-info">
                         The init.field.fv event is triggered after the field is initialized by the plugin. In order to trigger the event, you must declare .on('init.field.fv') before calling formValidation(options).
                     </div>
@@ -318,7 +318,7 @@ $(document).ready(function() {
 
                     <p>Triggering the <a href="/settings#event-field"><code>success.field.fv</code> event</a> to do that:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#signupForm&#39;</span><span class="p">)</span>
         <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;init.field.fv&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
             <span class="p">...</span>
@@ -335,7 +335,7 @@ $(document).ready(function() {
                 <span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="s1">&#39;.validMessage[data-field=&quot;&#39;</span> <span class="o">+</span> <span class="nx">field</span> <span class="o">+</span> <span class="s1">&#39;&quot;]&#39;</span><span class="p">)</span>
                 <span class="p">.</span><span class="nx">show</span><span class="p">();</span>  <span class="c1">// Show it</span>
         <span class="p">});</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
                 </section>
 
                 <div class="doc-hr"></div>
@@ -345,7 +345,7 @@ $(document).ready(function() {
 
                     <p>Finally, being similar to the step 3, the valid message must be hidden when the field turns to be invalid. It can be done via the <a href="/settings#event-field"><code>err.field.fv</code> event</a>:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#signupForm&#39;</span><span class="p">)</span>
         <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;init.field.fv&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
             <span class="p">...</span>
@@ -365,7 +365,7 @@ $(document).ready(function() {
                 <span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="s1">&#39;.validMessage[data-field=&quot;&#39;</span> <span class="o">+</span> <span class="nx">field</span> <span class="o">+</span> <span class="s1">&#39;&quot;]&#39;</span><span class="p">)</span>
                 <span class="p">.</span><span class="nx">hide</span><span class="p">();</span>
         <span class="p">});</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
                 </section>
 
                 <div class="doc-hr"></div>
@@ -376,10 +376,6 @@ $(document).ready(function() {
                     <p>Below is the final working example:</p>
 
                     
-
-
-
-
 
 
 
@@ -411,7 +407,7 @@ $(document).ready(function() {
         <div class="tab-pane" id="demo-programmatic-tab">
             
             <div data-demo-code="bootstrap">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;signupForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;signupForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Username<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-5&quot;</span><span class="nt">&gt;</span>
@@ -507,7 +503,7 @@ $(document).ready(function() {
             <span class="nx">$field</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="s1">&#39;.validMessage[data-field=&quot;&#39;</span> <span class="o">+</span> <span class="nx">field</span> <span class="o">+</span> <span class="s1">&#39;&quot;]&#39;</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
         <span class="p">});</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
             </div>
             
         </div>

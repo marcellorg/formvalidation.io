@@ -186,7 +186,7 @@ $(document).ready(function() {
                 <p>geocomplete provides the ability of populating these coordinates after selecting the address from the list.
                     Then we can use these values to validate the address via the <a href="/validators/callback/">callback</a> validator:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#addressForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#addressForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
     <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">address</span><span class="o">:</span> <span class="p">{</span>
             <span class="nx">trigger</span><span class="o">:</span> <span class="s1">&#39;blur&#39;</span><span class="p">,</span>
@@ -203,18 +203,18 @@ $(document).ready(function() {
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">}</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
                 <p>When user enter a a straight text, we need to reset the latitude, longitude values and mark the field as not validated yet via the <a href="//api/#update-status">updateStatus()</a> method:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#addressForm&#39;</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#addressForm&#39;</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;[name=&quot;address&quot;]&#39;</span><span class="p">)</span>
         <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;input keyup&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
             <span class="c1">// Reset lat, lng</span>
             <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#addressForm&#39;</span><span class="p">)</span>
                 <span class="p">.</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;updateStatus&#39;</span><span class="p">,</span> <span class="s1">&#39;address&#39;</span><span class="p">,</span> <span class="s1">&#39;NOT_VALIDATED&#39;</span><span class="p">)</span>
                 <span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;[name=&quot;lat&quot;], [name=&quot;lng&quot;]&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">).</span><span class="nx">end</span><span class="p">();</span>
-        <span class="p">});</span></code></pre></div>
+        <span class="p">});</span></code></pre></figure>
 
                 <p>Below is live demonstration which you can play with:</p>
 
@@ -268,7 +268,7 @@ $(document).ready(function() {
                         </div>
 
                         <div class="tab-pane" id="pickadate-programmatic-tab">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Google Place library --&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Google Place library --&gt;</span>
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;//maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 
 <span class="c">&lt;!-- Geocomplete plugin --&gt;</span>
@@ -360,7 +360,7 @@ $(document).ready(function() {
             <span class="p">})</span>
             <span class="p">.</span><span class="nx">end</span><span class="p">();</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
                         </div>
                     </div>
                 </div>

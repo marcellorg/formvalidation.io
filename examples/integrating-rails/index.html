@@ -166,18 +166,18 @@ $(document).ready(function() {
                 <section>
                     <p>For Rails, the input field is constructed from model name and field name. For example, user have email as field, when form helper render view, the input field name will be <code>'user[email]'</code>. The syntax for calling the plugin looks like below:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
     <span class="nx">framework</span><span class="o">:</span> <span class="s1">&#39;bootstrap&#39;</span><span class="p">,</span>
     <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
         <span class="s1">&#39;user[email]&#39;</span><span class="o">:</span> <span class="p">{</span>
             <span class="nx">validatorName</span><span class="o">:</span> <span class="nx">validatorOptions</span>
         <span class="p">}</span>
     <span class="p">}</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
                     <p>When using FormValidation in a Rails remote form, in order to prevent the form from multiple submissions, trigger the <a href="/settings/#event-form">success.form.fv</a> event as following:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">formValidation</span><span class="p">({</span>
         <span class="p">...</span>
     <span class="p">})</span>
@@ -198,7 +198,7 @@ $(document).ready(function() {
                 <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
             <span class="p">}</span>
         <span class="p">}</span>
-    <span class="p">});</span></code></pre></div>
+    <span class="p">});</span></code></pre></figure>
                 </section>
 
                 <div class="doc-hr"></div>

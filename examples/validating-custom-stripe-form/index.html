@@ -178,7 +178,7 @@ $(document).ready(function() {
 
                     <p>It's easy to use your favorite framework to create a standard payment form as following:</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;paymentForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;paymentForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
     ...
 
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
@@ -208,7 +208,7 @@ $(document).ready(function() {
     <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;token&quot;</span> <span class="na">value=</span><span class="s">&quot;&quot;</span> <span class="nt">/&gt;</span>
 
     ...
-<span class="nt">&lt;/form&gt;</span></code></pre></div>
+<span class="nt">&lt;/form&gt;</span></code></pre></figure>
 
                     <p>As you see, all fields for filling the credit card information don't have the <code>name</code> attribute.
                         Instead, they use the <code>data-stripe</code> attribute which are defined by Stripe. The Stripe API then will
@@ -233,7 +233,7 @@ $(document).ready(function() {
                         to support indicating fields via a CSS selector.</p>
                     <p>We can use the built in <a href="/validators/">validators</a> for the credit card fields via their <code>data-stripe</code> attribute as following:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#paymentForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#paymentForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
     <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">ccNumber</span><span class="o">:</span> <span class="p">{</span>
             <span class="c1">// The credit card number field can be retrieved</span>
@@ -291,7 +291,7 @@ $(document).ready(function() {
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">}</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
                     <div class="doc-alert doc-alert-info">
                         The expiration month (expMonth) and year (expYear) fields use the <a href="/settings/#field-row">row</a> option
@@ -334,7 +334,7 @@ $(document).ready(function() {
                     <p>When the form passes our validation rules, it's time to send credit card data to Stripe and get back the token.
                         It can be done by triggering the <a href="/settings/#event-form">success.form.fv</a> event:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Change the key to your one</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Change the key to your one</span>
 <span class="nx">Stripe</span><span class="p">.</span><span class="nx">setPublishableKey</span><span class="p">(</span><span class="s1">&#39;pk_test_IrimHhYZzZiCmaNo5riP9buX&#39;</span><span class="p">);</span>
 
 <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#paymentForm&#39;</span><span class="p">)</span>
@@ -376,7 +376,7 @@ $(document).ready(function() {
                 <span class="p">});</span>
             <span class="p">}</span>
         <span class="p">});</span>
-    <span class="p">});</span></code></pre></div>
+    <span class="p">});</span></code></pre></figure>
 
                     <p>Inside the handler of <code>Stripe.card.createToken</code>, we use <a href="http://bootboxjs.com/">bootboxjs</a>
                         to show the error message from Stripe if there's something wrong with credit card data.
@@ -447,10 +447,6 @@ $(document).ready(function() {
 
 
 
-
-
-
-
 <div class="doc-demo">
     <ul class="nav nav-tabs">
         <li role="presentation" class="dropdown">
@@ -477,7 +473,7 @@ $(document).ready(function() {
         <div class="tab-pane" id="basic-programmatic-tab">
             
             <div data-demo-code="bootstrap">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;paymentForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;paymentForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Product name<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-5&quot;</span><span class="nt">&gt;</span>
@@ -686,7 +682,7 @@ $(document).ready(function() {
             <span class="p">});</span>
         <span class="p">});</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
             </div>
             
         </div>

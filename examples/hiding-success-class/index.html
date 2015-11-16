@@ -176,10 +176,6 @@ $(document).ready(function() {
 
 
 
-
-
-
-
 <div class="doc-demo">
     <ul class="nav nav-tabs">
         <li role="presentation" class="dropdown">
@@ -206,7 +202,7 @@ $(document).ready(function() {
         <div class="tab-pane" id="demo-programmatic-tab">
             
             <div data-demo-code="bootstrap">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;proposalForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;proposalForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;label&gt;</span>Proposal title<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;title&quot;</span> <span class="nt">/&gt;</span>
@@ -326,7 +322,7 @@ $(document).ready(function() {
             <span class="nx">data</span><span class="p">.</span><span class="nx">element</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;fv.icon&#39;</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
         <span class="p">});</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
             </div>
             
         </div>
@@ -342,7 +338,7 @@ $(document).ready(function() {
 
                     <p>Based on this approach, it's possible to hide success icon and remove the success CSS class from the container if the field is empty. You just simply change the <code>success.field.fv</code> event handler a little bit:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#proposalForm&#39;</span><span class="p">)</span>
         <span class="p">.</span><span class="nx">formValidation</span><span class="p">({</span>
             <span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
@@ -366,7 +362,7 @@ $(document).ready(function() {
                 <span class="nx">data</span><span class="p">.</span><span class="nx">element</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;fv.icon&#39;</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
             <span class="p">}</span>
         <span class="p">});</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
                 </section>
             </div>
 

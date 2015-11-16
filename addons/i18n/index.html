@@ -167,7 +167,7 @@ $(document).ready(function() {
                 <section>
                     <p>As you already knew, you can use the <a href="/settings/#validator-message">message</a> option to indicate error message for each validator:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
     <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">userName</span><span class="o">:</span> <span class="p">{</span>
             <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
@@ -180,7 +180,7 @@ $(document).ready(function() {
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">}</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
                     <p>This i18n add-on allows to define messages in different languages. Below is a step by step instruction showing how to use the i18n add-on.</p>
                 </section>
 
@@ -192,11 +192,11 @@ $(document).ready(function() {
                         <li>Download the <a href="https://github.com/formvalidation/addon-i18n/releases/download/v0.1.1/i18n-v0.1.1.zip" class="addonDownloadButton" data-placement="bottom" data-container="body">i18n</a> add-on</li>
                         <li>Include <code>i18n.min.js</code> (located in the <code>dist</code> directory) to your page. Ensure that it's placed after <code>formValidation(.min).js</code></li>
                     </ul>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- FormValidation plugin --&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- FormValidation plugin --&gt;</span>
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/vendor/formvalidation/dist/js/formValidation.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 
 <span class="c">&lt;!-- Add-ons. You should place it inside /vendor/formvalidation/dist/js/addons directory --&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/vendor/formvalidation/dist/js/addons/i18n.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/vendor/formvalidation/dist/js/addons/i18n.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></figure>
                 </section>
 
                 <div class="doc-hr"></div>
@@ -213,7 +213,7 @@ $(document).ready(function() {
 
                         <div class="tab-content">
                             <div class="tab-pane active" id="programmatic-tab">
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
     <span class="nx">framework</span><span class="o">:</span> <span class="s1">&#39;...&#39;</span><span class="p">,</span>
     <span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
         <span class="p">...</span>
@@ -224,7 +224,7 @@ $(document).ready(function() {
     <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
         <span class="p">...</span>
     <span class="p">}</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
                             </div>
 
                             <div class="tab-pane" id="declarative-tab">
@@ -233,10 +233,10 @@ $(document).ready(function() {
                                     <p>data-fv-addons="i18n, mandatoryIcon, recaptcha2"</p>
                                 </div>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;signUpForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;signUpForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span>
     <span class="na">data-fv-addons=</span><span class="s">&quot;i18n&quot;</span><span class="nt">&gt;</span>
     ...
-<span class="nt">&lt;/form&gt;</span></code></pre></div>
+<span class="nt">&lt;/form&gt;</span></code></pre></figure>
                             </div>
                         </div>
                     </div>
@@ -260,7 +260,7 @@ $(document).ready(function() {
                     <p>All of them are placed inside the <code>js/language</code> directory.</p>
                     <p>In order to <a href="/examples/using-language-package/">use</a> them, you only need to include the language file:</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;/vendor/formvalidation/dist/js/formValidation.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;/vendor/formvalidation/dist/js/formValidation.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;/vendor/formvalidation/dist/js/framework/bootstrap.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 
 <span class="c">&lt;!--</span>
@@ -269,7 +269,7 @@ $(document).ready(function() {
 <span class="c">--&gt;</span>
 <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;/vendor/formvalidation/dist/js/language/de_DE.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;/vendor/formvalidation/dist/js/language/fr_FR.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;/vendor/formvalidation/dist/js/language/vi_VN.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;/vendor/formvalidation/dist/js/language/vi_VN.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></figure>
 
                     <div class="doc-alert doc-alert-info">
                         It's not necessary to include the English package (en_US.js). It's default locale and the English messages are already included in the formValidation(.min).js file
@@ -278,7 +278,7 @@ $(document).ready(function() {
                     <h3>Using literal object</h3>
                     <p>By default, <code>message</code> must be a string. With the i18 add-on, you can use a Javascript literal object which maps the locale with associating message:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
     <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">fieldName</span><span class="o">:</span> <span class="p">{</span>
             <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
@@ -291,12 +291,12 @@ $(document).ready(function() {
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">}</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
                     <h3>Using a callback function</h3>
                     <p>You also can use a callback function that returns the literal object as above:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
     <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">fieldName</span><span class="o">:</span> <span class="p">{</span>
             <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
@@ -314,7 +314,7 @@ $(document).ready(function() {
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">}</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
                 </section>
 
                 <div class="doc-hr"></div>
@@ -325,8 +325,8 @@ $(document).ready(function() {
                     <p>The previous section introduces various ways to define the message in different locales.</p>
                     <p>To switch messages between them (via a switcher control, for example), you need to call the <code>setLocale()</code> method:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Switch messages to French</span>
-<span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;setLocale&#39;</span><span class="p">,</span> <span class="s1">&#39;fr_FR&#39;</span><span class="p">);</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Switch messages to French</span>
+<span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;setLocale&#39;</span><span class="p">,</span> <span class="s1">&#39;fr_FR&#39;</span><span class="p">);</span></code></pre></figure>
                 </section>
 
                 <div class="doc-hr"></div>
@@ -338,10 +338,6 @@ $(document).ready(function() {
                         It's up to you to choose any way in a multilingual website.</p>
 
                     
-
-
-
-
 
 
 
@@ -373,7 +369,7 @@ $(document).ready(function() {
         <div class="tab-pane" id="demo-programmatic-tab">
             
             <div data-demo-code="bootstrap">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Include FormValidation files first --&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Include FormValidation files first --&gt;</span>
 
 <span class="c">&lt;!-- Then include mandatoryIcon add-on --&gt;</span>
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/vendor/formvalidation/js/addons/i18n.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
@@ -548,7 +544,7 @@ $(document).ready(function() {
         <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#profileForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;setLocale&#39;</span><span class="p">,</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;data-locale&#39;</span><span class="p">));</span>
     <span class="p">});</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
             </div>
             
         </div>

@@ -176,7 +176,7 @@ $(document).ready(function() {
 
                     <p>To prevent the plugin from submitting the form automatically, you can trigger the <a href="/settings/#event-form">success.form.fv</a> event:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">)</span>
         <span class="p">.</span><span class="nx">formValidation</span><span class="p">({</span>
             <span class="p">...</span> <span class="nx">options</span> <span class="p">...</span>
@@ -197,11 +197,11 @@ $(document).ready(function() {
             <span class="c1">// See http://formvalidation.io/api/#default-submit</span>
             <span class="nx">fv</span><span class="p">.</span><span class="nx">defaultSubmit</span><span class="p">();</span>
         <span class="p">});</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
                     <p>You can use a custom submit handler like the following way:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">)</span>
         <span class="p">.</span><span class="nx">formValidation</span><span class="p">({</span>
             <span class="p">...</span> <span class="nx">options</span> <span class="p">...</span>
@@ -221,7 +221,7 @@ $(document).ready(function() {
 
         <span class="c1">// Do whatever you want here ...</span>
     <span class="p">});</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
                 </section>
 
                 <div class="doc-hr"></div>
@@ -233,7 +233,7 @@ $(document).ready(function() {
                         The issue is caused by the fact that the <code>success.form.fv</code> event is triggered more than one time.</p>
                     <p>For example, in the following snippet, we initialize the plugin and handle the event when clicking on particular button:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#addToCartButton&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
         <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#paymenForm&#39;</span><span class="p">)</span>
             <span class="p">.</span><span class="nx">formValidation</span><span class="p">({</span>
@@ -247,12 +247,12 @@ $(document).ready(function() {
                 <span class="c1">// such as sending data to server using Ajax ...</span>
             <span class="p">});</span>
     <span class="p">});</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
                     <p>As you see, the <code>success.form.fv</code> event is handler inside the <code>addToCartButton</code> button click handler,
                         the event will be triggered multiple times from the second, third, ... time you click the button.</p>
                     <p>To solve this issue, you can remove the previous handler of <code>success.form.fv</code> event by either destroying the plugin instance before creating new one:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#addToCartButton&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
         <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#paymenForm&#39;</span><span class="p">)</span>
             <span class="c1">// Destroy the plugin instance and all event attached with it</span>
@@ -269,11 +269,11 @@ $(document).ready(function() {
                 <span class="p">...</span>
             <span class="p">});</span>
     <span class="p">});</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
                     <p>or calling <code>.off('success.form.fv')</code>:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#addToCartButton&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
         <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#paymenForm&#39;</span><span class="p">)</span>
             <span class="p">.</span><span class="nx">formValidation</span><span class="p">({</span>
@@ -290,7 +290,7 @@ $(document).ready(function() {
                 <span class="p">...</span>
             <span class="p">});</span>
     <span class="p">});</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
                 </section>
 
                 <div class="doc-hr"></div>

@@ -192,10 +192,6 @@ $(document).ready(function() {
 
 
 
-
-
-
-
 <div class="doc-demo">
     <ul class="nav nav-tabs">
         <li role="presentation" class="dropdown">
@@ -222,7 +218,7 @@ $(document).ready(function() {
         <div class="tab-pane" id="callback-programmatic-tab">
             
             <div data-demo-code="bootstrap">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;surveyForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;surveyForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;control-label&quot;</span><span class="nt">&gt;</span>How do you know about us?<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;radio&quot;</span><span class="nt">&gt;</span>
@@ -303,7 +299,7 @@ $(document).ready(function() {
             <span class="p">}</span>
         <span class="p">});</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
             </div>
             
         </div>
@@ -320,7 +316,7 @@ $(document).ready(function() {
                     <p>The second solution uses the <a href="/settings#field-enabled">enabled</a> option and <a href="/api#enable-field-validators">enableFieldValidators()</a> method.</p>
                     <p>Initially, the field validators are disabled by setting <code>enabled: false</code>:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#profileForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#profileForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
     <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">driverLicense</span><span class="o">:</span> <span class="p">{</span>
             <span class="c1">// Disable validators</span>
@@ -330,20 +326,16 @@ $(document).ready(function() {
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">}</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
                     <p>Later, when conditions happen, these validators can be turned on (off) by calling the <code>enableFieldValidators()</code> method:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#profileForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;enableFieldValidators&#39;</span><span class="p">,</span> <span class="s1">&#39;driverLicense&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="o">/</span><span class="kc">false</span><span class="p">);</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#profileForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;enableFieldValidators&#39;</span><span class="p">,</span> <span class="s1">&#39;driverLicense&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="o">/</span><span class="kc">false</span><span class="p">);</span>
 
 <span class="c1">// Or the same way</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#profileForm&#39;</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;formValidation&#39;</span><span class="p">).</span><span class="nx">enableFieldValidators</span><span class="p">(</span><span class="s1">&#39;driverLicense&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="o">/</span><span class="kc">false</span><span class="p">);</span></code></pre></div>
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#profileForm&#39;</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;formValidation&#39;</span><span class="p">).</span><span class="nx">enableFieldValidators</span><span class="p">(</span><span class="s1">&#39;driverLicense&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="o">/</span><span class="kc">false</span><span class="p">);</span></code></pre></figure>
 
                     
-
-
-
-
 
 
 
@@ -375,7 +367,7 @@ $(document).ready(function() {
         <div class="tab-pane" id="enabling-programmatic-tab">
             
             <div data-demo-code="bootstrap">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;profileForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;profileForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;p&gt;</span>Please provide one of these information:<span class="nt">&lt;/p&gt;</span>
 
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
@@ -468,7 +460,7 @@ $(document).ready(function() {
             <span class="p">}</span>
         <span class="p">});</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
             </div>
             
         </div>

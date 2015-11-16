@@ -172,7 +172,7 @@ $(document).ready(function() {
                     <p>If your favorite framework is not in the list, you must fill its name in a text box. You can use the
                         <a href="/validators/callback/">callback</a> validator to validate this input:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#surveyForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#surveyForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
     <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
         <span class="p">...</span>
         <span class="nx">otherFramework</span><span class="o">:</span> <span class="p">{</span>
@@ -192,17 +192,13 @@ $(document).ready(function() {
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">}</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
                     <p>The logic inside the <code>callback</code> function is quite simple and easy to understand. The problem comes when you submit the form, the
                         <code>otherFramework</code> field is marked as valid with a valid icon even if you choose a framework from the list.
                         In that case, the <code>otherFramework</code> field should be completely ignored.</p>
 
                     
-
-
-
-
 
 
 
@@ -234,7 +230,7 @@ $(document).ready(function() {
         <div class="tab-pane" id="basic-programmatic-tab">
             
             <div data-demo-code="bootstrap">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;surveyForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;surveyForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;control-label&quot;</span><span class="nt">&gt;</span>Which Javascript framework you like most?<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;radio&quot;</span><span class="nt">&gt;</span>
@@ -302,7 +298,7 @@ $(document).ready(function() {
             <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#surveyForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;revalidateField&#39;</span><span class="p">,</span> <span class="s1">&#39;otherFramework&#39;</span><span class="p">);</span>
         <span class="p">});</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
             </div>
             
         </div>
@@ -312,7 +308,7 @@ $(document).ready(function() {
 
                     <p>In order to fix that, the callback method just simply returns <code>null</code> instead of <code>true</code>:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#surveyForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#surveyForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
     <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
         <span class="p">...</span>
         <span class="nx">otherFramework</span><span class="o">:</span> <span class="p">{</span>
@@ -332,13 +328,9 @@ $(document).ready(function() {
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">}</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
                     
-
-
-
-
 
 
 
@@ -370,7 +362,7 @@ $(document).ready(function() {
         <div class="tab-pane" id="ignore-programmatic-tab">
             
             <div data-demo-code="bootstrap">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;surveyForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;surveyForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;control-label&quot;</span><span class="nt">&gt;</span>Which Javascript framework you like most?<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;radio&quot;</span><span class="nt">&gt;</span>
@@ -438,7 +430,7 @@ $(document).ready(function() {
             <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#surveyForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;revalidateField&#39;</span><span class="p">,</span> <span class="s1">&#39;otherFramework&#39;</span><span class="p">);</span>
         <span class="p">});</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
             </div>
             
         </div>
@@ -472,7 +464,7 @@ $(document).ready(function() {
                                 <tr>
                                     <td><a href="/validators/callback/">callback</a> validator</td>
                                     <td>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">callback</span><span class="o">:</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">callback</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">callback</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
 
@@ -483,13 +475,13 @@ $(document).ready(function() {
             <span class="nx">otherKey</span><span class="o">:</span> <span class="nx">value</span>
         <span class="p">};</span>
     <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td><a href="/validators/promise/">promise</a> validator</td>
                                     <td>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">promise</span><span class="o">:</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">promise</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">promise</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">)</span> <span class="p">{</span>
         <span class="kd">var</span> <span class="nx">dfd</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">$</span><span class="p">.</span><span class="nx">Deferred</span><span class="p">();</span>
 
@@ -502,20 +494,20 @@ $(document).ready(function() {
 
         <span class="k">return</span> <span class="nx">dfd</span><span class="p">.</span><span class="nx">promise</span><span class="p">();</span>
     <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td><a href="/validators/remote/">remote</a> validator</td>
                                     <td>
                                         <p>The backend returns a JSON string that consists of <code>valid</code> key:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span> <span class="nx">valid</span><span class="o">:</span> <span class="kc">null</span> <span class="p">}</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span> <span class="nx">valid</span><span class="o">:</span> <span class="kc">null</span> <span class="p">}</span></code></pre></figure>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td><a href="/developing/">Your own</a> validator</td>
                                     <td>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">FormValidation</span><span class="p">.</span><span class="nx">Validator</span><span class="p">.</span><span class="nx">yourValidatorName</span> <span class="o">=</span> <span class="p">{</span>
         <span class="nx">validate</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
             <span class="c1">// ... Do your logic checking</span>
@@ -529,7 +521,7 @@ $(document).ready(function() {
             <span class="p">};</span>
         <span class="p">}</span>
     <span class="p">};</span>
-<span class="p">}(</span><span class="nb">window</span><span class="p">.</span><span class="nx">jQuery</span><span class="p">));</span></code></pre></div>
+<span class="p">}(</span><span class="nb">window</span><span class="p">.</span><span class="nx">jQuery</span><span class="p">));</span></code></pre></figure>
                                     </td>
                                 </tr>
                             </tbody>

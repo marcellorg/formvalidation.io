@@ -175,7 +175,7 @@ $(document).ready(function() {
                     </li>
                 </ul>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;dob&quot;</span> <span class="nt">/&gt;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;dob&quot;</span> <span class="nt">/&gt;</span></code></pre></figure>
 
                 <ul class="doc-list">
                     <li>
@@ -185,7 +185,7 @@ $(document).ready(function() {
                     </li>
                 </ul>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#profileForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#profileForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
     <span class="nx">framework</span><span class="o">:</span> <span class="s1">&#39;bootstrap&#39;</span><span class="p">,</span>
     <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">dob</span><span class="o">:</span> <span class="p">{</span>
@@ -200,13 +200,13 @@ $(document).ready(function() {
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">}</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
                 <ul class="doc-list">
                     <li>Finally, when any of Date, Month and Year fields changes its value, we need to update the hidden field value and revalidate it using the <a href="/api/#revalidate-field">revalidateField()</a> method:</li>
                 </ul>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#profileForm&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;keyup&#39;</span><span class="p">,</span> <span class="s1">&#39;input[name=&quot;date&quot;], input[name=&quot;month&quot;], input[name=&quot;year&quot;]&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#profileForm&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;keyup&#39;</span><span class="p">,</span> <span class="s1">&#39;input[name=&quot;date&quot;], input[name=&quot;month&quot;], input[name=&quot;year&quot;]&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">y</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#profileForm&#39;</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;[name=&quot;year&quot;]&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
         <span class="nx">m</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#profileForm&#39;</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;[name=&quot;month&quot;]&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
         <span class="nx">d</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#profileForm&#39;</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;[name=&quot;date&quot;]&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
@@ -216,15 +216,11 @@ $(document).ready(function() {
 
     <span class="c1">// Revalidate it</span>
     <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#profileForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;revalidateField&#39;</span><span class="p">,</span> <span class="s1">&#39;dob&#39;</span><span class="p">);</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
                 <p>Here is the working example:</p>
 
                 
-
-
-
-
 
 
 
@@ -256,7 +252,7 @@ $(document).ready(function() {
         <div class="tab-pane" id="demo-programmatic-tab">
             
             <div data-demo-code="bootstrap">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;style </span><span class="na">type=</span><span class="s">&quot;text/css&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;style </span><span class="na">type=</span><span class="s">&quot;text/css&quot;</span><span class="nt">&gt;</span>
 <span class="c">/* There is no gutter between date, month and year fields */</span>
 <span class="nc">.row.no-gutter</span> <span class="p">{</span>
     <span class="k">margin-left</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
@@ -349,7 +345,7 @@ $(document).ready(function() {
             <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#profileForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;revalidateField&#39;</span><span class="p">,</span> <span class="s1">&#39;dob&#39;</span><span class="p">);</span>
         <span class="p">});</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
             </div>
             
         </div>

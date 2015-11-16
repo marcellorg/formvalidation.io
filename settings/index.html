@@ -168,7 +168,7 @@ $(document).ready(function() {
     <p>There are three levels of settings which are form, field, and validators.</p>
     <p>The FormValidation plugin can be called as following:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nx">formSelector</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nx">formSelector</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
     <span class="c1">// Indicate the framework</span>
     <span class="c1">// It can be: bootstrap, foundation, pure, semantic, uikit</span>
     <span class="nx">framework</span><span class="o">:</span> <span class="s1">&#39;bootstrap&#39;</span><span class="p">,</span>
@@ -187,7 +187,7 @@ $(document).ready(function() {
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">}</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
     <div class="doc-alert doc-alert-info">
         If the field name contains special characters such as ., [, ], you must wrap it between single or double quote.
@@ -197,7 +197,7 @@ $(document).ready(function() {
     <p>Most of settings can be set via HTML 5 attributes prefixed with <code>data-fv</code>.</p>
     <p>For example, the following call:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nx">formSelector</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nx">formSelector</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
     <span class="nx">framework</span><span class="o">:</span> <span class="s1">&#39;bootstrap&#39;</span><span class="p">,</span>
     <span class="nx">excluded</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;:disabled&#39;</span><span class="p">,</span> <span class="s1">&#39;:hidden&#39;</span><span class="p">,</span> <span class="s1">&#39;:not(:visible)&#39;</span><span class="p">],</span>
     <span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
@@ -209,11 +209,11 @@ $(document).ready(function() {
     <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;This value is not valid&#39;</span><span class="p">,</span>
     <span class="nx">trigger</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
     <span class="nx">fields</span><span class="o">:</span> <span class="p">...</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
     <p>is equivalent with the one below:</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span>
     <span class="na">data-fv-framework=</span><span class="s">&quot;bootstrap&quot;</span>
     <span class="na">data-fv-message=</span><span class="s">&quot;This value is not valid&quot;</span>
     <span class="na">data-fv-icon-valid=</span><span class="s">&quot;glyphicon glyphicon-ok&quot;</span>
@@ -229,7 +229,7 @@ $(document).ready(function() {
         <span class="nx">fields</span><span class="o">:</span> <span class="p">...</span>
     <span class="p">});</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
 
     <div class="doc-alert doc-alert-info">
         The <a href="/examples/attribute/">Setting validator options via HTML attributes</a> example shows how to use the declarative code in action.
@@ -269,10 +269,10 @@ $(document).ready(function() {
                         </ul>
                     </td>
                     <td>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">button</span><span class="o">:</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">button</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;[type=&quot;submit&quot;]&#39;</span><span class="p">,</span>
     <span class="nx">disabled</span><span class="o">:</span> <span class="s1">&#39;&#39;</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
                     </td>
                 </tr>
                 <tr>
@@ -284,10 +284,10 @@ $(document).ready(function() {
                         </ul>
                     </td>
                     <td>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">err</span><span class="o">:</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">err</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">clazz</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
     <span class="nx">container</span><span class="o">:</span> <span class="kc">null</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
                     </td>
                 </tr>
                 <tr>
@@ -310,11 +310,11 @@ $(document).ready(function() {
                         </ul>
                     </td>
                     <td>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span>
     <span class="nx">valid</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
     <span class="nx">invalid</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
     <span class="nx">validating</span><span class="o">:</span> <span class="kc">null</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
                     </td>
                 </tr>
                 <tr>
@@ -337,11 +337,11 @@ $(document).ready(function() {
                         </ul>
                     </td>
                     <td>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">row</span><span class="o">:</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">row</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">selector</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
     <span class="nx">valid</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
     <span class="nx">invalid</span><span class="o">:</span> <span class="s1">&#39;&#39;</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
                     </td>
                 </tr>
                 <tr>
@@ -381,13 +381,13 @@ $(document).ready(function() {
     <section>
     <h3 id="form-button">button</h3>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">button</span><span class="o">:</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">button</span><span class="o">:</span> <span class="p">{</span>
     <span class="c1">// The submit buttons selector</span>
     <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;[type=&quot;submit&quot;]:not([formnovalidate])&#39;</span><span class="p">,</span>
 
     <span class="c1">// The disabled class</span>
     <span class="nx">disabled</span><span class="o">:</span> <span class="s1">&#39;&#39;</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
     <h4 id="form-button-selector">selector</h4>
 
@@ -440,13 +440,13 @@ $(document).ready(function() {
     <section>
     <h3 id="form-err">err</h3>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">err</span><span class="o">:</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">err</span><span class="o">:</span> <span class="p">{</span>
     <span class="c1">// The CSS class of each message element</span>
     <span class="nx">clazz</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
 
     <span class="c1">// The error messages container</span>
     <span class="nx">container</span><span class="o">:</span> <span class="kc">null</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
     <h4 id="form-err-clazz">clazz</h4>
     <p><code>clazz: String</code> &mdash; The CSS class of message element. The default value is taken from specific framework if available:</p>
@@ -503,10 +503,10 @@ $(document).ready(function() {
                     <td>A callback</td>
                     <td>
                         <p>A callback returns the element that the messages are placed in:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span><span class="p">(</span><span class="nx">$field</span><span class="p">,</span> <span class="nx">validator</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span><span class="p">(</span><span class="nx">$field</span><span class="p">,</span> <span class="nx">validator</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// $field is the field element</span>
     <span class="c1">// validator is the plugin instance</span>
-<span class="p">};</span></code></pre></div>
+<span class="p">};</span></code></pre></figure>
                     </td>
                 </tr>
                 <tr>
@@ -568,10 +568,6 @@ $(document).ready(function() {
 
 
 
-
-
-
-
 <div class="doc-demo">
     <ul class="nav nav-tabs">
         <li role="presentation" class="dropdown">
@@ -598,7 +594,7 @@ $(document).ready(function() {
         <div class="tab-pane" id="form-tooltip-programmatic-tab">
             
             <div data-demo-code="bootstrap">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;containerForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;containerForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Full name<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-4&quot;</span><span class="nt">&gt;</span>
@@ -663,7 +659,7 @@ $(document).ready(function() {
         <span class="p">}</span>
     <span class="p">});</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
             </div>
             
         </div>
@@ -707,14 +703,14 @@ $(document).ready(function() {
                     <td>String</td>
                     <td>
                         <p>Filters are separated by a comma. For example:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="s1">&#39;:disabled, :hidden, :not(:visible)&#39;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="s1">&#39;:disabled, :hidden, :not(:visible)&#39;</span></code></pre></figure>
                     </td>
                 </tr>
                 <tr>
                     <td>Array of strings</td>
                     <td>
                         <p>Each element is a filter. For example:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">[</span><span class="s1">&#39;:disabled&#39;</span><span class="p">,</span> <span class="s1">&#39;:hidden&#39;</span><span class="p">,</span> <span class="s1">&#39;:not(:visible)&#39;</span><span class="p">]</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">[</span><span class="s1">&#39;:disabled&#39;</span><span class="p">,</span> <span class="s1">&#39;:hidden&#39;</span><span class="p">,</span> <span class="s1">&#39;:not(:visible)&#39;</span><span class="p">]</span></code></pre></figure>
                     </td>
                 </tr>
                 <tr>
@@ -722,18 +718,18 @@ $(document).ready(function() {
                     <td>
                         <p>The callback function has format as below:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span><span class="p">(</span><span class="nx">$field</span><span class="p">,</span> <span class="nx">validator</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span><span class="p">(</span><span class="nx">$field</span><span class="p">,</span> <span class="nx">validator</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// $field is jQuery object representing the field element</span>
     <span class="c1">// validator is the plugin instance</span>
     <span class="c1">// return true or false;</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
                         <p>For example:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">[</span><span class="s1">&#39;:disabled&#39;</span><span class="p">,</span> <span class="s1">&#39;:hidden&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$field</span><span class="p">,</span> <span class="nx">validator</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">[</span><span class="s1">&#39;:disabled&#39;</span><span class="p">,</span> <span class="s1">&#39;:hidden&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$field</span><span class="p">,</span> <span class="nx">validator</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// Do not validate invisible element</span>
     <span class="k">return</span> <span class="o">!</span><span class="nx">$field</span><span class="p">.</span><span class="nx">is</span><span class="p">(</span><span class="s1">&#39;:visible&#39;</span><span class="p">);</span>
-<span class="p">}]</span></code></pre></div>
+<span class="p">}]</span></code></pre></figure>
                     </td>
                 </tr>
             </tbody>
@@ -795,11 +791,11 @@ $(document).ready(function() {
     <h3 id="form-icon">icon</h3>
     <p>Indicate valid/invalid/validating icons based on the field validity.</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">valid</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
     <span class="nx">invalid</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
     <span class="nx">validating</span><span class="o">:</span> <span class="kc">null</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
     <p>By default, these icons are not set. You also can <a href="#field-icon">enabled or disable</a> feedback icon for particular field.</p>
 
@@ -813,7 +809,7 @@ $(document).ready(function() {
         <li>When using Semantic framework, wrap the field inside</li>
     </ul>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ui input icon&quot;</span><span class="nt">&gt;&lt;/div&gt;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ui input icon&quot;</span><span class="nt">&gt;&lt;/div&gt;</span></code></pre></figure>
 
     <p>You can use icons provided by</p>
 
@@ -829,48 +825,48 @@ $(document).ready(function() {
                 <tr>
                     <td><a href="http://getbootstrap.com/components/#glyphicons">Glyphicons</a></td>
                     <td>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">valid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-ok&#39;</span><span class="p">,</span>
     <span class="nx">invalid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-remove&#39;</span><span class="p">,</span>
     <span class="nx">validating</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-refresh&#39;</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
                     </td>
                 </tr>
                 <tr>
                     <td><a href="http://fontawesome.io/icons">FontAwesome</a></td>
                     <td>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">valid</span><span class="o">:</span> <span class="s1">&#39;fa fa-check&#39;</span><span class="p">,</span>
     <span class="nx">invalid</span><span class="o">:</span> <span class="s1">&#39;fa fa-times&#39;</span><span class="p">,</span>
     <span class="nx">validating</span><span class="o">:</span> <span class="s1">&#39;fa fa-refresh&#39;</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
                         <p>There is a FontAwesome issue (<a href="https://github.com/FortAwesome/Font-Awesome/issues/4313">#41313</a>) that causes the icon to be aligned not properly when using with Bootstrap.
                         While waiting for this issue to be fixed, you can resolve it by placing the FontAwesome CSS before Bootstrap CSS:</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Load FontAwesome CSS before Bootstrap --&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Load FontAwesome CSS before Bootstrap --&gt;</span>
 <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;/vendor/font-awesome/css/font-awesome.min.css&quot;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;/vendor/bootstrap/css/bootstrap.min.css&quot;</span><span class="nt">/&gt;</span></code></pre></div>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;/vendor/bootstrap/css/bootstrap.min.css&quot;</span><span class="nt">/&gt;</span></code></pre></figure>
                     </td>
                 </tr>
                 <tr>
                     <td><a href="http://semantic-ui.com/elements/icon.html">Semantic icons</a></td>
                     <td>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">valid</span><span class="o">:</span> <span class="s1">&#39;checkmark icon&#39;</span><span class="p">,</span>
     <span class="nx">invalid</span><span class="o">:</span> <span class="s1">&#39;remove icon&#39;</span><span class="p">,</span>
     <span class="nx">validating</span><span class="o">:</span> <span class="s1">&#39;refresh icon&#39;</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
                     </td>
                 </tr>
                 <tr>
                     <td><a href="http://getuikit.com/docs/icon.html">UIKit</a></td>
                     <td>
                         <p>UIKit uses the <a href="http://fontawesome.io/icons">FontAwesome</a> icons, but replaces the <code>fa fa-xxx</code> class with <code>uk-icon-xxx</code> one.</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">valid</span><span class="o">:</span> <span class="s1">&#39;uk-icon-check&#39;</span><span class="p">,</span>
     <span class="nx">invalid</span><span class="o">:</span> <span class="s1">&#39;uk-icon-times&#39;</span><span class="p">,</span>
     <span class="nx">validating</span><span class="o">:</span> <span class="s1">&#39;uk-icon-refresh&#39;</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
                     </td>
                 </tr>
             </tbody>
@@ -880,7 +876,7 @@ $(document).ready(function() {
     <h5>Using with Bootswatch</h5>
     <p>Some <a href="http://bootswatch.com">BootsWatch</a> themes override some CSS styles causing feedback icon invisible to your eyes. For instance, the <a href="http://bootswatch.com/flatly/">Flatly theme</a> set the feedback icon color to <code>#FFF</code>.</p>
     <p>To fix this, you can simply add some CSS to your <code>head</code>, right before the BootsWatch theme CSS, to reset the feedback icons color:</p>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;//netdna.bootstrapcdn.com/bootswatch/3.1.1/flatly/bootstrap.min.css&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;//netdna.bootstrapcdn.com/bootswatch/3.1.1/flatly/bootstrap.min.css&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;style </span><span class="na">type=</span><span class="s">&quot;text/css&quot;</span><span class="nt">&gt;</span>
 <span class="nc">.has-error</span> <span class="nc">.form-control-feedback</span> <span class="p">{</span>
     <span class="k">color</span><span class="o">:</span> <span class="m">#E74C3C</span><span class="p">;</span>
@@ -888,7 +884,7 @@ $(document).ready(function() {
 <span class="nc">.has-success</span> <span class="nc">.form-control-feedback</span> <span class="p">{</span>
     <span class="k">color</span><span class="o">:</span> <span class="m">#18BCA0</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="nt">&lt;/style&gt;</span></code></pre></div>
+<span class="nt">&lt;/style&gt;</span></code></pre></figure>
 
     <h5>Example</h5>
     <ul class="doc-list">
@@ -946,11 +942,11 @@ $(document).ready(function() {
     <section>
     <h3 id="form-row">row</h3>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">row</span><span class="o">:</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">row</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">selector</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
     <span class="nx">valid</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
     <span class="nx">invalid</span><span class="o">:</span> <span class="s1">&#39;&#39;</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
     <h4 id="form-row-selector">selector</h4>
     <p><code>selector: String</code> &mdash; CSS selector indicates the parent element of field. Each framework usually wraps both field and its label inside elements with the same CSS class</p>
@@ -1007,10 +1003,6 @@ $(document).ready(function() {
 
 
 
-
-
-
-
 <div class="doc-demo">
     <ul class="nav nav-tabs">
         <li role="presentation" class="dropdown">
@@ -1037,7 +1029,7 @@ $(document).ready(function() {
         <div class="tab-pane" id="form-cell-programmatic-tab">
             
             <div data-demo-code="bootstrap">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;style </span><span class="na">type=</span><span class="s">&quot;text/css&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;style </span><span class="na">type=</span><span class="s">&quot;text/css&quot;</span><span class="nt">&gt;</span>
 <span class="nf">#groupForm</span> <span class="nt">i</span><span class="nc">.form-control-feedback</span> <span class="p">{</span>
     <span class="k">top</span><span class="o">:</span> <span class="m">5px</span> <span class="cp">!important</span><span class="p">;</span>
     <span class="k">right</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
@@ -1131,7 +1123,7 @@ $(document).ready(function() {
         <span class="p">}</span>
     <span class="p">});</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
             </div>
             
         </div>
@@ -1197,7 +1189,7 @@ $(document).ready(function() {
     <p>To archive it, you can trigger the <a href="/settings/#event-field">status.field.fv</a> event. The following
         code snippet demonstrates how to do it while the field is being validated by the <a href="/validators/remote/">remote</a> validator:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">formValidation</span><span class="p">({</span>
         <span class="nx">framework</span><span class="o">:</span> <span class="s1">&#39;bootstrap&#39;</span><span class="p">,</span>
         <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
@@ -1230,7 +1222,7 @@ $(document).ready(function() {
                 <span class="o">?</span> <span class="nx">$container</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;custom-class&#39;</span><span class="p">)</span>
                 <span class="o">:</span> <span class="nx">$container</span><span class="p">.</span><span class="nx">removeClass</span><span class="p">(</span><span class="s1">&#39;custom-class&#39;</span><span class="p">);</span>
         <span class="p">}</span>
-    <span class="p">});</span></code></pre></div>
+    <span class="p">});</span></code></pre></figure>
 
     <div class="doc-alert doc-alert-info">
         If you want get more attention from user while the field is being validated, take a look at this <a href="/examples/getting-notified-field-being-validated/">example</a>
@@ -1397,10 +1389,10 @@ $(document).ready(function() {
                     <td>A callback</td>
                     <td>
                         <p>A callback returns the element that the messages are placed in:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span><span class="p">(</span><span class="nx">$field</span><span class="p">,</span> <span class="nx">validator</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span><span class="p">(</span><span class="nx">$field</span><span class="p">,</span> <span class="nx">validator</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// $field is the field element</span>
     <span class="c1">// validator is the plugin instance</span>
-<span class="p">};</span></code></pre></div>
+<span class="p">};</span></code></pre></figure>
                     </td>
                 </tr>
                 <tr>
@@ -1419,10 +1411,6 @@ $(document).ready(function() {
     <p>The following form illustrates an usage of the <code>err</code> option. The error messages are shown in the element defined by a CSS selector.</p>
 
     
-
-
-
-
 
 
 
@@ -1454,7 +1442,7 @@ $(document).ready(function() {
         <div class="tab-pane" id="field-err-programmatic-tab">
             
             <div data-demo-code="bootstrap">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;profileForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;profileForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Full name<span class="nt">&lt;/label&gt;</span>
 
@@ -1519,7 +1507,7 @@ $(document).ready(function() {
         <span class="p">}</span>
     <span class="p">});</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
             </div>
             
         </div>
@@ -1544,7 +1532,7 @@ $(document).ready(function() {
     <p><code>excluded: Boolean|Function</code> &mdash; Indicate whether or not the field is excluded.</p>
     <p>To exclude a set of fields, you should use the <a href="#form-excluded">excluded</a> option for form.</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Use Boolean value</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Use Boolean value</span>
 <span class="nx">excluded</span><span class="o">:</span> <span class="kc">true</span> <span class="nx">or</span> <span class="kc">false</span>
 
 <span class="c1">// Use the return value of a callback function</span>
@@ -1552,7 +1540,7 @@ $(document).ready(function() {
     <span class="c1">// $field is the field element</span>
     <span class="c1">// validator is the plugin instance</span>
     <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>    <span class="c1">// or false</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
     <h5>Example</h5>
     <ul class="doc-list">
@@ -1571,10 +1559,6 @@ $(document).ready(function() {
     <p>The form below disables the feedback icons for field by setting <code>icon: false</code> or <code>icon: 'false'</code></p>
 
     
-
-
-
-
 
 
 
@@ -1606,7 +1590,7 @@ $(document).ready(function() {
         <div class="tab-pane" id="field-icon-programmatic-tab">
             
             <div data-demo-code="bootstrap">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;profileForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;profileForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Address<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-5&quot;</span><span class="nt">&gt;</span>
@@ -1676,7 +1660,7 @@ $(document).ready(function() {
         <span class="p">}</span>
     <span class="p">});</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
             </div>
             
         </div>
@@ -1724,10 +1708,6 @@ $(document).ready(function() {
 
 
 
-
-
-
-
 <div class="doc-demo">
     <ul class="nav nav-tabs">
         <li role="presentation" class="dropdown">
@@ -1754,7 +1734,7 @@ $(document).ready(function() {
         <div class="tab-pane" id="field-selector-programmatic-tab">
             
             <div data-demo-code="bootstrap">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;paymentForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;paymentForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Credit card number<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-5&quot;</span><span class="nt">&gt;</span>
@@ -1884,7 +1864,7 @@ $(document).ready(function() {
         <span class="p">}</span>
     <span class="p">});</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
             </div>
             
         </div>
@@ -1909,10 +1889,6 @@ $(document).ready(function() {
 
     <h5>Example</h5>
     
-
-
-
-
 
 
 
@@ -1944,7 +1920,7 @@ $(document).ready(function() {
         <div class="tab-pane" id="field-threshold-programmatic-tab">
             
             <div data-demo-code="bootstrap">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;thresholdForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;thresholdForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Full name<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-5&quot;</span><span class="nt">&gt;</span>
@@ -2045,7 +2021,7 @@ $(document).ready(function() {
         <span class="p">}</span>
     <span class="p">});</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
             </div>
             
         </div>
@@ -2065,10 +2041,6 @@ $(document).ready(function() {
     <p>In the following form, the <strong>Title</strong> field will be validated while user type any character (<code>trigger="keyup"</code>). The <strong>Summary</strong> field will be validated when user lose the focus (<code>trigger="blur"</code>).</p>
 
     
-
-
-
-
 
 
 
@@ -2100,7 +2072,7 @@ $(document).ready(function() {
         <div class="tab-pane" id="field-trigger-programmatic-tab">
             
             <div data-demo-code="bootstrap">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;articleForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;articleForm&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Title<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-5&quot;</span><span class="nt">&gt;</span>
@@ -2159,7 +2131,7 @@ $(document).ready(function() {
         <span class="p">}</span>
     <span class="p">});</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
             </div>
             
         </div>
@@ -2234,20 +2206,20 @@ $(document).ready(function() {
                 <tr>
                     <td>HTML 5 attribute</td>
                     <td>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Enable validator --&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Enable validator --&gt;</span>
 <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;fullName&quot;</span> <span class="na">data-fv-notempty</span> <span class="nt">/&gt;</span>
 
 <span class="c">&lt;!-- or --&gt;</span>
 <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;fullName&quot;</span> <span class="na">data-fv-notempty=</span><span class="s">&quot;true&quot;</span> <span class="nt">/&gt;</span>
 
 <span class="c">&lt;!-- Disable validator --&gt;</span>
-<span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;fullName&quot;</span> <span class="na">data-fv-notempty=</span><span class="s">&quot;false&quot;</span> <span class="nt">/&gt;</span></code></pre></div>
+<span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;fullName&quot;</span> <span class="na">data-fv-notempty=</span><span class="s">&quot;false&quot;</span> <span class="nt">/&gt;</span></code></pre></figure>
                     </td>
                 </tr>
                 <tr>
                     <td>Plugin option</td>
                     <td>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
         <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
             <span class="nx">fullName</span><span class="o">:</span> <span class="p">{</span>
@@ -2259,18 +2231,18 @@ $(document).ready(function() {
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">});</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
                     </td>
                 <tr>
                     <td><a href="/api#enable-field-validators">enableFieldValidators()</a></td>
                     <td>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Enable validator</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Enable validator</span>
 <span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;enableFieldValidators&#39;</span><span class="p">,</span> <span class="nx">fullName</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="s1">&#39;notEmpty&#39;</span><span class="p">);</span>
 
 <span class="c1">// Disable validator</span>
 <span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;enableFieldValidators&#39;</span><span class="p">,</span> <span class="nx">fullName</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="s1">&#39;notEmpty&#39;</span><span class="p">);</span></code></pre></div>
+    <span class="p">.</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;enableFieldValidators&#39;</span><span class="p">,</span> <span class="nx">fullName</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="s1">&#39;notEmpty&#39;</span><span class="p">);</span></code></pre></figure>
                     </td>
                 </tr>
             </tbody>
@@ -2279,10 +2251,6 @@ $(document).ready(function() {
 
     <h5>Examples</h5>
     
-
-
-
-
 
 
 
@@ -2314,7 +2282,7 @@ $(document).ready(function() {
         <div class="tab-pane" id="validator-enabled-programmatic-tab">
             
             <div data-demo-code="bootstrap">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;validatorEnabledForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;validatorEnabledForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Full name<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-5&quot;</span><span class="nt">&gt;</span>
@@ -2361,7 +2329,7 @@ $(document).ready(function() {
         <span class="p">}</span>
     <span class="p">});</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
             </div>
             
         </div>
@@ -2392,7 +2360,7 @@ $(document).ready(function() {
 
     <p><code>transformer: Function</code> &mdash; Modify the field value before validating.</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">transformer</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$field</span><span class="p">,</span> <span class="nx">validatorName</span><span class="p">,</span> <span class="nx">validator</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">transformer</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$field</span><span class="p">,</span> <span class="nx">validatorName</span><span class="p">,</span> <span class="nx">validator</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// $field is the jQuery object presenting the field element</span>
     <span class="c1">// validatorName is the name of current validator</span>
     <span class="c1">// validator is the instance of plugin</span>
@@ -2405,7 +2373,7 @@ $(document).ready(function() {
 
     <span class="c1">// ... and return</span>
     <span class="k">return</span> <span class="nx">value</span><span class="p">;</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
     <div class="doc-alert doc-alert-info">
         FormValidation only uses the value returned by the transformer option for validating.
@@ -2417,10 +2385,6 @@ $(document).ready(function() {
     <p>By default, these kind of URLs don't pass the <a href="/validators/uri/">uri</a> validators. Applying the <code>transformer</code> option for the uri validator, we can make it pass.</p>
 
     
-
-
-
-
 
 
 
@@ -2452,7 +2416,7 @@ $(document).ready(function() {
         <div class="tab-pane" id="validator-transformer-uri-programmatic-tab">
             
             <div data-demo-code="bootstrap">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;profileForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;profileForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Website<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-5&quot;</span><span class="nt">&gt;</span>
@@ -2494,7 +2458,7 @@ $(document).ready(function() {
         <span class="p">}</span>
     <span class="p">});</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
             </div>
             
         </div>
@@ -2524,11 +2488,11 @@ $(document).ready(function() {
 
     <p>In the third and fourth cases, the callback function must follow the format:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// value is the value of field</span>
     <span class="c1">// validator is the FormValidation instance</span>
     <span class="c1">// $field is the jQuery element representing field element</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
     <h4 id="dynamic-option-validators">Supported validators</h4>
 
@@ -2627,7 +2591,7 @@ $(document).ready(function() {
 
     <p>It's easy for you if the country code option is set initially and can't be changed:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#zipcodeForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
         <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
             <span class="nx">code</span><span class="o">:</span> <span class="p">{</span>
@@ -2640,13 +2604,9 @@ $(document).ready(function() {
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">});</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
     
-
-
-
-
 
 
 
@@ -2678,7 +2638,7 @@ $(document).ready(function() {
         <div class="tab-pane" id="validator-do-string-programmatic-tab">
             
             <div data-demo-code="bootstrap">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;zipCodeForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;zipCodeForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>US zipcode<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-5&quot;</span><span class="nt">&gt;</span>
@@ -2708,7 +2668,7 @@ $(document).ready(function() {
         <span class="p">}</span>
     <span class="p">});</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
             </div>
             
         </div>
@@ -2719,7 +2679,7 @@ $(document).ready(function() {
     <p>What happen if you want the country to be changeable, for example, by a select element. With the dynamic option concept, it can be done easily by setting the <code>country</code> option as:</p>
 
     <h4 id="dynamic-option-element">Using name of element defining the option value</h4>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- The element for choosing a country --&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- The element for choosing a country --&gt;</span>
 <span class="nt">&lt;select</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;countrySelectBox&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;US&quot;</span><span class="nt">&gt;</span>United States<span class="nt">&lt;/option&gt;</span>
     <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;CA&quot;</span><span class="nt">&gt;</span>Canada<span class="nt">&lt;/option&gt;</span>
@@ -2728,9 +2688,9 @@ $(document).ready(function() {
     <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;NL&quot;</span><span class="nt">&gt;</span>Netherlands<span class="nt">&lt;/option&gt;</span>
     <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;SE&quot;</span><span class="nt">&gt;</span>Sweden<span class="nt">&lt;/option&gt;</span>
     <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;GB&quot;</span><span class="nt">&gt;</span>United Kingdom<span class="nt">&lt;/option&gt;</span>
-<span class="nt">&lt;/select&gt;</span></code></pre></div>
+<span class="nt">&lt;/select&gt;</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#zipcodeElementForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
         <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
             <span class="nx">code</span><span class="o">:</span> <span class="p">{</span>
@@ -2743,13 +2703,9 @@ $(document).ready(function() {
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">});</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
     
-
-
-
-
 
 
 
@@ -2781,7 +2737,7 @@ $(document).ready(function() {
         <div class="tab-pane" id="validator-do-element-programmatic-tab">
             
             <div data-demo-code="bootstrap">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;zipCodeForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;zipCodeForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Country:<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-5&quot;</span><span class="nt">&gt;</span>
@@ -2831,7 +2787,7 @@ $(document).ready(function() {
             <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#zipCodeForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;revalidateField&#39;</span><span class="p">,</span> <span class="s1">&#39;code&#39;</span><span class="p">);</span>
         <span class="p">});</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
             </div>
             
         </div>
@@ -2841,7 +2797,7 @@ $(document).ready(function() {
 
     <h4 id="dynamic-option-function-name">Using name of function returning the option value</h4>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- The element for choosing a country --&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- The element for choosing a country --&gt;</span>
 <span class="nt">&lt;select</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;countrySelectBox&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;US&quot;</span><span class="nt">&gt;</span>United States<span class="nt">&lt;/option&gt;</span>
     <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;CA&quot;</span><span class="nt">&gt;</span>Canada<span class="nt">&lt;/option&gt;</span>
@@ -2850,9 +2806,9 @@ $(document).ready(function() {
     <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;NL&quot;</span><span class="nt">&gt;</span>Netherlands<span class="nt">&lt;/option&gt;</span>
     <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;SE&quot;</span><span class="nt">&gt;</span>Sweden<span class="nt">&lt;/option&gt;</span>
     <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;GB&quot;</span><span class="nt">&gt;</span>United Kingdom<span class="nt">&lt;/option&gt;</span>
-<span class="nt">&lt;/select&gt;</span></code></pre></div>
+<span class="nt">&lt;/select&gt;</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">getCountryCode</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">getCountryCode</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// Return the selected country code</span>
     <span class="k">return</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;[name=&quot;countrySelectBox&quot;]&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
 
@@ -2873,13 +2829,9 @@ $(document).ready(function() {
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">});</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
     
-
-
-
-
 
 
 
@@ -2911,7 +2863,7 @@ $(document).ready(function() {
         <div class="tab-pane" id="validator-do-function-programmatic-tab">
             
             <div data-demo-code="bootstrap">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;zipCodeForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;zipCodeForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Country:<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-5&quot;</span><span class="nt">&gt;</span>
@@ -2965,7 +2917,7 @@ $(document).ready(function() {
             <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#zipCodeForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;revalidateField&#39;</span><span class="p">,</span> <span class="s1">&#39;code&#39;</span><span class="p">);</span>
         <span class="p">});</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
             </div>
             
         </div>
@@ -2975,7 +2927,7 @@ $(document).ready(function() {
 
     <h4 id="dynamic-option-callback">Using function returning the option value</h4>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#zipcodeElementForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
         <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
             <span class="nx">code</span><span class="o">:</span> <span class="p">{</span>
@@ -2993,13 +2945,9 @@ $(document).ready(function() {
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">});</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
     
-
-
-
-
 
 
 
@@ -3031,7 +2979,7 @@ $(document).ready(function() {
         <div class="tab-pane" id="validator-do-callback-programmatic-tab">
             
             <div data-demo-code="bootstrap">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;zipCodeForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;zipCodeForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Country:<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-5&quot;</span><span class="nt">&gt;</span>
@@ -3082,7 +3030,7 @@ $(document).ready(function() {
             <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#getCountryCode&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;revalidateField&#39;</span><span class="p">,</span> <span class="s1">&#39;code&#39;</span><span class="p">);</span>
         <span class="p">});</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
             </div>
             
         </div>
@@ -3096,7 +3044,7 @@ $(document).ready(function() {
     <h3 id="dynamic-message">Dynamic message</h3>
     <p>Looking back to the <a href="#dynamic-option-element">zipcode example</a> above, you will realize that the message is static:</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- The element for choosing a country --&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- The element for choosing a country --&gt;</span>
 <span class="nt">&lt;select</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;countrySelectBox&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;US&quot;</span><span class="nt">&gt;</span>United States<span class="nt">&lt;/option&gt;</span>
     <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;CA&quot;</span><span class="nt">&gt;</span>Canada<span class="nt">&lt;/option&gt;</span>
@@ -3105,9 +3053,9 @@ $(document).ready(function() {
     <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;NL&quot;</span><span class="nt">&gt;</span>Netherlands<span class="nt">&lt;/option&gt;</span>
     <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;SE&quot;</span><span class="nt">&gt;</span>Sweden<span class="nt">&lt;/option&gt;</span>
     <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;GB&quot;</span><span class="nt">&gt;</span>United Kingdom<span class="nt">&lt;/option&gt;</span>
-<span class="nt">&lt;/select&gt;</span></code></pre></div>
+<span class="nt">&lt;/select&gt;</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#dynamicMessageForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
         <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
             <span class="nx">code</span><span class="o">:</span> <span class="p">{</span>
@@ -3120,11 +3068,11 @@ $(document).ready(function() {
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">});</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
     <p>As you see, the message is always <code>The value is not valid zipcode</code> and does not change nomatter what the country is.</p>
     <p>Fortunately, it is easy to convert this message to a dynamic one. Just use <code>%s</code> characters in the message and they will be replaced with the country you choose:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#dynamicMessageForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
         <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
             <span class="nx">code</span><span class="o">:</span> <span class="p">{</span>
@@ -3139,13 +3087,9 @@ $(document).ready(function() {
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">});</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
     
-
-
-
-
 
 
 
@@ -3177,7 +3121,7 @@ $(document).ready(function() {
         <div class="tab-pane" id="validator-dm-programmatic-tab">
             
             <div data-demo-code="bootstrap">
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;dynamicMessageForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;dynamicMessageForm&quot;</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-xs-3 control-label&quot;</span><span class="nt">&gt;</span>Country:<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-xs-5&quot;</span><span class="nt">&gt;</span>
@@ -3227,7 +3171,7 @@ $(document).ready(function() {
             <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#dynamicMessageForm&#39;</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="s1">&#39;revalidateField&#39;</span><span class="p">,</span> <span class="s1">&#39;code&#39;</span><span class="p">);</span>
         <span class="p">});</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
             </div>
             
         </div>
@@ -3248,100 +3192,100 @@ $(document).ready(function() {
                 <tr>
                     <td><a href="/validators/between/">between</a> validator</td>
                     <td>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">between</span><span class="o">:</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">between</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">min</span><span class="o">:</span> <span class="p">...,</span>
     <span class="nx">max</span><span class="o">:</span> <span class="p">...,</span>
     <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;Please enter a value between %s and %s&#39;</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
                     </td>
                 </tr>
                 <tr>
                     <td><a href="/validators/choice/">choice</a> validator</td>
                     <td>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">choice</span><span class="o">:</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">choice</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">min</span><span class="o">:</span> <span class="p">...,</span>
     <span class="nx">max</span><span class="o">:</span> <span class="p">...,</span>
     <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;Please choose %s - %s options&#39;</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
                     </td>
                 </tr>
                 <tr>
                     <td><a href="/validators/greaterThan/">greaterThan</a> validator</td>
                     <td>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">greaterThan</span><span class="o">:</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">greaterThan</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">value</span><span class="o">:</span> <span class="p">...,</span>
     <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;Please enter a value greater than or equal to %s&#39;</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
                     </td>
                 </tr>
                 <tr>
                     <td><a href="/validators/iban/">iban</a> validator</td>
                     <td>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">iban</span><span class="o">:</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">iban</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">country</span><span class="o">:</span> <span class="p">...,</span>
     <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;Please enter a valid IBAN number in %s&#39;</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
                     </td>
                 </tr>
                 <tr>
                     <td><a href="/validators/id/">id</a> validator</td>
                     <td>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">id</span><span class="o">:</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">id</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">country</span><span class="o">:</span> <span class="p">...,</span>
     <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;Please enter a valid %s identification number&#39;</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
                     </td>
                 </tr>
                 <tr>
                     <td><a href="/validators/lessThan/">lessThan</a> validator</td>
                     <td>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">lessThan</span><span class="o">:</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">lessThan</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">value</span><span class="o">:</span> <span class="p">...,</span>
     <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;Please enter a value less than or equal to %s&#39;</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
                     </td>
                 </tr>
                 <tr>
                     <td><a href="/validators/phone/">phone</a> validator</td>
                     <td>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">phone</span><span class="o">:</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">phone</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">country</span><span class="o">:</span> <span class="p">...,</span>
     <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;Please enter a valid phone number in %s&#39;</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
                     </td>
                 </tr>
                 <tr>
                     <td><a href="/validators/stringLength/">stringLength</a> validator</td>
                     <td>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">stringLength</span><span class="o">:</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">stringLength</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">min</span><span class="o">:</span> <span class="p">...,</span>
     <span class="nx">max</span><span class="o">:</span> <span class="p">...,</span>
     <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;Please enter value between %s and %s characters long&#39;</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
                     </td>
                 </tr>
                 <tr>
                     <td><a href="/validators/vat/">vat</a> validator</td>
                     <td>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">vat</span><span class="o">:</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">vat</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">country</span><span class="o">:</span> <span class="p">...,</span>
     <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;Please enter a valid %s VAT number&#39;</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
                     </td>
                 </tr>
                 <tr>
                     <td><a href="/validators/zipCode/">zipCode</a> validator</td>
                     <td>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">zipCode</span><span class="o">:</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">zipCode</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">country</span><span class="o">:</span> <span class="p">...,</span>
     <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;Please enter a valid %s&#39;</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
                     </td>
                 </tr>
                 <tr>
                     <td><a href="/validators/callback/">callback</a> validator</td>
                     <td>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">callback</span><span class="o">:</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">callback</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">callback</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">)</span> <span class="p">{</span>
         <span class="c1">// ... Do your logic checking</span>
         <span class="k">if</span> <span class="p">(...)</span> <span class="p">{</span>
@@ -3356,13 +3300,13 @@ $(document).ready(function() {
             <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;Other error message&#39;</span>
         <span class="p">}</span>
     <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
                     </td>
                 </tr>
                 <tr>
                     <td><a href="/validators/promise/">promise</a> validator</td>
                     <td>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">promise</span><span class="o">:</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">promise</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">promise</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">)</span> <span class="p">{</span>
         <span class="kd">var</span> <span class="nx">dfd</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">$</span><span class="p">.</span><span class="nx">Deferred</span><span class="p">();</span>
 
@@ -3381,20 +3325,20 @@ $(document).ready(function() {
 
         <span class="k">return</span> <span class="nx">dfd</span><span class="p">.</span><span class="nx">promise</span><span class="p">();</span>
     <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
                     </td>
                 </tr>
                 <tr>
                     <td><a href="/validators/remote/">remote</a> validator</td>
                     <td>
                         <p>The backend returns a JSON string that consists of <code>valid</code> and <code>message</code> keys:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span> <span class="nx">valid</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The error message&#39;</span> <span class="p">}</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span> <span class="nx">valid</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;The error message&#39;</span> <span class="p">}</span></code></pre></figure>
                     </td>
                 </tr>
                 <tr>
                     <td><a href="/developing/">Your own</a> validator</td>
                     <td>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">FormValidation</span><span class="p">.</span><span class="nx">Validator</span><span class="p">.</span><span class="nx">yourValidatorName</span> <span class="o">=</span> <span class="p">{</span>
         <span class="nx">validate</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
             <span class="c1">// ... Do your logic checking</span>
@@ -3411,7 +3355,7 @@ $(document).ready(function() {
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">};</span>
-<span class="p">}(</span><span class="nb">window</span><span class="p">.</span><span class="nx">jQuery</span><span class="p">));</span></code></pre></div>
+<span class="p">}(</span><span class="nb">window</span><span class="p">.</span><span class="nx">jQuery</span><span class="p">));</span></code></pre></figure>
                     </td>
                 </tr>
             </tbody>
@@ -3437,28 +3381,28 @@ $(document).ready(function() {
                 <tr>
                     <td><a href="/validators/between/">between</a> validator</td>
                     <td>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">between</span><span class="o">:</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">between</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">min</span><span class="o">:</span> <span class="mi">20</span><span class="p">,</span>
     <span class="nx">max</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span>
     <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;Please enter a value between 20 and 100&#39;</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
                     </td>
                 </tr>
                 <tr>
                     <td><a href="/validators/callback/">callback</a> validator</td>
                     <td>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">callback</span><span class="o">:</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">callback</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">callback</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">)</span> <span class="p">{</span>
         <span class="c1">// ... Do your logic checking</span>
         <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>        <span class="c1">// or false</span>
     <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
                     </td>
                 </tr>
                 <tr>
                     <td><a href="/validators/promise/">promise</a> validator</td>
                     <td>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">promise</span><span class="o">:</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">promise</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">promise</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">)</span> <span class="p">{</span>
         <span class="kd">var</span> <span class="nx">dfd</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">$</span><span class="p">.</span><span class="nx">Deferred</span><span class="p">();</span>
 
@@ -3474,27 +3418,27 @@ $(document).ready(function() {
 
         <span class="k">return</span> <span class="nx">dfd</span><span class="p">.</span><span class="nx">promise</span><span class="p">();</span>
     <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
                     </td>
                 </tr>
                 <tr>
                     <td><a href="/validators/remote/">remote</a> validator</td>
                     <td>
                         <p>The backend returns a JSON string that consists of <code>valid</code> key:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span> <span class="nx">valid</span><span class="o">:</span> <span class="kc">true</span> <span class="p">}</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span> <span class="nx">valid</span><span class="o">:</span> <span class="kc">true</span> <span class="p">}</span></code></pre></figure>
                     </td>
                 </tr>
                 <tr>
                     <td><a href="/developing/">Your own validator</a></td>
                     <td>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">FormValidation</span><span class="p">.</span><span class="nx">Validator</span><span class="p">.</span><span class="nx">yourValidatorName</span> <span class="o">=</span> <span class="p">{</span>
         <span class="nx">validate</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">validator</span><span class="p">,</span> <span class="nx">$field</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
             <span class="c1">// ... Do your logic checking</span>
             <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>        <span class="c1">// or false</span>
         <span class="p">}</span>
     <span class="p">};</span>
-<span class="p">}(</span><span class="nb">window</span><span class="p">.</span><span class="nx">jQuery</span><span class="p">));</span></code></pre></div>
+<span class="p">}(</span><span class="nb">window</span><span class="p">.</span><span class="nx">jQuery</span><span class="p">));</span></code></pre></figure>
                     </td>
                 </tr>
             </tbody>
@@ -3568,7 +3512,7 @@ $(document).ready(function() {
                 <tr>
                     <td>Listening to event</td>
                     <td>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">)</span>
         <span class="c1">// on(&#39;init.form.fv&#39;) must be declared</span>
         <span class="c1">// before calling .formValidation(options)</span>
@@ -3622,13 +3566,13 @@ $(document).ready(function() {
 
             <span class="c1">// Do something ...</span>
         <span class="p">});</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
                     </td>
                 </tr>
                 <tr>
                     <td>Using option</td>
                     <td>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">)</span>
         <span class="p">.</span><span class="nx">formValidation</span><span class="p">({</span>
             <span class="nx">onPreValidate</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
@@ -3641,17 +3585,17 @@ $(document).ready(function() {
                 <span class="c1">// Do something ...</span>
             <span class="p">}</span>
         <span class="p">});</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
                     </td>
                 </tr>
                 <tr>
                     <td>Using HTML 5 attributes</td>
                     <td>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">data-fv-onprevalidate=</span><span class="s">&quot;onPreValidateForm&quot;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">data-fv-onprevalidate=</span><span class="s">&quot;onPreValidateForm&quot;</span>
       <span class="na">data-fv-onerror=</span><span class="s">&quot;onFormError&quot;</span>
-      <span class="na">data-fv-onsuccess=</span><span class="s">&quot;onFormSuccess&quot;</span><span class="nt">&gt;&lt;/form&gt;</span></code></pre></div>
+      <span class="na">data-fv-onsuccess=</span><span class="s">&quot;onFormSuccess&quot;</span><span class="nt">&gt;&lt;/form&gt;</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">onPreValidateForm</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">onPreValidateForm</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// Do something ...</span>
 <span class="p">};</span>
 
@@ -3665,7 +3609,7 @@ $(document).ready(function() {
 
 <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="nx">options</span><span class="p">);</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
                     </td>
                 </tr>
             </tbody>
@@ -3732,7 +3676,7 @@ $(document).ready(function() {
                 <tr>
                     <td>Listening to event</td>
                     <td>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">)</span>
         <span class="c1">// on(&#39;init.field.fv&#39;) must be declared</span>
         <span class="c1">// before calling .formValidation(options)</span>
@@ -3767,7 +3711,7 @@ $(document).ready(function() {
 
             <span class="c1">// Do something ...</span>
         <span class="p">});</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
                     </td>
                 </tr>
             </tbody>
@@ -3787,7 +3731,7 @@ $(document).ready(function() {
                 <tr>
                     <td>Listening to event</td>
                     <td>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">)</span>
         <span class="c1">// on(&#39;init.field.fv&#39;) must be declared</span>
         <span class="c1">// before calling .formValidation(options)</span>
@@ -3808,13 +3752,13 @@ $(document).ready(function() {
         <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;status.field.fv&#39;</span><span class="p">,</span> <span class="s1">&#39;[name=&quot;email&quot;]&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
             <span class="c1">// Do something ...</span>
         <span class="p">});</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
                     </td>
                 </tr>
                 <tr>
                     <td>Using option</td>
                     <td>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">)</span>
         <span class="p">.</span><span class="nx">formValidation</span><span class="p">({</span>
             <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
@@ -3834,13 +3778,13 @@ $(document).ready(function() {
                 <span class="p">}</span>
             <span class="p">}</span>
         <span class="p">});</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
                     </td>
                 </tr>
                 <tr>
                     <td>Using HTML 5 attributes</td>
                     <td>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form&gt;</span>
     ...
     <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">name=</span><span class="s">&quot;email&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span>
         <span class="na">data-fv-emailaddress=</span><span class="s">&quot;true&quot;</span>
@@ -3848,8 +3792,8 @@ $(document).ready(function() {
         <span class="na">data-fv-onsuccess=</span><span class="s">&quot;onFieldSuccess&quot;</span>
         <span class="na">data-fv-onstatus=</span><span class="s">&quot;onFieldStatus&quot;</span> <span class="nt">/&gt;</span>
     ...
-<span class="nt">&lt;/form&gt;</span></code></pre></div>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">onFieldError</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+<span class="nt">&lt;/form&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">onFieldError</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// Do something ...</span>
 <span class="p">};</span>
 
@@ -3863,7 +3807,7 @@ $(document).ready(function() {
 
 <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="nx">options</span><span class="p">);</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
                     </td>
                 </tr>
             </tbody>
@@ -3919,7 +3863,7 @@ $(document).ready(function() {
                 <tr>
                     <td>Listening to event</td>
                     <td>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">)</span>
         <span class="p">.</span><span class="nx">formValidation</span><span class="p">(</span><span class="nx">options</span><span class="p">)</span>
 
@@ -3938,13 +3882,13 @@ $(document).ready(function() {
 
             <span class="c1">// Do something ...</span>
         <span class="p">});</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
                     </td>
                 </tr>
                 <tr>
                     <td>Using option</td>
                     <td>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">)</span>
         <span class="p">.</span><span class="nx">formValidation</span><span class="p">({</span>
             <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
@@ -3963,22 +3907,22 @@ $(document).ready(function() {
                 <span class="p">}</span>
             <span class="p">}</span>
         <span class="p">});</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
                     </td>
                 </tr>
                 <tr>
                     <td>Using HTML 5 attributes</td>
                     <td>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form&gt;</span>
     ...
     <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">name=</span><span class="s">&quot;email&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span>
         <span class="na">data-fv-emailaddress=</span><span class="s">&quot;true&quot;</span>
         <span class="na">data-fv-emailaddress-onerror=</span><span class="s">&quot;onEmailAddressError&quot;</span>
         <span class="na">data-fv-emailaddress-onsuccess=</span><span class="s">&quot;onEmailAddressSuccess&quot;</span> <span class="nt">/&gt;</span>
     ...
-<span class="nt">&lt;/form&gt;</span></code></pre></div>
+<span class="nt">&lt;/form&gt;</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">onEmailAddressError</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">onEmailAddressError</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// Do something ...</span>
 <span class="p">};</span>
 
@@ -3988,7 +3932,7 @@ $(document).ready(function() {
 
 <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">(</span><span class="nx">options</span><span class="p">);</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
                         </td>
                     </tr>
                 </tbody>

@@ -180,13 +180,13 @@ $(document).ready(function() {
 
                     <p>The first and most simple way is using a loading icon. It can be set via the <a href="/settings/#form-icon">icon</a> option:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
     <span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">valid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-ok&#39;</span><span class="p">,</span>
         <span class="nx">invalid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-remove&#39;</span><span class="p">,</span>
         <span class="nx">validating</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-refresh&#39;</span>
     <span class="p">}</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
                     <p>The <code>icon.validating</code> icon then is shown up when the field is being validated.</p>
 
@@ -204,41 +204,41 @@ $(document).ready(function() {
                                 <tr>
                                     <td><a href="http://getbootstrap.com/components/#glyphicons">Glyphicons</a></td>
                                     <td>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">valid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-ok&#39;</span><span class="p">,</span>
     <span class="nx">invalid</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-remove&#39;</span><span class="p">,</span>
     <span class="nx">validating</span><span class="o">:</span> <span class="s1">&#39;glyphicon glyphicon-refresh&#39;</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td><a href="http://fontawesome.io/icons">FontAwesome</a></td>
                                     <td>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">valid</span><span class="o">:</span> <span class="s1">&#39;fa fa-check&#39;</span><span class="p">,</span>
     <span class="nx">invalid</span><span class="o">:</span> <span class="s1">&#39;fa fa-times&#39;</span><span class="p">,</span>
     <span class="nx">validating</span><span class="o">:</span> <span class="s1">&#39;fa fa-refresh&#39;</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td><a href="http://semantic-ui.com/elements/icon.html">Semantic icons</a></td>
                                     <td>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">valid</span><span class="o">:</span> <span class="s1">&#39;checkmark icon&#39;</span><span class="p">,</span>
     <span class="nx">invalid</span><span class="o">:</span> <span class="s1">&#39;remove icon&#39;</span><span class="p">,</span>
     <span class="nx">validating</span><span class="o">:</span> <span class="s1">&#39;refresh icon&#39;</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td><a href="http://getuikit.com/docs/icon.html">UIKit</a></td>
                                     <td>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">valid</span><span class="o">:</span> <span class="s1">&#39;uk-icon-check&#39;</span><span class="p">,</span>
     <span class="nx">invalid</span><span class="o">:</span> <span class="s1">&#39;uk-icon-times&#39;</span><span class="p">,</span>
     <span class="nx">validating</span><span class="o">:</span> <span class="s1">&#39;uk-icon-refresh&#39;</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
                                     </td>
                                 </tr>
                             </tbody>
@@ -259,7 +259,7 @@ $(document).ready(function() {
 
                     <p>When the plugin starts validating field, it triggers the <a href="/settings/#event-field">status.field.fv</a> event:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">formValidation</span><span class="p">({</span>
         <span class="p">...</span>
     <span class="p">})</span>
@@ -268,7 +268,7 @@ $(document).ready(function() {
         <span class="c1">// data.element is the field element</span>
         <span class="c1">// data.fv is the plugin instance</span>
         <span class="c1">// data.status is the field status which is &#39;VALIDATING&#39; when the validation starts</span>
-    <span class="p">});</span></code></pre></div>
+    <span class="p">});</span></code></pre></figure>
 
                     <p>By listening this event, we can do whatever we want to inform user about the validation process.
                         To make it simple, I am going to use the <a href="http://getbootstrap.com/components/#progress">Bootstrap progress bar</a> component which
@@ -282,7 +282,7 @@ $(document).ready(function() {
 
                     <p>The form markup:</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;col-lg-3 control-label&quot;</span><span class="nt">&gt;</span>Username<span class="nt">&lt;/label&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-lg-5&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name=</span><span class="s">&quot;username&quot;</span> <span class="na">autocomplete=</span><span class="s">&quot;off&quot;</span> <span class="nt">/&gt;</span>
@@ -292,11 +292,11 @@ $(document).ready(function() {
             <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;progress-bar progress-bar-success progress-bar-striped active&quot;</span> <span class="na">style=</span><span class="s">&quot;width: 100%&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span></code></pre></div>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
 
                     <p>The Javascript code:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nx">form</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">formValidation</span><span class="p">({</span>
         <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
             <span class="nx">username</span><span class="o">:</span> <span class="p">{</span>
@@ -316,7 +316,7 @@ $(document).ready(function() {
                 <span class="o">?</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#progressBar&#39;</span><span class="p">).</span><span class="nx">show</span><span class="p">()</span>      <span class="c1">// Show the progress bar while we are validating</span>
                 <span class="o">:</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#progressBar&#39;</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>     <span class="c1">// Otherwise, hide it</span>
         <span class="p">}</span>
-    <span class="p">});</span></code></pre></div>
+    <span class="p">});</span></code></pre></figure>
 
                     <p>The screenshot below demonstrates how it looks:</p>
 
