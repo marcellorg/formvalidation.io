@@ -9,7 +9,7 @@
         <div class="col-xs-6">
             <input type="file" class="form-control" name="avatar"
                 data-fv-file="true"
-                data-fv-file-extension="jpeg,png"
+                data-fv-file-extension="jpeg,jpg,png"
                 data-fv-file-type="image/jpeg,image/png"
                 data-fv-file-maxsize="2097152"
                 data-fv-file-message="The selected file is not valid" />
