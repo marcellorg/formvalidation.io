@@ -1,0 +1,41 @@
+<script src="//oss.maxcdn.com/momentjs/2.8.2/moment.min.js"></script>
+
+<form id="profileForm" class="form-horizontal">
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Birthday</label>
+        <div class="col-xs-5">
+            <input type="text" class="form-control" name="birthday" placeholder="DD.MM.YYYY or DD.MM.YY" />
+        </div>
+    </div>
+</form>
+
+<script>
+$(document).ready(function() {
+    $('#profileForm').formValidation({
+        framework: 'bootstrap',
+        icon: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            birthday: {
+                validators: {
+                    callback: {
+                        message: 'The birthday is not valid',
+                        callback: function(value, validator, $field) {
+                            if (value === '') {
+                                return true;
+                            }
+
+                            // Check if the value has format of DD.MM.YYYY or DD.MM.YY
+                            return moment(value, 'DD.MM.YYYY', true).isValid()
+                                || moment(value, 'DD.MM.YY', true).isValid();
+                        }
+                    }
+                }
+            }
+        }
+    });
+});
+</script>

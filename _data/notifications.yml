@@ -1,3 +1,6 @@
+- title: "Supporting multiple date formats"
+  url: "/examples/supporting-multiple-date-formats/"
+
 - title: "v0.7.0 is released on 2015.08.01"
   url: "/news/v0.7.0-released/"
 
@@ -24,6 +27,3 @@
 
 - title: "New example: Showing custom message returned from server"
   url: "/examples/showing-custom-message-returned-from-server/"
-
-- title: "New example: Terms and conditions agreement validation"
-  url: "/examples/terms-conditions-agreement-validation/"

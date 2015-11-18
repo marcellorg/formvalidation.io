@@ -1,0 +1,63 @@
+---
+layout: default
+title: Supporting multiple date formats
+permalink: /examples/supporting-multiple-date-formats/
+---
+
+<div class="doc-content-container">
+    <div class="doc-heading">
+        <h1>Supporting multiple date formats</h1>
+        <p>&larr; <a href="/examples/">Examples</a></p>
+        {% include share.html %}
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <section>
+                    <p>The built-in <a href="/validators/date/">date</a> validator provides a handy tool when we need to validate a date.
+                        It supports various formats of date with different separator, such as MM/DD/YYYY or YYYY-MM-DD.
+                        But there's only one format supported at the same time.</p>
+
+                    <p>In some cases, you want the field to accept multiple formats such as DD.MM.YYYY and DD.MM.YY.
+                        The first format is supported by date validator, but the second one isn't.</p>
+
+                    <p>This example shows how to do this by using the <a href="/validators/callback/">callback</a> validator and the
+                        <a href="http://momentjs.com/">momentjs</a> library.</p>
+
+                    <p>The momentjs library provides <a href="http://momentjs.com/docs/#/parsing/is-valid/">isValid()</a> method to
+                        check if a date follows by given format:</p>
+
+{% highlight javascript %}
+moment('2015-10-20', 'YYYY-MM-DD', true).isValid();     // true
+moment('2015-20-10', 'YYYY-MM-DD', true).isValid();     // false
+
+moment('20.10.15', 'DD.MM.YY', true).isValid();         // true
+moment('2015.20.10', 'DD.MM.YY', true).isValid();       // false
+{% endhighlight %}
+
+                    <div class="doc-alert doc-alert-info">
+                        The third parameter of <a href="http://momentjs.com/docs/#/parsing/string-format/">moment() constructor</a> HAVE to set as true to ensure that the input has the
+                        given format exactly
+                    </div>
+
+                    {% include demo/tabs.html id="basic" frameworks="bootstrap" codes="programmatic" %}
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Related example</h2>
+
+                    <ul class="doc-list">
+                        <li><a href="/validators/date/#custom-format-example">Support custom date format</a></li>
+                    </ul>
+                </section>
+            </div>
+
+            <div class="col-md-3 hidden-print hidden-xs hidden-sm">
+                {% include sidebar.html %}
+            </div>
+        </div>
+    </div>
+</div>
