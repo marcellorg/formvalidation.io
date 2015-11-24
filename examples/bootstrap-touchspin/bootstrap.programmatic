@@ -1,0 +1,64 @@
+<!-- Include Bootstrap Touchspin file -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-touchspin/3.0.3/jquery.bootstrap-touchspin.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-touchspin/3.0.3/jquery.bootstrap-touchspin.min.js"></script>
+
+<!--
+Adjust the icon position
+See http://formvalidation.io/examples/adjusting-feedback-icon-position/
+-->
+<style>
+#touchspinForm .percentageContainer .form-control-feedback {
+    right: -15px;
+}
+</style>
+
+<form id="touchspinForm" method="post" class="form-horizontal">
+    <div class="form-group percentageContainer">
+        <label class="col-xs-3 control-label">Percent</label>
+        <div class="col-xs-5">
+            <input type="text" class="form-control" name="percentage" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-xs-9 col-xs-offset-3">
+            <button type="submit" class="btn btn-default">Validate</button>
+        </div>
+    </div>
+</form>
+
+<script>
+$(document).ready(function() {
+    $('#touchspinForm')
+        .formValidation({
+            framework: 'bootstrap',
+            excluded: ':disabled',
+            icon: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                percentage: {
+                    validators: {
+                        between: {
+                            min: 0,
+                            max: 100,
+                            message: 'The percentage must be between 0 and 100'
+                        }
+                    }
+                }
+            }
+        })
+        .find('[name="percentage"]')
+            .TouchSpin({
+                min: 0,
+                max: 100
+            })
+            .on('change touchspin.on.min touchspin.on.max', function() {
+                // Revaliate the field
+                $('#touchspinForm').formValidation('revalidateField', 'percentage');
+            })
+            .end();
+});
+</script>

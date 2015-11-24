@@ -1,3 +1,6 @@
+- title: "Playing with Bootstrap Touchspin"
+  url: "/examples/bootstrap-touchspin/"
+
 - title: "Supporting multiple date formats"
   url: "/examples/supporting-multiple-date-formats/"
 
@@ -24,6 +27,3 @@
 
 - title: "New example: Validating custom Stripe form"
   url: "/examples/validating-custom-stripe-form/"
-
-- title: "New example: Showing custom message returned from server"
-  url: "/examples/showing-custom-message-returned-from-server/"
