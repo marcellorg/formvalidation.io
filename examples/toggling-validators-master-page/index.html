@@ -1,0 +1,122 @@
+---
+layout: default
+title: Toggling validators in a master page
+permalink: /examples/toggling-validators-master-page/
+---
+
+<div class="doc-content-container">
+    <div class="doc-heading">
+        <h1>Toggling validators in a master page</h1>
+        <p>&larr; <a href="/examples/">Examples</a></p>
+        {% include share.html %}
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <section>
+                    <p>In some cases, you might want to validate given fields while ignoring validation on other one.
+                        Let's look at the following particular case:</p>
+
+                    <ul class="doc-list">
+                        <li>The signing in form defines validator rules for the username and password fields</li>
+                        <li>There's also a modal that allows user to enter the email address in case he wants to reset the password</li>
+                    </ul>
+
+                    <p>The main form and modal have separated submit buttons.</p>
+                    <ul class="doc-list">
+                        <li>Clicking the <em>Submit</em> button in the main form only validates the username/password fields</li>
+                        <li>And vice versa, clicking the <em>Submit</em> button in the modal will trigger the validations on the email field only</li>
+                    </ul>
+
+                    <p>The requirement above can be easily implemented if we put the main form and modal into separated forms.
+                        By doing that, clicking the <em>Submit</em> button in each form doesn't effect to the validations of the other one.
+                        The problem is solved.</p>
+
+                    <p>But, what if the page always has only one form, such as the master page from ASP.Net.</p>
+
+                    <p>This example shows you a way to solve this <a href="/examples/enable-validator/">again</a> by
+                        using two powerful features of <a href="/download/">FormValidation</a>:</p>
+
+                    <ul class="doc-list">
+                        <li>Initially, all the validators of email field are disabled via the <a href="/settings#field-enabled">enabled</a> option</li>
+                        <li>When showing the modal, we can turn them on via the <a href="/api#enable-field-validators">enableFieldValidators()</a> method.
+                            Also, they are turned off when closing the modal.</li>
+                    </ul>
+
+                    <p>The <a href="http://getbootstrap.com/javascript/#modals">Bootstrap modal</a> provides <code>shown.bs.modal</code>
+                        and <code>hidden.bs.modal</code> event that are triggered after showing/hiding a modal. That are the places where we can
+                        toggle the field validations.</p>
+
+{% highlight javascript %}
+$('#forgotPasswordModal')
+    // Called after showing the modal
+    .on('shown.bs.modal', function() {
+        $('#signinForm')
+            // Disable the validators of username/password fields
+            .formValidation('enableFieldValidators', 'username', false)
+            .formValidation('enableFieldValidators', 'password', false)
+
+            // Enable the validators of email field
+            .formValidation('enableFieldValidators', 'email', true)
+            .formValidation('resetField', 'email');
+    })
+
+    // Called after hiding the modal
+    .on('hidden.bs.modal', function() {
+        $('#signinForm')
+            // Enable the validators of username/password fields
+            .formValidation('enableFieldValidators', 'username', true)
+            .formValidation('enableFieldValidators', 'password', true)
+
+            // Disable the validators of email field
+            .formValidation('enableFieldValidators', 'email', false);
+    });
+{% endhighlight %}
+
+                    <p>You can take a look at the <em>Programmatic code</em> tab to see the full working code.</p>
+
+                    <div class="doc-demo">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#demo-form-tab" data-toggle="tab">Try it</a></li>
+                            <li><a href="#demo-programmatic-tab" data-toggle="tab">Programmatic code</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="demo-form-tab">
+                                {% include_relative bootstrap.markup %}
+                            </div>
+
+                            <div class="tab-pane" id="demo-programmatic-tab">
+{% highlight html %}
+{% include_relative bootstrap.markup %}
+
+{% include_relative bootstrap.programmatic %}
+{% endhighlight %}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Related examples</h2>
+
+                    <ul class="doc-list">
+                        <li><a href="/examples/conditional-validation/">Conditional validation</a></li>
+                        <li><a href="/examples/enable-validator/">Enabling validator</a></li>
+                        <li><a href="/examples/switching-validators-same-field/">Switching validators on the same field</a></li>
+                        <li><a href="/examples/modal/">Validating form inside a modal</a></li>
+                    </ul>
+                </section>
+            </div>
+
+            <div class="col-md-3 hidden-print hidden-xs hidden-sm">
+                {% include sidebar.html %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include_relative bootstrap.programmatic %}

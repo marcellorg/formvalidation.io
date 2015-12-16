@@ -1,3 +1,6 @@
+- title: "New example: Toggling validators in a master page"
+  url: "/examples/toggling-validators-master-page/"
+
 - title: "Playing with Bootstrap Touchspin"
   url: "/examples/bootstrap-touchspin/"
 
@@ -24,6 +27,3 @@
 
 - title: "New example: Validating percentage values"
   url: "/examples/validating-percentage-values/"
-
-- title: "New example: Validating custom Stripe form"
-  url: "/examples/validating-custom-stripe-form/"
