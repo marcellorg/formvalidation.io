@@ -1,0 +1,60 @@
+---
+layout: default
+title: Playing with Awesome Bootstrap Checkbox
+permalink: /examples/awesome-bootstrap-checkbox/
+---
+
+<div class="doc-content-container">
+    <div class="doc-heading">
+        <h1>Playing with Awesome Bootstrap Checkbox</h1>
+        <p>&larr; <a href="/examples/">Examples</a></p>
+        {% include share.html %}
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <section>
+                    <p>This example shows how to validate check boxes and radio buttons which are customized by the <a href="https://github.com/flatlogic/awesome-bootstrap-checkbox/">Awesome Bootstrap Checkbox</a> library.</p>
+
+                    <div class="doc-alert doc-alert-info">
+                        You should look at the <a href="/examples#compatibility">basic principles</a> when integrating FormValidation with other plugins
+                    </div>
+
+                    <div>As described in the <a href="https://github.com/flatlogic/awesome-bootstrap-checkbox#use">official usage</a>, there are two important notices:</div>
+                    <ul class="doc-list">
+                        <li>Each checkbox, radio button should have <code>styled</code> class in order to support Opera 12 and earlier versions</li>
+                        <li>The <code>for</code> attribute of label element is the same as associated <code>id</code> attribute of checkbox or radio button.
+                            So clicking on the label will have the same effect as checking the button</li>
+                    </ul>
+
+                    <p>We also need to override the styles for <code>styled</code> radio button to fix the issue where the Font Awesome check icon
+                        is shown inside the radio button:</p>
+
+{% highlight css %}
+/* Don't add a FontAwesome check icon to the radio */
+input[type="radio"].styled:checked+label:after {
+    font-family: 'FontAwesome';
+    content: '';
+}
+{% endhighlight %}
+
+                    {% include demo/tabs.html id="basic" frameworks="bootstrap" codes="programmatic" %}
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Related example</h2>
+                    <ul class="doc-list">
+                        <li><a href="/examples/icheck/">iCheck</a></li>
+                    </ul>
+                </section>
+            </div>
+
+            <div class="col-md-3 hidden-print hidden-xs hidden-sm">
+                {% include sidebar.html %}
+            </div>
+        </div>
+    </div>
+</div>
