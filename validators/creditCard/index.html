@@ -205,6 +205,25 @@ related:
                     </div>
 
                     {% include demo/tabs.html id="icon" frameworks="bootstrap" dir="icon" codes="programmatic" %}
+
+                    <h3>Accept test credit card numbers</h3>
+                    <p>Do you want some of fake, even invalid credit card numbers to be valid? For example, in the developing phase,
+                        you might want the creditCard validator to accept a few of particular card numbers.</p>
+                    <p>Of course, you don't need to modify the source code of creditCard validator and add your own numbers there.
+                        FormValidation allows you to do it in a nice way via the <a href="/settings/#validator-transformer">transformer</a> option.</p>
+                    <p>By using this option, we transform your test card numbers from an invalid to a valid one.</p>
+
+                    <div class="doc-alert doc-alert-info">
+                        The transformer option changes the card numbers for validation process only. When the form is submitted,
+                        you get the extract number that is initially provided by the user
+                    </div>
+
+                    {% include demo/tabs.html id="transformer" frameworks="bootstrap" dir="transformer" codes="programmatic" %}
+
+                    <p>For more usage of <code>transformer</code> option, you should take a look at the following example:</p>
+                    <ul class="doc-list">
+                        <li><a href="/examples/modifying-value-before-validating/">Modifying the value before validating</a></li>
+                    </ul>
                 </section>
 
                 <div class="doc-hr"></div>
