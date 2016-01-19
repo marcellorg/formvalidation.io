@@ -14,24 +14,31 @@ permalink: /examples/bootstrap-tab/
     <div class="container">
         <div class="row">
             <div class="col-md-9">
-                <p>The following example shows that the plugin works perfectly with <a href="http://getbootstrap.com/javascript/#tabs">Bootstrap Tabs</a>.</p>
+                <section>
+                    <p>The following example shows that the plugin works perfectly with <a href="http://getbootstrap.com/javascript/#tabs">Bootstrap Tabs</a>.</p>
 
-                <div class="doc-alert doc-alert-info">
-                    If you are thinking about the form wizard, look at some <a href="/examples/#wizard">wizard</a> examples
-                </div>
+                    <div class="doc-alert doc-alert-info">
+                        If you are thinking about the form wizard, look at some <a href="/examples/#wizard">wizard</a> examples
+                    </div>
+                </section>
 
-                <p>By default, the fields in inactive tabs will not be validated because they are not visible. In order to validate them, we need to use the <a href="/settings#form-excluded">excluded</a> option:</p>
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Adding invalid icon to tab</h2>
+
+                    <p>By default, the fields in inactive tabs will not be validated because they are not visible. In order to validate them, we need to use the <a href="/settings#form-excluded">excluded</a> option:</p>
 
 {% highlight javascript %}
 excluded: [':disabled']
 {% endhighlight %}
 
-                <div class="doc-alert doc-alert-info">
-                    You should look at the <a href="/examples#compatibility">basic principles</a> when integrating FormValidation with other plugins
-                </div>
+                    <div class="doc-alert doc-alert-info">
+                        You should look at the <a href="/examples#compatibility">basic principles</a> when integrating FormValidation with other plugins
+                    </div>
 
-                <p>Assume that you want to add an icon to tab to indicate the valid or invalid tab. A tab is called valid if all fields inside it are valid. Otherwise, if there is at least one invalid field inside tab, the tab is invalid.</p>
-                <p>Firstly, we need to prepare the icon placed at the tab title:</p>
+                    <p>Assume that you want to add an icon to tab to indicate the valid or invalid tab. A tab is called valid if all fields inside it are valid. Otherwise, if there is at least one invalid field inside tab, the tab is invalid.</p>
+                    <p>Firstly, we need to prepare the icon placed at the tab title:</p>
 
 {% highlight html %}
 <ul class="nav nav-tabs">
@@ -40,7 +47,7 @@ excluded: [':disabled']
 </ul>
 {% endhighlight %}
 
-                <p>Lastly, add success/error class to icon when the field is valid/invalid by triggering the <code>err.field.fv</code> and <code>success.field.fv</code> <a href="/settings#event-field">events</a>:</p>
+                    <p>Lastly, add success/error class to icon when the field is valid/invalid by triggering the <code>err.field.fv</code> and <code>success.field.fv</code> <a href="/settings#event-field">events</a>:</p>
 
 {% highlight javascript %}
 $(document).ready(function() {
@@ -85,7 +92,49 @@ $(document).ready(function() {
 });
 {% endhighlight %}
 
-                {% include demo/tabs.html id="demo" frameworks="bootstrap" codes="programmatic" %}
+                    {% include demo/tabs.html id="basic" dir="basic" frameworks="bootstrap" codes="programmatic" %}
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Activating tab containing invalid field</h2>
+
+                    <p>The following snippet shows how to activate the tab that contains the invalid field. It uses the
+                        <a href="/api/#get-invalid-fields">getInvalidFields()</a> method to retrieve the list of invalid fields, and from there,
+                        determine the tab containing the first invalid one.</p>
+
+                    <p>If that tab isn't active, then activate it and the associated <code>&lt;li&gt;</code> element.</p>
+
+{% highlight javascript %}
+$(document).ready(function() {
+    $('#accountForm')
+        .formValidation({
+            excluded: [':disabled'],
+            ...
+        })
+        .on('err.field.fv', function(e, data) {
+            // Get the first invalid field
+            var $invalidFields = data.fv.getInvalidFields().eq(0);
+
+            // Get the tab that contains the first invalid field
+            var $tabPane     = $invalidFields.parents('.tab-pane'),
+                invalidTabId = $tabPane.attr('id');
+
+            // If the tab is not active
+            if (!$tabPane.hasClass('active')) {
+                // Then activate it
+                ...
+
+                // Focus on the field
+                $invalidFields.focus();
+            }
+        });
+});
+{% endhighlight %}
+
+                    {% include demo/tabs.html id="activate-tab" dir="activate-tab" frameworks="bootstrap" codes="programmatic" %}
+                </section>
             </div>
 
             <div class="col-md-3 hidden-print hidden-xs hidden-sm">
