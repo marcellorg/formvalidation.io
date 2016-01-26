@@ -28,6 +28,68 @@ permalink: /examples/bootstrap-datepicker/
                 <div class="doc-hr"></div>
 
                 <section>
+                    <h2>Embedding a date picker</h2>
+
+                    <p>It's possible for Bootstrap Datepicker to embed a picker right on the page without attaching it
+                        to particular input field.</p>
+                    <p>In order to validate the selected date, firstly we need create a hidden input to keep the selected date:</p>
+
+{% highlight html %}
+<div id="embeddingDatePicker"></div>
+<input type="hidden" id="selectedDate" name="selectedDate" />
+{% endhighlight %}
+
+                    <p>We then add validator rules for the <code>selectedDate</code> field,
+                        don't forget to set <a href="/settings#field-excluded">excluded: false</a> to the field (because it's hidden so it will be ignored by default):</p>
+
+{% highlight javascript %}
+$('#eventForm').formValidation({
+    framework: 'bootstrap',
+    icon: {
+        ...
+    },
+    fields: {
+        selectedDate: {
+            // The hidden input will not be ignored
+            excluded: false,
+            validators: {
+                notEmpty: {
+                    message: 'The date is required'
+                },
+                date: {
+                    format: 'MM/DD/YYYY',
+                    message: 'The date is not a valid'
+                }
+            }
+        }
+    }
+});
+{% endhighlight %}
+
+                    <p>Finally, after choosing a date, you need to set the selected date to the hidden field, and revalidate it:</p>
+
+{% highlight javascript %}
+$('#embeddingDatePicker')
+    .datepicker({
+        format: 'mm/dd/yyyy'
+    })
+    .on('changeDate', function(e) {
+        // Set the value for the date input
+        $("#selectedDate").val($("#embeddingDatePicker").datepicker('getFormattedDate'));
+
+        // Revalidate it
+        $('#eventForm').formValidation('revalidateField', 'selectedDate');
+    });
+{% endhighlight %}
+
+                    <p>You can try it with the following live form:</p>
+
+                    {% include demo/tabs.html id="embedding" frameworks="bootstrap" dir="embedding" codes="programmatic" %}
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
                     <h2>Setting date in a range</h2>
 
                     <p>Since Bootstrap Datepicker provides <a href="http://bootstrap-datepicker.readthedocs.org/en/release/options.html#startdate">startDate</a> and <a href="http://bootstrap-datepicker.readthedocs.org/en/release/options.html#enddate">endDate</a> options,
