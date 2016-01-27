@@ -1,0 +1,206 @@
+---
+layout: default
+title: Using Google material icons
+permalink: /examples/using-google-material-icons/
+---
+
+<div class="doc-content-container">
+    <div class="doc-heading">
+        <h1>Using Google material icons</h1>
+        <p>&larr; <a href="/examples/">Examples</a></p>
+        {% include share.html %}
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <section>
+                    <p><a href="/download/">FormValidation</a> will show a feedback icon when a field is
+                        being validated, invalid or valid. The icons can be set by the <a href="/settings/#form-icon">icon</a>
+                        option:
+                    </p>
+
+{% highlight javascript %}
+icon: {
+    valid: null,        // The CSS classes of valid icon
+    invalid: null,      // The CSS classes of invalid icon
+    validating: null    // The CSS classes of validating icon
+}
+{% endhighlight %}
+
+                    <p>By using this option, it's easy to use the icons provided by different icon sets such as</p>
+                    <ul class="doc-list">
+                        <li><a href="http://getbootstrap.com/components/#glyphicons">Bootstrap Glyphicons</a></li>
+                        <li><a href="http://fontawesome.io/icons">FontAwesome</a></li>
+                        <li>etc.</li>
+                    </ul>
+
+                    <p>This example shows how to use the <a href="https://design.google.com/icons/">Google material design icons</a>.</p>
+                    <p>It's up to you to choose suitable icons from Google material design icons for the feedback icons. The following table
+                        is just an example of three icons taken from the set:</p>
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Field status</th>
+                                    <th>Icon</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Valid</td>
+                                    <td>
+{% highlight html %}
+<i class="material-icons">check</i>
+{% endhighlight %}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Invalid</td>
+                                    <td>
+{% highlight html %}
+<i class="material-icons">clear</i>
+{% endhighlight %}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Being validated</td>
+                                    <td>
+{% highlight html %}
+<i class="material-icons">graphic_eq</i>
+{% endhighlight %}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p>As you see, each Google material design icon uses pre-defined content instead of a different CSS class. Meanwhile,
+                        the <a href="/settings/#form-icon">icon</a> option only accepts CSS classes that are added to the icon based on
+                        the field validity.
+                    </p>
+
+                    <p>The next section introduces two approaches to solve this problem.</p>
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Defining icon content by CSS</h2>
+
+                    <p>By using the <code>:after</code> CSS selector, we can indicated content of icons as following:</p>
+
+{% highlight css %}
+.material-icons.valid-icon:after {
+    // The content of valid icon is 'check'
+    content: 'check';
+    font-size: 15px;
+}
+.material-icons.invalid-icon:after {
+    // The content of invalid icon is 'clear'
+    content: 'clear';
+    font-size: 15px;
+}
+.material-icons.validating-icon:after {
+    content: 'graphic_eq';
+    font-size: 15px;
+}
+{% endhighlight %}
+
+                    <p>Lastly, you just set the icons for each status of field:</p>
+
+{% highlight javascript %}
+$('#googleIconsForm').formValidation({
+    framework: 'bootstrap',
+    icon: {
+        valid: 'material-icons valid-icon',
+        invalid: 'material-icons invalid-icon',
+        validating: 'material-icons validating-icon'
+    }
+    ...
+});
+{% endhighlight %}
+
+                    {% include demo/tabs.html id="icons" frameworks="bootstrap" dir="icons" codes="programmatic" %}
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Triggering the event</h2>
+
+                    <p>In this approach, we set the same <code>material-icons</code> class for all icons:</p>
+
+{% highlight javascript %}
+$('#googleIconsForm').formValidation({
+    icon: {
+        valid: 'material-icons',
+        invalid: 'material-icons',
+        validating: 'material-icons'
+    },
+    ...
+});
+{% endhighlight %}
+
+                    <p>In order to update the content of icon based on the field validity status, we can handle the
+                        <a href="/settings/#event-field">status.field.fv</a> event that is triggered whenever the field status is updated:</p>
+
+{% highlight javascript %}
+$('#googleIconsForm')
+    .formValidation({
+        icon: {
+            valid: 'material-icons',
+            invalid: 'material-icons',
+            validating: 'material-icons'
+        },
+        ...
+    })
+    .on('status.field.fv', function(e, data) {
+        var $element = data.element,                // Get the field element
+            $icon    = $element.data('fv.icon');    // The feedback icon associates with the field
+
+        switch (data.status) {
+            case 'VALID':
+                $icon.html('check');
+                break;
+            case 'INVALID':
+                $icon.html('clear');
+                break;
+            case 'VALIDATING':
+                $icon.html('graphic_eq');
+                break;
+            case 'NOT_VALIDATED':
+            default:
+                $icon.html('');
+                break;
+        }
+    });
+});
+{% endhighlight %}
+
+                    <div class="doc-alert doc-alert-info">
+                        Tip: For a given field, we can retrieve the icon element via $field.data('fv.icon') as seen
+                        in the sample code above
+                    </div>
+
+                    {% include demo/tabs.html id="event" frameworks="bootstrap" dir="event" codes="programmatic" %}
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Related example</h2>
+
+                    <ul class="doc-list">
+                        <li><a href="/examples/bootstrap-material-design/">Playing with Bootstrap Material Design</a></li>
+                    </ul>
+                </section>
+            </div>
+
+            <div class="col-md-3 hidden-print hidden-xs hidden-sm">
+                {% include sidebar.html %}
+            </div>
+        </div>
+    </div>
+</div>
