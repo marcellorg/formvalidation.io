@@ -47,6 +47,40 @@ permalink: /examples/validating-credit-card-expiration-date/
                     </div>
 
                     {% include demo/tabs.html id="two-fields" frameworks="bootstrap" dir="two-fields" codes="programmatic" %}
+
+                    <h3>Supporting two digits year</h3>
+
+                    <p>The example above requires the expiration year to be a full four digits year. What if we need to support two digits year such as 18 instead of 2018?</p>
+
+                    <p>The <a href="/settings/#validator-transformer">transformer</a> option will be used in this case. The idea is that using this option to transform a two digits year number into a four digits year number:</p>
+
+{% highlight javascript %}
+$('#paymentForm').formValidation({
+    framework: 'bootstrap',
+    icon: {
+        ...
+    },
+    fields: {
+        expYear: {
+            row: '.col-xs-3',
+            transformer: function($field, validatorName, validator) {
+                var year = parseInt($field.val(), 10);
+                if (isNaN(year)) {
+                    return year;
+                } else {
+                    // Add 2000 to year
+                    return 2000 + year;
+                }
+            },
+            validators: {
+                ...
+            }
+        }
+    }
+});
+{% endhighlight %}
+
+                    {% include demo/tabs.html id="two-digits-year" frameworks="bootstrap" dir="two-digits-year" codes="programmatic" %}
                 </section>
 
                 <div class="doc-hr"></div>
