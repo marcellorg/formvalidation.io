@@ -1,0 +1,99 @@
+<form id="eventForm" method="post" class="form-horizontal">
+    <div class="form-group">
+        <label>Event name</label>
+        <input type="text" class="form-control" name="name" style="width: 200px;" />
+    </div>
+
+    <div class="form-group">
+        <label>Alert on</label>
+    </div>
+
+    <div class="form-group">
+        <!-- The feedback icon will be placed here -->
+        <span id="alertDayIcon"></span>
+
+        <div class="row">
+            <div class="col-xs-6">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="0" name="alertDay" /> On event day
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="1" name="alertDay" /> 1 day before
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="2" name="alertDay" /> 2 days before
+                    </label>
+                </div>
+            </div>
+
+            <div class="col-xs-6">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="3" name="alertDay" /> 3 days before
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="7" name="alertDay" /> 1 week before
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="14" name="alertDay" /> 2 weeks before
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- The container to place the error of checkboxes -->
+        <div id="alertDayMessage"></div>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-default">Validate</button>
+    </div>
+</form>
+
+<script>
+$(document).ready(function() {
+    $('#eventForm')
+        .on('init.field.fv', function(e, data) {
+            // data.field   --> The field name
+            // data.element --> The field element
+            if (data.field === 'alertDay') {
+                var $icon = data.element.data('fv.icon');
+                $icon.appendTo('#alertDayIcon');
+            }
+        })
+        .formValidation({
+            framework: 'bootstrap',
+            icon: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                name: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The event name is required'
+                        }
+                    }
+                },
+                alertDay: {
+                    err: '#alertDayMessage',
+                    validators: {
+                        notEmpty: {
+                            message: 'Please choose at least one checkbox'
+                        }
+                    }
+                }
+            }
+        });
+});
+</script>

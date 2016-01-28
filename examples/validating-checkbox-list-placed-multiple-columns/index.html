@@ -1,0 +1,122 @@
+---
+layout: default
+title: Validating checkbox list placed in multiple columns
+permalink: /examples/validating-checkbox-list-placed-multiple-columns/
+---
+
+<div class="doc-content-container">
+    <div class="doc-heading">
+        <h1>Validating checkbox list placed in multiple columns</h1>
+        <p>&larr; <a href="/examples/">Examples</a></p>
+        {% include share.html %}
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <section>
+                    <p>In this example, you will see how to validate a list of checkboxes which are placed in multiple columns.</p>
+                    <p>The following form asks us to choose at least one day that we will be notified when the event is going to happen.
+                        The list of days are placed inside two columns which have the same <code>col-xs-6</code> class.</p>
+
+                    <p>We need to define the elements that display the feedback icon and error message:</p>
+
+{% highlight html %}
+<div class="form-group">
+    <!-- The feedback icon will be placed here -->
+    <span id="alertDayIcon"></span>
+
+    <div class="row">
+        <div class="col-xs-6">
+            <!-- The first three checkboxes ... -->
+        </div>
+
+        <div class="col-xs-6">
+            <!-- The other three checkboxes ... -->
+        </div>
+    </div>
+
+    <!-- The container to place the error of checkboxes -->
+    <div id="alertDayMessage"></div>
+</div>
+{% endhighlight %}
+
+                    <p>To show the feedback icon at the element <code>#alertDayIcon</code>, we can handle the
+                        <a href="/settings#event-field">init.field.fv</a> event that is trigger right after initializing
+                        the fields and feedback icon element:</p>
+
+{% highlight javascript %}
+$('#eventForm')
+    .on('init.field.fv', function(e, data) {
+        // data.field   --> The field name
+        // data.element --> The field element
+        if (data.field === 'alertDay') {
+            var $icon = data.element.data('fv.icon');
+            $icon.appendTo('#alertDayIcon');
+        }
+    })
+    .formValidation({
+        framework: 'bootstrap',
+        icon: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            ...
+        }
+    });
+{% endhighlight %}
+
+                    <div class="doc-alert doc-alert-info">
+                        For more information, look at the <a href="/examples/showing-icon-custom-area/">Showing icons in custom area</a> example
+                    </div>
+
+                    <p>The last step is to use the <a href="/settings/#field-err">err</a> option to indicate the container where the associated messages are shown:</p>
+
+{% highlight javascript %}
+$('#eventForm')
+    .formValidation({
+        framework: 'bootstrap',
+        icon: {
+            ...
+        },
+        fields: {
+            alertDay: {
+                err: '#alertDayMessage',    // The error message container
+                validators: {
+                    notEmpty: {
+                        message: 'Please choose at least one checkbox'
+                    }
+                }
+            }
+        }
+    });
+{% endhighlight %}
+
+                    <div class="doc-alert doc-alert-info">
+                        The <a href="/examples/showing-message-custom-area/">Showing messages in custom area</a> example demonstrates
+                        a few of similar usecases
+                    </div>
+
+                    {% include demo/tabs.html id="demo" frameworks="bootstrap" codes="programmatic" %}
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Related examples</h2>
+
+                    <ul class="doc-list">
+                        <li><a href="/examples/showing-messages-modal/">Showing messages in a modal</a></li>
+                        <li><a href="/examples/showing-message-custom-area/">Showing messages in custom area</a></li>
+                    </ul>
+                </section>
+            </div>
+
+            <div class="col-md-3 hidden-print hidden-xs hidden-sm">
+                {% include sidebar.html %}
+            </div>
+        </div>
+    </div>
+</div>

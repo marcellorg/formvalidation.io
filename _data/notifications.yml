@@ -1,3 +1,6 @@
+- title: "Validating checkbox list placed in multiple columns"
+  url: "/examples/validating-checkbox-list-placed-multiple-columns/"
+
 - title: "Using Google material icons"
   url: "/examples/using-google-material-icons/"
 
@@ -24,6 +27,3 @@
 
 - title: "Asking fields to be unique"
   url: "/examples/asking-fields-be-unique/"
-
-- title: "Contact form"
-  url: "/examples/contact-form/"
