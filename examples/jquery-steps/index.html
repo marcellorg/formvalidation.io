@@ -15,14 +15,17 @@ image: /examples/jquery-steps/cover.png
     <div class="container">
         <div class="row">
             <div class="col-md-9">
-                <p>The following example shows an usage of FormValidation to validate tabs structured by <a href="http://www.jquery-steps.com/">jQuery Steps</a>.</p>
+                <section>
+                    <h2>Basic usage</h2>
 
-                <div class="doc-alert doc-alert-info">
-                    You should look at the <a href="/examples#wizard">wizard</a> section when integrating FormValidation with wizard-like components
-                </div>
+                    <p>The following example shows an usage of FormValidation to validate tabs structured by <a href="http://www.jquery-steps.com/">jQuery Steps</a>.</p>
 
-                <p>The CSS provided by jQuery Steps set the <code>min-height: 35em</code> for the main content. In order to adjust the
-                height of container to fit the content, we can override it easily as following:</p>
+                    <div class="doc-alert doc-alert-info">
+                        You should look at the <a href="/examples#wizard">wizard</a> section when integrating FormValidation with wizard-like components
+                    </div>
+
+                    <p>The CSS provided by jQuery Steps set the <code>min-height: 35em</code> for the main content. In order to adjust the
+                    height of container to fit the content, we can override it easily as following:</p>
 
 {% highlight css %}
 .wizard .content {
@@ -36,13 +39,57 @@ image: /examples/jquery-steps/cover.png
 }
 {% endhighlight %}
 
-                <p>When clicking the Previous, Next, Finish button, we need to validate the current step area. It can be done by calling the <a href="/api/#validate-container">validateContainer()</a> method when
-                <code>onStepChanging</code>, <code>onFinishing</code> <a href="https://github.com/rstaib/jquery-steps/wiki/Settings#events">events</a> are triggered.</p>
-                <p>We then prevent the wizard from jumping to the next or previous step if the container is not valid.</p>
+                    <p>When clicking the Previous, Next, Finish button, we need to validate the current step area. It can be done by calling the <a href="/api/#validate-container">validateContainer()</a> method when
+                    <code>onStepChanging</code>, <code>onFinishing</code> <a href="https://github.com/rstaib/jquery-steps/wiki/Settings#events">events</a> are triggered.</p>
+                    <p>We then prevent the wizard from jumping to the next or previous step if the container is not valid.</p>
 
-                <p>Below is the working example:</p>
+                    <p>Below is the working example:</p>
 
-                {% include demo/tabs.html id="demo" frameworks="bootstrap" codes="programmatic" %}
+                    {% include demo/tabs.html id="demo" frameworks="bootstrap" codes="programmatic" %}
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Not validating current step when going to previous one</h2>
+
+                    <p>The <a href="https://github.com/rstaib/jquery-steps/wiki/Settings#events">onStepChanging</a> event provided by jQuery Steps
+                        has <code>currentIndex</code> and <code>newIndex</code> parameters.
+                        We can compare these parameters to check whether the user click on Previous button or not:</p>
+
+{% highlight javascript %}
+$('#profileForm')
+    .steps({
+        headerTag: 'h2',
+        bodyTag: 'section',
+        // Triggered when clicking the Previous/Next buttons
+        onStepChanging: function(e, currentIndex, newIndex) {
+            var fv         = $('#profileForm').data('formValidation'), // FormValidation instance
+                // The current step container
+                $container = $('#profileForm').find('section[data-step="' + currentIndex +'"]');
+
+            // If user click on "Previous" button, we just normally let he/she goes
+            if (newIndex < currentIndex) {
+                return true;
+            }
+
+            // Validate the container
+            fv.validateContainer($container);
+
+            ...
+        },
+        onFinishing: function(e, currentIndex) {
+            ...
+        },
+        onFinished: function(e, currentIndex) {
+            ...
+        }
+    })
+    .formValidation({
+        ...
+    });
+{% endhighlight %}
+                </section>
             </div>
 
             <div class="col-md-3 hidden-print hidden-xs hidden-sm">
