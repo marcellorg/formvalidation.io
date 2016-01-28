@@ -64,11 +64,14 @@ $(document).ready(function() {
         })
         .on('err.validator.fv', function(e, data) {
             if (data.field === 'email' && data.validator === 'remote') {
+                var response = data.result;
                 // We need to reset the error message
                 data.element                // The field element
                     .data('fv.messages')    // The message container
                     .find('[data-fv-validator="remote"][data-fv-for="email"]')
-                    .html('The email is not valid')
+                    .html(response.did_you_mean
+                                ? 'Did you mean ' + response.did_you_mean + '?'
+                                : 'The email is not valid')
                     .show();
             }
         });
