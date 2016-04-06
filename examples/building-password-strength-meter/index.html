@@ -1,0 +1,221 @@
+---
+layout: default
+title: Building a password strength meter with Dropbox's zxcvbn libary
+permalink: /examples/building-password-strength-meter/
+---
+
+<div class="doc-content-container">
+    <div class="doc-heading">
+        <h1>Building a password strength meter with Dropbox's zxcvbn libary</h1>
+        <p>&larr; <a href="/examples/">Examples</a></p>
+        {% include share.html %}
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <section>
+                    <p>In this example, we will use the awesome Dropbox's <a href="https://github.com/dropbox/zxcvbn">zxcvbn</a> library to
+                        build a password strength meter.</p>
+
+                    <p>For anyone who haven't known about zxcvbn library, it's a password strength estimator inspired by password crackers developed by Dropbox.</p>
+                    <p>It can recognize and weighs 30k common passwords. For more information about this library, you can refer to <a href="https://github.com/dropbox/zxcvbn">its official page</a>.</p>
+                    <p>It's quite easy to <a href="https://github.com/dropbox/zxcvbn#usage">use it</a> to see how strong a given password is:</p>
+
+{% highlight javascript %}
+var result = zxcvbn(password);
+
+// The password strength score. See the following table for available values
+result.score
+
+// Explain why the password is weak. "This is a top-10 common password", for example
+result.feedback.warning
+{% endhighlight %}
+
+                    <p><code>score</code> is an integer number between 0 and 4 indicate the strength level:</p>
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Score</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>0</td>
+                                    <td>Too guessable: risky password</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Very guessable: protection from throttled online attacks</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Somewhat guessable: protection from unthrottled online attacks</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Safely unguessable: moderate protection from offline slow-hash scenario</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Very unguessable: strong protection from offline slow-hash scenario</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p>We will use the <a href="/validators/callback/">callback</a> validator to check the password strength, and treat it as an invalid password if the score is less than 3:</p>
+
+{% highlight javascript %}
+$('#passwordForm').formValidation({
+    framework: 'bootstrap',
+    icon: {
+        ...
+    },
+    fields: {
+        password: {
+            validators: {
+                notEmpty: {
+                    message: 'The password is required'
+                },
+                callback: {
+                    callback: function(value, validator, $field) {
+                        var password = $field.val();
+                        if (password == '') {
+                            return true;
+                        }
+
+                        var result  = zxcvbn(password),
+                            score   = result.score,
+                            message = result.feedback.warning || 'The password is weak';
+
+                        // We will treat the password as an invalid one if the score is less than 3
+                        if (score < 3) {
+                            return {
+                                valid: false,
+                                message: message    // Yeah, this will be set as error message
+                            }
+                        }
+
+                        return true;
+                    }
+                }
+            }
+        }
+    }
+});
+{% endhighlight %}
+
+                    <div class="doc-alert doc-alert-info">
+                        The sample code above shows how to set a dynamic error message returned from the <a href="/validators/callback/">callback</a> validator.
+                        This capability is also available in a few of validators as listed in the <a href="/settings/#dynamic-message">dynamic message</a> section.
+                    </div>
+                    
+                    <p>We also can use <a href="http://getbootstrap.com/components/#progress">Bootstrap's progress bar</a> component to show the strength level:</p>
+
+{% highlight html %}
+<div class="progress password-progress">
+    <div id="strengthBar" class="progress-bar" role="progressbar" style="width: 0;"></div>
+</div>
+{% endhighlight %}
+
+{% highlight javascript %}
+$('#passwordForm').formValidation({
+    framework: 'bootstrap',
+    icon: {
+        ...
+    },
+    fields: {
+        password: {
+            validators: {
+                notEmpty: {
+                    message: 'The password is required'
+                },
+                callback: {
+                    callback: function(value, validator, $field) {
+                        ...
+
+                        var result  = zxcvbn(password),
+                            score   = result.score;
+
+                        // Update the progress bar width and add alert class
+                        var $bar = $('#strengthBar');
+                        switch (score) {
+                            case 0:
+                                $bar.attr('class', 'progress-bar progress-bar-danger')
+                                    .css('width', '1%');
+                                break;
+                            case 1:
+                                $bar.attr('class', 'progress-bar progress-bar-danger')
+                                    .css('width', '25%');
+                                break;
+                            case 2:
+                                $bar.attr('class', 'progress-bar progress-bar-danger')
+                                    .css('width', '50%');
+                                break;
+                            case 3:
+                                $bar.attr('class', 'progress-bar progress-bar-warning')
+                                    .css('width', '75%');
+                                break;
+                            case 4:
+                                $bar.attr('class', 'progress-bar progress-bar-success')
+                                    .css('width', '100%');
+                                break;
+                        }
+
+                        ...
+                    }
+                }
+            }
+        }
+    }
+});
+{% endhighlight %}
+
+                    <p>If you use any framework which is supported by <a href="/download/">FormValidation</a>, you can use the framework progress bar component
+                        as listed in the table below:</p>
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Framework</th>
+                                    <th>Progress bar component</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Bootstrap</td>
+                                    <td><a href="http://getbootstrap.com/components/#progress">http://getbootstrap.com/components/#progress</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Foundation</td>
+                                    <td><a href="http://foundation.zurb.com/sites/docs/progress-bar.html">http://foundation.zurb.com/sites/docs/progress-bar.html</a></td>
+                                </tr>
+                                <tr>
+                                    <td>UIKit</td>
+                                    <td><a href="http://getuikit.com/docs/progress.html">http://getuikit.com/docs/progress.html</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Semantic UI</td>
+                                    <td><a href="http://semantic-ui.com/modules/progress.html">http://semantic-ui.com/modules/progress.html</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p>Lastly, for a full working demonstration, you can play with the following form:</p>
+
+                    {% include demo/tabs.html id="basic" frameworks="bootstrap" codes="programmatic" %}
+                </section>
+            </div>
+
+            <div class="col-md-3 hidden-print hidden-xs hidden-sm">
+                {% include sidebar.html %}
+            </div>
+        </div>
+    </div>
+</div>
