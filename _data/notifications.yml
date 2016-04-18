@@ -1,7 +1,7 @@
 - title: "FormValidation v0.7.1 Released"
   url: "/news/v0-7-1-released/"
 
-- title: "Building a password strength meter with Dropbox's zxcvbn libary"
+- title: "Building a password strength meter with Dropbox zxcvbn libary"
   url: "/examples/building-password-strength-meter/"
 
 - title: "Validating checkbox list placed in multiple columns"
