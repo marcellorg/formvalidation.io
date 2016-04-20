@@ -1,5 +1,5 @@
-- title: "FormValidation v0.7.1 Released"
-  url: "/news/v0-7-1-released/"
+- title: "Using hint library to show message"
+  url: "/examples/using-hint-library-show-message/"
 
 - title: "Building a password strength meter with Dropbox zxcvbn libary"
   url: "/examples/building-password-strength-meter/"
@@ -9,6 +9,9 @@
 
 - title: "Using Google material icons"
   url: "/examples/using-google-material-icons/"
+
+- title: "FormValidation v0.7.1 Released"
+  url: "/news/v0-7-1-released/"
 
 - title: "Validating an embed Bootstrap Datepicker"
   url: "/examples/bootstrap-datepicker/#embedding-a-date-picker"
@@ -24,6 +27,3 @@
 
 - title: "Supporting multiple date formats"
   url: "/examples/supporting-multiple-date-formats/"
-
-- title: "Showing messages in a modal"
-  url: "/examples/showing-messages-modal/"

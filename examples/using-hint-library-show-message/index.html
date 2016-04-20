@@ -1,0 +1,200 @@
+---
+layout: default
+title: Using hint library to show message
+permalink: /examples/using-hint-library-show-message/
+---
+
+<div class="doc-content-container">
+    <div class="doc-heading">
+        <h1>Using hint library to show message</h1>
+        <p>&larr; <a href="/examples">Examples</a></p>
+        {% include share.html %}
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <p>Via the <a href="/settings/#form-err-container">err.container</a> option, <a href="/download/">FormValidation</a>
+                    provides the ability of using tooltip to show the error messages.</p>
+                <p>What if you want to use custom tooltip library instead of built-in tooltip component provided by supported frameworks such as</p>
+                <ul class="doc-list">
+                    <li><a href="http://getbootstrap.com/javascript/#tooltips">Bootstrap's tooltip</a></li>
+                    <li><a href="http://foundation.zurb.com/sites/docs/v/5.5.3/components/tooltips.html">Foundation's tooltip</a></li>
+                    <li><a href="http://semantic-ui.com/modules/popup.html">Semantic UI's popup</a></li>
+                    <li>or <a href="http://getuikit.com/docs/tooltip.html">UIKit's tooltip</a></li>
+                </ul>
+
+                <p>This example is an answer of this question. By following step by step instructions, you will learn how to use
+                    an external tooltip library for displaying the messages.</p>
+                <p>This example uses the <a href="http://kushagragour.in/lab/hint/">hint</a> library for that purpose.</p>
+
+                <div class="doc-alert doc-alert-info">
+                    hint is one of popular libraries for creating tooltip with pure CSS. It's also available on <a href="https://github.com/chinchang/hint.css/">Github</a>.
+                </div>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Preparing the markup</h2>
+
+                    <p>Using hint is quite simple. We just need to include its CSS file firstly, and add some HTML attributes to the element:</p>
+
+{% highlight html %}
+<link rel="stylesheet" href="/path/to/hint.css">
+
+<span class="hint--bottom hint--error" data-hint="Thank you!">hover over me.</span>
+{% endhighlight %}
+
+                    <p>The CSS classes <code>hint--bottom</code> and <code>hint--error</code> indicate the tooltip position
+                        and kind of information. hint supports other positions and kinds via modifiers which are listed
+                        in its official website.</p>
+
+                    <p>The problem is that it doesn't support self closing tag such as <code>&lt;img/&gt;</code>, <code>&lt;i/&gt;</code>.
+                        Therefore, it's not possible for you to attach a tooltip to an icon such as:</p>
+
+{% highlight html %}
+<i class="glyphicon glyphicon-remove hint--bottom hint--error"
+   data-hint="The username is required"></i>
+{% endhighlight %}
+
+                    <p>To fix that, we need to wrap the icon inside some <code>span</code> elements:</p>
+
+{% highlight html %}
+<span class="form-control-feedback">
+    <span class="hint--bottom hint--error" data-hint="The username is required">
+        <i class="glyphicon glyphicon-remove"></i>
+    </span>
+</span>
+{% endhighlight %}
+
+                    <p>Hover the mouse over the icons to see it in action:</p>
+
+                    {% include demo/tabs.html id="markup" frameworks="bootstrap" dir="markup" codes="programmatic" %}
+
+                    <p>Because the icons (<code>i</code>) are generated dynamically by the plugin, we need to trigger the
+                        <a href="/settings/#event-field">init.field.fv</a> event to prepare the markup properly:</p>
+
+{% highlight javascript %}
+$('#registrationForm')
+    .on('init.field.fv', function(e, data) {
+        data.element            // Retrieve the field element
+            .data('fv.icon')    // its icon element
+            .wrap($('<span/>')) // Wrap inside a span ...
+            .parent()
+            // ... and another parent span
+            .wrap($('<span/>').addClass('form-control-feedback'));
+    })
+    .formValidation(...);
+{% endhighlight %}
+
+                    <div class="doc-alert doc-alert-info">
+                        The same technique is used in the <a href="/examples/showing-icon-custom-area/">Showing icons in custom area</a> example
+                    </div>
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Showing the tooltip</h2>
+
+                    <p>In this step, we need to display the tooltip when hovering the mouse over the icon. It can be done by adding
+                        hint CSS and attribute to the target element (i.e, our created <code>span</code> element).
+                        This should happen whenever the field is invalid:</p>
+
+{% highlight javascript %}
+$('#registrationForm')
+    .on('init.field.fv', function(e, data) {
+        ...
+    })
+    .formValidation(...)
+    .on('err.field.fv', function(e, data) {
+        var $field    = data.element,
+            $icon     = $field.data('fv.icon'),
+            $messages = $field.data('fv.messages').find('.help-block[data-fv-for="' + data.field + '"]');
+
+        // Get a random message
+        var message = $messages.filter('[data-fv-result="INVALID"]').eq(0).html();
+
+        $icon.removeClass()
+             .addClass('glyphicon glyphicon-remove')
+             .parent()
+             .addClass('hint--bottom hint--error')
+             .attr('data-hint', message);
+
+        // Hide all error messages
+        $messages.hide();
+    });
+{% endhighlight %}
+
+                    <div class="doc-alert doc-alert-info">
+                        The err.field.fv event is triggered when the field is invalid. For more usage examples, refer to the
+                        <a href="/settings/#event-field">field events</a> section.
+                    </div>
+
+                    <p>As you can see above, the icon and all error messages elements can be retrieved by
+                        <code>$field.data('fv.icon')</code> and <code>$field.data('fv.messages')</code>, respectively.</p>
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Hiding the tooltip</h2>
+
+                    <p>It's more easy to hide the tooltip when the field is valid. We just remove the associated CSS class and attribute
+                        from the target element:</p>
+
+{% highlight javascript %}
+$('#registrationForm')
+    .on('init.field.fv', function(e, data) {
+        ...
+    })
+    .formValidation(...)
+    .on('err.field.fv', function(e, data) {
+        ...
+    })
+    .on('success.field.fv', function(e, data) {
+        data.element
+            .data('fv.icon')
+            .removeClass()
+            .addClass('glyphicon glyphicon-ok')
+            .parent()
+            .removeClass('hint--bottom hint--error')
+            .removeAttr('data-hint');
+    });
+{% endhighlight %}
+
+                    <div class="doc-alert doc-alert-info">
+                        As opposite of the err.field.fv event, the success.field.fv event is triggered when the field is valid. For more usage examples, refer to the
+                        <a href="/settings/#event-field">field events</a> section.
+                    </div>
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Final version</h2>
+
+                    <p>Finally, you can get a full working demonstration as following:</p>
+
+                    {% include demo/tabs.html id="final" frameworks="bootstrap" dir="final" codes="programmatic" %}
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Related examples</h2>
+
+                    <ul class="doc-list">
+                        <li><a href="/examples/hiding-message/">Hiding messages</a></li>
+                        <li><a href="/examples/showing-icon-custom-area/">Showing icons in custom area</a></li>
+                        <li><a href="/examples/using-tooltip-to-show-message/">Using tooltip to show message</a></li>
+                    </ul>
+                </section>
+            </div>
+
+            <div class="col-md-3 hidden-print hidden-xs hidden-sm">
+                {% include sidebar.html %}
+            </div>
+        </div>
+    </div>
+</div>

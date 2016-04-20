@@ -14,7 +14,7 @@
 <body class="demo-bootstrap">
     <div class="container">
         <div class="row">
-            <div class="col-xs-12" id="demoContainer">
+            <div class="col-xs-12" id="demoContainer" style="height: {% if page.height %}{{ page.height }}{% else %}auto{% endif %}">
                 {{ content }}
             </div>
         </div>
