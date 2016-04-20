@@ -1,6 +1,9 @@
 - title: "Using hint library to show message"
   url: "/examples/using-hint-library-show-message/"
 
+- title: "Using Balloon CSS library to show message"
+  url: "/examples/using-balloon-css-library-show-message/"
+
 - title: "Building a password strength meter with Dropbox zxcvbn libary"
   url: "/examples/building-password-strength-meter/"
 
