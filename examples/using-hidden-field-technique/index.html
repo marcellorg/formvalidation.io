@@ -1,0 +1,104 @@
+---
+layout: default
+title: Using hidden field technique
+permalink: /examples/using-hidden-field-technique/
+---
+
+<div class="doc-content-container">
+    <div class="doc-heading">
+        <h1>Using hidden field technique</h1>
+        <p>&larr; <a href="/examples/">Examples</a></p>
+        {% include share.html %}
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <section>
+                    <p>This example introduces a technique of using a hidden field. It's often used when we need to
+                        treat a few of inputs as one.</p>
+
+                    <p>For instance, let's assume that we need user to provide one of telephone or cellphone number.</p>
+                    <p>Firstly, we create a hidden field for storing one of these phone numbers.</p>
+
+{% highlight html %}
+<form id="profileForm" method="post" class="form-horizontal">
+    ...
+
+    <!-- Original fields -->
+    <input type="text" class="form-control" name="telephone" placeholder="Telephone number" />
+    <input type="text" class="form-control" name="cellphone" placeholder="Cell phone number" />
+
+    <!-- The hidden field -->
+    <input type="hidden" name="hiddenPhone" />
+</form>
+{% endhighlight %}
+
+                    <p><a href="/download/">FormValidation</a> will ask the hidden field to not empty. Because FormValidation
+                        <a href="/settings/#form-excluded">ignores</a> hidden fields by default, we need to use the
+                        <a href="/settings/#field-excluded">excluded</a> option for our particular field:</p>
+
+{% highlight javascript %}
+$('#profileForm').formValidation({
+    framework: 'bootstrap',
+    icon: {
+        ...
+    },
+    fields: {
+        hiddenPhone: {
+            excluded: false,    // Don't ignore me, please!
+            validators: {
+                notEmpty: {
+                    message: 'Please provide either telephone or cellphone number'
+                }
+            }
+        }
+    }
+});
+{% endhighlight %}
+
+                    <p>The last step, whenever we detect that any of the original phone fields are modified, we
+                        update the value for the hidden field and <a href="/api/#revalidate-field">revalidate</a> it:</p>
+
+{% highlight javascript %}
+$('#profileForm')
+    .formValidation({
+        ...
+    })
+    .on('keyup', '[name="telephone"], [name="cellphone"]', function(e) {
+        var telephone = $('#profileForm').find('[name="telephone"]').val(),
+            cellphone = $('#profileForm').find('[name="cellphone"]').val();
+
+        $('#profileForm')
+            // Update the value for hidden field
+            .find('[name="hiddenPhone"]')
+                .val(telephone || cellphone)
+                .end()
+            // Revalidate it
+            .formValidation('revalidateField', 'hiddenPhone');
+    });
+{% endhighlight %}
+
+                    <div class="doc-alert doc-alert-info">
+                        This technique is also used in the <a href="/examples/validating-multiple-inputs-one/">Validating multiple inputs as one</a> example
+                    </div>
+
+                    {% include demo/tabs.html id="demo" frameworks="bootstrap" codes="programmatic" %}
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <p>In this example, we only require either telephone or cellphone numbers by using the <a href="/validators/notEmpty/">notEmpty</a>
+                        validator. This approach doesn't solve the problem if we need to apply more validator rules such as
+                        the phone number must consist of digits only.</p>
+                    <p>In these cases, you need to use the solutions introduced in the <a href="/examples/conditional-validation/">Conditional validation</a> example.</p>
+                </section>
+            </div>
+
+            <div class="col-md-3 hidden-print hidden-xs hidden-sm">
+                {% include sidebar.html %}
+            </div>
+        </div>
+    </div>
+</div>

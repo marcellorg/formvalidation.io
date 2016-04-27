@@ -1,20 +1,23 @@
 - title: "Using hint library to show message"
   url: "/examples/using-hint-library-show-message/"
 
+- title: "Using hidden field technique"
+  url: "/examples/using-hidden-field-technique/"
+
 - title: "Using Balloon CSS library to show message"
   url: "/examples/using-balloon-css-library-show-message/"
 
 - title: "Building a password strength meter with Dropbox zxcvbn libary"
   url: "/examples/building-password-strength-meter/"
 
+- title: "FormValidation v0.7.1 Released"
+  url: "/news/v0-7-1-released/"
+
 - title: "Validating checkbox list placed in multiple columns"
   url: "/examples/validating-checkbox-list-placed-multiple-columns/"
 
 - title: "Using Google material icons"
   url: "/examples/using-google-material-icons/"
-
-- title: "FormValidation v0.7.1 Released"
-  url: "/news/v0-7-1-released/"
 
 - title: "Validating an embed Bootstrap Datepicker"
   url: "/examples/bootstrap-datepicker/#embedding-a-date-picker"
@@ -27,6 +30,3 @@
 
 - title: "Playing with Bootstrap Touchspin"
   url: "/examples/bootstrap-touchspin/"
-
-- title: "Supporting multiple date formats"
-  url: "/examples/supporting-multiple-date-formats/"
