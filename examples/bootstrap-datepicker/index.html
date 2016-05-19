@@ -98,6 +98,29 @@ $('#embeddingDatePicker')
 
                     {% include demo/tabs.html id="range" frameworks="bootstrap" dir="range" codes="programmatic" %}
                 </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Auto closing the date picker</h2>
+
+                    <p>If you want to close the date picker immediately right after choosing a date, you need to set the
+                        <a href="https://bootstrap-datepicker.readthedocs.io/en/stable/options.html#autoclose">autoclose</a> option to <code>true</code>:
+                    </p>
+
+{% highlight javascript %}
+$('#datePicker')
+    .datepicker({
+        autoclose: true,    // It is false, by default
+        format: 'mm/dd/yyyy'
+    })
+    .on('changeDate', function(e) {
+        ...
+    });
+{% endhighlight %}
+
+                    {% include demo/tabs.html id="autoclose" frameworks="bootstrap" dir="autoclose" codes="programmatic" %}
+                </section>
             </div>
 
             <div class="col-md-3 hidden-print hidden-xs hidden-sm">
