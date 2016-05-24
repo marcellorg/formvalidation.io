@@ -56,7 +56,9 @@ $(form).formValidation({
             // Replace validatorName with the name of validator
             // validatorOptions will be passed as third parameter of the
             // validate(validator, $field, options) method
-            validatorName: validatorOptions
+            validators: {
+                validatorName: validatorOptions
+            }
         }
     }
 });{% endhighlight %}
