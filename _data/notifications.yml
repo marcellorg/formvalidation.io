@@ -1,3 +1,6 @@
+- title: "Preventing user to have same value as the placeholder"
+  url: "/examples/preventing-user-have-same-value-placeholder/"
+
 - title: "Using hint library to show message"
   url: "/examples/using-hint-library-show-message/"
 
@@ -27,6 +30,3 @@
 
 - title: "Toggling validators in a master page"
   url: "/examples/toggling-validators-master-page/"
-
-- title: "Playing with Bootstrap Touchspin"
-  url: "/examples/bootstrap-touchspin/"

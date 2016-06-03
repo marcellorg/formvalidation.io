@@ -1,0 +1,112 @@
+---
+layout: default
+title: Preventing user to have same value as the placeholder
+permalink: /examples/preventing-user-have-same-value-placeholder/
+---
+
+<div class="doc-content-container">
+    <div class="doc-heading">
+        <h1>Preventing user to have same value as the placeholder</h1>
+        <p>&larr; <a href="/examples/">Examples</a></p>
+        {% include share.html %}
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <section>
+                    <p>This example shows a few ways to prevent user to put the same value as the placeholder attribute.</p>
+                    <p>For instance, we could show an error message when someone enters <em>First name</em> or <em>Last name</em>
+                        for the text fields named <code>firstName</code> and <code>lastName</code>, respectively.</p>
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Using callback validator</h2>
+
+                    <p>The first approach is to use the <a href="/validators/callback/">callback</a> validator:</p>
+
+{% highlight javascript %}
+$('#contactForm').formValidation({
+    fields: {
+        message: {
+            validators: {
+                callback: {
+                    message: 'The value cannot be the same as placeholder',
+                    callback: function(value, validator, $field) {
+                        return value != $field.attr('placeholder');
+                    }
+                }
+            }
+        }
+    }
+});
+{% endhighlight %}
+                    <p>As you saw, the field passes the <code>callback</code> validator if its value (you can use the
+                        <code>value</code> passed as a parameter of callback, or <code>$field.val()</code>) is different than its
+                        placeholder attribute which can be accessed as <code>$field.attr('placeholder')</code>.
+                    </p>
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Creating a custom validator</h2>
+
+                    <p>It's also possible for you to develop a custom validator for that purpose and reuse it whenever you want.</p>
+                    <p>The following code snippet creates a validator named <code>placeholder</code> (of course, you can change it):</p>
+
+{% highlight javascript %}
+FormValidation.Validator.placeholder = {
+    validate: function(validator, $field, options) {
+        return $field.attr('placeholder') != $field.val();
+    }
+};
+{% endhighlight %}
+
+                    <p>Now, you can apply the created validator with multiple fields:</p>
+
+{% highlight javascript %}
+$('#contactForm').formValidation({
+    fields: {
+        firstName: {
+            validators: {
+                // Using a custom validator named 'placeholder' created above
+                placeholder: {
+                    message: 'The value cannot be the same as placeholder'
+                }
+            }
+        },
+        lastName: {
+            validators: {
+                // Using a custom validator named 'placeholder' created above
+                placeholder: {
+                    message: 'The value cannot be the same as placeholder'
+                }
+            }
+        }
+    }
+});
+{% endhighlight %}
+
+                    <div class="doc-alert doc-alert-info">
+                        You should take a look at the <a href="/developing/">developing</a> page to see more details and usages on creating your own validator
+                    </div>
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <p>The following form uses both approaches which are described above:</p>
+
+                    {% include demo/tabs.html id="basic" frameworks="bootstrap" codes="programmatic" %}
+                </section>
+            </div>
+
+            <div class="col-md-3 hidden-print hidden-xs hidden-sm">
+                {% include sidebar.html %}
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,87 @@
+<form id="contactForm" class="form-horizontal">
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Full name</label>
+        <div class="col-xs-4">
+            <input type="text" class="form-control" name="firstName" placeholder="First name" />
+        </div>
+        <div class="col-xs-4">
+            <input type="text" class="form-control" name="lastName" placeholder="Last name" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Message</label>
+        <div class="col-xs-9">
+            <textarea class="form-control" name="message" rows="7" placeholder="Message"></textarea>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-xs-9 col-xs-offset-3">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+</form>
+
+<script>
+$(document).ready(function() {
+    FormValidation.Validator.placeholder = {
+        validate: function(validator, $field, options) {
+            return $field.attr('placeholder') != $field.val();
+        }
+    };
+
+    $('#contactForm').formValidation({
+        framework: 'bootstrap',
+        icon: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            firstName: {
+                row: '.col-xs-4',
+                validators: {
+                    notEmpty: {
+                        message: 'The first name is required'
+                    },
+                    // Using a custom validator named 'placeholder' created above
+                    placeholder: {
+                        message: 'The value cannot be the same as placeholder'
+                    }
+                }
+            },
+            lastName: {
+                row: '.col-xs-4',
+                validators: {
+                    notEmpty: {
+                        message: 'The last name is required'
+                    },
+                    // Using a custom validator named 'placeholder' created above
+                    placeholder: {
+                        message: 'The value cannot be the same as placeholder'
+                    }
+                }
+            },
+            message: {
+                validators: {
+                    notEmpty: {
+                        message: 'The message is required'
+                    },
+                    stringLength: {
+                        max: 700,
+                        message: 'The message must be less than 700 characters long'
+                    },
+                    // Using the callback validator
+                    callback: {
+                        message: 'The value cannot be the same as placeholder',
+                        callback: function(value, validator, $field) {
+                            return value != $field.attr('placeholder');
+                        }
+                    }
+                }
+            }
+        }
+    });
+});
+</script>
