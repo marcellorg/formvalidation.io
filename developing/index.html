@@ -61,10 +61,13 @@ $(form).formValidation({
             // Replace validatorName with the name of validator
             // validatorOptions will be passed as third parameter of the
             // validate(validator, $field, options) method
-            validatorName: validatorOptions
+            validators: {
+                validatorName: validatorOptions
+            }
         }
     }
-});{% endhighlight %}
+});
+{% endhighlight %}
 
                     <div class="doc-alert doc-alert-info">
                         To see how built-in validators are developed, you can look at their sources located inside the <code>src/js/validator</code> directory.
