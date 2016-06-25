@@ -1,7 +1,7 @@
 <form id="passwordFoundationForm" class="fv-form-horizontal">
     <div class="row">
         <div class="small-3 columns">
-            <label class="right">Password</label>
+            <label class="right inline">Password</label>
         </div>
         <div class="small-6 small-pull-3 columns">
             <input type="password" name="pwd" />
@@ -42,7 +42,7 @@ $(document).ready(function() {
     };
 
     $('#passwordFoundationForm').formValidation({
-        framework: 'foundation',
+        framework: 'foundation5',
         icon: {
             valid: 'fa fa-check',
             invalid: 'fa fa-times',

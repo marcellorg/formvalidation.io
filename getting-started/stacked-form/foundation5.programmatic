@@ -1,19 +1,17 @@
-<form id="productForm" class="fv-form-horizontal">
+<form id="productForm">
     <div class="row">
-        <div class="small-3 columns">
-            <label class="right">Product name</label>
-        </div>
-        <div class="small-6 small-pull-3 columns">
-            <input type="text" name="name" />
+        <div class="small-12 columns">
+            <label>
+                Product name
+                <input type="text" name="name" />
+            </label>
         </div>
     </div>
 
     <div class="row">
-        <div class="small-3 columns">
-            <label class="right">Price</label>
-        </div>
-        <div class="small-6 small-pull-3 columns">
+        <div class="small-12 columns">
             <div class="row collapse">
+                <label>Price</label>
                 <div class="small-2 columns">
                     <span class="prefix">$</span>
                 </div>
@@ -25,10 +23,8 @@
     </div>
 
     <div class="row">
-        <div class="small-3 columns">
-            <label class="right">Size</label>
-        </div>
-        <div class="small-6 small-pull-3 columns">
+        <div class="small-12 columns">
+            <label>Size</label>
             <input type="checkbox" name="size[]" value="s" /><label>S</label>
             <input type="checkbox" name="size[]" value="m" /><label>M</label>
             <input type="checkbox" name="size[]" value="l" /><label>L</label>
@@ -37,19 +33,17 @@
     </div>
 
     <div class="row">
-        <div class="small-3 columns">
-            <label class="right">Available in store</label>
-        </div>
-        <div class="small-6 small-pull-3 columns">
+        <div class="small-12 columns">
+            <label>Available in store</label>
             <input type="radio" name="availability" value="yes" /><label>Yes</label>
             <input type="radio" name="availability" value="no" /><label>No</label>
         </div>
     </div>
 
     <div class="row">
-        <div class="small-9 small-push-3 columns">
+        <div class="small-12 columns">
             <!-- Do NOT use name="submit" or id="submit" for the Submit button -->
-            <button type="submit" class="button">Add product</button>
+            <button type="submit" class="button small">Add product</button>
         </div>
     </div>
 </form>
@@ -57,7 +51,7 @@
 <script>
 $(document).ready(function() {
     $('#productForm').formValidation({
-        framework: 'foundation',
+        framework: 'foundation5',
         icon: {
             valid: 'fa fa-check',
             invalid: 'fa fa-times',

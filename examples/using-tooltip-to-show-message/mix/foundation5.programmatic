@@ -1,7 +1,7 @@
 <form id="messageForm" class="fv-form-horizontal">
     <div class="row">
         <div class="small-3 columns">
-            <label class="right">Message</label>
+            <label class="right inline">Message</label>
         </div>
         <div class="small-9 columns">
             <textarea name="message" rows="5"></textarea>
@@ -10,7 +10,7 @@
 
     <div class="row">
         <div class="small-3 columns">
-            <label class="right">Email address</label>
+            <label class="right inline">Email address</label>
         </div>
         <div class="small-6 small-pull-3 columns">
             <input type="text" name="email" />
@@ -19,7 +19,7 @@
 
     <div class="row">
         <div class="small-9 small-push-3 columns">
-            <button type="submit" class="button">Send</button>
+            <button type="submit" class="button small">Send</button>
         </div>
     </div>
 </form>
@@ -27,7 +27,7 @@
 <script>
 $(document).ready(function() {
     $('#messageForm').formValidation({
-        framework: 'foundation',
+        framework: 'foundation5',
         icon: {
             valid: 'fa fa-check',
             invalid: 'fa fa-times',

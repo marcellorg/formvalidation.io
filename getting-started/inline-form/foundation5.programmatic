@@ -1,20 +1,16 @@
 <form id="signinForm">
     <div class="row">
-        <div class="small-12 columns">
+        <div class="small-4 columns">
             <input type="text" name="username" placeholder="Username" />
         </div>
-    </div>
 
-    <div class="row">
-        <div class="small-12 columns">
+        <div class="small-4 columns">
             <input type="password" name="password" placeholder="Password" />
         </div>
-    </div>
 
-    <div class="row">
-        <div class="small-12 columns">
+        <div class="small-4 columns">
             <!-- Do NOT use name="submit" or id="submit" for the Submit button -->
-            <button type="submit" class="button">Sign in</button>
+            <button type="submit" class="button small">Sign in</button>
         </div>
     </div>
 </form>
@@ -22,7 +18,7 @@
 <script>
 $(document).ready(function() {
     $('#signinForm').formValidation({
-        framework: 'foundation',
+        framework: 'foundation5',
         icon: {
             valid: 'fa fa-check',
             invalid: 'fa fa-times',
@@ -30,6 +26,7 @@ $(document).ready(function() {
         },
         fields: {
             username: {
+                row: '.small-4',
                 validators: {
                     notEmpty: {
                         message: 'The username is required'
@@ -46,6 +43,7 @@ $(document).ready(function() {
                 }
             },
             password: {
+                row: '.small-4',
                 validators: {
                     notEmpty: {
                         message: 'The password is required'

@@ -1,7 +1,7 @@
 <form id="profileForm" class="form-horizontal">
     <div class="row">
         <div class="small-2 columns">
-            <label class="right">Full name</label>
+            <label class="right inline">Full name</label>
         </div>
 
         <div class="small-5 columns">
@@ -15,7 +15,7 @@
 
     <div class="row">
         <div class="small-2 columns">
-            <label class="right">Phone number</label>
+            <label class="right inline">Phone number</label>
         </div>
 
         <div class="small-3 columns">
@@ -34,7 +34,7 @@
     <div class="row">
         <div class="small-10 small-push-2 columns">
             <!-- Do NOT use name="submit" or id="submit" for the Submit button -->
-            <button type="submit" class="button">Update profile</button>
+            <button type="submit" class="button small">Update profile</button>
         </div>
     </div>
 </form>
@@ -42,7 +42,7 @@
 <script>
 $(document).ready(function() {
     $('#profileForm').formValidation({
-        framework: 'foundation',
+        framework: 'foundation5',
         icon: {
             valid: 'fa fa-check',
             invalid: 'fa fa-times',

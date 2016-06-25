@@ -1,7 +1,7 @@
-<form id="basicFoundationForm" class="fv-form-horizontal">
+<form id="registrationForm" class="fv-form-horizontal">
     <div class="row">
         <div class="small-3 columns">
-            <label class="right">Full name</label>
+            <label class="right inline">Full name</label>
         </div>
         <div class="small-9 columns">
             <div class="row">
@@ -18,7 +18,7 @@
 
     <div class="row">
         <div class="small-3 columns">
-            <label class="right">Username</label>
+            <label class="right inline">Username</label>
         </div>
         <div class="small-6 small-pull-3 columns">
             <input type="text" name="username" />
@@ -27,7 +27,7 @@
 
     <div class="row">
         <div class="small-3 columns">
-            <label class="right">Email address</label>
+            <label class="right inline">Email address</label>
         </div>
         <div class="small-6 small-pull-3 columns">
             <input type="text" name="email" />
@@ -36,7 +36,7 @@
 
     <div class="row">
         <div class="small-3 columns">
-            <label class="right">Password</label>
+            <label class="right inline">Password</label>
         </div>
         <div class="small-6 small-pull-3 columns">
             <input type="password" name="password" />
@@ -47,7 +47,7 @@
         <div class="small-3 columns">
             <label class="right">Gender</label>
         </div>
-        <div class="small-9 columns">
+        <div class="small-6 small-pull-3 columns">
             <input type="radio" name="gender" value="male" /><label>Male</label>
             <input type="radio" name="gender" value="female" /><label>Female</label>
             <input type="radio" name="gender" value="other" /><label>Other</label>
@@ -56,40 +56,31 @@
 
     <div class="row">
         <div class="small-3 columns">
-            <label class="right" id="captchaOperation"></label>
+            <label class="right inline">Date of birth</label>
         </div>
-        <div class="small-3 small-pull-6 columns">
-            <input type="text" name="captcha" />
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="small-9 small-push-3 columns">
-            <input type="checkbox" name="agree" value="agree" /> <label>Agree with the terms and conditions</label>
+        <div class="small-4 small-pull-5 columns">
+            <input type="text" name="birthday" />
         </div>
     </div>
 
     <div class="row">
         <div class="small-9 small-push-3 columns">
-            <button type="submit" class="button" name="signup" value="Sign up">Submit</button>
+            <button type="submit" class="button small" name="signup" value="Sign up">Submit</button>
         </div>
     </div>
 </form>
 
 <script>
 $(document).ready(function() {
-    // Generate a simple captcha
-    function randomNumber(min, max) {
-        return Math.floor(Math.random() * (max - min + 1) + min);
-    }
-    $('#captchaOperation').html([randomNumber(1, 100), '+', randomNumber(1, 200), '='].join(' '));
-
-    $('#basicFoundationForm').formValidation({
-        framework: 'foundation',
+    $('#registrationForm').formValidation({
+        framework: 'foundation5',
         icon: {
             valid: 'fa fa-check',
             invalid: 'fa fa-times',
             validating: 'fa fa-refresh'
+        },
+        err: {
+            container: 'tooltip'
         },
         fields: {
             firstName: {
@@ -152,21 +143,14 @@ $(document).ready(function() {
                     }
                 }
             },
-            captcha: {
-                validators: {
-                    callback: {
-                        message: 'Wrong answer',
-                        callback: function(value, validator, $field) {
-                            var items = $('#captchaOperation').html().split(' '), sum = parseInt(items[0]) + parseInt(items[2]);
-                            return value == sum;
-                        }
-                    }
-                }
-            },
-            agree: {
+            birthday: {
                 validators: {
                     notEmpty: {
-                        message: 'You must agree with the terms and conditions'
+                        message: 'The date of birth is required'
+                    },
+                    date: {
+                        format: 'YYYY/MM/DD',
+                        message: 'The date of birth is not valid'
                     }
                 }
             }
