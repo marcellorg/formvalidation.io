@@ -18,7 +18,18 @@
             <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"><span class="doc-framework">Framework</span> <i class="caret"></i></a>
             <ul class="dropdown-menu" role="menu">
                 {% for f in frameworks %}
-                <li><a href="{{ url | append: f | append: '.html' }}" data-demo-target="#{{ include.id }}-frame" data-demo-framework="{{ f }}">{{ f | capitalize }}</a></li>
+                {% if f == 'bootstrap' %}
+                {% assign frameworkName = 'Bootstrap 3' %}
+                {% elsif f == 'bootstrap4' %}
+                {% assign frameworkName = 'Bootstrap 4 (alpha 2)' %}
+                {% elsif f == 'foundation' %}
+                {% assign frameworkName = 'Foundation 6+' %}
+                {% elsif f == 'foundation5' %}
+                {% assign frameworkName = 'Foundation 5' %}
+                {% else %}
+                {% assign frameworkName = f | capitalize %}
+                {% endif %}
+                <li><a href="{{ url | append: f | append: '.html' }}" data-demo-target="#{{ include.id }}-frame" data-demo-framework="{{ f }}">{{ frameworkName }}</a></li>
                 {% endfor %}
             </ul>
         </li>
