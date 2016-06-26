@@ -1,0 +1,102 @@
+<form id="productForm">
+    <div class="row">
+        <div class="small-12 columns">
+            <label>
+                Product name
+                <input type="text" name="name" />
+            </label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="small-12 columns">
+            <label>
+                Price
+                <div class="input-group">
+                    <span class="input-group-label">$</span>
+                    <input type="text" class="input-group-field" name="price" />
+                </div>
+            </label>
+        </div>
+    </div>
+
+    <div class="row">
+        <fieldset class="small-12 columns">
+            <legend>Size</legend>
+            <input type="checkbox" id="sizeSCheckbox" name="size[]" value="s" /><label for="sizeSCheckbox">S</label>
+            <input type="checkbox" id="sizeMCheckbox" name="size[]" value="m" /><label for="sizeMCheckbox">M</label>
+            <input type="checkbox" id="sizeLCheckbox" name="size[]" value="l" /><label for="sizeLCheckbox">L</label>
+            <input type="checkbox" id="sizeXLCheckbox" name="size[]" value="xl" /><label for="sizeXLCheckbox">XL</label>
+        </fieldset>
+    </div>
+
+    <div class="row">
+        <fieldset class="small-12 columns">
+            <legend>Available in store</legend>
+            <input type="radio" id="availableRadio" name="availability" value="yes" /><label for="availableRadio">Yes</label>
+            <input type="radio" id="notAvailableRadio" name="availability" value="no" /><label for="notAvailableRadio">No</label>
+        </fieldset>
+    </div>
+
+    <div class="row">
+        <div class="small-12 columns">
+            <!-- Do NOT use name="submit" or id="submit" for the Submit button -->
+            <button type="submit" class="button">Add product</button>
+        </div>
+    </div>
+</form>
+
+<script>
+$(document).ready(function() {
+    $('#productForm').formValidation({
+        framework: 'foundation',
+        icon: {
+            valid: 'fa fa-check',
+            invalid: 'fa fa-times',
+            validating: 'fa fa-refresh'
+        },
+        fields: {
+            name: {
+                validators: {
+                    notEmpty: {
+                        message: 'The name is required'
+                    },
+                    stringLength: {
+                        min: 6,
+                        max: 30,
+                        message: 'The name must be more than 6 and less than 30 characters long'
+                    },
+                    regexp: {
+                        regexp: /^[a-zA-Z0-9_]+$/,
+                        message: 'The name can only consist of alphabetical, number and underscore'
+                    }
+                }
+            },
+            price: {
+                validators: {
+                    notEmpty: {
+                        message: 'The price is required'
+                    },
+                    numeric: {
+                        message: 'The price must be a number'
+                    }
+                }
+            },
+            'size[]': {
+                validators: {
+                    notEmpty: {
+                        message: 'The size is required'
+                    }
+                }
+            },
+            availability: {
+                validators: {
+                    notEmpty: {
+                        message: 'The availability option is required'
+                    }
+                }
+            }
+        }
+    });
+});
+</script>
