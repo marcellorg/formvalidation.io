@@ -15,8 +15,10 @@
 
         <div class="doc-demo">
             <ul class="nav nav-tabs">
-                <li class="active"><a href="#including-bootstrap-tab" data-toggle="tab">Bootstrap</a></li>
-                <li><a href="#including-foundation-tab" data-toggle="tab">Foundation</a></li>
+                <li class="active"><a href="#including-bootstrap-tab" data-toggle="tab">Bootstrap 3</a></li>
+                <li><a href="#including-bootstrap4-tab" data-toggle="tab">Bootstrap 4 (alpha 2)</a></li>
+                <li><a href="#including-foundation5-tab" data-toggle="tab">Foundation 5</a></li>
+                <li><a href="#including-foundation-tab" data-toggle="tab">Foundation 6</a></li>
                 <li><a href="#including-pure-tab" data-toggle="tab">Pure</a></li>
                 <li><a href="#including-semantic-tab" data-toggle="tab">Semantic</a></li>
                 <li><a href="#including-uikit-tab" data-toggle="tab">UIKit</a></li>
@@ -25,14 +27,14 @@
             <div class="tab-content">
                 <div class="tab-pane active" id="including-bootstrap-tab">
 {% highlight html %}
-<!-- Bootstrap CSS v3.0.0 or higher -->
+<!-- Bootstrap CSS v3 -->
 <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css">
 
 <!-- FormValidation CSS file -->
 <link rel="stylesheet" href="/vendor/formvalidation/dist/css/formValidation.min.css">
 
 <!-- jQuery v1.9.1 or higher -->
-<script type="text/javascript" src="/vendor/jquery/jquery.min.js"></script>
+<script src="/vendor/jquery/jquery.min.js"></script>
 
 <!-- Bootstrap JS -->
 <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
@@ -49,9 +51,38 @@
                     </div>
                 </div>
 
-                <div class="tab-pane" id="including-foundation-tab">
+                <div class="tab-pane" id="including-bootstrap4-tab">
 {% highlight html %}
-<!-- Foundation CSS -->
+<!-- Bootstrap CSS v4.0.0 (alpha 2) -->
+<link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css">
+
+<!-- FormValidation CSS file -->
+<link rel="stylesheet" href="/vendor/formvalidation/dist/css/formValidation.min.css">
+
+<!-- jQuery v1.9.1 or higher -->
+<script src="/vendor/jquery/jquery.min.js"></script>
+
+<!-- Tether library, which is required if you want to use Bootstrap tooltip -->
+<script src="/vendor/tether/js/tether.min.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- FormValidation plugin and the class supports validating Bootstrap form -->
+<script src="/vendor/formvalidation/dist/js/formValidation.min.js"></script>
+<script src="/vendor/formvalidation/dist/js/framework/bootstrap4.min.js"></script>
+{% endhighlight %}
+
+                    <div class="doc-alert doc-alert-warning">
+                        <p>Don't confuse bootstrap(.min).js file provided by the Bootstrap framework with
+                        bootstrap4(.min).js provided by FormValidation which is placed inside the formvalidation/dist/js/framework directory.</p>
+                        <p>They are two different files and both of them need to be included as mentioned above.</p>
+                    </div>
+                </div>
+
+                <div class="tab-pane" id="including-foundation5-tab">
+{% highlight html %}
+<!-- Foundation v5 CSS -->
 <link rel="stylesheet" href="/vendor/foundation/css/normalize.min.css">
 <link rel="stylesheet" href="/vendor/foundation/css/foundation.min.css">
 
@@ -59,12 +90,38 @@
 <link rel="stylesheet" href="/vendor/formvalidation/dist/css/formValidation.min.css">
 
 <!-- jQuery v1.9.1 or higher -->
-<script type="text/javascript" src="/vendor/jquery/jquery.min.js"></script>
+<script src="/vendor/jquery/jquery.min.js"></script>
 
 <!-- Foundation JS file -->
 <script src="/vendor/foundation/js/vendor/modernizr.js"></script>
 <script src="/vendor/foundation/js/foundation/foundation.js"></script>
 <script src="/vendor/foundation/js/foundation/foundation.tooltip.js"></script>
+
+<!-- FormValidation plugin and the class supports validating Foundation form -->
+<script src="/vendor/formvalidation/dist/js/formValidation.min.js"></script>
+<script src="/vendor/formvalidation/dist/js/framework/foundation5.min.js"></script>
+{% endhighlight %}
+
+                    <div class="doc-alert doc-alert-warning">
+                        <p>Don't confuse foundation(.min).js file provided by the Foundation framework with
+                            foundation5(.min).js provided by FormValidation which is placed inside the formvalidation/dist/js/framework directory.</p>
+                        <p>They are two different files and both of them need to be included as mentioned above.</p>
+                    </div>
+                </div>
+
+                <div class="tab-pane" id="including-foundation-tab">
+{% highlight html %}
+<!-- Foundation v6 CSS -->
+<link rel="stylesheet" href="/vendor/foundation/css/foundation.min.css">
+
+<!-- FormValidation CSS file -->
+<link rel="stylesheet" href="/vendor/formvalidation/dist/css/formValidation.min.css">
+
+<!-- jQuery v1.9.1 or higher -->
+<script src="/vendor/jquery/jquery.min.js"></script>
+
+<!-- Foundation JS file -->
+<script src="/vendor/foundation/js/foundation/foundation.min.js"></script>
 
 <!-- FormValidation plugin and the class supports validating Foundation form -->
 <script src="/vendor/formvalidation/dist/js/formValidation.min.js"></script>
@@ -89,7 +146,7 @@
 <link rel="stylesheet" href="/vendor/formvalidation/dist/css/formValidation.min.css">
 
 <!-- jQuery v1.9.1 or higher -->
-<script type="text/javascript" src="/vendor/jquery/jquery.min.js"></script>
+<script src="/vendor/jquery/jquery.min.js"></script>
 
 <!-- FormValidation plugin and the class supports validating Pure form -->
 <script src="/vendor/formvalidation/dist/js/formValidation.min.js"></script>
@@ -106,7 +163,7 @@
 <link rel="stylesheet" href="/vendor/formvalidation/dist/css/formValidation.min.css">
 
 <!-- jQuery v1.9.1 or higher -->
-<script type="text/javascript" src="/vendor/jquery/jquery.min.js"></script>
+<script src="/vendor/jquery/jquery.min.js"></script>
 
 <!-- Semantic JS -->
 <script src="/vendor/semantic-ui/semantic.min.js"></script>
@@ -132,7 +189,7 @@
 <link rel="stylesheet" href="/vendor/formvalidation/dist/css/formValidation.min.css">
 
 <!-- jQuery v1.9.1 or higher -->
-<script type="text/javascript" src="/vendor/jquery/jquery.min.js"></script>
+<script src="/vendor/jquery/jquery.min.js"></script>
 
 <!-- UIKit JS -->
 <script src="/vendor/uikit/js/uikit.min.js"></script>
@@ -153,7 +210,7 @@
 
         <p>If you want to use the default message translated in the <a href="#language-package">language package</a>, then finally include it:</p>
 {% highlight html %}
-<script type="text/javascript" src="/vendor/formvalidation/dist/js/language/languagecode_COUNTRYCODE.js"></script>
+<script src="/vendor/formvalidation/dist/js/language/languagecode_COUNTRYCODE.js"></script>
 {% endhighlight %}
 
         <div class="doc-alert doc-alert-info">
