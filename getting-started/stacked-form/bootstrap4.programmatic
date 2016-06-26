@@ -45,11 +45,11 @@
 <script>
 $(document).ready(function() {
     $('#productForm').formValidation({
-        framework: 'bootstrap',
+        framework: 'bootstrap4',
         icon: {
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
+            valid: 'fa fa-check',
+            invalid: 'fa fa-times',
+            validating: 'fa fa-refresh'
         },
         fields: {
             name: {

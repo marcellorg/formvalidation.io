@@ -1,4 +1,4 @@
-<form id="basicBootstrap4Form">
+<form id="registrationForm">
     <div class="form-group row">
         <label class="col-xs-3 form-control-label">Full name</label>
         <div class="col-xs-4">
@@ -11,28 +11,28 @@
 
     <div class="form-group row">
         <label class="col-xs-3 form-control-label">Username</label>
-        <div class="col-xs-6">
+        <div class="col-xs-5">
             <input type="text" class="form-control" name="username" />
         </div>
     </div>
 
     <div class="form-group row">
         <label class="col-xs-3 form-control-label">Email address</label>
-        <div class="col-xs-6">
+        <div class="col-xs-5">
             <input type="text" class="form-control" name="email" />
         </div>
     </div>
 
     <div class="form-group row">
         <label class="col-xs-3 form-control-label">Password</label>
-        <div class="col-xs-6">
+        <div class="col-xs-5">
             <input type="password" class="form-control" name="password" />
         </div>
     </div>
 
     <div class="form-group row">
         <label class="col-xs-3">Gender</label>
-        <div class="col-xs-6">
+        <div class="col-xs-5">
             <div class="radio">
                 <label>
                     <input type="radio" name="gender" value="male" /> Male
@@ -52,19 +52,9 @@
     </div>
 
     <div class="form-group row">
-        <label class="col-xs-3 form-control-label" id="captchaOperation"></label>
-        <div class="col-xs-4">
-            <input type="text" class="form-control" name="captcha" />
-        </div>
-    </div>
-
-    <div class="form-group row">
-        <div class="col-xs-9 col-xs-offset-3">
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" name="agree" value="agree" /> Agree with the terms and conditions
-                </label>
-            </div>
+        <label class="col-xs-3 form-control-label">Date of birth</label>
+        <div class="col-xs-3">
+            <input type="text" class="form-control" name="birthday" placeholder="YYYY/MM/DD" />
         </div>
     </div>
 
@@ -77,13 +67,7 @@
 
 <script>
 $(document).ready(function() {
-    // Generate a simple captcha
-    function randomNumber(min, max) {
-        return Math.floor(Math.random() * (max - min + 1) + min);
-    }
-    $('#captchaOperation').html([randomNumber(1, 100), '+', randomNumber(1, 200), '='].join(' '));
-
-    $('#basicBootstrap4Form').formValidation({
+    $('#registrationForm').formValidation({
         framework: 'bootstrap4',
         icon: {
             valid: 'fa fa-check',
@@ -151,21 +135,14 @@ $(document).ready(function() {
                     }
                 }
             },
-            captcha: {
-                validators: {
-                    callback: {
-                        message: 'Wrong answer',
-                        callback: function(value, validator, $field) {
-                            var items = $('#captchaOperation').html().split(' '), sum = parseInt(items[0]) + parseInt(items[2]);
-                            return value == sum;
-                        }
-                    }
-                }
-            },
-            agree: {
+            birthday: {
                 validators: {
                     notEmpty: {
-                        message: 'You must agree with the terms and conditions'
+                        message: 'The date of birth is required'
+                    },
+                    date: {
+                        format: 'YYYY/MM/DD',
+                        message: 'The date of birth is not valid'
                     }
                 }
             }

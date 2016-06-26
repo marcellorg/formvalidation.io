@@ -1,13 +1,13 @@
-<form id="productForm" class="form-horizontal">
-    <div class="form-group">
-        <label class="col-xs-3 control-label">Product name</label>
+<form id="productForm">
+    <div class="form-group row">
+        <label class="col-xs-3 form-control-label">Product name</label>
         <div class="col-xs-6">
             <input type="text" class="form-control" name="name" />
         </div>
     </div>
 
-    <div class="form-group">
-        <label class="col-xs-3 control-label">Price</label>
+    <div class="form-group row">
+        <label class="col-xs-3 form-control-label">Price</label>
         <div class="col-xs-3">
             <div class="input-group">
                 <div class="input-group-addon">$</div>
@@ -16,8 +16,8 @@
         </div>
     </div>
 
-    <div class="form-group">
-        <label class="col-xs-3 control-label">Size</label>
+    <div class="form-group row">
+        <label class="col-xs-3">Size</label>
         <div class="col-xs-6">
             <div class="checkbox">
                 <label><input type="checkbox" name="size[]" value="s" /> S</label>
@@ -34,8 +34,8 @@
         </div>
     </div>
 
-    <div class="form-group">
-        <label class="col-xs-3 control-label">Available in store</label>
+    <div class="form-group row">
+        <label class="col-xs-3">Available in store</label>
         <div class="col-xs-6">
             <div class="radio">
                 <label><input type="radio" name="availability" value="yes" /> Yes</label>
@@ -46,7 +46,7 @@
         </div>
     </div>
 
-    <div class="form-group">
+    <div class="form-group row">
         <div class="col-xs-6 col-xs-offset-3">
             <!-- Do NOT use name="submit" or id="submit" for the Submit button -->
             <button type="submit" class="btn btn-primary">Add product</button>
@@ -57,11 +57,11 @@
 <script>
 $(document).ready(function() {
     $('#productForm').formValidation({
-        framework: 'bootstrap',
+        framework: 'bootstrap4',
         icon: {
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
+            valid: 'fa fa-check',
+            invalid: 'fa fa-times',
+            validating: 'fa fa-refresh'
         },
         fields: {
             name: {
