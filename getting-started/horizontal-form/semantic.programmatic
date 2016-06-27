@@ -1,25 +1,25 @@
-<form id="productForm" class="ui grid form fv-form-horizontal">
-    <div class="row field">
-        <label class="three wide column">Product name</label>
-        <div class="eight wide column">
+<form id="productForm" class="ui form">
+    <div class="fields">
+        <label class="three wide field">Product name</label>
+        <div class="eight wide field">
             <div class="ui input icon">
                 <input type="text" name="name" />
             </div>
         </div>
     </div>
 
-    <div class="row field">
-        <label class="three wide column">Price</label>
-        <div class="eight wide column">
+    <div class="fields">
+        <label class="three wide field">Price</label>
+        <div class="eight wide field">
             <div class="ui input icon">
                 <input type="text" name="price" />
             </div>
         </div>
     </div>
 
-    <div class="row field">
-        <label class="three wide column">Size</label>
-        <div class="eight wide column">
+    <div class="fields">
+        <label class="three wide field">Size</label>
+        <div class="eight wide field">
             <div class="ui input icon">
                 <div class="ui checkbox">
                     <input type="checkbox" name="size[]" value="s" /> <label>S</label>
@@ -37,9 +37,9 @@
         </div>
     </div>
 
-    <div class="row field">
-        <label class="three wide column">Available in store</label>
-        <div class="eight wide column">
+    <div class="fields">
+        <label class="three wide field">Available in store</label>
+        <div class="eight wide field">
             <div class="ui input icon">
                 <div class="ui radio checkbox">
                     <input type="radio" name="availability" value="yes" /> <label>Yes</label>
@@ -51,9 +51,9 @@
         </div>
     </div>
 
-    <div class="row field">
-        <label class="three wide column"></label>
-        <div class="eight wide column">
+    <div class="fields">
+        <label class="three wide field"></label>
+        <div class="eight wide field">
             <!-- Do NOT use name="submit" or id="submit" for the Submit button -->
             <button type="submit" class="ui primary button">Add product</button>
         </div>

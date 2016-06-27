@@ -17,30 +17,34 @@
 
             <div class="field">
                 <label>Size</label>
-                <div class="ui input icon">
-                    <div class="ui checkbox">
-                        <input type="checkbox" name="size[]" value="s" /> <label>S</label>
-                    </div>
-                    <div class="ui checkbox">
-                        <input type="checkbox" name="size[]" value="m" /> <label>M</label>
-                    </div>
-                    <div class="ui checkbox">
-                        <input type="checkbox" name="size[]" value="l" /> <label>L</label>
-                    </div>
-                    <div class="ui checkbox">
-                        <input type="checkbox" name="size[]" value="xl" /> <label>XL</label>
+                <div class="ten wide field">
+                    <div class="ui input icon">
+                        <div class="ui checkbox">
+                            <input type="checkbox" name="size[]" value="s" /> <label>S</label>
+                        </div>
+                        <div class="ui checkbox">
+                            <input type="checkbox" name="size[]" value="m" /> <label>M</label>
+                        </div>
+                        <div class="ui checkbox">
+                            <input type="checkbox" name="size[]" value="l" /> <label>L</label>
+                        </div>
+                        <div class="ui checkbox">
+                            <input type="checkbox" name="size[]" value="xl" /> <label>XL</label>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="field">
                 <label>Available in store</label>
-                <div class="ui input icon">
-                    <div class="ui radio checkbox">
-                        <input type="radio" name="availability" value="yes" /> <label>Yes</label>
-                    </div>
-                    <div class="ui radio checkbox">
-                        <input type="radio" name="availability" value="no" /> <label>No</label>
+                <div class="ten wide field">
+                    <div class="ui input icon">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="availability" value="yes" /> <label>Yes</label>
+                        </div>
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="availability" value="no" /> <label>No</label>
+                        </div>
                     </div>
                 </div>
             </div>

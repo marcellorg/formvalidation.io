@@ -4,9 +4,9 @@
     data-fv-icon-invalid="remove icon"
     data-fv-icon-validating="refresh icon">
 
-    <div class="row field">
-        <label class="four wide column">Full name</label>
-        <div class="six wide column">
+    <div class="fields">
+        <label class="four wide field">Full name</label>
+        <div class="six wide field">
             <div class="ui input icon">
                 <input name="firstName" type="text" placeholder="First name"
                     data-fv-row=".six"
@@ -15,7 +15,7 @@
             </div>
         </div>
 
-        <div class="six wide column">
+        <div class="six wide field">
             <div class="ui input icon">
                 <input name="lastName" type="text" placeholder="Last name"
                     data-fv-row=".six"
@@ -25,9 +25,9 @@
         </div>
     </div>
 
-    <div class="row field">
-        <label class="four wide column">Username</label>
-        <div class="eight wide column">
+    <div class="fields">
+        <label class="four wide field">Username</label>
+        <div class="eight wide field">
             <div class="ui input icon">
                 <input name="username" type="text" placeholder="Username"
                     data-fv-notempty="true"
@@ -45,9 +45,9 @@
         </div>
     </div>
 
-    <div class="row field">
-        <label class="four wide column">Email address</label>
-        <div class="eight wide column">
+    <div class="fields">
+        <label class="four wide field">Email address</label>
+        <div class="eight wide field">
             <div class="ui input icon">
                 <input name="email" type="text" placeholder="Email address"
                     data-fv-notempty="true"
@@ -59,9 +59,9 @@
         </div>
     </div>
 
-    <div class="row field">
-        <label class="four wide column">Password</label>
-        <div class="eight wide column">
+    <div class="fields">
+        <label class="four wide field">Password</label>
+        <div class="eight wide field">
             <div class="ui input icon">
                 <input name="password" type="password" placeholder="Password"
                     data-fv-notempty="true"
@@ -74,9 +74,9 @@
         </div>
     </div>
 
-    <div class="row field">
-        <label class="four wide column">Gender</label>
-        <div class="ten wide column">
+    <div class="fields">
+        <label class="four wide field">Gender</label>
+        <div class="ten wide field">
             <div class="ui input icon">
                 <div class="ui radio checkbox">
                     <input name="gender" type="radio" value="male"
@@ -93,11 +93,11 @@
         </div>
     </div>
 
-    <div class="row field">
-        <label class="four wide column">
+    <div class="fields">
+        <label class="four wide field">
             <span class="right" id="captchaOperation"></span>
         </label>
-        <div class="four wide column">
+        <div class="four wide field">
             <div class="ui input icon">
                 <input type="text" name="captcha"
                     data-fv-callback="true"
@@ -107,9 +107,9 @@
         </div>
     </div>
 
-    <div class="row field">
-        <label class="four wide column"></label>
-        <div class="ten wide column">
+    <div class="fields">
+        <label class="four wide field"></label>
+        <div class="ten wide field">
             <div class="ui input icon">
                 <div class="ui checkbox">
                     <input name="agree" type="checkbox"
@@ -120,9 +120,9 @@
         </div>
     </div>
 
-    <div class="row">
-        <label class="four wide column"></label>
-        <div class="eight wide column">
+    <div class="fields">
+        <label class="four wide field"></label>
+        <div class="eight wide field">
             <button type="submit" class="ui primary button">Submit</button>
         </div>
     </div>
