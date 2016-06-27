@@ -1,3 +1,6 @@
+- title: "FormValidation v0.8.0 is released, supports Bootstrap 4 alpha and Foundation 6"
+  url: "/news/v0-8-0-released-supports-bootstrap-4-alpha-foundation-6/"
+
 - title: "Preventing user to have same value as the placeholder"
   url: "/examples/preventing-user-have-same-value-placeholder/"
 
@@ -12,9 +15,6 @@
 
 - title: "Building a password strength meter with Dropbox zxcvbn libary"
   url: "/examples/building-password-strength-meter/"
-
-- title: "FormValidation v0.7.1 Released"
-  url: "/news/v0-7-1-released/"
 
 - title: "Validating checkbox list placed in multiple columns"
   url: "/examples/validating-checkbox-list-placed-multiple-columns/"
