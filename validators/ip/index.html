@@ -33,6 +33,27 @@ examples:
         - "FF02:0000:0000:0000:0000:0000:0000:0000:0001"
         - "::1111:2222:3333:4444:5555:6666::"
         - "3ffe:b00::1::a"
+cidr_examples:
+    valid:
+        - 192.168.1.1/12
+        - 192.168.1.1/32
+        - "0000:0000:0000:0000:0000:0000:0000:0000/01"
+        - "0000:0000:0000:0000:0000:0000:0000:0000/19"
+        - "0000:0000:0000:0000:0000:0000:0000:0000/99"
+        - "0000:0000:0000:0000:0000:0000:0000:0000/100"
+        - "0000:0000:0000:0000:0000:0000:0000:0000/119"
+        - "0000:0000:0000:0000:0000:0000:0000:0000/128"
+        - "::1/128"
+        - "2001:db8::/48"
+    invalid:
+        - 192.168.1.1/
+        - 192.168.1.1/12.34
+        - 192.168.1.1/01
+        - 192.168.1.1/33
+        - "0000:0000:0000:0000:0000:0000:0000:0000/"
+        - "0000:0000:0000:0000:0000:0000:0000:0000/012"
+        - "0000:0000:0000:0000:0000:0000:0000:0000/129"
+        - "0000:0000:0000:0000:0000:0000:0000:0000/130"
 related:
     - mac
     - uri
@@ -109,6 +130,30 @@ related:
                             </thead>
                             <tbody>
                                 {% for item in page.examples %}
+                                <tr class="active"><td colspan="2">{{ item[0] | capitalize }}</td></tr>
+                                {% for ipAddress in item[1] %}
+                                <tr>
+                                    <td><a href="javascript: void(0);" class="sample">{{ ipAddress }}</a></td>
+                                    <td><i class="fa"></i></td>
+                                </tr>
+                                {% endfor %}
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p>It also supports <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">CIDR notation</a>:</p>
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>IP address</th>
+                                    <th>Result</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for item in page.cidr_examples %}
                                 <tr class="active"><td colspan="2">{{ item[0] | capitalize }}</td></tr>
                                 {% for ipAddress in item[1] %}
                                 <tr>
