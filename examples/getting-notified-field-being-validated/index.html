@@ -130,6 +130,7 @@ $(form)
         // data.element is the field element
         // data.fv is the plugin instance
         // data.status is the field status which is 'VALIDATING' when the validation starts
+        // data.validator is the name of current validator
     });
 {% endhighlight %}
 
@@ -177,7 +178,8 @@ $(form)
         }
     })
     .on('status.field.fv', function(e, data) {
-        if (data.field === 'username') {        // Change “username” to your field name
+        // Change “username” to your field name
+        if (data.field === 'username' && data.validator === 'remote') {
             (data.status === 'VALIDATING')
                 ? $('#progressBar').show()      // Show the progress bar while we are validating
                 : $('#progressBar').hide();     // Otherwise, hide it
