@@ -16,20 +16,20 @@ author: nghuuphuoc
 </ul>
 
 <h3>Changes</h3>
-<p>If you still want to use <a href="http://foundation.zurb.com/sites/docs/v/5.5.3/">Foundation 5</a>, you need to follow the <a href="/news/upgrading-to-v0-8-0/">upgrading to v0.8.0</a> guide</p>
+<p>If you want to try <a href="http://v4-alpha.getbootstrap.com/">Bootstrap 4 alpha 2</a> or still want to use <a href="http://foundation.zurb.com/sites/docs/v/5.5.3/">Foundation 5</a>, you need to follow the <a href="/news/upgrading-to-v0-8-0/">upgrading to v0.8.0</a> guide</p>
 
 <h3>Improvements</h3>
 <ul class="doc-list">
     <li>#536, #613: The <a href="/validators/creditCard/">creditCard</a> validator now supports more card types (Dankort, Elo, Forbrugsforeningen, Maestro International, Visa Electron)</li>
     <li>#546: The <a href="/validators/ip/">ip</a> validator now supports <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">CIDR notation</a></li>
     <li>#556: Return more information of the <a href="/validators/file/">file</a> validator result, so user can display associated message if the selected file doesn't match given extension, type or size</li>
-    <li>#607: Pass <code>validator</code> along to the <a href="">status.field.fv</a> event</li>
+    <li>#607: Pass <code>validator</code> along to the <a href="/settings/#event-field">status.field.fv</a> event</li>
 </ul>
 
 <h3>Bug fixes</h3>
 <ul class="doc-list">
     <li>#315, #600: Using <code>formnovalidate</code> attribute causes IE to send two postbacks to server, thanks to <a href="https://github.com/dtkujawski">@dtkujawski</a></li>
-    <li>#364, #593, #611: Form cannot submit with live mode disabled (<code>live: 'disabled'</code>) and form has some radios/checkboxes</li>
+    <li>#364, #593, #611: Form cannot submit with <a href="/settings/#form-live">live</a> mode disabled (<code>live: 'disabled'</code>) and form has some radios/checkboxes</li>
     <li>#488: Fix an exception when calling <a href="/api/#destroy">destroy()</a> if a field is replaced manually</li>
     <li>#501: The <a href="/validators/cvv/">cvv</a> validator doesn't work properly if we transform the credit card value</li>
     <li>#599: The <a href="/validators/phone/">phone</a> validator should accept valid US phones such as 999 999 9999</li>
