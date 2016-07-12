@@ -31,7 +31,7 @@ $(document).ready(function() {
         })
         .find('[name="address"]')
             .on('input keyup', function(e) {
-                // Reset lat, lng
+                /* Reset lat, lng */
                 $('#addressForm')
                     .formValidation('updateStatus', 'address', 'NOT_VALIDATED')
                     .find('[name="lat"], [name="lng"]').val('').end();

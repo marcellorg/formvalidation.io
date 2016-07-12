@@ -25,7 +25,7 @@ $(document).ready(function() {
         .find('[name="dob"]')
             .datepicker({
                 onSelect: function(date, inst) {
-                    // Revalidate the field when choosing it from the datepicker
+                    /* Revalidate the field when choosing it from the datepicker */
                     $('#profileForm').formValidation('revalidateField', 'dob');
                 }
             });

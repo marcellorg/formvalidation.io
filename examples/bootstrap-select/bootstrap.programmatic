@@ -4,14 +4,14 @@ $(document).ready(function() {
         .find('[name="colors"]')
             .selectpicker()
             .change(function(e) {
-                // revalidate the color when it is changed
+                /* Revalidate the color when it is changed */
                 $('#bootstrapSelectForm').formValidation('revalidateField', 'colors');
             })
             .end()
         .find('[name="language"]')
             .selectpicker()
             .change(function(e) {
-                // revalidate the language when it is changed
+                /* Revalidate the language when it is changed */
                 $('#bootstrapSelectForm').formValidation('revalidateField', 'language');
             })
             .end()
@@ -29,7 +29,7 @@ $(document).ready(function() {
                         callback: {
                             message: 'Please choose 2-4 colors you like most',
                             callback: function(value, validator, $field) {
-                                // Get the selected options
+                                /* Get the selected options */
                                 var options = validator.getFieldElements('colors').val();
                                 return (options != null && options.length >= 2 && options.length <= 4);
                             }

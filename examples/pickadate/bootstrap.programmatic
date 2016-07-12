@@ -9,8 +9,10 @@ $(document).ready(function() {
     $('#dob')
         .pickadate('picker')
         .on('render', function() {
-            // http://amsul.ca/pickadate.js/api.htm#events-callbacks
-            // Revalidate the date of birth field
+            /**
+             * http://amsul.ca/pickadate.js/api.htm#events-callbacks
+             * Revalidate the date of birth field
+             */
             $('#pickDateForm').formValidation('revalidateField', 'dob');
         });
 

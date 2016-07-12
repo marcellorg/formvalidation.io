@@ -101,7 +101,7 @@ $('#loginModal').on('hidden.bs.modal', function() {
 <script>
 $(document).ready(function() {
     $('#loginForm').on('success.form.fv', function(e) {
-        // Prevent form submission
+        /* Prevent form submission */
         e.preventDefault();
 
         var validator = $(e.target).data('formValidation'),

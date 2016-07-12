@@ -24,7 +24,7 @@ $(document).ready(function() {
                 }
             },
             email: {
-                // Initially, the validators of this field are disabled
+                /* Initially, the validators of this field are disabled */
                 enabled: false,
                 validators: {
                     notEmpty: {

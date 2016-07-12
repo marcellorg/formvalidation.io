@@ -60,7 +60,7 @@ $(document).ready(function() {
                 }
             }
         })
-        // Using Bootbox for color and size select elements
+        /* Using Combobox for color and size select elements */
         .find('[name="color"], [name="size"]')
             .combobox()
             .end()

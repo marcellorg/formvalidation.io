@@ -95,17 +95,17 @@ $(document).ready(function() {
 <script>
 $(document).ready(function() {
     $('#loginForm').on('success.form.fv', function(e) {
-        // Prevent form submission
+        /* Prevent form submission */
         e.preventDefault();
 
         var $form     = $(e.target),
             validator = $form.data('formValidation'),
             username  = validator.getFieldElements('username').val();
 
-        // Hide the modal containing the form
+        /* Hide the modal containing the form */
         $form.parents('.bootbox').modal('hide');
 
-        // Show the welcome dialog
+        /* Show the welcome dialog */
         bootbox.alert('Welcome back, ' + username);
     });
 });
