@@ -5,17 +5,20 @@
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
-    <link href="/vendor/formvalidation/css/formValidation.min.css" rel="stylesheet">
-    <style>
-    {% include framework/skeleton/skeleton.css %}
-    </style>
-    <link href="/asset/css/demo.css" rel="stylesheet">
+
+    {% bundle %}
+    - /vendor/formvalidation/css/formValidation.min.css
+    - /asset/framework/skeleton/skeleton.css
+    - /asset/css/demo.css
+    {% endbundle %}
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="/vendor/formvalidation/js/formValidation.min.js"></script>
-    <script>
-    {% include framework/skeleton/skeleton.js %}
-    </script>
+
+    {% bundle %}
+    - /vendor/formvalidation/js/formValidation.min.js
+    - /asset/framework/skeleton/skeleton.js
+    - /asset/js/demo.js
+    {% endbundle %}
 </head>
 <body class="demo-skeleton">
     <div class="container">
@@ -23,9 +26,5 @@
             {{ content }}
         </div>
     </div>
-
-<script>
-{% include demo/foot.js %}
-</script>
 </body>
 </html>

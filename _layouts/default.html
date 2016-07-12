@@ -17,7 +17,9 @@ layout: compress
         {% include footer.html %}
     </div>
 
-<script src="/vendor/tocjs/js/toc.min.js"></script>
-<script src="/asset/js/app.js"></script>
+{% bundle %}
+- /vendor/tocjs/js/toc.min.js
+- /asset/js/app.js
+{% endbundle %}
 </body>
 </html>

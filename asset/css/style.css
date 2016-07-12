@@ -286,7 +286,7 @@ h4 {
   color: #3498db;
 }
 .doc-home-intro {
-  background: url(../img/pattern.png) top left repeat;
+  background: url('/asset/img/pattern.png') top left repeat;
   color: #fff;
   padding-bottom: 20px;
 }
@@ -469,7 +469,7 @@ h4 {
   color: #fff;
 }
 .doc-sellfy-button {
-  background-image: url('../img/sellfy-button.png');
+  background-image: url('/asset/img/sellfy-button.png');
   display: inline-block;
   width: 162px;
   height: 32px;
@@ -484,7 +484,7 @@ h4 {
   padding-left: 96px;
 }
 .doc-gumroad-button {
-  background: white url('../img/gumroad-button-bar.jpg') repeat-x;
+  background: white url('/asset/img/gumroad-button-bar.jpg') repeat-x;
   border-radius: 4px;
   box-shadow: rgba(0, 0, 0, 0.4) 0 0 2px;
   color: #999;
@@ -496,7 +496,7 @@ h4 {
   text-decoration: none;
 }
 .doc-gumroad-button span {
-  background-image: url('../img/gumroad-button-logo.png');
+  background-image: url('/asset/img/gumroad-button-logo.png');
   background-size: cover;
   height: 17px;
   width: 16px;

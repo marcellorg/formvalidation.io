@@ -6,14 +6,19 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.min.css" rel="stylesheet" />
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
-    <link href="/vendor/formvalidation/css/formValidation.min.css" rel="stylesheet">
-    <link href="/asset/css/demo.css" rel="stylesheet">
+    {% bundle %}
+    - /vendor/formvalidation/css/formValidation.min.css
+    - /asset/css/demo.css
+    {% endbundle %}
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.min.js"></script>
 
-    <script src="/vendor/formvalidation/js/formValidation.min.js"></script>
-    <script src="/vendor/formvalidation/js/framework/foundation.min.js"></script>
+    {% bundle %}
+    - /vendor/formvalidation/js/formValidation.min.js
+    - /vendor/formvalidation/js/framework/foundation.min.js
+    - /asset/js/demo.js
+    {% endbundle %}
 </head>
 <body class="demo-foundation">
     <div class="row">
@@ -26,7 +31,6 @@
 $(document).ready(function() {
     $(document).foundation();
 });
-{% include demo/foot.js %}
 </script>
 </body>
 </html>
