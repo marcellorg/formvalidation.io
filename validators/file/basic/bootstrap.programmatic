@@ -19,6 +19,9 @@ $(document).ready(function() {
         fields: {
             avatar: {
                 validators: {
+                    notEmpty: {
+                        message: 'Please select an image'
+                    },
                     file: {
                         extension: 'jpeg,jpg,png',
                         type: 'image/jpeg,image/png',

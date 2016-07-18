@@ -8,6 +8,9 @@
         <label class="col-xs-3 control-label">Avatar</label>
         <div class="col-xs-6">
             <input type="file" class="form-control" name="avatar"
+                data-fv-notempty="true"
+                data-fv-notempty-message="Please select an image"
+
                 data-fv-file="true"
                 data-fv-file-extension="jpeg,jpg,png"
                 data-fv-file-type="image/jpeg,image/png"
