@@ -171,8 +171,7 @@ permalink: /
                 <h2>Download</h2>
                 <div class="doc-hr"></div>
 
-                <h3 id="downloadCounter">{{ site.num_downloads }}</h3>
-                <p>downloads so far</p>
+                <p>What are you waiting for?</p>
                 <p><a href="/download/" class="btn">Download</a></p>
             </div>
         </section>
@@ -190,26 +189,6 @@ $(function() {
         animationTime: 1000,
         responsiveFallback: 767
     });
-
-    function updateCounter(count) {
-        var t = count.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',').split('');
-        t = $.map(t, function(item) {
-            return (item === ',' ? ',' : '<span>' + item + '</span>');
-        }).join('');
-        $('#downloadCounter').html(t + '+');
-    }
-
-    var total   = parseInt('{{ site.num_downloads }}', 10),
-        count   = Math.floor(total / 1000 - 1) * 1000,
-        counter = setInterval(function() {
-            count++;
-            if (count > total) {
-                clearInterval(counter);
-            } else {
-                updateCounter(count);
-            }
-        }, 0.5);
-    updateCounter(count);
 });
 </script>
 </body>
