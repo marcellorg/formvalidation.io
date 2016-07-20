@@ -1,6 +1,9 @@
 - title: "FormValidation v0.8.0 is released, supports Bootstrap 4 alpha and Foundation 6"
   url: "/news/v0-8-0-released-supports-bootstrap-4-alpha-foundation-6/"
 
+- title: "Supporting Spectre framework"
+  url: "/examples/supporting-spectre-framework/"
+
 - title: "Preventing user to have same value as the placeholder"
   url: "/examples/preventing-user-have-same-value-placeholder/"
 
@@ -27,6 +30,3 @@
 
 - title: "Playing with Awesome Bootstrap Checkbox"
   url: "/examples/awesome-bootstrap-checkbox/"
-
-- title: "Toggling validators in a master page"
-  url: "/examples/toggling-validators-master-page/"

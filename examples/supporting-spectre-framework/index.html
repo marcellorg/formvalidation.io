@@ -1,0 +1,100 @@
+---
+layout: default
+title: Supporting Skeleton framework
+permalink: /examples/supporting-spectre-framework/
+---
+
+<div class="doc-content-container">
+    <div class="doc-heading">
+        <h1>Supporting Spectre framework</h1>
+        <p>&larr; <a href="/examples/">Examples</a></p>
+        {% include share.html %}
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <p><a href="https://picturepan2.github.io/spectre/">Spectre</a> is a lightweight, responsive and modern CSS framework for faster and extensible development.
+                    You can see more information and its usage on the official website.</p>
+
+                <p>This example is a step by step instruction showing how to validate the forms which uses the Spectre framework.</p>
+
+                <section>
+                    <h2>Downloading the files</h2>
+
+                    <ul class="doc-list">
+                        <li>Create a file named <code>spectre.js</code> with the following content:</li>
+                    </ul>
+
+{% highlight javascript %}
+{% include_absolute /asset/framework/spectre/spectre.js %}
+{% endhighlight %}
+
+                    <ul class="doc-list">
+                        <li>Create a file named <code>spectre.css</code> with the following content:</li>
+                    </ul>
+
+{% highlight javascript %}
+{% include_absolute /asset/framework/spectre/spectre.css %}
+{% endhighlight %}
+
+                    <p>You should place <code>spectre.js</code> and <code>spectre.css</code> in <code>formvalidation/dist/js/framework</code> and <code>formvalidation/dist/css</code> directories respectively.</p>
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Including the library</h2>
+
+{% highlight html %}
+<!-- Skeleton framework -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.1.25/spectre.min.css" rel="stylesheet">
+
+<!-- Optional: Include the Font Awesome for using some icons -->
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" />
+
+<!-- FormValidation CSS file -->
+<link rel="stylesheet" href="/vendor/formvalidation/dist/css/formValidation.min.css">
+<link rel="stylesheet" href="/vendor/formvalidation/dist/css/spectre.css">
+
+<!-- jQuery v1.9.1 or higher -->
+<script type="text/javascript" src="/vendor/jquery/jquery.min.js"></script>
+
+<!-- FormValidation plugin and the class supports validating Skeleton form -->
+<script src="/vendor/formvalidation/dist/js/formValidation.min.js"></script>
+<script src="/vendor/formvalidation/dist/js/framework/spectre.js"></script>
+{% endhighlight %}
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
+                    <h2>Calling the plugin</h2>
+
+                    <p>When calling <code>.formValidation()</code>, you need to set the <a href="/settings/#form-framework">framework</a> option:</p>
+
+{% highlight javascript %}
+$(form).formValidation({
+    framework: 'spectre',
+    ...
+});
+{% endhighlight %}
+
+                    <div class="doc-alert doc-alert-info">
+                        Some of forms use the <a href="/settings/#form-row-selector">row</a> option to support multiple fields in the same row container
+                    </div>
+
+                    <h3>Stacked form</h3>
+                    {% include demo/tabs.html id="stacked-form" frameworks="spectre" dir="stacked-form" codes="programmatic" %}
+
+                    <h3>Horizontal form</h3>
+                    {% include demo/tabs.html id="horizontal-form" frameworks="spectre" dir="horizontal-form" codes="programmatic" %}
+                </section>
+            </div>
+
+            <div class="col-md-3 hidden-print hidden-xs hidden-sm">
+                {% include sidebar.html %}
+            </div>
+        </div>
+    </div>
+</div>
