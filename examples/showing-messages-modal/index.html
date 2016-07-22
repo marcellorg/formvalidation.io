@@ -137,6 +137,38 @@ $('#signupForm')
                 <div class="doc-hr"></div>
 
                 <section>
+                    <h2>Bonus: Keep showing errors below field and inside the modal</h2>
+
+                    <p>If you want to show the error messages in both right below the field as usual and inside the modal, we don't need to use the <code>err.container</code> option.</p>
+                    <p>Instead, we find all the available error messages and push it to the modal:</p>
+
+{% highlight javascript %}
+$('#signupForm')
+    .formValidation({
+        // Don't use the `err.container` option
+        // so the error messages are shown below the field as usual
+    })
+    .on('err.form.fv', function(e) {
+        // Reset the errors inside the modal first
+        $('#errors').html('');
+
+        $('#signupForm')
+            // Find all the error messages
+            .find('[data-fv-validator][data-fv-result="INVALID"]')
+            // And update the error inside the modal body
+            .clone().appendTo('#errors');
+
+        // Show the message modal
+        $('#messageModal').modal('show');
+    });
+{% endhighlight %}
+
+                    {% include demo/tabs.html id="both" frameworks="bootstrap" dir="both" codes="programmatic" %}
+                </section>
+
+                <div class="doc-hr"></div>
+
+                <section>
                     <h2>Related examples</h2>
 
                     <ul class="doc-list">
