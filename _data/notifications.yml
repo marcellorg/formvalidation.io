@@ -1,3 +1,6 @@
+- title: "FormValidation v0.8.1 is released, supports Bootstrap 4 alpha 3"
+  url: "/news/v0-8-1-released-supports-bootstrap-4-alpha-3/"
+
 - title: "FormValidation v0.8.0 is released, supports Bootstrap 4 alpha and Foundation 6"
   url: "/news/v0-8-0-released-supports-bootstrap-4-alpha-foundation-6/"
 
@@ -27,6 +30,3 @@
 
 - title: "Validating an embed Bootstrap Datepicker"
   url: "/examples/bootstrap-datepicker/#embedding-a-date-picker"
-
-- title: "Playing with Awesome Bootstrap Checkbox"
-  url: "/examples/awesome-bootstrap-checkbox/"

@@ -29,9 +29,9 @@ license:
     gumroad_url:      https://gum.co/formvalidation-organization-license
     sellfy_url:       https://sellfy.com/p/eQiZ/
     sellfy_id:        eQiZ
-current_version:      0.8.0
-change_log:           /news/v0-8-0-released-supports-bootstrap-4-alpha-foundation-6/
-released_date:        2016.06.27
+current_version:      0.8.1
+change_log:           /news/v0-8-1-released-supports-bootstrap-4-alpha-3/
+released_date:        2016.07.29
 support:              https://github.com/formvalidation/support/issues
 ga_code:              UA-44786951-2
 
