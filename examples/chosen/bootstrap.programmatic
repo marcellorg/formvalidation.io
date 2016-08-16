@@ -13,6 +13,10 @@
     /* Adjust feedback icon position */
     right: -15px;
 }
+.chosen-container.form-control {
+    height: inherit; 
+    padding: 0px;
+}
 </style>
 
 <form id="chosenForm" class="form-horizontal">
@@ -42,7 +46,8 @@ $(document).ready(function() {
     $('#chosenForm')
         .find('[name="colors"]')
             .chosen({
-                width: '100%'
+                width: '100%',
+                inherit_select_classes: true
             })
             // Revalidate the color when it is changed
             .change(function(e) {
