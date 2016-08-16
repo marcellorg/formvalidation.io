@@ -3,17 +3,17 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/chosen/1.1.0/chosen.jquery.min.js"></script>
 
 <style type="text/css">
-#chosenForm .chosen-choices {
+.chosen-choices {
     border: 1px solid #ccc;
     border-radius: 4px;
     min-height: 34px;
     padding: 6px 12px;
 }
-#chosenForm .chosenContainer .form-control-feedback {
+.chosenContainer .form-control-feedback {
     /* Adjust feedback icon position */
     right: -15px;
 }
-.chosen-container.form-control {
+.chosenContainer .form-control {
     height: inherit; 
     padding: 0px;
 }
