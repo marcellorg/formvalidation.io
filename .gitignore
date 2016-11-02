@@ -2,5 +2,6 @@
 .idea
 .jekyll-metadata
 _gh_pages
-node_modules
 bundles
+node_modules
+Gemfile.lock
